@@ -17,11 +17,11 @@
   <div class="m-1">
     <form role="form" class="m-2">
       <div class="form-group row justify-content-center align-items-center">
-        <label for="cube" class="col-auto text-right">{{'statistics.olap.cubeLabel' | translate}}</label>
-        <div class="col-auto">
+        <label for="cube" class="col-sm-2">{{'statistics.olap.cubeLabel' | translate}}</label>
+        <div class="col-sm-3">
           <p-dropdown [options]="cubeSelectItems" [(ngModel)]="selectedCube" id="cube"
                       placeholder="{{'statistics.olap.cubePlaceholder' | translate}}"
-                      (onChange)="onCubeChange()" name="cube" styleClass="cube-dropdown">
+                      (onChange)="onCubeChange()" name="cube" styleClass="olap-dropdown">
             <ng-template let-cube pTemplate="selectedItem">
               {{ cube.label | translate }}
             </ng-template>
@@ -30,11 +30,11 @@
             </ng-template>
           </p-dropdown>
         </div>
-        <label for="measure" class="col-auto text-right">{{'statistics.olap.measureLabel' | translate}}</label>
-        <div class="col-auto">
+        <label for="measure" class="col-sm-2">{{'statistics.olap.measureLabel' | translate}}</label>
+        <div class="col-sm-5">
           <p-dropdown [options]="measureSelectItems" [(ngModel)]="selectedMeasure" id="measure"
                       placeholder="{{'statistics.olap.measurePlaceholder' | translate}}"
-                      (onChange)="onMeasureChange()" name="measure" styleClass="measure-dropdown">
+                      (onChange)="onMeasureChange()" name="measure" styleClass="olap-dropdown">
             <ng-template let-measure pTemplate="selectedItem">
               {{ measure.label | translate }}
             </ng-template>
@@ -57,21 +57,21 @@
         </div>
       </div>
       <div class="form-group row justify-content-center align-items-center">
-        <label for="organizer" class="col-auto text-right">{{'common.list.organizerLabel' | translate}}</label>
-        <div class="col-auto">
+        <label for="organizer" class="col-sm-2">{{'common.list.organizerLabel' | translate}}</label>
+        <div class="col-sm-3">
           <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
                       placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"
-                      (onChange)="onOrganizerChange()" name="organizer" styleClass="organizer-dropdown">
+                      (onChange)="onOrganizerChange()" name="organizer" styleClass="olap-dropdown">
             <ng-template let-organizer pTemplate="item">
               {{organizer.value.name}}
             </ng-template>
           </p-dropdown>
         </div>
-        <label for="conference" class="col-auto text-right">{{'common.list.eventTypeLabel' | translate}}</label>
-        <div class="col-auto">
+        <label for="conference" class="col-sm-2">{{'common.list.eventTypeLabel' | translate}}</label>
+        <div class="col-sm-5">
           <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="conference"
                       placeholder="{{'common.list.eventTypePlaceholder' | translate}}" [showClear]="true"
-                      (onChange)="onEventTypeChange()" name="conference" styleClass="event-type-dropdown">
+                      (onChange)="onEventTypeChange()" name="conference" styleClass="olap-dropdown">
             <ng-template let-eventType pTemplate="item">
               <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
               <span class="ml-2">{{eventType.value.name}}</span>
@@ -80,16 +80,16 @@
         </div>
       </div>
       <div *ngIf="isSpeakersVisible()" class="form-group row justify-content-center align-items-center">
-        <label for="speaker" class="col-auto text-right">{{'statistics.olap.speakersLabel' | translate}}</label>
-        <div class="col-auto">
+        <label for="speaker" class="col-sm-2">{{'statistics.olap.speakersLabel' | translate}}</label>
+        <div class="col-sm-10">
           <p-autoComplete id="speaker" [(ngModel)]="selectedSpeakers" [suggestions]="speakerSuggestions" (completeMethod)="speakerSearch($event)"
                           (onSelect)="selectSpeaker($event)" field="displayName" name="speaker" [multiple]="true"
                           styleClass="olap-autocomplete"></p-autoComplete>
         </div>
       </div>
       <div *ngIf="isCompaniesVisible()" class="form-group row justify-content-center align-items-center">
-        <label for="company" class="col-auto text-right">{{'statistics.olap.companiesLabel' | translate}}</label>
-        <div class="col-auto">
+        <label for="company" class="col-sm-2">{{'statistics.olap.companiesLabel' | translate}}</label>
+        <div class="col-sm-10">
           <p-autoComplete id="company" [(ngModel)]="selectedCompanies" [suggestions]="companySuggestions" (completeMethod)="companySearch($event)"
                           (onSelect)="selectCompany($event)" field="name" name="company" [multiple]="true"
                           styleClass="olap-autocomplete"></p-autoComplete>

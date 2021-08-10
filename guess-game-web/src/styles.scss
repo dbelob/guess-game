@@ -173,21 +173,14 @@
   }
 }
 
-.start-listbox.p-listbox, .start-dropdown.p-dropdown, .search-dropdown.p-dropdown, .search-autocomplete.p-autocomplete,
-.search-autocomplete .p-inputtext, .olap-autocomplete .p-inputtext {
+.start-listbox.p-listbox, .start-dropdown.p-dropdown, .search-dropdown.p-dropdown, .olap-dropdown.p-dropdown,
+.search-autocomplete.p-autocomplete, .search-autocomplete .p-inputtext,
+.olap-autocomplete.p-autocomplete, .olap-autocomplete .p-inputtext {
   width: 100%;
 }
 
-.olap-autocomplete.p-autocomplete {
-  min-width: 600px;
-}
-
-.organizer-dropdown.p-dropdown, .event-type-dropdown.p-dropdown, .cube-dropdown.p-dropdown {
+.organizer-dropdown.p-dropdown, .event-type-dropdown.p-dropdown {
   min-width: 175px;
-}
-
-.measure-dropdown.p-dropdown {
-  min-width: 275px;
 }
 
 .p-paginator {
