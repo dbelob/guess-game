@@ -6,7 +6,7 @@ import guess.domain.StartParameters;
 import java.util.List;
 
 /**
- * Start parameters DTO
+ * Start parameters DTO.
  */
 public class StartParametersDto {
     private List<Long> eventTypeIds;
