@@ -7,12 +7,11 @@ import guess.dto.eventtype.EventTypeSuperBriefDto;
 import guess.dto.statistics.*;
 import guess.service.LocaleService;
 import guess.service.StatisticsService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Collections;
@@ -25,6 +24,8 @@ import java.util.List;
 @Controller
 @RequestMapping("/api/statistics")
 public class StatisticsController {
+    private static final Logger log = LoggerFactory.getLogger(StatisticsController.class);
+
     private final StatisticsService statisticsService;
     private final LocaleService localeService;
 
@@ -124,5 +125,15 @@ public class StatisticsController {
 
             return cubeEnum.getMeasures();
         }
+    }
+
+    @PostMapping("/olap-statistics")
+    @ResponseBody
+    public OlapStatisticsDto getOlapStatistics(@RequestBody OlapParametersDto olapParameters) {
+        log.debug("cube: {}, measure: {}, organizerId: {}, eventTypeId: {}, speakerIds: {}, companyIds: {}",
+                olapParameters.getCube(), olapParameters.getMeasure(), olapParameters.getOrganizerId(),
+                olapParameters.getEventTypeId(), olapParameters.getSpeakerIds(), olapParameters.getCompanyIds());
+        //TODO: implement
+        return new OlapStatisticsDto();
     }
 }

@@ -83,16 +83,16 @@
         <label for="speaker" class="col-sm-2">{{'statistics.olap.speakersLabel' | translate}}</label>
         <div class="col-sm-10">
           <p-autoComplete id="speaker" [(ngModel)]="selectedSpeakers" [suggestions]="speakerSuggestions" (completeMethod)="speakerSearch($event)"
-                          (onSelect)="selectSpeaker($event)" field="displayName" name="speaker" [multiple]="true"
-                          styleClass="olap-autocomplete"></p-autoComplete>
+                          (onSelect)="selectSpeaker($event)" (onUnselect)="unselectSpeaker($event)"
+                          field="displayName" name="speaker" [multiple]="true" styleClass="olap-autocomplete"></p-autoComplete>
         </div>
       </div>
       <div *ngIf="isCompaniesVisible()" class="form-group row justify-content-center align-items-center">
         <label for="company" class="col-sm-2">{{'statistics.olap.companiesLabel' | translate}}</label>
         <div class="col-sm-10">
           <p-autoComplete id="company" [(ngModel)]="selectedCompanies" [suggestions]="companySuggestions" (completeMethod)="companySearch($event)"
-                          (onSelect)="selectCompany($event)" field="name" name="company" [multiple]="true"
-                          styleClass="olap-autocomplete"></p-autoComplete>
+                          (onSelect)="selectCompany($event)" (onUnselect)="unselectCompany($event)"
+                          field="name" name="company" [multiple]="true" styleClass="olap-autocomplete"></p-autoComplete>
         </div>
       </div>
     </form>

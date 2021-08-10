@@ -11,6 +11,8 @@ import { Organizer } from '../models/organizer/organizer.model';
 import { Cube } from '../models/statistics/olap/cube.model';
 import { Measure } from '../models/statistics/olap/measure.model';
 import { MessageService } from '../../modules/message/message.service';
+import { OlapStatistics } from "../models/statistics/olap/olap-statistics.model";
+import { OlapParameters } from "../models/statistics/olap/olap.parameters.model";
 
 @Injectable({
   providedIn: 'root'
@@ -118,6 +120,16 @@ export class StatisticsService {
       .set('cube', (cube) ? cube.toString() : null);
 
     return this.http.get<Measure[]>(`${this.baseUrl}/measures`, {params: params})
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getOlapStatistics(olapParameters: OlapParameters): Observable<OlapStatistics> {
+    return this.http.post<OlapStatistics>(`${this.baseUrl}/olap-statistics`, olapParameters)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);
