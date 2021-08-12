@@ -6,6 +6,7 @@ import guess.domain.statistics.olap.MeasureType;
 import guess.dto.eventtype.EventTypeSuperBriefDto;
 import guess.dto.statistics.*;
 import guess.service.LocaleService;
+import guess.service.OlapService;
 import guess.service.StatisticsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,11 +28,13 @@ public class StatisticsController {
     private static final Logger log = LoggerFactory.getLogger(StatisticsController.class);
 
     private final StatisticsService statisticsService;
+    private final OlapService olapService;
     private final LocaleService localeService;
 
     @Autowired
-    public StatisticsController(StatisticsService statisticsService, LocaleService localeService) {
+    public StatisticsController(StatisticsService statisticsService, OlapService olapService, LocaleService localeService) {
         this.statisticsService = statisticsService;
+        this.olapService = olapService;
         this.localeService = localeService;
     }
 
@@ -123,7 +126,7 @@ public class StatisticsController {
         } else {
             CubeType cubeTypeEnum = CubeType.valueOf(cubeType);
 
-            return cubeTypeEnum.getMeasureTypes();
+            return olapService.getMeasureTypes(cubeTypeEnum);
         }
     }
 
