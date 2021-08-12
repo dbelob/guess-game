@@ -4,7 +4,7 @@
     "speakers": "Спикеры",
     "companies": "Компании"
   },
-  "measure": {
+  "measureType": {
     "duration": "Длительность, дней",
     "eventTypesQuantity": "Количество типов событий",
     "eventsQuantity": "Количество событий",

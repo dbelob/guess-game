@@ -26,13 +26,13 @@ export class OlapStatisticsComponent implements OnInit {
   private readonly SPEAKERS_CUBE_TYPE_KEY = 'cubeType.speakers';
   private readonly COMPANIES_CUBE_TYPE_KEY = 'cubeType.companies';
 
-  private readonly DURATION_MEASURE_KEY = 'measure.duration';
-  private readonly EVENT_TYPES_QUANTITY_MEASURE_KEY = 'measure.eventTypesQuantity';
-  private readonly EVENTS_QUANTITY_MEASURE_KEY = 'measure.eventsQuantity';
-  private readonly TALKS_QUANTITY_MEASURE_KEY = 'measure.talksQuantity';
-  private readonly SPEAKERS_QUANTITY_MEASURE_KEY = 'measure.speakersQuantity';
-  private readonly JAVA_CHAMPIONS_QUANTITY_MEASURE_KEY = 'measure.javaChampionsQuantity';
-  private readonly MVPS_QUANTITY_MEASURE_KEY = 'measure.mvpsQuantity';
+  private readonly DURATION_MEASURE_TYPE_KEY = 'measureType.duration';
+  private readonly EVENT_TYPES_QUANTITY_MEASURE_TYPE_KEY = 'measureType.eventTypesQuantity';
+  private readonly EVENTS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.eventsQuantity';
+  private readonly TALKS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.talksQuantity';
+  private readonly SPEAKERS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.speakersQuantity';
+  private readonly JAVA_CHAMPIONS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.javaChampionsQuantity';
+  private readonly MVPS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.mvpsQuantity';
 
   private imageDirectory = 'assets/images';
   public eventsImageDirectory = `${this.imageDirectory}/events`;
@@ -94,25 +94,25 @@ export class OlapStatisticsComponent implements OnInit {
   getMeasureTypeMessageKeyByCube(measureType: MeasureType): string {
     switch (measureType) {
       case MeasureType.Duration: {
-        return this.DURATION_MEASURE_KEY;
+        return this.DURATION_MEASURE_TYPE_KEY;
       }
       case MeasureType.EventTypesQuantity: {
-        return this.EVENT_TYPES_QUANTITY_MEASURE_KEY;
+        return this.EVENT_TYPES_QUANTITY_MEASURE_TYPE_KEY;
       }
       case MeasureType.EventsQuantity: {
-        return this.EVENTS_QUANTITY_MEASURE_KEY;
+        return this.EVENTS_QUANTITY_MEASURE_TYPE_KEY;
       }
       case MeasureType.TalksQuantity: {
-        return this.TALKS_QUANTITY_MEASURE_KEY;
+        return this.TALKS_QUANTITY_MEASURE_TYPE_KEY;
       }
       case MeasureType.SpeakersQuantity: {
-        return this.SPEAKERS_QUANTITY_MEASURE_KEY;
+        return this.SPEAKERS_QUANTITY_MEASURE_TYPE_KEY;
       }
       case MeasureType.JavaChampionsQuantity: {
-        return this.JAVA_CHAMPIONS_QUANTITY_MEASURE_KEY;
+        return this.JAVA_CHAMPIONS_QUANTITY_MEASURE_TYPE_KEY;
       }
       case MeasureType.MvpsQuantity: {
-        return this.MVPS_QUANTITY_MEASURE_KEY;
+        return this.MVPS_QUANTITY_MEASURE_TYPE_KEY;
       }
       default: {
         return null;

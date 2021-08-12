@@ -4,7 +4,7 @@
     "speakers": "Speakers",
     "companies": "Companies"
   },
-  "measure": {
+  "measureType": {
     "duration": "Duration, days",
     "eventTypesQuantity": "Event types quantity",
     "eventsQuantity": "Events quantity",
