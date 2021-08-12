@@ -1,5 +1,5 @@
 {
-  "cube": {
+  "cubeType": {
     "eventTypes": "Типы событий",
     "speakers": "Спикеры",
     "companies": "Компании"

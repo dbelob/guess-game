@@ -22,9 +22,9 @@ import { findEventTypeById, findOrganizerById } from '../../general/utility-func
   templateUrl: './olap-statistics.component.html'
 })
 export class OlapStatisticsComponent implements OnInit {
-  private readonly EVENT_TYPES_CUBE_KEY = 'cube.eventTypes';
-  private readonly SPEAKERS_CUBE_KEY = 'cube.speakers';
-  private readonly COMPANIES_CUBE_KEY = 'cube.companies';
+  private readonly EVENT_TYPES_CUBE_TYPE_KEY = 'cubeType.eventTypes';
+  private readonly SPEAKERS_CUBE_TYPE_KEY = 'cubeType.speakers';
+  private readonly COMPANIES_CUBE_TYPE_KEY = 'cubeType.companies';
 
   private readonly DURATION_MEASURE_KEY = 'measure.duration';
   private readonly EVENT_TYPES_QUANTITY_MEASURE_KEY = 'measure.eventTypesQuantity';
@@ -77,13 +77,13 @@ export class OlapStatisticsComponent implements OnInit {
   getCubeTypeMessageKeyByCube(cubeType: CubeType): string {
     switch (cubeType) {
       case CubeType.EventTypes: {
-        return this.EVENT_TYPES_CUBE_KEY;
+        return this.EVENT_TYPES_CUBE_TYPE_KEY;
       }
       case CubeType.Speakers: {
-        return this.SPEAKERS_CUBE_KEY;
+        return this.SPEAKERS_CUBE_TYPE_KEY;
       }
       case CubeType.Companies: {
-        return this.COMPANIES_CUBE_KEY;
+        return this.COMPANIES_CUBE_TYPE_KEY;
       }
       default: {
         return null;
