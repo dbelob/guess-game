@@ -1,6 +1,6 @@
 package guess.dto.statistics;
 
-import guess.domain.statistics.olap.Cube;
+import guess.domain.statistics.olap.CubeType;
 import guess.domain.statistics.olap.Measure;
 
 import java.util.List;
@@ -9,19 +9,19 @@ import java.util.List;
  * OLAP parameters DTO.
  */
 public class OlapParametersDto {
-    private Cube cube;
+    private CubeType cubeType;
     private Measure measure;
     private Long organizerId;
     private Long eventTypeId;
     private List<Long> speakerIds;
     private List<Long> companyIds;
 
-    public Cube getCube() {
-        return cube;
+    public CubeType getCubeType() {
+        return cubeType;
     }
 
-    public void setCube(Cube cube) {
-        this.cube = cube;
+    public void setCubeType(CubeType cubeType) {
+        this.cubeType = cubeType;
     }
 
     public Measure getMeasure() {

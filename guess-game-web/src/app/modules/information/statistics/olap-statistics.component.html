@@ -17,16 +17,16 @@
   <div class="m-1">
     <form role="form" class="m-2">
       <div class="form-group row justify-content-center align-items-center">
-        <label for="cube" class="col-sm-2">{{'statistics.olap.cubeLabel' | translate}}</label>
+        <label for="cubeType" class="col-sm-2">{{'statistics.olap.cubeLabel' | translate}}</label>
         <div class="col-sm-3">
-          <p-dropdown [options]="cubeSelectItems" [(ngModel)]="selectedCube" id="cube"
+          <p-dropdown [options]="cubeTypeSelectItems" [(ngModel)]="selectedCubeType" id="cubeType"
                       placeholder="{{'statistics.olap.cubePlaceholder' | translate}}"
-                      (onChange)="onCubeChange()" name="cube" styleClass="olap-dropdown">
-            <ng-template let-cube pTemplate="selectedItem">
-              {{ cube.label | translate }}
+                      (onChange)="onCubeChange()" name="cubeType" styleClass="olap-dropdown">
+            <ng-template let-cubeType pTemplate="selectedItem">
+              {{ cubeType.label | translate }}
             </ng-template>
-            <ng-template let-cube pTemplate="item">
-              {{ cube.label | translate }}
+            <ng-template let-cubeType pTemplate="item">
+              {{ cubeType.label | translate }}
             </ng-template>
           </p-dropdown>
         </div>

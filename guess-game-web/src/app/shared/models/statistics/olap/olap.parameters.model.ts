@@ -1,9 +1,9 @@
-import { Cube } from './cube.model';
+import { CubeType } from './cube-type.model';
 import { Measure } from './measure.model';
 
 export class OlapParameters {
   constructor(
-    public cube?: Cube,
+    public cubeType?: CubeType,
     public measure?: Measure,
     public organizerId?: number,
     public eventTypeId?: number,

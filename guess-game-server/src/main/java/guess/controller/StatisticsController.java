@@ -1,7 +1,7 @@
 package guess.controller;
 
 import guess.domain.source.EventType;
-import guess.domain.statistics.olap.Cube;
+import guess.domain.statistics.olap.CubeType;
 import guess.domain.statistics.olap.Measure;
 import guess.dto.eventtype.EventTypeSuperBriefDto;
 import guess.dto.statistics.*;
@@ -109,10 +109,10 @@ public class StatisticsController {
         return eventTypeSuperBriefDtoList;
     }
 
-    @GetMapping("/cubes")
+    @GetMapping("/cube-types")
     @ResponseBody
-    public List<Cube> getCubes() {
-        return List.of(Cube.values());
+    public List<CubeType> getCubeTypes() {
+        return List.of(CubeType.values());
     }
 
     @GetMapping("/measures")
@@ -121,17 +121,17 @@ public class StatisticsController {
         if ((cube == null) || cube.isEmpty()) {
             return Collections.emptyList();
         } else {
-            Cube cubeEnum = Cube.valueOf(cube);
+            CubeType cubeTypeEnum = CubeType.valueOf(cube);
 
-            return cubeEnum.getMeasures();
+            return cubeTypeEnum.getMeasures();
         }
     }
 
     @PostMapping("/olap-statistics")
     @ResponseBody
     public OlapStatisticsDto getOlapStatistics(@RequestBody OlapParametersDto olapParameters) {
-        log.debug("cube: {}, measure: {}, organizerId: {}, eventTypeId: {}, speakerIds: {}, companyIds: {}",
-                olapParameters.getCube(), olapParameters.getMeasure(), olapParameters.getOrganizerId(),
+        log.debug("cubeType: {}, measure: {}, organizerId: {}, eventTypeId: {}, speakerIds: {}, companyIds: {}",
+                olapParameters.getCubeType(), olapParameters.getMeasure(), olapParameters.getOrganizerId(),
                 olapParameters.getEventTypeId(), olapParameters.getSpeakerIds(), olapParameters.getCompanyIds());
         //TODO: implement
         return new OlapStatisticsDto("result");

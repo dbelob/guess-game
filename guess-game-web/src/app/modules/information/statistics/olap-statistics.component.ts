@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
 import { TranslateService } from '@ngx-translate/core';
 import { Company } from '../../../shared/models/company/company.model';
-import { Cube } from '../../../shared/models/statistics/olap/cube.model';
+import { CubeType } from '../../../shared/models/statistics/olap/cube-type.model';
 import { EventType } from '../../../shared/models/event-type/event-type.model';
 import { Measure } from '../../../shared/models/statistics/olap/measure.model';
 import { OlapParameters } from '../../../shared/models/statistics/olap/olap.parameters.model';
@@ -37,9 +37,9 @@ export class OlapStatisticsComponent implements OnInit {
   private imageDirectory = 'assets/images';
   public eventsImageDirectory = `${this.imageDirectory}/events`;
 
-  public cubes: Cube[] = [];
-  public selectedCube: Cube;
-  public cubeSelectItems: SelectItem[] = [];
+  public cubeTypes: CubeType[] = [];
+  public selectedCubeType: CubeType;
+  public cubeTypeSelectItems: SelectItem[] = [];
 
   public measures: Measure[] = [];
   public selectedMeasure: Measure;
@@ -74,15 +74,15 @@ export class OlapStatisticsComponent implements OnInit {
     this.loadCubes();
   }
 
-  getCubeMessageKeyByCube(cube: Cube): string {
-    switch (cube) {
-      case Cube.EventTypes: {
+  getCubeTypeMessageKeyByCube(cubeType: CubeType): string {
+    switch (cubeType) {
+      case CubeType.EventTypes: {
         return this.EVENT_TYPES_CUBE_KEY;
       }
-      case Cube.Speakers: {
+      case CubeType.Speakers: {
         return this.SPEAKERS_CUBE_KEY;
       }
-      case Cube.Companies: {
+      case CubeType.Companies: {
         return this.COMPANIES_CUBE_KEY;
       }
       default: {
@@ -120,10 +120,10 @@ export class OlapStatisticsComponent implements OnInit {
     }
   }
 
-  fillCubes(cubes: Cube[]) {
-    this.cubes = cubes;
-    this.cubeSelectItems = this.cubes.map(c => {
-        const messageKey = this.getCubeMessageKeyByCube(c);
+  fillCubeTypes(cubeTypes: CubeType[]) {
+    this.cubeTypes = cubeTypes;
+    this.cubeTypeSelectItems = this.cubeTypes.map(c => {
+        const messageKey = this.getCubeTypeMessageKeyByCube(c);
 
         return {label: messageKey, value: c};
       }
@@ -157,12 +157,12 @@ export class OlapStatisticsComponent implements OnInit {
   }
 
   loadCubes() {
-    this.statisticsService.getCubes()
-      .subscribe(cubeData => {
-        this.fillCubes(cubeData);
-        this.selectedCube = (cubeData && (cubeData.length > 0)) ? cubeData[0] : null;
+    this.statisticsService.getCubeTypes()
+      .subscribe(cubeTypeData => {
+        this.fillCubeTypes(cubeTypeData);
+        this.selectedCubeType = (cubeTypeData && (cubeTypeData.length > 0)) ? cubeTypeData[0] : null;
 
-        this.statisticsService.getMeasures(this.selectedCube)
+        this.statisticsService.getMeasures(this.selectedCubeType)
           .subscribe(measureData => {
             this.fillMeasures(measureData);
             this.selectedMeasure = (measureData && (measureData.length > 0)) ? measureData[0] : null;
@@ -185,7 +185,7 @@ export class OlapStatisticsComponent implements OnInit {
                           this.selectedEventType = null;
                         }
 
-                        this.loadOlapStatistics(this.selectedCube, this.selectedMeasure, this.selectedOrganizer,
+                        this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasure, this.selectedOrganizer,
                             this.selectedEventType, this.selectedSpeakers, this.selectedCompanies);
                       });
                   });
@@ -201,15 +201,15 @@ export class OlapStatisticsComponent implements OnInit {
 
         this.selectedEventType = null;
 
-        this.loadOlapStatistics(this.selectedCube, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
+        this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
             this.selectedSpeakers, this.selectedCompanies);
       });
   }
 
-  loadOlapStatistics(cube: Cube, measure: Measure, organizer: Organizer, eventType: EventType, speakers: Speaker[], companies: Company[]) {
+  loadOlapStatistics(cubeType: CubeType, measure: Measure, organizer: Organizer, eventType: EventType, speakers: Speaker[], companies: Company[]) {
     this.statisticsService.getOlapStatistics(
         new OlapParameters(
-            cube,
+            cubeType,
             measure,
             (organizer) ? organizer.id : null,
             (eventType) ? eventType.id : null,
@@ -231,7 +231,7 @@ export class OlapStatisticsComponent implements OnInit {
   }
 
   onEventTypeChange() {
-    this.loadOlapStatistics(this.selectedCube, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
+    this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
         this.selectedSpeakers, this.selectedCompanies);
   }
 
@@ -255,7 +255,7 @@ export class OlapStatisticsComponent implements OnInit {
               this.selectedEventType = null;
             }
 
-            this.loadOlapStatistics(this.selectedCube, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
+            this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
                 this.selectedSpeakers, this.selectedCompanies);
           });
       });
@@ -265,27 +265,27 @@ export class OlapStatisticsComponent implements OnInit {
     this.selectedSpeakers = [];
     this.selectedCompanies = [];
 
-    this.statisticsService.getMeasures(this.selectedCube)
+    this.statisticsService.getMeasures(this.selectedCubeType)
       .subscribe(measureData => {
         this.fillMeasures(measureData);
         this.selectedMeasure = (measureData && (measureData.length > 0)) ? measureData[0] : null;
 
-        this.loadOlapStatistics(this.selectedCube, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
+        this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
             this.selectedSpeakers, this.selectedCompanies);
       });
   }
 
   onMeasureChange() {
-    this.loadOlapStatistics(this.selectedCube, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
+    this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
         this.selectedSpeakers, this.selectedCompanies);
   }
 
   isSpeakersVisible(): boolean {
-    return (Cube.Speakers === this.selectedCube);
+    return (CubeType.Speakers === this.selectedCubeType);
   }
 
   isCompaniesVisible(): boolean {
-    return (Cube.Companies == this.selectedCube);
+    return (CubeType.Companies == this.selectedCubeType);
   }
 
   speakerSearch(event) {
@@ -297,12 +297,12 @@ export class OlapStatisticsComponent implements OnInit {
   }
 
   selectSpeaker(event) {
-    this.loadOlapStatistics(this.selectedCube, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
+    this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
         this.selectedSpeakers, this.selectedCompanies);
   }
 
   unselectSpeaker(event) {
-    this.loadOlapStatistics(this.selectedCube, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
+    this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
         this.selectedSpeakers, this.selectedCompanies);
   }
 
@@ -315,12 +315,12 @@ export class OlapStatisticsComponent implements OnInit {
   }
 
   selectCompany(event) {
-    this.loadOlapStatistics(this.selectedCube, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
+    this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
         this.selectedSpeakers, this.selectedCompanies);
   }
 
   unselectCompany(event) {
-    this.loadOlapStatistics(this.selectedCube, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
+    this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType,
         this.selectedSpeakers, this.selectedCompanies);
   }
 }

@@ -8,7 +8,7 @@ import { EventStatistics } from '../models/statistics/event-statistics.model';
 import { SpeakerStatistics } from '../models/statistics/speaker-statistics.model';
 import { CompanyStatistics } from '../models/statistics/company-statistics.model';
 import { Organizer } from '../models/organizer/organizer.model';
-import { Cube } from '../models/statistics/olap/cube.model';
+import { CubeType } from '../models/statistics/olap/cube-type.model';
 import { Measure } from '../models/statistics/olap/measure.model';
 import { MessageService } from '../../modules/message/message.service';
 import { OlapStatistics } from "../models/statistics/olap/olap-statistics.model";
@@ -105,8 +105,8 @@ export class StatisticsService {
       );
   }
 
-  getCubes(): Observable<Cube[]> {
-    return this.http.get<Cube[]>(`${this.baseUrl}/cubes`)
+  getCubeTypes(): Observable<CubeType[]> {
+    return this.http.get<CubeType[]>(`${this.baseUrl}/cube-types`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);
@@ -115,7 +115,7 @@ export class StatisticsService {
       );
   }
 
-  getMeasures(cube: Cube): Observable<Measure[]> {
+  getMeasures(cube: CubeType): Observable<Measure[]> {
     const params = new HttpParams()
       .set('cube', (cube) ? cube.toString() : null);
 
