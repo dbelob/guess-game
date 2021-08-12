@@ -5,6 +5,7 @@ import guess.domain.Language;
 import guess.domain.source.*;
 import guess.domain.statistics.*;
 import guess.service.LocaleService;
+import guess.service.OlapService;
 import guess.service.StatisticsService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -35,6 +36,9 @@ class StatisticsControllerTest {
 
     @MockBean
     private StatisticsService statisticsService;
+
+    @MockBean
+    private OlapService olapService;
 
     @MockBean
     private LocaleService localeService;
@@ -83,10 +87,10 @@ class StatisticsControllerTest {
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
         mvc.perform(get("/api/statistics/event-type-statistics")
-                .contentType(MediaType.APPLICATION_JSON)
-                .param("conferences", Boolean.toString(conferences))
-                .param("meetups", Boolean.toString(meetups))
-                .session(httpSession))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .param("conferences", Boolean.toString(conferences))
+                        .param("meetups", Boolean.toString(meetups))
+                        .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.eventTypeMetricsList", hasSize(2)))
                 .andExpect(jsonPath("$.eventTypeMetricsList[0].id", is(1)))
@@ -131,9 +135,9 @@ class StatisticsControllerTest {
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
         mvc.perform(get("/api/statistics/event-statistics")
-                .contentType(MediaType.APPLICATION_JSON)
-                .param("eventTypeId", Long.toString(eventTypeId))
-                .session(httpSession))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .param("eventTypeId", Long.toString(eventTypeId))
+                        .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.eventMetricsList", hasSize(2)))
                 .andExpect(jsonPath("$.eventMetricsList[0].id", is(0)))
@@ -176,11 +180,11 @@ class StatisticsControllerTest {
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
         mvc.perform(get("/api/statistics/speaker-statistics")
-                .contentType(MediaType.APPLICATION_JSON)
-                .param("conferences", Boolean.toString(conferences))
-                .param("meetups", Boolean.toString(meetups))
-                .param("eventTypeId", Long.toString(eventTypeId))
-                .session(httpSession))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .param("conferences", Boolean.toString(conferences))
+                        .param("meetups", Boolean.toString(meetups))
+                        .param("eventTypeId", Long.toString(eventTypeId))
+                        .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.speakerMetricsList", hasSize(2)))
                 .andExpect(jsonPath("$.speakerMetricsList[0].id", is(1)))
@@ -223,11 +227,11 @@ class StatisticsControllerTest {
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
         mvc.perform(get("/api/statistics/company-statistics")
-                .contentType(MediaType.APPLICATION_JSON)
-                .param("conferences", Boolean.toString(conferences))
-                .param("meetups", Boolean.toString(meetups))
-                .param("eventTypeId", Long.toString(eventTypeId))
-                .session(httpSession))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .param("conferences", Boolean.toString(conferences))
+                        .param("meetups", Boolean.toString(meetups))
+                        .param("eventTypeId", Long.toString(eventTypeId))
+                        .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.companyMetricsList", hasSize(2)))
                 .andExpect(jsonPath("$.companyMetricsList[0].id", is(1)))
@@ -253,8 +257,8 @@ class StatisticsControllerTest {
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
         mvc.perform(get("/api/statistics/conferences")
-                .contentType(MediaType.APPLICATION_JSON)
-                .session(httpSession))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
                 .andExpect(jsonPath("$[0].id", is(0)))
