@@ -1,6 +1,6 @@
 package guess.domain.statistics.olap;
 
-public enum Measure {
+public enum MeasureType {
     DURATION,
     EVENT_TYPES_QUANTITY,
     EVENTS_QUANTITY,

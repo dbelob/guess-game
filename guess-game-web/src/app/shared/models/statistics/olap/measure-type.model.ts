@@ -1,4 +1,4 @@
-export enum Measure {
+export enum MeasureType {
   Duration = 'DURATION',
   EventTypesQuantity = 'EVENT_TYPES_QUANTITY',
   EventsQuantity = 'EVENTS_QUANTITY',

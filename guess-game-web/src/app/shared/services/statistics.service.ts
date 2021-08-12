@@ -9,7 +9,7 @@ import { SpeakerStatistics } from '../models/statistics/speaker-statistics.model
 import { CompanyStatistics } from '../models/statistics/company-statistics.model';
 import { Organizer } from '../models/organizer/organizer.model';
 import { CubeType } from '../models/statistics/olap/cube-type.model';
-import { Measure } from '../models/statistics/olap/measure.model';
+import { MeasureType } from '../models/statistics/olap/measure-type.model';
 import { MessageService } from '../../modules/message/message.service';
 import { OlapStatistics } from "../models/statistics/olap/olap-statistics.model";
 import { OlapParameters } from "../models/statistics/olap/olap.parameters.model";
@@ -115,11 +115,11 @@ export class StatisticsService {
       );
   }
 
-  getMeasures(cube: CubeType): Observable<Measure[]> {
+  getMeasureTypes(cubeType: CubeType): Observable<MeasureType[]> {
     const params = new HttpParams()
-      .set('cube', (cube) ? cube.toString() : null);
+      .set('cubeType', (cubeType) ? cubeType.toString() : null);
 
-    return this.http.get<Measure[]>(`${this.baseUrl}/measures`, {params: params})
+    return this.http.get<MeasureType[]>(`${this.baseUrl}/measure-types`, {params: params})
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);
