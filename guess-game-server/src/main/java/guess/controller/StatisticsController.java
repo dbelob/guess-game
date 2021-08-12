@@ -134,6 +134,6 @@ public class StatisticsController {
                 olapParameters.getCube(), olapParameters.getMeasure(), olapParameters.getOrganizerId(),
                 olapParameters.getEventTypeId(), olapParameters.getSpeakerIds(), olapParameters.getCompanyIds());
         //TODO: implement
-        return new OlapStatisticsDto();
+        return new OlapStatisticsDto("result");
     }
 }
