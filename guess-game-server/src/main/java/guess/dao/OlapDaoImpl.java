@@ -6,7 +6,7 @@ import guess.domain.statistics.olap.DimensionType;
 import guess.domain.statistics.olap.MeasureType;
 import org.springframework.stereotype.Repository;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -16,7 +16,7 @@ import java.util.Objects;
  */
 @Repository
 public class OlapDaoImpl implements OlapDao {
-    private final Map<CubeType, Cube> cubes = new HashMap<>();
+    private final Map<CubeType, Cube> cubes = new EnumMap<>(CubeType.class);
 
     public OlapDaoImpl() {
         cubes.put(CubeType.EVENT_TYPES,

@@ -1,6 +1,5 @@
 package guess.domain.statistics.olap.dimension;
 
-import guess.domain.statistics.olap.Dimension;
 import guess.domain.statistics.olap.DimensionType;
 
 /**

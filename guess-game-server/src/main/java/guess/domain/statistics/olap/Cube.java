@@ -1,5 +1,7 @@
 package guess.domain.statistics.olap;
 
+import guess.domain.statistics.olap.dimension.Dimension;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -10,7 +12,7 @@ import java.util.Set;
 public class Cube {
     private final List<DimensionType> dimensionTypes;
     private final List<MeasureType> measureTypes;
-    private final Set<Dimension<?>> dimensions = new HashSet<>();
+    private final Set<Dimension> dimensions = new HashSet<>();
 
     public Cube(List<DimensionType> dimensionTypes, List<MeasureType> measureTypes) {
         this.dimensionTypes = dimensionTypes;
@@ -25,7 +27,7 @@ public class Cube {
         return measureTypes;
     }
 
-    public Set<Dimension<?>> getDimensions() {
+    public Set<Dimension> getDimensions() {
         return dimensions;
     }
 }
