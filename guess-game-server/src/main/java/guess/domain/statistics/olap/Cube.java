@@ -3,27 +3,26 @@ package guess.domain.statistics.olap;
 import guess.domain.statistics.olap.dimension.Dimension;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
  * Cube.
  */
 public class Cube {
-    private final List<DimensionType> dimensionTypes;
-    private final List<MeasureType> measureTypes;
+    private final Set<DimensionType> dimensionTypes;
+    private final Set<MeasureType> measureTypes;
     private final Set<Dimension> dimensions = new HashSet<>();
 
-    public Cube(List<DimensionType> dimensionTypes, List<MeasureType> measureTypes) {
+    public Cube(Set<DimensionType> dimensionTypes, Set<MeasureType> measureTypes) {
         this.dimensionTypes = dimensionTypes;
         this.measureTypes = measureTypes;
     }
 
-    public List<DimensionType> getDimensionTypes() {
+    public Set<DimensionType> getDimensionTypes() {
         return dimensionTypes;
     }
 
-    public List<MeasureType> getMeasureTypes() {
+    public Set<MeasureType> getMeasureTypes() {
         return measureTypes;
     }
 

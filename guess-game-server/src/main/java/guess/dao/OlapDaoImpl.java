@@ -6,10 +6,7 @@ import guess.domain.statistics.olap.DimensionType;
 import guess.domain.statistics.olap.MeasureType;
 import org.springframework.stereotype.Repository;
 
-import java.util.EnumMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * OLAP DAO implementation.
@@ -21,26 +18,29 @@ public class OlapDaoImpl implements OlapDao {
     public OlapDaoImpl() {
         cubes.put(CubeType.EVENT_TYPES,
                 new Cube(
-                        List.of(DimensionType.EVENT_TYPE, DimensionType.YEAR),
-                        List.of(MeasureType.DURATION, MeasureType.EVENTS_QUANTITY, MeasureType.TALKS_QUANTITY,
-                                MeasureType.SPEAKERS_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY, MeasureType.MVPS_QUANTITY)));
+                        new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.YEAR)),
+                        new LinkedHashSet<>(Arrays.asList(MeasureType.DURATION, MeasureType.EVENTS_QUANTITY,
+                                MeasureType.TALKS_QUANTITY, MeasureType.SPEAKERS_QUANTITY,
+                                MeasureType.JAVA_CHAMPIONS_QUANTITY, MeasureType.MVPS_QUANTITY))));
         cubes.put(CubeType.SPEAKERS,
                 new Cube(
-                        List.of(DimensionType.EVENT_TYPE, DimensionType.SPEAKER, DimensionType.YEAR),
-                        List.of(MeasureType.TALKS_QUANTITY, MeasureType.EVENTS_QUANTITY, MeasureType.EVENT_TYPES_QUANTITY,
-                                MeasureType.JAVA_CHAMPIONS_QUANTITY, MeasureType.MVPS_QUANTITY)));
+                        new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.SPEAKER, DimensionType.YEAR)),
+                        new LinkedHashSet<>(Arrays.asList(MeasureType.TALKS_QUANTITY, MeasureType.EVENTS_QUANTITY,
+                                MeasureType.EVENT_TYPES_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY,
+                                MeasureType.MVPS_QUANTITY))));
         cubes.put(CubeType.COMPANIES,
                 new Cube(
-                        List.of(DimensionType.EVENT_TYPE, DimensionType.COMPANY, DimensionType.YEAR),
-                        List.of(MeasureType.SPEAKERS_QUANTITY, MeasureType.TALKS_QUANTITY, MeasureType.EVENTS_QUANTITY,
-                                MeasureType.EVENT_TYPES_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY, MeasureType.MVPS_QUANTITY)));
+                        new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.COMPANY, DimensionType.YEAR)),
+                        new LinkedHashSet<>(Arrays.asList(MeasureType.SPEAKERS_QUANTITY, MeasureType.TALKS_QUANTITY,
+                                MeasureType.EVENTS_QUANTITY, MeasureType.EVENT_TYPES_QUANTITY,
+                                MeasureType.JAVA_CHAMPIONS_QUANTITY, MeasureType.MVPS_QUANTITY))));
     }
 
     @Override
     public List<MeasureType> getMeasureTypes(CubeType cubeType) {
         Cube cube = cubes.get(cubeType);
 
-        return Objects.requireNonNull(cube, () -> String.format("Cube type %s not found", cubeType))
-                .getMeasureTypes();
+        return List.copyOf(Objects.requireNonNull(cube, () -> String.format("Cube type %s not found", cubeType))
+                .getMeasureTypes());
     }
 }

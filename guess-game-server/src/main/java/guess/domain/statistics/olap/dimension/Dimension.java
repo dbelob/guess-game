@@ -2,23 +2,25 @@ package guess.domain.statistics.olap.dimension;
 
 import guess.domain.statistics.olap.DimensionType;
 
+import java.util.Set;
+
 /**
  * Dimension.
  */
 public abstract class Dimension<T> {
     private final DimensionType dimensionType;
-    private final T value;
+    private final Set<T> values;
 
-    protected Dimension(DimensionType dimensionType, T value) {
+    protected Dimension(DimensionType dimensionType, Set<T> values) {
         this.dimensionType = dimensionType;
-        this.value = value;
+        this.values = values;
     }
 
     public DimensionType getDimensionType() {
         return dimensionType;
     }
 
-    public T getValue() {
-        return value;
+    public Set<T> getValues() {
+        return values;
     }
 }
