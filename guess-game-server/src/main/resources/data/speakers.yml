@@ -5710,6 +5710,7 @@ speakers:
             \ committer and PMC member, interested in storage, distributed systems and algorithms. Currently writing the Database\
             \ Internals books with O'Reilly."}
     twitter: ifesdjeen
+    gitHub: ifesdjeen
   - id: 394
     photoFileName: 0394.jpg
     name:
