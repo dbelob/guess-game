@@ -4111,6 +4111,7 @@ speakers:
             й торговли. Интересуется C# и C++, а также технологиями высокопроизводительных вычислений, такими как CUDA и FPGA."}
     twitter: dnesteruk
     gitHub: nesteruk
+    habr: mezastel
   - id: 283
     photoFileName: 0283.jpg
     name:
@@ -5709,6 +5710,7 @@ speakers:
             \ committer and PMC member, interested in storage, distributed systems and algorithms. Currently writing the Database\
             \ Internals books with O'Reilly."}
     twitter: ifesdjeen
+    gitHub: ifesdjeen
   - id: 394
     photoFileName: 0394.jpg
     name:
@@ -12277,7 +12279,7 @@ speakers:
     photoFileName: 0863.jpg
     name:
       - {language: en, text: "Ivan Ponomarev"}
-      - {language: ru, text: "Иван Пономарев"}
+      - {language: ru, text: "Иван Пономарёв"}
     companyIds: [22]
     bio:
       - {language: en, text: "Senior developer for mobile platforms of Akvelon company. More than 5 years experience in the\
@@ -22298,7 +22300,7 @@ speakers:
     photoUpdatedAt: 2021-03-11T07:13:50.686Z[UTC]
     name:
       - {language: en, text: "Roman Ponomarev"}
-      - {language: ru, text: "Роман Пономарев"}
+      - {language: ru, text: "Роман Пономарёв"}
     companyIds: [730]
     bio:
       - {language: en, text: "One of the creators of the DevSchacht community and co-host of the Frontend Youth podcast. When\
