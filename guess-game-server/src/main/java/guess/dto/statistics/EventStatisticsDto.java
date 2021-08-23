@@ -1,7 +1,7 @@
 package guess.dto.statistics;
 
 import guess.domain.Language;
-import guess.domain.statistics.EventStatistics;
+import guess.domain.statistics.event.EventStatistics;
 
 import java.util.List;
 

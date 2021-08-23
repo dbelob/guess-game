@@ -1,4 +1,4 @@
-package guess.domain.statistics;
+package guess.domain.statistics.speaker;
 
 import java.util.List;
 import java.util.Objects;

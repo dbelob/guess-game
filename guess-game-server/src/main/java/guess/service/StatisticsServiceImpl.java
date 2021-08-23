@@ -4,6 +4,16 @@ import guess.dao.EventDao;
 import guess.dao.EventTypeDao;
 import guess.domain.source.*;
 import guess.domain.statistics.*;
+import guess.domain.statistics.company.CompanyMetrics;
+import guess.domain.statistics.company.CompanyMetricsInternal;
+import guess.domain.statistics.company.CompanyStatistics;
+import guess.domain.statistics.event.EventMetrics;
+import guess.domain.statistics.event.EventStatistics;
+import guess.domain.statistics.eventtype.EventTypeMetrics;
+import guess.domain.statistics.eventtype.EventTypeStatistics;
+import guess.domain.statistics.speaker.SpeakerMetrics;
+import guess.domain.statistics.speaker.SpeakerMetricsInternal;
+import guess.domain.statistics.speaker.SpeakerStatistics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

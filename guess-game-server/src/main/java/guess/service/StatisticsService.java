@@ -1,10 +1,10 @@
 package guess.service;
 
 import guess.domain.source.EventType;
-import guess.domain.statistics.CompanyStatistics;
-import guess.domain.statistics.EventStatistics;
-import guess.domain.statistics.EventTypeStatistics;
-import guess.domain.statistics.SpeakerStatistics;
+import guess.domain.statistics.company.CompanyStatistics;
+import guess.domain.statistics.event.EventStatistics;
+import guess.domain.statistics.eventtype.EventTypeStatistics;
+import guess.domain.statistics.speaker.SpeakerStatistics;
 
 import java.util.List;
 

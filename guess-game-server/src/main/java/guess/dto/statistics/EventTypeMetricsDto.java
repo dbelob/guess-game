@@ -1,8 +1,8 @@
 package guess.dto.statistics;
 
 import guess.domain.Language;
-import guess.domain.statistics.AbstractEventTypeMetrics;
-import guess.domain.statistics.EventTypeMetrics;
+import guess.domain.statistics.eventtype.AbstractEventTypeMetrics;
+import guess.domain.statistics.eventtype.EventTypeMetrics;
 import guess.domain.statistics.Metrics;
 import guess.util.LocalizationUtils;
 

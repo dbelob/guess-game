@@ -1,6 +1,7 @@
-package guess.domain.statistics;
+package guess.domain.statistics.company;
 
 import guess.domain.source.Company;
+import guess.domain.statistics.AbstractSpeakerCompanyMetrics;
 
 import java.util.Objects;
 

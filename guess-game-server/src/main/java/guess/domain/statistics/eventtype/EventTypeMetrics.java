@@ -1,6 +1,7 @@
-package guess.domain.statistics;
+package guess.domain.statistics.eventtype;
 
 import guess.domain.source.EventType;
+import guess.domain.statistics.Metrics;
 
 import java.time.LocalDate;
 import java.util.Objects;

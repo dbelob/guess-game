@@ -1,4 +1,4 @@
-package guess.domain.statistics;
+package guess.domain.statistics.event;
 
 import guess.domain.source.Event;
 
