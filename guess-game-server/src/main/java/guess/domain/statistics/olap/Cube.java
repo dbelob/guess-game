@@ -4,7 +4,7 @@ import guess.domain.statistics.olap.dimension.Dimension;
 import guess.domain.statistics.olap.measure.Measure;
 
 import java.util.EnumMap;
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -15,7 +15,7 @@ public class Cube {
     private final Set<DimensionType> dimensionTypes;
     private final Set<MeasureType> measureTypes;
     private final Map<DimensionType, Set<Dimension>> dimensionMap = new EnumMap<>(DimensionType.class);
-    private final Set<Measure> measures = new HashSet<>();
+    private final Map<Set<Dimension>, Map<MeasureType, Measure>> measureMap = new HashMap<>();
 
     public Cube(Set<DimensionType> dimensionTypes, Set<MeasureType> measureTypes) {
         this.dimensionTypes = dimensionTypes;
@@ -38,12 +38,14 @@ public class Cube {
         this.dimensionMap.put(dimensionType, dimensions);
     }
 
-    public void addMeasure(Measure measure) {
+    public void addMeasure(Set<Dimension> dimensions, MeasureType measureType, Measure measure) {
         //TODO: check dimension type existence for each dimension
 
         //TODO: check dimension existence for each dimension
 
-        measures.add(measure);
+        Map<MeasureType, Measure> dimensionMeasures = measureMap.computeIfAbsent(dimensions, k -> new HashMap<>());
+
+        dimensionMeasures.put(measureType, measure);
     }
 
     public void addMeasureEntity(Set<Dimension> dimensions, MeasureType measureType, Object value) {

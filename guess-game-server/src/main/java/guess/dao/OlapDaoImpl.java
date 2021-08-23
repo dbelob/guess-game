@@ -24,24 +24,28 @@ public class OlapDaoImpl implements OlapDao {
     public OlapDaoImpl(EventTypeDao eventTypeDao) {
         this.eventTypeDao = eventTypeDao;
 
-        cubes.put(CubeType.EVENT_TYPES,
-                new Cube(
-                        new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.YEAR)),
-                        new LinkedHashSet<>(Arrays.asList(MeasureType.DURATION, MeasureType.EVENTS_QUANTITY,
-                                MeasureType.TALKS_QUANTITY, MeasureType.SPEAKERS_QUANTITY,
-                                MeasureType.JAVA_CHAMPIONS_QUANTITY, MeasureType.MVPS_QUANTITY))));
-        cubes.put(CubeType.SPEAKERS,
-                new Cube(
-                        new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.SPEAKER, DimensionType.YEAR)),
-                        new LinkedHashSet<>(Arrays.asList(MeasureType.TALKS_QUANTITY, MeasureType.EVENTS_QUANTITY,
-                                MeasureType.EVENT_TYPES_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY,
-                                MeasureType.MVPS_QUANTITY))));
-        cubes.put(CubeType.COMPANIES,
-                new Cube(
-                        new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.COMPANY, DimensionType.YEAR)),
-                        new LinkedHashSet<>(Arrays.asList(MeasureType.SPEAKERS_QUANTITY, MeasureType.TALKS_QUANTITY,
-                                MeasureType.EVENTS_QUANTITY, MeasureType.EVENT_TYPES_QUANTITY,
-                                MeasureType.JAVA_CHAMPIONS_QUANTITY, MeasureType.MVPS_QUANTITY))));
+        Cube eventTypesCube = new Cube(
+                new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.YEAR)),
+                new LinkedHashSet<>(Arrays.asList(MeasureType.DURATION, MeasureType.EVENTS_QUANTITY,
+                        MeasureType.TALKS_QUANTITY, MeasureType.SPEAKERS_QUANTITY,
+                        MeasureType.JAVA_CHAMPIONS_QUANTITY, MeasureType.MVPS_QUANTITY)));
+        Cube speakersCube = new Cube(
+                new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.SPEAKER, DimensionType.YEAR)),
+                new LinkedHashSet<>(Arrays.asList(MeasureType.TALKS_QUANTITY, MeasureType.EVENTS_QUANTITY,
+                        MeasureType.EVENT_TYPES_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY,
+                        MeasureType.MVPS_QUANTITY)));
+        Cube companiesCube = new Cube(
+                new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.COMPANY, DimensionType.YEAR)),
+                new LinkedHashSet<>(Arrays.asList(MeasureType.SPEAKERS_QUANTITY, MeasureType.TALKS_QUANTITY,
+                        MeasureType.EVENTS_QUANTITY, MeasureType.EVENT_TYPES_QUANTITY,
+                        MeasureType.JAVA_CHAMPIONS_QUANTITY, MeasureType.MVPS_QUANTITY)));
+
+        cubes.put(CubeType.EVENT_TYPES, eventTypesCube);
+        cubes.put(CubeType.SPEAKERS, speakersCube);
+        cubes.put(CubeType.COMPANIES, companiesCube);
+
+        fillDimensions(eventTypesCube, speakersCube, companiesCube);
+        fillMeasures(eventTypesCube, speakersCube, companiesCube);
     }
 
     @Override
@@ -52,7 +56,11 @@ public class OlapDaoImpl implements OlapDao {
                 .getMeasureTypes());
     }
 
-    private void fillCubes(Cube eventTypesCube, Cube speakersCube, Cube companiesCube) {
+    private void fillDimensions(Cube eventTypesCube, Cube speakersCube, Cube companiesCube) {
+        //TODO: implement
+    }
+
+    private void fillMeasures(Cube eventTypesCube, Cube speakersCube, Cube companiesCube) {
         List<EventType> eventTypes = eventTypeDao.getEventTypes();
 
         for (EventType eventType : eventTypes) {

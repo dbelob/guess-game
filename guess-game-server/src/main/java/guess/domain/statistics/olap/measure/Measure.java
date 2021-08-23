@@ -1,6 +1,6 @@
 package guess.domain.statistics.olap.measure;
 
-import guess.domain.statistics.olap.dimension.Dimension;
+import guess.domain.statistics.olap.MeasureType;
 
 import java.util.Objects;
 import java.util.Set;
@@ -9,16 +9,16 @@ import java.util.Set;
  * Measure.
  */
 public abstract class Measure<T, S> {
-    private final Set<Dimension> dimensions;
+    private final MeasureType measureType;
     protected final Set<T> entities;
 
-    public Measure(Set<Dimension> dimensions, Set<T> entities) {
-        this.dimensions = dimensions;
+    public Measure(MeasureType measureType, Set<T> entities) {
+        this.measureType = measureType;
         this.entities = entities;
     }
 
-    public Set<Dimension> getDimensions() {
-        return dimensions;
+    public MeasureType getMeasureType() {
+        return measureType;
     }
 
     public Set<T> getEntities() {
@@ -32,11 +32,11 @@ public abstract class Measure<T, S> {
         if (this == o) return true;
         if (!(o instanceof Measure)) return false;
         Measure<?, ?> measure = (Measure<?, ?>) o;
-        return Objects.equals(getDimensions(), measure.getDimensions());
+        return getMeasureType() == measure.getMeasureType();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getDimensions());
+        return Objects.hash(getMeasureType());
     }
 }
