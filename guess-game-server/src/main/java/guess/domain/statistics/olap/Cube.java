@@ -46,7 +46,7 @@ public class Cube {
         measures.add(measure);
     }
 
-    public void addMeasureValue(Set<Dimension> dimensions, MeasureType measureType, Object value) {
+    public void addMeasureEntity(Set<Dimension> dimensions, MeasureType measureType, Object value) {
         //TODO: implement
     }
 }

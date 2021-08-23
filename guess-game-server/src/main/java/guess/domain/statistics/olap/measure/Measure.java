@@ -8,29 +8,31 @@ import java.util.Set;
 /**
  * Measure.
  */
-public abstract class Measure<T> {
+public abstract class Measure<T, S> {
     private final Set<Dimension> dimensions;
-    private final T value;
+    protected final Set<T> entities;
 
-    public Measure(Set<Dimension> dimensions, T value) {
+    public Measure(Set<Dimension> dimensions, Set<T> entities) {
         this.dimensions = dimensions;
-        this.value = value;
+        this.entities = entities;
     }
 
     public Set<Dimension> getDimensions() {
         return dimensions;
     }
 
-    public T getValue() {
-        return value;
+    public Set<T> getEntities() {
+        return entities;
     }
+
+    public abstract S calculateValue();
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Measure)) return false;
-        Measure<?> measure = (Measure<?>) o;
-        return getDimensions().equals(measure.getDimensions());
+        Measure<?, ?> measure = (Measure<?, ?>) o;
+        return Objects.equals(getDimensions(), measure.getDimensions());
     }
 
     @Override
