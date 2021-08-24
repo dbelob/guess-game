@@ -15,7 +15,7 @@ public class Cube {
     private final Set<DimensionType> dimensionTypes;
     private final Set<MeasureType> measureTypes;
     private final Map<DimensionType, Set<Dimension<?>>> dimensionMap = new EnumMap<>(DimensionType.class);
-    private final Map<Set<Dimension<?>>, Map<MeasureType, Measure>> measureMap = new HashMap<>();
+    private final Map<Set<Dimension<?>>, Map<MeasureType, Measure<?>>> measureMap = new HashMap<>();
 
     public Cube(Set<DimensionType> dimensionTypes, Set<MeasureType> measureTypes) {
         this.dimensionTypes = dimensionTypes;
@@ -44,12 +44,14 @@ public class Cube {
         this.dimensionMap.put(dimensionType, dimensions);
     }
 
-    public void addMeasure(Set<Dimension<?>> dimensions, MeasureType measureType, Measure measure) {
+    public void addMeasure(Set<Dimension<?>> dimensions, MeasureType measureType, Measure<?> measure) {
         //TODO: check dimension type existence for each dimension
 
         //TODO: check dimension existence for each dimension
 
-        Map<MeasureType, Measure> dimensionMeasures = measureMap.computeIfAbsent(dimensions, k -> new HashMap<>());
+        //TODO: check measure type
+
+        Map<MeasureType, Measure<?>> dimensionMeasures = measureMap.computeIfAbsent(dimensions, k -> new HashMap<>());
 
         dimensionMeasures.put(measureType, measure);
     }

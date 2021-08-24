@@ -1,7 +1,6 @@
 package guess.domain.statistics.olap.measure;
 
 import guess.domain.source.Event;
-import guess.domain.statistics.olap.MeasureType;
 
 import java.time.temporal.ChronoUnit;
 import java.util.Set;
@@ -9,9 +8,9 @@ import java.util.Set;
 /**
  * Duration measure.
  */
-public class DurationMeasure extends Measure<Event, Long> {
+public class DurationMeasure extends Measure<Event> {
     public DurationMeasure(Set<Event> entities) {
-        super(MeasureType.DURATION, entities);
+        super(entities);
     }
 
     @Override
