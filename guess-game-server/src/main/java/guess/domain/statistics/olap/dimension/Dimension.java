@@ -1,23 +1,15 @@
 package guess.domain.statistics.olap.dimension;
 
-import guess.domain.statistics.olap.DimensionType;
-
 import java.util.Objects;
 
 /**
  * Dimension.
  */
 public abstract class Dimension<T> {
-    private final DimensionType dimensionType;
     private final T value;
 
-    protected Dimension(DimensionType dimensionType, T value) {
-        this.dimensionType = dimensionType;
+    protected Dimension(T value) {
         this.value = value;
-    }
-
-    public DimensionType getDimensionType() {
-        return dimensionType;
     }
 
     public T getValue() {
@@ -29,11 +21,11 @@ public abstract class Dimension<T> {
         if (this == o) return true;
         if (!(o instanceof Dimension)) return false;
         Dimension<?> dimension = (Dimension<?>) o;
-        return getDimensionType() == dimension.getDimensionType() && getValue().equals(dimension.getValue());
+        return Objects.equals(getValue(), dimension.getValue());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getDimensionType(), getValue());
+        return Objects.hash(getValue());
     }
 }

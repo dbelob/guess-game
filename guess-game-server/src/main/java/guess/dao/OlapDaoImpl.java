@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * OLAP DAO implementation.
@@ -57,7 +59,50 @@ public class OlapDaoImpl implements OlapDao {
     }
 
     private void fillDimensions(Cube eventTypesCube, Cube speakersCube, Cube companiesCube) {
-        //TODO: implement
+        // Event type dimension values
+        Set<Dimension<?>> eventTypes = eventTypeDao.getEventTypes().stream()
+                .map(EventTypeDimension::new)
+                .collect(Collectors.toSet());
+
+        // Speaker dimension values
+        Set<Dimension<?>> speakers = eventTypeDao.getEventTypes().stream()
+                .flatMap(et -> et.getEvents().stream())
+                .flatMap(e -> e.getTalks().stream())
+                .flatMap(t -> t.getSpeakers().stream())
+                .map(SpeakerDimension::new)
+                .collect(Collectors.toSet());
+
+        // Company dimension values
+        Set<Dimension<?>> companies = eventTypeDao.getEventTypes().stream()
+                .flatMap(et -> et.getEvents().stream())
+                .flatMap(e -> e.getTalks().stream())
+                .flatMap(t -> t.getSpeakers().stream())
+                .flatMap(t -> t.getCompanies().stream())
+                .map(CompanyDimension::new)
+                .collect(Collectors.toSet());
+
+        // Year dimension values
+        IntSummaryStatistics summaryStatistics = eventTypeDao.getEventTypes().stream()
+                .flatMap(et -> et.getEvents().stream())
+                .filter(e -> e.getStartDate() != null)
+                .map(e -> e.getStartDate().getYear())
+                .mapToInt(y -> y)
+                .summaryStatistics();
+        Set<Dimension<?>> years = IntStream.rangeClosed(summaryStatistics.getMin(), summaryStatistics.getMax())
+                .boxed()
+                .map(YearDimension::new)
+                .collect(Collectors.toSet());
+
+        eventTypesCube.addDimensions(DimensionType.EVENT_TYPE, eventTypes);
+        eventTypesCube.addDimensions(DimensionType.YEAR, years);
+
+        speakersCube.addDimensions(DimensionType.EVENT_TYPE, eventTypes);
+        speakersCube.addDimensions(DimensionType.SPEAKER, speakers);
+        speakersCube.addDimensions(DimensionType.YEAR, years);
+
+        companiesCube.addDimensions(DimensionType.EVENT_TYPE, eventTypes);
+        companiesCube.addDimensions(DimensionType.COMPANY, companies);
+        companiesCube.addDimensions(DimensionType.YEAR, years);
     }
 
     private void fillMeasures(Cube eventTypesCube, Cube speakersCube, Cube companiesCube) {
@@ -65,14 +110,14 @@ public class OlapDaoImpl implements OlapDao {
 
         for (EventType eventType : eventTypes) {
             // Event type dimension
-            Dimension eventTypeDimension = new EventTypeDimension(eventType);
+            EventTypeDimension eventTypeDimension = new EventTypeDimension(eventType);
 
             for (Event event : eventType.getEvents()) {
                 // Year dimension
-                Dimension yearDimension = new YearDimension(event.getStartDate().getYear());
+                YearDimension yearDimension = new YearDimension(event.getStartDate().getYear());
 
                 // Event type and year dimensions
-                Set<Dimension> eventTypeAndYearDimensions = Set.of(eventTypeDimension, yearDimension);
+                Set<Dimension<?>> eventTypeAndYearDimensions = Set.of(eventTypeDimension, yearDimension);
 
                 // Event measure values
                 eventTypesCube.addMeasureEntity(eventTypeAndYearDimensions, MeasureType.DURATION, event);
@@ -84,7 +129,7 @@ public class OlapDaoImpl implements OlapDao {
 
                     for (Speaker speaker : talk.getSpeakers()) {
                         // Event type, speaker and year dimension
-                        Set<Dimension> eventTypeAndSpeakerAndYearDimensions = Set.of(
+                        Set<Dimension<?>> eventTypeAndSpeakerAndYearDimensions = Set.of(
                                 eventTypeDimension, new SpeakerDimension(speaker), yearDimension);
 
                         // Speaker measure values
@@ -106,7 +151,7 @@ public class OlapDaoImpl implements OlapDao {
 
                         for (Company company : speaker.getCompanies()) {
                             // Event type, company and year dimension
-                            Set<Dimension> eventTypeAndCompanyAndYearDimensions = Set.of(
+                            Set<Dimension<?>> eventTypeAndCompanyAndYearDimensions = Set.of(
                                     eventTypeDimension, new CompanyDimension(company), yearDimension);
 
                             // Company measure values

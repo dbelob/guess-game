@@ -14,8 +14,8 @@ import java.util.Set;
 public class Cube {
     private final Set<DimensionType> dimensionTypes;
     private final Set<MeasureType> measureTypes;
-    private final Map<DimensionType, Set<Dimension>> dimensionMap = new EnumMap<>(DimensionType.class);
-    private final Map<Set<Dimension>, Map<MeasureType, Measure>> measureMap = new HashMap<>();
+    private final Map<DimensionType, Set<Dimension<?>>> dimensionMap = new EnumMap<>(DimensionType.class);
+    private final Map<Set<Dimension<?>>, Map<MeasureType, Measure>> measureMap = new HashMap<>();
 
     public Cube(Set<DimensionType> dimensionTypes, Set<MeasureType> measureTypes) {
         this.dimensionTypes = dimensionTypes;
@@ -30,15 +30,21 @@ public class Cube {
         return measureTypes;
     }
 
-    public void addDimensions(DimensionType dimensionType, Set<Dimension> dimensions) {
+    public void addDimensions(DimensionType dimensionType, Set<Dimension<?>> dimensions) {
         if (!dimensionTypes.contains(dimensionType)) {
-            //TODO: throw exception
+            throw new IllegalStateException(String.format("Invalid dimension type %s for %s valid values", dimensionType, dimensionTypes));
         }
+
+        dimensions.forEach(d -> {
+            if (!dimensionType.isDimensionValid(d)) {
+                throw new IllegalStateException(String.format("Invalid dimension %s, valid dimension is %s ", d.getClass().getSimpleName(), dimensionType.getDimensionClass().getSimpleName()));
+            }
+        });
 
         this.dimensionMap.put(dimensionType, dimensions);
     }
 
-    public void addMeasure(Set<Dimension> dimensions, MeasureType measureType, Measure measure) {
+    public void addMeasure(Set<Dimension<?>> dimensions, MeasureType measureType, Measure measure) {
         //TODO: check dimension type existence for each dimension
 
         //TODO: check dimension existence for each dimension
@@ -48,7 +54,7 @@ public class Cube {
         dimensionMeasures.put(measureType, measure);
     }
 
-    public void addMeasureEntity(Set<Dimension> dimensions, MeasureType measureType, Object value) {
+    public void addMeasureEntity(Set<Dimension<?>> dimensions, MeasureType measureType, Object value) {
         //TODO: implement
     }
 }
