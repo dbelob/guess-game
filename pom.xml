@@ -30,7 +30,7 @@
         <aspectj.version>1.9.7</aspectj.version>
         <kumo.version>1.28</kumo.version>
         <logback.version>1.2.5</logback.version>
-        <mockito.version>3.12.1</mockito.version>
+        <mockito.version>3.12.3</mockito.version>
         <sl4j.version>1.7.32</sl4j.version>
         <snakeyaml.version>1.29</snakeyaml.version>
         <spring-boot.version>2.5.4</spring-boot.version>
