@@ -18,7 +18,7 @@
     "@angular/core": "^12.2.2",
     "@angular/forms": "^12.2.2",
     "@angular/platform-browser": "^12.2.3",
-    "@angular/platform-browser-dynamic": "^12.2.2",
+    "@angular/platform-browser-dynamic": "^12.2.3",
     "@angular/router": "^12.2.2",
     "@angular/youtube-player": "^12.2.3",
     "@fortawesome/angular-fontawesome": "^0.9.0",
