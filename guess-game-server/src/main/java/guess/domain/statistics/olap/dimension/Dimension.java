@@ -10,11 +10,11 @@ public abstract class Dimension<T> {
 
     protected Dimension(Class<T> valueClass, Object value) {
         if (value == null) {
-            throw new IllegalStateException("Dimension value is null");
+            throw new IllegalArgumentException("Dimension value is null");
         }
 
         if (!valueClass.isInstance(value)) {
-            throw new IllegalStateException(String.format("Invalid dimension value class %s, valid dimension value class is %s",
+            throw new IllegalArgumentException(String.format("Invalid dimension value class %s, valid dimension value class is %s",
                     value.getClass().getSimpleName(), valueClass.getSimpleName()));
         }
 

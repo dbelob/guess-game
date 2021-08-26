@@ -8,7 +8,7 @@ import java.util.Set;
 public abstract class Measure<T> {
     protected final Set<T> entities;
 
-    public Measure(Set<T> entities) {
+    protected Measure(Set<T> entities) {
         this.entities = entities;
     }
 

@@ -5,8 +5,11 @@ import guess.domain.statistics.olap.DimensionType;
 /**
  * Dimension factory.
  */
-@SuppressWarnings("rawtypes")
 public class DimensionFactory {
+    private DimensionFactory() {
+    }
+
+    @SuppressWarnings("rawtypes")
     public static Dimension create(DimensionType dimensionType, Object value) {
         switch (dimensionType) {
             case EVENT_TYPE:
