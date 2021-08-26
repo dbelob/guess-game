@@ -60,25 +60,21 @@ public class OlapDaoImpl implements OlapDao {
 
     private void fillDimensions(Cube eventTypesCube, Cube speakersCube, Cube companiesCube) {
         // Event type dimension values
-        Set<Dimension<?>> eventTypes = eventTypeDao.getEventTypes().stream()
-                .map(EventTypeDimension::new)
-                .collect(Collectors.toSet());
+        Set<EventType> eventTypes = new HashSet<>(eventTypeDao.getEventTypes());
 
         // Speaker dimension values
-        Set<Dimension<?>> speakers = eventTypeDao.getEventTypes().stream()
+        Set<Speaker> speakers = eventTypeDao.getEventTypes().stream()
                 .flatMap(et -> et.getEvents().stream())
                 .flatMap(e -> e.getTalks().stream())
                 .flatMap(t -> t.getSpeakers().stream())
-                .map(SpeakerDimension::new)
                 .collect(Collectors.toSet());
 
         // Company dimension values
-        Set<Dimension<?>> companies = eventTypeDao.getEventTypes().stream()
+        Set<Company> companies = eventTypeDao.getEventTypes().stream()
                 .flatMap(et -> et.getEvents().stream())
                 .flatMap(e -> e.getTalks().stream())
                 .flatMap(t -> t.getSpeakers().stream())
                 .flatMap(t -> t.getCompanies().stream())
-                .map(CompanyDimension::new)
                 .collect(Collectors.toSet());
 
         // Year dimension values
@@ -88,9 +84,8 @@ public class OlapDaoImpl implements OlapDao {
                 .map(e -> e.getStartDate().getYear())
                 .mapToInt(y -> y)
                 .summaryStatistics();
-        Set<Dimension<?>> years = IntStream.rangeClosed(summaryStatistics.getMin(), summaryStatistics.getMax())
+        Set<Integer> years = IntStream.rangeClosed(summaryStatistics.getMin(), summaryStatistics.getMax())
                 .boxed()
-                .map(YearDimension::new)
                 .collect(Collectors.toSet());
 
         eventTypesCube.addDimensions(DimensionType.EVENT_TYPE, eventTypes);

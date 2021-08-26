@@ -1,12 +1,14 @@
 package guess.domain.statistics.olap;
 
 import guess.domain.statistics.olap.dimension.Dimension;
+import guess.domain.statistics.olap.dimension.DimensionFactory;
 import guess.domain.statistics.olap.measure.Measure;
 
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Cube.
@@ -30,16 +32,14 @@ public class Cube {
         return measureTypes;
     }
 
-    public void addDimensions(DimensionType dimensionType, Set<Dimension<?>> dimensions) {
+    public void addDimensions(DimensionType dimensionType, Set<?> dimensionValues) {
         if (!dimensionTypes.contains(dimensionType)) {
             throw new IllegalStateException(String.format("Invalid dimension type %s for %s valid values", dimensionType, dimensionTypes));
         }
 
-        dimensions.forEach(d -> {
-            if (!dimensionType.isDimensionValid(d)) {
-                throw new IllegalStateException(String.format("Invalid dimension %s, valid dimension is %s ", d.getClass().getSimpleName(), dimensionType.getDimensionClass().getSimpleName()));
-            }
-        });
+        Set<Dimension<?>> dimensions = dimensionValues.stream()
+                .map(v -> (Dimension<?>) DimensionFactory.create(dimensionType, v))
+                .collect(Collectors.toSet());
 
         this.dimensionMap.put(dimensionType, dimensions);
     }

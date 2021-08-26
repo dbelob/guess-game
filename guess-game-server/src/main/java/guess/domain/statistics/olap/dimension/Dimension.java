@@ -8,8 +8,17 @@ import java.util.Objects;
 public abstract class Dimension<T> {
     private final T value;
 
-    protected Dimension(T value) {
-        this.value = value;
+    protected Dimension(Class<T> valueClass, Object value) {
+        if (value == null) {
+            throw new IllegalStateException("Dimension value is null");
+        }
+
+        if (!valueClass.isInstance(value)) {
+            throw new IllegalStateException(String.format("Invalid dimension value class %s, valid dimension value class is %s",
+                    value.getClass().getSimpleName(), valueClass.getSimpleName()));
+        }
+
+        this.value = valueClass.cast(value);
     }
 
     public T getValue() {

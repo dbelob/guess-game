@@ -6,7 +6,7 @@ import guess.domain.source.Company;
  * Company dimension.
  */
 public class CompanyDimension extends Dimension<Company> {
-    public CompanyDimension(Company value) {
-        super(value);
+    public CompanyDimension(Object value) {
+        super(Company.class, value);
     }
 }
