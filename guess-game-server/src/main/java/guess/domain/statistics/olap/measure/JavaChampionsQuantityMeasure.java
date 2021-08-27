@@ -2,14 +2,12 @@ package guess.domain.statistics.olap.measure;
 
 import guess.domain.source.Speaker;
 
-import java.util.Set;
-
 /**
  * Java Champions quantity measure.
  */
 public class JavaChampionsQuantityMeasure extends Measure<Speaker> {
-    public JavaChampionsQuantityMeasure(Set<Speaker> entities) {
-        super(entities);
+    public JavaChampionsQuantityMeasure(Object entity) {
+        super(Speaker.class, entity);
     }
 
     @Override

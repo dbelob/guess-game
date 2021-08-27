@@ -3,14 +3,13 @@ package guess.domain.statistics.olap.measure;
 import guess.domain.source.Event;
 
 import java.time.temporal.ChronoUnit;
-import java.util.Set;
 
 /**
  * Duration measure.
  */
 public class DurationMeasure extends Measure<Event> {
-    public DurationMeasure(Set<Event> entities) {
-        super(entities);
+    public DurationMeasure(Object entity) {
+        super(Event.class, entity);
     }
 
     @Override

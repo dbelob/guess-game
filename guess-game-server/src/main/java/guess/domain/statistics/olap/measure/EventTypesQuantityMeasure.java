@@ -2,14 +2,12 @@ package guess.domain.statistics.olap.measure;
 
 import guess.domain.source.EventType;
 
-import java.util.Set;
-
 /**
  * Event types quantity measure.
  */
 public class EventTypesQuantityMeasure extends Measure<EventType> {
-    public EventTypesQuantityMeasure(Set<EventType> entities) {
-        super(entities);
+    public EventTypesQuantityMeasure(Object entity) {
+        super(EventType.class, entity);
     }
 
     @Override
