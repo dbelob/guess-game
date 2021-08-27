@@ -46,10 +46,8 @@ public class Cube {
         for (DimensionType dimensionType : dimensionTypes) {
             Set<Dimension<?>> dimensionSet = dimensionMap.get(dimensionType);
 
-            if (dimensionSet != null) {
-                if (dimensionSet.contains(dimension)) {
-                    return dimensionType;
-                }
+            if ((dimensionSet != null) && dimensionSet.contains(dimension)) {
+                return dimensionType;
             }
         }
 
