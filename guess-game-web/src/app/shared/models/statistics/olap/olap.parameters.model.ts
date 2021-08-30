@@ -5,6 +5,8 @@ export class OlapParameters {
   constructor(
     public cubeType?: CubeType,
     public measureType?: MeasureType,
+    public conferences?: boolean,
+    public meetups?: boolean,
     public organizerId?: number,
     public eventTypeId?: number,
     public speakerIds?: number[],

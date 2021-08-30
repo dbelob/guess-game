@@ -3,6 +3,7 @@ package guess.service;
 import guess.dao.OlapDao;
 import guess.domain.statistics.olap.CubeType;
 import guess.domain.statistics.olap.MeasureType;
+import guess.domain.statistics.olap.OlapStatistics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +24,12 @@ public class OlapServiceImpl implements OlapService {
     @Override
     public List<MeasureType> getMeasureTypes(CubeType cubeType) {
         return olapDao.getMeasureTypes(cubeType);
+    }
+
+    @Override
+    public OlapStatistics getOlapStatistics(CubeType cubeType, MeasureType measureType, boolean isConferences, boolean isMeetups,
+                                            Long organizerId, Long eventTypeId, List<Long> speakerIds, List<Long> companyIds) {
+        //TODO: implement
+        return new OlapStatistics();
     }
 }

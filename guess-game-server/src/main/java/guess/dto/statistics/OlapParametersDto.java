@@ -11,6 +11,8 @@ import java.util.List;
 public class OlapParametersDto {
     private CubeType cubeType;
     private MeasureType measureType;
+    private boolean isConferences;
+    private boolean isMeetups;
     private Long organizerId;
     private Long eventTypeId;
     private List<Long> speakerIds;
@@ -30,6 +32,22 @@ public class OlapParametersDto {
 
     public void setMeasureType(MeasureType measureType) {
         this.measureType = measureType;
+    }
+
+    public boolean isConferences() {
+        return isConferences;
+    }
+
+    public void setConferences(boolean conferences) {
+        isConferences = conferences;
+    }
+
+    public boolean isMeetups() {
+        return isMeetups;
+    }
+
+    public void setMeetups(boolean meetups) {
+        isMeetups = meetups;
     }
 
     public Long getOrganizerId() {

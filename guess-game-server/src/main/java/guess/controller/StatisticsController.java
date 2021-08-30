@@ -132,11 +132,12 @@ public class StatisticsController {
 
     @PostMapping("/olap-statistics")
     @ResponseBody
-    public OlapStatisticsDto getOlapStatistics(@RequestBody OlapParametersDto olapParameters) {
-        log.debug("cubeType: {}, measureType: {}, organizerId: {}, eventTypeId: {}, speakerIds: {}, companyIds: {}",
-                olapParameters.getCubeType(), olapParameters.getMeasureType(), olapParameters.getOrganizerId(),
+    public OlapStatisticsDto getOlapStatistics(@RequestBody OlapParametersDto olapParameters, HttpSession httpSession) {
+        var olapStatistics = olapService.getOlapStatistics(olapParameters.getCubeType(), olapParameters.getMeasureType(),
+                olapParameters.isConferences(), olapParameters.isMeetups(), olapParameters.getOrganizerId(),
                 olapParameters.getEventTypeId(), olapParameters.getSpeakerIds(), olapParameters.getCompanyIds());
-        //TODO: implement
-        return new OlapStatisticsDto("result");
+        var language = localeService.getLanguage(httpSession);
+
+        return OlapStatisticsDto.convertToDto(olapStatistics, language);
     }
 }
