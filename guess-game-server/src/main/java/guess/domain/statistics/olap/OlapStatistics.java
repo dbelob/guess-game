@@ -8,27 +8,27 @@ import guess.domain.source.Speaker;
  * OLAP statistics.
  */
 public class OlapStatistics {
-    private final EntityOlapStatistics<Integer, EventType> eventTypeStatistics;
-    private final EntityOlapStatistics<Integer, Speaker> speakerStatistics;
-    private final EntityOlapStatistics<Integer, Company> companyStatistics;
+    private final OlapEntityStatistics<Integer, EventType> eventTypeStatistics;
+    private final OlapEntityStatistics<Integer, Speaker> speakerStatistics;
+    private final OlapEntityStatistics<Integer, Company> companyStatistics;
 
-    public OlapStatistics(EntityOlapStatistics<Integer, EventType> eventTypeStatistics,
-                          EntityOlapStatistics<Integer, Speaker> speakerStatistics,
-                          EntityOlapStatistics<Integer, Company> companyStatistics) {
+    public OlapStatistics(OlapEntityStatistics<Integer, EventType> eventTypeStatistics,
+                          OlapEntityStatistics<Integer, Speaker> speakerStatistics,
+                          OlapEntityStatistics<Integer, Company> companyStatistics) {
         this.eventTypeStatistics = eventTypeStatistics;
         this.speakerStatistics = speakerStatistics;
         this.companyStatistics = companyStatistics;
     }
 
-    public EntityOlapStatistics<Integer, EventType> getEventTypeStatistics() {
+    public OlapEntityStatistics<Integer, EventType> getEventTypeStatistics() {
         return eventTypeStatistics;
     }
 
-    public EntityOlapStatistics<Integer, Speaker> getSpeakerStatistics() {
+    public OlapEntityStatistics<Integer, Speaker> getSpeakerStatistics() {
         return speakerStatistics;
     }
 
-    public EntityOlapStatistics<Integer, Company> getCompanyStatistics() {
+    public OlapEntityStatistics<Integer, Company> getCompanyStatistics() {
         return companyStatistics;
     }
 }

@@ -2,7 +2,7 @@ package guess.service;
 
 import guess.dao.OlapDao;
 import guess.domain.statistics.olap.CubeType;
-import guess.domain.statistics.olap.EntityOlapStatistics;
+import guess.domain.statistics.olap.OlapEntityStatistics;
 import guess.domain.statistics.olap.MeasureType;
 import guess.domain.statistics.olap.OlapStatistics;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,15 +33,15 @@ public class OlapServiceImpl implements OlapService {
                                             Long organizerId, Long eventTypeId, List<Long> speakerIds, List<Long> companyIds) {
         //TODO: implement
         return new OlapStatistics(
-                new EntityOlapStatistics<>(
+                new OlapEntityStatistics<>(
                         Collections.emptyList(),
                         Collections.emptyList()
                 ),
-                new EntityOlapStatistics<>(
+                new OlapEntityStatistics<>(
                         Collections.emptyList(),
                         Collections.emptyList()
                 ),
-                new EntityOlapStatistics<>(
+                new OlapEntityStatistics<>(
                         Collections.emptyList(),
                         Collections.emptyList()
                 )

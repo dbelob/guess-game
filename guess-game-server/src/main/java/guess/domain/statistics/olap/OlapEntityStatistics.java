@@ -3,13 +3,13 @@ package guess.domain.statistics.olap;
 import java.util.List;
 
 /**
- * Event type OLAP statistics.
+ * OLAP entity statistics.
  */
-public class EntityOlapStatistics<T, S> {
+public class OlapEntityStatistics<T, S> {
     private final List<T> dimensionValues;
-    private final List<EntityOlapMetrics<S>> metricsList;
+    private final List<OlapEntityMetrics<S>> metricsList;
 
-    public EntityOlapStatistics(List<T> dimensionValues, List<EntityOlapMetrics<S>> metricsList) {
+    public OlapEntityStatistics(List<T> dimensionValues, List<OlapEntityMetrics<S>> metricsList) {
         this.dimensionValues = dimensionValues;
         this.metricsList = metricsList;
     }
@@ -18,7 +18,7 @@ public class EntityOlapStatistics<T, S> {
         return dimensionValues;
     }
 
-    public List<EntityOlapMetrics<S>> getMetricsList() {
+    public List<OlapEntityMetrics<S>> getMetricsList() {
         return metricsList;
     }
 }

@@ -3,13 +3,13 @@ package guess.domain.statistics.olap;
 import java.util.List;
 
 /**
- * Entity OLAP metrics.
+ * OLAP entity metrics.
  */
-public class EntityOlapMetrics<T> {
+public class OlapEntityMetrics<T> {
     private final T entity;
     private final List<Long> measureValues;
 
-    public EntityOlapMetrics(T entity, List<Long> measureValues) {
+    public OlapEntityMetrics(T entity, List<Long> measureValues) {
         this.entity = entity;
         this.measureValues = measureValues;
     }
