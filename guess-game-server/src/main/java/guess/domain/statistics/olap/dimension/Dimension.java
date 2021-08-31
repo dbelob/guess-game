@@ -6,9 +6,15 @@ import java.util.Objects;
  * Dimension.
  */
 public abstract class Dimension<T> {
+    private final Class<T> valueClass;
     private final T value;
 
     protected Dimension(Class<T> valueClass, Object value) {
+        this.valueClass = valueClass;
+        this.value = getCheckedValue(value);
+    }
+
+    public T getCheckedValue(Object value) {
         if (value == null) {
             throw new IllegalArgumentException("Dimension value is null");
         }
@@ -18,7 +24,7 @@ public abstract class Dimension<T> {
                     value.getClass().getSimpleName(), valueClass.getSimpleName()));
         }
 
-        this.value = valueClass.cast(value);
+        return valueClass.cast(value);
     }
 
     public T getValue() {

@@ -30,6 +30,14 @@ public class Cube {
         return measureTypes;
     }
 
+    public List<Object> getDimensionValues(DimensionType dimensionType) {
+        checkDimensionType(dimensionType);
+
+        return dimensionMap.get(dimensionType).stream()
+                .map(Dimension::getValue)
+                .collect(Collectors.toList());
+    }
+
     private void checkDimensionType(DimensionType dimensionType) {
         if (!dimensionTypes.contains(dimensionType)) {
             throw new IllegalArgumentException(String.format("Invalid dimension type %s for %s valid values", dimensionType, dimensionTypes));

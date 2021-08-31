@@ -51,11 +51,15 @@ public class OlapDaoImpl implements OlapDao {
     }
 
     @Override
-    public List<MeasureType> getMeasureTypes(CubeType cubeType) {
+    public Cube getCube(CubeType cubeType) {
         Cube cube = cubes.get(cubeType);
 
-        return List.copyOf(Objects.requireNonNull(cube, () -> String.format("Cube type %s not found", cubeType))
-                .getMeasureTypes());
+        return Objects.requireNonNull(cube, () -> String.format("Cube type %s not found", cubeType));
+    }
+
+    @Override
+    public List<MeasureType> getMeasureTypes(CubeType cubeType) {
+        return List.copyOf(getCube(cubeType).getMeasureTypes());
     }
 
     private void fillDimensions(Cube eventTypesCube, Cube speakersCube, Cube companiesCube) {
