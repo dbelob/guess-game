@@ -110,4 +110,9 @@ public class Cube {
             measure.addEntity(entity);
         }
     }
+
+    public Long getMeasureValue(Set<Dimension<?>> dimensions, MeasureType measureType) {
+        //TODO: implement
+        return 42L;
+    }
 }
