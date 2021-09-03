@@ -77,20 +77,24 @@ public class OlapServiceImpl implements OlapService {
         List<OlapEntityMetrics<S>> entityMetricsList = new ArrayList<>();
 
         // Fill measure values for each entity (first dimension)
-        for (S firstDimensionValue : firstDimensionValues) {
-            List<Long> measureValues = new ArrayList<>();
+        firstDimensionValues.stream()
+                .parallel()
+                .forEach(firstDimensionValue -> {
+                    List<Long> measureValues = new ArrayList<>();
 
-            // Fill measure values for each second dimension
-            for (T secondDimensionValue : secondDimensionValues) {
-                Set<Dimension<?>> dimensions = Set.of(
-                        DimensionFactory.create(firstDimensionType, firstDimensionValue),
-                        DimensionFactory.create(DimensionType.YEAR, secondDimensionValue));
+                    // Fill measure values for each second dimension
+                    secondDimensionValues.stream()
+                            .parallel()
+                            .forEach(secondDimensionValue -> {
+                                Set<Dimension<?>> dimensions = Set.of(
+                                        DimensionFactory.create(firstDimensionType, firstDimensionValue),
+                                        DimensionFactory.create(DimensionType.YEAR, secondDimensionValue));
 
-                measureValues.add(cube.getMeasureValue(dimensions, measureType));
-            }
+                                measureValues.add(cube.getMeasureValue(dimensions, measureType));
+                            });
 
-            entityMetricsList.add(new OlapEntityMetrics<>(firstDimensionValue, measureValues));
-        }
+                    entityMetricsList.add(new OlapEntityMetrics<>(firstDimensionValue, measureValues));
+                });
 
         return new OlapEntityStatistics<>(secondDimensionValues, entityMetricsList);
     }
