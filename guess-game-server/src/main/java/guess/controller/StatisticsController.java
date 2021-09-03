@@ -5,6 +5,8 @@ import guess.domain.statistics.olap.CubeType;
 import guess.domain.statistics.olap.MeasureType;
 import guess.dto.eventtype.EventTypeSuperBriefDto;
 import guess.dto.statistics.*;
+import guess.dto.statistics.olap.OlapParametersDto;
+import guess.dto.statistics.olap.OlapStatisticsDto;
 import guess.service.LocaleService;
 import guess.service.OlapService;
 import guess.service.StatisticsService;

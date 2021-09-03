@@ -1,4 +1,4 @@
-package guess.dto.statistics;
+package guess.dto.statistics.olap;
 
 import guess.domain.Language;
 import guess.domain.statistics.olap.OlapStatistics;
