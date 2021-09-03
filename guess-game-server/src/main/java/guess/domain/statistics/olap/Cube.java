@@ -105,7 +105,7 @@ public class Cube {
         Measure<?> measure = dimensionMeasures.get(measureType);
 
         if (measure == null) {
-            dimensionMeasures.put(measureType, MeasureFactory.create(measureType, entity));
+            dimensionMeasures.put(measureType, MeasureFactory.create(measureType, Set.of(entity)));
         } else {
             measure.addEntity(entity);
         }

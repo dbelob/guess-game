@@ -2,6 +2,8 @@ package guess.domain.statistics.olap.measure;
 
 import guess.domain.statistics.olap.MeasureType;
 
+import java.util.Set;
+
 /**
  * Measure factory.
  */
@@ -10,22 +12,22 @@ public class MeasureFactory {
     }
 
     @SuppressWarnings("rawtypes")
-    public static Measure create(MeasureType measureType, Object entity) {
+    public static Measure create(MeasureType measureType, Set<Object> entities) {
         switch (measureType) {
             case DURATION:
-                return new DurationMeasure(entity);
+                return new DurationMeasure(entities);
             case EVENT_TYPES_QUANTITY:
-                return new EventTypesQuantityMeasure(entity);
+                return new EventTypesQuantityMeasure(entities);
             case EVENTS_QUANTITY:
-                return new EventsQuantityMeasure(entity);
+                return new EventsQuantityMeasure(entities);
             case TALKS_QUANTITY:
-                return new TalksQuantityMeasure(entity);
+                return new TalksQuantityMeasure(entities);
             case SPEAKERS_QUANTITY:
-                return new SpeakersQuantityMeasure(entity);
+                return new SpeakersQuantityMeasure(entities);
             case JAVA_CHAMPIONS_QUANTITY:
-                return new JavaChampionsQuantityMeasure(entity);
+                return new JavaChampionsQuantityMeasure(entities);
             case MVPS_QUANTITY:
-                return new MvpsQuantityMeasure(entity);
+                return new MvpsQuantityMeasure(entities);
             default:
                 throw new IllegalStateException(String.format("Unknown measure type %s", measureType));
         }
