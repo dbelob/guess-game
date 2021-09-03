@@ -1,6 +1,9 @@
 package guess.service;
 
 import guess.dao.OlapDao;
+import guess.domain.source.Company;
+import guess.domain.source.EventType;
+import guess.domain.source.Speaker;
 import guess.domain.statistics.olap.*;
 import guess.domain.statistics.olap.dimension.Dimension;
 import guess.domain.statistics.olap.dimension.DimensionFactory;
@@ -10,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 /**
@@ -32,18 +36,25 @@ public class OlapServiceImpl implements OlapService {
     @Override
     public OlapStatistics getOlapStatistics(CubeType cubeType, MeasureType measureType, boolean isConferences, boolean isMeetups,
                                             Long organizerId, Long eventTypeId, List<Long> speakerIds, List<Long> companyIds) {
+        Predicate<EventType> eventTypePredicate = et ->
+                ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
+                        ((organizerId == null) || (et.getOrganizer().getId() == organizerId)) &&
+                        ((eventTypeId == null) || (et.getId() == eventTypeId));
+        Predicate<Speaker> speakerPredicate = s -> (speakerIds == null) || speakerIds.isEmpty() || speakerIds.contains(s.getId());
+        Predicate<Company> companyPredicate = c -> (companyIds == null) || companyIds.isEmpty() || companyIds.contains(c.getId());
+
         return new OlapStatistics(
                 CubeType.EVENT_TYPES.equals(cubeType) ?
                         getOlapEntityStatistics(cubeType, measureType, isConferences, isMeetups, organizerId,
-                                eventTypeId, speakerIds, companyIds, DimensionType.EVENT_TYPE) :
+                                eventTypeId, DimensionType.EVENT_TYPE, eventTypePredicate) :
                         null,
                 CubeType.SPEAKERS.equals(cubeType) ?
                         getOlapEntityStatistics(cubeType, measureType, isConferences, isMeetups, organizerId,
-                                eventTypeId, speakerIds, companyIds, DimensionType.SPEAKER) :
+                                eventTypeId, DimensionType.SPEAKER, speakerPredicate) :
                         null,
                 CubeType.COMPANIES.equals(cubeType) ?
                         getOlapEntityStatistics(cubeType, measureType, isConferences, isMeetups, organizerId,
-                                eventTypeId, speakerIds, companyIds, DimensionType.COMPANY) :
+                                eventTypeId, DimensionType.COMPANY, companyPredicate) :
                         null
         );
     }
@@ -52,32 +63,35 @@ public class OlapServiceImpl implements OlapService {
     private <T, S> OlapEntityStatistics<T, S> getOlapEntityStatistics(CubeType cubeType, MeasureType measureType,
                                                                       boolean isConferences, boolean isMeetups,
                                                                       Long organizerId, Long eventTypeId,
-                                                                      List<Long> speakerIds, List<Long> companyIds,
-                                                                      DimensionType secondDimensionType) {
+                                                                      DimensionType firstDimensionType,
+                                                                      Predicate<S> firstDimensionPredicate) {
         Cube cube = olapDao.getCube(cubeType);
-        List<T> firstDimensionValues = cube.getDimensionValues(DimensionType.YEAR).stream()
+        List<S> firstDimensionValues = cube.getDimensionValues(firstDimensionType).stream()
+                .map(v -> (S) v)
+                .filter(firstDimensionPredicate)
+                .collect(Collectors.toList());
+        List<T> secondDimensionValues = cube.getDimensionValues(DimensionType.YEAR).stream()
                 .map(v -> (T) v)
                 .sorted()
                 .collect(Collectors.toList());
-        List<S> secondDimensionValues = cube.getDimensionValues(secondDimensionType).stream()
-                .map(v -> (S) v)
-                .collect(Collectors.toList());
         List<OlapEntityMetrics<S>> entityMetricsList = new ArrayList<>();
 
-        for (S secondDimensionValue : secondDimensionValues) {
+        // Fill measure values for each entity (first dimension)
+        for (S firstDimensionValue : firstDimensionValues) {
             List<Long> measureValues = new ArrayList<>();
 
-            for (T firstDimensionValue : firstDimensionValues) {
+            // Fill measure values for each second dimension
+            for (T secondDimensionValue : secondDimensionValues) {
                 Set<Dimension<?>> dimensions = Set.of(
-                        DimensionFactory.create(DimensionType.YEAR, firstDimensionValue),
-                        DimensionFactory.create(secondDimensionType, secondDimensionValue));
+                        DimensionFactory.create(firstDimensionType, firstDimensionValue),
+                        DimensionFactory.create(DimensionType.YEAR, secondDimensionValue));
 
                 measureValues.add(cube.getMeasureValue(dimensions, measureType));
             }
 
-            entityMetricsList.add(new OlapEntityMetrics<>(secondDimensionValue, measureValues));
+            entityMetricsList.add(new OlapEntityMetrics<>(firstDimensionValue, measureValues));
         }
 
-        return new OlapEntityStatistics<>(firstDimensionValues, entityMetricsList);
+        return new OlapEntityStatistics<>(secondDimensionValues, entityMetricsList);
     }
 }

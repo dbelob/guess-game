@@ -1,6 +1,7 @@
 package guess.domain.statistics.olap.measure;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -13,6 +14,14 @@ public abstract class Measure<T> {
     protected Measure(Class<T> entityClass, Object entity) {
         this.entityClass = entityClass;
         this.entities.add(getCheckedEntity(entity));
+    }
+
+    protected Measure(Class<T> entityClass, List<Object> entities) {
+        this.entityClass = entityClass;
+
+        for (Object entity : entities) {
+            this.entities.add(getCheckedEntity(entity));
+        }
     }
 
     private T getCheckedEntity(Object entity) {
