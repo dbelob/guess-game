@@ -5,8 +5,7 @@ import guess.domain.statistics.olap.CubeType;
 import guess.domain.statistics.olap.MeasureType;
 import guess.dto.eventtype.EventTypeSuperBriefDto;
 import guess.dto.statistics.*;
-import guess.dto.statistics.olap.OlapParametersDto;
-import guess.dto.statistics.olap.OlapStatisticsDto;
+import guess.dto.statistics.olap.*;
 import guess.service.LocaleService;
 import guess.service.OlapService;
 import guess.service.StatisticsService;
@@ -139,7 +138,24 @@ public class StatisticsController {
                 olapParameters.isConferences(), olapParameters.isMeetups(), olapParameters.getOrganizerId(),
                 olapParameters.getEventTypeId(), olapParameters.getSpeakerIds(), olapParameters.getCompanyIds());
         var language = localeService.getLanguage(httpSession);
+        var olapStatisticsDto = OlapStatisticsDto.convertToDto(olapStatistics, language);
 
-        return OlapStatisticsDto.convertToDto(olapStatistics, language);
+        if (olapStatisticsDto.getEventTypeStatistics() != null) {
+            Comparator<OlapEventTypeMetricsDto> comparatorByIsConference = Comparator.comparing(OlapEventTypeMetricsDto::isConference).reversed();
+            Comparator<OlapEventTypeMetricsDto> comparatorByOrganizerName = Comparator.comparing(OlapEventTypeMetricsDto::getOrganizerName, String.CASE_INSENSITIVE_ORDER);
+            Comparator<OlapEventTypeMetricsDto> comparatorByName = Comparator.comparing(OlapEventTypeMetricsDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
+
+            olapStatisticsDto.getEventTypeStatistics().getMetricsList().sort(comparatorByIsConference.thenComparing(comparatorByOrganizerName).thenComparing(comparatorByName));
+        }
+
+        if (olapStatisticsDto.getSpeakerStatistics() != null) {
+            olapStatisticsDto.getSpeakerStatistics().getMetricsList().sort(Comparator.comparing(OlapSpeakerMetricsDto::getName, String.CASE_INSENSITIVE_ORDER));
+        }
+
+        if (olapStatisticsDto.getCompanyStatistics() != null) {
+            olapStatisticsDto.getCompanyStatistics().getMetricsList().sort(Comparator.comparing(OlapCompanyMetricsDto::getName, String.CASE_INSENSITIVE_ORDER));
+        }
+
+        return olapStatisticsDto;
     }
 }

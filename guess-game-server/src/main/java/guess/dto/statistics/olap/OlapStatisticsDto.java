@@ -7,20 +7,33 @@ import guess.domain.statistics.olap.OlapStatistics;
  * OLAP statistics DTO.
  */
 public class OlapStatisticsDto {
-    //TODO: implement
+    private final OlapEntityStatisticsDto<Integer, OlapEventTypeMetricsDto> eventTypeStatistics;
+    private final OlapEntityStatisticsDto<Integer, OlapSpeakerMetricsDto> speakerStatistics;
+    private final OlapEntityStatisticsDto<Integer, OlapCompanyMetricsDto> companyStatistics;
 
-    private final String text;
-
-    public OlapStatisticsDto(String text) {
-        this.text = text;
+    public OlapStatisticsDto(OlapEventTypeStatisticsDto eventTypeStatistics, OlapSpeakerStatisticsDto speakerStatistics,
+                             OlapCompanyStatisticsDto companyStatistics) {
+        this.eventTypeStatistics = eventTypeStatistics;
+        this.speakerStatistics = speakerStatistics;
+        this.companyStatistics = companyStatistics;
     }
 
-    public String getText() {
-        return text;
+    public OlapEntityStatisticsDto<Integer, OlapEventTypeMetricsDto> getEventTypeStatistics() {
+        return eventTypeStatistics;
+    }
+
+    public OlapEntityStatisticsDto<Integer, OlapSpeakerMetricsDto> getSpeakerStatistics() {
+        return speakerStatistics;
+    }
+
+    public OlapEntityStatisticsDto<Integer, OlapCompanyMetricsDto> getCompanyStatistics() {
+        return companyStatistics;
     }
 
     public static OlapStatisticsDto convertToDto(OlapStatistics olapStatistics, Language language) {
-        //TODO: implement
-        return new OlapStatisticsDto("result");
+        return new OlapStatisticsDto(
+                OlapEventTypeStatisticsDto.convertToDto(olapStatistics.getEventTypeStatistics(), language),
+                OlapSpeakerStatisticsDto.convertToDto(olapStatistics.getSpeakerStatistics(), language),
+                OlapCompanyStatisticsDto.convertToDto(olapStatistics.getCompanyStatistics(), language));
     }
 }
