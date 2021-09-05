@@ -177,7 +177,7 @@
     "title": "Статистика",
     "eventTypes": {
       "title": "Типы событий",
-      "noEventTypesFoundText": "Типы событий не найдены",
+      "noEventTypesDataFoundText": "Данные о типах событий не найдены",
       "table": {
         "kindColumn": "Вид",
         "organizerNameColumn": "Организатор",
@@ -196,7 +196,7 @@
       "title": "События",
       "conferenceLabel": "Конференция:",
       "conferencePlaceholder": "Все",
-      "noEventsFoundText": "События не найдены",
+      "noEventsDataFoundText": "Данные о событиях не найдены",
       "table": {
         "nameColumn": "Наименование",
         "startDateColumn": "Начальная дата",
@@ -209,7 +209,7 @@
     },
     "speakers": {
       "title": "Спикеры",
-      "noSpeakersFoundText": "Спикеры не найдены",
+      "noSpeakersDataFoundText": "Данные о спикерах не найдены",
       "table": {
         "nameColumn": "Имя",
         "talksColumn": "Докладов",
@@ -221,7 +221,7 @@
     },
     "companies": {
       "title": "Компании",
-      "noCompaniesFoundText": "Компании не найдены",
+      "noCompaniesDataFoundText": "Данные о компаниях не найдены",
       "table": {
         "companyColumn": "Компания",
         "speakersColumn": "Спикеров",
