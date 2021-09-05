@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * OLAP entity statistics DTO.
  */
-public class OlapEntityStatisticsDto<T, S extends OlapEntityMetricsDto> {
+public abstract class OlapEntityStatisticsDto<T, S extends OlapEntityMetricsDto> {
     private final List<T> dimensionValues;
     private final List<S> metricsList;
 

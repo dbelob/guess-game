@@ -1,6 +1,10 @@
 package guess.dto.statistics.olap;
 
 import guess.domain.Language;
+import guess.domain.source.Company;
+import guess.domain.source.EventType;
+import guess.domain.source.Speaker;
+import guess.domain.statistics.olap.OlapEntityStatistics;
 import guess.domain.statistics.olap.OlapStatistics;
 
 /**
@@ -31,9 +35,13 @@ public class OlapStatisticsDto {
     }
 
     public static OlapStatisticsDto convertToDto(OlapStatistics olapStatistics, Language language) {
+        OlapEntityStatistics<Integer, EventType> eventTypeStatistics = olapStatistics.getEventTypeStatistics();
+        OlapEntityStatistics<Integer, Speaker> speakerStatistics = olapStatistics.getSpeakerStatistics();
+        OlapEntityStatistics<Integer, Company> companyStatistics = olapStatistics.getCompanyStatistics();
+
         return new OlapStatisticsDto(
-                OlapEventTypeStatisticsDto.convertToDto(olapStatistics.getEventTypeStatistics(), language),
-                OlapSpeakerStatisticsDto.convertToDto(olapStatistics.getSpeakerStatistics(), language),
-                OlapCompanyStatisticsDto.convertToDto(olapStatistics.getCompanyStatistics(), language));
+                (eventTypeStatistics != null) ? OlapEventTypeStatisticsDto.convertToDto(eventTypeStatistics, language) : null,
+                (speakerStatistics != null) ? OlapSpeakerStatisticsDto.convertToDto(speakerStatistics, language) : null,
+                (companyStatistics != null) ? OlapCompanyStatisticsDto.convertToDto(companyStatistics, language) : null);
     }
 }

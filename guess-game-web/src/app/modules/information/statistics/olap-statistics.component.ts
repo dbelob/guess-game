@@ -220,7 +220,6 @@ export class OlapStatisticsComponent implements OnInit {
         (companies) ? companies.map(c => c.id) : null))
       .subscribe(data => {
           this.olapStatistics = data;
-          console.log('text: ' + data.text)
         }
       );
   }
