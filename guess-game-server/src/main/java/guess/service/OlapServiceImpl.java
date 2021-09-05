@@ -85,7 +85,7 @@ public class OlapServiceImpl implements OlapService {
                     // Fill measure values for each second dimension
                     secondDimensionValues.stream()
                             .parallel()
-                            .forEach(secondDimensionValue -> {
+                            .forEachOrdered(secondDimensionValue -> {
                                 Set<Dimension<?>> dimensions = Set.of(
                                         DimensionFactory.create(firstDimensionType, firstDimensionValue),
                                         DimensionFactory.create(DimensionType.YEAR, secondDimensionValue));
