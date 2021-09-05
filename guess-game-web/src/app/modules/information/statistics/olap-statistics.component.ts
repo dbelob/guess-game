@@ -15,7 +15,11 @@ import { OrganizerService } from '../../../shared/services/organizer.service';
 import { StatisticsService } from '../../../shared/services/statistics.service';
 import { SpeakerService } from '../../../shared/services/speaker.service';
 import { CompanyService } from '../../../shared/services/company.service';
-import { findEventTypeById, findOrganizerById } from '../../general/utility-functions';
+import {
+  findEventTypeById,
+  findOrganizerById,
+  getOlapEventTypeStatisticsWithSortName
+} from '../../general/utility-functions';
 
 @Component({
   selector: 'app-olap-statistics',
@@ -63,11 +67,13 @@ export class OlapStatisticsComponent implements OnInit {
   public companySuggestions: Company[];
 
   public olapStatistics = new OlapStatistics();
+  public eventTypeMultiSortMeta: any[] = [];
 
   constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
               private eventService: EventService, private organizerService: OrganizerService,
               public translateService: TranslateService, private speakerService: SpeakerService,
               private companyService: CompanyService) {
+    this.eventTypeMultiSortMeta.push({field: 'sortName', order: 1});
   }
 
   ngOnInit(): void {
@@ -220,6 +226,10 @@ export class OlapStatisticsComponent implements OnInit {
         (companies) ? companies.map(c => c.id) : null))
       .subscribe(data => {
           this.olapStatistics = data;
+
+          if (this.olapStatistics?.eventTypeStatistics) {
+            this.olapStatistics.eventTypeStatistics = getOlapEventTypeStatisticsWithSortName(this.olapStatistics.eventTypeStatistics);
+          }
         }
       );
   }
@@ -324,5 +334,17 @@ export class OlapStatisticsComponent implements OnInit {
   unselectCompany(event) {
     this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
       this.selectedOrganizer, this.selectedEventType, this.selectedSpeakers, this.selectedCompanies);
+  }
+
+  isNoEventTypesDataFoundVisible() {
+    return ((this.selectedCubeType === CubeType.EventTypes) &&
+      this.olapStatistics?.eventTypeStatistics?.metricsList &&
+      (this.olapStatistics?.eventTypeStatistics.metricsList.length === 0));
+  }
+
+  isEventTypesListVisible() {
+    return ((this.selectedCubeType === CubeType.EventTypes) &&
+      this.olapStatistics?.eventTypeStatistics?.metricsList &&
+      (this.olapStatistics?.eventTypeStatistics.metricsList.length > 0));
   }
 }

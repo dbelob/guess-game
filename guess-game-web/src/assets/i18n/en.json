@@ -238,7 +238,13 @@
       "measureLabel": "Measure:",
       "measurePlaceholder": "All",
       "speakersLabel": "Speakers:",
-      "companiesLabel": "Companies:"
+      "companiesLabel": "Companies:",
+      "noEventTypesDataFoundText": "No event types data found",
+      "table": {
+        "kindColumn": "Kind",
+        "organizerNameColumn": "Organizer",
+        "nameColumn": "Name"
+      }
     }
   },
   "notFound": {

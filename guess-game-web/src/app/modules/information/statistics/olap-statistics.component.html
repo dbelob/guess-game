@@ -101,8 +101,56 @@
       Charts
     </div>
 
-    <div class="alert text-center m-2">
-      Table
+    <div *ngIf="isNoEventTypesDataFoundVisible()" class="alert text-center m-2">
+      {{'statistics.olap.noEventTypesDataFoundText' | translate}}
+    </div>
+
+    <div *ngIf="isEventTypesListVisible()" class="m-2">
+      <p-table [value]="olapStatistics.eventTypeStatistics.metricsList" [resizableColumns]="true" [autoLayout]="true"
+               sortMode="multiple" [multiSortMeta]="eventTypeMultiSortMeta" styleClass="p-datatable-striped"
+               responsiveLayout="scroll">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" pResizableColumn>
+              {{'statistics.olap.table.kindColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'statistics.olap.table.organizerNameColumn' | translate}}
+            </th>
+            <th class="text-center" [pSortableColumn]="'sortName'" pResizableColumn>
+              {{'statistics.olap.table.nameColumn' | translate}}
+              <p-sortIcon [field]="'sortName'"></p-sortIcon>
+            </th>
+            <th class="text-center" pResizableColumn *ngFor="let dimensionValue of olapStatistics.eventTypeStatistics.dimensionValues">
+              {{dimensionValue}}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-eventTypeMetrics let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>
+              <span *ngIf="eventTypeMetrics.conference">
+                {{'common.eventTypeKind.conference' | translate}}
+              </span>
+              <span *ngIf="!eventTypeMetrics.conference">
+                {{'common.eventTypeKind.meetup' | translate}}
+              </span>
+            </td>
+            <td>{{eventTypeMetrics.organizerName}}</td>
+            <td>
+              <a [routerLink]="['/information', 'event-type', eventTypeMetrics.id]" class="text-dark">
+                <img src="{{eventsImageDirectory}}/{{eventTypeMetrics.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>
+                <span class="ml-2">{{eventTypeMetrics.displayName}}</span>
+              </a>
+            </td>
+            <td *ngFor="let measureValue of eventTypeMetrics.measureValues" class="text-center">
+              {{measureValue}}
+            </td>
+          <tr>
+        </ng-template>
+      </p-table>
     </div>
   </div>
 </div>

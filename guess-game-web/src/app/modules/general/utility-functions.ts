@@ -7,6 +7,8 @@ import { Speaker } from '../../shared/models/speaker/speaker.model';
 import { EventTypeMetrics } from '../../shared/models/statistics/event-type-metrics.model';
 import { EventTypeStatistics } from '../../shared/models/statistics/event-type-statistics.model';
 import { Organizer } from '../../shared/models/organizer/organizer.model';
+import { OlapEntityStatistics } from "../../shared/models/statistics/olap/olap-entity-statistics.model";
+import { OlapEventTypeMetrics } from "../../shared/models/statistics/olap/olap-event-type-metrics.model";
 
 export function isStringEmpty(value: string): boolean {
   return (!value || (value.trim().length <= 0));
@@ -122,6 +124,20 @@ export function getEventTypeStatisticsWithSortName(eventTypeStatistics: EventTyp
   if (eventTypeMetricsList) {
     for (let i = 0; i < eventTypeMetricsList.length; i++) {
       const eventTypeMetrics: EventTypeMetrics = eventTypeMetricsList[i];
+
+      eventTypeMetrics.sortName = (eventTypeMetrics.conference ? '0' : '1') + eventTypeMetrics.organizerName + eventTypeMetrics.displayName;
+    }
+  }
+
+  return eventTypeStatistics;
+}
+
+export function getOlapEventTypeStatisticsWithSortName(eventTypeStatistics: OlapEntityStatistics<number, OlapEventTypeMetrics>): OlapEntityStatistics<number, OlapEventTypeMetrics> {
+  const eventTypeMetricsList: OlapEventTypeMetrics[] = eventTypeStatistics.metricsList;
+
+  if (eventTypeMetricsList) {
+    for (let i = 0; i < eventTypeMetricsList.length; i++) {
+      const eventTypeMetrics: OlapEventTypeMetrics = eventTypeMetricsList[i];
 
       eventTypeMetrics.sortName = (eventTypeMetrics.conference ? '0' : '1') + eventTypeMetrics.organizerName + eventTypeMetrics.displayName;
     }

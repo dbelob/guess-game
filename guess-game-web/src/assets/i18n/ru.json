@@ -238,7 +238,13 @@
       "measureLabel": "Показатель:",
       "measurePlaceholder": "Все",
       "speakersLabel": "Спикеры:",
-      "companiesLabel": "Компании:"
+      "companiesLabel": "Компании:",
+      "noEventTypesDataFoundText": "Данные о типах событий не найдены",
+      "table": {
+        "kindColumn": "Вид",
+        "organizerNameColumn": "Организатор",
+        "nameColumn": "Наименование"
+      }
     }
   },
   "notFound": {
