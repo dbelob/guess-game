@@ -70,6 +70,7 @@ export class OlapStatisticsComponent implements OnInit {
   public olapStatistics = new OlapStatistics();
   public eventTypeMultiSortMeta: any[] = [];
   public speakerMultiSortMeta: any[] = [];
+  public companyMultiSortMeta: any[] = [];
 
   constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
               private eventService: EventService, private organizerService: OrganizerService,
@@ -77,6 +78,7 @@ export class OlapStatisticsComponent implements OnInit {
               private companyService: CompanyService) {
     this.eventTypeMultiSortMeta.push({field: 'sortName', order: 1});
     this.speakerMultiSortMeta.push({field: 'name', order: 1});
+    this.companyMultiSortMeta.push({field: 'name', order: 1});
   }
 
   ngOnInit(): void {

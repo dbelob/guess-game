@@ -196,5 +196,36 @@
         </ng-template>
       </p-table>
     </div>
+
+    <div *ngIf="isCompaniesListVisible()" class="m-2">
+      <p-table [value]="olapStatistics.companyStatistics.metricsList" [resizableColumns]="true" [autoLayout]="true"
+               [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
+               [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
+               currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
+               sortMode="multiple" [multiSortMeta]="companyMultiSortMeta" styleClass="p-datatable-striped"
+               responsiveLayout="scroll">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" [pSortableColumn]="'name'" pResizableColumn>
+              {{'statistics.olap.table.companyColumn' | translate}}
+              <p-sortIcon [field]="'name'"></p-sortIcon>
+            </th>
+            <th class="text-center" pResizableColumn *ngFor="let dimensionValue of olapStatistics.companyStatistics.dimensionValues">
+              {{dimensionValue}}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-companyMetrics let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>{{companyMetrics.name}}</td>
+            <td *ngFor="let measureValue of companyMetrics.measureValues" class="text-center">
+              {{measureValue}}
+            </td>
+          <tr>
+        </ng-template>
+      </p-table>
+    </div>
   </div>
 </div>
