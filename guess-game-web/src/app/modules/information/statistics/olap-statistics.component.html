@@ -105,6 +105,14 @@
       {{'statistics.olap.noEventTypesDataFoundText' | translate}}
     </div>
 
+    <div *ngIf="isNoSpeakersDataFoundVisible()" class="alert text-center m-2">
+      {{'statistics.olap.noSpeakersDataFoundText' | translate}}
+    </div>
+
+    <div *ngIf="isNoCompaniesDataFoundVisible()" class="alert text-center m-2">
+      {{'statistics.olap.noCompaniesDataFoundText' | translate}}
+    </div>
+
     <div *ngIf="isEventTypesListVisible()" class="m-2">
       <p-table [value]="olapStatistics.eventTypeStatistics.metricsList" [resizableColumns]="true" [autoLayout]="true"
                sortMode="multiple" [multiSortMeta]="eventTypeMultiSortMeta" styleClass="p-datatable-striped"
@@ -119,7 +127,7 @@
               {{'statistics.olap.table.organizerNameColumn' | translate}}
             </th>
             <th class="text-center" [pSortableColumn]="'sortName'" pResizableColumn>
-              {{'statistics.olap.table.nameColumn' | translate}}
+              {{'statistics.olap.table.eventTypeNameColumn' | translate}}
               <p-sortIcon [field]="'sortName'"></p-sortIcon>
             </th>
             <th class="text-center" pResizableColumn *ngFor="let dimensionValue of olapStatistics.eventTypeStatistics.dimensionValues">
@@ -146,6 +154,42 @@
               </a>
             </td>
             <td *ngFor="let measureValue of eventTypeMetrics.measureValues" class="text-center">
+              {{measureValue}}
+            </td>
+          <tr>
+        </ng-template>
+      </p-table>
+    </div>
+
+    <div *ngIf="isSpeakersListVisible()" class="m-2">
+      <p-table [value]="olapStatistics.speakerStatistics.metricsList" [resizableColumns]="true" [autoLayout]="true"
+               [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
+               [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
+               currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
+               sortMode="multiple" [multiSortMeta]="speakerMultiSortMeta" styleClass="p-datatable-striped"
+               responsiveLayout="scroll">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" [pSortableColumn]="'name'" pResizableColumn>
+              {{'statistics.olap.table.speakerNameColumn' | translate}}
+              <p-sortIcon [field]="'name'"></p-sortIcon>
+            </th>
+            <th class="text-center" pResizableColumn *ngFor="let dimensionValue of olapStatistics.speakerStatistics.dimensionValues">
+              {{dimensionValue}}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-speakerMetrics let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>
+              <a [routerLink]="['/information', 'speaker', speakerMetrics.id]" class="text-dark">
+                <img src="{{speakersImageDirectory}}/{{speakerMetrics.photoFileName}}" class="img-speaker-photo-table" alt="photo"/>
+                <span class="ml-2">{{speakerMetrics.name}}</span>
+              </a>
+            </td>
+            <td *ngFor="let measureValue of speakerMetrics.measureValues" class="text-center">
               {{measureValue}}
             </td>
           <tr>

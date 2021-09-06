@@ -240,10 +240,13 @@
       "speakersLabel": "Спикеры:",
       "companiesLabel": "Компании:",
       "noEventTypesDataFoundText": "Данные о типах событий не найдены",
+      "noSpeakersDataFoundText": "Данные о спикерах не найдены",
+      "noCompaniesDataFoundText": "Данные о компаниях не найдены",
       "table": {
         "kindColumn": "Вид",
         "organizerNameColumn": "Организатор",
-        "nameColumn": "Наименование"
+        "eventTypeNameColumn": "Наименование",
+        "speakerNameColumn": "Имя"
       }
     }
   },

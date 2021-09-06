@@ -40,6 +40,7 @@ export class OlapStatisticsComponent implements OnInit {
 
   private imageDirectory = 'assets/images';
   public eventsImageDirectory = `${this.imageDirectory}/events`;
+  public speakersImageDirectory = `${this.imageDirectory}/speakers`;
 
   public cubeTypes: CubeType[] = [];
   public selectedCubeType: CubeType;
@@ -68,12 +69,14 @@ export class OlapStatisticsComponent implements OnInit {
 
   public olapStatistics = new OlapStatistics();
   public eventTypeMultiSortMeta: any[] = [];
+  public speakerMultiSortMeta: any[] = [];
 
   constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
               private eventService: EventService, private organizerService: OrganizerService,
               public translateService: TranslateService, private speakerService: SpeakerService,
               private companyService: CompanyService) {
     this.eventTypeMultiSortMeta.push({field: 'sortName', order: 1});
+    this.speakerMultiSortMeta.push({field: 'name', order: 1});
   }
 
   ngOnInit(): void {
@@ -346,5 +349,29 @@ export class OlapStatisticsComponent implements OnInit {
     return ((this.selectedCubeType === CubeType.EventTypes) &&
       this.olapStatistics?.eventTypeStatistics?.metricsList &&
       (this.olapStatistics?.eventTypeStatistics.metricsList.length > 0));
+  }
+
+  isNoSpeakersDataFoundVisible() {
+    return ((this.selectedCubeType === CubeType.Speakers) &&
+      this.olapStatistics?.speakerStatistics?.metricsList &&
+      (this.olapStatistics?.speakerStatistics.metricsList.length === 0));
+  }
+
+  isSpeakersListVisible() {
+    return ((this.selectedCubeType === CubeType.Speakers) &&
+      this.olapStatistics?.speakerStatistics?.metricsList &&
+      (this.olapStatistics?.speakerStatistics.metricsList.length > 0));
+  }
+
+  isNoCompaniesDataFoundVisible() {
+    return ((this.selectedCubeType === CubeType.Companies) &&
+      this.olapStatistics?.companyStatistics?.metricsList &&
+      (this.olapStatistics?.companyStatistics.metricsList.length === 0));
+  }
+
+  isCompaniesListVisible() {
+    return ((this.selectedCubeType === CubeType.Companies) &&
+      this.olapStatistics?.companyStatistics?.metricsList &&
+      (this.olapStatistics?.companyStatistics.metricsList.length > 0));
   }
 }

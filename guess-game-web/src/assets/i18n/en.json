@@ -240,10 +240,13 @@
       "speakersLabel": "Speakers:",
       "companiesLabel": "Companies:",
       "noEventTypesDataFoundText": "No event types data found",
+      "noSpeakersDataFoundText": "No speakers data found",
+      "noCompaniesDataFoundText": "No companies data found",
       "table": {
         "kindColumn": "Kind",
         "organizerNameColumn": "Organizer",
-        "nameColumn": "Name"
+        "eventTypeNameColumn": "Name",
+        "speakerNameColumn": "Name"
       }
     }
   },
