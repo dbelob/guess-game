@@ -6,6 +6,7 @@ import guess.domain.statistics.olap.measure.Measure;
 import guess.domain.statistics.olap.measure.MeasureFactory;
 
 import java.util.*;
+import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
 /**
@@ -131,5 +132,81 @@ public class Cube {
 
             return measure.calculateValue();
         }
+    }
+
+    public Long getMeasureValue(List<Measure<?>> measures, MeasureType measureType) {
+        if ((measures == null) || measures.isEmpty()) {
+            return 0L;
+        } else if (measures.size() == 1) {
+            return measures.get(0).calculateValue();
+        } else {
+            Set<Object> measureValues = measures.stream()
+                    .flatMap(m -> m.getEntities().stream())
+                    .collect(Collectors.toSet());
+            Measure<?> measure = MeasureFactory.create(measureType, measureValues);
+
+            return measure.calculateValue();
+        }
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    public <T, S, V> List<V> getMeasureValueEntities(DimensionType firstDimensionType, List<T> firstDimensionValues,
+                                                     DimensionType secondDimensionType, List<S> secondDimensionValues,
+                                                     MeasureType measureType, BiFunction<T, List<Long>, V> entityBiFunction) {
+        Set<Dimension> firstDimensions = firstDimensionValues.stream()
+                .map(v -> DimensionFactory.create(firstDimensionType, v))
+                .collect(Collectors.toSet());
+        Set<Dimension> secondDimensions = secondDimensionValues.stream()
+                .map(v -> DimensionFactory.create(secondDimensionType, v))
+                .collect(Collectors.toSet());
+        Map<T, Map<S, List<Measure<?>>>> measuresByFirstDimensionValue = new HashMap<>();
+
+        // Create intermediate measure map
+        for (Map.Entry<Set<Dimension<?>>, Map<MeasureType, Measure<?>>> entry : measureMap.entrySet()) {
+            Set<Dimension<?>> entryDimensions = entry.getKey();
+
+            for (Dimension<?> firstEntryDimension : entryDimensions) {
+                if (firstDimensions.contains(firstEntryDimension)) {
+                    T firstDimensionValue = (T) firstEntryDimension.getValue();
+                    Map<S, List<Measure<?>>> measuresBySecondDimensionValue = measuresByFirstDimensionValue.computeIfAbsent(firstDimensionValue, k -> new HashMap<>());
+
+                    for (Dimension<?> secondEntryDimension : entryDimensions) {
+                        if (secondDimensions.contains(secondEntryDimension)) {
+                            S secondDimensionValue = (S) secondEntryDimension.getValue();
+                            List<Measure<?>> measures = measuresBySecondDimensionValue.computeIfAbsent(secondDimensionValue, k -> new ArrayList<>());
+
+                            measures.add(entry.getValue().get(measureType));
+
+                            break;
+                        }
+                    }
+
+                    break;
+                }
+            }
+        }
+
+        // Fill resulting list
+        List<V> measureValueEntities = new ArrayList<>();
+
+        for (T firstDimensionValue : firstDimensionValues) {
+            Map<S, List<Measure<?>>> measuresBySecondDimensionValue = measuresByFirstDimensionValue.get(firstDimensionValue);
+            List<Long> measureValues;
+
+            if (measuresBySecondDimensionValue == null) {
+                measureValues = Collections.nCopies(secondDimensionValues.size(), 0L);
+            } else {
+                measureValues = new ArrayList<>();
+
+                for (S secondDimensionValue : secondDimensionValues) {
+                    List<Measure<?>> measures = measuresBySecondDimensionValue.get(secondDimensionValue);
+                    measureValues.add(getMeasureValue(measures, measureType));
+                }
+            }
+
+            measureValueEntities.add(entityBiFunction.apply(firstDimensionValue, measureValues));
+        }
+
+        return measureValueEntities;
     }
 }

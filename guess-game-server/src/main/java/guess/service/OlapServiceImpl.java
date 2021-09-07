@@ -95,6 +95,9 @@ public class OlapServiceImpl implements OlapService {
 
                     entityMetricsList.add(new OlapEntityMetrics<>(firstDimensionValue, measureValues));
                 });
+//        List<OlapEntityMetrics<S>> entityMetricsList2 = cube.getMeasureValueEntities(
+//                firstDimensionType, firstDimensionValues, DimensionType.YEAR, secondDimensionValues,
+//                measureType, OlapEntityMetrics::new);
 
         return new OlapEntityStatistics<>(secondDimensionValues, entityMetricsList);
     }
