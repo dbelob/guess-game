@@ -13,5 +13,5 @@ public interface OlapService {
     List<MeasureType> getMeasureTypes(CubeType cubeType);
 
     OlapStatistics getOlapStatistics(CubeType cubeType, MeasureType measureType, boolean isConferences, boolean isMeetups,
-                                     Long organizerId, Long eventTypeId, List<Long> speakerIds, List<Long> companyIds);
+                                     Long organizerId, List<Long> eventTypeIds, List<Long> speakerIds, List<Long> companyIds);
 }

@@ -38,6 +38,20 @@ export function findEventTypeById(id: number, eventTypes: EventType[]): EventTyp
   return null;
 }
 
+export function findEventTypesByIds(ids: number[], eventTypes: EventType[]): EventType[] {
+  const result: EventType[] = [];
+
+  for (let id of ids) {
+    const eventType = findEventTypeById(id, eventTypes);
+
+    if (eventType) {
+      result.push(eventType);
+    }
+  }
+
+  return result;
+}
+
 export function findEventById(id: number, events: Event[]): Event {
   for (let i = 0; i < events.length; i++) {
     const event: Event = events[i];

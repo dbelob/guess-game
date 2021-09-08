@@ -31,26 +31,26 @@ public class OlapServiceImpl implements OlapService {
 
     @Override
     public OlapStatistics getOlapStatistics(CubeType cubeType, MeasureType measureType, boolean isConferences, boolean isMeetups,
-                                            Long organizerId, Long eventTypeId, List<Long> speakerIds, List<Long> companyIds) {
+                                            Long organizerId, List<Long> eventTypeIds, List<Long> speakerIds, List<Long> companyIds) {
         Predicate<EventType> eventTypePredicate = et ->
                 ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
                         ((organizerId == null) || (et.getOrganizer().getId() == organizerId)) &&
-                        ((eventTypeId == null) || (et.getId() == eventTypeId));
+                        ((eventTypeIds == null) || eventTypeIds.isEmpty() || eventTypeIds.contains(et.getId()));
         Predicate<Speaker> speakerPredicate = s -> (speakerIds == null) || speakerIds.isEmpty() || speakerIds.contains(s.getId());
         Predicate<Company> companyPredicate = c -> (companyIds == null) || companyIds.isEmpty() || companyIds.contains(c.getId());
 
         return new OlapStatistics(
                 CubeType.EVENT_TYPES.equals(cubeType) ?
                         getOlapEntityStatistics(cubeType, measureType, isConferences, isMeetups, organizerId,
-                                eventTypeId, DimensionType.EVENT_TYPE, eventTypePredicate) :
+                                eventTypeIds, DimensionType.EVENT_TYPE, eventTypePredicate) :
                         null,
                 CubeType.SPEAKERS.equals(cubeType) ?
                         getOlapEntityStatistics(cubeType, measureType, isConferences, isMeetups, organizerId,
-                                eventTypeId, DimensionType.SPEAKER, speakerPredicate) :
+                                eventTypeIds, DimensionType.SPEAKER, speakerPredicate) :
                         null,
                 CubeType.COMPANIES.equals(cubeType) ?
                         getOlapEntityStatistics(cubeType, measureType, isConferences, isMeetups, organizerId,
-                                eventTypeId, DimensionType.COMPANY, companyPredicate) :
+                                eventTypeIds, DimensionType.COMPANY, companyPredicate) :
                         null
         );
     }
@@ -58,7 +58,7 @@ public class OlapServiceImpl implements OlapService {
     @SuppressWarnings("unchecked")
     private <T, S> OlapEntityStatistics<T, S> getOlapEntityStatistics(CubeType cubeType, MeasureType measureType,
                                                                       boolean isConferences, boolean isMeetups,
-                                                                      Long organizerId, Long eventTypeId,
+                                                                      Long organizerId, List<Long> eventTypeIds,
                                                                       DimensionType firstDimensionType,
                                                                       Predicate<S> firstDimensionPredicate) {
         Cube cube = olapDao.getCube(cubeType);

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DropdownModule } from 'primeng/dropdown';
+import { MultiSelectModule } from 'primeng/multiselect';
 import { RouterModule } from '@angular/router';
 import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
@@ -33,6 +34,7 @@ import { StatisticsSwitcherComponent } from './statistics-switcher.component';
     FormsModule,
     CheckboxModule,
     DropdownModule,
+    MultiSelectModule,
     RouterModule,
     TableModule,
     TooltipModule,

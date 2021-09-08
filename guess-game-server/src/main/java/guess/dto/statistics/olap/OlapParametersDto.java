@@ -14,7 +14,7 @@ public class OlapParametersDto {
     private boolean isConferences;
     private boolean isMeetups;
     private Long organizerId;
-    private Long eventTypeId;
+    private List<Long> eventTypeIds;
     private List<Long> speakerIds;
     private List<Long> companyIds;
 
@@ -58,12 +58,12 @@ public class OlapParametersDto {
         this.organizerId = organizerId;
     }
 
-    public Long getEventTypeId() {
-        return eventTypeId;
+    public List<Long> getEventTypeIds() {
+        return eventTypeIds;
     }
 
-    public void setEventTypeId(Long eventTypeId) {
-        this.eventTypeId = eventTypeId;
+    public void setEventTypeIds(List<Long> eventTypeIds) {
+        this.eventTypeIds = eventTypeIds;
     }
 
     public List<Long> getSpeakerIds() {

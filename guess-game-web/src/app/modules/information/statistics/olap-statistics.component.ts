@@ -16,9 +16,9 @@ import { StatisticsService } from '../../../shared/services/statistics.service';
 import { SpeakerService } from '../../../shared/services/speaker.service';
 import { CompanyService } from '../../../shared/services/company.service';
 import {
-  findEventTypeById,
-  findOrganizerById,
-  getOlapEventTypeStatisticsWithSortName
+    findEventTypesByIds,
+    findOrganizerById,
+    getOlapEventTypeStatisticsWithSortName
 } from '../../general/utility-functions';
 
 @Component({
@@ -58,7 +58,7 @@ export class OlapStatisticsComponent implements OnInit {
   public organizerSelectItems: SelectItem[] = [];
 
   public eventTypes: EventType[] = [];
-  public selectedEventType: EventType;
+  public selectedEventTypes: EventType[] = [];
   public eventTypeSelectItems: SelectItem[] = [];
 
   public selectedSpeakers: Speaker[] = [];
@@ -191,13 +191,13 @@ export class OlapStatisticsComponent implements OnInit {
                         this.fillEventTypes(eventTypesData);
 
                         if (this.eventTypes.length > 0) {
-                          this.selectedEventType = (defaultEventData) ? findEventTypeById(defaultEventData.eventTypeId, this.eventTypes) : null;
+                          this.selectedEventTypes = (defaultEventData) ? findEventTypesByIds([defaultEventData.eventTypeId], this.eventTypes) : [];
                         } else {
-                          this.selectedEventType = null;
+                          this.selectedEventTypes = [];
                         }
 
                         this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-                          this.selectedOrganizer, this.selectedEventType, this.selectedSpeakers, this.selectedCompanies);
+                          this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
                       });
                   });
               });
@@ -210,15 +210,15 @@ export class OlapStatisticsComponent implements OnInit {
       .subscribe(eventTypesData => {
         this.fillEventTypes(eventTypesData);
 
-        this.selectedEventType = null;
+        this.selectedEventTypes = [];
 
         this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-          this.selectedOrganizer, this.selectedEventType, this.selectedSpeakers, this.selectedCompanies);
+          this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
       });
   }
 
   loadOlapStatistics(cubeType: CubeType, measureType: MeasureType, isConferences: boolean, isMeetups: boolean,
-                     organizer: Organizer, eventType: EventType, speakers: Speaker[], companies: Company[]) {
+                     organizer: Organizer, eventTypes: EventType[], speakers: Speaker[], companies: Company[]) {
     this.statisticsService.getOlapStatistics(
       new OlapParameters(
         cubeType,
@@ -226,7 +226,7 @@ export class OlapStatisticsComponent implements OnInit {
         isConferences,
         isMeetups,
         (organizer) ? organizer.id : null,
-        (eventType) ? eventType.id : null,
+        (eventTypes) ? eventTypes.map(et => et.id) : null,
         (speakers) ? speakers.map(s => s.id) : null,
         (companies) ? companies.map(c => c.id) : null))
       .subscribe(data => {
@@ -249,12 +249,12 @@ export class OlapStatisticsComponent implements OnInit {
 
   onEventTypeChange() {
     this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-      this.selectedOrganizer, this.selectedEventType, this.selectedSpeakers, this.selectedCompanies);
+      this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
   }
 
   onLanguageChange() {
     const currentSelectedOrganizer = this.selectedOrganizer;
-    const currentSelectedEventType = this.selectedEventType;
+    const currentSelectedEventTypes = this.selectedEventTypes;
 
     this.organizerService.getOrganizers()
       .subscribe(organizerData => {
@@ -267,13 +267,13 @@ export class OlapStatisticsComponent implements OnInit {
             this.fillEventTypes(eventTypesData);
 
             if (this.eventTypes.length > 0) {
-              this.selectedEventType = (currentSelectedEventType) ? findEventTypeById(currentSelectedEventType.id, this.eventTypes) : null;
+              this.selectedEventTypes = (currentSelectedEventTypes) ? findEventTypesByIds(currentSelectedEventTypes.map(et => et.id), this.eventTypes) : [];
             } else {
-              this.selectedEventType = null;
+              this.selectedEventTypes = [];
             }
 
             this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-              this.selectedOrganizer, this.selectedEventType, this.selectedSpeakers, this.selectedCompanies);
+              this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
           });
       });
   }
@@ -288,13 +288,13 @@ export class OlapStatisticsComponent implements OnInit {
         this.selectedMeasureType = (measureTypeData && (measureTypeData.length > 0)) ? measureTypeData[0] : null;
 
         this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-          this.selectedOrganizer, this.selectedEventType, this.selectedSpeakers, this.selectedCompanies);
+          this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
       });
   }
 
   onMeasureTypeChange() {
     this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-      this.selectedOrganizer, this.selectedEventType, this.selectedSpeakers, this.selectedCompanies);
+      this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
   }
 
   isSpeakersVisible(): boolean {
@@ -315,12 +315,12 @@ export class OlapStatisticsComponent implements OnInit {
 
   selectSpeaker(event) {
     this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-      this.selectedOrganizer, this.selectedEventType, this.selectedSpeakers, this.selectedCompanies);
+      this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
   }
 
   unselectSpeaker(event) {
     this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-      this.selectedOrganizer, this.selectedEventType, this.selectedSpeakers, this.selectedCompanies);
+      this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
   }
 
   companySearch(event) {
@@ -333,12 +333,12 @@ export class OlapStatisticsComponent implements OnInit {
 
   selectCompany(event) {
     this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-      this.selectedOrganizer, this.selectedEventType, this.selectedSpeakers, this.selectedCompanies);
+      this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
   }
 
   unselectCompany(event) {
     this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-      this.selectedOrganizer, this.selectedEventType, this.selectedSpeakers, this.selectedCompanies);
+      this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
   }
 
   isNoEventTypesDataFoundVisible() {

@@ -8,7 +8,7 @@ export class OlapParameters {
     public conferences?: boolean,
     public meetups?: boolean,
     public organizerId?: number,
-    public eventTypeId?: number,
+    public eventTypeIds?: number[],
     public speakerIds?: number[],
     public companyIds?: number[]
   ) {

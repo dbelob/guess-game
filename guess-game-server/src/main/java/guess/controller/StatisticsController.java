@@ -136,7 +136,7 @@ public class StatisticsController {
     public OlapStatisticsDto getOlapStatistics(@RequestBody OlapParametersDto olapParameters, HttpSession httpSession) {
         var olapStatistics = olapService.getOlapStatistics(olapParameters.getCubeType(), olapParameters.getMeasureType(),
                 olapParameters.isConferences(), olapParameters.isMeetups(), olapParameters.getOrganizerId(),
-                olapParameters.getEventTypeId(), olapParameters.getSpeakerIds(), olapParameters.getCompanyIds());
+                olapParameters.getEventTypeIds(), olapParameters.getSpeakerIds(), olapParameters.getCompanyIds());
         var language = localeService.getLanguage(httpSession);
         var olapStatisticsDto = OlapStatisticsDto.convertToDto(olapStatistics, language);
 
