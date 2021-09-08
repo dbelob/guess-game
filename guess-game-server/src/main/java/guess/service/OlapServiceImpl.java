@@ -5,14 +5,10 @@ import guess.domain.source.Company;
 import guess.domain.source.EventType;
 import guess.domain.source.Speaker;
 import guess.domain.statistics.olap.*;
-import guess.domain.statistics.olap.dimension.Dimension;
-import guess.domain.statistics.olap.dimension.DimensionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -74,30 +70,10 @@ public class OlapServiceImpl implements OlapService {
                 .map(v -> (T) v)
                 .sorted()
                 .collect(Collectors.toList());
-        List<OlapEntityMetrics<S>> entityMetricsList = new ArrayList<>();
 
-        // Fill measure values for each entity (first dimension)
-        firstDimensionValues.stream()
-                .parallel()
-                .forEach(firstDimensionValue -> {
-                    List<Long> measureValues = new ArrayList<>();
-
-                    // Fill measure values for each second dimension
-                    secondDimensionValues.stream()
-                            .parallel()
-                            .forEachOrdered(secondDimensionValue -> {
-                                Set<Dimension<?>> dimensions = Set.of(
-                                        DimensionFactory.create(firstDimensionType, firstDimensionValue),
-                                        DimensionFactory.create(DimensionType.YEAR, secondDimensionValue));
-
-                                measureValues.add(cube.getMeasureValue(dimensions, measureType));
-                            });
-
-                    entityMetricsList.add(new OlapEntityMetrics<>(firstDimensionValue, measureValues));
-                });
-//        List<OlapEntityMetrics<S>> entityMetricsList2 = cube.getMeasureValueEntities(
-//                firstDimensionType, firstDimensionValues, DimensionType.YEAR, secondDimensionValues,
-//                measureType, OlapEntityMetrics::new);
+        List<OlapEntityMetrics<S>> entityMetricsList = cube.getMeasureValueEntities(
+                firstDimensionType, firstDimensionValues, DimensionType.YEAR, secondDimensionValues,
+                measureType, OlapEntityMetrics::new);
 
         return new OlapEntityStatistics<>(secondDimensionValues, entityMetricsList);
     }

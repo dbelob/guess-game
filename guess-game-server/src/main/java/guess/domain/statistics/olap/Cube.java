@@ -112,28 +112,6 @@ public class Cube {
         }
     }
 
-    public Long getMeasureValue(Set<Dimension<?>> dimensions, MeasureType measureType) {
-        List<Measure<?>> measures = measureMap.entrySet().stream()
-                .filter(e -> e.getKey().containsAll(dimensions))
-                .map(Map.Entry::getValue)
-                .filter(e -> e.containsKey(measureType))
-                .map(e -> e.get(measureType))
-                .collect(Collectors.toList());
-
-        if (measures.isEmpty()) {
-            return 0L;
-        } else if (measures.size() == 1) {
-            return measures.get(0).calculateValue();
-        } else {
-            Set<Object> measureValues = measures.stream()
-                    .flatMap(m -> m.getEntities().stream())
-                    .collect(Collectors.toSet());
-            Measure<?> measure = MeasureFactory.create(measureType, measureValues);
-
-            return measure.calculateValue();
-        }
-    }
-
     public Long getMeasureValue(List<Measure<?>> measures, MeasureType measureType) {
         if ((measures == null) || measures.isEmpty()) {
             return 0L;
