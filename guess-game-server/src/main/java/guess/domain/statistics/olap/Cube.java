@@ -151,9 +151,12 @@ public class Cube {
                     for (Dimension<?> secondEntryDimension : entryDimensions) {
                         if (secondDimensions.contains(secondEntryDimension)) {
                             S secondDimensionValue = (S) secondEntryDimension.getValue();
-                            List<Measure<?>> measures = measuresBySecondDimensionValue.computeIfAbsent(secondDimensionValue, k -> new ArrayList<>());
+                            Measure<?> measure = entry.getValue().get(measureType);
 
-                            measures.add(entry.getValue().get(measureType));
+                            if (measure != null) {
+                                List<Measure<?>> measures = measuresBySecondDimensionValue.computeIfAbsent(secondDimensionValue, k -> new ArrayList<>());
+                                measures.add(measure);
+                            }
 
                             break;
                         }
