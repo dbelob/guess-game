@@ -128,14 +128,18 @@ public class Cube {
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
-    public <T, S, V> List<V> getMeasureValueEntities(DimensionType firstDimensionType, List<T> firstDimensionValues,
-                                                     DimensionType secondDimensionType, List<S> secondDimensionValues,
-                                                     MeasureType measureType, BiFunction<T, List<Long>, V> entityBiFunction) {
+    public <T, S, U, V> List<V> getMeasureValueEntities(DimensionType firstDimensionType, List<T> firstDimensionValues,
+                                                        DimensionType secondDimensionType, List<S> secondDimensionValues,
+                                                        DimensionType filterDimensionType, List<U> filterDimensionValues,
+                                                        MeasureType measureType, BiFunction<T, List<Long>, V> entityBiFunction) {
         Set<Dimension> firstDimensions = firstDimensionValues.stream()
                 .map(v -> DimensionFactory.create(firstDimensionType, v))
                 .collect(Collectors.toSet());
         Set<Dimension> secondDimensions = secondDimensionValues.stream()
                 .map(v -> DimensionFactory.create(secondDimensionType, v))
+                .collect(Collectors.toSet());
+        Set<Dimension> filterDimensions = filterDimensionValues.stream()
+                .map(v -> DimensionFactory.create(filterDimensionType, v))
                 .collect(Collectors.toSet());
         Map<T, Map<S, List<Measure<?>>>> measuresByFirstDimensionValue = new HashMap<>();
 
@@ -143,19 +147,30 @@ public class Cube {
         for (Map.Entry<Set<Dimension<?>>, Map<MeasureType, Measure<?>>> entry : measureMap.entrySet()) {
             Set<Dimension<?>> entryDimensions = entry.getKey();
 
+            // Search first dimension value
             for (Dimension<?> firstEntryDimension : entryDimensions) {
                 if (firstDimensions.contains(firstEntryDimension)) {
                     T firstDimensionValue = (T) firstEntryDimension.getValue();
                     Map<S, List<Measure<?>>> measuresBySecondDimensionValue = measuresByFirstDimensionValue.computeIfAbsent(firstDimensionValue, k -> new HashMap<>());
 
+                    // Search second dimension value
                     for (Dimension<?> secondEntryDimension : entryDimensions) {
                         if (secondDimensions.contains(secondEntryDimension)) {
-                            S secondDimensionValue = (S) secondEntryDimension.getValue();
-                            Measure<?> measure = entry.getValue().get(measureType);
 
-                            if (measure != null) {
-                                List<Measure<?>> measures = measuresBySecondDimensionValue.computeIfAbsent(secondDimensionValue, k -> new ArrayList<>());
-                                measures.add(measure);
+                            // Filter by values of third dimension
+                            for (Dimension<?> thirdEntryDimension : entryDimensions) {
+                                if (filterDimensions.contains(thirdEntryDimension)) {
+                                    Measure<?> measure = entry.getValue().get(measureType);
+
+                                    if (measure != null) {
+                                        S secondDimensionValue = (S) secondEntryDimension.getValue();
+                                        List<Measure<?>> measures = measuresBySecondDimensionValue.computeIfAbsent(secondDimensionValue, k -> new ArrayList<>());
+
+                                        measures.add(measure);
+                                    }
+
+                                    break;
+                                }
                             }
 
                             break;
