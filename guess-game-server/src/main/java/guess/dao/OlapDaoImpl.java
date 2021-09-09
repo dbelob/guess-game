@@ -29,18 +29,17 @@ public class OlapDaoImpl implements OlapDao {
         Cube eventTypesCube = new Cube(
                 new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.YEAR)),
                 new LinkedHashSet<>(Arrays.asList(MeasureType.EVENTS_QUANTITY, MeasureType.DURATION,
-                        MeasureType.TALKS_QUANTITY, MeasureType.SPEAKERS_QUANTITY,
-                        MeasureType.JAVA_CHAMPIONS_QUANTITY, MeasureType.MVPS_QUANTITY)));
+                        MeasureType.TALKS_QUANTITY, MeasureType.SPEAKERS_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY,
+                        MeasureType.MVPS_QUANTITY)));
         Cube speakersCube = new Cube(
                 new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.SPEAKER, DimensionType.YEAR)),
                 new LinkedHashSet<>(Arrays.asList(MeasureType.TALKS_QUANTITY, MeasureType.EVENTS_QUANTITY,
-                        MeasureType.EVENT_TYPES_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY,
-                        MeasureType.MVPS_QUANTITY)));
+                        MeasureType.EVENT_TYPES_QUANTITY)));
         Cube companiesCube = new Cube(
                 new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.COMPANY, DimensionType.YEAR)),
                 new LinkedHashSet<>(Arrays.asList(MeasureType.SPEAKERS_QUANTITY, MeasureType.TALKS_QUANTITY,
-                        MeasureType.EVENTS_QUANTITY, MeasureType.EVENT_TYPES_QUANTITY,
-                        MeasureType.JAVA_CHAMPIONS_QUANTITY, MeasureType.MVPS_QUANTITY)));
+                        MeasureType.EVENTS_QUANTITY, MeasureType.EVENT_TYPES_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY,
+                        MeasureType.MVPS_QUANTITY)));
 
         cubes.put(CubeType.EVENT_TYPES, eventTypesCube);
         cubes.put(CubeType.SPEAKERS, speakersCube);
@@ -140,12 +139,10 @@ public class OlapDaoImpl implements OlapDao {
 
                         if (speaker.isJavaChampion()) {
                             eventTypesCube.addMeasureEntity(eventTypeAndYearDimensions, MeasureType.JAVA_CHAMPIONS_QUANTITY, speaker);
-                            speakersCube.addMeasureEntity(eventTypeAndSpeakerAndYearDimensions, MeasureType.JAVA_CHAMPIONS_QUANTITY, speaker);
                         }
 
                         if (speaker.isAnyMvp()) {
                             eventTypesCube.addMeasureEntity(eventTypeAndYearDimensions, MeasureType.MVPS_QUANTITY, speaker);
-                            speakersCube.addMeasureEntity(eventTypeAndSpeakerAndYearDimensions, MeasureType.MVPS_QUANTITY, speaker);
                         }
 
                         for (Company company : speaker.getCompanies()) {
