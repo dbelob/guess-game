@@ -74,10 +74,10 @@ public class OlapServiceImpl implements OlapService {
                 .filter(filterDimensionPredicate)
                 .collect(Collectors.toList());
 
-        List<OlapEntityMetrics<S>> entityMetricsList = cube.getMeasureValueEntities(
+        return cube.getMeasureValueEntities(
                 firstDimensionType, firstDimensionValues, DimensionType.YEAR, secondDimensionValues,
-                DimensionType.EVENT_TYPE, filterDimensionValues, measureType, OlapEntityMetrics::new);
-
-        return new OlapEntityStatistics<>(secondDimensionValues, entityMetricsList);
+                DimensionType.EVENT_TYPE, filterDimensionValues, measureType, OlapEntityMetrics::new,
+                (measureValues, total) -> new OlapEntityMetrics<Void>(null, measureValues, total),
+                OlapEntityStatistics::new);
     }
 }

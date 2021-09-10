@@ -8,10 +8,12 @@ import java.util.List;
 public class OlapEntityStatistics<T, S> {
     private final List<T> dimensionValues;
     private final List<OlapEntityMetrics<S>> metricsList;
+    private final OlapEntityMetrics<Void> totals;
 
-    public OlapEntityStatistics(List<T> dimensionValues, List<OlapEntityMetrics<S>> metricsList) {
+    public OlapEntityStatistics(List<T> dimensionValues, List<OlapEntityMetrics<S>> metricsList, OlapEntityMetrics<Void> totals) {
         this.dimensionValues = dimensionValues;
         this.metricsList = metricsList;
+        this.totals = totals;
     }
 
     public List<T> getDimensionValues() {
@@ -20,5 +22,9 @@ public class OlapEntityStatistics<T, S> {
 
     public List<OlapEntityMetrics<S>> getMetricsList() {
         return metricsList;
+    }
+
+    public OlapEntityMetrics<Void> getTotals() {
+        return totals;
     }
 }

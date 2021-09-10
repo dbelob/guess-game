@@ -8,10 +8,12 @@ import java.util.List;
 public class OlapEntityMetrics<T> {
     private final T entity;
     private final List<Long> measureValues;
+    private final Long total;
 
-    public OlapEntityMetrics(T entity, List<Long> measureValues) {
+    public OlapEntityMetrics(T entity, List<Long> measureValues, Long total) {
         this.entity = entity;
         this.measureValues = measureValues;
+        this.total = total;
     }
 
     public T getEntity() {
@@ -20,5 +22,9 @@ public class OlapEntityMetrics<T> {
 
     public List<Long> getMeasureValues() {
         return measureValues;
+    }
+
+    public Long getTotal() {
+        return total;
     }
 }

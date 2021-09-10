@@ -4,6 +4,7 @@ import guess.domain.statistics.olap.dimension.Dimension;
 import guess.domain.statistics.olap.dimension.DimensionFactory;
 import guess.domain.statistics.olap.measure.Measure;
 import guess.domain.statistics.olap.measure.MeasureFactory;
+import org.apache.commons.lang3.function.TriFunction;
 
 import java.util.*;
 import java.util.function.BiFunction;
@@ -128,10 +129,12 @@ public class Cube {
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
-    public <T, S, U, V> List<V> getMeasureValueEntities(DimensionType firstDimensionType, List<T> firstDimensionValues,
+    public <T, S, U, V, W, Y> Y getMeasureValueEntities(DimensionType firstDimensionType, List<T> firstDimensionValues,
                                                         DimensionType secondDimensionType, List<S> secondDimensionValues,
                                                         DimensionType filterDimensionType, List<U> filterDimensionValues,
-                                                        MeasureType measureType, BiFunction<T, List<Long>, V> entityBiFunction) {
+                                                        MeasureType measureType, TriFunction<T, List<Long>, Long, V> entityTriFunction,
+                                                        BiFunction<List<Long>, Long, W> totalsBiFunction,
+                                                        TriFunction<List<S>, List<V>, W, Y> resultTriFunction) {
         Set<Dimension> firstDimensions = firstDimensionValues.stream()
                 .map(v -> DimensionFactory.create(firstDimensionType, v))
                 .collect(Collectors.toSet());
@@ -200,9 +203,14 @@ public class Cube {
                 }
             }
 
-            measureValueEntities.add(entityBiFunction.apply(firstDimensionValue, measureValues));
+            //TODO: change
+            measureValueEntities.add(entityTriFunction.apply(firstDimensionValue, measureValues, 0L));
         }
 
-        return measureValueEntities;
+        //TODO: change
+        return resultTriFunction.apply(
+                secondDimensionValues,
+                measureValueEntities,
+                totalsBiFunction.apply(Collections.emptyList(), 0L));
     }
 }
