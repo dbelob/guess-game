@@ -16,8 +16,8 @@ public class OlapCompanyMetricsDto extends OlapEntityMetricsDto {
     private final long id;
     private final String name;
 
-    public OlapCompanyMetricsDto(long id, String name, List<Long> measureValues) {
-        super(measureValues);
+    public OlapCompanyMetricsDto(long id, String name, List<Long> measureValues, Long total) {
+        super(measureValues, total);
 
         this.id = id;
         this.name = name;
@@ -38,7 +38,8 @@ public class OlapCompanyMetricsDto extends OlapEntityMetricsDto {
         return new OlapCompanyMetricsDto(
                 company.getId(),
                 name,
-                companyMetrics.getMeasureValues());
+                companyMetrics.getMeasureValues(),
+                companyMetrics.getTotal());
     }
 
     public static List<OlapCompanyMetricsDto> convertToDto(List<OlapEntityMetrics<Company>> companyMetricsList, Language language) {

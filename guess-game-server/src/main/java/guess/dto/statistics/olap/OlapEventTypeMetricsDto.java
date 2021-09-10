@@ -20,8 +20,8 @@ public class OlapEventTypeMetricsDto extends OlapEntityMetricsDto {
     private final String organizerName;
 
     public OlapEventTypeMetricsDto(long id, String displayName, boolean conference, String logoFileName,
-                                   String organizerName, List<Long> measureValues) {
-        super(measureValues);
+                                   String organizerName, List<Long> measureValues, Long total) {
+        super(measureValues, total);
 
         this.id = id;
         this.displayName = displayName;
@@ -61,7 +61,8 @@ public class OlapEventTypeMetricsDto extends OlapEntityMetricsDto {
                 eventType.isEventTypeConference(),
                 eventType.getLogoFileName(),
                 organizerName,
-                eventTypeMetrics.getMeasureValues());
+                eventTypeMetrics.getMeasureValues(),
+                eventTypeMetrics.getTotal());
     }
 
     public static List<OlapEventTypeMetricsDto> convertToDto(List<OlapEntityMetrics<EventType>> eventTypeMetricsList, Language language) {

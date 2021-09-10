@@ -145,6 +145,8 @@ public class Cube {
                 .map(v -> DimensionFactory.create(filterDimensionType, v))
                 .collect(Collectors.toSet());
         Map<T, Map<S, List<Measure<?>>>> measuresByFirstDimensionValue = new HashMap<>();
+        Map<T, List<Measure<?>>> firstDimensionTotalMeasures = new HashMap<>();
+        Map<S, List<Measure<?>>> secondDimensionTotalMeasures = new HashMap<>();
 
         // Create intermediate measure map
         for (Map.Entry<Set<Dimension<?>>, Map<MeasureType, Measure<?>>> entry : measureMap.entrySet()) {
@@ -167,9 +169,21 @@ public class Cube {
 
                                     if (measure != null) {
                                         S secondDimensionValue = (S) secondEntryDimension.getValue();
-                                        List<Measure<?>> measures = measuresBySecondDimensionValue.computeIfAbsent(secondDimensionValue, k -> new ArrayList<>());
 
-                                        measures.add(measure);
+                                        // Measures of first and second dimension
+                                        measuresBySecondDimensionValue
+                                                .computeIfAbsent(secondDimensionValue, k -> new ArrayList<>())
+                                                .add(measure);
+
+                                        // Measures for total of first dimension
+                                        firstDimensionTotalMeasures
+                                                .computeIfAbsent(firstDimensionValue, k -> new ArrayList<>())
+                                                .add(measure);
+
+                                        // Measures for total of second dimension
+                                        secondDimensionTotalMeasures
+                                                .computeIfAbsent(secondDimensionValue, k -> new ArrayList<>())
+                                                .add(measure);
                                     }
 
                                     break;
@@ -203,14 +217,30 @@ public class Cube {
                 }
             }
 
-            //TODO: change
-            measureValueEntities.add(entityTriFunction.apply(firstDimensionValue, measureValues, 0L));
+            List<Measure<?>> measures = firstDimensionTotalMeasures.get(firstDimensionValue);
+            Long total = getMeasureValue(measures, measureType);
+
+            measureValueEntities.add(entityTriFunction.apply(firstDimensionValue, measureValues, total));
         }
 
-        //TODO: change
+        // Fill totals
+        List<Long> totals = new ArrayList<>();
+        List<Measure<?>> allTotalMeasures = new ArrayList<>();
+
+        for (S secondDimensionValue : secondDimensionValues) {
+            List<Measure<?>> measures = secondDimensionTotalMeasures.get(secondDimensionValue);
+            Long total = getMeasureValue(measures, measureType);
+
+            totals.add(total);
+            allTotalMeasures.addAll(measures);
+        }
+
+        // Fill all total
+        Long allTotal = getMeasureValue(allTotalMeasures, measureType);
+
         return resultTriFunction.apply(
                 secondDimensionValues,
                 measureValueEntities,
-                totalsBiFunction.apply(Collections.emptyList(), 0L));
+                totalsBiFunction.apply(totals, allTotal));
     }
 }

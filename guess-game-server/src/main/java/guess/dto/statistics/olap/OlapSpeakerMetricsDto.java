@@ -18,8 +18,8 @@ public class OlapSpeakerMetricsDto extends OlapEntityMetricsDto {
     private final String name;
     private final String photoFileName;
 
-    public OlapSpeakerMetricsDto(long id, String name, String photoFileName, List<Long> measureValues) {
-        super(measureValues);
+    public OlapSpeakerMetricsDto(long id, String name, String photoFileName, List<Long> measureValues, Long total) {
+        super(measureValues, total);
 
         this.id = id;
         this.name = name;
@@ -46,7 +46,8 @@ public class OlapSpeakerMetricsDto extends OlapEntityMetricsDto {
                 speaker.getId(),
                 name,
                 speaker.getPhotoFileName(),
-                speakerMetrics.getMeasureValues());
+                speakerMetrics.getMeasureValues(),
+                speakerMetrics.getTotal());
     }
 
     public static List<OlapSpeakerMetricsDto> convertToDto(List<OlapEntityMetrics<Speaker>> speakerMetricsList, Language language) {
