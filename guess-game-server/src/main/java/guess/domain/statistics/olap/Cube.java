@@ -232,7 +232,10 @@ public class Cube {
             Long total = getMeasureValue(measures, measureType);
 
             totals.add(total);
-            allTotalMeasures.addAll(measures);
+
+            if (measures != null) {
+                allTotalMeasures.addAll(measures);
+            }
         }
 
         // Fill all total
