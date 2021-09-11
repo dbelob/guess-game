@@ -133,6 +133,9 @@
             <th class="text-center" pResizableColumn *ngFor="let dimensionValue of olapStatistics.eventTypeStatistics.dimensionValues">
               {{dimensionValue}}
             </th>
+            <th class="text-center" pResizableColumn>
+              {{'common.table.totalsText' | translate}}
+            </th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-eventTypeMetrics let-i = "rowIndex">
@@ -156,7 +159,17 @@
             <td *ngFor="let measureValue of eventTypeMetrics.measureValues" class="text-center">
               {{measureValue}}
             </td>
+            <td class="text-center total-column">{{eventTypeMetrics.total}}</td>
           <tr>
+        </ng-template>
+        <ng-template pTemplate="footer">
+          <tr>
+            <td colspan="4">{{'common.table.totalsText' | translate}}</td>
+            <td *ngFor="let measureValue of olapStatistics.eventTypeStatistics.totals.measureValues" class="text-center">
+              {{measureValue}}
+            </td>
+            <td class="text-center">{{olapStatistics.eventTypeStatistics.totals.total}}</td>
+          </tr>
         </ng-template>
       </p-table>
     </div>
@@ -178,6 +191,9 @@
             <th class="text-center" pResizableColumn *ngFor="let dimensionValue of olapStatistics.speakerStatistics.dimensionValues">
               {{dimensionValue}}
             </th>
+            <th class="text-center" pResizableColumn>
+              {{'common.table.totalsText' | translate}}
+            </th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-speakerMetrics let-i = "rowIndex">
@@ -192,7 +208,17 @@
             <td *ngFor="let measureValue of speakerMetrics.measureValues" class="text-center">
               {{measureValue}}
             </td>
+            <td class="text-center total-column">{{speakerMetrics.total}}</td>
           <tr>
+        </ng-template>
+        <ng-template pTemplate="footer">
+          <tr>
+            <td colspan="2">{{'common.table.totalsText' | translate}}</td>
+            <td *ngFor="let measureValue of olapStatistics.speakerStatistics.totals.measureValues" class="text-center">
+              {{measureValue}}
+            </td>
+            <td class="text-center">{{olapStatistics.speakerStatistics.totals.total}}</td>
+          </tr>
         </ng-template>
       </p-table>
     </div>
@@ -214,6 +240,9 @@
             <th class="text-center" pResizableColumn *ngFor="let dimensionValue of olapStatistics.companyStatistics.dimensionValues">
               {{dimensionValue}}
             </th>
+            <th class="text-center" pResizableColumn>
+              {{'common.table.totalsText' | translate}}
+            </th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-companyMetrics let-i = "rowIndex">
@@ -223,7 +252,17 @@
             <td *ngFor="let measureValue of companyMetrics.measureValues" class="text-center">
               {{measureValue}}
             </td>
+            <td class="text-center total-column">{{companyMetrics.total}}</td>
           <tr>
+        </ng-template>
+        <ng-template pTemplate="footer">
+          <tr>
+            <td colspan="2">{{'common.table.totalsText' | translate}}</td>
+            <td *ngFor="let measureValue of olapStatistics.companyStatistics.totals.measureValues" class="text-center">
+              {{measureValue}}
+            </td>
+            <td class="text-center">{{olapStatistics.companyStatistics.totals.total}}</td>
+          </tr>
         </ng-template>
       </p-table>
     </div>
