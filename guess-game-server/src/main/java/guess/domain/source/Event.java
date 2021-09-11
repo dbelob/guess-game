@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -175,16 +174,12 @@ public class Event extends Nameable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        var event = (Event) o;
-        return Objects.equals(eventType, event.eventType) &&
-                Objects.equals(startDate, event.startDate);
+        return super.equals(o);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eventType, startDate);
+        return super.hashCode();
     }
 
     @Override

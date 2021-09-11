@@ -36,11 +36,11 @@ public abstract class Dimension<T> {
         if (this == o) return true;
         if (!(o instanceof Dimension)) return false;
         Dimension<?> dimension = (Dimension<?>) o;
-        return Objects.equals(getValue(), dimension.getValue());
+        return Objects.equals(valueClass, dimension.valueClass) && Objects.equals(getValue(), dimension.getValue());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getValue());
+        return Objects.hash(valueClass, getValue());
     }
 }
