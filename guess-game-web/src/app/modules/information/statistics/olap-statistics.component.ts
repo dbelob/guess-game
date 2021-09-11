@@ -77,7 +77,11 @@ export class OlapStatisticsComponent implements OnInit {
               public translateService: TranslateService, private speakerService: SpeakerService,
               private companyService: CompanyService) {
     this.eventTypeMultiSortMeta.push({field: 'sortName', order: 1});
+
+    this.speakerMultiSortMeta.push({field: 'total', order: -1});
     this.speakerMultiSortMeta.push({field: 'name', order: 1});
+
+    this.companyMultiSortMeta.push({field: 'total', order: -1});
     this.companyMultiSortMeta.push({field: 'name', order: 1});
   }
 

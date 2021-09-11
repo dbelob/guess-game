@@ -133,8 +133,9 @@
             <th class="text-center" pResizableColumn *ngFor="let dimensionValue of olapStatistics.eventTypeStatistics.dimensionValues">
               {{dimensionValue}}
             </th>
-            <th class="text-center" pResizableColumn>
+            <th class="text-center" [pSortableColumn]="'total'" pResizableColumn>
               {{'common.table.totalsText' | translate}}
+              <p-sortIcon [field]="'total'"></p-sortIcon>
             </th>
           </tr>
         </ng-template>
@@ -191,8 +192,9 @@
             <th class="text-center" pResizableColumn *ngFor="let dimensionValue of olapStatistics.speakerStatistics.dimensionValues">
               {{dimensionValue}}
             </th>
-            <th class="text-center" pResizableColumn>
+            <th class="text-center" [pSortableColumn]="'total'" pResizableColumn>
               {{'common.table.totalsText' | translate}}
+              <p-sortIcon [field]="'total'"></p-sortIcon>
             </th>
           </tr>
         </ng-template>
@@ -240,8 +242,9 @@
             <th class="text-center" pResizableColumn *ngFor="let dimensionValue of olapStatistics.companyStatistics.dimensionValues">
               {{dimensionValue}}
             </th>
-            <th class="text-center" pResizableColumn>
+            <th class="text-center" [pSortableColumn]="'total'" pResizableColumn>
               {{'common.table.totalsText' | translate}}
+              <p-sortIcon [field]="'total'"></p-sortIcon>
             </th>
           </tr>
         </ng-template>
