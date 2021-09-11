@@ -154,18 +154,21 @@ class StatisticsServiceImplTest {
         talk2.setSpeakers(List.of(speaker2));
 
         event0 = new Event();
+        event0.setId(0);
         event0.setEventType(eventType0);
         event0.setStartDate(EVENT_START_DATE0);
         event0.setEndDate(EVENT_END_DATE0);
         event0.setTalks(List.of(talk0));
 
         event1 = new Event();
+        event1.setId(1);
         event1.setEventType(eventType1);
         event1.setStartDate(EVENT_START_DATE1);
         event1.setEndDate(EVENT_END_DATE1);
         event1.setTalks(List.of(talk1));
 
         event2 = new Event();
+        event2.setId(2);
         event2.setEventType(eventType2);
         event2.setStartDate(EVENT_START_DATE2);
         event2.setEndDate(EVENT_END_DATE2);
