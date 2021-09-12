@@ -6976,7 +6976,9 @@ speakers:
             \ «гильдийное» время, которое (совместно со свободным временем) используется для изучения «кишочков», особенно\
             \ того, что касается concurrency, ведь чтобы узнать что-то хорошо, надо копнуть как минимум на уровень глубже\
             , чем используешь."}
+    twitter: m08pvv
     gitHub: m08pvv
+    habr: m08pvv
   - id: 478
     photoFileName: 0478.jpg
     name:
@@ -7948,7 +7950,7 @@ speakers:
     companyIds: [425]
     bio:
       - {language: en, text: "Artem works in web app testing automation for more than 8 years. He has worked in different\
-            \ teams and occupied different positions up to the head of the automation testing group. Artem has a vast experience\
+            \ teams and occupied different positions up to the head of the automation testing group. Artem has vast experience\
             \ with popular tools (Selenium, HtmlElements, Allure, Jenkins). He codes mostly in Java and Groovy."}
       - {language: ru, text: "Более 8 лет занимается автоматизацией тестирования веб-приложений. За это время работал в ра\
             зных командах и в разных ролях: автоматизатор тестирования, менеджер команды разработки инструментов тестирова\
@@ -8863,15 +8865,14 @@ speakers:
     companyIds: [702]
     bio:
       - language: en
-        text: "Vsevolod has more than 11 years in IT industry.\nHe tried his hands at different roles and directions. He worked\
-            \ with automated testing, fullstack development in different languages. Some time ago he lived in California and\
-            \ worked under contract at Google. Managed to work with various clients from financial sector. Worked at NEO SPCC\
-            \ startup where he was developing on Go."
-      - language: ru
-        text: "Более 11 лет в ИТ.\nПопробовал себя в разных ролях и направлениях. Занимался автоматизированным тестировани\
-            ем, фулстэк разработкой на различных языках. Какое-то время жил в Калифорнии и работал по контракту в Google.\
-            \ Успел поработать с различными клиентами из финансовой сферы. Работал в стартапе NEO SPCC, где занимался разр\
-            аботкой на Go."
+        text: "Vsevolod has more than 10 years in IT industry.\nHe worked with automated testing, fullstack development in\
+            \ different languages. Some time ago he lived in California and worked under contract at Google. Managed to work\
+            \ with various clients from financial sector. He worked at NEO SPCC startup where he was engaged in development\
+            \ on Go."
+      - {language: ru, text: "Более 10 лет в ИТ. Попробовал себя в разных ролях и направлениях. Занимался автоматизированн\
+            ым тестированием, фулстэк-разработкой на различных языках. Какое-то время жил в Калифорнии и работал по контра\
+            кту в Google. Успел поработать с различными клиентами из финансовой сферы. Работал в стартапе NEO SPCC, где за\
+            нимался разработкой на Go."}
     twitter: brekelov
     gitHub: volekerb
     habr: vbrekelov
@@ -21554,20 +21555,21 @@ speakers:
     photoFileName: 1561.jpg
     photoUpdatedAt: 2021-04-06T07:23:48.119Z[UTC]
     name:
-      - {language: en, text: "Lilia Valeyko"}
+      - {language: en, text: "Lilia Valeiko"}
       - {language: ru, text: "Лилия Валейко"}
     companyIds: [141]
     bio:
       - language: en
         text: "QA Automation Lead.\nDeutsche Bank Technology Centre employee. \nShe has been working in test automation since\
-            \ 2014. Now Lilia develops automation systems from scratch with the following implementation.\nLilia leads the\
-            \ team dedicated to testing automation for the launch and aggregation of internal business applications in a huge\
-            \ bank platform. \nAnnually Lilia shares her experience at testing conferences (CEE - SECR, SQA Days, TestCon)."
+            \ 2014. Now Lilia develops automation systems from scratch with following implementation.\nLilia leads the team\
+            \ dedicated to test automation for launch and aggregation of internal business applications in a huge bank platform.\
+            \ \nAnnually Lilia shares her experience at testing conferences (CEE - SECR, SQA Days, TestCon)."
       - language: ru
-        text: "Сотрудник Технологического Центра Дойче Банка. В автоматизации тестирования с 2014 года. Занимается разрабо\
-            ткой систем автоматизации с нуля и их внедрением.\r\nСейчас Лилия руководит командой, занимающейся автоматизац\
-            ией тестирования в крупной платформе банка для агрегации и запуска внутренних бизнес-приложений.\r\nЛилия ежег\
-            одно делится своим опытом на конференциях в секциях, посвященных тестированию (CEE - SECR, SQA Days, TestCon)."
+        text: "QA Automation Lead.\nСотрудник Технологического Центра Дойче Банка. В автоматизации тестирования с 2014 год\
+            а. Занимается разработкой систем автоматизации с нуля и их внедрением.\nСейчас Лилия руководит командой, заним\
+            ающейся автоматизацией тестирования в крупной платформе банка для агрегации и запуска внутренних бизнес-прилож\
+            ений.\nЛилия ежегодно делится своим опытом на конференциях в секциях, посвященных тестированию (CEE - SECR, SQA\
+            \ Days, TestCon)."
   - id: 1562
     photoFileName: 1562.jpg
     photoUpdatedAt: 2021-04-05T13:12:54.144Z[UTC]
@@ -21577,10 +21579,10 @@ speakers:
     companyIds: [141]
     bio:
       - language: en
-        text: "Full-stack Developer.\nDeutsche Bank Technology Centre employee. \nHas been developing backend since 2011.\
-            \ Now he creates a mobile application in Autobahn-platform for Deutsche Bank Group."
+        text: "Full-stack Developer.\nDeutsche Bank Technology Centre employee. \nHe has been developing backend since 2011.\
+            \ Now he creates mobile application in Autobahn-platform for Deutsche Bank Group."
       - language: ru
-        text: "Full-stack Developer.\nСотрудник Технологического Центра Дойче Банка. Разрабатывает бэкенд с 2011 года. Сей\
+        text: "Full-stack Developer.\nСотрудник Технологического Центра Дойче Банка. Разрабатывает бекенд с 2011 года. Сей\
             час участвует в создании мобильного приложения внутри Autobahn-платформы для группы Дойче Банк."
   - id: 1563
     photoFileName: 1563.jpg
@@ -21600,7 +21602,7 @@ speakers:
             анды, создающей суперсервис «Мои субсидии». \nДо Android занимался backend-разработкой на Java, Python. Являет\
             ся автором Text-To-Speech-системы для пилотного исследования по обучению детей английскому языку при помощи ан\
             тропоморфного робота (DOI: 10.1109/DeSE.2019.00055)."
-    gitHub: m08pvv
+    gitHub: valeryvpetrov-dev
   - id: 1564
     photoFileName: 1564.jpg
     photoUpdatedAt: 2021-03-03T09:03:50.469Z[UTC]
