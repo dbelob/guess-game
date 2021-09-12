@@ -402,6 +402,7 @@ eventTypes:
             \ systems given by renowned experts in the field."}
     siteLink:
       - {language: en, text: "https://sptdc.ru/"}
+    youtubeLink: https://www.youtube.com/channel/UCYoIFJ96Kn_Ziayw8av-IAA
     timeZone: Europe/Moscow
   - id: 12
     conference: TECH_TRAIN
