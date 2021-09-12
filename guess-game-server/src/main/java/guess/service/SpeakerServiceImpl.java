@@ -30,6 +30,11 @@ public class SpeakerServiceImpl implements SpeakerService {
     }
 
     @Override
+    public List<Speaker> getSpeakerByIds(List<Long> ids) {
+        return speakerDao.getSpeakerByIds(ids);
+    }
+
+    @Override
     public List<Speaker> getSpeakersByFirstLetter(String firstLetter, Language language) {
         return speakerDao.getSpeakers().stream()
                 .filter(s -> {

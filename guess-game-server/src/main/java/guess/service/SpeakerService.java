@@ -11,6 +11,8 @@ import java.util.List;
 public interface SpeakerService {
     Speaker getSpeakerById(long id);
 
+    List<Speaker> getSpeakerByIds(List<Long> ids);
+
     List<Speaker> getSpeakersByFirstLetter(String firstLetter, Language language);
 
     List<Speaker> getSpeakersByFirstLetters(String firstLetters, Language language);

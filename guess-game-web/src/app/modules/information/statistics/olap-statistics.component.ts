@@ -221,6 +221,14 @@ export class OlapStatisticsComponent implements OnInit {
       });
   }
 
+  loadSpeakers() {
+    // TODO: implement
+  }
+
+  loadCompanies() {
+    // TODO: implement
+  }
+
   loadOlapStatistics(cubeType: CubeType, measureType: MeasureType, isConferences: boolean, isMeetups: boolean,
                      organizer: Organizer, eventTypes: EventType[], speakers: Speaker[], companies: Company[]) {
     this.statisticsService.getOlapStatistics(
@@ -275,6 +283,8 @@ export class OlapStatisticsComponent implements OnInit {
             } else {
               this.selectedEventTypes = [];
             }
+
+            // TODO: load selected speakers or companies
 
             this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
               this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);

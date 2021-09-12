@@ -1,16 +1,14 @@
 package guess.controller;
 
 import guess.domain.source.Company;
+import guess.dto.common.SelectedEntitiesDto;
 import guess.dto.company.CompanyDto;
 import guess.service.CompanyService;
 import guess.service.LocaleService;
 import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Comparator;
@@ -41,6 +39,15 @@ public class CompanyController {
         return CompanyDto.convertToDto(companies, language).stream()
                 .sorted(Comparator.comparing(CompanyDto::getName, String.CASE_INSENSITIVE_ORDER))
                 .collect(Collectors.toList());
+    }
+
+    @PostMapping("/selected-companies")
+    @ResponseBody
+    public List<CompanyDto> getSelectedCompanies(@RequestBody SelectedEntitiesDto selectedEntities, HttpSession httpSession) {
+        var language = localeService.getLanguage(httpSession);
+        List<Company> companies = companyService.getCompaniesByIds(selectedEntities.getIds());
+
+        return CompanyDto.convertToDto(companies, language);
     }
 
     @GetMapping("/first-letters-company-names")

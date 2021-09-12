@@ -11,4 +11,6 @@ public interface SpeakerDao {
     List<Speaker> getSpeakers();
 
     Speaker getSpeakerById(long id);
+
+    List<Speaker> getSpeakerByIds(List<Long> ids);
 }

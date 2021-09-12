@@ -28,6 +28,11 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
+    public List<Company> getCompaniesByIds(List<Long> ids) {
+        return companyDao.getCompaniesByIds(ids);
+    }
+
+    @Override
     public List<Company> getCompaniesByFirstLetters(String firstLetters, Language language) {
         String lowerCaseFirstLetters = (firstLetters != null) ? firstLetters.toLowerCase() : "";
 

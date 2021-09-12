@@ -2,6 +2,7 @@ package guess.controller;
 
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
+import guess.dto.common.SelectedEntitiesDto;
 import guess.dto.company.CompanyDto;
 import guess.dto.speaker.SpeakerBriefDto;
 import guess.dto.speaker.SpeakerDetailsDto;
@@ -63,6 +64,23 @@ public class SpeakerController {
         List<SpeakerBriefDto> speakerBriefDtoList = convertToBriefDtoAndSort(
                 speakers,
                 s -> SpeakerBriefDto.convertToBriefDto(s, language, speakerDuplicates));
+
+        return speakerBriefDtoList.stream()
+                .map(s -> new SpeakerSuperBriefDto(s.getId(), s.getDisplayName()))
+                .collect(Collectors.toList());
+    }
+
+    @PostMapping("/selected-speakers")
+    @ResponseBody
+    public List<SpeakerSuperBriefDto> getSelectedSpeakers(@RequestBody SelectedEntitiesDto selectedEntities, HttpSession httpSession) {
+        var language = localeService.getLanguage(httpSession);
+        List<Speaker> speakers = speakerService.getSpeakerByIds(selectedEntities.getIds());
+        Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
+                speakers,
+                s -> LocalizationUtils.getString(s.getName(), language),
+                s -> true);
+
+        List<SpeakerBriefDto> speakerBriefDtoList = SpeakerBriefDto.convertToBriefDto(speakers, language, speakerDuplicates);
 
         return speakerBriefDtoList.stream()
                 .map(s -> new SpeakerSuperBriefDto(s.getId(), s.getDisplayName()))
