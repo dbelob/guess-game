@@ -149,11 +149,17 @@ public class StatisticsController {
         }
 
         if (olapStatisticsDto.getSpeakerStatistics() != null) {
-            olapStatisticsDto.getSpeakerStatistics().getMetricsList().sort(Comparator.comparing(OlapSpeakerMetricsDto::getName, String.CASE_INSENSITIVE_ORDER));
+            Comparator<OlapSpeakerMetricsDto> comparatorByTotal = Comparator.comparing(OlapSpeakerMetricsDto::getTotal).reversed();
+            Comparator<OlapSpeakerMetricsDto> comparatorByName = Comparator.comparing(OlapSpeakerMetricsDto::getName, String.CASE_INSENSITIVE_ORDER);
+
+            olapStatisticsDto.getSpeakerStatistics().getMetricsList().sort(comparatorByTotal.thenComparing(comparatorByName));
         }
 
         if (olapStatisticsDto.getCompanyStatistics() != null) {
-            olapStatisticsDto.getCompanyStatistics().getMetricsList().sort(Comparator.comparing(OlapCompanyMetricsDto::getName, String.CASE_INSENSITIVE_ORDER));
+            Comparator<OlapCompanyMetricsDto> comparatorByTotal = Comparator.comparing(OlapCompanyMetricsDto::getTotal).reversed();
+            Comparator<OlapCompanyMetricsDto> comparatorByName = Comparator.comparing(OlapCompanyMetricsDto::getName, String.CASE_INSENSITIVE_ORDER);
+
+            olapStatisticsDto.getCompanyStatistics().getMetricsList().sort(comparatorByTotal.thenComparing(comparatorByName));
         }
 
         return olapStatisticsDto;
