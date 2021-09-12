@@ -439,8 +439,9 @@ events:
     startDate: "2021-04-06"
     endDate: "2021-04-09"
     siteLink:
+      - {language: en, text: "https://heisenbug-piter.ru/en/"}
       - {language: ru, text: "https://heisenbug-piter.ru/"}
-    youtubeLink: https://live.jugru.org/events/heisenbug/?p=sch100085
+    youtubeLink: https://live.jugru.org/?p=sch100085
     placeId: 24
     talkIds: [2921, 2922, 2923, 2924, 2925, 2926, 2927, 2928, 2929, 2930, 2931, 2955, 2932, 2933, 2951, 2934, 2952, 2935,
               2936, 2937, 2938, 2939, 3022, 2953, 2941, 2942, 2943, 2944, 2945, 2946, 2947, 2954, 2948, 2949, 2950, 3093]
