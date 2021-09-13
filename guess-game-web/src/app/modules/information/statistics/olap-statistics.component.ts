@@ -19,6 +19,7 @@ import { CompanyService } from '../../../shared/services/company.service';
 import {
   findEventTypesByIds,
   findOrganizerById,
+  fixOlapEntityStatistics,
   getOlapEventTypeStatisticsWithSortName
 } from '../../general/utility-functions';
 
@@ -260,6 +261,15 @@ export class OlapStatisticsComponent implements OnInit {
 
           if (this.olapStatistics?.eventTypeStatistics) {
             this.olapStatistics.eventTypeStatistics = getOlapEventTypeStatisticsWithSortName(this.olapStatistics.eventTypeStatistics);
+            fixOlapEntityStatistics(this.olapStatistics.eventTypeStatistics)
+          }
+
+          if (this.olapStatistics?.speakerStatistics) {
+            fixOlapEntityStatistics(this.olapStatistics.speakerStatistics)
+          }
+
+          if (this.olapStatistics?.companyStatistics) {
+            fixOlapEntityStatistics(this.olapStatistics.companyStatistics)
           }
         }
       );

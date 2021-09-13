@@ -7,8 +7,9 @@ import { Speaker } from '../../shared/models/speaker/speaker.model';
 import { EventTypeMetrics } from '../../shared/models/statistics/event-type-metrics.model';
 import { EventTypeStatistics } from '../../shared/models/statistics/event-type-statistics.model';
 import { Organizer } from '../../shared/models/organizer/organizer.model';
-import { OlapEntityStatistics } from "../../shared/models/statistics/olap/olap-entity-statistics.model";
-import { OlapEventTypeMetrics } from "../../shared/models/statistics/olap/olap-event-type-metrics.model";
+import { OlapEntityStatistics } from '../../shared/models/statistics/olap/olap-entity-statistics.model';
+import { OlapEventTypeMetrics } from '../../shared/models/statistics/olap/olap-event-type-metrics.model';
+import { OlapEntityMetrics } from '../../shared/models/statistics/olap/olap-entity-metrics.model';
 
 export function isStringEmpty(value: string): boolean {
   return (!value || (value.trim().length <= 0));
@@ -202,4 +203,28 @@ export function getSpeakersWithCompaniesString(speakers: Speaker[]): Speaker[] {
   }
 
   return speakers;
+}
+
+export function getFixedMeasureValues(measureValues: number[], quantity: number): number[] {
+  if (measureValues) {
+    if (measureValues.length < quantity) {
+      return measureValues.concat(Array(quantity - measureValues.length).fill(null))
+    } else if (measureValues.length > quantity) {
+      return measureValues.slice(0, quantity);
+    } else {
+      return measureValues;
+    }
+  } else {
+    return Array(quantity).fill(null);
+  }
+}
+
+export function fixOlapEntityStatistics<T, S extends OlapEntityMetrics>(entityStatistics: OlapEntityStatistics<T, S>) {
+  const quantity = entityStatistics.dimensionValues.length;
+
+  entityStatistics.metricsList.forEach(metrics => {
+    metrics.measureValues = getFixedMeasureValues(metrics.measureValues, quantity);
+  });
+
+  entityStatistics.totals.measureValues = getFixedMeasureValues(entityStatistics.totals.measureValues, quantity);
 }
