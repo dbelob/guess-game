@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Speaker } from '../models/speaker/speaker.model';
 import { SpeakerDetails } from '../models/speaker/speaker-details.model';
+import { SelectedEntities } from '../models/common/selected-entities.model';
 import { MessageService } from '../../modules/message/message.service';
 
 @Injectable({
@@ -33,6 +34,16 @@ export class SpeakerService {
       .set('firstLetters', firstLetters);
 
     return this.http.get<Speaker[]>(`${this.baseUrl}/first-letters-speakers`, {params: params})
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getSelectedSpeakers(selectedEntities: SelectedEntities): Observable<Speaker[]> {
+    return this.http.post<Speaker[]>(`${this.baseUrl}/selected-speakers`, selectedEntities)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

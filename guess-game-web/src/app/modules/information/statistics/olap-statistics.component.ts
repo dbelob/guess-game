@@ -9,6 +9,7 @@ import { OlapParameters } from '../../../shared/models/statistics/olap/olap.para
 import { OlapStatistics } from '../../../shared/models/statistics/olap/olap-statistics.model';
 import { Organizer } from '../../../shared/models/organizer/organizer.model';
 import { Speaker } from '../../../shared/models/speaker/speaker.model';
+import { SelectedEntities } from '../../../shared/models/common/selected-entities.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
 import { OrganizerService } from '../../../shared/services/organizer.service';
@@ -16,9 +17,9 @@ import { StatisticsService } from '../../../shared/services/statistics.service';
 import { SpeakerService } from '../../../shared/services/speaker.service';
 import { CompanyService } from '../../../shared/services/company.service';
 import {
-    findEventTypesByIds,
-    findOrganizerById,
-    getOlapEventTypeStatisticsWithSortName
+  findEventTypesByIds,
+  findOrganizerById,
+  getOlapEventTypeStatisticsWithSortName
 } from '../../general/utility-functions';
 
 @Component({
@@ -221,12 +222,25 @@ export class OlapStatisticsComponent implements OnInit {
       });
   }
 
-  loadSpeakers() {
-    // TODO: implement
-  }
-
-  loadCompanies() {
-    // TODO: implement
+  loadSelectedEntities(complete?: (() => void)) {
+    switch (this.selectedCubeType) {
+      case CubeType.EventTypes:
+        complete();
+        break;
+      case CubeType.Speakers:
+        this.speakerService.getSelectedSpeakers(new SelectedEntities(this.selectedSpeakers.map(s => s.id)))
+          .subscribe(speakersData => {
+            this.selectedSpeakers = speakersData;
+            complete();
+          });
+        break;
+      case CubeType.Companies:
+        this.companyService.getSelectedCompanies(new SelectedEntities(this.selectedCompanies.map(c => c.id)))
+          .subscribe(companiesData => {
+            this.selectedCompanies = companiesData;
+            complete();
+          });
+    }
   }
 
   loadOlapStatistics(cubeType: CubeType, measureType: MeasureType, isConferences: boolean, isMeetups: boolean,
@@ -284,10 +298,10 @@ export class OlapStatisticsComponent implements OnInit {
               this.selectedEventTypes = [];
             }
 
-            // TODO: load selected speakers or companies
-
-            this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-              this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
+            this.loadSelectedEntities(() => {
+              this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
+                this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
+            });
           });
       });
   }
