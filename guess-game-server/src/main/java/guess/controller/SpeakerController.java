@@ -1,5 +1,6 @@
 package guess.controller;
 
+import guess.domain.Language;
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
 import guess.dto.common.SelectedEntitiesDto;
@@ -57,17 +58,8 @@ public class SpeakerController {
     public List<SpeakerSuperBriefDto> getSpeakersByFirstLetters(@RequestParam String firstLetters, HttpSession httpSession) {
         var language = localeService.getLanguage(httpSession);
         List<Speaker> speakers = speakerService.getSpeakersByFirstLetters(firstLetters, language);
-        Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
-                speakers,
-                s -> LocalizationUtils.getString(s.getName(), language),
-                s -> true);
-        List<SpeakerBriefDto> speakerBriefDtoList = convertToBriefDtoAndSort(
-                speakers,
-                s -> SpeakerBriefDto.convertToBriefDto(s, language, speakerDuplicates));
 
-        return speakerBriefDtoList.stream()
-                .map(s -> new SpeakerSuperBriefDto(s.getId(), s.getDisplayName()))
-                .collect(Collectors.toList());
+        return createDuplicatesAndConvertToDtoAndSort(speakers, language);
     }
 
     @PostMapping("/selected-speakers")
@@ -75,16 +67,8 @@ public class SpeakerController {
     public List<SpeakerSuperBriefDto> getSelectedSpeakers(@RequestBody SelectedEntitiesDto selectedEntities, HttpSession httpSession) {
         var language = localeService.getLanguage(httpSession);
         List<Speaker> speakers = speakerService.getSpeakerByIds(selectedEntities.getIds());
-        Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
-                speakers,
-                s -> LocalizationUtils.getString(s.getName(), language),
-                s -> true);
 
-        List<SpeakerBriefDto> speakerBriefDtoList = SpeakerBriefDto.convertToBriefDto(speakers, language, speakerDuplicates);
-
-        return speakerBriefDtoList.stream()
-                .map(s -> new SpeakerSuperBriefDto(s.getId(), s.getDisplayName()))
-                .collect(Collectors.toList());
+        return createDuplicatesAndConvertToDtoAndSort(speakers, language);
     }
 
     @GetMapping("/speakers")
@@ -97,6 +81,20 @@ public class SpeakerController {
         List<Speaker> speakers = speakerService.getSpeakers(name, company, twitter, gitHub, javaChampion, mvp);
 
         return convertToBriefDtoAndSort(speakers, s -> SpeakerBriefDto.convertToBriefDto(s, language));
+    }
+
+    @GetMapping("/speaker/{id}")
+    @ResponseBody
+    public SpeakerDetailsDto getSpeaker(@PathVariable long id, HttpSession httpSession) {
+        var speaker = speakerService.getSpeakerById(id);
+        List<Talk> talks = talkService.getTalksBySpeaker(speaker);
+        var language = localeService.getLanguage(httpSession);
+        var speakerDetailsDto = SpeakerDetailsDto.convertToDto(speaker, talks, eventService::getEventByTalk,
+                eventTypeService::getEventTypeByEvent, language);
+
+        speakerDetailsDto.getTalks().sort(Comparator.comparing(TalkBriefDto::getTalkDate).reversed());
+
+        return speakerDetailsDto;
     }
 
     List<SpeakerBriefDto> convertToBriefDtoAndSort(List<Speaker> speakers, Function<List<Speaker>, List<SpeakerBriefDto>> speakerFunction) {
@@ -113,17 +111,17 @@ public class SpeakerController {
         return speakerBriefDtoList;
     }
 
-    @GetMapping("/speaker/{id}")
-    @ResponseBody
-    public SpeakerDetailsDto getSpeaker(@PathVariable long id, HttpSession httpSession) {
-        var speaker = speakerService.getSpeakerById(id);
-        List<Talk> talks = talkService.getTalksBySpeaker(speaker);
-        var language = localeService.getLanguage(httpSession);
-        var speakerDetailsDto = SpeakerDetailsDto.convertToDto(speaker, talks, eventService::getEventByTalk,
-                eventTypeService::getEventTypeByEvent, language);
+    List<SpeakerSuperBriefDto> createDuplicatesAndConvertToDtoAndSort(List<Speaker> speakers, Language language) {
+        Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
+                speakers,
+                s -> LocalizationUtils.getString(s.getName(), language),
+                s -> true);
+        List<SpeakerBriefDto> speakerBriefDtoList = convertToBriefDtoAndSort(
+                speakers,
+                s -> SpeakerBriefDto.convertToBriefDto(s, language, speakerDuplicates));
 
-        speakerDetailsDto.getTalks().sort(Comparator.comparing(TalkBriefDto::getTalkDate).reversed());
-
-        return speakerDetailsDto;
+        return speakerBriefDtoList.stream()
+                .map(s -> new SpeakerSuperBriefDto(s.getId(), s.getDisplayName()))
+                .collect(Collectors.toList());
     }
 }

@@ -47,7 +47,9 @@ public class CompanyController {
         var language = localeService.getLanguage(httpSession);
         List<Company> companies = companyService.getCompaniesByIds(selectedEntities.getIds());
 
-        return CompanyDto.convertToDto(companies, language);
+        return CompanyDto.convertToDto(companies, language).stream()
+                .sorted(Comparator.comparing(CompanyDto::getName, String.CASE_INSENSITIVE_ORDER))
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/first-letters-company-names")
