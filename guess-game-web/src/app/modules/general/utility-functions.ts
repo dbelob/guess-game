@@ -120,12 +120,16 @@ export function getEventDisplayName(event: Event, translateService: TranslateSer
   return displayName;
 }
 
+function getSortName(conference: boolean, organizerName: string, name: string): string {
+  return (conference ? '0' : '1') + organizerName + name;
+}
+
 export function getEventTypesWithSortName(eventTypes: EventType[]): EventType[] {
   if (eventTypes) {
     for (let i = 0; i < eventTypes.length; i++) {
       const eventType: EventType = eventTypes[i];
 
-      eventType.sortName = (eventType.conference ? '0' : '1') + eventType.organizerName + eventType.name;
+      eventType.sortName = getSortName(eventType.conference, eventType.organizerName, eventType.name);
     }
   }
 
@@ -139,7 +143,7 @@ export function getEventTypeStatisticsWithSortName(eventTypeStatistics: EventTyp
     for (let i = 0; i < eventTypeMetricsList.length; i++) {
       const eventTypeMetrics: EventTypeMetrics = eventTypeMetricsList[i];
 
-      eventTypeMetrics.sortName = (eventTypeMetrics.conference ? '0' : '1') + eventTypeMetrics.organizerName + eventTypeMetrics.displayName;
+      eventTypeMetrics.sortName = getSortName(eventTypeMetrics.conference, eventTypeMetrics.organizerName, eventTypeMetrics.displayName);
     }
   }
 
@@ -153,7 +157,7 @@ export function getOlapEventTypeStatisticsWithSortName(eventTypeStatistics: Olap
     for (let i = 0; i < eventTypeMetricsList.length; i++) {
       const eventTypeMetrics: OlapEventTypeMetrics = eventTypeMetricsList[i];
 
-      eventTypeMetrics.sortName = (eventTypeMetrics.conference ? '0' : '1') + eventTypeMetrics.organizerName + eventTypeMetrics.displayName;
+      eventTypeMetrics.sortName = getSortName(eventTypeMetrics.conference, eventTypeMetrics.organizerName, eventTypeMetrics.displayName);
     }
   }
 
