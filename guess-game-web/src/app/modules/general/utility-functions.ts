@@ -224,6 +224,10 @@ export function fixOlapEntityStatistics<T, S extends OlapEntityMetrics>(entitySt
 
   entityStatistics.metricsList.forEach(metrics => {
     metrics.measureValues = getFixedMeasureValues(metrics.measureValues, quantity);
+
+    for (let i = 0; i < metrics.measureValues.length; i++) {
+      metrics['measureValues' + i] = metrics.measureValues[i];
+    }
   });
 
   entityStatistics.totals.measureValues = getFixedMeasureValues(entityStatistics.totals.measureValues, quantity);
