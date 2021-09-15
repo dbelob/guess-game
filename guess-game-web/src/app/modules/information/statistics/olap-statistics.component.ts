@@ -40,6 +40,8 @@ export class OlapStatisticsComponent implements OnInit {
   private readonly JAVA_CHAMPIONS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.javaChampionsQuantity';
   private readonly MVPS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.mvpsQuantity';
 
+  private readonly MEASURE_VALUE_FIELD_NAME_PREFIX = 'measureValue';
+
   private imageDirectory = 'assets/images';
   public eventsImageDirectory = `${this.imageDirectory}/events`;
   public speakersImageDirectory = `${this.imageDirectory}/speakers`;
@@ -257,20 +259,22 @@ export class OlapStatisticsComponent implements OnInit {
         (speakers) ? speakers.map(s => s.id) : null,
         (companies) ? companies.map(c => c.id) : null))
       .subscribe(data => {
-          this.olapStatistics = data;
+          const olapStatistics = data;
 
-          if (this.olapStatistics?.eventTypeStatistics) {
-            this.olapStatistics.eventTypeStatistics = getOlapEventTypeStatisticsWithSortName(this.olapStatistics.eventTypeStatistics);
-            fixOlapEntityStatistics(this.olapStatistics.eventTypeStatistics)
+          if (olapStatistics?.eventTypeStatistics) {
+            olapStatistics.eventTypeStatistics = getOlapEventTypeStatisticsWithSortName(olapStatistics.eventTypeStatistics);
+            fixOlapEntityStatistics(olapStatistics.eventTypeStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
           }
 
-          if (this.olapStatistics?.speakerStatistics) {
-            fixOlapEntityStatistics(this.olapStatistics.speakerStatistics)
+          if (olapStatistics?.speakerStatistics) {
+            fixOlapEntityStatistics(olapStatistics.speakerStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
           }
 
-          if (this.olapStatistics?.companyStatistics) {
-            fixOlapEntityStatistics(this.olapStatistics.companyStatistics)
+          if (olapStatistics?.companyStatistics) {
+            fixOlapEntityStatistics(olapStatistics.companyStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
           }
+
+          this.olapStatistics = olapStatistics;
         }
       );
   }
@@ -400,18 +404,22 @@ export class OlapStatisticsComponent implements OnInit {
   isSpeakersListVisible() {
     return ((this.selectedCubeType === CubeType.Speakers) &&
       this.olapStatistics?.speakerStatistics?.metricsList &&
-      (this.olapStatistics?.speakerStatistics.metricsList.length > 0));
+      (this.olapStatistics.speakerStatistics.metricsList.length > 0));
   }
 
   isNoCompaniesDataFoundVisible() {
     return ((this.selectedCubeType === CubeType.Companies) &&
       this.olapStatistics?.companyStatistics?.metricsList &&
-      (this.olapStatistics?.companyStatistics.metricsList.length === 0));
+      (this.olapStatistics.companyStatistics.metricsList.length === 0));
   }
 
   isCompaniesListVisible() {
     return ((this.selectedCubeType === CubeType.Companies) &&
       this.olapStatistics?.companyStatistics?.metricsList &&
-      (this.olapStatistics?.companyStatistics.metricsList.length > 0));
+      (this.olapStatistics.companyStatistics.metricsList.length > 0));
+  }
+
+  getMeasureValueFieldNamePrefix(num: number): string {
+    return this.MEASURE_VALUE_FIELD_NAME_PREFIX + num;
   }
 }

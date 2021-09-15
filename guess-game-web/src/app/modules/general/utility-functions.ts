@@ -219,14 +219,15 @@ export function getFixedMeasureValues(measureValues: number[], quantity: number)
   }
 }
 
-export function fixOlapEntityStatistics<T, S extends OlapEntityMetrics>(entityStatistics: OlapEntityStatistics<T, S>) {
+export function fixOlapEntityStatistics<T, S extends OlapEntityMetrics>(entityStatistics: OlapEntityStatistics<T, S>,
+                                                                        measureValueFieldNamePrefix: string) {
   const quantity = entityStatistics.dimensionValues.length;
 
   entityStatistics.metricsList.forEach(metrics => {
     metrics.measureValues = getFixedMeasureValues(metrics.measureValues, quantity);
 
     for (let i = 0; i < metrics.measureValues.length; i++) {
-      metrics['measureValues' + i] = metrics.measureValues[i];
+      metrics[measureValueFieldNamePrefix + i] = metrics.measureValues[i];
     }
   });
 

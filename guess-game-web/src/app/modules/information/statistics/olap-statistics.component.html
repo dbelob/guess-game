@@ -130,10 +130,10 @@
               {{'statistics.olap.table.eventTypeNameColumn' | translate}}
               <p-sortIcon [field]="'sortName'"></p-sortIcon>
             </th>
-            <th class="text-center" [pSortableColumn]="'measureValues' + i" pResizableColumn
+            <th class="text-center" [pSortableColumn]="getMeasureValueFieldNamePrefix(i)" pResizableColumn
                 *ngFor="let dimensionValue of olapStatistics.eventTypeStatistics.dimensionValues; let i = index">
               {{dimensionValue}}
-              <p-sortIcon [field]="'measureValues' + i"></p-sortIcon>
+              <p-sortIcon [field]="getMeasureValueFieldNamePrefix(i)"></p-sortIcon>
             </th>
             <th class="text-center" [pSortableColumn]="'total'" pResizableColumn>
               {{'common.table.totalsText' | translate}}
@@ -191,10 +191,10 @@
               {{'statistics.olap.table.speakerNameColumn' | translate}}
               <p-sortIcon [field]="'name'"></p-sortIcon>
             </th>
-            <th class="text-center" [pSortableColumn]="'measureValues' + i" pResizableColumn
+            <th class="text-center" [pSortableColumn]="getMeasureValueFieldNamePrefix(i)" pResizableColumn
                 *ngFor="let dimensionValue of olapStatistics.speakerStatistics.dimensionValues; let i = index">
               {{dimensionValue}}
-              <p-sortIcon [field]="'measureValues' + i"></p-sortIcon>
+              <p-sortIcon [field]="getMeasureValueFieldNamePrefix(i)"></p-sortIcon>
             </th>
             <th class="text-center" [pSortableColumn]="'total'" pResizableColumn>
               {{'common.table.totalsText' | translate}}
@@ -243,10 +243,10 @@
               {{'statistics.olap.table.companyColumn' | translate}}
               <p-sortIcon [field]="'name'"></p-sortIcon>
             </th>
-            <th class="text-center" [pSortableColumn]="'measureValues' + i" pResizableColumn
+            <th class="text-center" [pSortableColumn]="getMeasureValueFieldNamePrefix(i)" pResizableColumn
                 *ngFor="let dimensionValue of olapStatistics.companyStatistics.dimensionValues; let i = index">
               {{dimensionValue}}
-              <p-sortIcon [field]="'measureValues' + i"></p-sortIcon>
+              <p-sortIcon [field]="getMeasureValueFieldNamePrefix(i)"></p-sortIcon>
             </th>
             <th class="text-center" [pSortableColumn]="'total'" pResizableColumn>
               {{'common.table.totalsText' | translate}}
