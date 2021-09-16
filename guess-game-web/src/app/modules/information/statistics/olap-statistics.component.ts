@@ -10,6 +10,7 @@ import { OlapStatistics } from '../../../shared/models/statistics/olap/olap-stat
 import { Organizer } from '../../../shared/models/organizer/organizer.model';
 import { Speaker } from '../../../shared/models/speaker/speaker.model';
 import { SelectedEntities } from '../../../shared/models/common/selected-entities.model';
+import { OlapSpeakerMetrics } from '../../../shared/models/statistics/olap/olap-speaker-metrics.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
 import { OrganizerService } from '../../../shared/services/organizer.service';
@@ -421,5 +422,44 @@ export class OlapStatisticsComponent implements OnInit {
 
   getMeasureValueFieldNamePrefix(num: number): string {
     return this.MEASURE_VALUE_FIELD_NAME_PREFIX + num;
+  }
+
+  speakerRowExpand(event) {
+    // TODO: change
+    // console.log('data 1: ' + JSON.stringify(event.data));
+
+    const speakerMetrics: OlapSpeakerMetrics = event.data;
+
+    speakerMetrics.eventTypeStatistics =
+      {
+        dimensionValues: [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
+        metricsList: [
+          {
+            id: 0,
+            displayName: 'C++ Russia',
+            conference: true,
+            logoFileName: 'cpprussia.jpg',
+            organizerName: null,
+            sortName: '0',
+            measureValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+            total: 123
+          },
+          {
+            id: 1,
+            displayName: 'DevOops',
+            conference: true,
+            logoFileName: 'devoops.jpg',
+            organizerName: null,
+            sortName: '1',
+            measureValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            total: 456
+          }
+        ],
+        totals: {measureValues: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11], total: 789}
+      };
+
+    fixOlapEntityStatistics(speakerMetrics.eventTypeStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX);
+
+    // console.log('data 2: ' + JSON.stringify(event.data));
   }
 }
