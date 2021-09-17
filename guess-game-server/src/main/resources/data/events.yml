@@ -1143,6 +1143,16 @@ events:
     youtubeLink: https://live.jugru.org/events/techtrain/?p=sch100093
     placeId: 24
     talkIds: [2912, 2913, 2914, 2916, 2918, 2915, 2919, 2917, 2920]
+  - eventTypeId: 12
+    name:
+      - {language: en, text: "TechTrain 2021 Autumn"}
+    startDate: "2021-09-18"
+    endDate: "2021-09-18"
+    siteLink:
+      - {language: en, text: "https://techtrain.ru/"}
+    youtubeLink: https://live.jugru.org/techtrain
+    placeId: 24
+    talkIds: [3159, 3160, 3161, 3162, 3163, 3164, 3165, 3166]
   # JUG.MSK
   - eventTypeId: 13
     name:
