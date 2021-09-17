@@ -13,6 +13,9 @@ import { MeasureType } from '../models/statistics/olap/measure-type.model';
 import { MessageService } from '../../modules/message/message.service';
 import { OlapStatistics } from "../models/statistics/olap/olap-statistics.model";
 import { OlapParameters } from "../models/statistics/olap/olap.parameters.model";
+import { OlapEventTypeParameters } from "../models/statistics/olap/olap-event-type-parameters.model";
+import { OlapEntityStatistics } from "../models/statistics/olap/olap-entity-statistics.model";
+import { OlapEventTypeMetrics } from "../models/statistics/olap/olap-event-type-metrics.model";
 
 @Injectable({
   providedIn: 'root'
@@ -136,5 +139,15 @@ export class StatisticsService {
           throw response;
         })
       );
+  }
+
+  getOlapEventTypeStatistics(olapParameters: OlapEventTypeParameters): Observable<OlapEntityStatistics<number, OlapEventTypeMetrics>> {
+      return this.http.post<OlapEntityStatistics<number, OlapEventTypeMetrics>>(`${this.baseUrl}/olap-event-type-statistics`, olapParameters)
+          .pipe(
+              catchError((response: Response) => {
+                  this.messageService.reportMessage(response);
+                  throw response;
+              })
+          );
   }
 }

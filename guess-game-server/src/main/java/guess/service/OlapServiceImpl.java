@@ -42,23 +42,50 @@ public class OlapServiceImpl implements OlapService {
         return new OlapStatistics(
                 CubeType.EVENT_TYPES.equals(cubeType) ?
                         getOlapEntityStatistics(cubeType, measureType, DimensionType.EVENT_TYPE, eventTypePredicate,
-                                eventTypePredicate) :
+                                DimensionType.EVENT_TYPE, eventTypePredicate) :
                         null,
                 CubeType.SPEAKERS.equals(cubeType) ?
                         getOlapEntityStatistics(cubeType, measureType, DimensionType.SPEAKER, speakerPredicate,
-                                eventTypePredicate) :
+                                DimensionType.EVENT_TYPE, eventTypePredicate) :
                         null,
                 CubeType.COMPANIES.equals(cubeType) ?
                         getOlapEntityStatistics(cubeType, measureType, DimensionType.COMPANY, companyPredicate,
-                                eventTypePredicate) :
+                                DimensionType.EVENT_TYPE, eventTypePredicate) :
                         null
         );
+    }
+
+    @Override
+    public OlapEntityStatistics<Integer, EventType> getOlapEventTypeStatistics(CubeType cubeType, MeasureType measureType,
+                                                                               boolean isConferences, boolean isMeetups,
+                                                                               Long organizerId, List<Long> eventTypeIds,
+                                                                               Long speakerId, Long companyId) {
+        Predicate<EventType> eventTypePredicate = et ->
+                ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
+                        ((organizerId == null) || (et.getOrganizer().getId() == organizerId)) &&
+                        ((eventTypeIds == null) || eventTypeIds.isEmpty() || eventTypeIds.contains(et.getId()));
+
+        switch (cubeType) {
+            case SPEAKERS:
+                Predicate<Speaker> speakerPredicate = s -> (speakerId != null) && (s.getId() == speakerId);
+
+                return getOlapEntityStatistics(cubeType, measureType, DimensionType.EVENT_TYPE, eventTypePredicate,
+                        DimensionType.SPEAKER, speakerPredicate);
+            case COMPANIES:
+                Predicate<Company> companyPredicate = c -> (companyId != null) && (c.getId() == companyId);
+
+                return getOlapEntityStatistics(cubeType, measureType, DimensionType.EVENT_TYPE, eventTypePredicate,
+                        DimensionType.COMPANY, companyPredicate);
+            default:
+                throw new IllegalArgumentException(String.format("Invalid cube type %s", cubeType));
+        }
     }
 
     @SuppressWarnings("unchecked")
     private <T, S, U> OlapEntityStatistics<T, S> getOlapEntityStatistics(CubeType cubeType, MeasureType measureType,
                                                                          DimensionType firstDimensionType,
                                                                          Predicate<S> firstDimensionPredicate,
+                                                                         DimensionType filterDimensionType,
                                                                          Predicate<U> filterDimensionPredicate) {
         Cube cube = olapDao.getCube(cubeType);
         List<S> firstDimensionValues = cube.getDimensionValues(firstDimensionType).stream()
@@ -69,14 +96,14 @@ public class OlapServiceImpl implements OlapService {
                 .map(v -> (T) v)
                 .sorted()
                 .collect(Collectors.toList());
-        List<U> filterDimensionValues = cube.getDimensionValues(DimensionType.EVENT_TYPE).stream()
+        List<U> filterDimensionValues = cube.getDimensionValues(filterDimensionType).stream()
                 .map(v -> (U) v)
                 .filter(filterDimensionPredicate)
                 .collect(Collectors.toList());
 
         return cube.getMeasureValueEntities(
                 firstDimensionType, firstDimensionValues, DimensionType.YEAR, secondDimensionValues,
-                DimensionType.EVENT_TYPE, filterDimensionValues, measureType, OlapEntityMetrics::new,
+                filterDimensionType, filterDimensionValues, measureType, OlapEntityMetrics::new,
                 (measureValues, total) -> new OlapEntityMetrics<Void>(null, measureValues, total),
                 OlapEntityStatistics::new);
     }

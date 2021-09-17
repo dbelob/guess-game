@@ -11,6 +11,9 @@ import { Organizer } from '../../../shared/models/organizer/organizer.model';
 import { Speaker } from '../../../shared/models/speaker/speaker.model';
 import { SelectedEntities } from '../../../shared/models/common/selected-entities.model';
 import { OlapSpeakerMetrics } from '../../../shared/models/statistics/olap/olap-speaker-metrics.model';
+import { OlapEventTypeParameters } from '../../../shared/models/statistics/olap/olap-event-type-parameters.model';
+import { OlapEntityStatistics } from '../../../shared/models/statistics/olap/olap-entity-statistics.model';
+import { OlapEventTypeMetrics } from '../../../shared/models/statistics/olap/olap-event-type-metrics.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
 import { OrganizerService } from '../../../shared/services/organizer.service';
@@ -18,448 +21,432 @@ import { StatisticsService } from '../../../shared/services/statistics.service';
 import { SpeakerService } from '../../../shared/services/speaker.service';
 import { CompanyService } from '../../../shared/services/company.service';
 import {
-  findEventTypesByIds,
-  findOrganizerById,
-  fixOlapEntityStatistics,
-  getOlapEventTypeStatisticsWithSortName
+    findEventTypesByIds,
+    findOrganizerById,
+    fixOlapEntityStatistics,
+    getOlapEventTypeStatisticsWithSortName
 } from '../../general/utility-functions';
 
 @Component({
-  selector: 'app-olap-statistics',
-  templateUrl: './olap-statistics.component.html'
+    selector: 'app-olap-statistics',
+    templateUrl: './olap-statistics.component.html'
 })
 export class OlapStatisticsComponent implements OnInit {
-  private readonly EVENT_TYPES_CUBE_TYPE_KEY = 'cubeType.eventTypes';
-  private readonly SPEAKERS_CUBE_TYPE_KEY = 'cubeType.speakers';
-  private readonly COMPANIES_CUBE_TYPE_KEY = 'cubeType.companies';
+    private readonly EVENT_TYPES_CUBE_TYPE_KEY = 'cubeType.eventTypes';
+    private readonly SPEAKERS_CUBE_TYPE_KEY = 'cubeType.speakers';
+    private readonly COMPANIES_CUBE_TYPE_KEY = 'cubeType.companies';
 
-  private readonly DURATION_MEASURE_TYPE_KEY = 'measureType.duration';
-  private readonly EVENT_TYPES_QUANTITY_MEASURE_TYPE_KEY = 'measureType.eventTypesQuantity';
-  private readonly EVENTS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.eventsQuantity';
-  private readonly TALKS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.talksQuantity';
-  private readonly SPEAKERS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.speakersQuantity';
-  private readonly JAVA_CHAMPIONS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.javaChampionsQuantity';
-  private readonly MVPS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.mvpsQuantity';
+    private readonly DURATION_MEASURE_TYPE_KEY = 'measureType.duration';
+    private readonly EVENT_TYPES_QUANTITY_MEASURE_TYPE_KEY = 'measureType.eventTypesQuantity';
+    private readonly EVENTS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.eventsQuantity';
+    private readonly TALKS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.talksQuantity';
+    private readonly SPEAKERS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.speakersQuantity';
+    private readonly JAVA_CHAMPIONS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.javaChampionsQuantity';
+    private readonly MVPS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.mvpsQuantity';
 
-  private readonly MEASURE_VALUE_FIELD_NAME_PREFIX = 'measureValue';
+    private readonly MEASURE_VALUE_FIELD_NAME_PREFIX = 'measureValue';
 
-  private imageDirectory = 'assets/images';
-  public eventsImageDirectory = `${this.imageDirectory}/events`;
-  public speakersImageDirectory = `${this.imageDirectory}/speakers`;
+    private imageDirectory = 'assets/images';
+    public eventsImageDirectory = `${this.imageDirectory}/events`;
+    public speakersImageDirectory = `${this.imageDirectory}/speakers`;
 
-  public cubeTypes: CubeType[] = [];
-  public selectedCubeType: CubeType;
-  public cubeTypeSelectItems: SelectItem[] = [];
+    public cubeTypes: CubeType[] = [];
+    public selectedCubeType: CubeType;
+    public cubeTypeSelectItems: SelectItem[] = [];
 
-  public measureTypes: MeasureType[] = [];
-  public selectedMeasureType: MeasureType;
-  public measureTypeSelectItems: SelectItem[] = [];
+    public measureTypes: MeasureType[] = [];
+    public selectedMeasureType: MeasureType;
+    public measureTypeSelectItems: SelectItem[] = [];
 
-  public isConferences = true;
-  public isMeetups = true;
+    public isConferences = true;
+    public isMeetups = true;
 
-  public organizers: Organizer[] = [];
-  public selectedOrganizer: Organizer;
-  public organizerSelectItems: SelectItem[] = [];
+    public organizers: Organizer[] = [];
+    public selectedOrganizer: Organizer;
+    public organizerSelectItems: SelectItem[] = [];
 
-  public eventTypes: EventType[] = [];
-  public selectedEventTypes: EventType[] = [];
-  public eventTypeSelectItems: SelectItem[] = [];
+    public eventTypes: EventType[] = [];
+    public selectedEventTypes: EventType[] = [];
+    public eventTypeSelectItems: SelectItem[] = [];
 
-  public selectedSpeakers: Speaker[] = [];
-  public speakerSuggestions: Speaker[];
+    public selectedSpeakers: Speaker[] = [];
+    public speakerSuggestions: Speaker[];
 
-  public selectedCompanies: Company[] = [];
-  public companySuggestions: Company[];
+    public selectedCompanies: Company[] = [];
+    public companySuggestions: Company[];
 
-  public olapStatistics = new OlapStatistics();
-  public eventTypeMultiSortMeta: any[] = [];
-  public speakerMultiSortMeta: any[] = [];
-  public companyMultiSortMeta: any[] = [];
+    public olapStatistics = new OlapStatistics();
+    public eventTypeMultiSortMeta: any[] = [];
+    public speakerMultiSortMeta: any[] = [];
+    public companyMultiSortMeta: any[] = [];
 
-  constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
-              private eventService: EventService, private organizerService: OrganizerService,
-              public translateService: TranslateService, private speakerService: SpeakerService,
-              private companyService: CompanyService) {
-    this.eventTypeMultiSortMeta.push({field: 'sortName', order: 1});
+    constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
+                private eventService: EventService, private organizerService: OrganizerService,
+                public translateService: TranslateService, private speakerService: SpeakerService,
+                private companyService: CompanyService) {
+        this.eventTypeMultiSortMeta.push({field: 'sortName', order: 1});
 
-    this.speakerMultiSortMeta.push({field: 'total', order: -1});
-    this.speakerMultiSortMeta.push({field: 'name', order: 1});
+        this.speakerMultiSortMeta.push({field: 'total', order: -1});
+        this.speakerMultiSortMeta.push({field: 'name', order: 1});
 
-    this.companyMultiSortMeta.push({field: 'total', order: -1});
-    this.companyMultiSortMeta.push({field: 'name', order: 1});
-  }
-
-  ngOnInit(): void {
-    this.loadCubeTypes();
-  }
-
-  getCubeTypeMessageKeyByCube(cubeType: CubeType): string {
-    switch (cubeType) {
-      case CubeType.EventTypes: {
-        return this.EVENT_TYPES_CUBE_TYPE_KEY;
-      }
-      case CubeType.Speakers: {
-        return this.SPEAKERS_CUBE_TYPE_KEY;
-      }
-      case CubeType.Companies: {
-        return this.COMPANIES_CUBE_TYPE_KEY;
-      }
-      default: {
-        return null;
-      }
+        this.companyMultiSortMeta.push({field: 'total', order: -1});
+        this.companyMultiSortMeta.push({field: 'name', order: 1});
     }
-  }
 
-  getMeasureTypeMessageKeyByCube(measureType: MeasureType): string {
-    switch (measureType) {
-      case MeasureType.Duration: {
-        return this.DURATION_MEASURE_TYPE_KEY;
-      }
-      case MeasureType.EventTypesQuantity: {
-        return this.EVENT_TYPES_QUANTITY_MEASURE_TYPE_KEY;
-      }
-      case MeasureType.EventsQuantity: {
-        return this.EVENTS_QUANTITY_MEASURE_TYPE_KEY;
-      }
-      case MeasureType.TalksQuantity: {
-        return this.TALKS_QUANTITY_MEASURE_TYPE_KEY;
-      }
-      case MeasureType.SpeakersQuantity: {
-        return this.SPEAKERS_QUANTITY_MEASURE_TYPE_KEY;
-      }
-      case MeasureType.JavaChampionsQuantity: {
-        return this.JAVA_CHAMPIONS_QUANTITY_MEASURE_TYPE_KEY;
-      }
-      case MeasureType.MvpsQuantity: {
-        return this.MVPS_QUANTITY_MEASURE_TYPE_KEY;
-      }
-      default: {
-        return null;
-      }
+    ngOnInit(): void {
+        this.loadCubeTypes();
     }
-  }
 
-  fillCubeTypes(cubeTypes: CubeType[]) {
-    this.cubeTypes = cubeTypes;
-    this.cubeTypeSelectItems = this.cubeTypes.map(c => {
-        const messageKey = this.getCubeTypeMessageKeyByCube(c);
+    getCubeTypeMessageKeyByCube(cubeType: CubeType): string {
+        switch (cubeType) {
+            case CubeType.EventTypes: {
+                return this.EVENT_TYPES_CUBE_TYPE_KEY;
+            }
+            case CubeType.Speakers: {
+                return this.SPEAKERS_CUBE_TYPE_KEY;
+            }
+            case CubeType.Companies: {
+                return this.COMPANIES_CUBE_TYPE_KEY;
+            }
+            default: {
+                return null;
+            }
+        }
+    }
 
-        return {label: messageKey, value: c};
-      }
-    );
-  }
+    getMeasureTypeMessageKeyByCube(measureType: MeasureType): string {
+        switch (measureType) {
+            case MeasureType.Duration: {
+                return this.DURATION_MEASURE_TYPE_KEY;
+            }
+            case MeasureType.EventTypesQuantity: {
+                return this.EVENT_TYPES_QUANTITY_MEASURE_TYPE_KEY;
+            }
+            case MeasureType.EventsQuantity: {
+                return this.EVENTS_QUANTITY_MEASURE_TYPE_KEY;
+            }
+            case MeasureType.TalksQuantity: {
+                return this.TALKS_QUANTITY_MEASURE_TYPE_KEY;
+            }
+            case MeasureType.SpeakersQuantity: {
+                return this.SPEAKERS_QUANTITY_MEASURE_TYPE_KEY;
+            }
+            case MeasureType.JavaChampionsQuantity: {
+                return this.JAVA_CHAMPIONS_QUANTITY_MEASURE_TYPE_KEY;
+            }
+            case MeasureType.MvpsQuantity: {
+                return this.MVPS_QUANTITY_MEASURE_TYPE_KEY;
+            }
+            default: {
+                return null;
+            }
+        }
+    }
 
-  fillMeasureTypes(measureTypes: MeasureType[]) {
-    this.measureTypes = measureTypes;
-    this.measureTypeSelectItems = this.measureTypes.map(m => {
-        const messageKey = this.getMeasureTypeMessageKeyByCube(m);
+    fillCubeTypes(cubeTypes: CubeType[]) {
+        this.cubeTypes = cubeTypes;
+        this.cubeTypeSelectItems = this.cubeTypes.map(c => {
+                const messageKey = this.getCubeTypeMessageKeyByCube(c);
 
-        return {label: messageKey, value: m};
-      }
-    );
-  }
+                return {label: messageKey, value: c};
+            }
+        );
+    }
 
-  fillOrganizers(organizers: Organizer[]) {
-    this.organizers = organizers;
-    this.organizerSelectItems = this.organizers.map(o => {
-        return {label: o.name, value: o};
-      }
-    );
-  }
+    fillMeasureTypes(measureTypes: MeasureType[]) {
+        this.measureTypes = measureTypes;
+        this.measureTypeSelectItems = this.measureTypes.map(m => {
+                const messageKey = this.getMeasureTypeMessageKeyByCube(m);
 
-  fillEventTypes(eventTypes: EventType[]) {
-    this.eventTypes = eventTypes;
-    this.eventTypeSelectItems = this.eventTypes.map(et => {
-        return {label: et.name, value: et};
-      }
-    );
-  }
+                return {label: messageKey, value: m};
+            }
+        );
+    }
 
-  loadCubeTypes() {
-    this.statisticsService.getCubeTypes()
-      .subscribe(cubeTypeData => {
-        this.fillCubeTypes(cubeTypeData);
-        this.selectedCubeType = (cubeTypeData && (cubeTypeData.length > 0)) ? cubeTypeData[0] : null;
+    fillOrganizers(organizers: Organizer[]) {
+        this.organizers = organizers;
+        this.organizerSelectItems = this.organizers.map(o => {
+                return {label: o.name, value: o};
+            }
+        );
+    }
 
-        this.statisticsService.getMeasureTypes(this.selectedCubeType)
-          .subscribe(measureTypeData => {
-            this.fillMeasureTypes(measureTypeData);
-            this.selectedMeasureType = (measureTypeData && (measureTypeData.length > 0)) ? measureTypeData[0] : null;
+    fillEventTypes(eventTypes: EventType[]) {
+        this.eventTypes = eventTypes;
+        this.eventTypeSelectItems = this.eventTypes.map(et => {
+                return {label: et.name, value: et};
+            }
+        );
+    }
 
-            this.organizerService.getOrganizers()
-              .subscribe(organizerData => {
+    loadCubeTypes() {
+        this.statisticsService.getCubeTypes()
+            .subscribe(cubeTypeData => {
+                this.fillCubeTypes(cubeTypeData);
+                this.selectedCubeType = (cubeTypeData && (cubeTypeData.length > 0)) ? cubeTypeData[0] : null;
+
+                this.statisticsService.getMeasureTypes(this.selectedCubeType)
+                    .subscribe(measureTypeData => {
+                        this.fillMeasureTypes(measureTypeData);
+                        this.selectedMeasureType = (measureTypeData && (measureTypeData.length > 0)) ? measureTypeData[0] : null;
+
+                        this.organizerService.getOrganizers()
+                            .subscribe(organizerData => {
+                                this.fillOrganizers(organizerData);
+
+                                this.eventService.getDefaultEvent()
+                                    .subscribe(defaultEventData => {
+                                        this.selectedOrganizer = (defaultEventData) ? findOrganizerById(defaultEventData.organizerId, this.organizers) : null;
+
+                                        this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
+                                            .subscribe(eventTypesData => {
+                                                this.fillEventTypes(eventTypesData);
+
+                                                if (this.eventTypes.length > 0) {
+                                                    this.selectedEventTypes = (defaultEventData) ? findEventTypesByIds([defaultEventData.eventTypeId], this.eventTypes) : [];
+                                                } else {
+                                                    this.selectedEventTypes = [];
+                                                }
+
+                                                this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
+                                                    this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
+                                            });
+                                    });
+                            });
+                    });
+            });
+    }
+
+    loadEventTypes() {
+        this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
+            .subscribe(eventTypesData => {
+                this.fillEventTypes(eventTypesData);
+
+                this.selectedEventTypes = [];
+
+                this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
+                    this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
+            });
+    }
+
+    loadSelectedEntities(complete?: (() => void)) {
+        switch (this.selectedCubeType) {
+            case CubeType.EventTypes:
+                complete();
+                break;
+            case CubeType.Speakers:
+                this.speakerService.getSelectedSpeakers(new SelectedEntities(this.selectedSpeakers.map(s => s.id)))
+                    .subscribe(speakersData => {
+                        this.selectedSpeakers = speakersData;
+                        complete();
+                    });
+                break;
+            case CubeType.Companies:
+                this.companyService.getSelectedCompanies(new SelectedEntities(this.selectedCompanies.map(c => c.id)))
+                    .subscribe(companiesData => {
+                        this.selectedCompanies = companiesData;
+                        complete();
+                    });
+        }
+    }
+
+    loadOlapStatistics(cubeType: CubeType, measureType: MeasureType, isConferences: boolean, isMeetups: boolean,
+                       organizer: Organizer, eventTypes: EventType[], speakers: Speaker[], companies: Company[]) {
+        this.statisticsService.getOlapStatistics(
+            new OlapParameters(
+                cubeType,
+                measureType,
+                isConferences,
+                isMeetups,
+                (organizer) ? organizer.id : null,
+                (eventTypes) ? eventTypes.map(et => et.id) : null,
+                (speakers) ? speakers.map(s => s.id) : null,
+                (companies) ? companies.map(c => c.id) : null))
+            .subscribe(data => {
+                    const olapStatistics = data;
+
+                    if (olapStatistics?.eventTypeStatistics) {
+                        olapStatistics.eventTypeStatistics = getOlapEventTypeStatisticsWithSortName(olapStatistics.eventTypeStatistics);
+                        fixOlapEntityStatistics(olapStatistics.eventTypeStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
+                    }
+
+                    if (olapStatistics?.speakerStatistics) {
+                        fixOlapEntityStatistics(olapStatistics.speakerStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
+                    }
+
+                    if (olapStatistics?.companyStatistics) {
+                        fixOlapEntityStatistics(olapStatistics.companyStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
+                    }
+
+                    this.olapStatistics = olapStatistics;
+                }
+            );
+    }
+
+    onEventTypeKindChange() {
+        this.loadEventTypes();
+    }
+
+    onOrganizerChange() {
+        this.loadEventTypes();
+    }
+
+    onEventTypeChange() {
+        this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
+            this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
+    }
+
+    onLanguageChange() {
+        const currentSelectedOrganizer = this.selectedOrganizer;
+        const currentSelectedEventTypes = this.selectedEventTypes;
+
+        this.organizerService.getOrganizers()
+            .subscribe(organizerData => {
                 this.fillOrganizers(organizerData);
 
-                this.eventService.getDefaultEvent()
-                  .subscribe(defaultEventData => {
-                    this.selectedOrganizer = (defaultEventData) ? findOrganizerById(defaultEventData.organizerId, this.organizers) : null;
+                this.selectedOrganizer = (currentSelectedOrganizer) ? findOrganizerById(currentSelectedOrganizer.id, this.organizers) : null;
 
-                    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
-                      .subscribe(eventTypesData => {
+                this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
+                    .subscribe(eventTypesData => {
                         this.fillEventTypes(eventTypesData);
 
                         if (this.eventTypes.length > 0) {
-                          this.selectedEventTypes = (defaultEventData) ? findEventTypesByIds([defaultEventData.eventTypeId], this.eventTypes) : [];
+                            this.selectedEventTypes = (currentSelectedEventTypes) ? findEventTypesByIds(currentSelectedEventTypes.map(et => et.id), this.eventTypes) : [];
                         } else {
-                          this.selectedEventTypes = [];
+                            this.selectedEventTypes = [];
                         }
 
-                        this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-                          this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
-                      });
-                  });
-              });
-          });
-      });
-  }
-
-  loadEventTypes() {
-    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
-      .subscribe(eventTypesData => {
-        this.fillEventTypes(eventTypesData);
-
-        this.selectedEventTypes = [];
-
-        this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-          this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
-      });
-  }
-
-  loadSelectedEntities(complete?: (() => void)) {
-    switch (this.selectedCubeType) {
-      case CubeType.EventTypes:
-        complete();
-        break;
-      case CubeType.Speakers:
-        this.speakerService.getSelectedSpeakers(new SelectedEntities(this.selectedSpeakers.map(s => s.id)))
-          .subscribe(speakersData => {
-            this.selectedSpeakers = speakersData;
-            complete();
-          });
-        break;
-      case CubeType.Companies:
-        this.companyService.getSelectedCompanies(new SelectedEntities(this.selectedCompanies.map(c => c.id)))
-          .subscribe(companiesData => {
-            this.selectedCompanies = companiesData;
-            complete();
-          });
-    }
-  }
-
-  loadOlapStatistics(cubeType: CubeType, measureType: MeasureType, isConferences: boolean, isMeetups: boolean,
-                     organizer: Organizer, eventTypes: EventType[], speakers: Speaker[], companies: Company[]) {
-    this.statisticsService.getOlapStatistics(
-      new OlapParameters(
-        cubeType,
-        measureType,
-        isConferences,
-        isMeetups,
-        (organizer) ? organizer.id : null,
-        (eventTypes) ? eventTypes.map(et => et.id) : null,
-        (speakers) ? speakers.map(s => s.id) : null,
-        (companies) ? companies.map(c => c.id) : null))
-      .subscribe(data => {
-          const olapStatistics = data;
-
-          if (olapStatistics?.eventTypeStatistics) {
-            olapStatistics.eventTypeStatistics = getOlapEventTypeStatisticsWithSortName(olapStatistics.eventTypeStatistics);
-            fixOlapEntityStatistics(olapStatistics.eventTypeStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
-          }
-
-          if (olapStatistics?.speakerStatistics) {
-            fixOlapEntityStatistics(olapStatistics.speakerStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
-          }
-
-          if (olapStatistics?.companyStatistics) {
-            fixOlapEntityStatistics(olapStatistics.companyStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
-          }
-
-          this.olapStatistics = olapStatistics;
-        }
-      );
-  }
-
-  onEventTypeKindChange() {
-    this.loadEventTypes();
-  }
-
-  onOrganizerChange() {
-    this.loadEventTypes();
-  }
-
-  onEventTypeChange() {
-    this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-      this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
-  }
-
-  onLanguageChange() {
-    const currentSelectedOrganizer = this.selectedOrganizer;
-    const currentSelectedEventTypes = this.selectedEventTypes;
-
-    this.organizerService.getOrganizers()
-      .subscribe(organizerData => {
-        this.fillOrganizers(organizerData);
-
-        this.selectedOrganizer = (currentSelectedOrganizer) ? findOrganizerById(currentSelectedOrganizer.id, this.organizers) : null;
-
-        this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
-          .subscribe(eventTypesData => {
-            this.fillEventTypes(eventTypesData);
-
-            if (this.eventTypes.length > 0) {
-              this.selectedEventTypes = (currentSelectedEventTypes) ? findEventTypesByIds(currentSelectedEventTypes.map(et => et.id), this.eventTypes) : [];
-            } else {
-              this.selectedEventTypes = [];
-            }
-
-            this.loadSelectedEntities(() => {
-              this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-                this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
+                        this.loadSelectedEntities(() => {
+                            this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
+                                this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
+                        });
+                    });
             });
-          });
-      });
-  }
+    }
 
-  onCubeTypeChange() {
-    this.selectedSpeakers = [];
-    this.selectedCompanies = [];
+    onCubeTypeChange() {
+        this.selectedSpeakers = [];
+        this.selectedCompanies = [];
 
-    this.statisticsService.getMeasureTypes(this.selectedCubeType)
-      .subscribe(measureTypeData => {
-        this.fillMeasureTypes(measureTypeData);
-        this.selectedMeasureType = (measureTypeData && (measureTypeData.length > 0)) ? measureTypeData[0] : null;
+        this.statisticsService.getMeasureTypes(this.selectedCubeType)
+            .subscribe(measureTypeData => {
+                this.fillMeasureTypes(measureTypeData);
+                this.selectedMeasureType = (measureTypeData && (measureTypeData.length > 0)) ? measureTypeData[0] : null;
 
+                this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
+                    this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
+            });
+    }
+
+    onMeasureTypeChange() {
         this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-          this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
-      });
-  }
+            this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
+    }
 
-  onMeasureTypeChange() {
-    this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-      this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
-  }
+    isSpeakersVisible(): boolean {
+        return (CubeType.Speakers === this.selectedCubeType);
+    }
 
-  isSpeakersVisible(): boolean {
-    return (CubeType.Speakers === this.selectedCubeType);
-  }
+    isCompaniesVisible(): boolean {
+        return (CubeType.Companies == this.selectedCubeType);
+    }
 
-  isCompaniesVisible(): boolean {
-    return (CubeType.Companies == this.selectedCubeType);
-  }
+    speakerSearch(event) {
+        this.speakerService.getSpeakersByFirstLetters(event.query)
+            .subscribe(data => {
+                    this.speakerSuggestions = data;
+                }
+            );
+    }
 
-  speakerSearch(event) {
-    this.speakerService.getSpeakersByFirstLetters(event.query)
-      .subscribe(data => {
-          this.speakerSuggestions = data;
-        }
-      );
-  }
+    selectSpeaker(event) {
+        this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
+            this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
+    }
 
-  selectSpeaker(event) {
-    this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-      this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
-  }
+    unselectSpeaker(event) {
+        this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
+            this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
+    }
 
-  unselectSpeaker(event) {
-    this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-      this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
-  }
+    companySearch(event) {
+        this.companyService.getCompaniesByFirstLetters(event.query)
+            .subscribe(data => {
+                    this.companySuggestions = data;
+                }
+            );
+    }
 
-  companySearch(event) {
-    this.companyService.getCompaniesByFirstLetters(event.query)
-      .subscribe(data => {
-          this.companySuggestions = data;
-        }
-      );
-  }
+    selectCompany(event) {
+        this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
+            this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
+    }
 
-  selectCompany(event) {
-    this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-      this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
-  }
+    unselectCompany(event) {
+        this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
+            this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
+    }
 
-  unselectCompany(event) {
-    this.loadOlapStatistics(this.selectedCubeType, this.selectedMeasureType, this.isConferences, this.isMeetups,
-      this.selectedOrganizer, this.selectedEventTypes, this.selectedSpeakers, this.selectedCompanies);
-  }
+    isNoEventTypesDataFoundVisible() {
+        return ((this.selectedCubeType === CubeType.EventTypes) &&
+            this.olapStatistics?.eventTypeStatistics?.metricsList &&
+            (this.olapStatistics?.eventTypeStatistics.metricsList.length === 0));
+    }
 
-  isNoEventTypesDataFoundVisible() {
-    return ((this.selectedCubeType === CubeType.EventTypes) &&
-      this.olapStatistics?.eventTypeStatistics?.metricsList &&
-      (this.olapStatistics?.eventTypeStatistics.metricsList.length === 0));
-  }
+    isEventTypesListVisible() {
+        return ((this.selectedCubeType === CubeType.EventTypes) &&
+            this.olapStatistics?.eventTypeStatistics?.metricsList &&
+            (this.olapStatistics?.eventTypeStatistics.metricsList.length > 0));
+    }
 
-  isEventTypesListVisible() {
-    return ((this.selectedCubeType === CubeType.EventTypes) &&
-      this.olapStatistics?.eventTypeStatistics?.metricsList &&
-      (this.olapStatistics?.eventTypeStatistics.metricsList.length > 0));
-  }
+    isNoSpeakersDataFoundVisible() {
+        return ((this.selectedCubeType === CubeType.Speakers) &&
+            this.olapStatistics?.speakerStatistics?.metricsList &&
+            (this.olapStatistics?.speakerStatistics.metricsList.length === 0));
+    }
 
-  isNoSpeakersDataFoundVisible() {
-    return ((this.selectedCubeType === CubeType.Speakers) &&
-      this.olapStatistics?.speakerStatistics?.metricsList &&
-      (this.olapStatistics?.speakerStatistics.metricsList.length === 0));
-  }
+    isSpeakersListVisible() {
+        return ((this.selectedCubeType === CubeType.Speakers) &&
+            this.olapStatistics?.speakerStatistics?.metricsList &&
+            (this.olapStatistics.speakerStatistics.metricsList.length > 0));
+    }
 
-  isSpeakersListVisible() {
-    return ((this.selectedCubeType === CubeType.Speakers) &&
-      this.olapStatistics?.speakerStatistics?.metricsList &&
-      (this.olapStatistics.speakerStatistics.metricsList.length > 0));
-  }
+    isNoCompaniesDataFoundVisible() {
+        return ((this.selectedCubeType === CubeType.Companies) &&
+            this.olapStatistics?.companyStatistics?.metricsList &&
+            (this.olapStatistics.companyStatistics.metricsList.length === 0));
+    }
 
-  isNoCompaniesDataFoundVisible() {
-    return ((this.selectedCubeType === CubeType.Companies) &&
-      this.olapStatistics?.companyStatistics?.metricsList &&
-      (this.olapStatistics.companyStatistics.metricsList.length === 0));
-  }
+    isCompaniesListVisible() {
+        return ((this.selectedCubeType === CubeType.Companies) &&
+            this.olapStatistics?.companyStatistics?.metricsList &&
+            (this.olapStatistics.companyStatistics.metricsList.length > 0));
+    }
 
-  isCompaniesListVisible() {
-    return ((this.selectedCubeType === CubeType.Companies) &&
-      this.olapStatistics?.companyStatistics?.metricsList &&
-      (this.olapStatistics.companyStatistics.metricsList.length > 0));
-  }
+    getMeasureValueFieldNamePrefix(num: number): string {
+        return this.MEASURE_VALUE_FIELD_NAME_PREFIX + num;
+    }
 
-  getMeasureValueFieldNamePrefix(num: number): string {
-    return this.MEASURE_VALUE_FIELD_NAME_PREFIX + num;
-  }
+    speakerRowExpand(event) {
+        const speakerMetrics: OlapSpeakerMetrics = event.data;
 
-  speakerRowExpand(event) {
-    // TODO: change
-    // console.log('data 1: ' + JSON.stringify(event.data));
+        this.statisticsService.getOlapEventTypeStatistics(
+            new OlapEventTypeParameters(
+                this.selectedCubeType,
+                this.selectedMeasureType,
+                this.isConferences,
+                this.isMeetups,
+                (this.selectedOrganizer) ? this.selectedOrganizer.id : null,
+                (this.selectedEventTypes) ? this.selectedEventTypes.map(et => et.id) : null,
+                speakerMetrics.id,
+                null
+            ))
+            .subscribe(data => {
+                    const olapEventTypeStatistics: OlapEntityStatistics<number, OlapEventTypeMetrics> = data;
 
-    const speakerMetrics: OlapSpeakerMetrics = event.data;
-
-    speakerMetrics.eventTypeStatistics =
-      {
-        dimensionValues: [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
-        metricsList: [
-          {
-            id: 0,
-            displayName: 'C++ Russia',
-            conference: true,
-            logoFileName: 'cpprussia.jpg',
-            organizerName: null,
-            sortName: '0',
-            measureValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-            total: 123
-          },
-          {
-            id: 1,
-            displayName: 'DevOops',
-            conference: true,
-            logoFileName: 'devoops.jpg',
-            organizerName: null,
-            sortName: '1',
-            measureValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            total: 456
-          }
-        ],
-        totals: {measureValues: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11], total: 789}
-      };
-
-    fixOlapEntityStatistics(speakerMetrics.eventTypeStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX);
-
-    // console.log('data 2: ' + JSON.stringify(event.data));
-  }
+                    fixOlapEntityStatistics(olapEventTypeStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX);
+                    speakerMetrics.eventTypeStatistics = olapEventTypeStatistics;
+                }
+            );
+    }
 }

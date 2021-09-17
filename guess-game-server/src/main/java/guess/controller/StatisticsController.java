@@ -164,4 +164,24 @@ public class StatisticsController {
 
         return olapStatisticsDto;
     }
+
+    @PostMapping("/olap-event-type-statistics")
+    @ResponseBody
+    public OlapEntityStatisticsDto<Integer, OlapEventTypeMetricsDto> getOlapEventTypeStatistics(
+            @RequestBody OlapEventTypeParametersDto olapParameters, HttpSession httpSession) {
+        var eventTypeStatistics = olapService.getOlapEventTypeStatistics(
+                olapParameters.getCubeType(), olapParameters.getMeasureType(), olapParameters.isConferences(),
+                olapParameters.isMeetups(), olapParameters.getOrganizerId(), olapParameters.getEventTypeIds(),
+                olapParameters.getSpeakerId(), olapParameters.getCompanyId());
+        var language = localeService.getLanguage(httpSession);
+        var olapEventTypeStatisticsDto = OlapEventTypeStatisticsDto.convertToDto(eventTypeStatistics, language);
+
+        Comparator<OlapEventTypeMetricsDto> comparatorByIsConference = Comparator.comparing(OlapEventTypeMetricsDto::isConference).reversed();
+        Comparator<OlapEventTypeMetricsDto> comparatorByOrganizerName = Comparator.comparing(OlapEventTypeMetricsDto::getOrganizerName, String.CASE_INSENSITIVE_ORDER);
+        Comparator<OlapEventTypeMetricsDto> comparatorByName = Comparator.comparing(OlapEventTypeMetricsDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
+
+        olapEventTypeStatisticsDto.getMetricsList().sort(comparatorByIsConference.thenComparing(comparatorByOrganizerName).thenComparing(comparatorByName));
+
+        return olapEventTypeStatisticsDto;
+    }
 }
