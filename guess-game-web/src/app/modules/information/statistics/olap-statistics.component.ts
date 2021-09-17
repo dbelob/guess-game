@@ -80,6 +80,8 @@ export class OlapStatisticsComponent implements OnInit {
     public speakerMultiSortMeta: any[] = [];
     public companyMultiSortMeta: any[] = [];
 
+    public speakerExpandedRows: {} = {};
+
     constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
                 private eventService: EventService, private organizerService: OrganizerService,
                 public translateService: TranslateService, private speakerService: SpeakerService,
@@ -272,6 +274,7 @@ export class OlapStatisticsComponent implements OnInit {
 
                     if (olapStatistics?.speakerStatistics) {
                         fixOlapEntityStatistics(olapStatistics.speakerStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
+                        this.speakerExpandedRows = {};
                     }
 
                     if (olapStatistics?.companyStatistics) {
