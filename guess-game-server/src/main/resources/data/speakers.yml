@@ -1,17 +1,16 @@
 speakers:
   - id: 0
     photoFileName: 0000.jpg
+    photoUpdatedAt: 2021-09-01T08:59:06.555Z[UTC]
     name:
       - {language: en, text: "Anton Arhipov"}
       - {language: ru, text: "Антон Архипов"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Anton is a Developer Advocate at JetBrains, resident of \"Разбор Полётов\" podcast. Working\
-            \ with TeamCity and IntelliJ IDEA. Programming in Java and Kotlin. Professional interests include programming\
-            \ languages, middleware, and developer tooling."}
-      - {language: ru, text: "Developer Advocate в компании JetBrains, резидент подкаста «Разбор Полётов». Работает с TeamCity\
-            \ и IntelliJ IDEA. Программирует на Java и Kotlin. Профессиональные интересы связаны с языками программировани\
-            я и средствами разработки ПО."}
+      - {language: en, text: "Anton is a Developer Advocate at JetBrains in the Kotlin project and \"Razbor poletov\" podcast\
+            \ resident. Professional interests include programming languages, middleware, and developer tooling."}
+      - {language: ru, text: "Антон — Developer Advocate в команде Kotlin в JetBrains. Долгое время программировал на Java.\
+            \ Последние 10 лет причастен к разработке инструментов для разработчиков ПО."}
     twitter: antonarhipov
     gitHub: antonarhipov
     habr: antonarhipov
@@ -158,13 +157,19 @@ speakers:
       - {language: ru, text: "Паша Финкельштейн"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Pasha is a speaker and developer for the Big Data Tools team at JetBrains and the author of\
-            \ the Kotlin API for Apache Spark. In the past, he has worked in almost every IT position, from tech support to\
-            \ manager and data engineer. He loves talking to people about anything, but particularly he loves talking about\
-            \ IT. He's a Kotlin fan."}
-      - {language: ru, text: "Паша — серийный спикер и разработчик Big Data Tools в JetBrains. Автор Kotlin API for Apache\
-            \ Spark. В прошлом успел позаниматься почти всем в сфере IT: от поддержки и системного администрирования до ме\
-            неджмента и дата инжиниринга. Очень любит людей и разговаривать. Обо всём, особенно об IT. Фанат Котлина."}
+      - language: en
+        text: "Despite his education in psychology, for 14 years Pasha managed to work in a lot of IT areas — system administration,\
+            \ development, management, data engineering, in general, touched almost everything that exists in IT. More than\
+            \ 10 years ago he started practicing DevOps and never focused on just one thing.\nNow Pasha works at JetBrains\
+            \ on Big Data Tools – tools to make data engineer's life easier.\nVery sociable, loves, and understands people\
+            \ and is always happy to answer any questions."
+      - language: ru
+        text: "Несмотря на психологическое образование, за 14 лет Паша успел поработать в куче сфер в IT — системное админ\
+            истрирование, разработка, менеджмент разных уровней, дата инжиниринг, в общем, так или иначе, касался почти вс\
+            его, что в IT существует. Начал практиковать DevOps-практики больше 10 лет назад и никогда не концентрировался\
+            \ на чём-то одном.\n\nСейчас Паша работает в компании JetBrains над разработкой Big Data Tools — инструментами\
+            \ для того, чтобы делать жизнь дата инженеров проще.\n\nОчень общительный, любит и понимает людей, и всегда ра\
+            д ответить на любые вопросы."
     twitter: asm0di0
     gitHub: asm0dey
     habr: asm0dey
@@ -657,18 +662,21 @@ speakers:
     habr: jbaruch
   - id: 36
     photoFileName: 0036.jpg
+    photoUpdatedAt: 2021-08-31T11:51:28.328Z[UTC]
     name:
-      - {language: en, text: "Alexander Tarasov"}
+      - {language: en, text: "Aleksandr Tarasov"}
       - {language: ru, text: "Александр Тарасов"}
-    companyIds: [653]
+    companyIds: [763]
     bio:
-      - {language: en, text: "Alexander is a software engineer at one of the most popular social networks Odnoklassniki. He\
-            \ has more than eleven years of experience in server-side Java development and more than three years of deployment\
-            \ automatization and different engineering practices. The author of several open-source projects connected with\
-            \ Spring Cloud on GitHub, writes articles for the own blog, Habrahabr and DZone."}
-      - {language: ru, text: "Инженер-программист из Одноклассников. За плечами Александра — более 11 лет разработки, в ос\
-            новном на Java, более трех лет практики внедрения различного рода автоматизации. Имеет несколько open source-п\
-            роектов, связанных со Spring Cloud на GitHub, ведет собственный блог, пишет статьи на Хабрахабр и DZone."}
+      - {language: en, text: "Director of Engineering at the British startup ANNA Money. Alexander has experience in implementing\
+            \ microservice architecture, various modern technologies: Kubernetes, Docker, Ansible, Spring Boot. He has more\
+            \ than 13 years of participation in server development, from B2B to social networks. A fan of extreme programming,\
+            \ open source, and modern stuff."}
+      - {language: ru, text: "Директор по инженерии в британском стартапе ANNA Money. Имеет опыт внедрения микросервисной\
+            \ архитектуры, различных модных и молодёжных технологий: Kubernetes, Docker, Ansible, Spring Boot. За плечами\
+            \ Александра более 13 лет участия в серверной разработке различных продуктов, от B2B до социальных сетей. Фана\
+            т экстремального программирования, открытого программного обеспечения и прочей хипстоты в суровом инженерном д\
+            еле."}
     twitter: aatarasoff
     gitHub: aatarasoff
     habr: aatarasoff
@@ -859,7 +867,7 @@ speakers:
     gitHub: sebastienblanc
   - id: 49
     photoFileName: 0049.jpg
-    photoUpdatedAt: 2019-02-11T12:45:04.409Z[UTC]
+    photoUpdatedAt: 2021-08-31T11:55:27.040Z[UTC]
     name:
       - {language: en, text: "Tagir Valeev"}
       - {language: ru, text: "Тагир Валеев"}
@@ -9825,7 +9833,7 @@ speakers:
     twitter: rdvornov
   - id: 686
     photoFileName: 0686.jpg
-    photoUpdatedAt: 2018-11-20T06:31:26.444Z[UTC]
+    photoUpdatedAt: 2021-09-02T07:35:47.867Z[UTC]
     name:
       - {language: en, text: "Egor Malkevich"}
       - {language: ru, text: "Егор Малькевич"}
@@ -18580,15 +18588,16 @@ speakers:
             жки баз данных, оптимизация обработки данных, моделирование данных."}
   - id: 1353
     photoFileName: 1353.jpg
-    photoUpdatedAt: 2019-04-17T08:57:02.379Z[UTC]
+    photoUpdatedAt: 2021-06-08T13:15:42.707Z[UTC]
     name:
       - {language: en, text: "Sergey Platonov"}
       - {language: ru, text: "Сергей Платонов"}
     companyIds: [209]
     bio:
-      - {language: en, text: "C++ developer, organizer of C++ Siberia."}
-      - {language: ru, text: "C++ программист. Организатор C++ Siberia."}
+      - { language: en, text: "C++ developer, member of C++ Russia PC, organizer of C++ Siberia" }
+      - { language: ru, text: "C++ программист, член ПК C++ Russia, организатор C++ Siberia" }
     twitter: sermp
+    gitHub: sergey-platonov
     habr: sermp
   - id: 1354
     photoFileName: 1354.jpg
@@ -22758,7 +22767,7 @@ speakers:
     habr: alexyakunin
   - id: 1641
     photoFileName: 1641.jpg
-    photoUpdatedAt: 2021-03-12T14:11:23.096Z[UTC]
+    photoUpdatedAt: 2021-08-30T09:07:29.134Z[UTC]
     name:
       - {language: en, text: "Philipp Bocharov"}
       - {language: ru, text: "Филипп Бочаров"}
@@ -22769,9 +22778,9 @@ speakers:
             \ Company's ecosystem. Promotes and popularizes ideas of observability among product teams.\nCertified Product\
             \ Owner with over 10 years of experience in development."
       - language: ru
-        text: "Руководитель проектов по разработке в МТС. Занимается развитием технологической платформы, обеспечивающей н\
-            аблюдаемость экосистемы Компании. Продвигает и популяризирует идеи наблюдаемости среди продуктовых команд. \nС\
-            ертифицированный владелец продукта с опытом в разработке более 10 лет."
+        text: "Руководитель проектов в МТС. Занимается развитием технологической платформы, обеспечивающей наблюдаемость э\
+            косистемы компании. Продвигает идеи наблюдаемости среди продуктовых команд.\r\n\r\nСертифицированный владелец\
+            \ продукта с опытом в разработке более 10 лет."
     habr: bocharovf
   - id: 1642
     photoFileName: 1642.jpg
@@ -23262,3 +23271,40 @@ speakers:
       - {language: en, text: "Ruslan Zainutdinov"}
       - {language: ru, text: "Руслан Зайнутдинов"}
     companyIds: [686]
+  - id: 1679
+    photoFileName: 1679.jpg
+    photoUpdatedAt: 2021-08-31T07:17:30.353Z[UTC]
+    name:
+      - {language: en, text: "Dmitry Gordin"}
+      - {language: ru, text: "Дмитрий Гордин"}
+    companyIds: [689]
+    bio:
+      - language: en
+        text: "Certified \"Operator of electronic computers and computers of the 3rd category\".\r\nAlmost got his Ph.D. at\
+            \ Innopolis University. Taught courses algorithms and data structures, Java, Android. Contributed 347 lines in\
+            \ android/camera-samples. Dmitry has been coding for money for 8 years. He likes to run neural networks on smartphones."
+      - language: ru
+        text: "Оператор электронно-вычислительных и вычислительных машин 3 разряда.\r\nУчился в аспирантуре Университета И\
+            ннополис. Преподавал алгоритмы и структуры данных, Java, Android. Законтрибьютил 347 строчек в android/camera-samples.\
+            \ 8 лет кодирует за деньги. Нравится запускать нейросети на телефоне."
+    twitter: gordinmitya
+    gitHub: gordinmitya
+  - id: 1680
+    photoFileName: 1680.jpg
+    photoUpdatedAt: 2021-08-30T09:45:49.364Z[UTC]
+    name:
+      - {language: en, text: "Simon Osipov"}
+      - {language: ru, text: "Семён Осипов"}
+    companyIds: [471]
+    bio:
+      - language: en
+        text: "Дата-инженер в Semrush.\nИнженер-самоучка, прошел путь от учебных скриптов до построения систем анализа бол\
+            ьших данных. Специализируется на автоматизации систем поставки и хранения данных. Ментор, ведет свой Telegram-к\
+            анал про работу с данными."
+      - language: ru
+        text: "Дата-инженер в Semrush.\r\nИнженер-самоучка, прошел путь от учебных скриптов до построения систем анализа б\
+            ольших данных. Специализируется на автоматизации систем поставки и хранения данных. Ментор, ведет свой Telegram-к\
+            анал про работу с данными."
+    twitter: OsipovSimon
+    gitHub: SimonOsipov
+    habr: SimonOsipov

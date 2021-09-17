@@ -1740,5 +1740,11 @@ public class ConferenceDataLoader {
 //                        false
 //                )
 //        );
+//        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2021, 9, 18), "2021autumntt",
+//                new LoadSettings(
+//                        Collections.emptyMap(),
+//                        Set.of("Открытие фестиваля", "Разговор в студии", "Закрытие фестиваля"),
+//                        false
+//                ));
     }
 }

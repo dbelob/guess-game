@@ -301,10 +301,8 @@ eventTypes:
     name:
       - {language: en, text: JPoint}
     shortDescription:
-      - language: en
-        text: "The largest Java conference in Russia"
-      - language: ru
-        text: "Международная Java-конференция для опытных разработчиков"
+      - {language: en, text: "The largest Java conference in Russia"}
+      - {language: ru, text: "Международная Java-конференция для опытных разработчиков"}
     longDescription:
       - language: en
         text: "JPoint (Moscow) is hardcore technical Java-conference only for experienced Java-developers and only about R&D.\n\
@@ -328,7 +326,7 @@ eventTypes:
     vkLink: https://vk.com/jpoint
     twitterLink: https://twitter.com/JUGru
     facebookLink: https://www.facebook.com/jpointconf/
-    youtubeLink: https://www.youtube.com/user/JUGRuVideo/
+    youtubeLink: https://www.youtube.com/user/JUGRuVideo
     telegramLink: https://telegram.me/jpointconf
     timeZone: Europe/Moscow
   - id: 9
@@ -338,10 +336,8 @@ eventTypes:
     name:
       - {language: en, text: Mobius}
     shortDescription:
-      - language: en
-        text: "Conference for professional mobile developers"
-      - language: ru
-        text: "Конференция для мобильных разработчиков"
+      - {language: en, text: "Conference for professional mobile developers"}
+      - {language: ru, text: "Конференция для мобильных разработчиков"}
     longDescription:
       - language: en
         text: "Mobius is a conference for mobile apps developers, which takes place in Moscow and St. Petersburg, gathering\

@@ -238,22 +238,29 @@
         <td>2020&nbsp;Autumn<br>(2020techtrainautumn)</td>
     </tr>
     <tr>
-        <th>2021</th>
-        <td></td>
-        <td></td>
-        <td>2021<br>(2021spb)</td>
-        <td>2021<br>(2021spb)</td>
-        <td>2021<br>(2021spb)</td>
-        <td>2021<br>(2021hydra)</td>
-        <td></td>
-        <td>2021<br>(2021jpoint)</td>
-        <td></td>
-        <td>2021<br>(2021spb)</td>
-        <td></td>
-        <td></td>
-        <td>2021<br>(2021marchtt)</td>
-        <td>2021</td>
-        <td>2021</td>
-        <td>2021</td>
+        <th rowspan="2">2021</th>
+        <td rowspan="2">2021 Spb<br>(2021spbcpp)</td>
+        <td rowspan="2">2021 Spb<br>(2021spbdevoops)</td>
+        <td>2021 Spb<br>(2021spb)</td>
+        <td>2021 Spb<br>(2021spb)</td>
+        <td>2021 Spb<br>(2021spb)</td>
+        <td rowspan="2">2021<br>(2021hydra)</td>
+        <td rowspan="2">2021<br>(2021joker)</td>
+        <td rowspan="2">2021<br>(2021jpoint)</td>
+        <td rowspan="2">2021<br>(2021joker)</td>
+        <td>2021 Spb<br>(2021spb)</td>
+        <td rowspan="2"></td>
+        <td rowspan="2">2021<br>(2021spbsmartdata)</td>
+        <td>2021 Spring<br>(2021marchtt)</td>
+        <td rowspan="2">2021</td>
+        <td rowspan="2">2021</td>
+        <td rowspan="2">2021</td>
+    </tr>
+    <tr>
+        <td>2021 Msk<br>(2021msk)</td>
+        <td>2021 Msk<br>(2021msk)</td>
+        <td>2021 Msk<br>(2021msk)</td>
+        <td>2021 Msk<br>(2021msk)</td>
+        <td>2021 Autumn<br>(2021autumntt)</td>
     </tr>
 </table>

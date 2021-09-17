@@ -35,7 +35,7 @@ events:
     siteLink:
       - {language: en, text: "https://cppconf-moscow.ru/en/"}
       - {language: ru, text: "https://cppconf-moscow.ru/"}
-    youtubeLink: https://live.jugru.org/online/100067r10004337
+    youtubeLink: https://www.youtube.com/playlist?list=PLZN9ZGiWZoZruMY-MlkAd-nHzdP9TfLRC
     placeId: 24
     talkIds: [1438, 1440, 2520, 1449, 2521, 2522, 1445, 1460, 2353, 2354, 2399, 1451, 1446, 1453, 2524, 2525, 1459, 1461,
               1456, 1441, 1455, 1452, 1443, 2526, 2527, 2528, 1450, 2112, 1442, 1447, 2400, 1463, 2529, 2530, 2401, 1464]
@@ -47,7 +47,7 @@ events:
     endDate: "2020-11-14"
     siteLink:
       - {language: ru, text: "https://cppconf-piter.ru/"}
-    youtubeLink: https://live.jugru.org/events/cpprussia
+    youtubeLink: https://www.youtube.com/playlist?list=PLZN9ZGiWZoZpzXS_y_1tZJW0OaL-HrU1F
     placeId: 24
     talkIds: [2659, 2660, 2661, 2662, 2663, 2664, 2838, 2665, 2666, 2667, 2668, 2669, 2670, 2671, 2672, 2673, 2674, 2675,
               2676, 2677, 2678, 2679, 2680, 2681, 2682]
@@ -96,7 +96,7 @@ events:
     siteLink:
       - {language: en, text: "https://devoops-moscow.ru/en/"}
       - {language: ru, text: "https://devoops-moscow.ru/"}
-    youtubeLink: https://live.jugru.org/online/100068r10004323/
+    youtubeLink: https://www.youtube.com/playlist?list=PL-ety8gh7rToQPAGEJh0t3QkWClxvx_ql
     placeId: 24
     talkIds: [2119, 2115, 2116, 2548, 2549, 2550, 2551, 2118, 2131, 2552, 2122, 2553, 2125, 2554, 2567, 2555, 2568, 2128,
               2556, 2127, 2130, 2117, 2143, 2557, 2558, 2559, 2402, 2135, 2133, 2138, 2357, 2139, 2560, 2561, 2126, 2142, 2569,
@@ -110,7 +110,7 @@ events:
     siteLink:
       - {language: en, text: "https://devoops-piter.ru/en/"}
       - {language: ru, text: "https://devoops-piter.ru/"}
-    youtubeLink: https://live.jugru.org/events/devoops
+    youtubeLink: https://www.youtube.com/playlist?list=PL-ety8gh7rTqlHs8YSt4C-Epx9nJuxBfQ
     placeId: 24
     talkIds: [2761, 2762, 2763, 2835, 2765, 2766, 2767, 2768, 2769, 2770, 2771, 2772, 2773, 2836, 2774, 2775, 2776, 2777,
               2778, 2779, 2780, 2781, 2782, 2783, 2784, 2785, 2786, 2787, 2788, 2789, 2790, 2791, 2792, 2794, 2795, 2796, 2797]
@@ -286,7 +286,7 @@ events:
     siteLink:
       - {language: en, text: "https://dotnext-piter.ru/en/"}
       - {language: ru, text: "https://dotnext-piter.ru/"}
-    youtubeLink: https://live.jugru.org/online/100064r10004297
+    youtubeLink: https://www.youtube.com/playlist?list=PLtWrKx3nUGBe8Fm_3Mp6dtdQnet5GuHFu
     placeId: 24
     talkIds: [1371, 1632, 1362, 2221, 2411, 2412, 2309, 1349, 1352, 1358, 1347, 1374, 1361, 2413, 2414, 2415, 2339, 1845,
               1351, 1366, 1348, 1356, 1350, 2574, 2454, 2416, 2417, 2418, 2422, 1367, 1375, 2419, 2420, 1359, 1355, 1369, 2421,
@@ -299,7 +299,7 @@ events:
     endDate: "2020-12-05"
     siteLink:
       - {language: ru, text: "https://dotnext-moscow.ru/"}
-    youtubeLink: https://live.jugru.org/events/dotnext
+    youtubeLink: https://www.youtube.com/playlist?list=PLtWrKx3nUGBfRvrRmicKedShARUrDU3sj
     placeId: 24
     talkIds: [2798, 2799, 2800, 2801, 2802, 2831, 2803, 2804, 2805, 2832, 2807, 2808, 2809, 2810, 2811, 2812, 2813, 2814,
               2833, 2815, 2816, 2817, 2818, 2819, 2820, 2821, 2822, 2823, 2824, 2825, 2826, 2827, 2829, 2830, 2834]
@@ -312,7 +312,7 @@ events:
     siteLink:
       - {language: en, text: "https://dotnext-piter.ru/en/"}
       - {language: ru, text: "https://dotnext-piter.ru/"}
-    youtubeLink: https://live.jugru.org/?p=sch100088
+    youtubeLink: https://www.youtube.com/playlist?list=PLtWrKx3nUGBe28FDxQP2hsF2nG4NQG5_5
     placeId: 24
     talkIds: [3062, 3063, 3064, 3065, 3110, 3112, 3066, 3067, 3068, 3069, 3070, 3071, 3072, 3073, 3120, 3074, 3075, 3076,
               3077, 3078, 3079, 3080, 3081, 3111, 3082, 3083, 3113, 3085, 3086, 3087, 3088, 3121, 3089, 3090, 3091, 3092]
@@ -415,7 +415,7 @@ events:
     siteLink:
       - {language: en, text: "https://heisenbug-piter.ru/en/"}
       - {language: ru, text: "https://heisenbug-piter.ru/"}
-    youtubeLink: https://live.jugru.org/online/100065r10004285
+    youtubeLink: https://www.youtube.com/playlist?list=PLsVTVVvrKX9tzwh6Y1-D1-_Bg1PTjOvsQ
     placeId: 24
     talkIds: [1379, 1382, 1383, 1385, 2423, 2449, 2424, 2432, 2450, 1381, 2223, 1384, 1392, 1754, 1840, 1399, 1841, 2451,
               2452, 2427, 2425, 2433, 2429, 2340, 1638, 1637, 2310, 2428, 1636, 2341, 2388, 2430, 2431, 2455, 1397, 2342, 2224,
@@ -428,7 +428,7 @@ events:
     endDate: "2020-11-07"
     siteLink:
       - {language: ru, text: "https://heisenbug-moscow.ru/"}
-    youtubeLink: https://live.jugru.org/events/heisenbug
+    youtubeLink: https://www.youtube.com/playlist?list=PLsVTVVvrKX9tBV0_LSkAoSZge3C8qb0ec
     placeId: 24
     talkIds: [2595, 2575, 2615, 2616, 2618, 2619, 2620, 2579, 2609, 2610, 2607, 2581, 2617, 2583, 2621, 2622, 2608, 2588,
               2611, 2612, 2623, 2587, 2596, 2613, 2624, 2585, 2589, 2590, 2614, 2591, 2593, 2597, 2592, 2625, 2594]
@@ -441,7 +441,7 @@ events:
     siteLink:
       - {language: en, text: "https://heisenbug-piter.ru/en/"}
       - {language: ru, text: "https://heisenbug-piter.ru/"}
-    youtubeLink: https://live.jugru.org/?p=sch100085
+    youtubeLink: https://www.youtube.com/playlist?list=PLsVTVVvrKX9td9Zm_4nF6Ywlz6gC5_e7K
     placeId: 24
     talkIds: [2921, 2922, 2923, 2924, 2925, 2926, 2927, 2928, 2929, 2930, 2931, 2955, 2932, 2933, 2951, 2934, 2952, 2935,
               2936, 2937, 2938, 2939, 3022, 2953, 2941, 2942, 2943, 2944, 2945, 2946, 2947, 2954, 2948, 2949, 2950, 3093]
@@ -558,7 +558,7 @@ events:
     siteLink:
       - {language: en, text: "https://holyjs-piter.ru/en/"}
       - {language: ru, text: "https://holyjs-piter.ru"}
-    youtubeLink: https://live.jugru.org/online/100066r10004348
+    youtubeLink: https://www.youtube.com/playlist?list=PL8sJahqnzh8KY2RD2eJIrbdSSljJ49QVm
     placeId: 24
     talkIds: [1957, 1432, 1434, 2456, 2457, 2458, 2459, 2460, 2461, 2462, 1756, 1433, 2463, 1409, 1415, 1757, 1405, 2464,
               2465, 2466, 2467, 1414, 1428, 1435, 2468, 2469, 1643, 2470, 1422, 2471, 2472, 2473, 2391, 2434, 1406, 2435, 2392,
@@ -573,7 +573,7 @@ events:
     siteLink:
       - {language: en, text: "https://holyjs-moscow.ru/en/"}
       - {language: ru, text: "https://holyjs-moscow.ru/"}
-    youtubeLink: https://live.jugru.org/events/holyjs
+    youtubeLink: https://www.youtube.com/playlist?list=PL8sJahqnzh8KkFDsx3tAM8t1kOMn89CwU
     placeId: 24
     talkIds: [2723, 2724, 2725, 2726, 2727, 2728, 2729, 2730, 2731, 2732, 2733, 2734, 2735, 2736, 2737, 2757, 2738, 2739,
               2740, 2741, 2742, 2743, 2744, 2745, 2758, 2746, 2747, 2748, 2749, 2750, 2751, 2752, 2753]
@@ -609,7 +609,7 @@ events:
     endDate: "2020-07-09"
     siteLink:
       - {language: en, text: "https://hydraconf.com/"}
-    youtubeLink: https://live.jugru.org/online/100070r10004451/
+    youtubeLink: https://www.youtube.com/playlist?list=PLC5OGTO4dWxZId5x2ZRFmujuef_-jP-c7
     placeId: 24
     talkIds: [2445, 2266, 2282, 2407, 2277, 2362, 2271, 2444, 2321, 2536, 2564, 2447, 2319, 2275, 2269, 2537, 2278,
               2535, 2364, 2409, 2274, 2281, 2410, 2366]
@@ -758,7 +758,7 @@ events:
     siteLink:
       - {language: en, text: "https://2020.jpoint.ru/en/"}
       - {language: ru, text: "https://2020.jpoint.ru/"}
-    youtubeLink: https://live.jugru.org/online/100063r10004435
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b8xrR08NRQoUW4XRCBByRf2
     placeId: 24
     talkIds: [2440, 2232, 2243, 2258, 2503, 2504, 2505, 2542, 2441, 2231, 2235, 2236, 2442, 2255, 2240, 2241, 2508, 2509,
               2510, 2543, 2512, 2513, 2237, 2242, 2260, 2253, 2249, 2239, 2248, 2230, 2544, 2514, 2397, 2244, 2245, 2398, 2254,
@@ -883,7 +883,7 @@ events:
     siteLink:
       - {language: en, text: "https://jokerconf.com/en/"}
       - {language: ru, text: "https://jokerconf.com/"}
-    youtubeLink: https://live.jugru.org/events/joker
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b_bCEiqcpNwoB0xT6wlIofb
     placeId: 24
     talkIds: [2684, 2685, 2686, 2687, 2688, 2689, 2690, 2691, 2692, 2693, 2754, 2694, 2695, 2759, 2697, 2698, 2755, 2699,
               2700, 2701, 2756, 2703, 2704, 2705, 2706, 2707, 2708, 2709, 2710, 2711, 2712, 2713, 2714, 2715, 2716, 2717, 2760,
@@ -1011,7 +1011,7 @@ events:
     siteLink:
       - {language: en, text: "https://mobius-piter.ru/en/"}
       - {language: ru, text: "https://mobius-piter.ru/"}
-    youtubeLink: https://live.jugru.org/online/100069r10004305
+    youtubeLink: https://www.youtube.com/playlist?list=PLb1A91j1236pxEWPQUlg98OYU2O1WRw1e
     placeId: 24
     talkIds: [2393, 2489, 1965, 1972, 2490, 2491, 2437, 2492, 2104, 2109, 2394, 1973, 2350, 2493, 2494, 2495, 2438, 2496,
               1971, 1964, 2395, 1961, 2107, 2108, 2497, 2396, 1967, 1966, 2105, 2227, 1974, 2226, 1969, 2498, 2499, 2500, 2352,
@@ -1025,7 +1025,7 @@ events:
     siteLink:
       - {language: en, text: "https://mobius-moscow.ru/en/"}
       - {language: ru, text: "https://mobius-moscow.ru/"}
-    youtubeLink: https://live.jugru.org/events/mobius
+    youtubeLink: https://www.youtube.com/playlist?list=PLb1A91j1236p4NcChx-G-aWNuiXgce80d
     placeId: 24
     talkIds: [2627, 2628, 2629, 2630, 2631, 2632, 2633, 2634, 2635, 2636, 2637, 2638, 2639, 2640, 2641, 2642, 2643, 2644,
               2645, 2646, 2647, 2648, 2649, 2650, 2651, 2652, 2653, 2654, 2683, 2655, 2656, 2837, 2657]
@@ -1061,7 +1061,7 @@ events:
     endDate: "2020-07-09"
     siteLink:
       - {language: en, text: "https://sptdc.ru/"}
-    youtubeLink: https://live.jugru.org/online/100078r10004705/
+    youtubeLink: https://www.youtube.com/playlist?list=PL_5iU_mKtf3uFget7xsc6CueBQO3EfB_r
     placeId: 24
     talkIds: [2367, 2538, 2368, 2369, 2370, 2371, 2539, 2566]
   # SmartData
@@ -1084,7 +1084,7 @@ events:
     siteLink:
       - {language: en, text: "https://2020.smartdataconf.ru/en/"}
       - {language: ru, text: "https://2020.smartdataconf.ru/"}
-    youtubeLink: https://live.jugru.org/?p=sch100083
+    youtubeLink: https://www.youtube.com/playlist?list=PLeN_80lmoMY1ugdDLg2mWht5eQDq6CoNQ
     placeId: 24
     talkIds: [2839, 2840, 2841, 2842, 2843, 2844, 2845, 2846, 2847, 2848, 2849, 2850, 2851, 2852, 2853, 2854, 2855, 2856,
               2868, 2858, 2859, 2860, 2861, 2862, 2863, 2864, 2865, 2866, 2867]
@@ -1109,6 +1109,7 @@ events:
     siteLink:
       - {language: en, text: "https://techtrain.ru/en/"}
       - {language: ru, text: "https://techtrain.ru/"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLmJD_ICvgPy1_10seBA-6QSkkRXPsgeLR
     placeId: 2
     talkIds: [1317, 1318, 1319, 1320, 1321, 1322, 1323, 1324, 1325, 1326, 1327, 1328, 1329, 1330, 1331, 1332, 1333, 1334,
               1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344]
@@ -1120,7 +1121,7 @@ events:
     siteLink:
       - {language: en, text: "https://techtrain.ru/en/"}
       - {language: ru, text: "https://techtrain.ru/"}
-    youtubeLink: https://live.jugru.org/online/100081r10004282
+    youtubeLink: https://www.youtube.com/playlist?list=PLmJD_ICvgPy1PRJtciEtdjANJWUZjN8zb
     placeId: 24
     talkIds: [2374, 2375, 2376, 2377, 2386, 2378, 2379, 2380, 2384]
   - eventTypeId: 12
@@ -1130,7 +1131,7 @@ events:
     endDate: "2020-10-24"
     siteLink:
       - {language: ru, text: "https://techtrain.ru/"}
-    youtubeLink: https://live.jugru.org/events/techtrain
+    youtubeLink: https://www.youtube.com/playlist?list=PLmJD_ICvgPy3Gn-f5Qv36bGGY4GcrVrGo
     placeId: 24
     talkIds: [2598, 2599, 2600, 2601, 2602, 2603, 2604, 2605, 2606]
   - eventTypeId: 12
@@ -1140,9 +1141,19 @@ events:
     endDate: "2021-03-27"
     siteLink:
       - {language: ru, text: "https://techtrain.ru/"}
-    youtubeLink: https://live.jugru.org/events/techtrain/?p=sch100093
+    youtubeLink: https://www.youtube.com/playlist?list=PLmJD_ICvgPy3OCnmvg7_Np_oROSikO0-4
     placeId: 24
     talkIds: [2912, 2913, 2914, 2916, 2918, 2915, 2919, 2917, 2920]
+  - eventTypeId: 12
+    name:
+      - {language: en, text: "TechTrain 2021 Autumn"}
+    startDate: "2021-09-18"
+    endDate: "2021-09-18"
+    siteLink:
+      - {language: en, text: "https://techtrain.ru/"}
+    youtubeLink: https://live.jugru.org/techtrain
+    placeId: 24
+    talkIds: [3159, 3160, 3161, 3162, 3163, 3164, 3165, 3166]
   # JUG.MSK
   - eventTypeId: 13
     name:

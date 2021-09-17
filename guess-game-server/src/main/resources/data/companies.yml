@@ -2389,3 +2389,6 @@ companies:
   - id: 762
     name:
       - {language: en, text: PulsePoint}
+  - id: 763
+    name:
+      - {language: en, text: "ANNA Money"}
