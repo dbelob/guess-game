@@ -452,7 +452,7 @@ export class OlapStatisticsComponent implements OnInit {
             const olapEventTypeStatistics: OlapEntityStatistics<number, OlapEventTypeMetrics> = data;
 
             fixOlapEntityStatistics(olapEventTypeStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX);
-            speakerMetrics.eventTypeStatistics = olapEventTypeStatistics;
+            speakerMetrics.eventTypeStatistics = getOlapEventTypeStatisticsWithSortName(olapEventTypeStatistics);
           }
         );
     }
@@ -477,7 +477,7 @@ export class OlapStatisticsComponent implements OnInit {
             const olapEventTypeStatistics: OlapEntityStatistics<number, OlapEventTypeMetrics> = data;
 
             fixOlapEntityStatistics(olapEventTypeStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX);
-            companyMetrics.eventTypeStatistics = olapEventTypeStatistics;
+            companyMetrics.eventTypeStatistics = getOlapEventTypeStatisticsWithSortName(olapEventTypeStatistics);
           }
         );
     }
