@@ -97,8 +97,12 @@
       </div>
     </form>
 
+    <div *ngIf="selectedCubeType && selectedMeasureType" class="text-center h5 m-2">
+      {{getCubeTypeMessageKeyByCube(selectedCubeType) | translate}} – {{getMeasureTypeMessageKeyByCube(selectedMeasureType) | translate}}
+    </div>
+
     <div class="alert text-center m-2">
-      Charts
+      Chart
     </div>
 
     <div *ngIf="isNoEventTypesDataFoundVisible()" class="alert text-center m-2">
