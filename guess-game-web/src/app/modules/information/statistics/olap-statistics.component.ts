@@ -433,23 +433,25 @@ export class OlapStatisticsComponent implements OnInit {
     speakerRowExpand(event) {
         const speakerMetrics: OlapSpeakerMetrics = event.data;
 
-        this.statisticsService.getOlapEventTypeStatistics(
+        if (!speakerMetrics.eventTypeStatistics) {
+          this.statisticsService.getOlapEventTypeStatistics(
             new OlapEventTypeParameters(
-                this.selectedCubeType,
-                this.selectedMeasureType,
-                this.isConferences,
-                this.isMeetups,
-                (this.selectedOrganizer) ? this.selectedOrganizer.id : null,
-                (this.selectedEventTypes) ? this.selectedEventTypes.map(et => et.id) : null,
-                speakerMetrics.id,
-                null
+              this.selectedCubeType,
+              this.selectedMeasureType,
+              this.isConferences,
+              this.isMeetups,
+              (this.selectedOrganizer) ? this.selectedOrganizer.id : null,
+              (this.selectedEventTypes) ? this.selectedEventTypes.map(et => et.id) : null,
+              speakerMetrics.id,
+              null
             ))
             .subscribe(data => {
-                    const olapEventTypeStatistics: OlapEntityStatistics<number, OlapEventTypeMetrics> = data;
+                const olapEventTypeStatistics: OlapEntityStatistics<number, OlapEventTypeMetrics> = data;
 
-                    fixOlapEntityStatistics(olapEventTypeStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX);
-                    speakerMetrics.eventTypeStatistics = olapEventTypeStatistics;
-                }
+                fixOlapEntityStatistics(olapEventTypeStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX);
+                speakerMetrics.eventTypeStatistics = olapEventTypeStatistics;
+              }
             );
+        }
     }
 }

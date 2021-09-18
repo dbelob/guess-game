@@ -224,7 +224,7 @@
         <ng-template pTemplate="rowexpansion" let-speakerMetrics>
           <tr>
             <td [attr.colspan]="olapStatistics.speakerStatistics.dimensionValues.length + 4">
-              <div *ngIf="speakerMetrics.eventTypeStatistics">
+              <div *ngIf="speakerMetrics?.eventTypeStatistics">
                 <p-table [value]="speakerMetrics.eventTypeStatistics.metricsList" [resizableColumns]="true" [autoLayout]="true"
                          sortMode="multiple" [multiSortMeta]="eventTypeMultiSortMeta" styleClass="p-datatable-striped"
                          responsiveLayout="scroll" dataKey="id">
