@@ -1,6 +1,7 @@
 package guess.service;
 
 import guess.domain.source.EventType;
+import guess.domain.source.Speaker;
 import guess.domain.statistics.olap.CubeType;
 import guess.domain.statistics.olap.MeasureType;
 import guess.domain.statistics.olap.OlapEntityStatistics;
@@ -21,4 +22,7 @@ public interface OlapService {
                                                                         boolean isConferences, boolean isMeetups,
                                                                         Long organizerId, List<Long> eventTypeIds,
                                                                         Long speakerId, Long companyId);
+
+    OlapEntityStatistics<Integer, Speaker> getOlapSpeakerStatistics(CubeType cubeType, MeasureType measureType,
+                                                                    Long companyId, Long eventTypeId);
 }

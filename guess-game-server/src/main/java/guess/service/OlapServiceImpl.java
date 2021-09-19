@@ -64,28 +64,41 @@ public class OlapServiceImpl implements OlapService {
                 ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
                         ((organizerId == null) || (et.getOrganizer().getId() == organizerId)) &&
                         ((eventTypeIds == null) || eventTypeIds.isEmpty() || eventTypeIds.contains(et.getId()));
-        OlapEntityStatistics<Integer, EventType> olapEntityStatistics;
+        OlapEntityStatistics<Integer, EventType> olapEventTypeStatistics;
 
         switch (cubeType) {
             case SPEAKERS:
                 Predicate<Speaker> speakerPredicate = s -> (speakerId != null) && (s.getId() == speakerId);
 
-                olapEntityStatistics = getOlapEntityStatistics(cubeType, measureType, DimensionType.EVENT_TYPE, eventTypePredicate,
+                olapEventTypeStatistics = getOlapEntityStatistics(cubeType, measureType, DimensionType.EVENT_TYPE, eventTypePredicate,
                         DimensionType.SPEAKER, speakerPredicate);
                 break;
             case COMPANIES:
                 Predicate<Company> companyPredicate = c -> (companyId != null) && (c.getId() == companyId);
 
-                olapEntityStatistics = getOlapEntityStatistics(cubeType, measureType, DimensionType.EVENT_TYPE, eventTypePredicate,
+                olapEventTypeStatistics = getOlapEntityStatistics(cubeType, measureType, DimensionType.EVENT_TYPE, eventTypePredicate,
                         DimensionType.COMPANY, companyPredicate);
                 break;
             default:
                 throw new IllegalArgumentException(String.format("Invalid cube type %s", cubeType));
         }
 
-        olapEntityStatistics.getMetricsList().removeIf(m -> (m.getTotal() == null) || (m.getTotal() == 0));
+        olapEventTypeStatistics.getMetricsList().removeIf(m -> (m.getTotal() == null) || (m.getTotal() == 0));
 
-        return olapEntityStatistics;
+        return olapEventTypeStatistics;
+    }
+
+    @Override
+    public OlapEntityStatistics<Integer, Speaker> getOlapSpeakerStatistics(CubeType cubeType, MeasureType measureType,
+                                                                           Long companyId, Long eventTypeId) {
+        Predicate<Speaker> speakerPredicate = s -> (companyId != null) && (s.getCompanyIds().contains(companyId));
+        Predicate<EventType> eventTypePredicate = et -> (eventTypeId != null) && (et.getId() == eventTypeId);
+        OlapEntityStatistics<Integer, Speaker> olapSpeakerStatistics = getOlapEntityStatistics(cubeType, measureType,
+                DimensionType.SPEAKER, speakerPredicate, DimensionType.EVENT_TYPE, eventTypePredicate);
+
+        olapSpeakerStatistics.getMetricsList().removeIf(m -> (m.getTotal() == null) || (m.getTotal() == 0));
+
+        return olapSpeakerStatistics;
     }
 
     @SuppressWarnings("unchecked")

@@ -184,4 +184,22 @@ public class StatisticsController {
 
         return olapEventTypeStatisticsDto;
     }
+
+    @PostMapping("/olap-speaker-statistics")
+    @ResponseBody
+    public OlapEntityStatisticsDto<Integer, OlapSpeakerMetricsDto> getOlapSpeakerStatistics(
+            @RequestBody OlapSpeakerParametersDto olapParameters, HttpSession httpSession) {
+        var speakerStatistics = olapService.getOlapSpeakerStatistics(
+                olapParameters.getCubeType(), olapParameters.getMeasureType(), olapParameters.getCompanyId(),
+                olapParameters.getEventTypeId());
+        var language = localeService.getLanguage(httpSession);
+        var olapSpeakerStatisticsDto = OlapSpeakerStatisticsDto.convertToDto(speakerStatistics, language);
+
+        Comparator<OlapSpeakerMetricsDto> comparatorByTotal = Comparator.comparing(OlapSpeakerMetricsDto::getTotal).reversed();
+        Comparator<OlapSpeakerMetricsDto> comparatorByName = Comparator.comparing(OlapSpeakerMetricsDto::getName, String.CASE_INSENSITIVE_ORDER);
+
+        olapSpeakerStatisticsDto.getMetricsList().sort(comparatorByTotal.thenComparing(comparatorByName));
+
+        return olapSpeakerStatisticsDto;
+    }
 }
