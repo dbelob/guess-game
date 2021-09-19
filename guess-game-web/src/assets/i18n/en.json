@@ -37,7 +37,9 @@
       "companyLabel": "Company:",
       "organizerPlaceholder": "All",
       "eventTypePlaceholder": "All",
-      "eventPlaceholder": "All"
+      "eventPlaceholder": "All",
+      "speakersPlaceholder": "All",
+      "companiesPlaceholder": "All"
     },
     "table": {
       "totalsText": "Totals",

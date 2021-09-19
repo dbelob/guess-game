@@ -84,6 +84,7 @@
         <div class="col-sm-10">
           <p-autoComplete id="speaker" [(ngModel)]="selectedSpeakers" [suggestions]="speakerSuggestions" (completeMethod)="speakerSearch($event)"
                           (onSelect)="selectSpeaker($event)" (onUnselect)="unselectSpeaker($event)"
+                          placeholder="{{'common.list.speakersPlaceholder' | translate}}"
                           field="displayName" name="speaker" [multiple]="true" styleClass="olap-autocomplete"></p-autoComplete>
         </div>
       </div>
@@ -92,6 +93,7 @@
         <div class="col-sm-10">
           <p-autoComplete id="company" [(ngModel)]="selectedCompanies" [suggestions]="companySuggestions" (completeMethod)="companySearch($event)"
                           (onSelect)="selectCompany($event)" (onUnselect)="unselectCompany($event)"
+                          placeholder="{{'common.list.companiesPlaceholder' | translate}}"
                           field="name" name="company" [multiple]="true" styleClass="olap-autocomplete"></p-autoComplete>
         </div>
       </div>

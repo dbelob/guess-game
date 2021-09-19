@@ -37,7 +37,9 @@
       "companyLabel": "Компания:",
       "organizerPlaceholder": "Все",
       "eventTypePlaceholder": "Все",
-      "eventPlaceholder": "Все"
+      "eventPlaceholder": "Все",
+      "speakersPlaceholder": "Все",
+      "companiesPlaceholder": "Все"
     },
     "table": {
       "totalsText": "Всего",
