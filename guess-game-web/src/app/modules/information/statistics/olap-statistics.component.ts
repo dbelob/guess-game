@@ -15,6 +15,7 @@ import { OlapCompanyMetrics } from '../../../shared/models/statistics/olap/olap-
 import { OlapEventTypeParameters } from '../../../shared/models/statistics/olap/olap-event-type-parameters.model';
 import { OlapEntityStatistics } from '../../../shared/models/statistics/olap/olap-entity-statistics.model';
 import { OlapEventTypeMetrics } from '../../../shared/models/statistics/olap/olap-event-type-metrics.model';
+import { OlapSpeakerParameters } from '../../../shared/models/statistics/olap/olap-speaker-parameters.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
 import { OrganizerService } from '../../../shared/services/organizer.service';
@@ -477,7 +478,29 @@ export class OlapStatisticsComponent implements OnInit {
             const olapEventTypeStatistics: OlapEntityStatistics<number, OlapEventTypeMetrics> = data;
 
             fixOlapEntityStatistics(olapEventTypeStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX);
+            olapEventTypeStatistics.metricsList.forEach(m => m.companyId = companyMetrics.id);
             companyMetrics.eventTypeStatistics = getOlapEventTypeStatisticsWithSortName(olapEventTypeStatistics);
+          }
+        );
+    }
+  }
+
+  eventTypeRowExpand(event) {
+    const eventTypeMetrics: OlapEventTypeMetrics = event.data;
+
+    if (!eventTypeMetrics.speakerStatistics) {
+      this.statisticsService.getOlapSpeakerStatistics(
+        new OlapSpeakerParameters(
+          this.selectedCubeType,
+          this.selectedMeasureType,
+          eventTypeMetrics.companyId,
+          eventTypeMetrics.id
+        ))
+        .subscribe(data => {
+            const olapSpeakerStatistics: OlapEntityStatistics<number, OlapSpeakerMetrics> = data;
+
+            fixOlapEntityStatistics(olapSpeakerStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX);
+            eventTypeMetrics.speakerStatistics = olapSpeakerStatistics;
           }
         );
     }
