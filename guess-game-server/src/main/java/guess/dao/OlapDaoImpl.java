@@ -38,8 +38,8 @@ public class OlapDaoImpl implements OlapDao {
         Cube companiesCube = new Cube(
                 new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.COMPANY, DimensionType.SPEAKER,
                         DimensionType.YEAR)),
-                new LinkedHashSet<>(Arrays.asList(MeasureType.SPEAKERS_QUANTITY, MeasureType.TALKS_QUANTITY,
-                        MeasureType.EVENTS_QUANTITY, MeasureType.EVENT_TYPES_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY,
+                new LinkedHashSet<>(Arrays.asList(MeasureType.TALKS_QUANTITY, MeasureType.EVENTS_QUANTITY,
+                        MeasureType.EVENT_TYPES_QUANTITY, MeasureType.SPEAKERS_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY,
                         MeasureType.MVPS_QUANTITY)));
 
         cubes.put(CubeType.EVENT_TYPES, eventTypesCube);
