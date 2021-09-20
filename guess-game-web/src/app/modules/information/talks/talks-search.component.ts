@@ -99,7 +99,7 @@ export class TalksSearchComponent implements OnInit {
 
   loadEvents(eventType: EventType) {
     if (eventType) {
-      this.eventService.getEvents(true, true, eventType)
+      this.eventService.getEvents(true, true, null, eventType)
         .subscribe(data => {
           this.fillEvents(data);
 
@@ -146,7 +146,7 @@ export class TalksSearchComponent implements OnInit {
 
         // Load events and search
         if (this.selectedEventType) {
-          this.eventService.getEvents(true, true, this.selectedEventType)
+          this.eventService.getEvents(true, true, null, this.selectedEventType)
             .subscribe(data => {
               this.fillEvents(data);
 
