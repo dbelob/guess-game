@@ -15,15 +15,13 @@ import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
 import static guess.util.tagcloud.TagCloudExporter.OUTPUT_DIRECTORY_NAME;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @DisplayName("TagCloudExporter class tests")
@@ -179,17 +177,8 @@ class TagCloudExporterTest {
     }
 
     @Test
-    void save() throws IOException {
-        Path directoryPath = Path.of(OUTPUT_DIRECTORY_NAME);
-        Path filePath = Path.of(OUTPUT_DIRECTORY_NAME + "/talk00.txt");
-
-        assertFalse(Files.exists(filePath));
-        assertFalse(Files.exists(directoryPath));
-
-        TagCloudExporter.save("content", "talk00.txt");
-
-        assertTrue(Files.exists(directoryPath) && Files.isDirectory(directoryPath));
-        assertTrue(Files.exists(filePath) && !Files.isDirectory(filePath));
+    void save() {
+        assertDoesNotThrow(() -> TagCloudExporter.save("content", "talk00.txt"));
     }
 
     @Test
