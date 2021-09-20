@@ -11,7 +11,7 @@ import java.util.List;
 public interface EventService {
     Event getEventById(long id);
 
-    List<Event> getEvents(boolean isConferences, boolean isMeetups, Long eventTypeId);
+    List<Event> getEvents(boolean isConferences, boolean isMeetups, Long organizerId, Long eventTypeId);
 
     Event getDefaultEvent(boolean isConferences, boolean isMeetups);
 

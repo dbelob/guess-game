@@ -42,8 +42,9 @@ public class EventController {
     @GetMapping("/events")
     @ResponseBody
     public List<EventBriefDto> getEvents(@RequestParam boolean conferences, @RequestParam boolean meetups,
+                                         @RequestParam(required = false) Long organizerId,
                                          @RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
-        List<Event> events = eventService.getEvents(conferences, meetups, eventTypeId);
+        List<Event> events = eventService.getEvents(conferences, meetups, organizerId, eventTypeId);
         var language = localeService.getLanguage(httpSession);
 
         events.sort(Comparator.comparing(Event::getStartDate).reversed());

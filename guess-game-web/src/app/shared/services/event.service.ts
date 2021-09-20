@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Event } from '../models/event/event.model';
 import { EventType } from '../models/event-type/event-type.model';
 import { EventDetails } from '../models/event/event-details.model';
+import { Organizer } from '../models/organizer/organizer.model';
 import { MessageService } from '../../modules/message/message.service';
 
 @Injectable({
@@ -16,11 +17,13 @@ export class EventService {
   constructor(private http: HttpClient, private messageService: MessageService) {
   }
 
-  getEvents(isConferences: boolean, isMeetups: boolean, eventType: EventType): Observable<Event[]> {
+  getEvents(isConferences: boolean, isMeetups: boolean, organizer: Organizer, eventType: EventType): Observable<Event[]> {
     let params = new HttpParams()
       .set('conferences', isConferences.toString())
       .set('meetups', isMeetups.toString());
-
+    if (organizer) {
+      params = params.set('organizerId', organizer.id.toString());
+    }
     if (eventType) {
       params = params.set('eventTypeId', eventType.id.toString());
     }
