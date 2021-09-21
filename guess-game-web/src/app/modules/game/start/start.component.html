@@ -32,7 +32,7 @@
         <p-listbox [multiple]="true" id="event" [options]="events" [(ngModel)]="selectedEvents"
                    optionLabel="displayName" (onChange)="onEventChange($event.value)" name="event"
                    styleClass="start-listbox" [listStyle]="{'height':'114px'}"
-                   [disabled]="isEventsDisabled()"></p-listbox>
+                   [disabled]="isEventsDisabled()" emptyMessage="{{'common.list.emptyMessage' | translate}}"></p-listbox>
       </div>
     </div>
     <div class="form-group row">

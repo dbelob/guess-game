@@ -39,7 +39,8 @@
       "eventTypePlaceholder": "All",
       "eventPlaceholder": "All",
       "speakersPlaceholder": "All",
-      "companiesPlaceholder": "All"
+      "companiesPlaceholder": "All",
+      "emptyMessage": "No items"
     },
     "table": {
       "totalsText": "Totals",

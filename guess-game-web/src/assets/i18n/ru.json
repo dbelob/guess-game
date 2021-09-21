@@ -39,7 +39,8 @@
       "eventTypePlaceholder": "Все",
       "eventPlaceholder": "Все",
       "speakersPlaceholder": "Все",
-      "companiesPlaceholder": "Все"
+      "companiesPlaceholder": "Все",
+      "emptyMessage": "Нет элементов"
     },
     "table": {
       "totalsText": "Всего",
