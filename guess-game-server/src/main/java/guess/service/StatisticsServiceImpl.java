@@ -3,7 +3,7 @@ package guess.service;
 import guess.dao.EventDao;
 import guess.dao.EventTypeDao;
 import guess.domain.source.*;
-import guess.domain.statistics.*;
+import guess.domain.statistics.Metrics;
 import guess.domain.statistics.company.CompanyMetrics;
 import guess.domain.statistics.company.CompanyMetricsInternal;
 import guess.domain.statistics.company.CompanyStatistics;
@@ -122,10 +122,11 @@ public class StatisticsServiceImpl implements StatisticsService {
     }
 
     @Override
-    public EventStatistics getEventStatistics(Long eventTypeId) {
+    public EventStatistics getEventStatistics(Long organizerId, Long eventTypeId) {
         List<Event> events = eventDao.getEvents().stream()
                 .filter(e ->
                         (e.getEventType().isEventTypeConference() &&
+                                ((organizerId == null) || (e.getEventType().getOrganizer().getId() == organizerId)) &&
                                 ((eventTypeId == null) || (e.getEventType().getId() == eventTypeId))))
                 .collect(Collectors.toList());
         List<EventMetrics> eventMetricsList = new ArrayList<>();
@@ -323,12 +324,5 @@ public class StatisticsServiceImpl implements StatisticsService {
                         totalsMvpsQuantity
                 )
         );
-    }
-
-    @Override
-    public List<EventType> getConferences() {
-        return eventTypeDao.getEventTypes().stream()
-                .filter(EventType::isEventTypeConference)
-                .collect(Collectors.toList());
     }
 }

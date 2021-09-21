@@ -45,8 +45,11 @@ export class StatisticsService {
       );
   }
 
-  getEventStatistics(eventType: EventType): Observable<EventStatistics> {
+  getEventStatistics(organizer: Organizer, eventType: EventType): Observable<EventStatistics> {
     let params = new HttpParams();
+    if (organizer) {
+      params = params.set('organizerId', organizer.id.toString());
+    }
     if (eventType) {
       params = params.set('eventTypeId', eventType.id.toString());
     }
@@ -92,16 +95,6 @@ export class StatisticsService {
     }
 
     return this.http.get<CompanyStatistics>(`${this.baseUrl}/company-statistics`, {params: params})
-      .pipe(
-        catchError((response: Response) => {
-          this.messageService.reportMessage(response);
-          throw response;
-        })
-      );
-  }
-
-  getConferences(): Observable<EventType[]> {
-    return this.http.get<EventType[]>(`${this.baseUrl}/conferences`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

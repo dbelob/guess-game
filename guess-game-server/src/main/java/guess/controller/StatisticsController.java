@@ -1,9 +1,7 @@
 package guess.controller;
 
-import guess.domain.source.EventType;
 import guess.domain.statistics.olap.CubeType;
 import guess.domain.statistics.olap.MeasureType;
-import guess.dto.eventtype.EventTypeSuperBriefDto;
 import guess.dto.statistics.*;
 import guess.dto.statistics.olap.*;
 import guess.service.LocaleService;
@@ -57,8 +55,9 @@ public class StatisticsController {
 
     @GetMapping("/event-statistics")
     @ResponseBody
-    public EventStatisticsDto getEventStatistics(@RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
-        var eventStatistics = statisticsService.getEventStatistics(eventTypeId);
+    public EventStatisticsDto getEventStatistics(@RequestParam(required = false) Long organizerId,
+                                                 @RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
+        var eventStatistics = statisticsService.getEventStatistics(organizerId, eventTypeId);
         var language = localeService.getLanguage(httpSession);
         var eventStatisticsDto = EventStatisticsDto.convertToDto(eventStatistics, language);
 
@@ -99,18 +98,6 @@ public class StatisticsController {
         companyStatisticsDto.getCompanyMetricsList().sort(comparatorByTalksQuantity.thenComparing(comparatorByEventsQuantity).thenComparing(comparatorByEventTypesQuantity));
 
         return companyStatisticsDto;
-    }
-
-    @GetMapping("/conferences")
-    @ResponseBody
-    public List<EventTypeSuperBriefDto> getConferences(HttpSession httpSession) {
-        List<EventType> eventTypes = statisticsService.getConferences();
-        var language = localeService.getLanguage(httpSession);
-        List<EventTypeSuperBriefDto> eventTypeSuperBriefDtoList = EventTypeSuperBriefDto.convertToSuperBriefDto(eventTypes, language);
-
-        eventTypeSuperBriefDtoList.sort(Comparator.comparing(EventTypeSuperBriefDto::getName, String.CASE_INSENSITIVE_ORDER));
-
-        return eventTypeSuperBriefDtoList;
     }
 
     @GetMapping("/cube-types")

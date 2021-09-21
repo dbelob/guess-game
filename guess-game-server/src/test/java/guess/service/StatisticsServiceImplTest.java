@@ -4,7 +4,7 @@ import guess.dao.EventDao;
 import guess.dao.EventTypeDao;
 import guess.domain.Conference;
 import guess.domain.source.*;
-import guess.domain.statistics.*;
+import guess.domain.statistics.Metrics;
 import guess.domain.statistics.company.CompanyMetrics;
 import guess.domain.statistics.company.CompanyStatistics;
 import guess.domain.statistics.event.EventMetrics;
@@ -393,7 +393,7 @@ class StatisticsServiceImplTest {
                 1,
                 0
         );
-        assertEquals(expected0, statisticsService.getEventStatistics(null));
+        assertEquals(expected0, statisticsService.getEventStatistics(null, null));
 
         EventStatistics expected1 = createEventStatistics(
                 List.of(eventMetrics0),
@@ -405,9 +405,9 @@ class StatisticsServiceImplTest {
                 1,
                 0
         );
-        assertEquals(expected1, statisticsService.getEventStatistics(0L));
+        assertEquals(expected1, statisticsService.getEventStatistics(null, 0L));
 
-        EventStatistics actual2 = statisticsService.getEventStatistics(1L);
+        EventStatistics actual2 = statisticsService.getEventStatistics(null, 1L);
         EventStatistics expected2 = createEventStatistics(
                 Collections.emptyList(),
                 new Event(),
@@ -420,7 +420,7 @@ class StatisticsServiceImplTest {
         );
         assertEquals(expected2, actual2);
 
-        EventStatistics actual3 = statisticsService.getEventStatistics(2L);
+        EventStatistics actual3 = statisticsService.getEventStatistics(null, 2L);
         EventStatistics expected3 = createEventStatistics(
                 List.of(eventMetrics2),
                 new Event(),
@@ -433,7 +433,7 @@ class StatisticsServiceImplTest {
         );
         assertEquals(expected3, actual3);
 
-        EventStatistics actual4 = statisticsService.getEventStatistics(3L);
+        EventStatistics actual4 = statisticsService.getEventStatistics(null, 3L);
         EventStatistics expected4 = createEventStatistics(
                 Collections.emptyList(),
                 new Event(),
@@ -819,10 +819,5 @@ class StatisticsServiceImplTest {
                         0, 0, 0, 0, 0, 0
                 ),
                 statisticsService.getCompanyStatistics(true, true, null, 3L));
-    }
-
-    @Test
-    void getConferences() {
-        assertEquals(List.of(eventType0, eventType2), statisticsService.getConferences());
     }
 }
