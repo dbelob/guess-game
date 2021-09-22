@@ -27,6 +27,7 @@
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
     "bootstrap": "^4.6.0",
+    "chart.js": "^3.5.1",
     "core-js": "^3.18.0",
     "font-awesome": "^4.7.0",
     "get-video-id": "^3.4.1",

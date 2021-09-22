@@ -103,8 +103,8 @@
       {{getCubeTypeMessageKeyByCube(selectedCubeType) | translate}} – {{getMeasureTypeMessageKeyByCube(selectedMeasureType) | translate}}
     </div>
 
-    <div class="alert text-center m-2">
-      Chart
+    <div class="m-2">
+      <p-chart type="line" [data]="lineData" [options]="lineOptions"></p-chart>
     </div>
 
     <div *ngIf="isNoEventTypesDataFoundVisible()" class="alert text-center m-2">

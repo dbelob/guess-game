@@ -16,6 +16,7 @@ import { OlapEventTypeParameters } from '../../../shared/models/statistics/olap/
 import { OlapEntityStatistics } from '../../../shared/models/statistics/olap/olap-entity-statistics.model';
 import { OlapEventTypeMetrics } from '../../../shared/models/statistics/olap/olap-event-type-metrics.model';
 import { OlapSpeakerParameters } from '../../../shared/models/statistics/olap/olap-speaker-parameters.model';
+import { OlapEntityMetrics } from '../../../shared/models/statistics/olap/olap-entity-metrics.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
 import { OrganizerService } from '../../../shared/services/organizer.service';
@@ -84,6 +85,9 @@ export class OlapStatisticsComponent implements OnInit {
 
   public speakerExpandedRows: {} = {};
   public companyExpandedRows: {} = {};
+
+  lineOptions: any;
+  lineData: any;
 
   constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
               private eventService: EventService, private organizerService: OrganizerService,
@@ -273,16 +277,22 @@ export class OlapStatisticsComponent implements OnInit {
           if (olapStatistics?.eventTypeStatistics) {
             olapStatistics.eventTypeStatistics = getOlapEventTypeStatisticsWithSortName(olapStatistics.eventTypeStatistics);
             fixOlapEntityStatistics(olapStatistics.eventTypeStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
+
+            this.loadChartData(olapStatistics.eventTypeStatistics);
           }
 
           if (olapStatistics?.speakerStatistics) {
             fixOlapEntityStatistics(olapStatistics.speakerStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
             this.speakerExpandedRows = {};
+
+            this.loadChartData(olapStatistics.speakerStatistics);
           }
 
           if (olapStatistics?.companyStatistics) {
             fixOlapEntityStatistics(olapStatistics.companyStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
             this.companyExpandedRows = {};
+
+            this.loadChartData(olapStatistics.companyStatistics);
           }
 
           this.olapStatistics = olapStatistics;
@@ -504,5 +514,20 @@ export class OlapStatisticsComponent implements OnInit {
           }
         );
     }
+  }
+
+  loadChartData(olapEntityStatistics: OlapEntityStatistics<number, OlapEntityMetrics>) {
+    this.lineData = {
+      labels: olapEntityStatistics.dimensionValues,
+      datasets: olapEntityStatistics.metricsList.slice(0, 10).map(v => {
+        return {
+          label: 'Dataset',
+          data: v.measureValues,
+          fill: false,
+          // borderColor: '#42A5F5',
+          tension: 0.4
+        }
+      })
+    };
   }
 }

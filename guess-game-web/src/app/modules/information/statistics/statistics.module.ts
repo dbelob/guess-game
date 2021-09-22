@@ -20,6 +20,7 @@ import { SpeakerStatisticsComponent } from './speaker-statistics.component';
 import { CompanyStatisticsComponent } from './company-statistics.component';
 import { OlapStatisticsComponent } from "./olap-statistics.component";
 import { StatisticsSwitcherComponent } from './statistics-switcher.component';
+import { ChartModule } from 'primeng/chart';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { StatisticsSwitcherComponent } from './statistics-switcher.component';
   imports: [
     AutoCompleteModule,
     ButtonModule,
+    ChartModule,
     CommonModule,
     FormsModule,
     CheckboxModule,
