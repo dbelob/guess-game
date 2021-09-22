@@ -27,7 +27,7 @@
             ],
             "scripts": [
               "node_modules/marked/lib/marked.js",
-              "node_modules/chart.js/dist/Chart.js"
+              "node_modules/chart.js/dist/chart.js"
             ],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -95,7 +95,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/chart.js/dist/Chart.js"
+              "node_modules/chart.js/dist/chart.js"
             ],
             "assets": [
               "src/favicon.ico",
