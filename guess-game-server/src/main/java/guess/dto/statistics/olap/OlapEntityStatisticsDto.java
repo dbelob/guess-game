@@ -10,7 +10,7 @@ public abstract class OlapEntityStatisticsDto<T, S extends OlapEntityMetricsDto>
     private final List<S> metricsList;
     private final OlapEntityMetricsDto totals;
 
-    public OlapEntityStatisticsDto(List<T> dimensionValues, List<S> metricsList, OlapEntityMetricsDto totals) {
+    protected OlapEntityStatisticsDto(List<T> dimensionValues, List<S> metricsList, OlapEntityMetricsDto totals) {
         this.dimensionValues = dimensionValues;
         this.metricsList = metricsList;
         this.totals = totals;

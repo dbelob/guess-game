@@ -7,8 +7,6 @@ import guess.dto.statistics.olap.*;
 import guess.service.LocaleService;
 import guess.service.OlapService;
 import guess.service.StatisticsService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +22,6 @@ import java.util.List;
 @Controller
 @RequestMapping("/api/statistics")
 public class StatisticsController {
-    private static final Logger log = LoggerFactory.getLogger(StatisticsController.class);
-
     private final StatisticsService statisticsService;
     private final OlapService olapService;
     private final LocaleService localeService;
