@@ -521,10 +521,9 @@ export class OlapStatisticsComponent implements OnInit {
       labels: olapEntityStatistics.dimensionValues,
       datasets: olapEntityStatistics.metricsList.slice(0, 10).map(v => {
         return {
-          label: 'Dataset',
+          label: v.name,
           data: v.measureValues,
           fill: false,
-          // borderColor: '#42A5F5',
           tension: 0.4
         }
       })

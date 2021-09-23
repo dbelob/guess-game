@@ -9,12 +9,24 @@ import java.util.Objects;
  * OLAP entity metrics DTO.
  */
 public class OlapEntityMetricsDto {
+    private final long id;
+    private final String name;
     private final List<Long> measureValues;
     private final Long total;
 
-    public OlapEntityMetricsDto(List<Long> measureValues, Long total) {
+    public OlapEntityMetricsDto(long id, String name, List<Long> measureValues, Long total) {
+        this.id = id;
+        this.name = name;
         this.measureValues = measureValues;
         this.total = total;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public List<Long> getMeasureValues() {
@@ -26,7 +38,7 @@ public class OlapEntityMetricsDto {
     }
 
     public static OlapEntityMetricsDto convertToDto(OlapEntityMetrics<?> entityMetrics) {
-        return new OlapEntityMetricsDto(entityMetrics.getMeasureValues(), entityMetrics.getTotal());
+        return new OlapEntityMetricsDto(0, null, entityMetrics.getMeasureValues(), entityMetrics.getTotal());
     }
 
     @Override
@@ -45,7 +57,9 @@ public class OlapEntityMetricsDto {
     @Override
     public String toString() {
         return "OlapEntityMetricsDto{" +
-                "measureValues=" + measureValues +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", measureValues=" + measureValues +
                 ", total=" + total +
                 '}';
     }

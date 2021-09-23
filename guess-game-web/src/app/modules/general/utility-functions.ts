@@ -158,7 +158,7 @@ export function getOlapEventTypeStatisticsWithSortName(eventTypeStatistics: Olap
     for (let i = 0; i < eventTypeMetricsList.length; i++) {
       const eventTypeMetrics: OlapEventTypeMetrics = eventTypeMetricsList[i];
 
-      eventTypeMetrics.sortName = getSortName(eventTypeMetrics.conference, eventTypeMetrics.organizerName, eventTypeMetrics.displayName);
+      eventTypeMetrics.sortName = getSortName(eventTypeMetrics.conference, eventTypeMetrics.organizerName, eventTypeMetrics.name);
     }
   }
 

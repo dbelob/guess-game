@@ -126,7 +126,7 @@ public class StatisticsController {
         if (olapStatisticsDto.getEventTypeStatistics() != null) {
             Comparator<OlapEventTypeMetricsDto> comparatorByIsConference = Comparator.comparing(OlapEventTypeMetricsDto::isConference).reversed();
             Comparator<OlapEventTypeMetricsDto> comparatorByOrganizerName = Comparator.comparing(OlapEventTypeMetricsDto::getOrganizerName, String.CASE_INSENSITIVE_ORDER);
-            Comparator<OlapEventTypeMetricsDto> comparatorByName = Comparator.comparing(OlapEventTypeMetricsDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
+            Comparator<OlapEventTypeMetricsDto> comparatorByName = Comparator.comparing(OlapEventTypeMetricsDto::getName, String.CASE_INSENSITIVE_ORDER);
 
             olapStatisticsDto.getEventTypeStatistics().getMetricsList().sort(comparatorByIsConference.thenComparing(comparatorByOrganizerName).thenComparing(comparatorByName));
         }
@@ -161,7 +161,7 @@ public class StatisticsController {
 
         Comparator<OlapEventTypeMetricsDto> comparatorByIsConference = Comparator.comparing(OlapEventTypeMetricsDto::isConference).reversed();
         Comparator<OlapEventTypeMetricsDto> comparatorByOrganizerName = Comparator.comparing(OlapEventTypeMetricsDto::getOrganizerName, String.CASE_INSENSITIVE_ORDER);
-        Comparator<OlapEventTypeMetricsDto> comparatorByName = Comparator.comparing(OlapEventTypeMetricsDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
+        Comparator<OlapEventTypeMetricsDto> comparatorByName = Comparator.comparing(OlapEventTypeMetricsDto::getName, String.CASE_INSENSITIVE_ORDER);
 
         olapEventTypeStatisticsDto.getMetricsList().sort(comparatorByIsConference.thenComparing(comparatorByOrganizerName).thenComparing(comparatorByName));
 

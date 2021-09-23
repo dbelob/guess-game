@@ -13,22 +13,8 @@ import java.util.stream.Collectors;
  * OLAP company metrics DTO.
  */
 public class OlapCompanyMetricsDto extends OlapEntityMetricsDto {
-    private final long id;
-    private final String name;
-
     public OlapCompanyMetricsDto(long id, String name, List<Long> measureValues, Long total) {
-        super(measureValues, total);
-
-        this.id = id;
-        this.name = name;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
+        super(id, name, measureValues, total);
     }
 
     public static OlapCompanyMetricsDto convertToDto(OlapEntityMetrics<Company> companyMetrics, Language language) {
@@ -65,8 +51,8 @@ public class OlapCompanyMetricsDto extends OlapEntityMetricsDto {
     @Override
     public String toString() {
         return "OlapCompanyMetricsDto{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "id=" + getId() +
+                ", name='" + getName() + '\'' +
                 '}';
     }
 }

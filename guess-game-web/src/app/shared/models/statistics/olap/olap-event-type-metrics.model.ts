@@ -5,8 +5,6 @@ import { OlapSpeakerMetrics } from './olap-speaker-metrics.model';
 
 export class OlapEventTypeMetrics extends OlapEntityMetrics implements SortableEventTypeMetrics {
   constructor(
-    public id?: number,
-    public displayName?: string,
     public conference?: boolean,
     public logoFileName?: string,
     public organizerName?: string,

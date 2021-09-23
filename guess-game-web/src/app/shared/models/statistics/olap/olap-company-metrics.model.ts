@@ -4,8 +4,6 @@ import { OlapEventTypeMetrics } from "./olap-event-type-metrics.model";
 
 export class OlapCompanyMetrics extends OlapEntityMetrics {
   constructor(
-    public id?: number,
-    public name?: string,
     public eventTypeStatistics?: OlapEntityStatistics<number, OlapEventTypeMetrics>
   ) {
     super();

@@ -14,24 +14,12 @@ import java.util.stream.Collectors;
  * OLAP speaker metrics DTO.
  */
 public class OlapSpeakerMetricsDto extends OlapEntityMetricsDto {
-    private final long id;
-    private final String name;
     private final String photoFileName;
 
     public OlapSpeakerMetricsDto(long id, String name, String photoFileName, List<Long> measureValues, Long total) {
-        super(measureValues, total);
+        super(id, name, measureValues, total);
 
-        this.id = id;
-        this.name = name;
         this.photoFileName = photoFileName;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public String getPhotoFileName() {
@@ -81,8 +69,8 @@ public class OlapSpeakerMetricsDto extends OlapEntityMetricsDto {
     @Override
     public String toString() {
         return "OlapSpeakerMetricsDto{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "id=" + getId() +
+                ", name='" + getName() + '\'' +
                 ", photoFileName='" + photoFileName + '\'' +
                 '}';
     }
