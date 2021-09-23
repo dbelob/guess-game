@@ -278,21 +278,21 @@ export class OlapStatisticsComponent implements OnInit {
             olapStatistics.eventTypeStatistics = getOlapEventTypeStatisticsWithSortName(olapStatistics.eventTypeStatistics);
             fixOlapEntityStatistics(olapStatistics.eventTypeStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
 
-            this.loadChartData(olapStatistics.eventTypeStatistics);
+            this.loadChartData(olapStatistics.eventTypeStatistics, -1);
           }
 
           if (olapStatistics?.speakerStatistics) {
             fixOlapEntityStatistics(olapStatistics.speakerStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
             this.speakerExpandedRows = {};
 
-            this.loadChartData(olapStatistics.speakerStatistics);
+            this.loadChartData(olapStatistics.speakerStatistics, 10);
           }
 
           if (olapStatistics?.companyStatistics) {
             fixOlapEntityStatistics(olapStatistics.companyStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
             this.companyExpandedRows = {};
 
-            this.loadChartData(olapStatistics.companyStatistics);
+            this.loadChartData(olapStatistics.companyStatistics, 10);
           }
 
           this.olapStatistics = olapStatistics;
@@ -516,10 +516,12 @@ export class OlapStatisticsComponent implements OnInit {
     }
   }
 
-  loadChartData(olapEntityStatistics: OlapEntityStatistics<number, OlapEntityMetrics>) {
+  loadChartData(olapEntityStatistics: OlapEntityStatistics<number, OlapEntityMetrics>, quantity: number) {
+    const metricsList = (quantity <= 0) ? olapEntityStatistics.metricsList : olapEntityStatistics.metricsList.slice(0, quantity);
+
     this.lineData = {
       labels: olapEntityStatistics.dimensionValues,
-      datasets: olapEntityStatistics.metricsList.slice(0, 10).map(v => {
+      datasets: metricsList.map(v => {
         return {
           label: v.name,
           data: v.measureValues,
