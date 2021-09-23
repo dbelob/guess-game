@@ -27,6 +27,7 @@ import {
   findEventTypesByIds,
   findOrganizerById,
   fixOlapEntityStatistics,
+  getColorByIndex,
   getOlapEventTypeStatisticsWithSortName
 } from '../../general/utility-functions';
 
@@ -103,6 +104,8 @@ export class OlapStatisticsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.lineOptions = this.createLineOptions();
+
     this.loadCubeTypes();
   }
 
@@ -285,14 +288,14 @@ export class OlapStatisticsComponent implements OnInit {
             fixOlapEntityStatistics(olapStatistics.speakerStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
             this.speakerExpandedRows = {};
 
-            this.loadChartData(olapStatistics.speakerStatistics, 10);
+            this.loadChartData(olapStatistics.speakerStatistics, 5);
           }
 
           if (olapStatistics?.companyStatistics) {
             fixOlapEntityStatistics(olapStatistics.companyStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
             this.companyExpandedRows = {};
 
-            this.loadChartData(olapStatistics.companyStatistics, 10);
+            this.loadChartData(olapStatistics.companyStatistics, 5);
           }
 
           this.olapStatistics = olapStatistics;
@@ -516,17 +519,27 @@ export class OlapStatisticsComponent implements OnInit {
     }
   }
 
+  createLineOptions(): any {
+    return {
+      animation: false
+    };
+  }
+
   loadChartData(olapEntityStatistics: OlapEntityStatistics<number, OlapEntityMetrics>, quantity: number) {
     const metricsList = (quantity <= 0) ? olapEntityStatistics.metricsList : olapEntityStatistics.metricsList.slice(0, quantity);
 
     this.lineData = {
       labels: olapEntityStatistics.dimensionValues,
-      datasets: metricsList.map(v => {
+      datasets: metricsList.map((value, index) => {
+        const color = getColorByIndex(index);
+
         return {
-          label: v.name,
-          data: v.measureValues,
+          label: value.name,
+          data: value.measureValues,
           fill: false,
-          tension: 0.4
+          tension: 0.4,
+          backgroundColor: color,
+          borderColor: color
         }
       })
     };
