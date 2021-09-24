@@ -521,7 +521,8 @@ export class OlapStatisticsComponent implements OnInit {
 
   createLineOptions(): any {
     return {
-      animation: false
+      animation: false,
+      aspectRatio: 3
     };
   }
 
