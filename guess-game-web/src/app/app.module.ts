@@ -50,6 +50,7 @@ import { EventTypeStatisticsComponent } from './modules/information/statistics/e
 import { EventStatisticsComponent } from './modules/information/statistics/event-statistics.component';
 import { SpeakerStatisticsComponent } from './modules/information/statistics/speaker-statistics.component';
 import { CompanyStatisticsComponent } from './modules/information/statistics/company-statistics.component';
+import { OlapStatisticsComponent } from './modules/information/statistics/olap-statistics.component';
 import { AnswerService } from './shared/services/answer.service';
 import { EventService } from './shared/services/event.service';
 import { EventTypeService } from './shared/services/event-type.service';
@@ -59,7 +60,6 @@ import { SpeakerService } from './shared/services/speaker.service';
 import { StatisticsService } from './shared/services/statistics.service';
 import { TalkService } from './shared/services/talk.service';
 import { GameStateGuard } from './shared/guards/game-state.guard';
-import { OlapStatisticsComponent } from "./modules/information/statistics/olap-statistics.component";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},

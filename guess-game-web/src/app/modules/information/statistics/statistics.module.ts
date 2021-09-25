@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { ButtonModule } from 'primeng/button';
+import { ChartModule } from 'primeng/chart';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DropdownModule } from 'primeng/dropdown';
 import { MultiSelectModule } from 'primeng/multiselect';
@@ -18,12 +19,13 @@ import { EventTypeStatisticsComponent } from './event-type-statistics.component'
 import { EventStatisticsComponent } from './event-statistics.component';
 import { SpeakerStatisticsComponent } from './speaker-statistics.component';
 import { CompanyStatisticsComponent } from './company-statistics.component';
-import { OlapStatisticsComponent } from "./olap-statistics.component";
+import { OlapStatisticsComponent } from './olap-statistics.component';
 import { StatisticsSwitcherComponent } from './statistics-switcher.component';
-import { ChartModule } from 'primeng/chart';
+import { ChartTypeSwitcherComponent } from './chart-type-switcher.component';
 
 @NgModule({
   declarations: [
+    ChartTypeSwitcherComponent,
     EventTypeStatisticsComponent,
     EventStatisticsComponent,
     SpeakerStatisticsComponent,

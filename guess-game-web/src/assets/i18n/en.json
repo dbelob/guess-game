@@ -246,6 +246,10 @@
       "noEventTypesDataFoundText": "No event types data found",
       "noSpeakersDataFoundText": "No speakers data found",
       "noCompaniesDataFoundText": "No companies data found",
+      "chart": {
+        "detailsLabel": "Details",
+        "totalLabel": "Total"
+      },
       "table": {
         "kindColumn": "Kind",
         "organizerNameColumn": "Organizer",

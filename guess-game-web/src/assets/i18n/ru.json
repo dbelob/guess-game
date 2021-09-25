@@ -246,6 +246,10 @@
       "noEventTypesDataFoundText": "Данные о типах событий не найдены",
       "noSpeakersDataFoundText": "Данные о спикерах не найдены",
       "noCompaniesDataFoundText": "Данные о компаниях не найдены",
+      "chart": {
+        "detailsLabel": "Подробно",
+        "totalLabel": "Всего"
+      },
       "table": {
         "kindColumn": "Вид",
         "organizerNameColumn": "Организатор",

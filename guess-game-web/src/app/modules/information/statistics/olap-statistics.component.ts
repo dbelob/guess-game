@@ -17,6 +17,7 @@ import { OlapEntityStatistics } from '../../../shared/models/statistics/olap/ola
 import { OlapEventTypeMetrics } from '../../../shared/models/statistics/olap/olap-event-type-metrics.model';
 import { OlapSpeakerParameters } from '../../../shared/models/statistics/olap/olap-speaker-parameters.model';
 import { OlapEntityMetrics } from '../../../shared/models/statistics/olap/olap-entity-metrics.model';
+import { ChartType } from '../../../shared/models/statistics/olap/chart-type.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
 import { OrganizerService } from '../../../shared/services/organizer.service';
@@ -87,8 +88,11 @@ export class OlapStatisticsComponent implements OnInit {
   public speakerExpandedRows: {} = {};
   public companyExpandedRows: {} = {};
 
-  lineOptions: any;
-  lineData: any;
+  public allLineOptions: any;
+  public allLineData: any;
+  public totalLineOptions: any;
+  public totalLineData: any;
+  private chartType = ChartType.Details;
 
   constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
               private eventService: EventService, private organizerService: OrganizerService,
@@ -104,7 +108,8 @@ export class OlapStatisticsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.lineOptions = this.createLineOptions();
+    this.allLineOptions = this.createLineOptions();
+    this.totalLineOptions = this.createLineOptions();
 
     this.loadCubeTypes();
   }
@@ -529,7 +534,7 @@ export class OlapStatisticsComponent implements OnInit {
   loadChartData(olapEntityStatistics: OlapEntityStatistics<number, OlapEntityMetrics>, quantity: number) {
     const metricsList = (quantity <= 0) ? olapEntityStatistics.metricsList : olapEntityStatistics.metricsList.slice(0, quantity);
 
-    this.lineData = {
+    this.allLineData = {
       labels: olapEntityStatistics.dimensionValues,
       datasets: metricsList.map((value, index) => {
         const color = getColorByIndex(index);
@@ -544,5 +549,48 @@ export class OlapStatisticsComponent implements OnInit {
         }
       })
     };
+
+    const color = getColorByIndex(0);
+
+    this.totalLineData = {
+      labels: olapEntityStatistics.dimensionValues,
+      datasets: [
+        {
+          label: 'Total',
+          data: olapEntityStatistics.totals.measureValues,
+          fill: false,
+          tension: 0.4,
+          backgroundColor: color,
+          borderColor: color
+        }
+      ]
+    };
+  }
+
+  getChartType(): string {
+    switch (this.chartType) {
+      case ChartType.Details:
+        return 'details';
+      case ChartType.Total:
+        return 'total';
+      default:
+        return null;
+    }
+  }
+
+  isDetailsChartVisible() {
+    return (this.chartType === ChartType.Details);
+  }
+
+  isTotalChartVisible() {
+    return (this.chartType === ChartType.Total);
+  }
+
+  detailsChart() {
+    this.chartType = ChartType.Details;
+  }
+
+  totalChart() {
+    this.chartType = ChartType.Total;
   }
 }
