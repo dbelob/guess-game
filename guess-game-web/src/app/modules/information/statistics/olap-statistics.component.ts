@@ -49,6 +49,8 @@ export class OlapStatisticsComponent implements OnInit {
   private readonly JAVA_CHAMPIONS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.javaChampionsQuantity';
   private readonly MVPS_QUANTITY_MEASURE_TYPE_KEY = 'measureType.mvpsQuantity';
 
+  private readonly TOTAL_LABEL_KEY = 'statistics.olap.chart.totalLabel';
+
   private readonly MEASURE_VALUE_FIELD_NAME_PREFIX = 'measureValue';
 
   private imageDirectory = 'assets/images';
@@ -552,19 +554,23 @@ export class OlapStatisticsComponent implements OnInit {
 
     const color = getColorByIndex(0);
 
-    this.totalLineData = {
-      labels: olapEntityStatistics.dimensionValues,
-      datasets: [
-        {
-          label: 'Total',
-          data: olapEntityStatistics.totals.measureValues,
-          fill: false,
-          tension: 0.4,
-          backgroundColor: color,
-          borderColor: color
+    this.translateService.get(this.TOTAL_LABEL_KEY)
+      .subscribe(data => {
+          this.totalLineData = {
+            labels: olapEntityStatistics.dimensionValues,
+            datasets: [
+              {
+                label: data,
+                data: olapEntityStatistics.totals.measureValues,
+                fill: false,
+                tension: 0.4,
+                backgroundColor: color,
+                borderColor: color
+              }
+            ]
+          };
         }
-      ]
-    };
+      );
   }
 
   getChartType(): string {
