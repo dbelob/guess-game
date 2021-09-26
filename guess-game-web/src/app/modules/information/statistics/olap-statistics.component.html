@@ -154,7 +154,7 @@
         <ng-template pTemplate="body" let-eventTypeMetrics let-i = "rowIndex" let-expanded="expanded">
           <tr>
             <td>
-              <button type="button" pButton pRipple [pRowToggler]="eventTypeMetrics" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+              <button type="button" pButton pRipple [pRowToggler]="eventTypeMetrics" class="p-button-text p-button-rounded p-button-plain remove-focus" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
             </td>
             <td class="text-center">{{i + 1}}</td>
             <td>
@@ -259,7 +259,7 @@
         <ng-template pTemplate="body" let-speakerMetrics let-i = "rowIndex" let-expanded="expanded">
           <tr>
             <td>
-              <button type="button" pButton pRipple [pRowToggler]="speakerMetrics" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+              <button type="button" pButton pRipple [pRowToggler]="speakerMetrics" class="p-button-text p-button-rounded p-button-plain remove-focus" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
             </td>
             <td class="text-center">{{i + 1}}</td>
             <td>
@@ -360,7 +360,7 @@
         <ng-template pTemplate="body" let-companyMetrics let-i = "rowIndex" let-expanded="expanded">
           <tr>
             <td>
-              <button type="button" pButton pRipple [pRowToggler]="companyMetrics" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+              <button type="button" pButton pRipple [pRowToggler]="companyMetrics" class="p-button-text p-button-rounded p-button-plain remove-focus" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
             </td>
             <td class="text-center">{{i + 1}}</td>
             <td>{{companyMetrics.name}}</td>
@@ -399,7 +399,7 @@
                   <ng-template pTemplate="body" let-eventTypeMetrics let-i = "rowIndex" let-expanded="expanded">
                     <tr>
                       <td>
-                        <button type="button" pButton pRipple [pRowToggler]="eventTypeMetrics" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+                        <button type="button" pButton pRipple [pRowToggler]="eventTypeMetrics" class="p-button-text p-button-rounded p-button-plain remove-focus" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
                       </td>
                       <td class="text-center">{{i + 1}}</td>
                       <td>
