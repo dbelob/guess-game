@@ -18,6 +18,8 @@ import { OlapEntityStatistics } from "../models/statistics/olap/olap-entity-stat
 import { OlapEventTypeMetrics } from "../models/statistics/olap/olap-event-type-metrics.model";
 import { OlapSpeakerMetrics } from '../models/statistics/olap/olap-speaker-metrics.model';
 import { OlapSpeakerParameters } from '../models/statistics/olap/olap-speaker-parameters.model';
+import { OlapCityMetrics } from '../models/statistics/olap/olap-city-metrics.model';
+import { OlapCityParameters } from '../models/statistics/olap/olap-city-parameters.model';
 
 @Injectable({
   providedIn: 'root'
@@ -148,6 +150,16 @@ export class StatisticsService {
 
   getOlapSpeakerStatistics(olapParameters: OlapSpeakerParameters): Observable<OlapEntityStatistics<number, OlapSpeakerMetrics>> {
     return this.http.post<OlapEntityStatistics<number, OlapSpeakerMetrics>>(`${this.baseUrl}/olap-speaker-statistics`, olapParameters)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getOlapCityStatistics(olapParameters: OlapCityParameters): Observable<OlapEntityStatistics<number, OlapCityMetrics>> {
+    return this.http.post<OlapEntityStatistics<number, OlapCityMetrics>>(`${this.baseUrl}/olap-city-statistics`, olapParameters)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

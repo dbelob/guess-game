@@ -255,7 +255,8 @@
         "organizerNameColumn": "Organizer",
         "eventTypeNameColumn": "Name",
         "speakerNameColumn": "Name",
-        "companyColumn": "Company"
+        "companyColumn": "Company",
+        "cityColumn": "City"
       }
     }
   },

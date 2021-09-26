@@ -17,6 +17,8 @@ import { OlapEntityStatistics } from '../../../shared/models/statistics/olap/ola
 import { OlapEventTypeMetrics } from '../../../shared/models/statistics/olap/olap-event-type-metrics.model';
 import { OlapSpeakerParameters } from '../../../shared/models/statistics/olap/olap-speaker-parameters.model';
 import { OlapEntityMetrics } from '../../../shared/models/statistics/olap/olap-entity-metrics.model';
+import { OlapCityParameters } from '../../../shared/models/statistics/olap/olap-city-parameters.model';
+import { OlapCityMetrics } from '../../../shared/models/statistics/olap/olap-city-metrics.model';
 import { ChartType } from '../../../shared/models/statistics/olap/chart-type.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
@@ -84,9 +86,11 @@ export class OlapStatisticsComponent implements OnInit {
 
   public olapStatistics = new OlapStatistics();
   public eventTypeMultiSortMeta: any[] = [];
+  public cityMultiSortMeta: any[] = [];
   public speakerMultiSortMeta: any[] = [];
   public companyMultiSortMeta: any[] = [];
 
+  public eventTypeExpandedRows: {} = {};
   public speakerExpandedRows: {} = {};
   public companyExpandedRows: {} = {};
 
@@ -101,6 +105,8 @@ export class OlapStatisticsComponent implements OnInit {
               public translateService: TranslateService, private speakerService: SpeakerService,
               private companyService: CompanyService) {
     this.eventTypeMultiSortMeta.push({field: 'sortName', order: 1});
+
+    this.cityMultiSortMeta.push({field: 'name', order: 1});
 
     this.speakerMultiSortMeta.push({field: 'total', order: -1});
     this.speakerMultiSortMeta.push({field: 'name', order: 1});
@@ -287,6 +293,7 @@ export class OlapStatisticsComponent implements OnInit {
           if (olapStatistics?.eventTypeStatistics) {
             olapStatistics.eventTypeStatistics = getOlapEventTypeStatisticsWithSortName(olapStatistics.eventTypeStatistics);
             fixOlapEntityStatistics(olapStatistics.eventTypeStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
+            this.eventTypeExpandedRows = {};
 
             this.loadChartData(olapStatistics.eventTypeStatistics, -1);
           }
@@ -455,6 +462,26 @@ export class OlapStatisticsComponent implements OnInit {
     return this.MEASURE_VALUE_FIELD_NAME_PREFIX + num;
   }
 
+  eventTypeRowExpand(event) {
+    const eventTypeMetrics: OlapEventTypeMetrics = event.data;
+
+    if (!eventTypeMetrics.cityStatistics) {
+      this.statisticsService.getOlapCityStatistics(
+        new OlapCityParameters(
+          this.selectedCubeType,
+          this.selectedMeasureType,
+          eventTypeMetrics.id
+        ))
+        .subscribe(data => {
+            const olapCityStatistics: OlapEntityStatistics<number, OlapCityMetrics> = data;
+
+            fixOlapEntityStatistics(olapCityStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX);
+            eventTypeMetrics.cityStatistics = olapCityStatistics;
+          }
+        );
+    }
+  }
+
   speakerRowExpand(event) {
     const speakerMetrics: OlapSpeakerMetrics = event.data;
 
@@ -506,7 +533,7 @@ export class OlapStatisticsComponent implements OnInit {
     }
   }
 
-  eventTypeRowExpand(event) {
+  companyEventTypeRowExpand(event) {
     const eventTypeMetrics: OlapEventTypeMetrics = event.data;
 
     if (!eventTypeMetrics.speakerStatistics) {

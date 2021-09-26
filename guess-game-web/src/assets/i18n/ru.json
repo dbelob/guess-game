@@ -255,7 +255,8 @@
         "organizerNameColumn": "Организатор",
         "eventTypeNameColumn": "Наименование",
         "speakerNameColumn": "Имя",
-        "companyColumn": "Компания"
+        "companyColumn": "Компания",
+        "cityColumn": "Город"
       }
     }
   },
