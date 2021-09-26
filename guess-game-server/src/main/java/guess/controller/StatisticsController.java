@@ -185,4 +185,18 @@ public class StatisticsController {
 
         return olapSpeakerStatisticsDto;
     }
+
+    @PostMapping("/olap-city-statistics")
+    @ResponseBody
+    public OlapEntityStatisticsDto<Integer, OlapCityMetricsDto> getOlapCityStatistics(
+            @RequestBody OlapCityParametersDto olapParameters, HttpSession httpSession) {
+        var cityStatistics = olapService.getOlapCityStatistics(
+                olapParameters.getCubeType(), olapParameters.getMeasureType(), olapParameters.getEventTypeId());
+        var language = localeService.getLanguage(httpSession);
+        var olapCityStatisticsDto = OlapCityStatisticsDto.convertToDto(cityStatistics, language);
+
+        olapCityStatisticsDto.getMetricsList().sort(Comparator.comparing(OlapCityMetricsDto::getName, String.CASE_INSENSITIVE_ORDER));
+
+        return olapCityStatisticsDto;
+    }
 }

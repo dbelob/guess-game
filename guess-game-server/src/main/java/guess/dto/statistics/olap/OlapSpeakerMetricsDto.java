@@ -58,12 +58,12 @@ public class OlapSpeakerMetricsDto extends OlapEntityMetricsDto {
         if (!(o instanceof OlapSpeakerMetricsDto)) return false;
         if (!super.equals(o)) return false;
         OlapSpeakerMetricsDto that = (OlapSpeakerMetricsDto) o;
-        return getId() == that.getId() && Objects.equals(getName(), that.getName()) && Objects.equals(getPhotoFileName(), that.getPhotoFileName());
+        return Objects.equals(getPhotoFileName(), that.getPhotoFileName());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getId(), getName(), getPhotoFileName());
+        return Objects.hash(super.hashCode(), getPhotoFileName());
     }
 
     @Override

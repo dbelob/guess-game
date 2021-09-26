@@ -65,12 +65,12 @@ public class OlapEventTypeMetricsDto extends OlapEntityMetricsDto {
         if (!(o instanceof OlapEventTypeMetricsDto)) return false;
         if (!super.equals(o)) return false;
         OlapEventTypeMetricsDto that = (OlapEventTypeMetricsDto) o;
-        return getId() == that.getId() && isConference() == that.isConference() && Objects.equals(getName(), that.getName()) && Objects.equals(getLogoFileName(), that.getLogoFileName()) && Objects.equals(getOrganizerName(), that.getOrganizerName());
+        return isConference() == that.isConference() && Objects.equals(getLogoFileName(), that.getLogoFileName()) && Objects.equals(getOrganizerName(), that.getOrganizerName());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getId(), getName(), isConference(), getLogoFileName(), getOrganizerName());
+        return Objects.hash(super.hashCode(), isConference(), getLogoFileName(), getOrganizerName());
     }
 
     @Override

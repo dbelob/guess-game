@@ -5,6 +5,7 @@ import guess.domain.source.Company;
 import guess.domain.source.EventType;
 import guess.domain.source.Speaker;
 import guess.domain.statistics.olap.*;
+import guess.domain.statistics.olap.dimension.City;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -99,6 +100,18 @@ public class OlapServiceImpl implements OlapService {
         olapSpeakerStatistics.getMetricsList().removeIf(m -> (m.getTotal() == null) || (m.getTotal() == 0));
 
         return olapSpeakerStatistics;
+    }
+
+    @Override
+    public OlapEntityStatistics<Integer, City> getOlapCityStatistics(CubeType cubeType, MeasureType measureType, Long eventTypeId) {
+        Predicate<City> cityPredicate = c -> true;
+        Predicate<EventType> eventTypePredicate = et -> (eventTypeId != null) && (et.getId() == eventTypeId);
+        OlapEntityStatistics<Integer, City> olapCityStatistics = getOlapEntityStatistics(cubeType, measureType,
+                DimensionType.CITY, cityPredicate, DimensionType.EVENT_TYPE, eventTypePredicate);
+
+        olapCityStatistics.getMetricsList().removeIf(m -> (m.getTotal() == null) || (m.getTotal() == 0));
+
+        return olapCityStatistics;
     }
 
     @SuppressWarnings("unchecked")

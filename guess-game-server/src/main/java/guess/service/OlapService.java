@@ -6,6 +6,7 @@ import guess.domain.statistics.olap.CubeType;
 import guess.domain.statistics.olap.MeasureType;
 import guess.domain.statistics.olap.OlapEntityStatistics;
 import guess.domain.statistics.olap.OlapStatistics;
+import guess.domain.statistics.olap.dimension.City;
 
 import java.util.List;
 
@@ -25,4 +26,6 @@ public interface OlapService {
 
     OlapEntityStatistics<Integer, Speaker> getOlapSpeakerStatistics(CubeType cubeType, MeasureType measureType,
                                                                     Long companyId, Long eventTypeId);
+
+    OlapEntityStatistics<Integer, City> getOlapCityStatistics(CubeType cubeType, MeasureType measureType, Long eventTypeId);
 }

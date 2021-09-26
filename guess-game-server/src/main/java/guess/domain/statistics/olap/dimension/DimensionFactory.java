@@ -14,6 +14,8 @@ public class DimensionFactory {
         switch (dimensionType) {
             case EVENT_TYPE:
                 return new EventTypeDimension(value);
+            case CITY:
+                return new CityDimension(value);
             case SPEAKER:
                 return new SpeakerDimension(value);
             case COMPANY:

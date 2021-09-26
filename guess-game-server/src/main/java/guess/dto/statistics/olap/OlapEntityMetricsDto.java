@@ -46,12 +46,12 @@ public class OlapEntityMetricsDto {
         if (this == o) return true;
         if (!(o instanceof OlapEntityMetricsDto)) return false;
         OlapEntityMetricsDto that = (OlapEntityMetricsDto) o;
-        return Objects.equals(getMeasureValues(), that.getMeasureValues()) && Objects.equals(getTotal(), that.getTotal());
+        return getId() == that.getId() && Objects.equals(getName(), that.getName()) && Objects.equals(getMeasureValues(), that.getMeasureValues()) && Objects.equals(getTotal(), that.getTotal());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getMeasureValues(), getTotal());
+        return Objects.hash(getId(), getName(), getMeasureValues(), getTotal());
     }
 
     @Override

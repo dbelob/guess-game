@@ -6,7 +6,6 @@ import guess.domain.statistics.olap.OlapEntityMetrics;
 import guess.util.LocalizationUtils;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -32,20 +31,6 @@ public class OlapCompanyMetricsDto extends OlapEntityMetricsDto {
         return companyMetricsList.stream()
                 .map(cm -> convertToDto(cm, language))
                 .collect(Collectors.toList());
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof OlapCompanyMetricsDto)) return false;
-        if (!super.equals(o)) return false;
-        OlapCompanyMetricsDto that = (OlapCompanyMetricsDto) o;
-        return getId() == that.getId() && Objects.equals(getName(), that.getName());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), getId(), getName());
     }
 
     @Override

@@ -5,6 +5,7 @@ package guess.domain.statistics.olap;
  */
 public enum DimensionType {
     EVENT_TYPE,
+    CITY,
     SPEAKER,
     COMPANY,
     YEAR
