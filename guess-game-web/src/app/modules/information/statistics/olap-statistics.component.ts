@@ -55,6 +55,10 @@ export class OlapStatisticsComponent implements OnInit {
 
   private readonly MEASURE_VALUE_FIELD_NAME_PREFIX = 'measureValue';
 
+  private readonly EVENT_TYPE_CHART_DATASET_QUANTITY = -1;
+  private readonly SPEAKER_CHART_DATASET_QUANTITY = 5;
+  private readonly COMPANY_CHART_DATASET_QUANTITY = 5;
+
   private imageDirectory = 'assets/images';
   public eventsImageDirectory = `${this.imageDirectory}/events`;
   public speakersImageDirectory = `${this.imageDirectory}/speakers`;
@@ -295,21 +299,21 @@ export class OlapStatisticsComponent implements OnInit {
             fixOlapEntityStatistics(olapStatistics.eventTypeStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
             this.eventTypeExpandedRows = {};
 
-            this.loadChartData(olapStatistics.eventTypeStatistics, -1);
+            this.loadChartData(olapStatistics.eventTypeStatistics, this.EVENT_TYPE_CHART_DATASET_QUANTITY);
           }
 
           if (olapStatistics?.speakerStatistics) {
             fixOlapEntityStatistics(olapStatistics.speakerStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
             this.speakerExpandedRows = {};
 
-            this.loadChartData(olapStatistics.speakerStatistics, 5);
+            this.loadChartData(olapStatistics.speakerStatistics, this.SPEAKER_CHART_DATASET_QUANTITY);
           }
 
           if (olapStatistics?.companyStatistics) {
             fixOlapEntityStatistics(olapStatistics.companyStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
             this.companyExpandedRows = {};
 
-            this.loadChartData(olapStatistics.companyStatistics, 5);
+            this.loadChartData(olapStatistics.companyStatistics, this.COMPANY_CHART_DATASET_QUANTITY);
           }
 
           this.olapStatistics = olapStatistics;
