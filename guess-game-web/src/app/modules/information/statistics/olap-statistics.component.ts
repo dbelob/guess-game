@@ -299,21 +299,21 @@ export class OlapStatisticsComponent implements OnInit {
             fixOlapEntityStatistics(olapStatistics.eventTypeStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
             this.eventTypeExpandedRows = {};
 
-            this.loadChartData(olapStatistics.eventTypeStatistics, this.EVENT_TYPE_CHART_DATASET_QUANTITY);
+            this.loadChartTotalData(olapStatistics.eventTypeStatistics);
           }
 
           if (olapStatistics?.speakerStatistics) {
             fixOlapEntityStatistics(olapStatistics.speakerStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
             this.speakerExpandedRows = {};
 
-            this.loadChartData(olapStatistics.speakerStatistics, this.SPEAKER_CHART_DATASET_QUANTITY);
+            this.loadChartTotalData(olapStatistics.speakerStatistics);
           }
 
           if (olapStatistics?.companyStatistics) {
             fixOlapEntityStatistics(olapStatistics.companyStatistics, this.MEASURE_VALUE_FIELD_NAME_PREFIX)
             this.companyExpandedRows = {};
 
-            this.loadChartData(olapStatistics.companyStatistics, this.COMPANY_CHART_DATASET_QUANTITY);
+            this.loadChartTotalData(olapStatistics.companyStatistics);
           }
 
           this.olapStatistics = olapStatistics;
@@ -565,7 +565,7 @@ export class OlapStatisticsComponent implements OnInit {
     };
   }
 
-  loadChartData(olapEntityStatistics: OlapEntityStatistics<number, OlapEntityMetrics>, quantity: number) {
+  loadChartDetailsData(olapEntityStatistics: OlapEntityStatistics<number, OlapEntityMetrics>, quantity: number) {
     const metricsList = (quantity <= 0) ? olapEntityStatistics.metricsList : olapEntityStatistics.metricsList.slice(0, quantity);
 
     this.allLineData = {
@@ -583,7 +583,9 @@ export class OlapStatisticsComponent implements OnInit {
         }
       })
     };
+  }
 
+  loadChartTotalData(olapEntityStatistics: OlapEntityStatistics<number, OlapEntityMetrics>) {
     const color = getColorByIndex(0);
 
     this.translateService.get(this.TOTAL_LABEL_KEY)
@@ -630,5 +632,17 @@ export class OlapStatisticsComponent implements OnInit {
 
   totalChart() {
     this.chartType = ChartType.Total;
+  }
+
+  sortEventTypeStatistics() {
+    this.loadChartDetailsData(this.olapStatistics.eventTypeStatistics, this.EVENT_TYPE_CHART_DATASET_QUANTITY);
+  }
+
+  sortSpeakerStatistics() {
+    this.loadChartDetailsData(this.olapStatistics.speakerStatistics, this.SPEAKER_CHART_DATASET_QUANTITY);
+  }
+
+  sortCompanyStatistics() {
+    this.loadChartDetailsData(this.olapStatistics.companyStatistics, this.COMPANY_CHART_DATASET_QUANTITY);
   }
 }

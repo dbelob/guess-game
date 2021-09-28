@@ -125,7 +125,8 @@
     <div *ngIf="isEventTypesListVisible()" class="m-2">
       <p-table [value]="olapStatistics.eventTypeStatistics.metricsList" [resizableColumns]="true" [autoLayout]="true"
                sortMode="multiple" [multiSortMeta]="eventTypeMultiSortMeta" styleClass="p-datatable-striped"
-               responsiveLayout="scroll" dataKey="id" (onRowExpand)="eventTypeRowExpand($event)" [expandedRowKeys]="eventTypeExpandedRows">
+               responsiveLayout="scroll" dataKey="id" (onRowExpand)="eventTypeRowExpand($event)" [expandedRowKeys]="eventTypeExpandedRows"
+               (onSort)="sortEventTypeStatistics()">
         <ng-template pTemplate="header">
           <tr>
             <th style="width: 3rem"></th>
@@ -236,7 +237,8 @@
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
                currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
                sortMode="multiple" [multiSortMeta]="speakerMultiSortMeta" styleClass="p-datatable-striped"
-               responsiveLayout="scroll" dataKey="id" (onRowExpand)="speakerRowExpand($event)" [expandedRowKeys]="speakerExpandedRows">
+               responsiveLayout="scroll" dataKey="id" (onRowExpand)="speakerRowExpand($event)" [expandedRowKeys]="speakerExpandedRows"
+               (onSort)="sortSpeakerStatistics()">
         <ng-template pTemplate="header">
           <tr>
             <th style="width: 3rem"></th>
@@ -337,7 +339,8 @@
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
                currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
                sortMode="multiple" [multiSortMeta]="companyMultiSortMeta" styleClass="p-datatable-striped"
-               responsiveLayout="scroll" dataKey="id" (onRowExpand)="companyRowExpand($event)" [expandedRowKeys]="companyExpandedRows">
+               responsiveLayout="scroll" dataKey="id" (onRowExpand)="companyRowExpand($event)" [expandedRowKeys]="companyExpandedRows"
+               (onSort)="sortCompanyStatistics()">
         <ng-template pTemplate="header">
           <tr>
             <th style="width: 3rem"></th>
