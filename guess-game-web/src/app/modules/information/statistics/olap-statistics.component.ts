@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SelectItem } from 'primeng/api';
+import { Table } from 'primeng/table';
 import { TranslateService } from '@ngx-translate/core';
 import { Company } from '../../../shared/models/company/company.model';
 import { CubeType } from '../../../shared/models/statistics/olap/cube-type.model';
@@ -98,11 +99,15 @@ export class OlapStatisticsComponent implements OnInit {
   public speakerExpandedRows: {} = {};
   public companyExpandedRows: {} = {};
 
-  public allLineOptions: any;
-  public allLineData: any;
-  public totalLineOptions: any;
-  public totalLineData: any;
+  public allLineOptions: any = {};
+  public allLineData: any = {};
+  public totalLineOptions: any = {};
+  public totalLineData: any = {};
   private chartType = ChartType.Details;
+
+  @ViewChild('eventTypeStatisticsTable') eventTypeStatisticsTable: Table;
+  @ViewChild('speakerStatisticsTable') speakerStatisticsTable: Table;
+  @ViewChild('companyStatisticsTable') companyStatisticsTable: Table;
 
   constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
               private eventService: EventService, private organizerService: OrganizerService,
@@ -565,8 +570,9 @@ export class OlapStatisticsComponent implements OnInit {
     };
   }
 
-  loadChartDetailsData(olapEntityStatistics: OlapEntityStatistics<number, OlapEntityMetrics>, quantity: number) {
-    const metricsList = (quantity <= 0) ? olapEntityStatistics.metricsList : olapEntityStatistics.metricsList.slice(0, quantity);
+  loadChartDetailsData(olapEntityStatistics: OlapEntityStatistics<number, OlapEntityMetrics>, sortedMetricsList: OlapEntityMetrics[],
+                       quantity: number) {
+    const metricsList = (quantity <= 0) ? sortedMetricsList : sortedMetricsList.slice(0, quantity);
 
     this.allLineData = {
       labels: olapEntityStatistics.dimensionValues,
@@ -635,14 +641,47 @@ export class OlapStatisticsComponent implements OnInit {
   }
 
   sortEventTypeStatistics() {
-    this.loadChartDetailsData(this.olapStatistics.eventTypeStatistics, this.EVENT_TYPE_CHART_DATASET_QUANTITY);
+    this.loadChartDetailsData(
+      this.olapStatistics.eventTypeStatistics,
+      (this.eventTypeStatisticsTable?.value) ? this.eventTypeStatisticsTable.value : this.olapStatistics.eventTypeStatistics.metricsList,
+      this.EVENT_TYPE_CHART_DATASET_QUANTITY);
+
+    // TODO: delete
+    // console.log('eventTypeStatistics');
+    // if (this.eventTypeStatisticsTable?.value) {
+    //   console.log('eventTypeStatistics (a)');
+    // } else {
+    //   console.log('eventTypeStatistics (b); eventTypeStatisticsTable: ' + this.eventTypeStatisticsTable + ', value: ' + this.eventTypeStatisticsTable?.value);
+    // }
   }
 
   sortSpeakerStatistics() {
-    this.loadChartDetailsData(this.olapStatistics.speakerStatistics, this.SPEAKER_CHART_DATASET_QUANTITY);
+    this.loadChartDetailsData(
+      this.olapStatistics.speakerStatistics,
+      (this.speakerStatisticsTable?.value) ? this.speakerStatisticsTable.value : this.olapStatistics.speakerStatistics.metricsList,
+      this.SPEAKER_CHART_DATASET_QUANTITY);
+
+    // TODO: delete
+    // console.log('speakerStatistics');
+    // if (this.speakerStatisticsTable?.value) {
+    //   console.log('speakerStatistics (a)');
+    // } else {
+    //   console.log('speakerStatistics (b)');
+    // }
   }
 
   sortCompanyStatistics() {
-    this.loadChartDetailsData(this.olapStatistics.companyStatistics, this.COMPANY_CHART_DATASET_QUANTITY);
+    this.loadChartDetailsData(
+      this.olapStatistics.companyStatistics,
+      (this.companyStatisticsTable?.value) ? this.companyStatisticsTable.value : this.olapStatistics.companyStatistics.metricsList,
+      this.COMPANY_CHART_DATASET_QUANTITY);
+
+    // TODO: delete
+    // console.log('companyStatistics');
+    // if (this.companyStatisticsTable?.value) {
+    //   console.log('companyStatistics (a)');
+    // } else {
+    //   console.log('companyStatistics (b)');
+    // }
   }
 }

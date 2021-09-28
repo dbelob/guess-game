@@ -123,7 +123,7 @@
     </div>
 
     <div *ngIf="isEventTypesListVisible()" class="m-2">
-      <p-table [value]="olapStatistics.eventTypeStatistics.metricsList" [resizableColumns]="true" [autoLayout]="true"
+      <p-table #eventTypeStatisticsTable [value]="olapStatistics.eventTypeStatistics.metricsList" [resizableColumns]="true" [autoLayout]="true"
                sortMode="multiple" [multiSortMeta]="eventTypeMultiSortMeta" styleClass="p-datatable-striped"
                responsiveLayout="scroll" dataKey="id" (onRowExpand)="eventTypeRowExpand($event)" [expandedRowKeys]="eventTypeExpandedRows"
                (onSort)="sortEventTypeStatistics()">
@@ -232,7 +232,7 @@
     </div>
 
     <div *ngIf="isSpeakersListVisible()" class="m-2">
-      <p-table [value]="olapStatistics.speakerStatistics.metricsList" [resizableColumns]="true" [autoLayout]="true"
+      <p-table #speakerStatisticsTable [value]="olapStatistics.speakerStatistics.metricsList" [resizableColumns]="true" [autoLayout]="true"
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
                currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
@@ -334,7 +334,7 @@
     </div>
 
     <div *ngIf="isCompaniesListVisible()" class="m-2">
-      <p-table [value]="olapStatistics.companyStatistics.metricsList" [resizableColumns]="true" [autoLayout]="true"
+      <p-table #companyStatisticsTable [value]="olapStatistics.companyStatistics.metricsList" [resizableColumns]="true" [autoLayout]="true"
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
                currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
