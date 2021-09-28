@@ -122,7 +122,7 @@ public class OlapDaoImpl implements OlapDao {
     private void fillMeasures(Cube eventTypesCube, Cube speakersCube, Cube companiesCube) {
         List<EventType> eventTypes = eventTypeDao.getEventTypes();
         Map<List<LocaleItem>, City> cityMap = eventTypesCube.getDimensionValues(DimensionType.CITY).stream()
-                .map(v -> (City) v)
+                .map(City.class::cast)
                 .collect(Collectors.toMap(Nameable::getName, v -> v));
 
         for (EventType eventType : eventTypes) {
