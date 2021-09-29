@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
-import { Table } from 'primeng/table';
 import { TranslateService } from '@ngx-translate/core';
 import { Company } from '../../../shared/models/company/company.model';
 import { CubeType } from '../../../shared/models/statistics/olap/cube-type.model';
@@ -104,10 +103,6 @@ export class OlapStatisticsComponent implements OnInit {
   public totalLineOptions: any = {};
   public totalLineData: any = {};
   private chartType = ChartType.Details;
-
-  @ViewChild('eventTypeStatisticsTable') eventTypeStatisticsTable: Table;
-  @ViewChild('speakerStatisticsTable') speakerStatisticsTable: Table;
-  @ViewChild('companyStatisticsTable') companyStatisticsTable: Table;
 
   constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
               private eventService: EventService, private organizerService: OrganizerService,
@@ -570,8 +565,8 @@ export class OlapStatisticsComponent implements OnInit {
     };
   }
 
-  loadChartDetailsData(olapEntityStatistics: OlapEntityStatistics<number, OlapEntityMetrics>, sortedMetricsList: OlapEntityMetrics[],
-                       quantity: number) {
+  loadChartDetailsData(olapEntityStatistics: OlapEntityStatistics<number, OlapEntityMetrics>,
+                       sortedMetricsList: OlapEntityMetrics[], quantity: number) {
     const metricsList = (quantity <= 0) ? sortedMetricsList : sortedMetricsList.slice(0, quantity);
 
     this.allLineData = {
@@ -640,48 +635,15 @@ export class OlapStatisticsComponent implements OnInit {
     this.chartType = ChartType.Total;
   }
 
-  sortEventTypeStatistics() {
-    this.loadChartDetailsData(
-      this.olapStatistics.eventTypeStatistics,
-      (this.eventTypeStatisticsTable?.value) ? this.eventTypeStatisticsTable.value : this.olapStatistics.eventTypeStatistics.metricsList,
-      this.EVENT_TYPE_CHART_DATASET_QUANTITY);
-
-    // TODO: delete
-    // console.log('eventTypeStatistics');
-    // if (this.eventTypeStatisticsTable?.value) {
-    //   console.log('eventTypeStatistics (a)');
-    // } else {
-    //   console.log('eventTypeStatistics (b); eventTypeStatisticsTable: ' + this.eventTypeStatisticsTable + ', value: ' + this.eventTypeStatisticsTable?.value);
-    // }
+  sortEventTypeStatistics(value) {
+    this.loadChartDetailsData(this.olapStatistics.eventTypeStatistics, value, this.EVENT_TYPE_CHART_DATASET_QUANTITY);
   }
 
-  sortSpeakerStatistics() {
-    this.loadChartDetailsData(
-      this.olapStatistics.speakerStatistics,
-      (this.speakerStatisticsTable?.value) ? this.speakerStatisticsTable.value : this.olapStatistics.speakerStatistics.metricsList,
-      this.SPEAKER_CHART_DATASET_QUANTITY);
-
-    // TODO: delete
-    // console.log('speakerStatistics');
-    // if (this.speakerStatisticsTable?.value) {
-    //   console.log('speakerStatistics (a)');
-    // } else {
-    //   console.log('speakerStatistics (b)');
-    // }
+  sortSpeakerStatistics(value) {
+    this.loadChartDetailsData(this.olapStatistics.speakerStatistics, value, this.SPEAKER_CHART_DATASET_QUANTITY);
   }
 
-  sortCompanyStatistics() {
-    this.loadChartDetailsData(
-      this.olapStatistics.companyStatistics,
-      (this.companyStatisticsTable?.value) ? this.companyStatisticsTable.value : this.olapStatistics.companyStatistics.metricsList,
-      this.COMPANY_CHART_DATASET_QUANTITY);
-
-    // TODO: delete
-    // console.log('companyStatistics');
-    // if (this.companyStatisticsTable?.value) {
-    //   console.log('companyStatistics (a)');
-    // } else {
-    //   console.log('companyStatistics (b)');
-    // }
+  sortCompanyStatistics(value) {
+    this.loadChartDetailsData(this.olapStatistics.companyStatistics, value, this.COMPANY_CHART_DATASET_QUANTITY);
   }
 }

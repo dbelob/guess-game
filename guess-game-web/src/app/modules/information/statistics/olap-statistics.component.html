@@ -126,7 +126,7 @@
       <p-table #eventTypeStatisticsTable [value]="olapStatistics.eventTypeStatistics.metricsList" [resizableColumns]="true" [autoLayout]="true"
                sortMode="multiple" [multiSortMeta]="eventTypeMultiSortMeta" styleClass="p-datatable-striped"
                responsiveLayout="scroll" dataKey="id" (onRowExpand)="eventTypeRowExpand($event)" [expandedRowKeys]="eventTypeExpandedRows"
-               (onSort)="sortEventTypeStatistics()">
+               (onSort)="sortEventTypeStatistics(eventTypeStatisticsTable.value)">
         <ng-template pTemplate="header">
           <tr>
             <th style="width: 3rem"></th>
@@ -238,7 +238,7 @@
                currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
                sortMode="multiple" [multiSortMeta]="speakerMultiSortMeta" styleClass="p-datatable-striped"
                responsiveLayout="scroll" dataKey="id" (onRowExpand)="speakerRowExpand($event)" [expandedRowKeys]="speakerExpandedRows"
-               (onSort)="sortSpeakerStatistics()">
+               (onSort)="sortSpeakerStatistics(speakerStatisticsTable.value)">
         <ng-template pTemplate="header">
           <tr>
             <th style="width: 3rem"></th>
@@ -340,7 +340,7 @@
                currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
                sortMode="multiple" [multiSortMeta]="companyMultiSortMeta" styleClass="p-datatable-striped"
                responsiveLayout="scroll" dataKey="id" (onRowExpand)="companyRowExpand($event)" [expandedRowKeys]="companyExpandedRows"
-               (onSort)="sortCompanyStatistics()">
+               (onSort)="sortCompanyStatistics(companyStatisticsTable.value)">
         <ng-template pTemplate="header">
           <tr>
             <th style="width: 3rem"></th>
