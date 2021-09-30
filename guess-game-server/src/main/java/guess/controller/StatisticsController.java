@@ -117,9 +117,7 @@ public class StatisticsController {
     @PostMapping("/olap-statistics")
     @ResponseBody
     public OlapStatisticsDto getOlapStatistics(@RequestBody OlapParametersDto olapParameters, HttpSession httpSession) {
-        var olapStatistics = olapService.getOlapStatistics(olapParameters.getCubeType(), olapParameters.getMeasureType(),
-                olapParameters.isConferences(), olapParameters.isMeetups(), olapParameters.getOrganizerId(),
-                olapParameters.getEventTypeIds(), olapParameters.getSpeakerIds(), olapParameters.getCompanyIds());
+        var olapStatistics = olapService.getOlapStatistics(olapParameters);
         var language = localeService.getLanguage(httpSession);
         var olapStatisticsDto = OlapStatisticsDto.convertToDto(olapStatistics, language);
 
@@ -152,10 +150,7 @@ public class StatisticsController {
     @ResponseBody
     public OlapEntityStatisticsDto<Integer, OlapEventTypeMetricsDto> getOlapEventTypeStatistics(
             @RequestBody OlapEventTypeParametersDto olapParameters, HttpSession httpSession) {
-        var eventTypeStatistics = olapService.getOlapEventTypeStatistics(
-                olapParameters.getCubeType(), olapParameters.getMeasureType(), olapParameters.isConferences(),
-                olapParameters.isMeetups(), olapParameters.getOrganizerId(), olapParameters.getEventTypeIds(),
-                olapParameters.getSpeakerId(), olapParameters.getCompanyId());
+        var eventTypeStatistics = olapService.getOlapEventTypeStatistics(olapParameters);
         var language = localeService.getLanguage(httpSession);
         var olapEventTypeStatisticsDto = OlapEventTypeStatisticsDto.convertToDto(eventTypeStatistics, language);
 
@@ -172,9 +167,7 @@ public class StatisticsController {
     @ResponseBody
     public OlapEntityStatisticsDto<Integer, OlapSpeakerMetricsDto> getOlapSpeakerStatistics(
             @RequestBody OlapSpeakerParametersDto olapParameters, HttpSession httpSession) {
-        var speakerStatistics = olapService.getOlapSpeakerStatistics(
-                olapParameters.getCubeType(), olapParameters.getMeasureType(), olapParameters.getCompanyId(),
-                olapParameters.getEventTypeId());
+        var speakerStatistics = olapService.getOlapSpeakerStatistics(olapParameters);
         var language = localeService.getLanguage(httpSession);
         var olapSpeakerStatisticsDto = OlapSpeakerStatisticsDto.convertToDto(speakerStatistics, language);
 
@@ -190,8 +183,7 @@ public class StatisticsController {
     @ResponseBody
     public OlapEntityStatisticsDto<Integer, OlapCityMetricsDto> getOlapCityStatistics(
             @RequestBody OlapCityParametersDto olapParameters, HttpSession httpSession) {
-        var cityStatistics = olapService.getOlapCityStatistics(
-                olapParameters.getCubeType(), olapParameters.getMeasureType(), olapParameters.getEventTypeId());
+        var cityStatistics = olapService.getOlapCityStatistics(olapParameters);
         var language = localeService.getLanguage(httpSession);
         var olapCityStatisticsDto = OlapCityStatisticsDto.convertToDto(cityStatistics, language);
 

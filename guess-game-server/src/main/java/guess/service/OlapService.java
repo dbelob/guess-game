@@ -7,6 +7,10 @@ import guess.domain.statistics.olap.MeasureType;
 import guess.domain.statistics.olap.OlapEntityStatistics;
 import guess.domain.statistics.olap.OlapStatistics;
 import guess.domain.statistics.olap.dimension.City;
+import guess.dto.statistics.olap.OlapCityParametersDto;
+import guess.dto.statistics.olap.OlapEventTypeParametersDto;
+import guess.dto.statistics.olap.OlapParametersDto;
+import guess.dto.statistics.olap.OlapSpeakerParametersDto;
 
 import java.util.List;
 
@@ -16,16 +20,11 @@ import java.util.List;
 public interface OlapService {
     List<MeasureType> getMeasureTypes(CubeType cubeType);
 
-    OlapStatistics getOlapStatistics(CubeType cubeType, MeasureType measureType, boolean isConferences, boolean isMeetups,
-                                     Long organizerId, List<Long> eventTypeIds, List<Long> speakerIds, List<Long> companyIds);
+    OlapStatistics getOlapStatistics(OlapParametersDto olapParameters);
 
-    OlapEntityStatistics<Integer, EventType> getOlapEventTypeStatistics(CubeType cubeType, MeasureType measureType,
-                                                                        boolean isConferences, boolean isMeetups,
-                                                                        Long organizerId, List<Long> eventTypeIds,
-                                                                        Long speakerId, Long companyId);
+    OlapEntityStatistics<Integer, EventType> getOlapEventTypeStatistics(OlapEventTypeParametersDto olapParameters);
 
-    OlapEntityStatistics<Integer, Speaker> getOlapSpeakerStatistics(CubeType cubeType, MeasureType measureType,
-                                                                    Long companyId, Long eventTypeId);
+    OlapEntityStatistics<Integer, Speaker> getOlapSpeakerStatistics(OlapSpeakerParametersDto olapParameters);
 
-    OlapEntityStatistics<Integer, City> getOlapCityStatistics(CubeType cubeType, MeasureType measureType, Long eventTypeId);
+    OlapEntityStatistics<Integer, City> getOlapCityStatistics(OlapCityParametersDto olapParameters);
 }
