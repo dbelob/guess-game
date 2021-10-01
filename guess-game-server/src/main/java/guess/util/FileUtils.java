@@ -27,8 +27,13 @@ public class FileUtils {
             try (Stream<Path> pathStream = Files.walk(directoryPath)) {
                 pathStream
                         .sorted(Comparator.reverseOrder())
-                        .map(Path::toFile)
-                        .forEach(File::delete);
+                        .forEach(path -> {
+                            try {
+                                Files.deleteIfExists(path);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        });
             }
         }
     }
