@@ -147,50 +147,68 @@ public class OlapDaoImpl implements OlapDao {
                     // Talk measure values
                     eventTypesCube.addMeasureEntity(eventTypeAndCityAndYearDimensions, MeasureType.TALKS_QUANTITY, talk);
 
-                    for (Speaker speaker : talk.getSpeakers()) {
-                        // Speaker dimension
-                        SpeakerDimension speakerDimension = new SpeakerDimension(speaker);
-
-                        // Event type, speaker and year dimension
-                        Set<Dimension<?>> eventTypeAndSpeakerAndYearDimensions = Set.of(
-                                eventTypeDimension, speakerDimension, yearDimension);
-
-                        // Speaker measure values
-                        eventTypesCube.addMeasureEntity(eventTypeAndCityAndYearDimensions, MeasureType.SPEAKERS_QUANTITY, speaker);
-
-                        speakersCube.addMeasureEntity(eventTypeAndSpeakerAndYearDimensions, MeasureType.TALKS_QUANTITY, talk);
-                        speakersCube.addMeasureEntity(eventTypeAndSpeakerAndYearDimensions, MeasureType.EVENTS_QUANTITY, event);
-                        speakersCube.addMeasureEntity(eventTypeAndSpeakerAndYearDimensions, MeasureType.EVENT_TYPES_QUANTITY, eventType);
-
-                        if (speaker.isJavaChampion()) {
-                            eventTypesCube.addMeasureEntity(eventTypeAndCityAndYearDimensions, MeasureType.JAVA_CHAMPIONS_QUANTITY, speaker);
-                        }
-
-                        if (speaker.isAnyMvp()) {
-                            eventTypesCube.addMeasureEntity(eventTypeAndCityAndYearDimensions, MeasureType.MVPS_QUANTITY, speaker);
-                        }
-
-                        for (Company company : speaker.getCompanies()) {
-                            // Event type, company, speaker and year dimension
-                            Set<Dimension<?>> eventTypeAndCompanyAndSpeakerAndYearDimensions = Set.of(
-                                    eventTypeDimension, new CompanyDimension(company), speakerDimension, yearDimension);
-
-                            // Company measure values
-                            companiesCube.addMeasureEntity(eventTypeAndCompanyAndSpeakerAndYearDimensions, MeasureType.SPEAKERS_QUANTITY, speaker);
-                            companiesCube.addMeasureEntity(eventTypeAndCompanyAndSpeakerAndYearDimensions, MeasureType.TALKS_QUANTITY, talk);
-                            companiesCube.addMeasureEntity(eventTypeAndCompanyAndSpeakerAndYearDimensions, MeasureType.EVENTS_QUANTITY, event);
-                            companiesCube.addMeasureEntity(eventTypeAndCompanyAndSpeakerAndYearDimensions, MeasureType.EVENT_TYPES_QUANTITY, eventType);
-
-                            if (speaker.isJavaChampion()) {
-                                companiesCube.addMeasureEntity(eventTypeAndCompanyAndSpeakerAndYearDimensions, MeasureType.JAVA_CHAMPIONS_QUANTITY, speaker);
-                            }
-
-                            if (speaker.isAnyMvp()) {
-                                companiesCube.addMeasureEntity(eventTypeAndCompanyAndSpeakerAndYearDimensions, MeasureType.MVPS_QUANTITY, speaker);
-                            }
-                        }
-                    }
+                    iterateSpeakers(eventTypesCube, speakersCube, companiesCube, eventTypeDimension, yearDimension,
+                            eventTypeAndCityAndYearDimensions, event, talk);
                 }
+            }
+        }
+    }
+
+    private void iterateSpeakers(Cube eventTypesCube, Cube speakersCube, Cube companiesCube,
+                                 EventTypeDimension eventTypeDimension, YearDimension yearDimension,
+                                 Set<Dimension<?>> eventTypeAndCityAndYearDimensions,
+                                 Event event, Talk talk) {
+        EventType eventType = eventTypeDimension.getValue();
+
+        for (Speaker speaker : talk.getSpeakers()) {
+            // Speaker dimension
+            SpeakerDimension speakerDimension = new SpeakerDimension(speaker);
+
+            // Event type, speaker and year dimension
+            Set<Dimension<?>> eventTypeAndSpeakerAndYearDimensions = Set.of(
+                    eventTypeDimension, speakerDimension, yearDimension);
+
+            // Speaker measure values
+            eventTypesCube.addMeasureEntity(eventTypeAndCityAndYearDimensions, MeasureType.SPEAKERS_QUANTITY, speaker);
+
+            speakersCube.addMeasureEntity(eventTypeAndSpeakerAndYearDimensions, MeasureType.TALKS_QUANTITY, talk);
+            speakersCube.addMeasureEntity(eventTypeAndSpeakerAndYearDimensions, MeasureType.EVENTS_QUANTITY, event);
+            speakersCube.addMeasureEntity(eventTypeAndSpeakerAndYearDimensions, MeasureType.EVENT_TYPES_QUANTITY, eventType);
+
+            if (speaker.isJavaChampion()) {
+                eventTypesCube.addMeasureEntity(eventTypeAndCityAndYearDimensions, MeasureType.JAVA_CHAMPIONS_QUANTITY, speaker);
+            }
+
+            if (speaker.isAnyMvp()) {
+                eventTypesCube.addMeasureEntity(eventTypeAndCityAndYearDimensions, MeasureType.MVPS_QUANTITY, speaker);
+            }
+
+            iterateCompanies(companiesCube, eventTypeDimension, yearDimension, speakerDimension, event, talk);
+        }
+    }
+
+    private void iterateCompanies(Cube companiesCube, EventTypeDimension eventTypeDimension, YearDimension yearDimension,
+                                  SpeakerDimension speakerDimension, Event event, Talk talk) {
+        EventType eventType = eventTypeDimension.getValue();
+        Speaker speaker = speakerDimension.getValue();
+
+        for (Company company : speaker.getCompanies()) {
+            // Event type, company, speaker and year dimension
+            Set<Dimension<?>> eventTypeAndCompanyAndSpeakerAndYearDimensions = Set.of(
+                    eventTypeDimension, new CompanyDimension(company), speakerDimension, yearDimension);
+
+            // Company measure values
+            companiesCube.addMeasureEntity(eventTypeAndCompanyAndSpeakerAndYearDimensions, MeasureType.SPEAKERS_QUANTITY, speaker);
+            companiesCube.addMeasureEntity(eventTypeAndCompanyAndSpeakerAndYearDimensions, MeasureType.TALKS_QUANTITY, talk);
+            companiesCube.addMeasureEntity(eventTypeAndCompanyAndSpeakerAndYearDimensions, MeasureType.EVENTS_QUANTITY, event);
+            companiesCube.addMeasureEntity(eventTypeAndCompanyAndSpeakerAndYearDimensions, MeasureType.EVENT_TYPES_QUANTITY, eventType);
+
+            if (speaker.isJavaChampion()) {
+                companiesCube.addMeasureEntity(eventTypeAndCompanyAndSpeakerAndYearDimensions, MeasureType.JAVA_CHAMPIONS_QUANTITY, speaker);
+            }
+
+            if (speaker.isAnyMvp()) {
+                companiesCube.addMeasureEntity(eventTypeAndCompanyAndSpeakerAndYearDimensions, MeasureType.MVPS_QUANTITY, speaker);
             }
         }
     }
