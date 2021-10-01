@@ -31,7 +31,7 @@ public class OlapDaoImpl implements OlapDao {
         }
     }
 
-    private final Map<CubeType, Cube> cubes = new EnumMap<>(CubeType.class);
+    private final Map<CubeType, Cube> cubeMap = new EnumMap<>(CubeType.class);
 
     private final EventTypeDao eventTypeDao;
 
@@ -55,9 +55,9 @@ public class OlapDaoImpl implements OlapDao {
                         MeasureType.EVENT_TYPES_QUANTITY, MeasureType.SPEAKERS_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY,
                         MeasureType.MVPS_QUANTITY)));
 
-        cubes.put(CubeType.EVENT_TYPES, eventTypesCube);
-        cubes.put(CubeType.SPEAKERS, speakersCube);
-        cubes.put(CubeType.COMPANIES, companiesCube);
+        cubeMap.put(CubeType.EVENT_TYPES, eventTypesCube);
+        cubeMap.put(CubeType.SPEAKERS, speakersCube);
+        cubeMap.put(CubeType.COMPANIES, companiesCube);
 
         fillDimensions(eventTypesCube, speakersCube, companiesCube);
         fillMeasures(eventTypesCube, speakersCube, companiesCube);
@@ -65,7 +65,7 @@ public class OlapDaoImpl implements OlapDao {
 
     @Override
     public Cube getCube(CubeType cubeType) {
-        Cube cube = cubes.get(cubeType);
+        Cube cube = cubeMap.get(cubeType);
 
         return Objects.requireNonNull(cube, () -> String.format("Cube type %s not found", cubeType));
     }

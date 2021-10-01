@@ -1,5 +1,8 @@
 package guess.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,6 +14,8 @@ import java.util.stream.Stream;
  * File utility methods.
  */
 public class FileUtils {
+    private static final Logger log = LoggerFactory.getLogger(FileUtils.class);
+
     private FileUtils() {
     }
 
@@ -31,7 +36,7 @@ public class FileUtils {
                             try {
                                 Files.deleteIfExists(path);
                             } catch (IOException e) {
-                                e.printStackTrace();
+                                log.error("File deletion error", e);
                             }
                         });
             }
