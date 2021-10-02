@@ -265,6 +265,16 @@ class SourceDaoImplTest {
     }
 
     @Test
+    void getCompaniesByIds() {
+        assertEquals(Collections.emptyList(), sourceDao.getCompaniesByIds(Collections.emptyList()));
+        assertEquals(List.of(company0), sourceDao.getCompaniesByIds(List.of(0L)));
+        assertEquals(List.of(company1), sourceDao.getCompaniesByIds(List.of(1L)));
+        assertEquals(List.of(company2), sourceDao.getCompaniesByIds(List.of(2L)));
+        assertEquals(List.of(company0, company1), sourceDao.getCompaniesByIds(List.of(0L, 1L)));
+        assertEquals(List.of(company0, company1, company2), sourceDao.getCompaniesByIds(List.of(0L, 1L, 2L)));
+    }
+
+    @Test
     void getSpeakers() {
         assertEquals(List.of(speaker0, speaker1, speaker2, speaker3), sourceDao.getSpeakers());
     }
@@ -277,6 +287,16 @@ class SourceDaoImplTest {
         assertEquals(speaker3, sourceDao.getSpeakerById(3));
         assertThrows(NoSuchElementException.class, () -> sourceDao.getSpeakerById(4));
         assertThrows(NoSuchElementException.class, () -> sourceDao.getSpeakerById(5));
+    }
+
+    @Test
+    void getSpeakerByIds() {
+        assertEquals(Collections.emptyList(), sourceDao.getSpeakerByIds(Collections.emptyList()));
+        assertEquals(List.of(speaker0), sourceDao.getSpeakerByIds(List.of(0L)));
+        assertEquals(List.of(speaker1), sourceDao.getSpeakerByIds(List.of(1L)));
+        assertEquals(List.of(speaker2), sourceDao.getSpeakerByIds(List.of(2L)));
+        assertEquals(List.of(speaker0, speaker1), sourceDao.getSpeakerByIds(List.of(0L, 1L)));
+        assertEquals(List.of(speaker0, speaker1, speaker2), sourceDao.getSpeakerByIds(List.of(0L, 1L, 2L)));
     }
 
     @Test

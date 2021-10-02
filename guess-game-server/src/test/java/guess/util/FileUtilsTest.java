@@ -1,7 +1,7 @@
 package guess.util;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -17,14 +17,14 @@ class FileUtilsTest {
     static final String DIRECTORY_NAME0 = "directory0";
     static final String DIRECTORY_NAME1 = "directory1";
 
-    @BeforeEach
-    void setUp() throws IOException {
+    @BeforeAll
+    static void setUp() throws IOException {
         FileUtils.deleteDirectory(DIRECTORY_NAME0);
         FileUtils.deleteDirectory(DIRECTORY_NAME1);
     }
 
-    @AfterEach
-    void tearDown() throws IOException {
+    @AfterAll
+    static void tearDown() throws IOException {
         FileUtils.deleteDirectory(DIRECTORY_NAME0);
         FileUtils.deleteDirectory(DIRECTORY_NAME1);
     }
@@ -71,7 +71,7 @@ class FileUtilsTest {
 
         assertTrue(directory.exists() && directory.isDirectory());
 
-        // Try create directory again
+        // Try to create directory again
         FileUtils.checkAndCreateDirectory(directory);
 
         assertTrue(directory.exists() && directory.isDirectory());
