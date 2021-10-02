@@ -14,6 +14,20 @@ import java.util.stream.Collectors;
  * Cube.
  */
 public class Cube {
+    private static class MeasureMaps<T, S> {
+        private final Map<T, List<Measure<?>>> firstDimensionTotalMeasures;
+        private final Map<S, List<Measure<?>>> secondDimensionTotalMeasures;
+        private final Map<S, List<Measure<?>>> measuresBySecondDimensionValue;
+
+        public MeasureMaps(Map<T, List<Measure<?>>> firstDimensionTotalMeasures,
+                           Map<S, List<Measure<?>>> secondDimensionTotalMeasures,
+                           Map<S, List<Measure<?>>> measuresBySecondDimensionValue) {
+            this.firstDimensionTotalMeasures = firstDimensionTotalMeasures;
+            this.secondDimensionTotalMeasures = secondDimensionTotalMeasures;
+            this.measuresBySecondDimensionValue = measuresBySecondDimensionValue;
+        }
+    }
+
     private final Set<DimensionType> dimensionTypes;
     private final Set<MeasureType> measureTypes;
     private final Map<DimensionType, Set<Dimension<?>>> dimensionMap = new EnumMap<>(DimensionType.class);
@@ -164,9 +178,9 @@ public class Cube {
                         if (secondDimensions.contains(secondEntryDimension)) {
 
                             // Filter by values of third dimension
-                            filterByThirdDimensionValues(measureType, filterDimensions, firstDimensionTotalMeasures,
-                                    secondDimensionTotalMeasures, entry, firstDimensionValue, measuresBySecondDimensionValue,
-                                    secondEntryDimension);
+                            MeasureMaps<T, S> measureMaps = new MeasureMaps<>(firstDimensionTotalMeasures, secondDimensionTotalMeasures, measuresBySecondDimensionValue);
+                            filterByThirdDimensionValues(measureType, filterDimensions, measureMaps, entry, firstDimensionValue, secondEntryDimension);
+
                             break;
                         }
                     }
@@ -200,11 +214,9 @@ public class Cube {
     @SuppressWarnings({"unchecked", "rawtypes"})
     private <T, S> void filterByThirdDimensionValues(MeasureType measureType,
                                                      Set<Dimension> filterDimensions,
-                                                     Map<T, List<Measure<?>>> firstDimensionTotalMeasures,
-                                                     Map<S, List<Measure<?>>> secondDimensionTotalMeasures,
+                                                     MeasureMaps<T, S> measureMaps,
                                                      Map.Entry<Set<Dimension<?>>, Map<MeasureType, Measure<?>>> entry,
                                                      T firstDimensionValue,
-                                                     Map<S, List<Measure<?>>> measuresBySecondDimensionValue,
                                                      Dimension<?> secondEntryDimension) {
         Set<Dimension<?>> entryDimensions = entry.getKey();
 
@@ -218,17 +230,17 @@ public class Cube {
                     S secondDimensionValue = (S) secondEntryDimension.getValue();
 
                     // Measures of first and second dimension
-                    measuresBySecondDimensionValue
+                    measureMaps.measuresBySecondDimensionValue
                             .computeIfAbsent(secondDimensionValue, k -> new ArrayList<>())
                             .add(measure);
 
                     // Measures for total of first dimension
-                    firstDimensionTotalMeasures
+                    measureMaps.firstDimensionTotalMeasures
                             .computeIfAbsent(firstDimensionValue, k -> new ArrayList<>())
                             .add(measure);
 
                     // Measures for total of second dimension
-                    secondDimensionTotalMeasures
+                    measureMaps.secondDimensionTotalMeasures
                             .computeIfAbsent(secondDimensionValue, k -> new ArrayList<>())
                             .add(measure);
                 }
