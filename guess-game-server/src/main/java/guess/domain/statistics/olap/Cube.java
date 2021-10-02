@@ -164,12 +164,9 @@ public class Cube {
                         if (secondDimensions.contains(secondEntryDimension)) {
 
                             // Filter by values of third dimension
-                            for (Dimension<?> thirdEntryDimension : entryDimensions) {
-                                if (filterDimensions.contains(thirdEntryDimension)) {
-                                    filterByThirdDimensionValues(measureType, firstDimensionTotalMeasures, secondDimensionTotalMeasures,
-                                            entry, firstDimensionValue, measuresBySecondDimensionValue, secondEntryDimension);
-                                    break;
-                                }
+                            if (entryDimensions.stream().anyMatch(filterDimensions::contains)) {
+                                filterByThirdDimensionValues(measureType, firstDimensionTotalMeasures, secondDimensionTotalMeasures,
+                                        entry, firstDimensionValue, measuresBySecondDimensionValue, secondEntryDimension);
                             }
 
                             break;
