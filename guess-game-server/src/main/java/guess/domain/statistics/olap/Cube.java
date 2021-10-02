@@ -164,14 +164,9 @@ public class Cube {
                         if (secondDimensions.contains(secondEntryDimension)) {
 
                             // Filter by values of third dimension
-                            for (Dimension<?> thirdEntryDimension : entryDimensions) {
-                                if (filterDimensions.contains(thirdEntryDimension)) {
-                                    filterByThirdDimensionValues(measureType, firstDimensionTotalMeasures, secondDimensionTotalMeasures,
-                                            entry, firstDimensionValue, measuresBySecondDimensionValue, secondEntryDimension);
-                                    break;
-                                }
-                            }
-
+                            filterByThirdDimensionValues(measureType, filterDimensions, firstDimensionTotalMeasures,
+                                    secondDimensionTotalMeasures, entry, firstDimensionValue, measuresBySecondDimensionValue,
+                                    secondEntryDimension);
                             break;
                         }
                     }
@@ -202,33 +197,44 @@ public class Cube {
                 totalsBiFunction.apply(totals, allTotal));
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({"unchecked", "rawtypes"})
     private <T, S> void filterByThirdDimensionValues(MeasureType measureType,
+                                                     Set<Dimension> filterDimensions,
                                                      Map<T, List<Measure<?>>> firstDimensionTotalMeasures,
                                                      Map<S, List<Measure<?>>> secondDimensionTotalMeasures,
                                                      Map.Entry<Set<Dimension<?>>, Map<MeasureType, Measure<?>>> entry,
                                                      T firstDimensionValue,
                                                      Map<S, List<Measure<?>>> measuresBySecondDimensionValue,
                                                      Dimension<?> secondEntryDimension) {
-        Measure<?> measure = entry.getValue().get(measureType);
+        Set<Dimension<?>> entryDimensions = entry.getKey();
 
-        if (measure != null) {
-            S secondDimensionValue = (S) secondEntryDimension.getValue();
+        for (Dimension<?> thirdEntryDimension : entryDimensions) {
+            if (filterDimensions.contains(thirdEntryDimension)) {
 
-            // Measures of first and second dimension
-            measuresBySecondDimensionValue
-                    .computeIfAbsent(secondDimensionValue, k -> new ArrayList<>())
-                    .add(measure);
+                // filterByThirdDimensionValues
+                Measure<?> measure = entry.getValue().get(measureType);
 
-            // Measures for total of first dimension
-            firstDimensionTotalMeasures
-                    .computeIfAbsent(firstDimensionValue, k -> new ArrayList<>())
-                    .add(measure);
+                if (measure != null) {
+                    S secondDimensionValue = (S) secondEntryDimension.getValue();
 
-            // Measures for total of second dimension
-            secondDimensionTotalMeasures
-                    .computeIfAbsent(secondDimensionValue, k -> new ArrayList<>())
-                    .add(measure);
+                    // Measures of first and second dimension
+                    measuresBySecondDimensionValue
+                            .computeIfAbsent(secondDimensionValue, k -> new ArrayList<>())
+                            .add(measure);
+
+                    // Measures for total of first dimension
+                    firstDimensionTotalMeasures
+                            .computeIfAbsent(firstDimensionValue, k -> new ArrayList<>())
+                            .add(measure);
+
+                    // Measures for total of second dimension
+                    secondDimensionTotalMeasures
+                            .computeIfAbsent(secondDimensionValue, k -> new ArrayList<>())
+                            .add(measure);
+                }
+
+                break;
+            }
         }
     }
 
