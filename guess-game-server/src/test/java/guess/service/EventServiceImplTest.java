@@ -55,6 +55,7 @@ class EventServiceImplTest {
     private static final LocalTime TALK_TRACK_TIME2;
 
     private static Organizer organizer0;
+    private static Organizer organizer1;
     private static EventType eventType0;
     private static EventType eventType1;
     private static EventType eventType2;
@@ -94,6 +95,9 @@ class EventServiceImplTest {
         organizer0 = new Organizer();
         organizer0.setId(0);
 
+        organizer1 = new Organizer();
+        organizer1.setId(1);
+
         eventType0 = new EventType();
         eventType0.setId(0);
         eventType0.setConference(Conference.JPOINT);
@@ -101,12 +105,12 @@ class EventServiceImplTest {
 
         eventType1 = new EventType();
         eventType1.setId(1);
-        eventType1.setOrganizer(organizer0);
+        eventType1.setOrganizer(organizer1);
 
         eventType2 = new EventType();
         eventType2.setId(2);
         eventType2.setConference(Conference.JOKER);
-        eventType2.setOrganizer(organizer0);
+        eventType2.setOrganizer(organizer1);
 
         EventType eventType3 = new EventType();
         eventType3.setId(3);
@@ -205,29 +209,69 @@ class EventServiceImplTest {
         private Stream<Arguments> data() {
             return Stream.of(
                     arguments(false, false, null, null, Collections.emptyList()),
+                    arguments(false, false, 0L, null, Collections.emptyList()),
+                    arguments(false, false, 1L, null, Collections.emptyList()),
                     arguments(false, true, null, null, List.of(event1)),
+                    arguments(false, true, 0L, null, Collections.emptyList()),
+                    arguments(false, true, 1L, null, List.of(event1)),
                     arguments(true, false, null, null, List.of(event0, event2)),
+                    arguments(true, false, 0L, null, List.of(event0)),
+                    arguments(true, false, 1L, null, List.of(event2)),
                     arguments(true, true, null, null, List.of(event0, event1, event2)),
+                    arguments(true, true, 0L, null, List.of(event0)),
+                    arguments(true, true, 1L, null, List.of(event1, event2)),
 
                     arguments(false, false, null, 0L, Collections.emptyList()),
+                    arguments(false, false, 0L, 0L, Collections.emptyList()),
+                    arguments(false, false, 1L, 0L, Collections.emptyList()),
                     arguments(false, true, null, 0L, Collections.emptyList()),
+                    arguments(false, true, 0L, 0L, Collections.emptyList()),
+                    arguments(false, true, 1L, 0L, Collections.emptyList()),
                     arguments(true, false, null, 0L, List.of(event0)),
+                    arguments(true, false, 0L, 0L, List.of(event0)),
+                    arguments(true, false, 1L, 0L, Collections.emptyList()),
                     arguments(true, true, null, 0L, List.of(event0)),
+                    arguments(true, true, 0L, 0L, List.of(event0)),
+                    arguments(true, true, 1L, 0L, Collections.emptyList()),
 
                     arguments(false, false, null, 1L, Collections.emptyList()),
+                    arguments(false, false, 0L, 1L, Collections.emptyList()),
+                    arguments(false, false, 1L, 1L, Collections.emptyList()),
                     arguments(false, true, null, 1L, List.of(event1)),
+                    arguments(false, true, 0L, 1L, Collections.emptyList()),
+                    arguments(false, true, 1L, 1L, List.of(event1)),
                     arguments(true, false, null, 1L, Collections.emptyList()),
+                    arguments(true, false, 0L, 1L, Collections.emptyList()),
+                    arguments(true, false, 1L, 1L, Collections.emptyList()),
                     arguments(true, true, null, 1L, List.of(event1)),
+                    arguments(true, true, 0L, 1L, Collections.emptyList()),
+                    arguments(true, true, 1L, 1L, List.of(event1)),
 
                     arguments(false, false, null, 2L, Collections.emptyList()),
+                    arguments(false, false, 0L, 2L, Collections.emptyList()),
+                    arguments(false, false, 1L, 2L, Collections.emptyList()),
                     arguments(false, true, null, 2L, Collections.emptyList()),
+                    arguments(false, true, 0L, 2L, Collections.emptyList()),
+                    arguments(false, true, 1L, 2L, Collections.emptyList()),
                     arguments(true, false, null, 2L, List.of(event2)),
+                    arguments(true, false, 0L, 2L, Collections.emptyList()),
+                    arguments(true, false, 1L, 2L, List.of(event2)),
                     arguments(true, true, null, 2L, List.of(event2)),
+                    arguments(true, true, 0L, 2L, Collections.emptyList()),
+                    arguments(true, true, 1L, 2L, List.of(event2)),
 
                     arguments(false, false, null, 3L, Collections.emptyList()),
+                    arguments(false, false, 0L, 3L, Collections.emptyList()),
+                    arguments(false, false, 1L, 3L, Collections.emptyList()),
                     arguments(false, true, null, 3L, Collections.emptyList()),
+                    arguments(false, true, 0L, 3L, Collections.emptyList()),
+                    arguments(false, true, 1L, 3L, Collections.emptyList()),
                     arguments(true, false, null, 3L, Collections.emptyList()),
-                    arguments(true, true, null, 3L, Collections.emptyList())
+                    arguments(true, false, 0L, 3L, Collections.emptyList()),
+                    arguments(true, false, 1L, 3L, Collections.emptyList()),
+                    arguments(true, true, null, 3L, Collections.emptyList()),
+                    arguments(true, true, 0L, 3L, Collections.emptyList()),
+                    arguments(true, true, 1L, 3L, Collections.emptyList())
             );
         }
 
