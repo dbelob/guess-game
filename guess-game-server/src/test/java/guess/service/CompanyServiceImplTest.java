@@ -41,6 +41,7 @@ class CompanyServiceImplTest {
             CompanyDao companyDao = Mockito.mock(CompanyDao.class);
 
             Mockito.when(companyDao.getCompanies()).thenReturn(List.of(company0, company1, company2));
+            Mockito.when(companyDao.getCompaniesByIds(Mockito.anyList())).thenReturn(List.of(company0, company1, company2));
 
             return companyDao;
         }
@@ -61,6 +62,15 @@ class CompanyServiceImplTest {
     void getCompanies() {
         companyService.getCompanies();
         Mockito.verify(companyDao, VerificationModeFactory.times(1)).getCompanies();
+        Mockito.verifyNoMoreInteractions(companyDao);
+    }
+
+    @Test
+    void getCompaniesByIds() {
+        final List<Long> IDS = List.of(0L, 1L, 2L);
+
+        companyService.getCompaniesByIds(IDS);
+        Mockito.verify(companyDao, VerificationModeFactory.times(1)).getCompaniesByIds(IDS);
         Mockito.verifyNoMoreInteractions(companyDao);
     }
 
