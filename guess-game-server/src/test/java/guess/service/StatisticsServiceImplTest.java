@@ -50,6 +50,7 @@ class StatisticsServiceImplTest {
     private static final LocalDate EVENT_END_DATE2;
 
     private static Organizer organizer0;
+    private static Organizer organizer1;
     private static EventType eventType0;
     private static EventType eventType1;
     private static EventType eventType2;
@@ -104,6 +105,9 @@ class StatisticsServiceImplTest {
         organizer0 = new Organizer();
         organizer0.setId(0);
 
+        organizer1 = new Organizer();
+        organizer1.setId(1);
+
         eventType0 = new EventType();
         eventType0.setId(0);
         eventType0.setConference(Conference.JPOINT);
@@ -111,12 +115,12 @@ class StatisticsServiceImplTest {
 
         eventType1 = new EventType();
         eventType1.setId(1);
-        eventType1.setOrganizer(organizer0);
+        eventType1.setOrganizer(organizer1);
 
         eventType2 = new EventType();
         eventType2.setId(2);
         eventType2.setConference(Conference.JOKER);
-        eventType2.setOrganizer(organizer0);
+        eventType2.setOrganizer(organizer1);
 
         company0 = new Company();
         company0.setId(0);
@@ -217,12 +221,12 @@ class StatisticsServiceImplTest {
                     arguments(true, true, null, null, eventTypes, List.of(eventType0, eventType1)),
                     arguments(false, false, 0L, null, eventTypes, Collections.emptyList()),
                     arguments(true, false, 0L, null, eventTypes, List.of(eventType0)),
-                    arguments(false, true, 0L, null, eventTypes, List.of(eventType1)),
-                    arguments(true, true, 0L, null, eventTypes, List.of(eventType0, eventType1)),
+                    arguments(false, true, 0L, null, eventTypes, Collections.emptyList()),
+                    arguments(true, true, 0L, null, eventTypes, List.of(eventType0)),
                     arguments(false, false, 1L, null, eventTypes, Collections.emptyList()),
                     arguments(true, false, 1L, null, eventTypes, Collections.emptyList()),
-                    arguments(false, true, 1L, null, eventTypes, Collections.emptyList()),
-                    arguments(true, true, 1L, null, eventTypes, Collections.emptyList()),
+                    arguments(false, true, 1L, null, eventTypes, List.of(eventType1)),
+                    arguments(true, true, 1L, null, eventTypes, List.of(eventType1)),
 
                     arguments(false, false, null, 0L, eventTypes, Collections.emptyList()),
                     arguments(true, false, null, 0L, eventTypes, List.of(eventType0)),
@@ -445,6 +449,21 @@ class StatisticsServiceImplTest {
                 0
         );
         assertEquals(expected4, actual4);
+
+        assertEquals(expected1, statisticsService.getEventStatistics(0L, null));
+        assertEquals(expected3, statisticsService.getEventStatistics(1L, null));
+
+        assertEquals(expected1, statisticsService.getEventStatistics(0L, 0L));
+        assertEquals(expected2, statisticsService.getEventStatistics(1L, 0L));
+
+        assertEquals(expected2, statisticsService.getEventStatistics(0L, 1L));
+        assertEquals(expected2, statisticsService.getEventStatistics(1L, 1L));
+
+        assertEquals(expected2, statisticsService.getEventStatistics(0L, 2L));
+        assertEquals(expected3, statisticsService.getEventStatistics(1L, 2L));
+
+        assertEquals(expected4, statisticsService.getEventStatistics(0L, 3L));
+        assertEquals(expected4, statisticsService.getEventStatistics(1L, 3L));
     }
 
     private SpeakerStatistics createSpeakerStatistics(List<SpeakerMetrics> speakerMetricsList, Speaker speaker,
