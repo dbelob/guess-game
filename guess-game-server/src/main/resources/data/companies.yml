@@ -2392,3 +2392,46 @@ companies:
   - id: 763
     name:
       - {language: en, text: "ANNA Money"}
+  - id: 764
+    name:
+      - {language: en, text: ExoAtlet}
+      - {language: ru, text: ЭкзоАтлет}
+  - id: 765
+    name:
+      - {language: en, text: "PVS Studio"}
+  - id: 766
+    name:
+      - {language: en, text: "Filina Consulting"}
+  - id: 767
+    name:
+      - {language: en, text: Automician}
+  - id: 768
+    name:
+      - {language: en, text: GustoHQ}
+  - id: 769
+    name:
+      - {language: en, text: SberTech}
+  - id: 770
+    name:
+      - {language: en, text: Citymobil}
+      - {language: ru, text: Ситимобил}
+  - id: 771
+    name:
+      - {language: en, text: "Inspired Testing"}
+  - id: 772
+    name:
+      - {language: en, text: "Deutsche Bank Tech Center"}
+  - id: 773
+    name:
+      - {language: en, text: YADRO}
+  - id: 774
+    name:
+      - {language: en, text: Wolt}
+  - id: 775
+    name:
+      - {language: en, text: PromSvyasBank}
+      - {language: ru, text: Промсвязьбанк}
+  - id: 776
+    name:
+      - {language: en, text: Samokat}
+      - {language: ru, text: Самокат}

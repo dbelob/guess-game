@@ -696,7 +696,7 @@ speakers:
     habr: mgramin
   - id: 38
     photoFileName: 0038.jpg
-    photoUpdatedAt: 2020-06-03T07:38:44.814Z[UTC]
+    photoUpdatedAt: 2021-08-20T10:23:43.290Z[UTC]
     name:
       - {language: en, text: "Oleg Nenashev"}
       - {language: ru, text: "Олег Ненашев"}
@@ -712,6 +712,7 @@ speakers:
             дах."}
     twitter: oleg_nenashev
     gitHub: oleg-nenashev
+    habr: oleg-nenashev
   - id: 39
     photoFileName: 0039.jpg
     name:
@@ -6276,20 +6277,18 @@ speakers:
     twitter: EgorBo
   - id: 432
     photoFileName: 0432.jpg
-    photoUpdatedAt: 2018-10-05T12:51:23.684Z[UTC]
+    photoUpdatedAt: 2021-08-25T13:29:45.078Z[UTC]
     name:
       - {language: en, text: "Vladimir Khorikov"}
       - {language: ru, text: "Владимир Хориков"}
     companyIds: [182]
     bio:
-      - {language: en, text: "Vladimir Khorikov is a Microsoft MVP and has been professionally involved in software development\
-            \ for more than 10 years. Nowadays he specializes in rescuing legacy code bases and helping teams with large enterprise\
-            \ applications. He practices clean code, domain-driven design, functional programming, and other techniques that\
-            \ help him on this path."}
-      - {language: ru, text: "Владимир Хориков — автор серии курсов на Pluralsight на тему Domain-driven design. Также нед\
-            авно опубликовал книгу [Unit Testing Principles, Practices, and Patterns](https://amzn.to/2QXS2ch), перевод ко\
-            торой на русский выйдет в декабре 2020 года."}
+      - {language: en, text: "Vladimir Khorikov is the author of \"Unit Testing Principles, Practices, and Patterns\" and\
+            \ a popular series of Pluralsight courses about Domain-Driven Design."}
+      - {language: ru, text: "Владимир Хориков — автор книги «Unit Testing Principles, Practices, and Patterns», а также а\
+            втор серии курсов на Pluralsight на тему Domain-Driven Design."}
     twitter: vkhorikov
+    gitHub: vkhorikov
     mvp: true
   - id: 433
     photoFileName: 0433.jpg
@@ -7313,16 +7312,18 @@ speakers:
     habr: VagifAbilov
   - id: 499
     photoFileName: 0499.jpg
-    photoUpdatedAt: 2020-06-13T14:34:42.472Z[UTC]
+    photoUpdatedAt: 2021-08-27T09:58:52.677Z[UTC]
     name:
-      - {language: en, text: "Sergey Vasilev"}
+      - {language: en, text: "Sergey Vasiliev"}
       - {language: ru, text: "Сергей Васильев"}
-    companyIds: [424]
+    companyIds: [765]
     bio:
-      - {language: en, text: "Тимлид направления разработки C# анализатора в команде PVS-Studio. В недалёком прошлом – тим\
-            лид команды Tools & DevOps, в более отдалённом - участвовал в разработке и поддержке C# и C++ анализаторов. Пе\
-            риодически пишет статьи (в том числе о проверке проектов, например – исходного кода библиотек .NET Core) и выс\
-            тупает на конференциях с докладами, где также проводит митапы."}
+      - {language: en, text: "Head of development at the PVS-Studio analyzer's C# team. Sergey has been developing a static\
+            \ analyzer for over 6 years, has experience with both C# and C++ analyzer development. Aside from development,\
+            \ he writes articles on advanced features in C# and .NET."}
+      - {language: ru, text: "Руководитель команды разработки C# анализатора PVS-Studio. Занимается разработкой статическо\
+            го анализатора более 6 лет, за которые успел поработать не только над C#, но и C++ анализатором. Параллельно с\
+            \ разработкой пишет статьи о тонкостях C# и .NET."}
     twitter: CPP_Coder
     habr: foto_shooter
   - id: 500
@@ -7769,12 +7770,12 @@ speakers:
       - {language: ru, text: "Вячеслав Смирнов"}
     companyIds: [621]
     bio:
-      - {language: en, text: "Vyacheslav works in testing for 10 years, he's a performance testing expert. He was improving\
-            \ quality in document flow, digital accounting, government services projects. Currently Vyacheslav is developing\
-            \ online banking channels for legal entities."}
-      - {language: ru, text: "Занимается тестированием 10 лет, хорошо разбирается в тестировании производительности. Повыш\
-            ал качество в проектах по документообороту, электронной отчётности, госуслугам. Сейчас развивает каналы дистан\
-            ционного банковского обслуживания для юридических лиц."}
+      - {language: en, text: "Director of Technical Expertise at VTB. He is in charge of performance defect clearance and\
+            \ load infrastructure in RBS 2.0 team for legal entities. Has been testing since 2008, speaking at conferences\
+            \ since 2018. Develops community of performance testing engineers."}
+      - {language: ru, text: "Директор по технической экспертизе ВТБ. Занимается оформлением дефектов производительности и\
+            \ инфраструктурой нагрузки в команде ДБО 2.0 для юридических лиц. Тестирует с 2008-го года, выступает на конфе\
+            ренциях с 2018-го. Развивает сообщество инженеров по тестированию производительности."}
   - id: 542
     photoFileName: 0542.jpg
     photoUpdatedAt: 2021-04-02T07:43:14.521Z[UTC]
@@ -7958,7 +7959,7 @@ speakers:
     companyIds: [425]
     bio:
       - {language: en, text: "Artem works in web app testing automation for more than 8 years. He has worked in different\
-            \ teams and occupied different positions up to the head of the automation testing group. Artem has vast experience\
+            \ teams and occupied different positions up to the head of automation testing group. Artem has a vast experience\
             \ with popular tools (Selenium, HtmlElements, Allure, Jenkins). He codes mostly in Java and Groovy."}
       - {language: ru, text: "Более 8 лет занимается автоматизацией тестирования веб-приложений. За это время работал в ра\
             зных командах и в разных ролях: автоматизатор тестирования, менеджер команды разработки инструментов тестирова\
@@ -8142,14 +8143,16 @@ speakers:
     twitter: rhian_is
   - id: 567
     photoFileName: 0567.jpg
-    photoUpdatedAt: 2020-02-21T10:00:56.518Z[UTC]
+    photoUpdatedAt: 2021-09-01T13:25:02.841Z[UTC]
     name:
       - {language: en, text: "Andrey Lushnikov"}
     companyIds: [328]
     bio:
-      - {language: en, text: "Former Chrome Puppeteer TL. Currently in Microsoft Playwright team."}
-      - {language: ru, text: "Бывший технический руководитель проекта Chrome Puppeteer. Член команды Microsoft Playwright"}
+      - {language: en, text: "Andrey Lushnikov, Principal Engineer at Microsoft, is a former Chrome DevTools engineer and\
+            \ Chrome Puppeteer technical lead with over 11 years of experience in software engineering. Today, Andrey is a\
+            \ member of the Playwright core team."}
     twitter: aslushnikov
+    gitHub: aslushnikov
   - id: 568
     photoFileName: 0568.jpg
     name:
@@ -8872,11 +8875,10 @@ speakers:
       - {language: ru, text: "Всеволод Брекелов"}
     companyIds: [702]
     bio:
-      - language: en
-        text: "Vsevolod has more than 10 years in IT industry.\nHe worked with automated testing, fullstack development in\
-            \ different languages. Some time ago he lived in California and worked under contract at Google. Managed to work\
-            \ with various clients from financial sector. He worked at NEO SPCC startup where he was engaged in development\
-            \ on Go."
+      - {language: en, text: "Vsevolod has more than 10 years in IT industry. He worked with automated testing, fullstack\
+            \ development in different languages. Some time ago he lived in California and worked under contract at Google.\
+            \ Managed to work with various clients from financial sector. He worked at NEO SPCC startup where he was engaged\
+            \ in development on Go."}
       - {language: ru, text: "Более 10 лет в ИТ. Попробовал себя в разных ролях и направлениях. Занимался автоматизированн\
             ым тестированием, фулстэк-разработкой на различных языках. Какое-то время жил в Калифорнии и работал по контра\
             кту в Google. Успел поработать с различными клиентами из финансовой сферы. Работал в стартапе NEO SPCC, где за\
@@ -8980,18 +8982,16 @@ speakers:
             \ тестированием игрового сервера."
   - id: 625
     photoFileName: 0625.jpg
+    photoUpdatedAt: 2021-08-24T08:39:00.296Z[UTC]
     name:
       - {language: en, text: "Julia Atlygina"}
       - {language: ru, text: "Юлия Атлыгина"}
     companyIds: [30]
     bio:
-      - {language: en, text: "More than 9 years in quality assurance area, last years spent in ALM Works, creating plugins\
-            \ for Atlassian JIRA/Confluence. Works as a test engineer, QA manager, product owner and SAFe consultant. If you\
-            \ have any questions regarding JIRA — don't hesitate to ask!"}
-      - language: ru
-        text: "В тестировании более 9 лет, последние из которых провела в ALM Works, разрабатывая плагины для Atlassian JIRA\
-            \ и Confluence. Роль тестировщика совмещает с ролями Product Owner и SAFe консультанта. \nЕсли есть вопросы по\
-            \ JIRA — не стесняйтесь задавать!"
+      - {language: en, text: "More than 12 years in the quality assurance area, last years spent in ALM Works, creating plugins\
+            \ for Atlassian JIRA/Confluence. Works as a test engineer, QA, and Product Manager."}
+      - {language: ru, text: "В тестировании более 12 лет, последние из которых провела в ALM Works, разрабатывая плагины\
+            \ для Atlassian Jira и Confluence. Роль тестировщика совмещает с ролью Product Manager."}
   - id: 626
     photoFileName: 0626.jpg
     name:
@@ -14975,6 +14975,7 @@ speakers:
     habr: willykolepniy
   - id: 1076
     photoFileName: 1076.jpg
+    photoUpdatedAt: 2017-05-10T15:32:48.117Z[UTC]
     name:
       - {language: en, text: "Andrey Dmitriev"}
       - {language: ru, text: "Андрей Дмитриев"}
@@ -15268,11 +15269,11 @@ speakers:
       - {language: ru, text: "Дмитрий Макаренко"}
     companyIds: [65]
     bio:
-      - {language: en, text: "Has been testing mobile applications for more than 5 years. For the last 3 years, Dmitry has\
+      - {language: en, text: "Has been testing mobile applications for more than 6 years. For the last 4 years, Dmitry has\
             \ been working as Mobile QA at Badoo, where he does both manual testing and test automation for Android and iOS\
             \ applications."}
-      - {language: ru, text: "Тестирует мобильные приложения более 5 лет. Последние 3 года работает Mobile QA в Badoo, где\
-            \ занимается как ручным тестированием, так и автоматизацией тестов для Android и iOS приложений."}
+      - {language: ru, text: "Тестирует мобильные приложения более 6 лет. Последние 4 года работает Mobile QA в Badoo, где\
+            \ занимается как ручным тестированием, так и автоматизацией тестов для Android и iOS-приложений."}
   - id: 1098
     photoFileName: 1098.jpg
     photoUpdatedAt: 2020-09-21T11:40:35.840Z[UTC]
@@ -17111,13 +17112,18 @@ speakers:
     twitter: gotheap
   - id: 1235
     photoFileName: 1235.jpg
-    photoUpdatedAt: 2020-05-21T09:16:27.429Z[UTC]
+    photoUpdatedAt: 2021-08-12T08:44:45.154Z[UTC]
     name:
-      - {language: en, text: "Alexander Volkov"}
+      - {language: en, text: "Aleksandr Volkov"}
       - {language: ru, text: "Александр Волков"}
-    companyIds: []
+    companyIds: [773]
     bio:
-      - {language: en, text: TBD}
+      - {language: en, text: "Team lead of the integration test automation team at YADRO. Aleksandr is developing a framework\
+            \ for testing the company's products. Before that, he was engaged in the automation of In-Memory DB testing, and\
+            \ baking products."}
+      - {language: ru, text: "Тимлид команды автоматизации интеграционного тестирования в компании YADRO. Занимается разви\
+            тием фреймворка для тестирования продуктов компании. До этого занимался автоматизацией тестирования In-Memory\
+            \ DB, продуктов банковской сферы."}
   - id: 1236
     photoFileName: 1236.jpg
     photoUpdatedAt: 2020-05-19T16:38:03.193Z[UTC]
@@ -17270,14 +17276,18 @@ speakers:
     gitHub: bahmutov
   - id: 1246
     photoFileName: 1246.jpg
-    photoUpdatedAt: 2018-07-17T15:58:35.335Z[UTC]
+    photoUpdatedAt: 2020-07-07T11:03:14.650Z[UTC]
     name:
       - {language: en, text: "Ruslan Akhmetzyanov"}
       - {language: ru, text: "Руслан Ахметзянов"}
-    companyIds: [291]
+    companyIds: [425]
     bio:
-      - {language: en, text: "Program Director of JUG Ru Group."}
-      - {language: ru, text: "Программный директор JUG Ru Group."}
+      - {language: en, text: "DevRel at Qameta Software. Former Marketing manager and Head of Program Department at JUG Ru\
+            \ Group. Learnt how to know a bit of everything. He's like a dog: understands everything in programming, but can't\
+            \ do anything by himself!"}
+      - {language: ru, text: "Занимается Developer Relations в Qameta Software. До этого пять лет проработал в JUG Ru Group\
+            \ в качестве антибулшит-менеджера в маркетинге и руководителя Программного отдела. Научился разбираться во всё\
+            м понемногу. В программировании разбирается как собака: всё понимает, но говорить не может!"}
     twitter: ruslan_jug
     gitHub: Avaddon-tfa
     habr: ARG89
@@ -21496,19 +21506,16 @@ speakers:
             \ и их экосистемы. Любит упрощать рутинную работу путем автоматизации."}
   - id: 1557
     photoFileName: 1557.jpg
-    photoUpdatedAt: 2021-03-11T10:20:16.810Z[UTC]
+    photoUpdatedAt: 2021-10-01T18:40:18.869Z[UTC]
     name:
       - {language: en, text: "Denis Bozhkov"}
       - {language: ru, text: "Денис Божков"}
     companyIds: [139]
     bio:
-      - {language: en, text: "8 years in IT. Started with technical support at Veeam and after working for 2 years as an engineer,\
-            \ moved to QA. Today, he is a Tech Lead one of the QA teams at Dell Technologies and is directly involved in testing\
-            \ storage-systems and their ecosystems."}
-      - language: ru
-        text: "Работает в IT около 8 лет. Начинал с технической поддержки в компании Veeam и проработав 2 года на позиции\
-            \ T3 инженера, перешел в QA. \nНа сегодняшний день является Tech Lead одной из команд QA в Dell Technologies,\
-            \ занимается тестированием непосредственно storage-systems и их экосистемы."
+      - {language: en, text: "Denis started his career working in technical support and then joined Dell Technologies as a\
+            \ senior programmer. In three years he worked his way up from technical leader to team manager."}
+      - {language: ru, text: "Денис начал карьеру с работы в технической поддержке, а затем присоединился к Dell Technologies\
+            \ в качестве старшего программиста. За три года он прошел путь от технического лидера до менеджера команды."}
   - id: 1558
     photoFileName: 1558.jpg
     photoUpdatedAt: 2021-02-18T08:15:14.739Z[UTC]
@@ -23308,3 +23315,621 @@ speakers:
     twitter: OsipovSimon
     gitHub: SimonOsipov
     habr: SimonOsipov
+  - id: 1681
+    photoFileName: 1681.jpg
+    photoUpdatedAt: 2021-10-01T18:12:30.870Z[UTC]
+    name:
+      - {language: en, text: "Anton Vinogradov"}
+      - {language: ru, text: "Антон Виноградов"}
+    companyIds: [769]
+    bio:
+      - {language: en, text: "Makes Apache Ignite and Sber better."}
+      - {language: ru, text: "Делает Apache Ignite и Сбер лучше."}
+    gitHub: anton-vinogradov
+    habr: randoom
+  - id: 1682
+    photoFileName: 1682.jpg
+    photoUpdatedAt: 2021-09-27T18:12:50.706Z[UTC]
+    name:
+      - {language: en, text: "Stanislav Ovchar"}
+      - {language: ru, text: "Станислав Овчар"}
+    companyIds: []
+    bio:
+      - {language: en, text: "Build/Test automation engineer. Jenkins-fan. Jenkins Pipeline Unit maintainer. Likes to create\
+            \ complex CI/CD toolchains."}
+      - {language: ru, text: "Инженер по автоматизации сборки и тестирования. Поклонник Jenkins. Мейнтейнер Jenkins Pipeline\
+            \ Unit. Занимается написанием сложных CI/CD-цепочек, в основном на базе Jenkins."}
+    gitHub: stchar
+  - id: 1683
+    photoFileName: 1683.jpg
+    photoUpdatedAt: 2021-08-27T15:18:44.247Z[UTC]
+    name:
+      - {language: en, text: "Nikolay Shaplov"}
+      - {language: ru, text: "Николай Шаплов"}
+    companyIds: [659]
+    bio:
+      - language: en
+        text: "A programmer who loved to write tests :)\r\n\r\nAfter many years of work in the development of web-oriented\
+            \ systems (perl) and some years of system programming (C), fate has led Nikolay into fuzzing testing. And that's\
+            \ where it all started..."
+      - language: ru
+        text: "Программист, который любил писать тесты :)\r\n\r\nПосле многих лет работы в области разработки веб-ориентир\
+            ованных систем (perl) и нескольких лет системного программирования (С), судьба завела Николая в область фаззин\
+            г-тестирования. И вот тут-то все и началось..."
+  - id: 1684
+    photoFileName: 1684.jpg
+    photoUpdatedAt: 2021-08-09T10:24:03.883Z[UTC]
+    name:
+      - {language: en, text: "Mikhail Krundyshev"}
+      - {language: ru, text: "Михаил Крундышев"}
+    companyIds: [764]
+    bio:
+      - language: en
+        text: "Co-founder of ExoAtlet project — developer and manufacturer of exoskeletons. ExoAtlet is a worldwide known\
+            \ unique Russian project.\r\nFor more than 20 years Mikhail is a specialist in project management in the consumer\
+            \ electronics market. In the past, he was the head of ВВК Electronics, a leader in the Russian DVD technology\
+            \ market. \r\nMikhail also has education in radionics, management, and psychology. \r\nAn advocate of the concept\
+            \ that employees are the main value in the organization, so they must see meaning in what they do."
+      - language: ru
+        text: "Со-основатель проекта ExoAtlet, занимающегося разработкой и производством экзоскелетов. ExoAtlet — это уник\
+            альный российский проект, вышедший на мировой рынок.\r\nБолее 20 лет Михаил специализируется в проектном менед\
+            жменте на рынке потребительской электроники, в прошлом руководил компанией ВВК Electronics, лидером российског\
+            о рынка в DVD-технике. \r\nПолучил образование в трех различных областях: радиоэлектроника, менеджмент и психо\
+            логия. Сторонник концепции, что сотрудники — это главная ценность в организации, поэтому крайне важно, чтобы о\
+            ни видели смысл в том, что они делают."
+  - id: 1685
+    photoFileName: 1685.jpg
+    photoUpdatedAt: 2021-09-24T15:24:56.602Z[UTC]
+    name:
+      - {language: en, text: "Ilya Kulakov"}
+      - {language: ru, text: "Илья Кулаков"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "He has been involved in software testing since 2010. In 2017, he joined the Sber team as a functional\
+            \ tester. Now he is testing a project related to the transition to a microservice architecture, is involved in\
+            \ the development of the new ISTQB certification."}
+      - {language: ru, text: "Занимается тестированием программного обеспечения с 2010 года. В 2017 году присоединился к к\
+            оманде Сбера в качестве функционального тестировщика. Сейчас занимается тестированием проекта, связанного с пе\
+            реходом на микросервисную архитектуру, участвует в разработке новой сертификации ISTQB."}
+  - id: 1686
+    photoFileName: 1686.jpg
+    photoUpdatedAt: 2021-08-24T10:07:13.224Z[UTC]
+    name:
+      - {language: en, text: "Aleksandr Fomin"}
+      - {language: ru, text: "Александр Фомин"}
+    companyIds: [465]
+    bio:
+      - {language: en, text: "For the last 7 years, he has been working in QA. Most of his professional activity has been\
+            \ developing software for the validation of GNSS receivers, controllers for automatic control of a tractor in\
+            \ agriculture (precision agriculture). Participated in the development of an R&D project — an autonomous tractor.\
+            \ Currently, he is the lead of the HWQA Automation team at SberDevices. In his spare time, he is fond of Android\
+            \ development."}
+      - {language: ru, text: "Последние 7 лет работает в QA. Большую часть своей профессиональной деятельности занимался р\
+            азработкой софта для валидации GNSS-приемников, контроллеров для автоматического управления трактором в сельск\
+            ом хозяйстве (precision agriculture). Участвовал в разработке R&D-проекта автономного трактора. В данный момен\
+            т руководит командой HWQA Automation в компании SberDevices. В свободное от работы время увлекается разработко\
+            й под Android."}
+  - id: 1687
+    photoFileName: 1687.jpg
+    photoUpdatedAt: 2021-08-25T07:42:45.274Z[UTC]
+    name:
+      - {language: en, text: "Aleksandr Grishin"}
+      - {language: ru, text: "Александр Гришин"}
+    companyIds: [465]
+    bio:
+      - {language: en, text: "Responsible for hardware quality at SberDevices. Aleksandr's responsibilities include the construction\
+            \ of a manual and automated testing process in the factory, as well as matching all test procedures and methods\
+            \ for testing all hardware devices."}
+      - {language: ru, text: "Отвечает за аппаратное качество в СберДевайсах. В обязанности Александра входят построение р\
+            учного и автоматизированного процесса тестирования на фабрике, а также согласование всех тестовых процедур и м\
+            етодик для тестирования всех аппаратных устройств."}
+  - id: 1688
+    photoFileName: 1688.jpg
+    photoUpdatedAt: 2021-08-10T07:35:54.829Z[UTC]
+    name:
+      - {language: en, text: "Nadezhda Degtyareva"}
+      - {language: ru, text: "Надежда Дегтярева"}
+    companyIds: [65]
+    bio:
+      - language: en
+        text: "Being a QA engineer for 10 years, Nadezhda was lucky to test desktop, web, and mobile apps. However, she has\
+            \ been focusing mostly on tests automation for iOS and Android apps in the last 5 years. \n\nAt the moment, as\
+            \ a Senior QA engineer in Badoo, she is responsible for tests automation and green test runs."
+      - language: ru
+        text: "Работает в роли QA уже более 10 лет, за это время попробовала себя в тестировании десктоп, веб и мобильных\
+            \ приложений. В последние 5 лет сфокусирована на автоматизации тестов для iOS и Android-приложений.\n\nВ насто\
+            ящее время, как Senior QA-инженер в Badoo, отвечает за автоматизацию и стабильные тесты."
+  - id: 1689
+    photoFileName: 1689.jpg
+    photoUpdatedAt: 2021-09-29T13:28:38.180Z[UTC]
+    name:
+      - {language: en, text: "Daria Lyadova"}
+      - {language: ru, text: "Дарья Лядова"}
+    companyIds: [3]
+    bio:
+      - {language: en, text: "Daria began in fintech, and now she's responsible for the quality of delivered features and\
+            \ fixes to the users of iOS version of 2GIS. Has successfully completed QA of new 2GIS product. In her free time\
+            \ loves doing something active — snowboarding, motocycling, yachting."}
+      - {language: ru, text: "Дарья начинала в финтехе, а сейчас отвечает за качество доставляемых фич и фиксов пользовате\
+            лям iOS-версии 2ГИС. Погружается в автоматизацию. Успешно побывала фичакрайней со стороны QA у нового продукта\
+            \ — SDK 2ГИС.Заправки. В свободное время нравится заниматься чем-то динамичным — сноуборд, мотоциклы (эндуро),\
+            \ яхтинг. А ещё Дарья — судья по парусному спорту."}
+  - id: 1690
+    photoFileName: 1690.jpg
+    photoUpdatedAt: 2021-09-23T09:38:24.234Z[UTC]
+    name:
+      - {language: en, text: "Nikita Chegodaev"}
+      - {language: ru, text: "Никита Чегодаев"}
+    companyIds: [621]
+    bio:
+      - {language: en, text: "I started my professional career in IT about 10 years ago. Most of the time I was working as\
+            \ a Java Backend developer. Have some experience in front-end development as well. Since 2017 I was switched to\
+            \ Test Automation. I am fond of Software Architecture and creating common-use solutions."}
+      - {language: ru, text: "Первые 5 лет в сфере IT в основном работал разработчиком бэкенда на Java. Были фулстек-проек\
+            ты для web, стартапы и энтерпрайз. Около 4 лет назад перешел в автоматизацию тестирования. Примерно в это же в\
+            ремя отказался от Java в пользу Kotlin и теперь продвигает его в своих проектах. Увлекается архитектурой ПО и\
+            \ сопутствующими темами."}
+  - id: 1691
+    photoFileName: 1691.jpg
+    photoUpdatedAt: 2021-09-27T15:07:01.807Z[UTC]
+    name:
+      - {language: en, text: "Daria Khmelnitskaya"}
+      - {language: ru, text: "Дарья Хмельницкая"}
+    companyIds: [390]
+    bio:
+      - {language: en, text: "Daria has worked as a QA engineer for more than 3 years, the last two of them she has been doing\
+            \ manual and automated testing of Ozon customer mobile application."}
+      - {language: ru, text: "Работает в тестировании более трех лет, из них последние два года тестирует мобильное прилож\
+            ение для пользователей в компании Ozon, занимается ручным и автоматизированным тестированием."}
+  - id: 1692
+    photoFileName: 1692.jpg
+    photoUpdatedAt: 2021-09-03T07:36:04.312Z[UTC]
+    name:
+      - {language: en, text: "Anna Filina"}
+    companyIds: [766]
+    bio:
+      - {language: en, text: "Anna has been a developer since 1997. She likes elegant code, automated testing, timely project\
+            \ delivery and celebrating the success of others. She has a knack for breathing new life into legacy code and\
+            \ teaching developers of all levels."}
+    twitter: afilina
+  - id: 1693
+    photoFileName: 1693.jpg
+    photoUpdatedAt: 2021-08-30T08:05:20.343Z[UTC]
+    name:
+      - {language: en, text: "Iakiv Kramarenko"}
+      - {language: ru, text: "Яков Крамаренко"}
+    companyIds: [767]
+    bio:
+      - {language: en, text: "Author of Selenide ports to Python, C#, JS — Selene, NSelene, SelenideJs. A strong believer\
+            \ in KISS and Context-Driven approaches. Practitioner and coach in polyglot automation. Invests in and wins from\
+            \ educating teams more than recruiting experienced and expensive engineers. Consults in QA Automation."}
+      - {language: ru, text: "Автор портов Selenide из Java в Python, С#, JS — Selene, NSelene, SelenideJs. Последователь\
+            \ подходов KISS и Context-Driven в разработке и тестировании. Практик и тренер в «Полиглот-автоматизации». Инв\
+            естирует и выигрывает от обучения команд больше, чем от поиска опытных и дорогих инженеров. Консультирует в QA\
+            \ Automation."}
+    twitter: yashaka
+  - id: 1694
+    photoFileName: 1694.jpg
+    photoUpdatedAt: 2021-09-06T13:13:07.521Z[UTC]
+    name:
+      - {language: en, text: "Kent Beck"}
+    companyIds: [768]
+    bio:
+      - language: en
+        text: "Original signer of the [Agile Manifesto](http://agilemanifesto.org/), Author of the [Extreme Programming](https://www.amazon.com/dp/0321278658/ref=cm_sw_r_cp_ep_dp_TI0SAb1S65NJN)\
+            \ book series, rediscoverer of [Test-Driven Development](https://www.amazon.com/dp/0321146530/ref=cm_sw_r_cp_ep_dp_BJ0SAbBCVPGBV),\
+            \ and inspiring [Keynote Speaker](https://www.youtube.com/watch?v=YX2XR73LnRY&ab_channel=VMwareTanzu).\n\nKent's\
+            \ mission is to help geeks feel safe in the world. That's why he's working with patterns, xUnit, TDD, extreme\
+            \ programming, and 3X Explore/Expand/Extract."
+    twitter: KentBeck
+  - id: 1695
+    photoFileName: 1695.jpg
+    photoUpdatedAt: 2021-09-03T13:52:50.643Z[UTC]
+    name:
+      - {language: en, text: "Dmitry Kolesnik"}
+      - {language: ru, text: "Дмитрий Колесник"}
+    companyIds: [390]
+    bio:
+      - {language: en, text: "Dmitry has been testing internet-based applications for over 6 years. Now he's doing software\
+            \ development in test and test automation at Ozon, also teach and mentor engineers. He also writes tests on GO."}
+      - {language: ru, text: "Более 6 лет тестирует интернет-приложения. Сейчас занимается разработкой инструментов тестир\
+            ования в Ozon, автоматизацией тестирования, обучением и менторством. Пишет тесты на Go."}
+  - id: 1696
+    photoFileName: 1696.jpg
+    photoUpdatedAt: 2021-09-02T14:43:06.570Z[UTC]
+    name:
+      - {language: en, text: "Maria Leshchinskaya"}
+      - {language: ru, text: "Мария Лещинская"}
+    companyIds: [506]
+    bio:
+      - {language: en, text: "QA specialist at Surf. Works with native iOS/Android and Flutter applications in various fields.\
+            \ Maria was also involved in the development of E2E tests on Calabash, implementation of screenshot testing in\
+            \ integration tests. Took part in automation work in the studio at the initial stages of working with Flutter.\
+            \ Teaches at Voronezh State University on various technologies and programming approaches YMP, OOP, C++, C#."}
+      - language: ru
+        text: "QA-специалист в Surf. Работает с нативными iOS/Android и Flutter-приложениями разных областей. Занималась р\
+            азвитием E2E-тестов на Calabash, внедрением скриншот-тестирования в интеграционные тесты. Принимала участие в\
+            \ работе автоматизации в студии на начальных этапах работы с Flutter.\nПреподаватель в Воронежском государстве\
+            нном университете по различным технологиям и подходам программирования: ЯМП, ООП, на языках С++, С#."
+  - id: 1697
+    photoFileName: 1697.jpg
+    photoUpdatedAt: 2021-10-01T16:27:37.885Z[UTC]
+    name:
+      - {language: en, text: "Svetlana Rasihina"}
+      - {language: ru, text: "Светлана Расихина"}
+    companyIds: [662]
+    bio:
+      - {language: en, text: "Community Lead in the Cash Management team of Raiffeisenbank. More than 4 years of experience\
+            \ in testing in large banks. During career managed to work both with BDD frameworks and completely switch to the\
+            \ side of testing on the developer stack — JavaScript / TypeScript, Java + Spring."}
+      - {language: ru, text: "Community Lead в команде Cash Management Райффайзенбанка. Опыт в автоматизации тестирования\
+            \ больше четырех лет в крупных банках. За карьерный путь успела поработать как с BDD-фреймворками, так и перей\
+            ти полностью на сторону тестирования на стеке разработчиков — JavaScript/TypeScript, Java + Spring."}
+  - id: 1698
+    photoFileName: 1698.jpg
+    photoUpdatedAt: 2021-10-01T16:25:58.141Z[UTC]
+    name:
+      - {language: en, text: "Artem Maltsev"}
+      - {language: ru, text: "Артём Мальцев"}
+    companyIds: [662]
+    bio:
+      - {language: en, text: "Working in Quality Assurance for 10 years, Artem started as a junior tester and then became\
+            \ a test manager, a scrum-master, technical lead. He has joined Raiffeisenbank team in 2019 as a Senior QA specialist,\
+            \ now he is a Technical Lead of 2 teams. He believes that test automation is only a tool for reducing routine,\
+            \ but the most important part of QA is people, tough specialists eyes full of enthusiasm."}
+      - language: ru
+        text: "За 10 лет в тестировании прошел путь от начинающего тестировщика до техлида (через тест-менеджерство, скрам\
+            -мастерство). Присоединился к команде Райффайзенбанка в 2019 году как старший специалист по тестированию, сейч\
+            ас техлид двух команд.\nСчитает, что автоматизация — лишь инструмент для снижения рутины, а главная ценность —\
+            \ люди, крутые специалисты с горящими глазами."
+  - id: 1699
+    photoFileName: 1699.jpg
+    photoUpdatedAt: 2021-10-01T16:30:18.367Z[UTC]
+    name:
+      - {language: en, text: "Ruslan Maksyutov"}
+      - {language: ru, text: "Руслан Максютов"}
+    companyIds: [662]
+    bio:
+      - {language: en, text: "Working in Quality Assurance for 10 years. He mainly worked on banking projects, during his\
+            \ work managed to test almost everything that is possible in the bank, excluding scoring and mobile applications.\
+            \ In the past, more involved in manual testing, now he is developing towards automation (java), and planning to\
+            \ get into the load testing."}
+      - {language: ru, text: "Занимается тестированием уже 15 лет. В основном работал на банковских проектах и за время ра\
+            боты успел потестить почти все, что можно в банке, за исключением скоринга и мобильных приложений. В прошлом б\
+            ольше занимался ручным тестированием, сейчас развивается в сторону автоматизации (java) и нагрузочного тестиро\
+            вания."}
+  - id: 1700
+    photoFileName: 1700.jpg
+    photoUpdatedAt: 2021-10-01T16:35:45.920Z[UTC]
+    name:
+      - {language: en, text: "Ivan Smolin"}
+      - {language: ru, text: "Иван Смолин"}
+    companyIds: [662]
+    bio:
+      - {language: en, text: "Test automation engineer in the team of the Raiffeisenbank Recruitment Automation department.\
+            \ He worked on international products for EPAM and Volkswagen Financial Services. Writes on the Java stack and\
+            \ Spring Boot. He saves up for retirement, loves alpacas, yoghurts and ice cream. Simplifies the life of the team\
+            \ and enjoys it."}
+      - {language: ru, text: "Инженер автоматизации тестирования в команде направления по автоматизации подбора персонала\
+            \ Райффайзенбанка. Работал над международными продуктами для EPAM и Volkswagen Financial Services. Пишет на ст\
+            еке Java и Spring Boot. Копит на пенсию, любит альпачек, йогуртики и мороженку. Упрощает жизнь команде и кайфу\
+            ет от этого."}
+  - id: 1701
+    photoFileName: 1701.jpg
+    photoUpdatedAt: 2021-08-27T09:04:04.241Z[UTC]
+    name:
+      - {language: en, text: "Liubomir Matveev"}
+      - {language: ru, text: "Любомир Матвеев"}
+    companyIds: [689]
+    bio:
+      - language: en
+        text: "Liubomir has been in testing for 6 years already, before Yandex he worked in mobile game development and went\
+            \ from a simple tester to the head of a department. At Yandex, he leads a group of automated mobility testing\
+            \ at a test site.\nLiubomir has been working with drones for 2 years, during which time he managed to be responsible\
+            \ for large Moscow locations. He is responsible for perception testing and bypassing static obstacles.\nTakes\
+            \ part in QA tools development and edits drone maps."
+      - language: ru
+        text: "6 лет в тестировании, до Яндекса работал в мобильном геймдеве и прошёл путь от простого тестировщика до рук\
+            оводителя отдела. В Яндексе руководит группой тестирования беспилотных автомобилей на испытательном полигоне.\n\
+            В беспилотниках уже 2 года, за это время успел побывать ответственным за крупные московские локации. Ответстве\
+            нный за тестирование perception и объезд статических препятствий. Принимает участие в разработке различных инс\
+            трументов для QA и не только, редактирует карты беспилотников, а количество выпущенных релизов уже и не сосчит\
+            ать."
+  - id: 1702
+    photoFileName: 1702.jpg
+    photoUpdatedAt: 2021-09-21T10:56:38.716Z[UTC]
+    name:
+      - {language: en, text: "Pavel Yeremeev"}
+      - {language: ru, text: "Павел Еремеев"}
+    companyIds: [424]
+    bio:
+      - {language: en, text: "Leads analyzer development at PVS-Studio. He started his career 11 years ago in the position\
+            \ of DevOps engineer. He managed to work as a support specialist, as a lead C# developer in the Tools group, and\
+            \ as the head of C# analyzer development."}
+      - {language: ru, text: "Руководит разработкой анализатора в PVS-Studio. Начинал свою карьеру 11 лет назад на позиции\
+            \ DevOps-инженера. Успел поработать в поддержке, побывать ведущим C# разработчиком в Tools-направлении и руков\
+            одителем направления разработки C# анализатора."}
+  - id: 1703
+    photoFileName: 1703.jpg
+    photoUpdatedAt: 2021-09-22T09:26:23.360Z[UTC]
+    name:
+      - {language: en, text: "Vadim Mashchenko"}
+      - {language: ru, text: "Вадим Мащенко"}
+    companyIds: [643]
+    bio:
+      - {language: en, text: "Специалист по тестированию безопасности приложений Mир Plat.Form"}
+  - id: 1704
+    photoFileName: 1704.jpg
+    photoUpdatedAt: 2021-09-23T11:42:11.681Z[UTC]
+    name:
+      - {language: en, text: "Edgar Burenkin"}
+      - {language: ru, text: "Эдгар Бурёнкин"}
+    companyIds: [770]
+    bio:
+      - {language: en, text: "He writes automated tests for API in postman and write UI tests using Python."}
+      - language: ru
+        text: "Работает в команде B2B Ситимобил.\nПишет автотесты на API в Postman, а также тесты для фронта на Python."
+  - id: 1705
+    photoFileName: 1705.jpg
+    photoUpdatedAt: 2021-08-27T07:38:00.668Z[UTC]
+    name:
+      - {language: en, text: "Yevheny Laichenkov"}
+      - {language: ru, text: "Евгений Лайченков"}
+    companyIds: []
+    bio:
+      - {language: en, text: "Evgeny has been working as a Software Test Engineer for more than 6 years. He loves testing,\
+            \ JavaScript, open source, and knowledge sharing. Besides, he's running Test Automation Weekly digest in English\
+            \ and Test Automation Digest in Russian on DOU."}
+      - {language: ru, text: "Software Test Engineer больше 6 лет. Любит тестирование, JavaScript, опенсорс и делиться зна\
+            ниями. Ведет еженедельный дайджест по автоматизации тестирования на английском и русском языках для DOU."}
+    twitter: elaichenkov
+  - id: 1706
+    photoFileName: 1706.jpg
+    photoUpdatedAt: 2021-09-06T09:15:26.152Z[UTC]
+    name:
+      - {language: en, text: "Bas Dijkstra"}
+    companyIds: [771]
+    bio:
+      - language: en
+        text: "At Inspired Testing, Bas is responsible for setting up and running the International Academy. Before starting\
+            \ his current role, he has been a test automation consultant, bringing 15 years of experience in improving testing\
+            \ efforts through smart use of tools. \r\nIn his career so far, Bas has covered everything from building and maintaining\
+            \ test automation solutions that work, to creating and implementing test automation strategies across teams and\
+            \ organizations."
+    twitter: _basdijkstra
+  - id: 1707
+    photoFileName: 1707.jpg
+    photoUpdatedAt: 2021-09-27T11:21:40.817Z[UTC]
+    name:
+      - {language: en, text: "Aleksandr Gvozdev"}
+      - {language: ru, text: "Александр Гвоздев"}
+    companyIds: [318]
+    bio:
+      - {language: en, text: "I am a software tester with an operational background in spheres related to aviation, aerodrome,\
+            \ automotive and underwater works. For already more than 20 years not only comfort but literally human lives depend\
+            \ on the quality of my work. It’s an enormous responsibility but at the same time a great honor to be able contribute\
+            \ to the development of mankind."}
+      - {language: ru, text: "Тестировщик по призванию. С 2000 года занимаюсь тестированием бортового ПО – авиационного, а\
+            эродромного, автомобильного и даже подводного, и жизни многих людей зависят от качества моей работы. Рад, что\
+            \ внёс (пусть даже относительно крошечный) вклад в прогресс всего человечества."}
+  - id: 1708
+    photoFileName: 1708.jpg
+    photoUpdatedAt: 2021-09-28T10:42:07.889Z[UTC]
+    name:
+      - {language: en, text: "Vitaliy Kachanovskiy"}
+      - {language: ru, text: "Виталий Качановский"}
+    companyIds: [621]
+    bio:
+      - {language: en, text: "In testing for 6.5 years, 4.5 of them as a lead. Tested warehouse robots and software for government\
+            \ customers. Now responsible for QA and release management in five VTB teams in the investment business. Builds\
+            \ horizontal connections, develops colleagues, and spreads knowledge wherever he can reach. Promotes close interaction\
+            \ between testing and development. Proponent of not letting the user shoot himself in the leg."}
+      - {language: ru, text: "В тестировании 6,5 лет, из них 4,5 — в качестве лида. Тестировал складских роботов и софт дл\
+            я госзаказчиков. Сейчас отвечает за QA и управление релизами в пяти командах ВТБ в направлении инвестиционного\
+            \ бизнеса. Строит горизонтальные связи, развивает коллег, распространяет знания везде, куда может дотянуться.\
+            \ Пропагандирует тесное взаимодействие тестирования и разработки. Сторонник того, чтобы не давать пользователю\
+            \ возможность выстрелить себе в ногу."}
+  - id: 1709
+    photoFileName: 1709.jpg
+    photoUpdatedAt: 2021-09-28T10:42:25.941Z[UTC]
+    name:
+      - {language: en, text: "Eric Burigin"}
+      - {language: ru, text: "Эрик Бурыгин"}
+    companyIds: [689]
+    bio:
+      - language: en
+        text: "Leader in Yandex, mentor and tech lead in Yandex.Practicum. In testing for more than 5 years, he has tested\
+            \ cloud surveillance systems, banking products, and classifids.\n\nNow he is responsible for testing Yandex.Real\
+            \ Estate mobile classifide. He advocates process optimization, automation implementation, and team development.\n\
+            \nHe believes that hard skills are just as important as soft skills for a lead. Writes mostly in Java and Swift."
+      - language: ru
+        text: "Лид в Яндексе, наставник и техлид в Яндекс.Практикуме. В тестировании больше 5 лет, тестировал облачные сис\
+            темы видеонаблюдения, банковские продукты и классифайды.\nСейчас отвечает за тестирование мобильного классифай\
+            да Яндекс.Недвижимость. Топит за оптимизацию процессов, внедрение автоматизации и развитие команды.\nСчитает,\
+            \ что для лида hard skills важны так же, как и soft skills. Программирует в основном на Java и Swift."
+  - id: 1710
+    photoFileName: 1710.jpg
+    photoUpdatedAt: 2021-08-26T08:45:05.073Z[UTC]
+    name:
+      - {language: en, text: "Maksim Zabunkov"}
+      - {language: ru, text: "Максим Забунков"}
+    companyIds: [772]
+    bio:
+      - language: en
+        text: "Started his career in 2005 as a C++ developer, then switched to C# .NET and soon became part of the Deutsche\
+            \ Bank Tech Center team.\r\nHe also tried backend development in Java and Kotlin. Soon Maksim changed his interests\
+            \ to Web UI development again.\r\nNow he's the head of a small cross-project automation and tooling team for Web\
+            \ UI Test Automation."
+      - language: ru
+        text: "Начал свой путь в 2005 году С++ разработчиком, затем переключился на C#.NET и вскоре стал частью команды Deutsche\
+            \ Bank Tech Center.\r\nПопробовал и бэкенд-разработку на Java, Kotlin. Вскоре снова сменил профиль на Web UI-р\
+            азработку.\r\nСейчас Максим возглавляет небольшую кросспроектную команду автоматизации и тулинга для Web UI Test\
+            \ Automation."
+  - id: 1711
+    photoFileName: 1711.jpg
+    photoUpdatedAt: 2021-08-11T09:57:02.823Z[UTC]
+    name:
+      - {language: en, text: "Mikhail Miroshnichenko"}
+      - {language: ru, text: "Михаил Мирошниченко"}
+    companyIds: [774]
+    bio:
+      - language: en
+        text: "Mikhail has been making various products better and users happier for 15 years now.\r\nHis interest in mobile\
+            \ technologies appeared while studying at the institute, later developed into programming and modifying device\
+            \ drivers for Android 2. And for 8 years now, mobile development has been the main field of activity.\r\nMikhail\
+            \ worked at Yandex and Doctor Web and has been living in Estonia for the fourth year now. Having taken part in\
+            \ the development and testing of Bolt applications, now he works at Wolt: the most popular food and grocery delivery\
+            \ service in Europe."
+      - language: ru
+        text: "Михаил делает больно разработчикам и хорошо пользователям самых разных продуктов на протяжении 15 лет. \nИн\
+            терес к мобильным технологиям появился еще во время учебы в институте, развился в программирование и модификац\
+            ии драйверов устройств для Android 2. И вот уже 8 лет мобильная разработка — основная область деятельности.\nМ\
+            ихаил работал в Яндексе и Докторе Вебе, и вот уже четвертый год как живет в Эстонии. Приняв участие в разработ\
+            ке и тестировании приложений Bolt, сейчас трудится в Wolt — самом популярном сервисе доставки еды и продуктов\
+            \ в Европе."
+  - id: 1712
+    photoFileName: 1712.jpg
+    photoUpdatedAt: 2021-10-01T11:14:31.613Z[UTC]
+    name:
+      - {language: en, text: "Daniil Suyagin"}
+      - {language: ru, text: "Даниил Суягин"}
+    companyIds: [662]
+    bio:
+      - language: en
+        text: "He has been testing for three years, one year of manual testing in gamedev and two years of automation testing\
+            \ of web applications.\r\nNow he is Senior QA Automation in Raiffeisenbank and encourages the whole team to participate\
+            \ in testing :)\r\nHe programs in Java and JavaScript."
+      - language: ru
+        text: "Три года занимается тестированием, из них год ручного тестирования в геймдеве и два года автоматизации тест\
+            ирования веб-приложений.\r\nСейчас Senior QA Automation в Райффайзенбанке и призывает участвовать в тестирован\
+            ии всю команду :)\r\nПрограммирует на Java и JavaScript."
+  - id: 1713
+    photoFileName: 1713.jpg
+    photoUpdatedAt: 2021-09-06T08:37:28.047Z[UTC]
+    name:
+      - {language: en, text: "Roman Kurochkin"}
+      - {language: ru, text: "Роман Курочкин"}
+    companyIds: [465]
+    bio:
+      - {language: en, text: "Since the beginning of QA career, Roman has focused on hardware testing. Was involved in quality\
+            \ assurance for SberPortal and OkkoSmartBox. Now the responsibilities include coordinating tasks, training new\
+            \ employees, supporting production at the factory. Currently Roman is the head of the HW/FW Manual QA team at\
+            \ SberDevices."}
+      - {language: ru, text: "С начала карьеры в QA сфокусировался на аппаратном тестировании. Занимался обеспечением каче\
+            ства SberPortal и Okko Smart Box. В данный момент руководит командой HW/FW Manual QA в компании SberDevices. В\
+            \ обязанности входит координирование задач, обучение новых сотрудников, поддержка производства на фабрике."}
+    twitter: R_Kuro3kin
+  - id: 1714
+    photoFileName: 1714.jpg
+    photoUpdatedAt: 2021-09-06T08:45:57.412Z[UTC]
+    name:
+      - {language: en, text: "Oleg Lomanov"}
+      - {language: ru, text: "Олег Ломанов"}
+    companyIds: [465]
+    bio:
+      - {language: en, text: "Oleg's career began with an authorized CPS service center. He was also interested in testing\
+            \ theory and solving various problems in Java. Worked as a manual tester at YotaDevices. There he had a unique\
+            \ experience in testing all stages of the hardware. Later he worked at Yandex on the Yandex.Auto project, and\
+            \ now at Sber. Oleg's responsibilities include the development of methods, tools, and localization of the problems\
+            \ found at all stages of the product development life cycle."}
+      - language: ru
+        text: "Карьера началась с авторизованного сервисного центра, где через руки Олега прошло немало «железок». Паралле\
+            льно интересовался теорией тестирования и решением задачек на Java. Работал ручным тестировщиком в Yota Devices,\
+            \ где получил уникальный опыт в тестировании «железного» продукта на всех стадиях производства. \nПозже работа\
+            л в проекте Яндекс.Авто, а сейчас – в SberDevices.\nВ обязанности Олега входит разработка методик, инструменто\
+            в тестирования и локализация найденных проблем на всех стадиях жизненного цикла разработки продукта."
+  - id: 1715
+    photoFileName: 1715.jpg
+    photoUpdatedAt: 2021-09-28T08:17:52.867Z[UTC]
+    name:
+      - {language: en, text: "Dmitry Baev"}
+      - {language: ru, text: "Дмитрий Баев"}
+    companyIds: [425]
+    bio:
+      - {language: en, text: "For the last 10 years has been developing tools for test automation. In seven days he created\
+            \ Allure in Yandex. Then he refactored everything and created Allure Framework 2. Last few years in addition to\
+            \ OSS has been developing Allure TestOps as a developer and CTO in Qameta Software"}
+      - {language: ru, text: "Последние 10 лет занимается разработкой инструментов для автоматизации тестирования. За семь\
+            \ дней сотворил Allure в Яндексе. Потом все отрефакторил и создал Allure Framework 2. Последние несколько лет\
+            \ помимо OSS занимается разработкой Allure TestOps в качество разработчика и CTO в Qameta Software"}
+  - id: 1716
+    photoFileName: 1716.jpg
+    photoUpdatedAt: 2021-10-01T18:33:47.121Z[UTC]
+    name:
+      - {language: en, text: "Denis Kosarev"}
+      - {language: ru, text: "Денис Косарев"}
+    companyIds: [318]
+    bio:
+      - {language: en, text: "Denis has been in management positions in the IT sphere for 12+ years already and has experience\
+            \ in software development in banking and O&G fields, working in international projects."}
+      - {language: ru, text: "Профессиональный опыт Дениса включает участие в проектах, в том числе и международных, крупн\
+            ых компаний банковского и нефтегазового секторов. Уже более 12 лет он работает на руководящих позициях."}
+  - id: 1717
+    photoFileName: 1717.jpg
+    photoUpdatedAt: 2021-10-01T18:32:26.101Z[UTC]
+    name:
+      - {language: en, text: "Elizaveta Kuznetsova"}
+      - {language: ru, text: "Елизавета Кузнецова"}
+    companyIds: [318]
+    bio:
+      - {language: en, text: "Lead Recruiting Specialist"}
+  - id: 1718
+    photoFileName: 1718.jpg
+    photoUpdatedAt: 2021-08-23T11:05:05.555Z[UTC]
+    name:
+      - {language: en, text: "Aleksandr Petrov"}
+      - {language: ru, text: "Александр Петров"}
+    companyIds: [770]
+    bio:
+      - {language: en, text: "More than 10 years of experience in software quality assurance. During this time, Aleksandr\
+            \ was in the role of a manual tester of web and mobile applications, wrote autotests for API and Android, managed\
+            \ teams, and built testing processes in companies such as Yandex and Mail.ru Group. Taught the course \"Testing\
+            \ mobile applications\" at the Bauman Moscow State Technical University, MIPT, and MEPhI. Currently, he is the\
+            \ head of the quality assurance service for the Citymobil project."}
+      - {language: ru, text: "Более 10 лет работает в области обеспечения качества программного обеспечения. За это время\
+            \ был в роли ручного тестировщика веб и мобильных приложений, писал автотесты на API и Android, управлял коман\
+            дами и выстраивал процессы тестирования в таких компаниях, как Yandex и Mail.ru Group. Преподавал курс «Тестир\
+            ование мобильных приложений» в МГТУ имени Баумана, МФТИ и МИФИ. В настоящее время руководит службой обеспечени\
+            я качества на проекте Ситимобил."}
+  - id: 1719
+    photoFileName: 1719.jpg
+    photoUpdatedAt: 2021-08-30T12:33:22.084Z[UTC]
+    name:
+      - {language: en, text: "Viktor Ganeles"}
+      - {language: ru, text: "Виктор Ганелес"}
+    companyIds: [775]
+    bio:
+      - {language: en, text: "Viktor has been doing stress testing for over 6 years, in various banks. He's one of the leading\
+            \ consultants in the [open community](https://t.me/qa_load) of load testers."}
+      - {language: ru, text: "Занимался нагрузочным тестированием более 6 лет, в различных банках. Один из ведущих консуль\
+            тантов в [открытом сообществе](https://t.me/qa_load) нагрузочных тестировщиков."}
+  - id: 1720
+    photoFileName: 1720.jpg
+    photoUpdatedAt: 2021-08-30T12:29:33.298Z[UTC]
+    name:
+      - {language: en, text: "Kirill Yurkov"}
+      - {language: ru, text: "Кирилл Юрков"}
+    companyIds: [776]
+    bio:
+      - {language: en, text: "For over eight years Kirill has been doing stress testing and system performance. He loaded\
+            \ a lot of various projects from banking and telecom to retail. Now he works as the head of the performance department\
+            \ at Samokat."}
+      - {language: ru, text: "Более восьми лет занимается нагрузочным тестированием и производительностью систем. Грузил м\
+            ного разнообразных проектов от банкинга и телекома до ритейла. Сейчас работает руководителем направления произ\
+            водительности в Самокат."}
+  - id: 1721
+    photoFileName: 1721.jpg
+    photoUpdatedAt: 2021-09-06T07:40:53.857Z[UTC]
+    name:
+      - {language: en, text: "Roman Davlyatshin"}
+      - {language: ru, text: "Роман Давлятшин"}
+    companyIds: [183]
+    bio:
+      - language: en
+        text: "JS developer with experience in frontend and backend development on various libraries and frameworks. \r\n\
+            Loves experiments, \"dig\" into code, and learns new things.\r\nNow works at EPAM, in Drill4J team, to make all\
+            \ developers, QA and managers happier."
+      - language: ru
+        text: "JavaScript-разработчик с опытом разработки фронтенда и бэкенда на всевозможных библиотеках и фреймворках.\r\
+            \nЛюбит экспериментировать, «копаться» в коде и разбираться в новых вещах.\r\nСейчас работает в EPAM, в состав\
+            е команды Drill4J с целью сделать всех разработчиков, QA-инженеров и менеджеров счастливее."
