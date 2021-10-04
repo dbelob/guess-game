@@ -445,6 +445,20 @@ events:
     placeId: 24
     talkIds: [2921, 2922, 2923, 2924, 2925, 2926, 2927, 2928, 2929, 2930, 2931, 2955, 2932, 2933, 2951, 2934, 2952, 2935,
               2936, 2937, 2938, 2939, 3022, 2953, 2941, 2942, 2943, 2944, 2945, 2946, 2947, 2954, 2948, 2949, 2950, 3093]
+  - eventTypeId: 3
+    name:
+      - {language: en, text: "Heisenbug 2021 Msc"}
+      - {language: ru, text: "Heisenbug 2021 Мск"}
+    startDate: "2021-10-05"
+    endDate: "2021-10-07"
+    siteLink:
+      - {language: en, text: "https://heisenbug-moscow.ru/en/"}
+      - {language: ru, text: "https://heisenbug-moscow.ru/"}
+    youtubeLink: https://live.jugru.org/heisenbug
+    placeId: 24
+    talkIds: [3167, 3168, 3169, 3216, 3170, 3217, 3171, 3172, 3173, 3174, 3175, 3218, 3176, 3177, 3178, 3179, 3180, 3181,
+              3182, 3183, 3184, 3185, 3186, 3187, 3188, 3189, 3190, 3191, 3192, 3193, 3194, 3195, 3196, 3197, 3198, 3199, 3200,
+              3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3219]
   # HolyJS
   - eventTypeId: 4
     name:

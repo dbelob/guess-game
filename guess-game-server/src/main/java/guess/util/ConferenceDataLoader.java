@@ -1746,5 +1746,10 @@ public class ConferenceDataLoader {
 //                        Set.of("Открытие фестиваля", "Разговор в студии", "Закрытие фестиваля"),
 //                        false
 //                ));
+//        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2021, 10, 5), "2021msk",
+//                new LoadSettings(
+//                        Collections.emptyMap(),
+//                        Set.of("Открытие конференции Heisenbug 2021 Moscow", "Разговор в студии"),
+//                        false));
     }
 }
