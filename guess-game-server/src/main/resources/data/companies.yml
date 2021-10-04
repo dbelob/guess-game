@@ -2435,3 +2435,9 @@ companies:
     name:
       - {language: en, text: Samokat}
       - {language: ru, text: Самокат}
+  - id: 777
+    name:
+      - {language: en, text: skyhive.ai}
+  - id: 778
+    name:
+      - {language: en, text: "Ozon Fintech"}

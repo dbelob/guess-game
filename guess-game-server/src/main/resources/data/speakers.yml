@@ -8702,24 +8702,24 @@ speakers:
             ния различных средств автоматизации тестирования. \n\nС июля 2017 года работает в компании Waves."
   - id: 607
     photoFileName: 0607.jpg
-    photoUpdatedAt: 2021-02-24T07:48:36.109Z[UTC]
+    photoUpdatedAt: 2021-07-21T11:18:36.278Z[UTC]
     name:
       - {language: en, text: "Igor Balagurov"}
       - {language: ru, text: "Игорь Балагуров"}
-    companyIds: [620]
+    companyIds: [778]
     bio:
       - language: en
-        text: "Igor works at VKontakte as a Head of the Testing team which helps to ensure the quality of payment services\
-            \ and internal development: UI / API autotests with a pinch of security checks, load testing, and automation of\
-            \ the entire routine (API fuzzing, linters, autoformatters, code coverage, etc.).\n\nPrefers Python for automation,\
-            \ and head for everything that is not automated.\nBefore VKontakte, he worked in several product companies and\
-            \ startups, where he was engaged in autotests of mobile phones, web, API, and services with Machine Learning."
+        text: "QA Automation Lead at Ozon Fintech\n\nIgor worked in several product companies and startups. He was engaged\
+            \ in autotests of mobile phones, web, API, and services with machine learning, load testing, and automation of\
+            \ the entire routine (API fuzzing, linters, autoformatters, code coverage, etc.).\n\nUntil recently, he worked\
+            \ at vk.com as a QA team lead of payment services and internal development."
       - language: ru
-        text: "Игорь работает во ВКонтакте в роли руководителя команды тестирования, которая помогает обеспечивать качеств\
-            о платёжных сервисов и внутренней разработки: UI\\API-автотесты со щепоткой security проверок, нагрузочное тес\
-            тирование и автоматизация всей рутины (фаззинг API, линтеры, автоформаттеры, покрытие кода и т.д.).\n\nПредпоч\
-            итает для автоматизации Python, а для всего, что не автоматизировано — голову.\nДо ВКонтакте работал в несколь\
-            ких продуктовых компаниях и стартапах, где занимался автотестами мобилок, веба, API и сервисов с Machine Learning."
+        text: "QA Automation Lead в Ozon Fintech.\n\nНесколько лет работал в продуктовых компаниях и стартапах. Делал авто\
+            матизацию тестирования для мобилок, веба, API, сервисов с Machine Learning, а также нагрузочное тестирование и\
+            \ прочую автоматизацию во благо качества (фаззинг API, линтеры, автоформаттеры, покрытие кода и т.д.)\n\nДо не\
+            давнего времени работал во ВКонтакте в роли руководителя команды тестирования платёжных сервисов и внутренней\
+            \ разработки."
+    gitHub: ibalagurov
   - id: 608
     photoFileName: 0608.jpg
     name:
@@ -23889,22 +23889,20 @@ speakers:
       - {language: en, text: "Lead Recruiting Specialist"}
   - id: 1718
     photoFileName: 1718.jpg
-    photoUpdatedAt: 2021-08-23T11:05:05.555Z[UTC]
+    photoUpdatedAt: 2021-10-01T15:34:34.496Z[UTC]
     name:
       - {language: en, text: "Aleksandr Petrov"}
-      - {language: ru, text: "Александр Петров"}
+      - {language: ru, text: "Александр  Петров"}
     companyIds: [770]
     bio:
-      - {language: en, text: "More than 10 years of experience in software quality assurance. During this time, Aleksandr\
-            \ was in the role of a manual tester of web and mobile applications, wrote autotests for API and Android, managed\
-            \ teams, and built testing processes in companies such as Yandex and Mail.ru Group. Taught the course \"Testing\
-            \ mobile applications\" at the Bauman Moscow State Technical University, MIPT, and MEPhI. Currently, he is the\
-            \ head of the quality assurance service for the Citymobil project."}
+      - {language: en, text: "Alexander ensures the quality of software for more than 10 years. Was a manual tester of web\
+            \ and mobile apps, wrote tests on API and Android, managed teams and built testing processes at Yandex and Mail.ru\
+            \ Group. Taught testing mobile apps at different Moscow universities. Now is a head of quality service at Citymobil."}
       - {language: ru, text: "Более 10 лет работает в области обеспечения качества программного обеспечения. За это время\
-            \ был в роли ручного тестировщика веб и мобильных приложений, писал автотесты на API и Android, управлял коман\
-            дами и выстраивал процессы тестирования в таких компаниях, как Yandex и Mail.ru Group. Преподавал курс «Тестир\
-            ование мобильных приложений» в МГТУ имени Баумана, МФТИ и МИФИ. В настоящее время руководит службой обеспечени\
-            я качества на проекте Ситимобил."}
+            \ был в роли ручного тестировщика веб- и мобильных приложений, писал автотесты на API и Android, управлял кома\
+            ндами и выстраивал процессы тестирования в Яндексе и Mail.ru Group. Преподавал курс «Тестирование мобильных пр\
+            иложений» в МГТУ имени Баумана, МФТИ и МИФИ. В настоящее время руководит службой обеспечения качества на проек\
+            те Ситимобил."}
   - id: 1719
     photoFileName: 1719.jpg
     photoUpdatedAt: 2021-08-30T12:33:22.084Z[UTC]
@@ -23949,3 +23947,55 @@ speakers:
         text: "JavaScript-разработчик с опытом разработки фронтенда и бэкенда на всевозможных библиотеках и фреймворках.\r\
             \nЛюбит экспериментировать, «копаться» в коде и разбираться в новых вещах.\r\nСейчас работает в EPAM, в состав\
             е команды Drill4J с целью сделать всех разработчиков, QA-инженеров и менеджеров счастливее."
+  - id: 1722
+    photoFileName: 1722.jpg
+    photoUpdatedAt: 2021-06-29T09:12:07.402Z[UTC]
+    name:
+      - {language: en, text: "Mikhail Chumakov"}
+      - {language: ru, text: "Михаил Чумаков"}
+    companyIds: [777]
+    bio:
+      - {language: en, text: "Throughout his career, Mikhail has been enjoyed providing the quality of games, backend, frontend,\
+            \ mobile applications in large corporations, and small startups. He gathered teams, automated, trained colleagues,\
+            \ was responsible for quality. He loves to learn new things and self-education. Now Mikhail continues his education\
+            \ in one of the public study institutions in Canada."}
+      - {language: ru, text: "Профессионально занимается тестированием более 10 лет, не профессионально — остальное время\
+            . В течение карьеры работал в огромных корпорациях и маленьких стартапах. Собирал команды, автоматизировал, об\
+            учал коллег, отвечал за качество. Любит самообразовываться и постоянно изучать что-то новое. Сейчас Михаил про\
+            должает образование в одном из вузов Канады."}
+  - id: 1723
+    photoFileName: 1723.jpg
+    photoUpdatedAt: 2021-10-01T14:36:52.721Z[UTC]
+    name:
+      - {language: en, text: "Stanislav Fedorchuk"}
+      - {language: ru, text: "Станислав Федорчук"}
+    companyIds: [770]
+    bio:
+      - {language: en, text: "Works on different products in testing for 8 years, previously worked on automation of different\
+            \ platforms, in recent years manages QA teams. Loves making people better, making them professionals."}
+      - {language: ru, text: "Работает над разными продуктами в тестировании уже 8 лет, большую часть карьеры автоматизиро\
+            вал различные платформы, последние годы управляет командами QA. Безумно любит развивать людей и делать их наст\
+            оящими профессионалами своего дела."}
+  - id: 1724
+    photoFileName: 1724.jpg
+    photoUpdatedAt: 2021-10-01T14:11:45.135Z[UTC]
+    name:
+      - {language: en, text: "Evgeny Myatlev"}
+      - {language: ru, text: "Евгений Мятлев"}
+    companyIds: [770]
+    bio:
+      - {language: en, text: "Is in charge of managing drivers' motivations in Citymobil, ensures their quality. Works in\
+            \ a team where every bug is easy to measure in money."}
+      - {language: ru, text: "Занимается водительскими мотивациями в Ситимобиле, обеспечивает их качество и надежность. Ра\
+            ботает в команде, в которой каждый баг очень легко измерить в денежном эквиваленте."}
+  - id: 1725
+    photoFileName: 1725.jpg
+    photoUpdatedAt: 2021-10-04T09:58:56.750Z[UTC]
+    name:
+      - {language: en, text: "Nikolay Izhikov"}
+      - {language: ru, text: "Николай Ижиков"}
+    companyIds: [769]
+    bio:
+      - {language: en, text: "I write code."}
+      - {language: ru, text: "Пишу код."}
+    habr: NorthDragon
