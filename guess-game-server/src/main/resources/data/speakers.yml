@@ -23356,6 +23356,7 @@ speakers:
         text: "Программист, который любил писать тесты :)\r\n\r\nПосле многих лет работы в области разработки веб-ориентир\
             ованных систем (perl) и нескольких лет системного программирования (С), судьба завела Николая в область фаззин\
             г-тестирования. И вот тут-то все и началось..."
+    gitHub: dhyannataraj
   - id: 1684
     photoFileName: 1684.jpg
     photoUpdatedAt: 2021-08-09T10:24:03.883Z[UTC]
@@ -23469,6 +23470,7 @@ speakers:
             ты для web, стартапы и энтерпрайз. Около 4 лет назад перешел в автоматизацию тестирования. Примерно в это же в\
             ремя отказался от Java в пользу Kotlin и теперь продвигает его в своих проектах. Увлекается архитектурой ПО и\
             \ сопутствующими темами."}
+    habr: gggodhand
   - id: 1691
     photoFileName: 1691.jpg
     photoUpdatedAt: 2021-09-27T15:07:01.807Z[UTC]
@@ -23481,6 +23483,7 @@ speakers:
             \ manual and automated testing of Ozon customer mobile application."}
       - {language: ru, text: "Работает в тестировании более трех лет, из них последние два года тестирует мобильное прилож\
             ение для пользователей в компании Ozon, занимается ручным и автоматизированным тестированием."}
+    habr: dashakhme
   - id: 1692
     photoFileName: 1692.jpg
     photoUpdatedAt: 2021-09-03T07:36:04.312Z[UTC]
@@ -23492,6 +23495,7 @@ speakers:
             \ delivery and celebrating the success of others. She has a knack for breathing new life into legacy code and\
             \ teaching developers of all levels."}
     twitter: afilina
+    gitHub: afilina
   - id: 1693
     photoFileName: 1693.jpg
     photoUpdatedAt: 2021-08-30T08:05:20.343Z[UTC]
@@ -23508,6 +23512,8 @@ speakers:
             естирует и выигрывает от обучения команд больше, чем от поиска опытных и дорогих инженеров. Консультирует в QA\
             \ Automation."}
     twitter: yashaka
+    gitHub: yashaka
+    habr: yashaka
   - id: 1694
     photoFileName: 1694.jpg
     photoUpdatedAt: 2021-09-06T13:13:07.521Z[UTC]
@@ -23522,6 +23528,7 @@ speakers:
             \ mission is to help geeks feel safe in the world. That's why he's working with patterns, xUnit, TDD, extreme\
             \ programming, and 3X Explore/Expand/Extract."
     twitter: KentBeck
+    gitHub: KentBeck
   - id: 1695
     photoFileName: 1695.jpg
     photoUpdatedAt: 2021-09-03T13:52:50.643Z[UTC]
@@ -23551,6 +23558,8 @@ speakers:
             азвитием E2E-тестов на Calabash, внедрением скриншот-тестирования в интеграционные тесты. Принимала участие в\
             \ работе автоматизации в студии на начальных этапах работы с Flutter.\nПреподаватель в Воронежском государстве\
             нном университете по различным технологиям и подходам программирования: ЯМП, ООП, на языках С++, С#."
+    gitHub: leshchinskaya
+    habr: leshchinskaya
   - id: 1697
     photoFileName: 1697.jpg
     photoUpdatedAt: 2021-10-01T16:27:37.885Z[UTC]
@@ -23649,6 +23658,7 @@ speakers:
       - {language: ru, text: "Руководит разработкой анализатора в PVS-Studio. Начинал свою карьеру 11 лет назад на позиции\
             \ DevOps-инженера. Успел поработать в поддержке, побывать ведущим C# разработчиком в Tools-направлении и руков\
             одителем направления разработки C# анализатора."}
+    habr: Paull
   - id: 1703
     photoFileName: 1703.jpg
     photoUpdatedAt: 2021-09-22T09:26:23.360Z[UTC]
@@ -23697,6 +23707,7 @@ speakers:
             \ test automation solutions that work, to creating and implementing test automation strategies across teams and\
             \ organizations."
     twitter: _basdijkstra
+    gitHub: basdijkstra
   - id: 1707
     photoFileName: 1707.jpg
     photoUpdatedAt: 2021-09-27T11:21:40.817Z[UTC]
@@ -23787,6 +23798,8 @@ speakers:
             ихаил работал в Яндексе и Докторе Вебе, и вот уже четвертый год как живет в Эстонии. Приняв участие в разработ\
             ке и тестировании приложений Bolt, сейчас трудится в Wolt — самом популярном сервисе доставки еды и продуктов\
             \ в Европе."
+    gitHub: heavy-razzer
+    habr: HeavyRazzer
   - id: 1712
     photoFileName: 1712.jpg
     photoUpdatedAt: 2021-10-01T11:14:31.613Z[UTC]
@@ -23852,6 +23865,7 @@ speakers:
       - {language: ru, text: "Последние 10 лет занимается разработкой инструментов для автоматизации тестирования. За семь\
             \ дней сотворил Allure в Яндексе. Потом все отрефакторил и создал Allure Framework 2. Последние несколько лет\
             \ помимо OSS занимается разработкой Allure TestOps в качество разработчика и CTO в Qameta Software"}
+    gitHub: baev
   - id: 1716
     photoFileName: 1716.jpg
     photoUpdatedAt: 2021-10-01T18:33:47.121Z[UTC]
@@ -23917,6 +23931,8 @@ speakers:
       - {language: ru, text: "Более восьми лет занимается нагрузочным тестированием и производительностью систем. Грузил м\
             ного разнообразных проектов от банкинга и телекома до ритейла. Сейчас работает руководителем направления произ\
             водительности в Самокат."}
+    gitHub: kirillyu
+    habr: login40k
   - id: 1721
     photoFileName: 1721.jpg
     photoUpdatedAt: 2021-09-06T07:40:53.857Z[UTC]
