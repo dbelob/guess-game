@@ -30,6 +30,7 @@ class SpeakerServiceImplTest {
     private static Speaker speaker0;
     private static Speaker speaker1;
     private static Speaker speaker2;
+    private static Speaker speaker3;
 
     @BeforeAll
     static void init() {
@@ -59,6 +60,13 @@ class SpeakerServiceImplTest {
         speaker2.setTwitter("twitter2");
         speaker2.setGitHub("github2");
         speaker2.setMvp(true);
+
+        speaker3 = new Speaker();
+        speaker3.setId(3);
+        speaker3.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "First3 Last3")));
+        speaker3.setCompanies(List.of(company2));
+        speaker3.setTwitter("twitter3");
+        speaker3.setGitHub("github3");
     }
 
     @Test
@@ -70,6 +78,20 @@ class SpeakerServiceImplTest {
 
         speakerService.getSpeakerById(0);
         Mockito.verify(speakerDao, VerificationModeFactory.times(1)).getSpeakerById(0);
+        Mockito.verifyNoMoreInteractions(speakerDao);
+    }
+
+    @Test
+    void getSpeakerByIds() {
+        final List<Long> IDS = List.of(0L, 1L, 2L);
+
+        SpeakerDao speakerDao = Mockito.mock(SpeakerDao.class);
+        SpeakerService speakerService = new SpeakerServiceImpl(speakerDao);
+
+        Mockito.when(speakerDao.getSpeakerByIds(Mockito.anyList())).thenReturn(List.of(speaker0, speaker1, speaker2));
+
+        speakerService.getSpeakerByIds(IDS);
+        Mockito.verify(speakerDao, VerificationModeFactory.times(1)).getSpeakerByIds(IDS);
         Mockito.verifyNoMoreInteractions(speakerDao);
     }
 
@@ -113,10 +135,63 @@ class SpeakerServiceImplTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getSpeakersByFirstLetters method tests")
+    class GetSpeakersByFirstLettersTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, null, Collections.emptyList(), Collections.emptyList()),
+                    arguments("n", Language.ENGLISH, List.of(speaker0), List.of(speaker0)),
+                    arguments("N", Language.ENGLISH, List.of(speaker0), List.of(speaker0)),
+                    arguments("n", Language.ENGLISH, List.of(speaker0, speaker1), List.of(speaker0, speaker1)),
+                    arguments("N", Language.ENGLISH, List.of(speaker0, speaker1), List.of(speaker0, speaker1)),
+                    arguments("n", Language.ENGLISH, List.of(speaker0, speaker1, speaker2), List.of(speaker0, speaker1, speaker2)),
+                    arguments("N", Language.ENGLISH, List.of(speaker0, speaker1, speaker2), List.of(speaker0, speaker1, speaker2)),
+                    arguments("name", Language.ENGLISH, List.of(speaker0, speaker1, speaker2), List.of(speaker0, speaker1, speaker2)),
+                    arguments("NAME", Language.ENGLISH, List.of(speaker0, speaker1, speaker2), List.of(speaker0, speaker1, speaker2)),
+                    arguments("Name", Language.ENGLISH, List.of(speaker0, speaker1, speaker2), List.of(speaker0, speaker1, speaker2)),
+                    arguments("name0", Language.ENGLISH, List.of(speaker0, speaker1, speaker2), List.of(speaker0)),
+                    arguments("NAME0", Language.ENGLISH, List.of(speaker0, speaker1, speaker2), List.of(speaker0)),
+                    arguments("Name0", Language.ENGLISH, List.of(speaker0, speaker1, speaker2), List.of(speaker0)),
+                    arguments("name1", Language.ENGLISH, List.of(speaker0, speaker1, speaker2), List.of(speaker1)),
+                    arguments("NAME1", Language.ENGLISH, List.of(speaker0, speaker1, speaker2), List.of(speaker1)),
+                    arguments("Name1", Language.ENGLISH, List.of(speaker0, speaker1, speaker2), List.of(speaker1)),
+                    arguments("name2", Language.ENGLISH, List.of(speaker0, speaker1, speaker2), List.of(speaker2)),
+                    arguments("NAME2", Language.ENGLISH, List.of(speaker0, speaker1, speaker2), List.of(speaker2)),
+                    arguments("Name2", Language.ENGLISH, List.of(speaker0, speaker1, speaker2), List.of(speaker2))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        @SuppressWarnings("unchecked")
+        void getSpeakersByFirstLetters(String firstLetters, Language language, List<Speaker> speakers, List<Speaker> expected) {
+            try (MockedStatic<LocalizationUtils> mockedStatic = Mockito.mockStatic(LocalizationUtils.class)) {
+                mockedStatic.when(() -> LocalizationUtils.getString(Mockito.anyList(), Mockito.any(Language.class)))
+                        .thenAnswer(
+                                (Answer<String>) invocation -> {
+                                    Object[] args = invocation.getArguments();
+                                    List<LocaleItem> localeItems = (List<LocaleItem>) args[0];
+
+                                    return !localeItems.isEmpty() ? localeItems.get(0).getText() : "";
+                                }
+                        );
+
+                SpeakerDao speakerDaoMock = Mockito.mock(SpeakerDao.class);
+                Mockito.when(speakerDaoMock.getSpeakers()).thenReturn(speakers);
+
+                SpeakerService speakerService = new SpeakerServiceImpl(speakerDaoMock);
+
+                assertEquals(expected, speakerService.getSpeakersByFirstLetters(firstLetters, language));
+            }
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("getSpeakers method tests")
     class GetSpeakersTest {
         private Stream<Arguments> data() {
-            List<Speaker> speakers = List.of(speaker0, speaker1, speaker2);
+            List<Speaker> speakers = List.of(speaker0, speaker1, speaker2, speaker3);
 
             return Stream.of(
                     arguments(null, null, null, null, false, false, Collections.emptyList(), Collections.emptyList()),
@@ -135,7 +210,8 @@ class SpeakerServiceImplTest {
                     arguments("0", "0", "0", "0", false, false, speakers, List.of(speaker0)),
                     arguments(null, null, "1", null, true, false, speakers, List.of(speaker1)),
                     arguments(null, null, null, "2", false, true, speakers, List.of(speaker2)),
-                    arguments("name", null, null, null, false, false, speakers, List.of(speaker0, speaker1, speaker2))
+                    arguments("name", null, null, null, false, false, speakers, List.of(speaker0, speaker1, speaker2)),
+                    arguments("Last3 First3", null, null, null, false, false, speakers, List.of(speaker3))
             );
         }
 
