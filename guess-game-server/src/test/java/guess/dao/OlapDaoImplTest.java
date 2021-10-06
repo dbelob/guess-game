@@ -2,16 +2,19 @@ package guess.dao;
 
 import guess.domain.Conference;
 import guess.domain.source.EventType;
+import guess.domain.statistics.olap.Cube;
 import guess.domain.statistics.olap.CubeType;
+import guess.domain.statistics.olap.DimensionType;
 import guess.domain.statistics.olap.MeasureType;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import java.util.Arrays;
+import java.util.LinkedHashSet;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 class OlapDaoImplTest {
     private static EventTypeDao eventTypeDao;
@@ -58,18 +61,54 @@ class OlapDaoImplTest {
                 olapDao.getMeasureTypes(CubeType.COMPANIES));
     }
 
+    private static Cube createEventTypesCube() {
+        return new Cube(
+                new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.CITY, DimensionType.YEAR)),
+                new LinkedHashSet<>(Arrays.asList(MeasureType.EVENTS_QUANTITY, MeasureType.DURATION, MeasureType.TALKS_QUANTITY,
+                        MeasureType.SPEAKERS_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY, MeasureType.MVPS_QUANTITY)));
+    }
+
+    private static Cube createSpeakersCube() {
+        return new Cube(
+                new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.SPEAKER, DimensionType.YEAR)),
+                new LinkedHashSet<>(Arrays.asList(MeasureType.TALKS_QUANTITY, MeasureType.EVENTS_QUANTITY,
+                        MeasureType.EVENT_TYPES_QUANTITY)));
+    }
+
+    private static Cube createCompaniesCube() {
+        return new Cube(
+                new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.COMPANY, DimensionType.SPEAKER,
+                        DimensionType.YEAR)),
+                new LinkedHashSet<>(Arrays.asList(MeasureType.TALKS_QUANTITY, MeasureType.EVENTS_QUANTITY,
+                        MeasureType.EVENT_TYPES_QUANTITY, MeasureType.SPEAKERS_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY,
+                        MeasureType.MVPS_QUANTITY)));
+    }
+
     @Test
     void fillDimensions() {
-        //TODO: implement
+        OlapDaoImpl olapDaoImpl = new OlapDaoImpl(eventTypeDao);
+
+        assertDoesNotThrow(() -> olapDaoImpl.fillDimensions(
+                createEventTypesCube(),
+                createSpeakersCube(),
+                createCompaniesCube()));
     }
 
     @Test
     void fillMeasures() {
-        //TODO: implement
+        OlapDaoImpl olapDaoImpl = new OlapDaoImpl(eventTypeDao);
+
+        assertDoesNotThrow(() -> olapDaoImpl.fillMeasures(
+                createEventTypesCube(),
+                createSpeakersCube(),
+                createCompaniesCube()));
     }
 
     @Test
     void iterateSpeakers() {
-        //TODO: implement
+    }
+
+    @Test
+    void iterateCompanies() {
     }
 }
