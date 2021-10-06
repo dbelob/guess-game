@@ -97,11 +97,13 @@ class OlapDaoImplTest {
     @Test
     void fillMeasures() {
         OlapDaoImpl olapDaoImpl = new OlapDaoImpl(eventTypeDao);
+        Cube eventTypesCube = createEventTypesCube();
+        Cube speakersCube = createSpeakersCube();
+        Cube companiesCube = createCompaniesCube();
 
-        assertDoesNotThrow(() -> olapDaoImpl.fillMeasures(
-                createEventTypesCube(),
-                createSpeakersCube(),
-                createCompaniesCube()));
+        olapDaoImpl.fillDimensions(eventTypesCube, speakersCube, companiesCube);
+
+        assertDoesNotThrow(() -> olapDaoImpl.fillMeasures(eventTypesCube, speakersCube, companiesCube));
     }
 
     @Test
