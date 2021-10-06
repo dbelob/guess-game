@@ -41,9 +41,8 @@ public class OlapDaoImpl implements OlapDao {
 
         Cube eventTypesCube = new Cube(
                 new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.CITY, DimensionType.YEAR)),
-                new LinkedHashSet<>(Arrays.asList(MeasureType.EVENTS_QUANTITY, MeasureType.DURATION,
-                        MeasureType.TALKS_QUANTITY, MeasureType.SPEAKERS_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY,
-                        MeasureType.MVPS_QUANTITY)));
+                new LinkedHashSet<>(Arrays.asList(MeasureType.EVENTS_QUANTITY, MeasureType.DURATION, MeasureType.TALKS_QUANTITY,
+                        MeasureType.SPEAKERS_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY, MeasureType.MVPS_QUANTITY)));
         Cube speakersCube = new Cube(
                 new LinkedHashSet<>(Arrays.asList(DimensionType.EVENT_TYPE, DimensionType.SPEAKER, DimensionType.YEAR)),
                 new LinkedHashSet<>(Arrays.asList(MeasureType.TALKS_QUANTITY, MeasureType.EVENTS_QUANTITY,
@@ -65,9 +64,7 @@ public class OlapDaoImpl implements OlapDao {
 
     @Override
     public Cube getCube(CubeType cubeType) {
-        Cube cube = cubeMap.get(cubeType);
-
-        return Objects.requireNonNull(cube, () -> String.format("Cube type %s not found", cubeType));
+        return Objects.requireNonNull(cubeMap.get(cubeType), () -> String.format("Cube type %s not found", cubeType));
     }
 
     @Override
@@ -75,7 +72,7 @@ public class OlapDaoImpl implements OlapDao {
         return List.copyOf(getCube(cubeType).getMeasureTypes());
     }
 
-    private void fillDimensions(Cube eventTypesCube, Cube speakersCube, Cube companiesCube) {
+    void fillDimensions(Cube eventTypesCube, Cube speakersCube, Cube companiesCube) {
         // Event type dimension values
         Set<EventType> eventTypes = new HashSet<>(eventTypeDao.getEventTypes());
 
@@ -131,7 +128,7 @@ public class OlapDaoImpl implements OlapDao {
         companiesCube.addDimensions(DimensionType.YEAR, years);
     }
 
-    private void fillMeasures(Cube eventTypesCube, Cube speakersCube, Cube companiesCube) {
+    void fillMeasures(Cube eventTypesCube, Cube speakersCube, Cube companiesCube) {
         List<EventType> eventTypes = eventTypeDao.getEventTypes();
         Map<List<LocaleItem>, City> cityMap = eventTypesCube.getDimensionValues(DimensionType.CITY).stream()
                 .map(City.class::cast)
@@ -166,8 +163,8 @@ public class OlapDaoImpl implements OlapDao {
         }
     }
 
-    private void iterateSpeakers(Cubes cubes, EventTypeDimension eventTypeDimension, YearDimension yearDimension,
-                                 Set<Dimension<?>> eventTypeAndCityAndYearDimensions, Event event, Talk talk) {
+    void iterateSpeakers(Cubes cubes, EventTypeDimension eventTypeDimension, YearDimension yearDimension,
+                         Set<Dimension<?>> eventTypeAndCityAndYearDimensions, Event event, Talk talk) {
         EventType eventType = eventTypeDimension.getValue();
 
         for (Speaker speaker : talk.getSpeakers()) {
@@ -197,8 +194,8 @@ public class OlapDaoImpl implements OlapDao {
         }
     }
 
-    private void iterateCompanies(Cube companiesCube, EventTypeDimension eventTypeDimension, YearDimension yearDimension,
-                                  SpeakerDimension speakerDimension, Event event, Talk talk) {
+    void iterateCompanies(Cube companiesCube, EventTypeDimension eventTypeDimension, YearDimension yearDimension,
+                          SpeakerDimension speakerDimension, Event event, Talk talk) {
         EventType eventType = eventTypeDimension.getValue();
         Speaker speaker = speakerDimension.getValue();
 
