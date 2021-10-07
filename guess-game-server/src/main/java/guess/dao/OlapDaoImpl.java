@@ -19,7 +19,7 @@ import java.util.stream.IntStream;
  */
 @Repository
 public class OlapDaoImpl implements OlapDao {
-    private static class Cubes {
+    static class Cubes {
         private final Cube eventTypesCube;
         private final Cube speakersCube;
         private final Cube companiesCube;
@@ -106,7 +106,6 @@ public class OlapDaoImpl implements OlapDao {
         // Year dimension values
         IntSummaryStatistics summaryStatistics = eventTypeDao.getEventTypes().stream()
                 .flatMap(et -> et.getEvents().stream())
-                .filter(e -> e.getStartDate() != null)
                 .map(e -> e.getStartDate().getYear())
                 .mapToInt(y -> y)
                 .summaryStatistics();

@@ -49,7 +49,7 @@ public class Cube {
     public List<Object> getDimensionValues(DimensionType dimensionType) {
         checkDimensionType(dimensionType);
 
-        return dimensionMap.get(dimensionType).stream()
+        return dimensionMap.getOrDefault(dimensionType, Collections.emptySet()).stream()
                 .map(Dimension::getValue)
                 .collect(Collectors.toList());
     }
@@ -140,6 +140,17 @@ public class Cube {
 
             return measure.calculateValue();
         }
+    }
+
+    public Long getMeasureValue(Set<Dimension<?>> dimensions, MeasureType measureType) {
+        List<Measure<?>> measures = measureMap.entrySet().stream()
+                .filter(e -> e.getKey().containsAll(dimensions))
+                .map(Map.Entry::getValue)
+                .filter(e -> e.containsKey(measureType))
+                .map(e -> e.get(measureType))
+                .collect(Collectors.toList());
+
+        return getMeasureValue(measures, measureType);
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
