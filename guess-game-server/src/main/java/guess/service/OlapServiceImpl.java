@@ -114,11 +114,11 @@ public class OlapServiceImpl implements OlapService {
     }
 
     @SuppressWarnings("unchecked")
-    private <T, S, U> OlapEntityStatistics<T, S> getOlapEntityStatistics(CubeType cubeType, MeasureType measureType,
-                                                                         DimensionType firstDimensionType,
-                                                                         Predicate<S> firstDimensionPredicate,
-                                                                         DimensionType filterDimensionType,
-                                                                         Predicate<U> filterDimensionPredicate) {
+    <T, S, U> OlapEntityStatistics<T, S> getOlapEntityStatistics(CubeType cubeType, MeasureType measureType,
+                                                                 DimensionType firstDimensionType,
+                                                                 Predicate<S> firstDimensionPredicate,
+                                                                 DimensionType filterDimensionType,
+                                                                 Predicate<U> filterDimensionPredicate) {
         Cube cube = olapDao.getCube(cubeType);
         List<S> firstDimensionValues = cube.getDimensionValues(firstDimensionType).stream()
                 .map(v -> (S) v)

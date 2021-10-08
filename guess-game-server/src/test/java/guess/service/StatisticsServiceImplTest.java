@@ -49,8 +49,6 @@ class StatisticsServiceImplTest {
     private static final LocalDate EVENT_START_DATE2;
     private static final LocalDate EVENT_END_DATE2;
 
-    private static Organizer organizer0;
-    private static Organizer organizer1;
     private static EventType eventType0;
     private static EventType eventType1;
     private static EventType eventType2;
@@ -102,10 +100,10 @@ class StatisticsServiceImplTest {
 
     @BeforeAll
     static void init() {
-        organizer0 = new Organizer();
+        Organizer organizer0 = new Organizer();
         organizer0.setId(0);
 
-        organizer1 = new Organizer();
+        Organizer organizer1 = new Organizer();
         organizer1.setId(1);
 
         eventType0 = new EventType();
