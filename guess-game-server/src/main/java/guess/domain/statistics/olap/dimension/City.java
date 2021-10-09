@@ -14,7 +14,7 @@ public class City extends Nameable {
     public String toString() {
         return "City{" +
                 "id=" + getId() +
-                "name=" + getName() +
+                ", name=" + getName() +
                 '}';
     }
 }

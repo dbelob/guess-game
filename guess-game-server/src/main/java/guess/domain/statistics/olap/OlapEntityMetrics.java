@@ -9,9 +9,9 @@ import java.util.Objects;
 public class OlapEntityMetrics<T> {
     private final T entity;
     private final List<Long> measureValues;
-    private final Long total;
+    private final long total;
 
-    public OlapEntityMetrics(T entity, List<Long> measureValues, Long total) {
+    public OlapEntityMetrics(T entity, List<Long> measureValues, long total) {
         this.entity = entity;
         this.measureValues = measureValues;
         this.total = total;
@@ -25,7 +25,7 @@ public class OlapEntityMetrics<T> {
         return measureValues;
     }
 
-    public Long getTotal() {
+    public long getTotal() {
         return total;
     }
 

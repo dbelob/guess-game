@@ -39,5 +39,5 @@ public abstract class Measure<T> {
         return entities;
     }
 
-    public abstract Long calculateValue();
+    public abstract long calculateValue();
 }

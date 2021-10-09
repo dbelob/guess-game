@@ -13,7 +13,7 @@ public class TalksQuantityMeasure extends Measure<Talk> {
     }
 
     @Override
-    public Long calculateValue() {
-        return (long) entities.size();
+    public long calculateValue() {
+        return entities.size();
     }
 }

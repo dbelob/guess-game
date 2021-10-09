@@ -13,7 +13,7 @@ public class JavaChampionsQuantityMeasure extends Measure<Speaker> {
     }
 
     @Override
-    public Long calculateValue() {
-        return (long) entities.size();
+    public long calculateValue() {
+        return entities.size();
     }
 }

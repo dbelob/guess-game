@@ -127,7 +127,7 @@ public class Cube {
         }
     }
 
-    public Long getMeasureValue(List<Measure<?>> measures, MeasureType measureType) {
+    public long getMeasureValue(List<Measure<?>> measures, MeasureType measureType) {
         if ((measures == null) || measures.isEmpty()) {
             return 0L;
         } else if (measures.size() == 1) {
@@ -142,7 +142,7 @@ public class Cube {
         }
     }
 
-    public Long getMeasureValue(Set<Dimension<?>> dimensions, MeasureType measureType) {
+    public long getMeasureValue(Set<Dimension<?>> dimensions, MeasureType measureType) {
         List<Measure<?>> measures = measureMap.entrySet().stream()
                 .filter(e -> e.getKey().containsAll(dimensions))
                 .map(Map.Entry::getValue)
@@ -214,7 +214,7 @@ public class Cube {
         fillTotals(secondDimensionTypeValues, secondDimensionTotalMeasures, measureType, totals, allTotalMeasures);
 
         // Fill all total
-        Long allTotal = getMeasureValue(allTotalMeasures, measureType);
+        long allTotal = getMeasureValue(allTotalMeasures, measureType);
 
         return resultTriFunction.apply(
                 secondDimensionTypeValues.getValues(),
@@ -284,7 +284,7 @@ public class Cube {
             }
 
             List<Measure<?>> measures = firstDimensionTotalMeasures.get(firstDimensionValue);
-            Long total = getMeasureValue(measures, measureType);
+            long total = getMeasureValue(measures, measureType);
 
             measureValueEntities.add(entityTriFunction.apply(firstDimensionValue, measureValues, total));
         }
@@ -295,7 +295,7 @@ public class Cube {
                                 MeasureType measureType, List<Long> totals, List<Measure<?>> allTotalMeasures) {
         for (S secondDimensionValue : secondDimensionTypeValues.getValues()) {
             List<Measure<?>> measures = secondDimensionTotalMeasures.get(secondDimensionValue);
-            Long total = getMeasureValue(measures, measureType);
+            long total = getMeasureValue(measures, measureType);
 
             totals.add(total);
 

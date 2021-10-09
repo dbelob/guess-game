@@ -234,47 +234,55 @@ class OlapServiceImplTest {
             List<Integer> dimensionValues0 = List.of(2020, 2021);
             City city0 = new City(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "City0")));
             City city1 = new City(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "City1")));
-            City city2 = new City(2, List.of(new LocaleItem(Language.ENGLISH.getCode(), "City2")));
 
-            List<OlapEntityMetrics<City>> metricsList0 = new ArrayList<>(List.of(
-                    new OlapEntityMetrics<>(city0, List.of(1L, 0L), 1L),
-                    new OlapEntityMetrics<>(city1, List.of(0L, 1L), 1L),
-                    new OlapEntityMetrics<>(city2, List.of(0L, 0L), 0L)
-            ));
-            OlapEntityMetrics<Void> totals0 = new OlapEntityMetrics<>(null, List.of(1L, 1L), 2L);
+            List<OlapEntityMetrics<City>> metricsList0 = Collections.emptyList();
+            OlapEntityMetrics<Void> totals0 = new OlapEntityMetrics<>(null, List.of(0L, 0L), 0L);
 
-            List<OlapEntityMetrics<City>> metricsList1 = new ArrayList<>(List.of(
-                    new OlapEntityMetrics<>(city0, List.of(1L, 0L), 1L),
-                    new OlapEntityMetrics<>(city1, List.of(0L, 1L), 1L)
-            ));
+            List<OlapEntityMetrics<City>> metricsList1 = List.of(
+                    new OlapEntityMetrics<>(city0, List.of(1L, 0L), 1L)
+            );
+            OlapEntityMetrics<Void> totals1 = new OlapEntityMetrics<>(null, List.of(1L, 0L), 1L);
 
-            List<OlapEntityMetrics<City>> expectedMetricsList0 = List.of(
-                    new OlapEntityMetrics<>(city0, List.of(1L, 0L), 1L),
+            List<OlapEntityMetrics<City>> metricsList2 = List.of(
                     new OlapEntityMetrics<>(city1, List.of(0L, 1L), 1L)
             );
+            OlapEntityMetrics<Void> totals2 = new OlapEntityMetrics<>(null, List.of(0L, 1L), 1L);
 
-            OlapEntityStatistics<Integer, City> cityStatistics0 = new OlapEntityStatistics<>(dimensionValues0, metricsList0, totals0);
-            OlapEntityStatistics<Integer, City> cityStatistics1 = new OlapEntityStatistics<>(dimensionValues0, metricsList1, totals0);
+            OlapCityParametersDto op0 = new OlapCityParametersDto();
+            op0.setCubeType(CubeType.EVENT_TYPES);
+            op0.setMeasureType(MeasureType.EVENTS_QUANTITY);
 
-            OlapEntityStatistics<Integer, City> expected0 = new OlapEntityStatistics<>(dimensionValues0, expectedMetricsList0, totals0);
+            OlapCityParametersDto op1 = new OlapCityParametersDto();
+            op1.setCubeType(CubeType.EVENT_TYPES);
+            op1.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op1.setEventTypeId(42L);
+
+            OlapCityParametersDto op2 = new OlapCityParametersDto();
+            op2.setCubeType(CubeType.EVENT_TYPES);
+            op2.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op2.setEventTypeId(0L);
+
+            OlapCityParametersDto op3 = new OlapCityParametersDto();
+            op3.setCubeType(CubeType.EVENT_TYPES);
+            op3.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op3.setEventTypeId(1L);
+
+            OlapEntityStatistics<Integer, City> expected0 = new OlapEntityStatistics<>(dimensionValues0, metricsList0, totals0);
+            OlapEntityStatistics<Integer, City> expected1 = new OlapEntityStatistics<>(dimensionValues0, metricsList1, totals1);
+            OlapEntityStatistics<Integer, City> expected2 = new OlapEntityStatistics<>(dimensionValues0, metricsList2, totals2);
 
             return Stream.of(
-                    arguments(cityStatistics0, expected0),
-                    arguments(cityStatistics1, expected0)
+                    arguments(op0, expected0),
+                    arguments(op1, expected0),
+                    arguments(op2, expected1),
+                    arguments(op3, expected2)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void getOlapCityStatistics(OlapEntityStatistics<Integer, City> cityStatistics, OlapEntityStatistics<Integer, City> expected) {
-            OlapServiceImpl olapServiceImpl = Mockito.mock(OlapServiceImpl.class);
-            Mockito.when(olapServiceImpl.<Integer, City, EventType>getOlapEntityStatistics(
-                    Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(cityStatistics);
-            Mockito.when(olapServiceImpl.getOlapCityStatistics(Mockito.any())).thenCallRealMethod();
-
-            OlapEntityStatistics<Integer, City> actual = olapServiceImpl.getOlapCityStatistics(new OlapCityParametersDto());
-
-            assertEquals(expected, actual);
+        void getOlapCityStatistics(OlapCityParametersDto op, OlapEntityStatistics<Integer, City> expected) {
+            assertEquals(expected, olapService.getOlapCityStatistics(op));
         }
     }
 

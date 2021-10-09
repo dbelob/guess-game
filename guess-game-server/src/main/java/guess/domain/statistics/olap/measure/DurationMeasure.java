@@ -14,7 +14,7 @@ public class DurationMeasure extends Measure<Event> {
     }
 
     @Override
-    public Long calculateValue() {
+    public long calculateValue() {
         return entities.stream()
                 .mapToLong(e -> ChronoUnit.DAYS.between(e.getStartDate(), e.getEndDate()) + 1)
                 .sum();

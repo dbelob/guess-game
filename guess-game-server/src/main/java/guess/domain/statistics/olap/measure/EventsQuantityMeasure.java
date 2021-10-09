@@ -13,7 +13,7 @@ public class EventsQuantityMeasure extends Measure<Event> {
     }
 
     @Override
-    public Long calculateValue() {
-        return (long) entities.size();
+    public long calculateValue() {
+        return entities.size();
     }
 }
