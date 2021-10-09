@@ -7,11 +7,11 @@ import guess.domain.Conference;
 import guess.domain.Language;
 import guess.domain.source.*;
 import guess.domain.statistics.olap.*;
+import guess.domain.statistics.olap.dimension.City;
+import guess.dto.statistics.olap.OlapCityParametersDto;
 import guess.dto.statistics.olap.OlapParametersDto;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.TestInstance;
+import guess.dto.statistics.olap.OlapSpeakerParametersDto;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -23,6 +23,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -44,6 +45,7 @@ class OlapServiceImplTest {
     private static Talk talk1;
     private static Speaker speaker0;
     private static Speaker speaker1;
+    private static Speaker speaker2;
     private static Company company0;
     private static Company company1;
 
@@ -91,6 +93,7 @@ class OlapServiceImplTest {
 
         Place place0 = new Place(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "City0")), Collections.emptyList(), null);
         Place place1 = new Place(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "City1")), Collections.emptyList(), null);
+        Place place2 = new Place(2, List.of(new LocaleItem(Language.ENGLISH.getCode(), "City2")), Collections.emptyList(), null);
 
         event0 = new Event();
         event0.setId(0);
@@ -115,13 +118,13 @@ class OlapServiceImplTest {
         event2.setEventTypeId(eventType2.getId());
         event2.setEventType(eventType2);
         eventType2.setEvents(List.of(event2));
-        event2.setPlace(place1);
+        event2.setPlace(place2);
         event2.setStartDate(LocalDate.of(2021, 5, 1));
         event2.setEndDate(LocalDate.of(2021, 5, 2));
 
         Event event3 = new Event();
         event3.setId(3);
-        event3.setPlace(place1);
+        event3.setPlace(place2);
         event3.setStartDate(LocalDate.of(2021, 6, 10));
         event3.setEndDate(LocalDate.of(2021, 6, 12));
 
@@ -140,6 +143,10 @@ class OlapServiceImplTest {
         speaker1.setId(1);
         speaker1.setCompanies(List.of(company1));
         speaker1.setMvp(true);
+
+        speaker2 = new Speaker();
+        speaker2.setId(2);
+        speaker2.setCompanies(List.of(company1));
 
         talk0 = new Talk();
         talk0.setId(0);
@@ -163,15 +170,113 @@ class OlapServiceImplTest {
         event2.setTalks(List.of(talk2));
     }
 
-//    @BeforeEach
-//    void setUp() {
-//        EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
-//        Mockito.when(eventTypeDao.getEventTypes()).thenReturn(List.of(eventType0, eventType1, eventType2));
-//
-//        OlapDao olapDao = new OlapDaoImpl(eventTypeDao);
-//
-//        Mockito.when(olapDao.getCube(CubeType.EVENT_TYPES)).thenReturn(olapDao.getCube(CubeType.EVENT_TYPES));
-//    }
+    @Test
+    void getMeasureTypes() {
+        assertEquals(List.of(MeasureType.EVENTS_QUANTITY, MeasureType.DURATION, MeasureType.TALKS_QUANTITY,
+                        MeasureType.SPEAKERS_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY, MeasureType.MVPS_QUANTITY),
+                olapService.getMeasureTypes(CubeType.EVENT_TYPES));
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getOlapSpeakerStatistics method with parameters tests")
+    class GetOlapSpeakerStatisticsTest {
+        private Stream<Arguments> data() {
+            List<Integer> dimensionValues0 = List.of(2020, 2021);
+
+            List<OlapEntityMetrics<Speaker>> metricsList0 = new ArrayList<>(List.of(
+                    new OlapEntityMetrics<>(speaker0, List.of(1L, 0L), 1L),
+                    new OlapEntityMetrics<>(speaker1, List.of(0L, 1L), 1L),
+                    new OlapEntityMetrics<>(speaker2, List.of(0L, 0L), 0L)
+            ));
+            OlapEntityMetrics<Void> totals0 = new OlapEntityMetrics<>(null, List.of(1L, 1L), 2L);
+
+            List<OlapEntityMetrics<Speaker>> metricsList1 = new ArrayList<>(List.of(
+                    new OlapEntityMetrics<>(speaker0, List.of(1L, 0L), 1L),
+                    new OlapEntityMetrics<>(speaker1, List.of(0L, 1L), 1L)
+            ));
+
+            List<OlapEntityMetrics<Speaker>> expectedMetricsList0 = List.of(
+                    new OlapEntityMetrics<>(speaker0, List.of(1L, 0L), 1L),
+                    new OlapEntityMetrics<>(speaker1, List.of(0L, 1L), 1L)
+            );
+
+            OlapEntityStatistics<Integer, Speaker> speakerStatistics0 = new OlapEntityStatistics<>(dimensionValues0, metricsList0, totals0);
+            OlapEntityStatistics<Integer, Speaker> speakerStatistics1 = new OlapEntityStatistics<>(dimensionValues0, metricsList1, totals0);
+
+            OlapEntityStatistics<Integer, Speaker> expected0 = new OlapEntityStatistics<>(dimensionValues0, expectedMetricsList0, totals0);
+
+            return Stream.of(
+                    arguments(speakerStatistics0, expected0),
+                    arguments(speakerStatistics1, expected0)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getOlapSpeakerStatistics(OlapEntityStatistics<Integer, Speaker> speakerStatistics, OlapEntityStatistics<Integer, Speaker> expected) {
+            OlapServiceImpl olapServiceImpl = Mockito.mock(OlapServiceImpl.class);
+            Mockito.when(olapServiceImpl.<Integer, Speaker, EventType>getOlapEntityStatistics(
+                    Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(speakerStatistics);
+            Mockito.when(olapServiceImpl.getOlapSpeakerStatistics(Mockito.any())).thenCallRealMethod();
+
+            OlapEntityStatistics<Integer, Speaker> actual = olapServiceImpl.getOlapSpeakerStatistics(new OlapSpeakerParametersDto());
+
+            assertEquals(expected, actual);
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getOlapCityStatistics method with parameters tests")
+    class GetOlapCityStatisticsTest {
+        private Stream<Arguments> data() {
+            List<Integer> dimensionValues0 = List.of(2020, 2021);
+            City city0 = new City(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "City0")));
+            City city1 = new City(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "City1")));
+            City city2 = new City(2, List.of(new LocaleItem(Language.ENGLISH.getCode(), "City2")));
+
+            List<OlapEntityMetrics<City>> metricsList0 = new ArrayList<>(List.of(
+                    new OlapEntityMetrics<>(city0, List.of(1L, 0L), 1L),
+                    new OlapEntityMetrics<>(city1, List.of(0L, 1L), 1L),
+                    new OlapEntityMetrics<>(city2, List.of(0L, 0L), 0L)
+            ));
+            OlapEntityMetrics<Void> totals0 = new OlapEntityMetrics<>(null, List.of(1L, 1L), 2L);
+
+            List<OlapEntityMetrics<City>> metricsList1 = new ArrayList<>(List.of(
+                    new OlapEntityMetrics<>(city0, List.of(1L, 0L), 1L),
+                    new OlapEntityMetrics<>(city1, List.of(0L, 1L), 1L)
+            ));
+
+            List<OlapEntityMetrics<City>> expectedMetricsList0 = List.of(
+                    new OlapEntityMetrics<>(city0, List.of(1L, 0L), 1L),
+                    new OlapEntityMetrics<>(city1, List.of(0L, 1L), 1L)
+            );
+
+            OlapEntityStatistics<Integer, City> cityStatistics0 = new OlapEntityStatistics<>(dimensionValues0, metricsList0, totals0);
+            OlapEntityStatistics<Integer, City> cityStatistics1 = new OlapEntityStatistics<>(dimensionValues0, metricsList1, totals0);
+
+            OlapEntityStatistics<Integer, City> expected0 = new OlapEntityStatistics<>(dimensionValues0, expectedMetricsList0, totals0);
+
+            return Stream.of(
+                    arguments(cityStatistics0, expected0),
+                    arguments(cityStatistics1, expected0)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getOlapCityStatistics(OlapEntityStatistics<Integer, City> cityStatistics, OlapEntityStatistics<Integer, City> expected) {
+            OlapServiceImpl olapServiceImpl = Mockito.mock(OlapServiceImpl.class);
+            Mockito.when(olapServiceImpl.<Integer, City, EventType>getOlapEntityStatistics(
+                    Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(cityStatistics);
+            Mockito.when(olapServiceImpl.getOlapCityStatistics(Mockito.any())).thenCallRealMethod();
+
+            OlapEntityStatistics<Integer, City> actual = olapServiceImpl.getOlapCityStatistics(new OlapCityParametersDto());
+
+            assertEquals(expected, actual);
+        }
+    }
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
