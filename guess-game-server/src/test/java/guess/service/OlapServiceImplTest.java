@@ -23,7 +23,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -136,16 +135,19 @@ class OlapServiceImplTest {
 
         speaker0 = new Speaker();
         speaker0.setId(0);
+        speaker0.setCompanyIds(List.of(0L));
         speaker0.setCompanies(List.of(company0));
         speaker0.setJavaChampion(true);
 
         speaker1 = new Speaker();
         speaker1.setId(1);
+        speaker1.setCompanyIds(List.of(1L));
         speaker1.setCompanies(List.of(company1));
         speaker1.setMvp(true);
 
         speaker2 = new Speaker();
         speaker2.setId(2);
+        speaker2.setCompanyIds(List.of(1L));
         speaker2.setCompanies(List.of(company1));
 
         talk0 = new Talk();
@@ -184,45 +186,88 @@ class OlapServiceImplTest {
         private Stream<Arguments> data() {
             List<Integer> dimensionValues0 = List.of(2020, 2021);
 
-            List<OlapEntityMetrics<Speaker>> metricsList0 = new ArrayList<>(List.of(
-                    new OlapEntityMetrics<>(speaker0, List.of(1L, 0L), 1L),
-                    new OlapEntityMetrics<>(speaker1, List.of(0L, 1L), 1L),
-                    new OlapEntityMetrics<>(speaker2, List.of(0L, 0L), 0L)
-            ));
-            OlapEntityMetrics<Void> totals0 = new OlapEntityMetrics<>(null, List.of(1L, 1L), 2L);
+            List<OlapEntityMetrics<Speaker>> metricsList0 = Collections.emptyList();
+            OlapEntityMetrics<Void> totals0 = new OlapEntityMetrics<>(null, List.of(0L, 0L), 0L);
 
-            List<OlapEntityMetrics<Speaker>> metricsList1 = new ArrayList<>(List.of(
-                    new OlapEntityMetrics<>(speaker0, List.of(1L, 0L), 1L),
-                    new OlapEntityMetrics<>(speaker1, List.of(0L, 1L), 1L)
-            ));
+            List<OlapEntityMetrics<Speaker>> metricsList1 = List.of(
+                    new OlapEntityMetrics<>(speaker0, List.of(1L, 0L), 1L)
+            );
+            OlapEntityMetrics<Void> totals1 = new OlapEntityMetrics<>(null, List.of(1L, 0L), 1L);
 
-            List<OlapEntityMetrics<Speaker>> expectedMetricsList0 = List.of(
-                    new OlapEntityMetrics<>(speaker0, List.of(1L, 0L), 1L),
+            List<OlapEntityMetrics<Speaker>> metricsList2 = List.of(
                     new OlapEntityMetrics<>(speaker1, List.of(0L, 1L), 1L)
             );
+            OlapEntityMetrics<Void> totals2 = new OlapEntityMetrics<>(null, List.of(0L, 1L), 1L);
 
-            OlapEntityStatistics<Integer, Speaker> speakerStatistics0 = new OlapEntityStatistics<>(dimensionValues0, metricsList0, totals0);
-            OlapEntityStatistics<Integer, Speaker> speakerStatistics1 = new OlapEntityStatistics<>(dimensionValues0, metricsList1, totals0);
+            OlapSpeakerParametersDto op0 = new OlapSpeakerParametersDto();
+            op0.setCubeType(CubeType.SPEAKERS);
+            op0.setMeasureType(MeasureType.EVENTS_QUANTITY);
 
-            OlapEntityStatistics<Integer, Speaker> expected0 = new OlapEntityStatistics<>(dimensionValues0, expectedMetricsList0, totals0);
+            OlapSpeakerParametersDto op1 = new OlapSpeakerParametersDto();
+            op1.setCubeType(CubeType.SPEAKERS);
+            op1.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op1.setEventTypeId(42L);
+
+            OlapSpeakerParametersDto op2 = new OlapSpeakerParametersDto();
+            op2.setCubeType(CubeType.SPEAKERS);
+            op2.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op2.setEventTypeId(0L);
+
+            OlapSpeakerParametersDto op3 = new OlapSpeakerParametersDto();
+            op3.setCubeType(CubeType.SPEAKERS);
+            op3.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op3.setCompanyId(42L);
+
+            OlapSpeakerParametersDto op4 = new OlapSpeakerParametersDto();
+            op4.setCubeType(CubeType.SPEAKERS);
+            op4.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op4.setCompanyId(0L);
+
+            OlapSpeakerParametersDto op5 = new OlapSpeakerParametersDto();
+            op5.setCubeType(CubeType.SPEAKERS);
+            op5.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op5.setCompanyId(0L);
+            op5.setEventTypeId(42L);
+
+            OlapSpeakerParametersDto op6 = new OlapSpeakerParametersDto();
+            op6.setCubeType(CubeType.SPEAKERS);
+            op6.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op6.setCompanyId(42L);
+            op6.setEventTypeId(0L);
+
+            OlapSpeakerParametersDto op7 = new OlapSpeakerParametersDto();
+            op7.setCubeType(CubeType.SPEAKERS);
+            op7.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op7.setCompanyId(0L);
+            op7.setEventTypeId(0L);
+
+            OlapSpeakerParametersDto op8 = new OlapSpeakerParametersDto();
+            op8.setCubeType(CubeType.SPEAKERS);
+            op8.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op8.setCompanyId(1L);
+            op8.setEventTypeId(1L);
+
+            OlapEntityStatistics<Integer, Speaker> expected0 = new OlapEntityStatistics<>(dimensionValues0, metricsList0, totals0);
+            OlapEntityStatistics<Integer, Speaker> expected1 = new OlapEntityStatistics<>(dimensionValues0, metricsList1, totals1);
+            OlapEntityStatistics<Integer, Speaker> expected2 = new OlapEntityStatistics<>(dimensionValues0, metricsList2, totals2);
 
             return Stream.of(
-                    arguments(speakerStatistics0, expected0),
-                    arguments(speakerStatistics1, expected0)
+                    arguments(op0, expected0),
+                    arguments(op1, expected0),
+                    arguments(op2, expected0),
+                    arguments(op3, expected0),
+                    arguments(op4, expected0),
+                    arguments(op5, expected0),
+                    arguments(op6, expected0),
+                    arguments(op7, expected1),
+                    arguments(op8, expected2)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void getOlapSpeakerStatistics(OlapEntityStatistics<Integer, Speaker> speakerStatistics, OlapEntityStatistics<Integer, Speaker> expected) {
-            OlapServiceImpl olapServiceImpl = Mockito.mock(OlapServiceImpl.class);
-            Mockito.when(olapServiceImpl.<Integer, Speaker, EventType>getOlapEntityStatistics(
-                    Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(speakerStatistics);
-            Mockito.when(olapServiceImpl.getOlapSpeakerStatistics(Mockito.any())).thenCallRealMethod();
-
-            OlapEntityStatistics<Integer, Speaker> actual = olapServiceImpl.getOlapSpeakerStatistics(new OlapSpeakerParametersDto());
-
-            assertEquals(expected, actual);
+        void getOlapSpeakerStatistics(OlapSpeakerParametersDto op, OlapEntityStatistics<Integer, Speaker> expected) {
+            assertEquals(expected, olapService.getOlapSpeakerStatistics(op));
         }
     }
 
@@ -232,6 +277,7 @@ class OlapServiceImplTest {
     class GetOlapCityStatisticsTest {
         private Stream<Arguments> data() {
             List<Integer> dimensionValues0 = List.of(2020, 2021);
+
             City city0 = new City(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "City0")));
             City city1 = new City(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "City1")));
 
