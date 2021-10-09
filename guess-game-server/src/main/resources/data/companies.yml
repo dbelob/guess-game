@@ -2056,10 +2056,6 @@ companies:
     name:
       - {language: en, text: Sber}
       - {language: ru, text: Сбер}
-  - id: 666
-    name:
-      - {language: en, text: Sberbank-Technology}
-      - {language: ru, text: Сбербанк-Технологии}
   - id: 667
     name:
       - {language: en, text: SibGUTI}
@@ -2396,9 +2392,6 @@ companies:
     name:
       - {language: en, text: ExoAtlet}
       - {language: ru, text: ЭкзоАтлет}
-  - id: 765
-    name:
-      - {language: en, text: "PVS Studio"}
   - id: 766
     name:
       - {language: en, text: "Filina Consulting"}
@@ -2411,6 +2404,7 @@ companies:
   - id: 769
     name:
       - {language: en, text: SberTech}
+      - {language: ru, text: СберТех}
   - id: 770
     name:
       - {language: en, text: Citymobil}
