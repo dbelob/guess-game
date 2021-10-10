@@ -20931,7 +20931,7 @@ speakers:
     name:
       - {language: en, text: "Vladimir Verstov"}
       - {language: ru, text: "Владимир Верстов"}
-    companyIds: [690]
+    companyIds: [718]
     bio:
       - {language: en, text: "The lead of the DMP development at Yandex.Go. More than 10 years of experience in IT. At the\
             \ university, Vladimir was engaged in parallel and distributed computing, developed his own CAD system, defended\

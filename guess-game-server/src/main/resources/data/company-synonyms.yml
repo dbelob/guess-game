@@ -151,6 +151,13 @@ companySynonyms:
     synonyms: [
         VKontakte
     ]
+  - name: "Yandex Go"
+    synonyms: [
+        "Yandex GO",
+        "Яндекс GO",
+        Yandex.Go,
+        Яндекс.Go
+    ]
   - name: "ZeptoLab LLC"
     synonyms: [
         Zeptolab

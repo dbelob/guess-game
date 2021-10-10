@@ -2148,10 +2148,6 @@ companies:
     name:
       - {language: en, text: Yandex}
       - {language: ru, text: Яндекс}
-  - id: 690
-    name:
-      - {language: en, text: Yandex.Go}
-      - {language: ru, text: Яндекс.Go}
   - id: 691
     name:
       - {language: en, text: "Yandex.Classifieds Technology"}
@@ -2247,8 +2243,8 @@ companies:
       - {language: ru, text: Авто.ру}
   - id: 718
     name:
-      - {language: en, text: "Yandex GO"}
-      - {language: ru, text: "Яндекс GO"}
+      - {language: en, text: "Yandex Go"}
+      - {language: ru, text: "Яндекс Go"}
   - id: 719
     name:
       - {language: en, text: INOSTUDIO}
