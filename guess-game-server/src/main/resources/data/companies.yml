@@ -2056,10 +2056,6 @@ companies:
     name:
       - {language: en, text: Sber}
       - {language: ru, text: Сбер}
-  - id: 666
-    name:
-      - {language: en, text: Sberbank-Technology}
-      - {language: ru, text: Сбербанк-Технологии}
   - id: 667
     name:
       - {language: en, text: SibGUTI}
@@ -2152,10 +2148,6 @@ companies:
     name:
       - {language: en, text: Yandex}
       - {language: ru, text: Яндекс}
-  - id: 690
-    name:
-      - {language: en, text: Yandex.Go}
-      - {language: ru, text: Яндекс.Go}
   - id: 691
     name:
       - {language: en, text: "Yandex.Classifieds Technology"}
@@ -2251,8 +2243,8 @@ companies:
       - {language: ru, text: Авто.ру}
   - id: 718
     name:
-      - {language: en, text: "Yandex GO"}
-      - {language: ru, text: "Яндекс GO"}
+      - {language: en, text: "Yandex Go"}
+      - {language: ru, text: "Яндекс Go"}
   - id: 719
     name:
       - {language: en, text: INOSTUDIO}
@@ -2396,9 +2388,6 @@ companies:
     name:
       - {language: en, text: ExoAtlet}
       - {language: ru, text: ЭкзоАтлет}
-  - id: 765
-    name:
-      - {language: en, text: "PVS Studio"}
   - id: 766
     name:
       - {language: en, text: "Filina Consulting"}
@@ -2411,6 +2400,7 @@ companies:
   - id: 769
     name:
       - {language: en, text: SberTech}
+      - {language: ru, text: СберТех}
   - id: 770
     name:
       - {language: en, text: Citymobil}
@@ -2441,3 +2431,49 @@ companies:
   - id: 778
     name:
       - {language: en, text: "Ozon Fintech"}
+  - id: 779
+    name:
+      - {language: en, text: Astronomer.io}
+  - id: 780
+    name:
+      - {language: en, text: Infoculture}
+      - {language: ru, text: Инфокультура}
+  - id: 781
+    name:
+      - {language: en, text: "Databricks Inc"}
+  - id: 782
+    name:
+      - {language: en, text: "Querify Labs"}
+  - id: 783
+    name:
+      - {language: en, text: Tele2}
+  - id: 784
+    name:
+      - {language: en, text: Profitero}
+  - id: 785
+    name:
+      - {language: en, text: Vertica}
+  - id: 786
+    name:
+      - {language: en, text: eyeota.com}
+  - id: 787
+    name:
+      - {language: en, text: "Leroy Merlin"}
+  - id: 788
+    name:
+      - {language: en, text: Dremio}
+  - id: 789
+    name:
+      - {language: en, text: "Cherry Labs"}
+  - id: 790
+    name:
+      - {language: en, text: EXASOL}
+  - id: 791
+    name:
+      - {language: en, text: Treeverse}
+  - id: 792
+    name:
+      - {language: en, text: "Valiotti Analytics"}
+  - id: 793
+    name:
+      - {language: en, text: Evolution}

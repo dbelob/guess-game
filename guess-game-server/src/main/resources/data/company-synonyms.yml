@@ -118,6 +118,10 @@ companySynonyms:
     synonyms: [
         PostgresPro
     ]
+  - name: PVS-Studio
+    synonyms: [
+        "PVS Studio"
+    ]
   - name: "Rambler Group"
     synonyms: [
         "Rambler&Co"
@@ -130,6 +134,11 @@ companySynonyms:
     synonyms: [
         Sberbank
     ]
+  - name: SberTech
+    synonyms: [
+        Sberbank-Technology,
+        Сбербанк-Технологии
+    ]
   - name: "Tune IT"
     synonyms: [
         Tune-IT
@@ -141,6 +150,13 @@ companySynonyms:
   - name: VK
     synonyms: [
         VKontakte
+    ]
+  - name: "Yandex Go"
+    synonyms: [
+        "Yandex GO",
+        "Яндекс GO",
+        Yandex.Go,
+        Яндекс.Go
     ]
   - name: "ZeptoLab LLC"
     synonyms: [
