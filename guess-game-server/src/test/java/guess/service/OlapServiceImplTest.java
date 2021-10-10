@@ -9,6 +9,7 @@ import guess.domain.source.*;
 import guess.domain.statistics.olap.*;
 import guess.domain.statistics.olap.dimension.City;
 import guess.dto.statistics.olap.OlapCityParametersDto;
+import guess.dto.statistics.olap.OlapEventTypeParametersDto;
 import guess.dto.statistics.olap.OlapParametersDto;
 import guess.dto.statistics.olap.OlapSpeakerParametersDto;
 import org.junit.jupiter.api.*;
@@ -30,6 +31,7 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @DisplayName("OlapServiceImpl class tests")
@@ -80,15 +82,27 @@ class OlapServiceImplTest {
 
     @BeforeAll
     static void init() {
+        Organizer organizer0 = new Organizer();
+        organizer0.setId(0L);
+
+        Organizer organizer1 = new Organizer();
+        organizer1.setId(1L);
+
         eventType0 = new EventType();
         eventType0.setId(0);
         eventType0.setConference(Conference.JPOINT);
+        eventType0.setOrganizerId(0L);
+        eventType0.setOrganizer(organizer0);
 
         eventType1 = new EventType();
         eventType1.setId(1);
+        eventType1.setOrganizerId(0L);
+        eventType1.setOrganizer(organizer0);
 
         eventType2 = new EventType();
         eventType2.setId(2);
+        eventType2.setOrganizerId(1L);
+        eventType2.setOrganizer(organizer1);
 
         Place place0 = new Place(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "City0")), Collections.emptyList(), null);
         Place place1 = new Place(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "City1")), Collections.emptyList(), null);
@@ -177,6 +191,208 @@ class OlapServiceImplTest {
         assertEquals(List.of(MeasureType.EVENTS_QUANTITY, MeasureType.DURATION, MeasureType.TALKS_QUANTITY,
                         MeasureType.SPEAKERS_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY, MeasureType.MVPS_QUANTITY),
                 olapService.getMeasureTypes(CubeType.EVENT_TYPES));
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getOlapEventTypeStatistics method with parameters tests")
+    class GetOlapEventTypeStatisticsTest {
+        private Stream<Arguments> data() {
+            List<Integer> dimensionValues0 = List.of(2020, 2021);
+
+            List<OlapEntityMetrics<EventType>> metricsList0 = Collections.emptyList();
+            OlapEntityMetrics<Void> totals0 = new OlapEntityMetrics<>(null, List.of(0L, 0L), 0L);
+
+            List<OlapEntityMetrics<EventType>> metricsList1 = List.of(
+                    new OlapEntityMetrics<>(eventType0, List.of(1L, 0L), 1L)
+            );
+            OlapEntityMetrics<Void> totals1 = new OlapEntityMetrics<>(null, List.of(1L, 0L), 1L);
+
+            List<OlapEntityMetrics<EventType>> metricsList2 = List.of(
+                    new OlapEntityMetrics<>(eventType2, List.of(0L, 1L), 1L)
+            );
+            OlapEntityMetrics<Void> totals2 = new OlapEntityMetrics<>(null, List.of(0L, 1L), 1L);
+
+            List<OlapEntityMetrics<EventType>> metricsList3 = List.of(
+                    new OlapEntityMetrics<>(eventType0, List.of(1L, 0L), 1L)
+            );
+            OlapEntityMetrics<Void> totals3 = new OlapEntityMetrics<>(null, List.of(1L, 0L), 1L);
+
+            OlapEventTypeParametersDto op0 = new OlapEventTypeParametersDto();
+            op0.setCubeType(CubeType.EVENT_TYPES);
+
+            OlapEventTypeParametersDto op1 = new OlapEventTypeParametersDto();
+            op1.setCubeType(CubeType.SPEAKERS);
+            op1.setMeasureType(MeasureType.EVENTS_QUANTITY);
+
+            OlapEventTypeParametersDto op2 = new OlapEventTypeParametersDto();
+            op2.setCubeType(CubeType.SPEAKERS);
+            op2.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op2.setConferences(true);
+
+            OlapEventTypeParametersDto op3 = new OlapEventTypeParametersDto();
+            op3.setCubeType(CubeType.SPEAKERS);
+            op3.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op3.setConferences(true);
+            op3.setSpeakerId(42L);
+
+            OlapEventTypeParametersDto op4 = new OlapEventTypeParametersDto();
+            op4.setCubeType(CubeType.SPEAKERS);
+            op4.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op4.setConferences(true);
+            op4.setSpeakerId(0L);
+
+            OlapEventTypeParametersDto op5 = new OlapEventTypeParametersDto();
+            op5.setCubeType(CubeType.SPEAKERS);
+            op5.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op5.setMeetups(true);
+            op5.setSpeakerId(42L);
+
+            OlapEventTypeParametersDto op6 = new OlapEventTypeParametersDto();
+            op6.setCubeType(CubeType.SPEAKERS);
+            op6.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op6.setMeetups(true);
+            op6.setSpeakerId(0L);
+
+            OlapEventTypeParametersDto op7 = new OlapEventTypeParametersDto();
+            op7.setCubeType(CubeType.SPEAKERS);
+            op7.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op7.setConferences(true);
+            op7.setMeetups(true);
+            op7.setOrganizerId(42L);
+            op7.setSpeakerId(0L);
+
+            OlapEventTypeParametersDto op8 = new OlapEventTypeParametersDto();
+            op8.setCubeType(CubeType.SPEAKERS);
+            op8.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op8.setConferences(true);
+            op8.setMeetups(true);
+            op8.setOrganizerId(0L);
+            op8.setSpeakerId(0L);
+
+            OlapEventTypeParametersDto op9 = new OlapEventTypeParametersDto();
+            op9.setCubeType(CubeType.SPEAKERS);
+            op9.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op9.setConferences(true);
+            op9.setMeetups(true);
+            op9.setEventTypeIds(List.of(42L));
+            op9.setSpeakerId(0L);
+
+            OlapEventTypeParametersDto op10 = new OlapEventTypeParametersDto();
+            op10.setCubeType(CubeType.SPEAKERS);
+            op10.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op10.setConferences(true);
+            op10.setMeetups(true);
+            op10.setEventTypeIds(List.of(0L));
+            op10.setSpeakerId(0L);
+
+            OlapEventTypeParametersDto op11 = new OlapEventTypeParametersDto();
+            op11.setCubeType(CubeType.COMPANIES);
+            op11.setMeasureType(MeasureType.EVENTS_QUANTITY);
+
+            OlapEventTypeParametersDto op12 = new OlapEventTypeParametersDto();
+            op12.setCubeType(CubeType.COMPANIES);
+            op12.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op12.setConferences(true);
+
+            OlapEventTypeParametersDto op13 = new OlapEventTypeParametersDto();
+            op13.setCubeType(CubeType.COMPANIES);
+            op13.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op13.setConferences(true);
+            op13.setCompanyId(42L);
+
+            OlapEventTypeParametersDto op14 = new OlapEventTypeParametersDto();
+            op14.setCubeType(CubeType.COMPANIES);
+            op14.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op14.setConferences(true);
+            op14.setCompanyId(0L);
+
+            OlapEventTypeParametersDto op15 = new OlapEventTypeParametersDto();
+            op15.setCubeType(CubeType.COMPANIES);
+            op15.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op15.setMeetups(true);
+            op15.setCompanyId(42L);
+
+            OlapEventTypeParametersDto op16 = new OlapEventTypeParametersDto();
+            op16.setCubeType(CubeType.COMPANIES);
+            op16.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op16.setMeetups(true);
+            op16.setCompanyId(0L);
+
+            OlapEventTypeParametersDto op17 = new OlapEventTypeParametersDto();
+            op17.setCubeType(CubeType.COMPANIES);
+            op17.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op17.setConferences(true);
+            op17.setMeetups(true);
+            op17.setOrganizerId(42L);
+            op17.setCompanyId(0L);
+
+            OlapEventTypeParametersDto op18 = new OlapEventTypeParametersDto();
+            op18.setCubeType(CubeType.COMPANIES);
+            op18.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op18.setConferences(true);
+            op18.setMeetups(true);
+            op18.setOrganizerId(0L);
+            op18.setCompanyId(0L);
+
+            OlapEventTypeParametersDto op19 = new OlapEventTypeParametersDto();
+            op19.setCubeType(CubeType.COMPANIES);
+            op19.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op19.setConferences(true);
+            op19.setMeetups(true);
+            op19.setEventTypeIds(List.of(42L));
+            op19.setCompanyId(0L);
+
+            OlapEventTypeParametersDto op20 = new OlapEventTypeParametersDto();
+            op20.setCubeType(CubeType.COMPANIES);
+            op20.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op20.setConferences(true);
+            op20.setMeetups(true);
+            op20.setEventTypeIds(List.of(0L));
+            op20.setCompanyId(0L);
+
+            OlapEntityStatistics<Integer, EventType> expected0 = new OlapEntityStatistics<>(dimensionValues0, metricsList0, totals0);
+            OlapEntityStatistics<Integer, EventType> expected1 = new OlapEntityStatistics<>(dimensionValues0, metricsList1, totals1);
+            OlapEntityStatistics<Integer, EventType> expected2 = new OlapEntityStatistics<>(dimensionValues0, metricsList2, totals2);
+            OlapEntityStatistics<Integer, EventType> expected3 = new OlapEntityStatistics<>(dimensionValues0, metricsList3, totals3);
+
+            return Stream.of(
+                    arguments(op0, IllegalArgumentException.class, null),
+
+                    arguments(op1, null, expected0),
+                    arguments(op2, null, expected0),
+                    arguments(op3, null, expected0),
+                    arguments(op4, null, expected1),
+                    arguments(op5, null, expected0),
+                    arguments(op6, null, expected2),
+                    arguments(op7, null, expected0),
+                    arguments(op8, null, expected3),
+                    arguments(op9, null, expected0),
+                    arguments(op10, null, expected3),
+
+                    arguments(op11, null, expected0),
+                    arguments(op12, null, expected0),
+                    arguments(op13, null, expected0),
+                    arguments(op14, null, expected1),
+                    arguments(op15, null, expected0),
+                    arguments(op16, null, expected2),
+                    arguments(op17, null, expected0),
+                    arguments(op18, null, expected3),
+                    arguments(op19, null, expected0),
+                    arguments(op20, null, expected3)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getOlapEventTypeStatistics(OlapEventTypeParametersDto op, Class<? extends Throwable> expectedException,
+                                        OlapEntityStatistics<Integer, EventType> expectedValue) {
+            if (expectedException == null) {
+                assertEquals(expectedValue, olapService.getOlapEventTypeStatistics(op));
+            } else {
+                assertThrows(expectedException, () -> olapService.getOlapEventTypeStatistics(op));
+            }
+        }
     }
 
     @Nested
