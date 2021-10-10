@@ -275,7 +275,8 @@ class OlapServiceImplTest {
             op9.setMeasureType(MeasureType.EVENTS_QUANTITY);
             op9.setConferences(true);
             op9.setMeetups(true);
-            op9.setEventTypeIds(List.of(42L));
+            op9.setOrganizerId(0L);
+            op9.setEventTypeIds(Collections.emptyList());
             op9.setSpeakerId(0L);
 
             OlapEventTypeParametersDto op10 = new OlapEventTypeParametersDto();
@@ -283,48 +284,48 @@ class OlapServiceImplTest {
             op10.setMeasureType(MeasureType.EVENTS_QUANTITY);
             op10.setConferences(true);
             op10.setMeetups(true);
-            op10.setEventTypeIds(List.of(0L));
+            op10.setEventTypeIds(List.of(42L));
             op10.setSpeakerId(0L);
 
             OlapEventTypeParametersDto op11 = new OlapEventTypeParametersDto();
-            op11.setCubeType(CubeType.COMPANIES);
+            op11.setCubeType(CubeType.SPEAKERS);
             op11.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op11.setConferences(true);
+            op11.setMeetups(true);
+            op11.setEventTypeIds(List.of(0L));
+            op11.setSpeakerId(0L);
 
             OlapEventTypeParametersDto op12 = new OlapEventTypeParametersDto();
             op12.setCubeType(CubeType.COMPANIES);
             op12.setMeasureType(MeasureType.EVENTS_QUANTITY);
-            op12.setConferences(true);
 
             OlapEventTypeParametersDto op13 = new OlapEventTypeParametersDto();
             op13.setCubeType(CubeType.COMPANIES);
             op13.setMeasureType(MeasureType.EVENTS_QUANTITY);
             op13.setConferences(true);
-            op13.setCompanyId(42L);
 
             OlapEventTypeParametersDto op14 = new OlapEventTypeParametersDto();
             op14.setCubeType(CubeType.COMPANIES);
             op14.setMeasureType(MeasureType.EVENTS_QUANTITY);
             op14.setConferences(true);
-            op14.setCompanyId(0L);
+            op14.setCompanyId(42L);
 
             OlapEventTypeParametersDto op15 = new OlapEventTypeParametersDto();
             op15.setCubeType(CubeType.COMPANIES);
             op15.setMeasureType(MeasureType.EVENTS_QUANTITY);
-            op15.setMeetups(true);
-            op15.setCompanyId(42L);
+            op15.setConferences(true);
+            op15.setCompanyId(0L);
 
             OlapEventTypeParametersDto op16 = new OlapEventTypeParametersDto();
             op16.setCubeType(CubeType.COMPANIES);
             op16.setMeasureType(MeasureType.EVENTS_QUANTITY);
             op16.setMeetups(true);
-            op16.setCompanyId(0L);
+            op16.setCompanyId(42L);
 
             OlapEventTypeParametersDto op17 = new OlapEventTypeParametersDto();
             op17.setCubeType(CubeType.COMPANIES);
             op17.setMeasureType(MeasureType.EVENTS_QUANTITY);
-            op17.setConferences(true);
             op17.setMeetups(true);
-            op17.setOrganizerId(42L);
             op17.setCompanyId(0L);
 
             OlapEventTypeParametersDto op18 = new OlapEventTypeParametersDto();
@@ -332,7 +333,7 @@ class OlapServiceImplTest {
             op18.setMeasureType(MeasureType.EVENTS_QUANTITY);
             op18.setConferences(true);
             op18.setMeetups(true);
-            op18.setOrganizerId(0L);
+            op18.setOrganizerId(42L);
             op18.setCompanyId(0L);
 
             OlapEventTypeParametersDto op19 = new OlapEventTypeParametersDto();
@@ -340,7 +341,7 @@ class OlapServiceImplTest {
             op19.setMeasureType(MeasureType.EVENTS_QUANTITY);
             op19.setConferences(true);
             op19.setMeetups(true);
-            op19.setEventTypeIds(List.of(42L));
+            op19.setOrganizerId(0L);
             op19.setCompanyId(0L);
 
             OlapEventTypeParametersDto op20 = new OlapEventTypeParametersDto();
@@ -348,8 +349,25 @@ class OlapServiceImplTest {
             op20.setMeasureType(MeasureType.EVENTS_QUANTITY);
             op20.setConferences(true);
             op20.setMeetups(true);
-            op20.setEventTypeIds(List.of(0L));
+            op20.setOrganizerId(0L);
+            op20.setEventTypeIds(Collections.emptyList());
             op20.setCompanyId(0L);
+
+            OlapEventTypeParametersDto op21 = new OlapEventTypeParametersDto();
+            op21.setCubeType(CubeType.COMPANIES);
+            op21.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op21.setConferences(true);
+            op21.setMeetups(true);
+            op21.setEventTypeIds(List.of(42L));
+            op21.setCompanyId(0L);
+
+            OlapEventTypeParametersDto op22 = new OlapEventTypeParametersDto();
+            op22.setCubeType(CubeType.COMPANIES);
+            op22.setMeasureType(MeasureType.EVENTS_QUANTITY);
+            op22.setConferences(true);
+            op22.setMeetups(true);
+            op22.setEventTypeIds(List.of(0L));
+            op22.setCompanyId(0L);
 
             OlapEntityStatistics<Integer, EventType> expected0 = new OlapEntityStatistics<>(dimensionValues0, metricsList0, totals0);
             OlapEntityStatistics<Integer, EventType> expected1 = new OlapEntityStatistics<>(dimensionValues0, metricsList1, totals1);
@@ -367,19 +385,21 @@ class OlapServiceImplTest {
                     arguments(op6, null, expected2),
                     arguments(op7, null, expected0),
                     arguments(op8, null, expected3),
-                    arguments(op9, null, expected0),
-                    arguments(op10, null, expected3),
+                    arguments(op9, null, expected3),
+                    arguments(op10, null, expected0),
+                    arguments(op11, null, expected3),
 
-                    arguments(op11, null, expected0),
                     arguments(op12, null, expected0),
                     arguments(op13, null, expected0),
-                    arguments(op14, null, expected1),
-                    arguments(op15, null, expected0),
-                    arguments(op16, null, expected2),
-                    arguments(op17, null, expected0),
-                    arguments(op18, null, expected3),
-                    arguments(op19, null, expected0),
-                    arguments(op20, null, expected3)
+                    arguments(op14, null, expected0),
+                    arguments(op15, null, expected1),
+                    arguments(op16, null, expected0),
+                    arguments(op17, null, expected2),
+                    arguments(op18, null, expected0),
+                    arguments(op19, null, expected3),
+                    arguments(op20, null, expected3),
+                    arguments(op21, null, expected0),
+                    arguments(op22, null, expected3)
             );
         }
 
