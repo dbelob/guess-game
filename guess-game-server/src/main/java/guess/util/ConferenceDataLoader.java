@@ -1577,7 +1577,7 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.JBREAK, LocalDate.of(2017, 4, 4), "2017JBreak",
 //                LoadSettings.invalidTalksSet(Set.of("Верхом на реактивных стримах")));
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2017, 4, 7), "2017JPoint",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Владимир Озеров", new Company(224, "GridGain Systems")), 28L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Владимир Озеров", new Company(224, "GridGain Systems")), 136L)));
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2017, 4, 21), "2017spb");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2017, 5, 19), "2017spb",
 //                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", new Company(601, "Xpirit")), 408L)));
@@ -1750,6 +1750,11 @@ public class ConferenceDataLoader {
 //                new LoadSettings(
 //                        Collections.emptyMap(),
 //                        Set.of("Открытие конференции Heisenbug 2021 Moscow", "Разговор в студии"),
+//                        false));
+//        loadTalksSpeakersEvent(Conference.SMART_DATA, LocalDate.of(2021, 10, 11), "2021spbsmartdata",
+//                new LoadSettings(
+//                        Map.of(new NameCompany("Владимир Озеров", new Company(782, "Querify Labs")), 136L),
+//                        Set.of("Открытие конференции SmartData 2021", "Разговор в телевизоре", "Закрытие конференции SmartData 2021"),
 //                        false));
     }
 }
