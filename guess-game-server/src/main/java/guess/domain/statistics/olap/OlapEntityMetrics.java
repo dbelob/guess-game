@@ -34,7 +34,7 @@ public class OlapEntityMetrics<T> {
         if (this == o) return true;
         if (!(o instanceof OlapEntityMetrics)) return false;
         OlapEntityMetrics<?> that = (OlapEntityMetrics<?>) o;
-        return Objects.equals(getEntity(), that.getEntity()) && Objects.equals(getMeasureValues(), that.getMeasureValues()) && Objects.equals(getTotal(), that.getTotal());
+        return getTotal() == that.getTotal() && Objects.equals(getEntity(), that.getEntity()) && Objects.equals(getMeasureValues(), that.getMeasureValues());
     }
 
     @Override

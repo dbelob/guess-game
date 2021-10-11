@@ -23,7 +23,7 @@ public class Company extends Nameable {
     public String toString() {
         return "Company{" +
                 "id=" + getId() +
-                "name=" + getName() +
+                ", name=" + getName() +
                 '}';
     }
 }

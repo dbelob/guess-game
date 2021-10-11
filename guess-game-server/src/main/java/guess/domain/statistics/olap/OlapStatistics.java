@@ -4,6 +4,8 @@ import guess.domain.source.Company;
 import guess.domain.source.EventType;
 import guess.domain.source.Speaker;
 
+import java.util.Objects;
+
 /**
  * OLAP statistics.
  */
@@ -30,5 +32,27 @@ public class OlapStatistics {
 
     public OlapEntityStatistics<Integer, Company> getCompanyStatistics() {
         return companyStatistics;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof OlapStatistics)) return false;
+        OlapStatistics that = (OlapStatistics) o;
+        return Objects.equals(getEventTypeStatistics(), that.getEventTypeStatistics()) && Objects.equals(getSpeakerStatistics(), that.getSpeakerStatistics()) && Objects.equals(getCompanyStatistics(), that.getCompanyStatistics());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getEventTypeStatistics(), getSpeakerStatistics(), getCompanyStatistics());
+    }
+
+    @Override
+    public String toString() {
+        return "OlapStatistics{" +
+                "eventTypeStatistics=" + eventTypeStatistics +
+                ", speakerStatistics=" + speakerStatistics +
+                ", companyStatistics=" + companyStatistics +
+                '}';
     }
 }
