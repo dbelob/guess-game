@@ -105,12 +105,10 @@ public class StatisticsController {
     @GetMapping("/measure-types")
     @ResponseBody
     public List<MeasureType> getMeasureTypes(@RequestParam String cubeType) {
-        if ((cubeType == null) || cubeType.isEmpty()) {
+        if (cubeType.isEmpty()) {
             return Collections.emptyList();
         } else {
-            CubeType cubeTypeEnum = CubeType.valueOf(cubeType);
-
-            return olapService.getMeasureTypes(cubeTypeEnum);
+            return olapService.getMeasureTypes(CubeType.valueOf(cubeType));
         }
     }
 

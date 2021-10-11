@@ -18,6 +18,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.Mockito;
+import org.mockito.internal.verification.VerificationModeFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -188,9 +189,13 @@ class OlapServiceImplTest {
 
     @Test
     void getMeasureTypes() {
-        assertEquals(List.of(MeasureType.EVENTS_QUANTITY, MeasureType.DURATION, MeasureType.TALKS_QUANTITY,
-                        MeasureType.SPEAKERS_QUANTITY, MeasureType.JAVA_CHAMPIONS_QUANTITY, MeasureType.MVPS_QUANTITY),
-                olapService.getMeasureTypes(CubeType.EVENT_TYPES));
+        OlapDao olapDao = Mockito.mock(OlapDao.class);
+        OlapService olapService = new OlapServiceImpl(olapDao);
+
+        olapService.getMeasureTypes(CubeType.EVENT_TYPES);
+
+        Mockito.verify(olapDao, VerificationModeFactory.times(1)).getMeasureTypes(CubeType.EVENT_TYPES);
+        Mockito.verifyNoMoreInteractions(olapDao);
     }
 
     @Nested

@@ -9,13 +9,19 @@ import guess.domain.statistics.event.EventMetrics;
 import guess.domain.statistics.event.EventStatistics;
 import guess.domain.statistics.eventtype.EventTypeMetrics;
 import guess.domain.statistics.eventtype.EventTypeStatistics;
+import guess.domain.statistics.olap.CubeType;
 import guess.domain.statistics.speaker.SpeakerMetrics;
 import guess.domain.statistics.speaker.SpeakerStatistics;
 import guess.service.LocaleService;
 import guess.service.OlapService;
 import guess.service.StatisticsService;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.Mockito;
 import org.mockito.internal.verification.VerificationModeFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,9 +33,11 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasSize;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -248,5 +256,48 @@ class StatisticsControllerTest {
                 .andExpect(jsonPath("$.totals.speakersQuantity", is(60)));
         Mockito.verify(statisticsService, VerificationModeFactory.times(1)).getCompanyStatistics(conferences, meetups, organizerId, eventTypeId);
         Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
+    }
+
+    @Test
+    void getCubeTypes() throws Exception {
+        mvc.perform(get("/api/statistics/cube-types")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(3)))
+                .andExpect(jsonPath("$[0]", is("EVENT_TYPES")))
+                .andExpect(jsonPath("$[1]", is("SPEAKERS")))
+                .andExpect(jsonPath("$[2]", is("COMPANIES")));
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getMeasureTypes method with parameters tests")
+    class GetMeasureTypesTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(""),
+                    arguments("EVENT_TYPES")
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getMeasureTypes(String cubeType) throws Exception {
+            if (cubeType.isEmpty()) {
+                mvc.perform(get("/api/statistics/measure-types")
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .param("cubeType", cubeType))
+                        .andExpect(status().isOk())
+                        .andExpect(jsonPath("$", hasSize(0)));
+                Mockito.verifyNoMoreInteractions(olapService);
+            } else {
+                mvc.perform(get("/api/statistics/measure-types")
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .param("cubeType", cubeType))
+                        .andExpect(status().isOk());
+                Mockito.verify(olapService, VerificationModeFactory.times(1)).getMeasureTypes(CubeType.valueOf(cubeType));
+                Mockito.verifyNoMoreInteractions(olapService);
+            }
+        }
     }
 }
