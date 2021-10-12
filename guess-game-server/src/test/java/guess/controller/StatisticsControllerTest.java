@@ -13,9 +13,13 @@ import guess.domain.statistics.olap.CubeType;
 import guess.domain.statistics.olap.OlapEntityMetrics;
 import guess.domain.statistics.olap.OlapEntityStatistics;
 import guess.domain.statistics.olap.OlapStatistics;
+import guess.domain.statistics.olap.dimension.City;
 import guess.domain.statistics.speaker.SpeakerMetrics;
 import guess.domain.statistics.speaker.SpeakerStatistics;
+import guess.dto.statistics.olap.OlapCityParametersDto;
+import guess.dto.statistics.olap.OlapEventTypeParametersDto;
 import guess.dto.statistics.olap.OlapParametersDto;
+import guess.dto.statistics.olap.OlapSpeakerParametersDto;
 import guess.service.LocaleService;
 import guess.service.OlapService;
 import guess.service.StatisticsService;
@@ -416,5 +420,117 @@ class StatisticsControllerTest {
             Mockito.verify(olapService, VerificationModeFactory.times(1)).getOlapStatistics(Mockito.any());
             Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
         }
+    }
+
+    @Test
+    void getOlapEventTypeStatistics() throws Exception {
+        Organizer organizer0 = new Organizer(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+        Organizer organizer1 = new Organizer(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+
+        EventType eventType0 = new EventType();
+        eventType0.setId(0);
+        eventType0.setOrganizer(organizer1);
+
+        EventType eventType1 = new EventType();
+        eventType1.setId(1);
+        eventType1.setOrganizer(organizer0);
+
+        List<Integer> dimensionValues0 = List.of(2020, 2021);
+
+        List<OlapEntityMetrics<EventType>> metricsList0 = List.of(
+                new OlapEntityMetrics<>(eventType0, List.of(0L, 1L), 1L),
+                new OlapEntityMetrics<>(eventType1, List.of(1L, 0L), 1L)
+        );
+        OlapEntityMetrics<Void> totals0 = new OlapEntityMetrics<>(null, List.of(1L, 1L), 2L);
+
+        OlapEntityStatistics<Integer, EventType> eventTypeStatistics0 = new OlapEntityStatistics<>(dimensionValues0, metricsList0, totals0);
+
+        MockHttpSession httpSession = new MockHttpSession();
+
+        given(olapService.getOlapEventTypeStatistics(Mockito.any())).willReturn(eventTypeStatistics0);
+        given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
+
+        mvc.perform(post("/api/statistics/olap-event-type-statistics")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(JsonUtil.toJson(new OlapEventTypeParametersDto()))
+                        .session(httpSession))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.metricsList", hasSize(2)))
+                .andExpect(jsonPath("$.metricsList[0].id", is(1)))
+                .andExpect(jsonPath("$.metricsList[1].id", is(0)));
+
+        Mockito.verify(olapService, VerificationModeFactory.times(1)).getOlapEventTypeStatistics(Mockito.any());
+        Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
+    }
+
+    @Test
+    void getOlapSpeakerStatistics() throws Exception {
+        Speaker speaker0 = new Speaker();
+        speaker0.setId(0);
+        speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+
+        Speaker speaker1 = new Speaker();
+        speaker1.setId(1);
+        speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+
+        List<Integer> dimensionValues0 = List.of(2020, 2021);
+
+        List<OlapEntityMetrics<Speaker>> metricsList0 = List.of(
+                new OlapEntityMetrics<>(speaker0, List.of(0L, 1L), 1L),
+                new OlapEntityMetrics<>(speaker1, List.of(2L, 0L), 2L)
+        );
+        OlapEntityMetrics<Void> totals0 = new OlapEntityMetrics<>(null, List.of(2L, 1L), 3L);
+
+        OlapEntityStatistics<Integer, Speaker> speakerStatistics0 = new OlapEntityStatistics<>(dimensionValues0, metricsList0, totals0);
+
+        MockHttpSession httpSession = new MockHttpSession();
+
+        given(olapService.getOlapSpeakerStatistics(Mockito.any())).willReturn(speakerStatistics0);
+        given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
+
+        mvc.perform(post("/api/statistics/olap-speaker-statistics")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(JsonUtil.toJson(new OlapSpeakerParametersDto()))
+                        .session(httpSession))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.metricsList", hasSize(2)))
+                .andExpect(jsonPath("$.metricsList[0].id", is(1)))
+                .andExpect(jsonPath("$.metricsList[1].id", is(0)));
+
+        Mockito.verify(olapService, VerificationModeFactory.times(1)).getOlapSpeakerStatistics(Mockito.any());
+        Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
+    }
+
+    @Test
+    void getOlapCityStatistics() throws Exception {
+        City city0 = new City(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+        City city1 = new City(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+
+        List<Integer> dimensionValues0 = List.of(2020, 2021);
+
+        List<OlapEntityMetrics<City>> metricsList0 = List.of(
+                new OlapEntityMetrics<>(city1, List.of(2L, 0L), 2L),
+                new OlapEntityMetrics<>(city0, List.of(0L, 1L), 1L)
+        );
+        OlapEntityMetrics<Void> totals0 = new OlapEntityMetrics<>(null, List.of(2L, 1L), 3L);
+
+        OlapEntityStatistics<Integer, City> cityStatistics0 = new OlapEntityStatistics<>(dimensionValues0, metricsList0, totals0);
+
+        MockHttpSession httpSession = new MockHttpSession();
+
+        given(olapService.getOlapCityStatistics(Mockito.any())).willReturn(cityStatistics0);
+        given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
+
+        mvc.perform(post("/api/statistics/olap-city-statistics")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(JsonUtil.toJson(new OlapCityParametersDto()))
+                        .session(httpSession))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.metricsList", hasSize(2)))
+                .andExpect(jsonPath("$.metricsList[0].id", is(0)))
+                .andExpect(jsonPath("$.metricsList[1].id", is(1)));
+
+        Mockito.verify(olapService, VerificationModeFactory.times(1)).getOlapCityStatistics(Mockito.any());
+        Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
     }
 }
