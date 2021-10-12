@@ -34,9 +34,10 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public List<Event> getEvents(boolean isConferences, boolean isMeetups, Long eventTypeId) {
+    public List<Event> getEvents(boolean isConferences, boolean isMeetups, Long organizerId, Long eventTypeId) {
         return eventTypeDao.getEventTypes().stream()
                 .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
+                        ((organizerId == null) || (et.getOrganizer().getId() == organizerId)) &&
                         ((eventTypeId == null) || (et.getId() == eventTypeId)))
                 .flatMap(et -> et.getEvents().stream())
                 .collect(Collectors.toList());
@@ -171,15 +172,15 @@ public class EventServiceImpl implements EventService {
         return eventDateMinTrackTimeList.stream()
                 .map(edt -> {
                     var minTrackDateTime = ZonedDateTime.of(
-                            edt.getDate(),
-                            edt.getMinTrackTime(),
-                            edt.getEvent().getFinalTimeZoneId())
+                                    edt.getDate(),
+                                    edt.getMinTrackTime(),
+                                    edt.getEvent().getFinalTimeZoneId())
                             .withZoneSameInstant(ZoneId.of("UTC"))
                             .toLocalDateTime();
                     var endDayDateTime = ZonedDateTime.of(
-                            edt.getDate().plus(1, ChronoUnit.DAYS),
-                            LocalTime.of(0, 0, 0),
-                            edt.getEvent().getFinalTimeZoneId())
+                                    edt.getDate().plus(1, ChronoUnit.DAYS),
+                                    LocalTime.of(0, 0, 0),
+                                    edt.getEvent().getFinalTimeZoneId())
                             .withZoneSameInstant(ZoneId.of("UTC"))
                             .toLocalDateTime();
 

@@ -114,6 +114,13 @@ public class SourceDaoImpl implements SourceDao {
     }
 
     @Override
+    public List<Company> getCompaniesByIds(List<Long> ids) {
+        return sourceInformation.getCompanies().stream()
+                .filter(c -> (ids.contains(c.getId())))
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public List<Speaker> getSpeakers() {
         return sourceInformation.getSpeakers();
     }
@@ -124,6 +131,13 @@ public class SourceDaoImpl implements SourceDao {
                 .filter(s -> (s.getId() == id))
                 .findFirst()
                 .orElseThrow();
+    }
+
+    @Override
+    public List<Speaker> getSpeakerByIds(List<Long> ids) {
+        return sourceInformation.getSpeakers().stream()
+                .filter(s -> (ids.contains(s.getId())))
+                .collect(Collectors.toList());
     }
 
     @Override

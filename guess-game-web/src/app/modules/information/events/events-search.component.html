@@ -29,11 +29,21 @@
         </div>
       </div>
       <div class="form-group row justify-content-center align-items-center">
+        <label for="organizer" class="col-auto text-right">{{'common.list.organizerLabel' | translate}}</label>
+        <div class="col-auto">
+          <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
+                      placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"
+                      (onChange)="onOrganizerChange()" name="organizer" styleClass="organizer-dropdown">
+            <ng-template let-organizer pTemplate="item">
+              {{organizer.value.name}}
+            </ng-template>
+          </p-dropdown>
+        </div>
         <label for="conference" class="col-auto text-right">{{'common.list.eventTypeLabel' | translate}}</label>
         <div class="col-auto">
           <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="conference"
                       placeholder="{{'common.list.eventTypePlaceholder' | translate}}" [showClear]="true"
-                      (onChange)="onEventTypeChange($event.value)" name="conference" styleClass="event-type-dropdown">
+                      (onChange)="onEventTypeChange()" name="conference" styleClass="event-type-dropdown">
             <ng-template let-eventType pTemplate="item">
               <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
               <span class="ml-2">{{eventType.value.name}}</span>

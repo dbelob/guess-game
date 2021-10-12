@@ -3,7 +3,7 @@ package guess.dto.statistics;
 import guess.domain.Language;
 import guess.domain.source.Speaker;
 import guess.domain.statistics.AbstractSpeakerCompanyMetrics;
-import guess.domain.statistics.SpeakerMetrics;
+import guess.domain.statistics.speaker.SpeakerMetrics;
 import guess.util.LocalizationUtils;
 
 import java.util.List;

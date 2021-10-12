@@ -58,6 +58,7 @@ class EventControllerTest {
 
         boolean conferences = true;
         boolean meetups = true;
+        Long organizerId = null;
         Long eventTypeId = 0L;
 
         Organizer organizer0 = new Organizer();
@@ -85,7 +86,7 @@ class EventControllerTest {
         event2.setEndDate(LocalDate.of(2020, 10, 31));
         event2.setEventType(eventType0);
 
-        given(eventService.getEvents(conferences, meetups, eventTypeId)).willReturn(new ArrayList<>(List.of(event0, event1, event2)));
+        given(eventService.getEvents(conferences, meetups, organizerId, eventTypeId)).willReturn(new ArrayList<>(List.of(event0, event1, event2)));
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
         mvc.perform(get("/api/event/events")
@@ -99,7 +100,7 @@ class EventControllerTest {
                 .andExpect(jsonPath("$[0].id", is(2)))
                 .andExpect(jsonPath("$[1].id", is(0)))
                 .andExpect(jsonPath("$[2].id", is(1)));
-        Mockito.verify(eventService, VerificationModeFactory.times(1)).getEvents(conferences, meetups, eventTypeId);
+        Mockito.verify(eventService, VerificationModeFactory.times(1)).getEvents(conferences, meetups, organizerId, eventTypeId);
         Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
     }
 

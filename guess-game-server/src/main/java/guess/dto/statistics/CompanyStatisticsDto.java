@@ -1,7 +1,7 @@
 package guess.dto.statistics;
 
 import guess.domain.Language;
-import guess.domain.statistics.CompanyStatistics;
+import guess.domain.statistics.company.CompanyStatistics;
 
 import java.util.List;
 

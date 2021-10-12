@@ -50,6 +50,10 @@ export class EventTypeService {
       );
   }
 
+  getFilterConferences(organizer: Organizer): Observable<EventType[]> {
+    return this.getFilterEventTypes(true, false, organizer);
+  }
+
   getEventType(id: number): Observable<EventTypeDetails> {
     return this.http.get<EventTypeDetails>(`${this.baseUrl}/event-type/${id}`)
       .pipe(

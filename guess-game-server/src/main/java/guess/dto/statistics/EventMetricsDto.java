@@ -1,8 +1,8 @@
 package guess.dto.statistics;
 
 import guess.domain.Language;
-import guess.domain.statistics.AbstractEventMetrics;
-import guess.domain.statistics.EventMetrics;
+import guess.domain.statistics.event.AbstractEventMetrics;
+import guess.domain.statistics.event.EventMetrics;
 import guess.util.LocalizationUtils;
 
 import java.util.List;

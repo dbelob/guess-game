@@ -7,6 +7,9 @@ import { Speaker } from '../../shared/models/speaker/speaker.model';
 import { EventTypeMetrics } from '../../shared/models/statistics/event-type-metrics.model';
 import { EventTypeStatistics } from '../../shared/models/statistics/event-type-statistics.model';
 import { Organizer } from '../../shared/models/organizer/organizer.model';
+import { OlapEntityStatistics } from '../../shared/models/statistics/olap/olap-entity-statistics.model';
+import { OlapEventTypeMetrics } from '../../shared/models/statistics/olap/olap-event-type-metrics.model';
+import { OlapEntityMetrics } from '../../shared/models/statistics/olap/olap-entity-metrics.model';
 
 export function isStringEmpty(value: string): boolean {
   return (!value || (value.trim().length <= 0));
@@ -34,6 +37,20 @@ export function findEventTypeById(id: number, eventTypes: EventType[]): EventTyp
   }
 
   return null;
+}
+
+export function findEventTypesByIds(ids: number[], eventTypes: EventType[]): EventType[] {
+  const result: EventType[] = [];
+
+  for (let id of ids) {
+    const eventType = findEventTypeById(id, eventTypes);
+
+    if (eventType) {
+      result.push(eventType);
+    }
+  }
+
+  return result;
 }
 
 export function findEventById(id: number, events: Event[]): Event {
@@ -104,12 +121,16 @@ export function getEventDisplayName(event: Event, translateService: TranslateSer
   return displayName;
 }
 
+function getSortName(conference: boolean, organizerName: string, name: string): string {
+  return (conference ? '0' : '1') + organizerName + name;
+}
+
 export function getEventTypesWithSortName(eventTypes: EventType[]): EventType[] {
   if (eventTypes) {
     for (let i = 0; i < eventTypes.length; i++) {
       const eventType: EventType = eventTypes[i];
 
-      eventType.sortName = (eventType.conference ? '0' : '1') + eventType.organizerName + eventType.name;
+      eventType.sortName = getSortName(eventType.conference, eventType.organizerName, eventType.name);
     }
   }
 
@@ -123,7 +144,21 @@ export function getEventTypeStatisticsWithSortName(eventTypeStatistics: EventTyp
     for (let i = 0; i < eventTypeMetricsList.length; i++) {
       const eventTypeMetrics: EventTypeMetrics = eventTypeMetricsList[i];
 
-      eventTypeMetrics.sortName = (eventTypeMetrics.conference ? '0' : '1') + eventTypeMetrics.organizerName + eventTypeMetrics.displayName;
+      eventTypeMetrics.sortName = getSortName(eventTypeMetrics.conference, eventTypeMetrics.organizerName, eventTypeMetrics.displayName);
+    }
+  }
+
+  return eventTypeStatistics;
+}
+
+export function getOlapEventTypeStatisticsWithSortName(eventTypeStatistics: OlapEntityStatistics<number, OlapEventTypeMetrics>): OlapEntityStatistics<number, OlapEventTypeMetrics> {
+  const eventTypeMetricsList: OlapEventTypeMetrics[] = eventTypeStatistics.metricsList;
+
+  if (eventTypeMetricsList) {
+    for (let i = 0; i < eventTypeMetricsList.length; i++) {
+      const eventTypeMetrics: OlapEventTypeMetrics = eventTypeMetricsList[i];
+
+      eventTypeMetrics.sortName = getSortName(eventTypeMetrics.conference, eventTypeMetrics.organizerName, eventTypeMetrics.name);
     }
   }
 
@@ -168,4 +203,43 @@ export function getSpeakersWithCompaniesString(speakers: Speaker[]): Speaker[] {
   }
 
   return speakers;
+}
+
+export function getFixedMeasureValues(measureValues: number[], quantity: number): number[] {
+  if (measureValues) {
+    if (measureValues.length < quantity) {
+      return measureValues.concat(Array(quantity - measureValues.length).fill(null))
+    } else if (measureValues.length > quantity) {
+      return measureValues.slice(0, quantity);
+    } else {
+      return measureValues;
+    }
+  } else {
+    return Array(quantity).fill(null);
+  }
+}
+
+export function fixOlapEntityStatistics<T, S extends OlapEntityMetrics>(entityStatistics: OlapEntityStatistics<T, S>,
+                                                                        measureValueFieldNamePrefix: string) {
+  const quantity = entityStatistics.dimensionValues.length;
+
+  entityStatistics.metricsList.forEach(metrics => {
+    metrics.measureValues = getFixedMeasureValues(metrics.measureValues, quantity);
+
+    for (let i = 0; i < metrics.measureValues.length; i++) {
+      metrics[measureValueFieldNamePrefix + i] = metrics.measureValues[i];
+    }
+  });
+
+  entityStatistics.totals.measureValues = getFixedMeasureValues(entityStatistics.totals.measureValues, quantity);
+}
+
+export function getColorByIndex(index: number): string {
+  const DEFAULT_COLORS = [
+    '#3366cc', '#dc3912', '#ff9900', '#109618', '#990099',
+    '#3b3eac', '#0099c6', '#dd4477', '#66aa00', '#b82e2e',
+    '#316395', '#994499', '#22aa99', '#aaaa11', '#6633cc',
+    '#e67300', '#8b0707', '#329262', '#5574a6', '#3b3eac'];
+
+  return DEFAULT_COLORS[index % DEFAULT_COLORS.length];
 }

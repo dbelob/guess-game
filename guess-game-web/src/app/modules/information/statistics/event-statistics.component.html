@@ -17,11 +17,22 @@
   <div class="m-1">
     <form role="form" class="m-2">
       <div class="form-group row justify-content-center align-items-center">
+        <label for="organizer" class="col-auto text-right">{{'common.list.organizerLabel' | translate}}</label>
+        <div class="col-auto">
+          <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
+                      placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"
+                      (onChange)="onOrganizerChange()" name="organizer" styleClass="organizer-dropdown">
+            <ng-template let-organizer pTemplate="item">
+              {{organizer.value.name}}
+            </ng-template>
+          </p-dropdown>
+        </div>
         <label for="conference" class="col-auto text-right">{{'statistics.events.conferenceLabel' | translate}}</label>
         <div class="col-auto">
           <p-dropdown [options]="conferenceSelectItems" [(ngModel)]="selectedConference" id="conference"
                       placeholder="{{'statistics.events.conferencePlaceholder' | translate}}" [showClear]="true"
-                      (onChange)="onConferenceChange($event.value)" name="conference" styleClass="event-type-dropdown">
+                      (onChange)="onConferenceChange($event.value)" name="conference" styleClass="event-type-dropdown"
+                      emptyMessage="{{'common.list.emptyMessage' | translate}}">
             <ng-template let-eventType pTemplate="item">
               <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
               <span class="ml-2">{{eventType.value.name}}</span>
@@ -32,7 +43,7 @@
     </form>
 
     <div *ngIf="isNoEventsFoundVisible()" class="alert text-center m-2">
-      {{'statistics.events.noEventsFoundText' | translate}}
+      {{'statistics.events.noEventsDataFoundText' | translate}}
     </div>
 
     <div *ngIf="isEventsListVisible()" class="m-2">

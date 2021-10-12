@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SelectItem } from 'primeng/api';
 import { TranslateService } from '@ngx-translate/core';
+import { SelectItem } from 'primeng/api';
 import { EventType } from '../../../shared/models/event-type/event-type.model';
 import { SpeakerStatistics } from '../../../shared/models/statistics/speaker-statistics.model';
 import { Organizer } from '../../../shared/models/organizer/organizer.model';

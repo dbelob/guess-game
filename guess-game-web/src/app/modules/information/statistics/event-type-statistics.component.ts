@@ -95,7 +95,7 @@ export class EventTypeStatisticsComponent implements OnInit {
       });
   }
 
-  isNoEventTypesFoundVisible() {
+  isNoEventTypesDataFoundVisible() {
     return (this.eventTypeStatistics?.eventTypeMetricsList && (this.eventTypeStatistics.eventTypeMetricsList.length === 0));
   }
 

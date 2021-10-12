@@ -1,4 +1,6 @@
-export class EventTypeMetrics {
+import { SortableEventTypeMetrics } from './sortable-event-type-metrics.model';
+
+export class EventTypeMetrics implements SortableEventTypeMetrics {
   constructor(
     public id?: number,
     public displayName?: string,

@@ -8,7 +8,18 @@ import { EventStatistics } from '../models/statistics/event-statistics.model';
 import { SpeakerStatistics } from '../models/statistics/speaker-statistics.model';
 import { CompanyStatistics } from '../models/statistics/company-statistics.model';
 import { Organizer } from '../models/organizer/organizer.model';
+import { CubeType } from '../models/statistics/olap/cube-type.model';
+import { MeasureType } from '../models/statistics/olap/measure-type.model';
 import { MessageService } from '../../modules/message/message.service';
+import { OlapStatistics } from "../models/statistics/olap/olap-statistics.model";
+import { OlapParameters } from "../models/statistics/olap/olap.parameters.model";
+import { OlapEventTypeParameters } from "../models/statistics/olap/olap-event-type-parameters.model";
+import { OlapEntityStatistics } from "../models/statistics/olap/olap-entity-statistics.model";
+import { OlapEventTypeMetrics } from "../models/statistics/olap/olap-event-type-metrics.model";
+import { OlapSpeakerMetrics } from '../models/statistics/olap/olap-speaker-metrics.model';
+import { OlapSpeakerParameters } from '../models/statistics/olap/olap-speaker-parameters.model';
+import { OlapCityMetrics } from '../models/statistics/olap/olap-city-metrics.model';
+import { OlapCityParameters } from '../models/statistics/olap/olap-city-parameters.model';
 
 @Injectable({
   providedIn: 'root'
@@ -36,8 +47,11 @@ export class StatisticsService {
       );
   }
 
-  getEventStatistics(eventType: EventType): Observable<EventStatistics> {
+  getEventStatistics(organizer: Organizer, eventType: EventType): Observable<EventStatistics> {
     let params = new HttpParams();
+    if (organizer) {
+      params = params.set('organizerId', organizer.id.toString());
+    }
     if (eventType) {
       params = params.set('eventTypeId', eventType.id.toString());
     }
@@ -91,8 +105,61 @@ export class StatisticsService {
       );
   }
 
-  getConferences(): Observable<EventType[]> {
-    return this.http.get<EventType[]>(`${this.baseUrl}/conferences`)
+  getCubeTypes(): Observable<CubeType[]> {
+    return this.http.get<CubeType[]>(`${this.baseUrl}/cube-types`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getMeasureTypes(cubeType: CubeType): Observable<MeasureType[]> {
+    const params = new HttpParams()
+      .set('cubeType', (cubeType) ? cubeType.toString() : null);
+
+    return this.http.get<MeasureType[]>(`${this.baseUrl}/measure-types`, {params: params})
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getOlapStatistics(olapParameters: OlapParameters): Observable<OlapStatistics> {
+    return this.http.post<OlapStatistics>(`${this.baseUrl}/olap-statistics`, olapParameters)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getOlapEventTypeStatistics(olapParameters: OlapEventTypeParameters): Observable<OlapEntityStatistics<number, OlapEventTypeMetrics>> {
+    return this.http.post<OlapEntityStatistics<number, OlapEventTypeMetrics>>(`${this.baseUrl}/olap-event-type-statistics`, olapParameters)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getOlapSpeakerStatistics(olapParameters: OlapSpeakerParameters): Observable<OlapEntityStatistics<number, OlapSpeakerMetrics>> {
+    return this.http.post<OlapEntityStatistics<number, OlapSpeakerMetrics>>(`${this.baseUrl}/olap-speaker-statistics`, olapParameters)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getOlapCityStatistics(olapParameters: OlapCityParameters): Observable<OlapEntityStatistics<number, OlapCityMetrics>> {
+    return this.http.post<OlapEntityStatistics<number, OlapCityMetrics>>(`${this.baseUrl}/olap-city-statistics`, olapParameters)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

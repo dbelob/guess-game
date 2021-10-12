@@ -30,6 +30,11 @@ public class SpeakerServiceImpl implements SpeakerService {
     }
 
     @Override
+    public List<Speaker> getSpeakerByIds(List<Long> ids) {
+        return speakerDao.getSpeakerByIds(ids);
+    }
+
+    @Override
     public List<Speaker> getSpeakersByFirstLetter(String firstLetter, Language language) {
         return speakerDao.getSpeakers().stream()
                 .filter(s -> {
@@ -50,6 +55,15 @@ public class SpeakerServiceImpl implements SpeakerService {
     }
 
     @Override
+    public List<Speaker> getSpeakersByFirstLetters(String firstLetters, Language language) {
+        String lowerCaseFirstLetters = (firstLetters != null) ? firstLetters.toLowerCase() : "";
+
+        return speakerDao.getSpeakers().stream()
+                .filter(s -> LocalizationUtils.getString(s.getNameWithLastNameFirst(), language).toLowerCase().indexOf(lowerCaseFirstLetters) == 0)
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public List<Speaker> getSpeakers(String name, String company, String twitter, String gitHub, boolean isJavaChampion, boolean isMvp) {
         String trimmedLowerCasedName = SearchUtils.trimAndLowerCase(name);
         String trimmedLowerCasedCompany = SearchUtils.trimAndLowerCase(company);
@@ -64,7 +78,7 @@ public class SpeakerServiceImpl implements SpeakerService {
             return Collections.emptyList();
         } else {
             return speakerDao.getSpeakers().stream()
-                    .filter(s -> ((!isNameSet || SearchUtils.isSubstringFound(trimmedLowerCasedName, s.getName())) &&
+                    .filter(s -> ((!isNameSet || SearchUtils.isSubstringFound(trimmedLowerCasedName, s.getName()) || SearchUtils.isSubstringFound(trimmedLowerCasedName, s.getNameWithLastNameFirst())) &&
                             (!isCompanySet || isSpeakerCompanyFound(s, trimmedLowerCasedCompany)) &&
                             (!isTwitterSet || SearchUtils.isSubstringFound(trimmedLowerCasedTwitter, s.getTwitter())) &&
                             (!isGitHubSet || SearchUtils.isSubstringFound(trimmedLowerCasedGitHub, s.getGitHub())) &&

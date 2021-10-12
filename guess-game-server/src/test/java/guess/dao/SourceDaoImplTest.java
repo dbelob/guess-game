@@ -20,6 +20,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.collection.IsIterableContainingInAnyOrder.containsInAnyOrder;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("SourceDaoImpl class tests")
@@ -265,6 +267,17 @@ class SourceDaoImplTest {
     }
 
     @Test
+    void getCompaniesByIds() {
+        assertEquals(Collections.emptyList(), sourceDao.getCompaniesByIds(Collections.emptyList()));
+        assertEquals(List.of(company0), sourceDao.getCompaniesByIds(List.of(0L)));
+        assertEquals(List.of(company1), sourceDao.getCompaniesByIds(List.of(1L)));
+        assertEquals(List.of(company2), sourceDao.getCompaniesByIds(List.of(2L)));
+
+        assertThat(sourceDao.getCompaniesByIds(List.of(0L, 1L)), containsInAnyOrder(List.of(company0, company1).toArray()));
+        assertThat(sourceDao.getCompaniesByIds(List.of(0L, 1L, 2L)), containsInAnyOrder(List.of(company0, company1, company2).toArray()));
+    }
+
+    @Test
     void getSpeakers() {
         assertEquals(List.of(speaker0, speaker1, speaker2, speaker3), sourceDao.getSpeakers());
     }
@@ -277,6 +290,17 @@ class SourceDaoImplTest {
         assertEquals(speaker3, sourceDao.getSpeakerById(3));
         assertThrows(NoSuchElementException.class, () -> sourceDao.getSpeakerById(4));
         assertThrows(NoSuchElementException.class, () -> sourceDao.getSpeakerById(5));
+    }
+
+    @Test
+    void getSpeakerByIds() {
+        assertEquals(Collections.emptyList(), sourceDao.getSpeakerByIds(Collections.emptyList()));
+        assertEquals(List.of(speaker0), sourceDao.getSpeakerByIds(List.of(0L)));
+        assertEquals(List.of(speaker1), sourceDao.getSpeakerByIds(List.of(1L)));
+        assertEquals(List.of(speaker2), sourceDao.getSpeakerByIds(List.of(2L)));
+
+        assertThat(sourceDao.getSpeakerByIds(List.of(0L, 1L)), containsInAnyOrder(List.of(speaker0, speaker1).toArray()));
+        assertThat(sourceDao.getSpeakerByIds(List.of(0L, 1L, 2L)), containsInAnyOrder(List.of(speaker0, speaker1, speaker2).toArray()));
     }
 
     @Test

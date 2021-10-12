@@ -81,7 +81,7 @@ export class TalksSearchComponent implements OnInit {
               this.defaultEvent = defaultEventData;
 
               const selectedEventType = (this.defaultEvent) ? findEventTypeById(this.defaultEvent.eventTypeId, this.eventTypes) : null;
-              this.selectedEventType = (selectedEventType) ? selectedEventType : this.eventTypes[0];
+              this.selectedEventType = (selectedEventType) ? selectedEventType : null;
 
               this.loadEvents(this.selectedEventType);
             });
@@ -99,13 +99,13 @@ export class TalksSearchComponent implements OnInit {
 
   loadEvents(eventType: EventType) {
     if (eventType) {
-      this.eventService.getEvents(true, true, eventType)
+      this.eventService.getEvents(true, true, null, eventType)
         .subscribe(data => {
           this.fillEvents(data);
 
           if (this.events.length > 0) {
             const selectedEvent = (this.defaultEvent) ? findEventById(this.defaultEvent.id, this.events) : null;
-            this.selectedEvent = (selectedEvent) ? selectedEvent : this.events[0];
+            this.selectedEvent = (selectedEvent) ? selectedEvent : null;
           } else {
             this.selectedEvent = null;
           }
@@ -146,7 +146,7 @@ export class TalksSearchComponent implements OnInit {
 
         // Load events and search
         if (this.selectedEventType) {
-          this.eventService.getEvents(true, true, this.selectedEventType)
+          this.eventService.getEvents(true, true, null, this.selectedEventType)
             .subscribe(data => {
               this.fillEvents(data);
 

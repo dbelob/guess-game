@@ -1,4 +1,18 @@
 {
+  "cubeType": {
+    "eventTypes": "Типы событий",
+    "speakers": "Спикеры",
+    "companies": "Компании"
+  },
+  "measureType": {
+    "duration": "Длительность, дней",
+    "eventTypesQuantity": "Количество типов событий",
+    "eventsQuantity": "Количество событий",
+    "talksQuantity": "Количество докладов",
+    "speakersQuantity": "Количество спикеров",
+    "javaChampionsQuantity": "Количество Java Champions",
+    "mvpsQuantity": "Количество MVPs"
+  },
   "common": {
     "menuLinkText": "Меню",
     "cancelLinkText": "Прервать",
@@ -17,10 +31,16 @@
     "list": {
       "organizerLabel": "Организатор:",
       "eventTypeLabel": "Тип события:",
+      "eventTypesLabel": "Типы событий:",
       "eventLabel": "Событие:",
+      "speakerLabel": "Спикер:",
+      "companyLabel": "Компания:",
       "organizerPlaceholder": "Все",
       "eventTypePlaceholder": "Все",
-      "eventPlaceholder": "Все"
+      "eventPlaceholder": "Все",
+      "speakersPlaceholder": "Все",
+      "companiesPlaceholder": "Все",
+      "emptyMessage": "Нет элементов"
     },
     "table": {
       "totalsText": "Всего",
@@ -126,8 +146,7 @@
     },
     "search": {
       "title": "Поиск",
-      "nameLabel": "Наименование:",
-      "speakerLabel": "Спикер:"
+      "nameLabel": "Наименование:"
     }
   },
   "speaker": {
@@ -152,7 +171,6 @@
     "search": {
       "title": "Поиск",
       "nameLabel": "Имя:",
-      "companyLabel": "Компания:",
       "twitterLabel": "Twitter:",
       "gitHubLabel": "GitHub:",
       "javaChampionLabel": "Java Champion",
@@ -163,7 +181,7 @@
     "title": "Статистика",
     "eventTypes": {
       "title": "Типы событий",
-      "noEventTypesFoundText": "Типы событий не найдены",
+      "noEventTypesDataFoundText": "Данные о типах событий не найдены",
       "table": {
         "kindColumn": "Вид",
         "organizerNameColumn": "Организатор",
@@ -182,7 +200,7 @@
       "title": "События",
       "conferenceLabel": "Конференция:",
       "conferencePlaceholder": "Все",
-      "noEventsFoundText": "События не найдены",
+      "noEventsDataFoundText": "Данные о событиях не найдены",
       "table": {
         "nameColumn": "Наименование",
         "startDateColumn": "Начальная дата",
@@ -195,7 +213,7 @@
     },
     "speakers": {
       "title": "Спикеры",
-      "noSpeakersFoundText": "Спикеры не найдены",
+      "noSpeakersDataFoundText": "Данные о спикерах не найдены",
       "table": {
         "nameColumn": "Имя",
         "talksColumn": "Докладов",
@@ -207,7 +225,7 @@
     },
     "companies": {
       "title": "Компании",
-      "noCompaniesFoundText": "Компании не найдены",
+      "noCompaniesDataFoundText": "Данные о компаниях не найдены",
       "table": {
         "companyColumn": "Компания",
         "speakersColumn": "Спикеров",
@@ -216,6 +234,29 @@
         "eventTypesColumn": "Типов событий",
         "javaChampionsColumn": "Java Champions",
         "mvpsColumn": "MVPs"
+      }
+    },
+    "olap" : {
+      "cubeLabel": "Куб:",
+      "cubePlaceholder": "Все",
+      "measureLabel": "Показатель:",
+      "measurePlaceholder": "Все",
+      "speakersLabel": "Спикеры:",
+      "companiesLabel": "Компании:",
+      "noEventTypesDataFoundText": "Данные о типах событий не найдены",
+      "noSpeakersDataFoundText": "Данные о спикерах не найдены",
+      "noCompaniesDataFoundText": "Данные о компаниях не найдены",
+      "chart": {
+        "detailsLabel": "Подробно",
+        "totalLabel": "Всего"
+      },
+      "table": {
+        "kindColumn": "Вид",
+        "organizerNameColumn": "Организатор",
+        "eventTypeNameColumn": "Наименование",
+        "speakerNameColumn": "Имя",
+        "companyColumn": "Компания",
+        "cityColumn": "Город"
       }
     }
   },

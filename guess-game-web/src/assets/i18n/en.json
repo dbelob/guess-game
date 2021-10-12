@@ -1,4 +1,18 @@
 {
+  "cubeType": {
+    "eventTypes": "Event types",
+    "speakers": "Speakers",
+    "companies": "Companies"
+  },
+  "measureType": {
+    "duration": "Duration, days",
+    "eventTypesQuantity": "Event types quantity",
+    "eventsQuantity": "Events quantity",
+    "talksQuantity": "Talks quantity",
+    "speakersQuantity": "Speakers quantity",
+    "javaChampionsQuantity": "Java Champions quantity",
+    "mvpsQuantity": "MVPs quantity"
+  },
   "common": {
     "menuLinkText": "Menu",
     "cancelLinkText": "Cancel",
@@ -17,10 +31,16 @@
     "list": {
       "organizerLabel": "Organizer:",
       "eventTypeLabel": "Event type:",
+      "eventTypesLabel": "Event types:",
       "eventLabel": "Event:",
+      "speakerLabel": "Speaker:",
+      "companyLabel": "Company:",
       "organizerPlaceholder": "All",
       "eventTypePlaceholder": "All",
-      "eventPlaceholder": "All"
+      "eventPlaceholder": "All",
+      "speakersPlaceholder": "All",
+      "companiesPlaceholder": "All",
+      "emptyMessage": "No items"
     },
     "table": {
       "totalsText": "Totals",
@@ -126,8 +146,7 @@
     },
     "search": {
       "title": "Search",
-      "nameLabel": "Name:",
-      "speakerLabel": "Speaker:"
+      "nameLabel": "Name:"
     }
   },
   "speaker": {
@@ -152,7 +171,6 @@
     "search": {
       "title": "Search",
       "nameLabel": "Name:",
-      "companyLabel": "Company:",
       "twitterLabel": "Twitter:",
       "gitHubLabel": "GitHub:",
       "javaChampionLabel": "Java Champion",
@@ -163,7 +181,7 @@
     "title": "Statistics",
     "eventTypes": {
       "title": "Event types",
-      "noEventTypesFoundText": "No event types found",
+      "noEventTypesDataFoundText": "No event types data found",
       "table": {
         "kindColumn": "Kind",
         "organizerNameColumn": "Organizer",
@@ -182,7 +200,7 @@
       "title": "Events",
       "conferenceLabel": "Conference:",
       "conferencePlaceholder": "All",
-      "noEventsFoundText": "No events found",
+      "noEventsDataFoundText": "No events data found",
       "table": {
         "nameColumn": "Name",
         "startDateColumn": "Start date",
@@ -195,7 +213,7 @@
     },
     "speakers": {
       "title": "Speakers",
-      "noSpeakersFoundText": "No speakers found",
+      "noSpeakersDataFoundText": "No speakers data found",
       "table": {
         "nameColumn": "Name",
         "talksColumn": "Talks",
@@ -207,7 +225,7 @@
     },
     "companies": {
       "title": "Companies",
-      "noCompaniesFoundText": "No companies found",
+      "noCompaniesDataFoundText": "No companies data found",
       "table": {
         "companyColumn": "Company",
         "speakersColumn": "Speakers",
@@ -216,6 +234,29 @@
         "eventTypesColumn": "Event types",
         "javaChampionsColumn": "Java Champions",
         "mvpsColumn": "MVPs"
+      }
+    },
+    "olap" : {
+      "cubeLabel": "Cube:",
+      "cubePlaceholder": "All",
+      "measureLabel": "Measure:",
+      "measurePlaceholder": "All",
+      "speakersLabel": "Speakers:",
+      "companiesLabel": "Companies:",
+      "noEventTypesDataFoundText": "No event types data found",
+      "noSpeakersDataFoundText": "No speakers data found",
+      "noCompaniesDataFoundText": "No companies data found",
+      "chart": {
+        "detailsLabel": "Details",
+        "totalLabel": "Total"
+      },
+      "table": {
+        "kindColumn": "Kind",
+        "organizerNameColumn": "Organizer",
+        "eventTypeNameColumn": "Name",
+        "speakerNameColumn": "Name",
+        "companyColumn": "Company",
+        "cityColumn": "City"
       }
     }
   },

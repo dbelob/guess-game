@@ -2,7 +2,7 @@ package guess.dto.statistics;
 
 import guess.domain.Language;
 import guess.domain.statistics.AbstractSpeakerCompanyMetrics;
-import guess.domain.statistics.CompanyMetrics;
+import guess.domain.statistics.company.CompanyMetrics;
 import guess.util.LocalizationUtils;
 
 import java.util.List;
