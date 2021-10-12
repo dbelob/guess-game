@@ -2495,3 +2495,21 @@ companies:
   - id: 799
     name:
       - {language: en, text: Witailer}
+  - id: 800
+    name:
+      - {language: en, text: "72 Services LLC"}
+  - id: 801
+    name:
+      - {language: en, text: "National Technical University of Ukraine"}
+  - id: 802
+    name:
+      - {language: en, text: Sonatype}
+  - id: 803
+    name:
+      - {language: en, text: FlowTraders}
+  - id: 804
+    name:
+      - {language: en, text: "BeZero Carbon"}
+  - id: 805
+    name:
+      - {language: en, text: Okta}
