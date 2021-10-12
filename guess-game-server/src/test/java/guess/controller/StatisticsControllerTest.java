@@ -10,8 +10,12 @@ import guess.domain.statistics.event.EventStatistics;
 import guess.domain.statistics.eventtype.EventTypeMetrics;
 import guess.domain.statistics.eventtype.EventTypeStatistics;
 import guess.domain.statistics.olap.CubeType;
+import guess.domain.statistics.olap.OlapEntityMetrics;
+import guess.domain.statistics.olap.OlapEntityStatistics;
+import guess.domain.statistics.olap.OlapStatistics;
 import guess.domain.statistics.speaker.SpeakerMetrics;
 import guess.domain.statistics.speaker.SpeakerStatistics;
+import guess.dto.statistics.olap.OlapParametersDto;
 import guess.service.LocaleService;
 import guess.service.OlapService;
 import guess.service.StatisticsService;
@@ -40,6 +44,7 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -298,6 +303,118 @@ class StatisticsControllerTest {
                 Mockito.verify(olapService, VerificationModeFactory.times(1)).getMeasureTypes(CubeType.valueOf(cubeType));
                 Mockito.verifyNoMoreInteractions(olapService);
             }
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getOlapStatistics method with parameters tests")
+    class GetOlapStatisticsTest {
+        private Stream<Arguments> data() {
+            List<Integer> dimensionValues0 = List.of(2020, 2021);
+
+            Organizer organizer0 = new Organizer(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+            Organizer organizer1 = new Organizer(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+
+            EventType eventType0 = new EventType();
+            eventType0.setId(0);
+            eventType0.setOrganizer(organizer1);
+
+            EventType eventType1 = new EventType();
+            eventType1.setId(1);
+            eventType1.setOrganizer(organizer0);
+
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+            speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+            speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+
+            Company company0 = new Company();
+            company0.setId(0);
+            company0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+
+            Company company1 = new Company();
+            company1.setId(1);
+            company1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+
+            List<OlapEntityMetrics<EventType>> metricsList0 = List.of(
+                    new OlapEntityMetrics<>(eventType0, List.of(0L, 1L), 1L),
+                    new OlapEntityMetrics<>(eventType1, List.of(1L, 0L), 1L)
+            );
+            OlapEntityMetrics<Void> totals0 = new OlapEntityMetrics<>(null, List.of(1L, 1L), 2L);
+
+            List<OlapEntityMetrics<Speaker>> metricsList1 = List.of(
+                    new OlapEntityMetrics<>(speaker0, List.of(0L, 1L), 1L),
+                    new OlapEntityMetrics<>(speaker1, List.of(2L, 0L), 2L)
+            );
+            OlapEntityMetrics<Void> totals1 = new OlapEntityMetrics<>(null, List.of(2L, 1L), 3L);
+
+            List<OlapEntityMetrics<Company>> metricsList2 = List.of(
+                    new OlapEntityMetrics<>(company0, List.of(0L, 1L), 1L),
+                    new OlapEntityMetrics<>(company1, List.of(2L, 0L), 2L)
+            );
+            OlapEntityMetrics<Void> totals2 = new OlapEntityMetrics<>(null, List.of(2L, 1L), 3L);
+
+            OlapEntityStatistics<Integer, EventType> eventTypeStatistics0 = new OlapEntityStatistics<>(dimensionValues0, metricsList0, totals0);
+            OlapEntityStatistics<Integer, Speaker> speakerStatistics0 = new OlapEntityStatistics<>(dimensionValues0, metricsList1, totals1);
+            OlapEntityStatistics<Integer, Company> companyStatistics0 = new OlapEntityStatistics<>(dimensionValues0, metricsList2, totals2);
+
+            OlapStatistics olapStatistics0 = new OlapStatistics(eventTypeStatistics0, null, null);
+            OlapStatistics olapStatistics1 = new OlapStatistics(null, speakerStatistics0, null);
+            OlapStatistics olapStatistics2 = new OlapStatistics(null, null, companyStatistics0);
+
+            return Stream.of(
+                    arguments(CubeType.EVENT_TYPES, olapStatistics0),
+                    arguments(CubeType.SPEAKERS, olapStatistics1),
+                    arguments(CubeType.COMPANIES, olapStatistics2)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getOlapStatistics(CubeType cubeType, OlapStatistics olapStatistics) throws Exception {
+            MockHttpSession httpSession = new MockHttpSession();
+
+            given(olapService.getOlapStatistics(Mockito.any())).willReturn(olapStatistics);
+            given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
+
+            switch (cubeType) {
+                case EVENT_TYPES:
+                    mvc.perform(post("/api/statistics/olap-statistics")
+                                    .contentType(MediaType.APPLICATION_JSON)
+                                    .content(JsonUtil.toJson(new OlapParametersDto()))
+                                    .session(httpSession))
+                            .andExpect(status().isOk())
+                            .andExpect(jsonPath("$.eventTypeStatistics.metricsList", hasSize(2)))
+                            .andExpect(jsonPath("$.eventTypeStatistics.metricsList[0].id", is(1)))
+                            .andExpect(jsonPath("$.eventTypeStatistics.metricsList[1].id", is(0)));
+                    break;
+                case SPEAKERS:
+                    mvc.perform(post("/api/statistics/olap-statistics")
+                                    .contentType(MediaType.APPLICATION_JSON)
+                                    .content(JsonUtil.toJson(new OlapParametersDto()))
+                                    .session(httpSession))
+                            .andExpect(status().isOk())
+                            .andExpect(jsonPath("$.speakerStatistics.metricsList", hasSize(2)))
+                            .andExpect(jsonPath("$.speakerStatistics.metricsList[0].id", is(1)))
+                            .andExpect(jsonPath("$.speakerStatistics.metricsList[1].id", is(0)));
+                    break;
+                case COMPANIES:
+                    mvc.perform(post("/api/statistics/olap-statistics")
+                                    .contentType(MediaType.APPLICATION_JSON)
+                                    .content(JsonUtil.toJson(new OlapParametersDto()))
+                                    .session(httpSession))
+                            .andExpect(status().isOk())
+                            .andExpect(jsonPath("$.companyStatistics.metricsList", hasSize(2)))
+                            .andExpect(jsonPath("$.companyStatistics.metricsList[0].id", is(1)))
+                            .andExpect(jsonPath("$.companyStatistics.metricsList[1].id", is(0)));
+            }
+
+            Mockito.verify(olapService, VerificationModeFactory.times(1)).getOlapStatistics(Mockito.any());
+            Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
         }
     }
 }
