@@ -41,13 +41,8 @@ class OlapServiceImplTest {
     private static EventType eventType0;
     private static EventType eventType1;
     private static EventType eventType2;
-    private static Event event0;
-    private static Event event1;
-    private static Talk talk0;
-    private static Talk talk1;
     private static Speaker speaker0;
     private static Speaker speaker1;
-    private static Speaker speaker2;
     private static Company company0;
     private static Company company1;
 
@@ -71,9 +66,6 @@ class OlapServiceImplTest {
             return new OlapServiceImpl(olapDao());
         }
     }
-
-    @Autowired
-    private EventTypeDao eventTypeDao;
 
     @Autowired
     private OlapDao olapDao;
@@ -109,7 +101,7 @@ class OlapServiceImplTest {
         Place place1 = new Place(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "City1")), Collections.emptyList(), null);
         Place place2 = new Place(2, List.of(new LocaleItem(Language.ENGLISH.getCode(), "City2")), Collections.emptyList(), null);
 
-        event0 = new Event();
+        Event event0 = new Event();
         event0.setId(0);
         event0.setEventTypeId(eventType0.getId());
         event0.setEventType(eventType0);
@@ -118,7 +110,7 @@ class OlapServiceImplTest {
         event0.setStartDate(LocalDate.of(2020, 9, 5));
         event0.setEndDate(LocalDate.of(2020, 9, 6));
 
-        event1 = new Event();
+        Event event1 = new Event();
         event1.setId(1);
         event1.setEventTypeId(eventType1.getId());
         event1.setEventType(eventType1);
@@ -160,19 +152,19 @@ class OlapServiceImplTest {
         speaker1.setCompanies(List.of(company1));
         speaker1.setMvp(true);
 
-        speaker2 = new Speaker();
+        Speaker speaker2 = new Speaker();
         speaker2.setId(2);
         speaker2.setCompanyIds(List.of(1L));
         speaker2.setCompanies(List.of(company1));
 
-        talk0 = new Talk();
+        Talk talk0 = new Talk();
         talk0.setId(0);
         talk0.setSpeakerIds(List.of(0L));
         talk0.setSpeakers(List.of(speaker0));
         event0.setTalkIds(List.of(0L));
         event0.setTalks(List.of(talk0));
 
-        talk1 = new Talk();
+        Talk talk1 = new Talk();
         talk1.setId(1);
         talk1.setSpeakerIds(List.of(1L));
         talk1.setSpeakers(List.of(speaker1));
