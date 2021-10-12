@@ -23903,16 +23903,14 @@ speakers:
       - {language: ru, text: "Александр Петров"}
     companyIds: [770]
     bio:
-      - {language: en, text: "More than 10 years of experience in software quality assurance. During this time, Aleksandr\
-            \ was in the role of a manual tester of web and mobile applications, wrote autotests for API and Android, managed\
-            \ teams, and built testing processes in companies such as Yandex and Mail.ru Group. Taught the course \"Testing\
-            \ mobile applications\" at the Bauman Moscow State Technical University, MIPT, and MEPhI. Currently, he is the\
-            \ head of the quality assurance service for the Citymobil project."}
+      - {language: en, text: "Alexander ensures the quality of software for more than 10 years. Was a manual tester of web\
+            \ and mobile apps, wrote tests on API and Android, managed teams and built testing processes at Yandex and Mail.ru\
+            \ Group. Taught testing mobile apps at different Moscow universities. Now is a head of quality service at Citymobil."}
       - {language: ru, text: "Более 10 лет работает в области обеспечения качества программного обеспечения. За это время\
-            \ был в роли ручного тестировщика веб и мобильных приложений, писал автотесты на API и Android, управлял коман\
-            дами и выстраивал процессы тестирования в таких компаниях, как Yandex и Mail.ru Group. Преподавал курс «Тестир\
-            ование мобильных приложений» в МГТУ имени Баумана, МФТИ и МИФИ. В настоящее время руководит службой обеспечени\
-            я качества на проекте Ситимобил."}
+            \ был в роли ручного тестировщика веб- и мобильных приложений, писал автотесты на API и Android, управлял кома\
+            ндами и выстраивал процессы тестирования в Яндексе и Mail.ru Group. Преподавал курс «Тестирование мобильных пр\
+            иложений» в МГТУ имени Баумана, МФТИ и МИФИ. В настоящее время руководит службой обеспечения качества на проек\
+            те Ситимобил."}
   - id: 1719
     photoFileName: 1719.jpg
     photoUpdatedAt: 2021-08-30T12:33:22.084Z[UTC]
