@@ -86,6 +86,10 @@ companySynonyms:
     synonyms: [
         "Intel Corporation"
     ]
+  - name: JetBrains
+    synonyms: [
+        "JetBrains Research"
+    ]
   - name: "JUG Ru Group"
     synonyms: [
         "JUG.ru Group"

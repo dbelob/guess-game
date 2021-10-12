@@ -2477,3 +2477,39 @@ companies:
   - id: 793
     name:
       - {language: en, text: Evolution}
+  - id: 794
+    name:
+      - {language: en, text: Iyuno-SDI}
+  - id: 795
+    name:
+      - {language: en, text: "The Data Farm"}
+  - id: 796
+    name:
+      - {language: en, text: DevBrothers}
+  - id: 797
+    name:
+      - {language: en, text: "Particular Software Ltd"}
+  - id: 798
+    name:
+      - {language: en, text: "The Secret Circle Solutions"}
+  - id: 799
+    name:
+      - {language: en, text: Witailer}
+  - id: 800
+    name:
+      - {language: en, text: "72 Services LLC"}
+  - id: 801
+    name:
+      - {language: en, text: "National Technical University of Ukraine"}
+  - id: 802
+    name:
+      - {language: en, text: Sonatype}
+  - id: 803
+    name:
+      - {language: en, text: FlowTraders}
+  - id: 804
+    name:
+      - {language: en, text: "BeZero Carbon"}
+  - id: 805
+    name:
+      - {language: en, text: Okta}
