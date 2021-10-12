@@ -2477,3 +2477,21 @@ companies:
   - id: 793
     name:
       - {language: en, text: Evolution}
+  - id: 794
+    name:
+      - {language: en, text: Iyuno-SDI}
+  - id: 795
+    name:
+      - {language: en, text: "The Data Farm"}
+  - id: 796
+    name:
+      - {language: en, text: DevBrothers}
+  - id: 797
+    name:
+      - {language: en, text: "Particular Software Ltd"}
+  - id: 798
+    name:
+      - {language: en, text: "The Secret Circle Solutions"}
+  - id: 799
+    name:
+      - {language: en, text: Witailer}

@@ -4114,12 +4114,12 @@ speakers:
     photoFileName: 0282.jpg
     photoUpdatedAt: 2020-01-31T09:16:32.208Z[UTC]
     name:
-      - {language: en, text: "Dmitry Nesteruk"}
+      - {language: en, text: "Dmitri Nesteruk"}
       - {language: ru, text: "Дмитрий Нестерук"}
     companyIds: []
     bio:
-      - {language: en, text: "Dmitry is a quantitative analyst. He has authored multiple books and courses on development\
-            \ and design patterns. His interests include computation, quantitative finance, and algorithmic trading. He works\
+      - {language: en, text: "Dmitri is a quantitative analyst. He has authored multiple books and courses on development\
+            \ and design patterns. His interests include computation, quanitative finance and algorithmic trading. He works\
             \ with C# and C++ as well as HPC technologies such as CUDA and FPGAs."}
       - {language: ru, text: "Квант, разработчик и просто увлеченный человек. Автор нескольких книг и курсов по разработке\
             \ и паттернам проектирования. Интересуется разработкой в сфере вычислений, численных финансов и алгоритмическо\
@@ -5918,6 +5918,7 @@ speakers:
             \ and on Twitter as @dylanbeattie."
     twitter: dylanbeattie
     gitHub: dylanbeattie
+    mvp: true
   - id: 408
     photoFileName: 0408.jpg
     photoUpdatedAt: 2020-01-30T18:30:32.365Z[UTC]
@@ -5982,20 +5983,20 @@ speakers:
     mvp: true
   - id: 412
     photoFileName: 0412.jpg
+    photoUpdatedAt: 2019-02-19T10:48:54.632Z[UTC]
     name:
       - {language: en, text: "Stan Drapkin"}
     companyIds: []
     bio:
       - language: en
-        text: "Stan Drapkin is a hands-on technical leader, manager, and security and \ncompliance expert. He is focused on\
+        text: "Stan Drapkin is a hands-on technical leader, manager, and security and compliance expert. He is focused on\
             \ hiring, training, and leading top-talent engineering teams using .NET to build highly secure cloud-based solutions\
-            \ for strongly regulated environments. \n\nStan has computer science and MBA degrees, as well as more than 17\
-            \ years of .NET Framework experience. He picked up .NET 1.0-beta in 2001 while working as an engineer at Microsoft,\
-            \ and has been immersed in .NET evolution ever since.\n\nStan is an author of <a href=\"http://securitydriven.net/\"\
-            \ target=\"_blank\">\"Security Driven .NET\"</a> (2014) and <a href=\"https://blog.syncfusion.com/post/interview-with-application-security-in-net-succinctly-author-stan-drapkin.aspx\"\
-            \ target=\"_blank\">\"Application Security in .NET, Succinctly\"</a> (2017) books, as well as several open source\
-            \ .NET libraries."
+            \ for strongly regulated environments.\n\nStan has computer science and MBA degrees, as well as more than 17 years\
+            \ of .NET Framework experience. He picked up .NET 1.0-beta in 2001 while working as an engineer at Microsoft,\
+            \ and has been immersed in .NET evolution ever since.\n\nStan is the author of \"Security Driven .NET\" (2014)\
+            \ and \"Application Security in .NET, Succinctly\" (2017) books, as well as several open source .NET libraries."
     twitter: sdrapkin
+    gitHub: sdrapkin
   - id: 413
     photoFileName: 0413.jpg
     photoUpdatedAt: 2019-12-16T13:46:32.472Z[UTC]
@@ -6135,17 +6136,20 @@ speakers:
             атичных подходов без крайностей. Работает с сервисными архитектурами и DDD."}
   - id: 422
     photoFileName: 0422.jpg
+    photoUpdatedAt: 2021-09-08T13:17:04.913Z[UTC]
     name:
       - {language: en, text: "Roberto Freato"}
-    companyIds: [110]
+    companyIds: [799]
     bio:
       - language: en
-        text: "Roberto has been an independent IT consultant since he started to work. After his MSc in computer science engineering\
-            \ with a thesis about consumer cloud computing he got specialization in Cloud and Azure. Today he works as a freelance\
-            \ consultant for major companies in Italy, helping clients to design and kick off their distributed software solutions.\
-            \ \n\nHe wrote some books on Microsoft Azure, for K12 education; he also trains/speaks for the developer community\
-            \ in many conferences. Roberto holds 45+ technical certifications on various vendors (MS, Sun, EXIN, Apple, Cisco,\
-            \ IBM). He's been a Microsoft MVP for 8 years."
+        text: "Independent IT consultant. After his MSc in computer science, engineering with a thesis about consumer cloud\
+            \ computing got specialization in Cloud and Azure.\nToday Roberto works as a freelance consultant for major companies\
+            \ in Italy, helping clients to design and kick-off their distributed software solutions. He wrote some books on\
+            \ Microsoft Azure, for K12 education and trains/speaks for the developer community in many national and international\
+            \ conferences. Holds 45+ technical certifications on various vendors (MS, Sun, EXIN, Apple, Cisco, IBM) and is\
+            \ a Microsoft MVP since 2010."
+    twitter: childotg
+    mvp: true
   - id: 423
     photoFileName: 0423.jpg
     name:
@@ -6277,11 +6281,12 @@ speakers:
       - {language: ru, text: "Егор Богатов"}
     companyIds: [328]
     bio:
-      - {language: en, text: "Egor Bogatov is a software developer at Microsoft. He is a member of .NET 5 team (Mono Runtime).\
-            \ Also he contributes to CoreCLR and CoreFX."}
-      - {language: ru, text: "Разработчик в компании Microsoft из команды Mono. Работает над .NET 5, Mono Runtime, и контр\
-            ибьютит в CoreCLR/CoreFX."}
+      - {language: en, text: "Software developer at Microsoft where he works on JIT compiler for CoreCLR. He was a member\
+            \ of Mono team previously."}
+      - {language: ru, text: "Разработчик в компании Microsoft, где работает над JIT-компилятором для CoreCLR. Ранее работ\
+            ал в команде Mono."}
     twitter: EgorBo
+    gitHub: EgorBo
   - id: 432
     photoFileName: 0432.jpg
     photoUpdatedAt: 2021-08-25T13:29:45.078Z[UTC]
@@ -6776,25 +6781,25 @@ speakers:
       - {language: ru, text: "Дмитрий Иванов"}
     companyIds: [242]
     bio:
-      - {language: en, text: "Former JetBrains Rider technical leader, ReSharper's Core developer: data structures, caches,\
-            \ concurrency. Worked at JetBrains since 2011. Graduated from SPbSU in 2006."}
-      - {language: ru, text: "Бывший техлид JetBrains Rider, разработчик ядра ReSharper: структур данных, кэшей, многопото\
-            чности. Работал в компании JetBrains с 2011 года, до этого руководил разработкой серверных решений в Yota. Око\
-            нчил матмех СПбГУ в 2006 году. Регулярный спикер DotNext."}
+      - {language: en, text: "Head of Software Analysis Team at Huawei R&D center in Saint-Petersburg. Formerly JetBrains\
+            \ Rider Technical Leader."}
+      - {language: ru, text: "Возглавляет группу анализа программ в R&D центре компании Huawei в Санкт-Петербурге. В прошл\
+            ом технический лидер JetBrains Rider."}
     twitter: korifey_ad
   - id: 466
     photoFileName: 0466.jpg
+    photoUpdatedAt: 2020-02-06T12:23:19.894Z[UTC]
     name:
       - {language: en, text: "Evgeny Peshkov"}
       - {language: ru, text: "Евгений Пешков"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Migrates Rider on .NET Core. Previously engaged in shared infrastructure at Kontur, a cloud-based\
-            \ application hosting platform. He is interested in the inner structure of .NET and Windows and uses this knowledge\
-            \ in practice."}
-      - {language: ru, text: "Переводит райдер на .NET Core. Ранее занимался общей инфраструктурой в Контуре, облачной пла\
-            тформой хостинга приложений. Интересуется внутренним устройством .NET и Windows и использует эти знания на пра\
-            ктике."}
+      - {language: en, text: "JetBrain Rider developer. Migrates Rider on .NET Core. Previously engaged in shared infrastructure\
+            \ at Kontur, a cloud-based application hosting platform. He is interested in the inner structure of .NET and Windows\
+            \ and uses this knowledge in practice."}
+      - {language: ru, text: "Разработчик JetBrains Rider. Переводит райдер на .NET Core. Ранее занимался общей инфраструк\
+            турой в Контуре, облачной платформой хостинга приложений. Интересуется внутренним устройством .NET и Windows и\
+            \ использует эти знания на практике."}
     twitter: epeshk
     gitHub: epeshk
     habr: epeshk
@@ -7339,18 +7344,15 @@ speakers:
     name:
       - {language: en, text: "Denis Tsvetsikh"}
       - {language: ru, text: "Денис Цветцих"}
-    companyIds: [748]
+    companyIds: [796]
     bio:
       - language: en
         text: "Denis has more than 10 years of experience in the development of Enterprise applications using C# and .NET.\
             \ Now his interests are a software architecture and design patterns. He thinks that the best metaphor for software\
-            \ architecture is not an onion, but an accordion. And that now in community too many discussions about RichModel\
-            \ and DDD and too little about DataAccess and Application.\nDenis is the author of courses about software architecture\
+            \ architecture is not an onion, but an accordion.\nDenis is the author of courses about software architecture\
             \ at Udemy."
       - {language: ru, text: "Более 10 лет разрабатывает кровавый Enterprise на C# и .NET. Текущая область интересов — арх\
-            итектура и паттерны проектирования. Считает, что лучшая метафора для архитектуры ПО, это не луковица, а баян.\
-            \ И что разговоров о DDD и Rich-модели слишком много, в то время как DataAccess и Application уделяется малова\
-            то внимания."}
+            итектура и паттерны проектирования. Считает, что лучшая метафора для архитектуры ПО, это не луковица, а баян."}
   - id: 501
     photoFileName: 0501.jpg
     photoUpdatedAt: 2021-04-13T18:05:51.392Z[UTC]
@@ -7599,10 +7601,17 @@ speakers:
     companyIds: []
   - id: 527
     photoFileName: 0527.jpg
+    photoUpdatedAt: 2021-09-13T09:19:02.532Z[UTC]
     name:
       - {language: en, text: "Anton Onikiychuk"}
       - {language: ru, text: "Антон Оникийчук"}
-    companyIds: []
+    companyIds: [161]
+    bio:
+      - {language: en, text: "Developer with 17 years of experience. Loves simple solutions and good team."}
+      - {language: ru, text: "Разработчик с 17-летним опытом работы. Любит простые решения и хорошую команду."}
+    twitter: holyslon
+    gitHub: holyslon
+    habr: onikiychuka
   - id: 528
     photoFileName: 0528.jpg
     name:
@@ -20475,13 +20484,14 @@ speakers:
     photoUpdatedAt: 2020-09-25T15:10:06.254Z[UTC]
     name:
       - {language: en, text: "Bartosz Adamczewski"}
-    companyIds: [469]
+    companyIds: [794]
     bio:
       - language: en
-        text: "A performance and data-oriented design freak, concurrency researcher, and machine learning practitioner that\
-            \ creates robust systems for over ten years.\n\nCurrently employed as Research and Innovation Director at SDI\
-            \ Media, where Bartosz is lead computer and data science teams."
+        text: "A Performance and Data-Oriented Design freak, Concurrency researcher, and Machine Learning practitioner that\
+            \ creates robust systems for over ten years.\n\nCurrently employed as a Research and Innovation Director in Iyuno-SDI\
+            \ where he leads computer science and data science teams."
     twitter: badamczewski01
+    gitHub: badamczewski
   - id: 1490
     photoFileName: 1490.jpg
     photoUpdatedAt: 2020-10-29T09:20:52.663Z[UTC]
@@ -24589,3 +24599,206 @@ speakers:
       - {language: ru, text: "Пытался сделать что-то полезное с данными с 1993 года как DBA, руководитель группы DBA и раз\
             работчик DB/DWH. Пережил взлеты и падения различных подходов к обработке данных. Сегодня Валдис руководитель г\
             руппы обработки данных в Evolution."}
+  - id: 1763
+    photoFileName: 1763.jpg
+    photoUpdatedAt: 2021-09-13T09:26:43.207Z[UTC]
+    name:
+      - {language: en, text: "Andrey Paramonov"}
+      - {language: ru, text: "Андрей Парамонов"}
+    companyIds: [161]
+    bio:
+      - {language: en, text: "Lead developer at Dodo Engineering. Doesn't like programming. Likes to pet dogs and cats."}
+      - {language: ru, text: "Ведущий разработчик в Додо Инжиниринг. Не любит программирование. Любит гладить собак. Кошек\
+            \ гладить тоже любит."}
+    twitter: Pr1vetAndrey
+  - id: 1764
+    photoFileName: 1764.jpg
+    photoUpdatedAt: 2021-09-15T16:02:14.814Z[UTC]
+    name:
+      - {language: en, text: "Stepan Artemyev"}
+      - {language: ru, text: "Степан Артемьев"}
+    companyIds: [674]
+    bio:
+      - {language: en, text: "Software Developer at Tinkoff. Develops Klecks - a crowdsourcing platform. Passionate about\
+            \ low-level optimization."}
+      - {language: ru, text: "Разработчик в Тинькофф, занимается разработкой краудсорсинговой платформы Klecks. Увлекается\
+            \ низкоуровневой оптимизацией."}
+  - id: 1765
+    photoFileName: 1765.jpg
+    photoUpdatedAt: 2021-09-16T14:56:57.725Z[UTC]
+    name:
+      - {language: en, text: "Anna Morozova"}
+      - {language: ru, text: "Анна Морозова"}
+    companyIds: [161]
+    bio:
+      - {language: en, text: "Technical leader of b2c at Dodo Engineering. I am responsible for a client services development,\
+            \ such as website and mobile application."}
+      - {language: ru, text: "Технический лидер направления b2c в компании Dodo Engineering. Отвечает за разработку сервис\
+            ов для клиентов, таких как сайт и мобильное приложение."}
+    twitter: techmyheart
+    gitHub: aryabush
+  - id: 1766
+    photoFileName: 1766.jpg
+    photoUpdatedAt: 2021-08-31T09:49:44.761Z[UTC]
+    name:
+      - {language: en, text: "Julie Lerman"}
+    companyIds: [795]
+    bio:
+      - {language: en, text: "Julie Lerman is a Microsoft Regional Director, Docker Captain, and a long-time Microsoft MVP\
+            \ who now counts her years as a coder in decades.  She makes her living as a coach and consultant to software\
+            \ teams around the world. You can find Julie presenting on Entity Framework, Domain Driven Design, and other topics\
+            \ at user groups and conferences around the world. Julie blogs at thedatafarm.com/blog, is the author of the highly\
+            \ acclaimed \"Programming Entity Framework\" books, the MSDN Magazine Data Points column, and popular videos on\
+            \ Pluralsight.com. Follow Julie on twitter at julielerman."}
+    twitter: julielerman
+    gitHub: julielerman
+    mvp: true
+  - id: 1767
+    photoFileName: 1767.jpg
+    photoUpdatedAt: 2021-08-23T10:14:12.750Z[UTC]
+    name:
+      - {language: en, text: "Mario Hewardt"}
+    companyIds: [328]
+    bio:
+      - language: en
+        text: "Mario Hewardt is a Principal Customer Engineer at Microsoft and author of Advanced Windows Debugging and Advanced\
+            \ .NET Debugging. \r\nWith the advent of cloud computing, Mario worked in the SaaS arena and delivered the Asset\
+            \ Inventory Service as well as leading a team of developers building the core platform for the next generation\
+            \ Microsoft online management service — Windows Intune. Mario also worked closely with Azure customers helping\
+            \ them build their solutions on the Microsoft stack in the most efficient and reliable way possible. \r\n\r\n\
+            Mario is currently the development lead for a team of engineers that focus on developing the popular Sysinternals\
+            \ tools for the Linux operating system as well as the global engineering lead for the Azure App Consults program\
+            \ which helps Microsoft customers to build great apps on Azure."
+    twitter: MarioHewardt
+    gitHub: MarioHewardt
+  - id: 1768
+    photoFileName: 1768.jpg
+    photoUpdatedAt: 2021-08-23T10:19:12.613Z[UTC]
+    name:
+      - {language: en, text: "Kevin Sheldrake"}
+    companyIds: [328]
+    bio:
+      - language: en
+        text: "Kevin Sheldrake is a penetration tester and researcher who started working in the technical security field\
+            \ in 1997. Over the years, Kev has been a developer and systems administrator of \"secure\" systems, an infosec\
+            \ policy consultant, a penetration tester, a reverse engineer, and an entrepreneur who founded and ran his security\
+            \ consulting company. He is currently porting Sysinternals Sysmon from Windows to Linux.\n\nHe has a Masters degree,\
+            \ is a Chartered Engineer and, in the past, has been a CHECK Team Leader, a CISSP and held CLAS."
+    gitHub: kesheldr
+  - id: 1769
+    photoFileName: 1769.jpg
+    photoUpdatedAt: 2021-09-09T14:00:28.999Z[UTC]
+    name:
+      - {language: en, text: "Rostislav Listerenko"}
+      - {language: ru, text: "Ростислав Листеренко"}
+    companyIds: [751]
+    bio:
+      - {language: en, text: "Software engineer at Mindbox. Has been employed for over five years, tackling various scalability\
+            \ problems and tasks in the platform. Currently leads core platform migration to .NET Core."}
+      - {language: ru, text: "Разработчик в Mindbox. Работает в компании более пяти лет, за это время время решал задачи м\
+            асштабирования платформы под растущие нагрузки и потребности клиентов с разных сторон. Сейчас занимается перев\
+            одом ядра системы на .NET Core."}
+    gitHub: listerenko
+  - id: 1770
+    photoFileName: 1770.jpg
+    photoUpdatedAt: 2021-09-13T15:58:41.827Z[UTC]
+    name:
+      - {language: en, text: "Udi Dahan"}
+    companyIds: [797]
+    bio:
+      - {language: en, text: "Udi Dahan is one of the world’s foremost experts on Service-Oriented Architecture and Domain-Driven\
+            \ Design and also the creator of NServiceBus, the most popular service bus for .NET."}
+    twitter: udidahan
+    gitHub: udidahan
+  - id: 1771
+    photoFileName: 1771.jpg
+    photoUpdatedAt: 2021-09-20T09:12:31.673Z[UTC]
+    name:
+      - {language: en, text: "Andrey Chebukin"}
+      - {language: ru, text: "Андрей Чебукин"}
+    companyIds: [798]
+    bio:
+      - language: en
+        text: "Primary maintainer of Elmish.Uno and Dial Tools for Visual Studio projects.\r\nCreator of the first and the\
+            \ only Elmish implementation for UWP.\r\nCo-founder of The Secret Circle Solutions, teacher at the IT SCHAG Computer\
+            \ Academy.\r\nC# developer since 2003, F# developer since 2015.\r\nSince 2019 develops all projects using full-stack\
+            \ F#.\r\nCertified Windows 8 solution developer using C# (MCSD).\r\nOpenID Connect authentication solution implementation\
+            \ expert.\r\nAzure cloud solutions architect."
+      - language: ru
+        text: "Главный мейнтейнер проектов Elmish.Uno и Dial Tools for Visual Studio.\r\nСоздатель первой и единственной р\
+            еализации Elmish на UWP.\r\nСоучредитель The Secret Circle Solutions, преподаватель в компьютерной академии ША\
+            Г.\r\nC# разработчик с 2003 года, F# разработчик с 2015 года.\r\nС 2019 года разрабатывает все проекты на F#.\r\
+            \nСертифицированный разработчик решений для Windows 8 на C # (MCSD).\r\nЭксперт по реализации решений с аутент\
+            ификацией по протоколу OpenID Connect.\r\nАрхитектор облачных решений на Azure."
+    twitter: XperiAndri
+    gitHub: xperiandri
+    habr: XperiAndri
+  - id: 1772
+    photoFileName: 1772.jpg
+    photoUpdatedAt: 2021-09-03T11:06:41.357Z[UTC]
+    name:
+      - {language: en, text: "Dmitry Mordvinov"}
+      - {language: ru, text: "Дмитрий Мордвинов"}
+    companyIds: [286]
+    bio:
+      - {language: en, text: "Dmitry Mordvinov is a researcher in JetBrains Research and senior lecturer at Saint-Petersburg\
+            \ State University. He graduated in 2013 from Saint-Petersburg State University and got his Ph.D. in 2021 in A.P.\
+            \ Ershov Institute of Informatics Systems. From 2019, he leads the formal verification group in the Programming\
+            \ Languages and Tools Lab in JetBrains Research. His work is focused on the theory and practice of symbolic execution\
+            \ engines and automated inductive invariants inference. His research interests include software verification,\
+            \ symbolic execution, type theory, and model theory."}
+      - {language: ru, text: "Дмитрий — исследователь в JetBrains Research и старший преподаватель Санкт-Петербургского Го\
+            сударственного Университета. Закончил кафедру системного программирования СПбГУ и защитил докторскую в 2021 го\
+            ду. С 2019 руководит группой формальной верификацией в лаборатории языковых инструментов JetBrains Research. Д\
+            митрий работает над теорией и практикой символьного исполнения и автоматического вывода индуктивных инварианто\
+            в. Его область научных интереснов включает верификацию программного обеспечения, символьное исполнение, теорию\
+            \ типов и теорию моделей."}
+  - id: 1773
+    photoFileName: 1773.jpg
+    photoUpdatedAt: 2021-09-20T08:22:01.262Z[UTC]
+    name:
+      - {language: en, text: "Yury Pastushenko"}
+      - {language: ru, text: "Юрий Пастушенко"}
+    companyIds: [161]
+    bio:
+      - {language: en, text: "Software developer at Dodo Engineering. Came into .Net from 1C development, where had an opportunity\
+            \ to try platform development and complex domain logic. Currently working with Azure, .Net and React stack."}
+      - {language: ru, text: "Разработчик в Dodo Engineering. Пришёл в .Net из 1С, где глубоко познакомился с платформенно\
+            й разработкой и сложной доменной логикой. Сейчас работает преимущественно на стеке Azure + .Net + React."}
+    gitHub: pastushenkoy
+    habr: ypastushenko
+  - id: 1774
+    photoFileName: 1774.jpg
+    photoUpdatedAt: 2021-08-17T07:38:33.827Z[UTC]
+    name:
+      - {language: en, text: "Kunal Pathak"}
+    companyIds: [328]
+    bio:
+      - language: en
+        text: "Kunal Pathak is a Senior Software Engineer at Microsoft working in the code generation team of .NET runtime.\
+            \ Kunal loves the compiler space and performance optimization of runtimes. Before joining .NET, he worked on Microsoft\
+            \ Edge's JavaScript runtime engine.\r\nHe sometimes writes at https://kunalspathak.github.io/."
+    twitter: kuxmlp
+    gitHub: kunalspathak
+  - id: 1775
+    photoFileName: 1775.jpg
+    photoUpdatedAt: 2021-08-25T14:04:20.932Z[UTC]
+    name:
+      - {language: en, text: "Sergey Teplyakov"}
+      - {language: ru, text: "Сергей Тепляков"}
+    companyIds: [328]
+    bio:
+      - language: en
+        text: "Blogger, author of \"Design Patterns in .NET\" (published in Russian), ex-maintainer of Code Contracts, author\
+            \ of Error Prone.NET.\n\nFor the last 7 years, he has been working at Microsoft focusing on engineering systems\
+            \ such as [Build XL](https://github.com/microsoft/BuildXL), a distributed and deterministic build system for Office\
+            \ and Windows. Recently Sergey switched to a distributed cache system used by the various build system."
+      - language: ru
+        text: "Блогер, автор книги «Паттерны проектирования на платформе .NET», бывший мейнтейнер библиотеки Code Contracts,\
+            \ автор анализаторов кода Error Prone.NET.\n\nПоследние 7 лет работает в компании Microsoft, где занимается ин\
+            женерными системами, в частности, распределенной билд-системой [Build XL](https://github.com/microsoft/BuildXL)\
+            \ для детерминированной сборки Office и Windows, а в последнее время — распределенной системой кэширования для\
+            \ различных билд-систем."
+    twitter: steplyakov
+    gitHub: SergeyTeplyakov
+    habr: SergeyT
