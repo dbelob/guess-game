@@ -11,7 +11,7 @@ import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
 /**
- * Cube.
+ * OLAP cube.
  */
 public class Cube {
     private static class MeasureMaps<T, S> {
@@ -38,14 +38,30 @@ public class Cube {
         this.measureTypes = measureTypes;
     }
 
+    /**
+     * Gets dimension types.
+     *
+     * @return dimension types
+     */
     public Set<DimensionType> getDimensionTypes() {
         return dimensionTypes;
     }
 
+    /**
+     * Gets measure types.
+     *
+     * @return measure types
+     */
     public Set<MeasureType> getMeasureTypes() {
         return measureTypes;
     }
 
+    /**
+     * Gets dimension values.
+     *
+     * @param dimensionType dimension type
+     * @return dimension values
+     */
     public List<Object> getDimensionValues(DimensionType dimensionType) {
         checkDimensionType(dimensionType);
 
@@ -54,18 +70,34 @@ public class Cube {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Checks the existence of dimension type.
+     *
+     * @param dimensionType dimension type
+     */
     private void checkDimensionType(DimensionType dimensionType) {
         if (!dimensionTypes.contains(dimensionType)) {
             throw new IllegalArgumentException(String.format("Invalid dimension type %s for %s valid values", dimensionType, dimensionTypes));
         }
     }
 
+    /**
+     * Checks the existence of measure type.
+     *
+     * @param measureType measure type
+     */
     private void checkMeasureType(MeasureType measureType) {
         if (!measureTypes.contains(measureType)) {
             throw new IllegalArgumentException(String.format("Invalid measure type %s for %s valid values", measureType, measureTypes));
         }
     }
 
+    /**
+     * Gets dimension type by dimension.
+     *
+     * @param dimension dimension
+     * @return dimension type
+     */
     private DimensionType getDimensionTypeByDimension(Dimension<?> dimension) {
         for (DimensionType dimensionType : dimensionTypes) {
             Set<Dimension<?>> dimensionSet = dimensionMap.get(dimensionType);
@@ -78,6 +110,11 @@ public class Cube {
         return null;
     }
 
+    /**
+     * Checks dimension set.
+     *
+     * @param dimensions dimension set
+     */
     private void checkDimensionSet(Set<Dimension<?>> dimensions) {
         // Check dimension set size
         if (dimensionTypes.size() != dimensions.size()) {
@@ -103,6 +140,12 @@ public class Cube {
         }
     }
 
+    /**
+     * Adds dimensions.
+     *
+     * @param dimensionType dimension type
+     * @param values        dimension values
+     */
     public void addDimensions(DimensionType dimensionType, Set<?> values) {
         checkDimensionType(dimensionType);
 
@@ -113,6 +156,13 @@ public class Cube {
         this.dimensionMap.put(dimensionType, dimensions);
     }
 
+    /**
+     * Adds measure entity.
+     *
+     * @param dimensions  dimension set
+     * @param measureType measure type
+     * @param entity      entity
+     */
     public void addMeasureEntity(Set<Dimension<?>> dimensions, MeasureType measureType, Object entity) {
         checkDimensionSet(dimensions);
         checkMeasureType(measureType);
@@ -127,6 +177,13 @@ public class Cube {
         }
     }
 
+    /**
+     * Gets measure value by measures.
+     *
+     * @param measures    measure list
+     * @param measureType measure type
+     * @return measure value
+     */
     public long getMeasureValue(List<Measure<?>> measures, MeasureType measureType) {
         if ((measures == null) || measures.isEmpty()) {
             return 0L;
@@ -142,6 +199,15 @@ public class Cube {
         }
     }
 
+    /**
+     * Gets measure value by dimensions.
+     * <p>
+     * Slow, only used in unit tests.
+     *
+     * @param dimensions  dimension set
+     * @param measureType measure type
+     * @return measure value
+     */
     public long getMeasureValue(Set<Dimension<?>> dimensions, MeasureType measureType) {
         List<Measure<?>> measures = measureMap.entrySet().stream()
                 .filter(e -> e.getKey().containsAll(dimensions))
@@ -153,6 +219,26 @@ public class Cube {
         return getMeasureValue(measures, measureType);
     }
 
+    /**
+     * Gets measure value entities.
+     * <p>
+     * Fast, used in the application.
+     *
+     * @param firstDimensionTypeValues  values of first dimension type
+     * @param secondDimensionTypeValues values of second dimension type
+     * @param filterDimensionTypeValues values of filter dimension type
+     * @param measureType               measure type
+     * @param entityTriFunction         result element function
+     * @param totalsBiFunction          totals function
+     * @param resultTriFunction         result function
+     * @param <T>                       first dimension type
+     * @param <S>                       second dimension type
+     * @param <U>                       filter dimension type
+     * @param <V>                       result element type
+     * @param <W>                       totals type
+     * @param <Y>                       result type
+     * @return measure value entities
+     */
     @SuppressWarnings({"unchecked", "rawtypes"})
     public <T, S, U, V, W, Y> Y getMeasureValueEntities(DimensionTypeValues<T> firstDimensionTypeValues,
                                                         DimensionTypeValues<S> secondDimensionTypeValues,
@@ -222,6 +308,18 @@ public class Cube {
                 totalsBiFunction.apply(totals, allTotal));
     }
 
+    /**
+     * Filters by third dimension values.
+     *
+     * @param measureType          measure type
+     * @param filterDimensions     filter dimensions
+     * @param measureMaps          measure maps
+     * @param entry                entry of measure map
+     * @param firstDimensionValue  first dimension value
+     * @param secondEntryDimension second entry dimension
+     * @param <T>                  first dimension type
+     * @param <S>                  second dimension type
+     */
     @SuppressWarnings({"unchecked", "rawtypes"})
     private <T, S> void filterByThirdDimensionValues(MeasureType measureType,
                                                      Set<Dimension> filterDimensions,
@@ -261,6 +359,20 @@ public class Cube {
         }
     }
 
+    /**
+     * Fill resulting list.
+     *
+     * @param firstDimensionTypeValues      values of first dimension type
+     * @param secondDimensionTypeValues     values of second dimension type
+     * @param measureType                   measure type
+     * @param entityTriFunction             result element function
+     * @param measuresByFirstDimensionValue measures by first dimension value
+     * @param firstDimensionTotalMeasures   total measures of first dimension
+     * @param measureValueEntities          measure value entities
+     * @param <T>                           first dimension type
+     * @param <S>                           second dimension type
+     * @param <V>                           result element type
+     */
     private <T, S, V> void fillResultingList(DimensionTypeValues<T> firstDimensionTypeValues,
                                              DimensionTypeValues<S> secondDimensionTypeValues,
                                              MeasureType measureType,
@@ -290,6 +402,16 @@ public class Cube {
         }
     }
 
+    /**
+     * Fill totals.
+     *
+     * @param secondDimensionTypeValues    values of second dimension type
+     * @param secondDimensionTotalMeasures total measures of second dimension
+     * @param measureType                  measure type
+     * @param totals                       totals
+     * @param allTotalMeasures             all total measures
+     * @param <S>                          second dimension type
+     */
     private <S> void fillTotals(DimensionTypeValues<S> secondDimensionTypeValues,
                                 Map<S, List<Measure<?>>> secondDimensionTotalMeasures,
                                 MeasureType measureType, List<Long> totals, List<Measure<?>> allTotalMeasures) {
