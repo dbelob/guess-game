@@ -1757,6 +1757,10 @@ public class ConferenceDataLoader {
 //                        Set.of("Открытие конференции SmartData 2021", "Разговор в телевизоре", "Закрытие конференции SmartData 2021"),
 //                        false));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2021, 10, 21), "2021msk");
-//        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2021, 10, 25), "2021joker");
+//        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2021, 10, 25), "2021joker",
+//                new LoadSettings(
+//                        Collections.emptyMap(),
+//                        Set.of("Открытие конференции Joker 2021"),
+//                        false));
     }
 }
