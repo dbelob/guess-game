@@ -6,12 +6,12 @@
   },
   "measureType": {
     "duration": "Duration, days",
-    "eventTypesQuantity": "Event types quantity",
-    "eventsQuantity": "Events quantity",
-    "talksQuantity": "Talks quantity",
-    "speakersQuantity": "Speakers quantity",
-    "javaChampionsQuantity": "Java Champions quantity",
-    "mvpsQuantity": "MVPs quantity"
+    "eventTypesQuantity": "Number of event types",
+    "eventsQuantity": "Number of events",
+    "talksQuantity": "Number of talks",
+    "speakersQuantity": "Number of speakers",
+    "javaChampionsQuantity": "Number of Java Champions",
+    "mvpsQuantity": "Number of MVPs"
   },
   "common": {
     "menuLinkText": "Menu",
