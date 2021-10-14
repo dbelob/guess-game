@@ -268,6 +268,9 @@ public class ConferenceDataLoader {
                         LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
         );
 
+        // Delete invalid speaker companies
+        deleteInvalidSpeakerCompanies(contentfulSpeakers);
+
         // Order company with talk order
         List<Company> contentfulCompanies = getSpeakerCompanies(contentfulSpeakers);
         log.info("Companies (in Contentful): {}", contentfulCompanies.size());
@@ -459,6 +462,25 @@ public class ConferenceDataLoader {
         return talks.stream()
                 .filter(t -> t.equals(ruNameMap.get(LocalizationUtils.getString(t.getName(), Language.RUSSIAN))))
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Deletes invalid companies from speaker.
+     *
+     * @param speakers speakers
+     */
+    static void deleteInvalidSpeakerCompanies(List<Speaker> speakers) {
+        for (Speaker speaker : speakers) {
+            Set<Long> ids = speaker.getCompanies().stream()
+                    .filter(c -> (c.getName() == null) || c.getName().isEmpty())
+                    .map(Company::getId)
+                    .collect(Collectors.toSet());
+
+            if (!ids.isEmpty()) {
+                speaker.getCompanyIds().removeIf(ids::contains);
+                speaker.getCompanies().removeIf(c -> ids.contains(c.getId()));
+            }
+        }
     }
 
     /**
