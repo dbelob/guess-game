@@ -426,8 +426,8 @@ public class ContentfulUtils {
      */
     static LocalDate createEventLocalDate(String zonedDateTimeString) {
         return ZonedDateTime.ofInstant(
-                ZonedDateTime.parse(zonedDateTimeString).toInstant(),
-                ZoneId.of(DateTimeUtils.MOSCOW_TIME_ZONE))
+                        ZonedDateTime.parse(zonedDateTimeString).toInstant(),
+                        ZoneId.of(DateTimeUtils.MOSCOW_TIME_ZONE))
                 .toLocalDate();
     }
 
@@ -555,10 +555,13 @@ public class ContentfulUtils {
 
         if (((enName != null) && !enName.isEmpty()) ||
                 ((ruName != null) && !ruName.isEmpty())) {
-            return List.of(new Company(
+            List<Company> companies = new ArrayList<>();
+
+            companies.add(new Company(
                     companyId.getAndDecrement(),
-                    extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany(), checkEnTextExistence)
-            ));
+                    extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany(), checkEnTextExistence)));
+
+            return companies;
         } else {
             return new ArrayList<>();
         }
@@ -585,7 +588,7 @@ public class ContentfulUtils {
 
         ContentfulAsset asset = assetMap.get(assetId);
         String url = extractAssetUrl(Objects.requireNonNull(asset,
-                () -> String.format("Asset (photo) id %s not found for '%s' speaker", assetId, speakerNameEn))
+                        () -> String.format("Asset (photo) id %s not found for '%s' speaker", assetId, speakerNameEn))
                 .getFields().getFile().getUrl());
 
         return new UrlDates(url, asset.getSys().getCreatedAt(), asset.getSys().getUpdatedAt());
@@ -956,7 +959,7 @@ public class ContentfulUtils {
                     String assetId = l.getSys().getId();
                     ContentfulAsset asset = assetMap.get(assetId);
                     return extractAssetUrl(Objects.requireNonNull(asset,
-                            () -> String.format("Asset (presentation link) id %s not found for '%s' talk", assetId, talkNameEn))
+                                    () -> String.format("Asset (presentation link) id %s not found for '%s' talk", assetId, talkNameEn))
                             .getFields().getFile().getUrl());
                 })
                 .collect(Collectors.toList());
@@ -1114,7 +1117,7 @@ public class ContentfulUtils {
 
         ContentfulCity city = cityMap.get(entryId);
         return Objects.requireNonNull(city,
-                () -> String.format("Entry (city name) id %s not found for '%s' event", entryId, eventName))
+                        () -> String.format("Entry (city name) id %s not found for '%s' event", entryId, eventName))
                 .getFields().getCityName().get(locale);
     }
 

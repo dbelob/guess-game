@@ -157,13 +157,19 @@ speakers:
       - {language: ru, text: "Паша Финкельштейн"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Pasha is a speaker and developer for the Big Data Tools team at JetBrains and the author of\
-            \ the Kotlin API for Apache Spark. In the past, he has worked in almost every IT position, from tech support to\
-            \ manager and data engineer. He loves talking to people about anything, but particularly he loves talking about\
-            \ IT. He's a Kotlin fan."}
-      - {language: ru, text: "Паша — серийный спикер и разработчик Big Data Tools в JetBrains. Автор Kotlin API for Apache\
-            \ Spark. В прошлом успел позаниматься почти всем в сфере IT: от поддержки и системного администрирования до ме\
-            неджмента и дата-инжиниринга. Очень любит людей и разговаривать. Обо всём, особенно об IT. Фанат Котлина."}
+      - language: en
+        text: "Despite his education in psychology, for 14 years Pasha managed to work in a lot of IT areas — system administration,\
+            \ development, management, data engineering, in general, touched almost everything that exists in IT. More than\
+            \ 10 years ago he started practicing DevOps and never focused on just one thing.\nNow Pasha works at JetBrains\
+            \ on Big Data Tools – tools to make data engineer's life easier.\nVery sociable, loves, and understands people\
+            \ and is always happy to answer any questions."
+      - language: ru
+        text: "Несмотря на психологическое образование, за 14 лет Паша успел поработать в куче сфер в IT — системное админ\
+            истрирование, разработка, менеджмент разных уровней, дата-инжиниринг, в общем, так или иначе, касался почти вс\
+            его, что в IT существует. Начал практиковать DevOps-практики больше 10 лет назад и никогда не концентрировался\
+            \ на чём-то одном.\n\nСейчас Паша работает в компании JetBrains над разработкой Big Data Tools — инструментами\
+            \ для того, чтобы делать жизнь дата-инженеров проще.\n\nОчень общительный, любит и понимает людей, и всегда ра\
+            д ответить на любые вопросы."
     twitter: asm0di0
     gitHub: asm0dey
     habr: asm0dey
@@ -7322,7 +7328,7 @@ speakers:
     habr: VagifAbilov
   - id: 499
     photoFileName: 0499.jpg
-    photoUpdatedAt: 2021-08-27T09:58:52.677Z[UTC]
+    photoUpdatedAt: 2021-10-12T13:50:30.483Z[UTC]
     name:
       - {language: en, text: "Sergey Vasiliev"}
       - {language: ru, text: "Сергей Васильев"}
@@ -17373,15 +17379,18 @@ speakers:
             стрированием Linux-серверов"}
   - id: 1252
     photoFileName: 1252.jpg
-    photoUpdatedAt: 2020-06-13T14:22:15.329Z[UTC]
+    photoUpdatedAt: 2021-10-14T08:25:41.807Z[UTC]
     name:
       - {language: en, text: "Nikita Lipilin"}
       - {language: ru, text: "Никита Липилин"}
     companyIds: [424]
     bio:
-      - {language: en, text: "Сотрудник отдела разработки C#-анализатора PVS-Studio. Профессионально делает вид, что умеет\
-            \ играть на гитаре, записывать видео и разговаривать с людьми. Всегда рад новым знакомствам и интересному обще\
-            нию"}
+      - {language: en, text: "A big fan of C#. One of the developers of the PVS-Studio static analyzer for C#. Likes coding,\
+            \ writing articles and participating in videos on various topics."}
+      - {language: ru, text: "Большой фанат C# и один из разработчиков статического анализатора PVS-Studio для этого языка\
+            . В свободное от программирования время любит программировать, а также писать статейки и участвовать в съёмках\
+            \ видео на разные темы."}
+    twitter: nikita30005701
     habr: Firensis
   - id: 1253
     photoFileName: 1253.jpg
@@ -25102,3 +25111,46 @@ speakers:
     twitter: briandemers
     gitHub: bdemers
     javaChampion: true
+  - id: 1797
+    photoFileName: 1797.jpg
+    photoUpdatedAt: 2021-10-14T08:42:50.209Z[UTC]
+    name:
+      - {language: en, text: "Nikita Tyulenev"}
+      - {language: ru, text: "Никита  Тюленев"}
+    companyIds: [806]
+    bio:
+      - {language: en, text: "Worked on projects in  fintech and b2b gambling solutions. Currently is a .NET Development Team\
+            \ Lead at Altenar."}
+      - {language: ru, text: "Основной опыт в IT связан с бэкенд-разработкой на .NET. Работал над проектами в финтехе и b2b-р\
+            ешениями в гемблинге. Сейчас работает в Altenar тимлидом."}
+    twitter: n1tulenev
+    gitHub: ntulenev
+  - id: 1798
+    photoFileName: 1798.jpg
+    photoUpdatedAt: 2021-10-13T07:21:09.443Z[UTC]
+    name:
+      - {language: en, text: "Anton Malikov"}
+      - {language: ru, text: "Антон Маликов"}
+    companyIds: [662]
+    bio:
+      - language: en
+        text: "Anton Malikov, .NET developer @ Raiffeisenbank.\r\nHe specializes in web applications. He started his career\
+            \ in tech support, so he knows what users want from a good software."
+      - {language: ru, text: "Разработчик в Райффайзенбанке. Специализируется на веб-приложениях. Начинал карьеру с техпод\
+            держки, так что немало знает о пользовательских требованиях к ПО."}
+  - id: 1799
+    photoFileName: 1799.jpg
+    photoUpdatedAt: 2021-10-14T08:22:23.406Z[UTC]
+    name:
+      - {language: en, text: "Nikolay Mironov"}
+      - {language: ru, text: "Николай Миронов"}
+    companyIds: [424]
+    bio:
+      - {language: en, text: "Tech Lead of the Tools&DevOps team at PVS-Studio. Nikolay develops and maintains utilities and\
+            \ plugins for developers to work with the static analyzer more conveniently. He also participated in developing\
+            \ the analyzer for C#. Writes scripts for Jenkins for fun."}
+      - {language: ru, text: "Tech Lead команды Tools&DevOps компании PVS-Studio. Занимается разработкой и поддержкой утил\
+            ит и плагинов для более удобной работы со статическим анализатором. Дополнительно успел оставить свой след в о\
+            дноименном C# анализаторе. Пишет скрипты в Jenkins для души"}
+    twitter: nikola_ich
+    habr: IchNikola
