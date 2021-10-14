@@ -2513,3 +2513,6 @@ companies:
   - id: 805
     name:
       - {language: en, text: Okta}
+  - id: 806
+    name:
+      - {language: en, text: Altenar}
