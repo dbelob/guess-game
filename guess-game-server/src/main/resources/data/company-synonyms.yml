@@ -98,6 +98,10 @@ companySynonyms:
     synonyms: [
         "Mail.ru"
     ]
+  - name: Microsoft
+    synonyms: [
+        Microsoft/GitHub
+    ]
   - name: "Kaspersky Lab"
     synonyms: [
         Kaspersky

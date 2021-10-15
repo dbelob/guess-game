@@ -28,7 +28,9 @@ import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -676,13 +678,33 @@ class ConferenceDataLoaderTest {
 
         List<Speaker> speakers = new ArrayList<>(List.of(speaker0, speaker1, speaker2, speaker3));
 
+        Predicate<Company> invalidCompanyPredicate = c -> (c.getName() == null) || c.getName().isEmpty();
+        List<Company> oldCompanies = speakers.stream()
+                .flatMap(s -> s.getCompanies().stream())
+                .collect(Collectors.toList());
+        long oldTotalCompanyCount = oldCompanies.size();
+        long oldInvalidCompanyCount = oldCompanies.stream()
+                .filter(invalidCompanyPredicate)
+                .count();
+        long oldValidCompanyCount = oldTotalCompanyCount - oldInvalidCompanyCount;
+
+        assertTrue(oldTotalCompanyCount > 0);
+        assertTrue(oldInvalidCompanyCount > 0);
+
         ConferenceDataLoader.deleteInvalidSpeakerCompanies(speakers);
 
-        for (Speaker speaker : speakers) {
-            for (Company company : speaker.getCompanies()) {
-                assertTrue((company.getName() != null) && !company.getName().isEmpty());
-            }
-        }
+        List<Company> newCompanies = speakers.stream()
+                .flatMap(s -> s.getCompanies().stream())
+                .collect(Collectors.toList());
+        long newTotalCompanyCount = newCompanies.size();
+        long newInvalidCompanyCount = newCompanies.stream()
+                .filter(invalidCompanyPredicate)
+                .count();
+        long newValidCompanyCount = newTotalCompanyCount - newInvalidCompanyCount;
+
+        assertTrue(newTotalCompanyCount > 0);
+        assertEquals(0, newInvalidCompanyCount);
+        assertEquals(oldValidCompanyCount, newValidCompanyCount);
     }
 
     @Nested

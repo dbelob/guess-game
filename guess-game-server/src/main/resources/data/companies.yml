@@ -2516,3 +2516,38 @@ companies:
   - id: 806
     name:
       - {language: en, text: Altenar}
+  - id: 807
+    name:
+      - {language: en, text: CircleCI}
+  - id: 808
+    name:
+      - {language: en, text: APC}
+  - id: 809
+    name:
+      - {language: en, text: Disco}
+  - id: 810
+    name:
+      - {language: en, text: Skyeng}
+  - id: 811
+    name:
+      - {language: en, text: Metarhia}
+  - id: 812
+    name:
+      - {language: en, text: MoleculerJS}
+  - id: 813
+    name:
+      - {language: en, text: Aviasales}
+      - {language: ru, text: Авиасейлс}
+  - id: 814
+    name:
+      - {language: en, text: "Pochta tech"}
+      - {language: ru, text: Почтатех}
+  - id: 815
+    name:
+      - {language: en, text: "Joyn GmbH"}
+  - id: 816
+    name:
+      - {language: en, text: Lightsource.ai}
+  - id: 817
+    name:
+      - {language: en, text: "1inch Network"}
