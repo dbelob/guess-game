@@ -7330,7 +7330,7 @@ speakers:
     photoFileName: 0499.jpg
     photoUpdatedAt: 2021-10-12T13:50:30.483Z[UTC]
     name:
-      - {language: en, text: "Sergey Vasiliev"}
+      - {language: en, text: "Sergey Vasilev"}
       - {language: ru, text: "Сергей Васильев"}
     companyIds: [424]
     bio:
