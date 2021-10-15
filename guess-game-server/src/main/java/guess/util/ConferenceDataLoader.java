@@ -1784,5 +1784,6 @@ public class ConferenceDataLoader {
 //                        Collections.emptyMap(),
 //                        Set.of("Открытие конференции Joker 2021"),
 //                        false));
+//        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2021, 11, 2), "2021msk");
     }
 }

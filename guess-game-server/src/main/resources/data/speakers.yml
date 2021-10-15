@@ -9909,7 +9909,7 @@ speakers:
     photoFileName: 0689.jpg
     photoUpdatedAt: 2018-10-15T14:48:03.205Z[UTC]
     name:
-      - {language: en, text: "Alexander Korotaev"}
+      - {language: en, text: "Aleksandr Korotaev"}
       - {language: ru, text: "Александр Коротаев"}
     companyIds: [620]
     bio:
@@ -10031,7 +10031,7 @@ speakers:
     twitter: gritzko
   - id: 698
     photoFileName: 0698.jpg
-    photoUpdatedAt: 2020-02-26T12:47:41.275Z[UTC]
+    photoUpdatedAt: 2021-09-30T06:54:17.865Z[UTC]
     name:
       - {language: en, text: "Viktor Vershansky"}
       - {language: ru, text: "Виктор Вершанский"}
@@ -14409,17 +14409,19 @@ speakers:
     twitter: frontendweekend
   - id: 1030
     photoFileName: 1030.jpg
+    photoUpdatedAt: 2019-09-02T12:34:11.199Z[UTC]
     name:
       - {language: en, text: "Romulo Cintra"}
-    companyIds: [84]
+    companyIds: [252]
     bio:
       - language: en
         text: "Technology enthusiast, working in Software development and Architectures for more than 10 years. Contributor\
-            \ in Open Source projects, TC39 Delegate, and blogger in part-time.\n\nHis main goal is to democratize technology\
+            \ in Open Source projects, TC39 Delegate, and blogger in part-time.\r\n\r\nHis main goal is to democratize technology\
             \ and empower developers, teams, and companies mostly in the financial sector to build better products. His main\
-            \ focuses are the web, mobile, and cloud. He loves and advocates for the future of the internet and decentralized\
+            \ focuses are the web, mobile, and cloud. He loves and advocates for the future of the Internet and decentralized\
             \ technology culture where all the globe is connected."
     twitter: romulocintra
+    gitHub: romulocintra
   - id: 1031
     photoFileName: 1031.jpg
     name:
@@ -15457,15 +15459,16 @@ speakers:
     name:
       - {language: en, text: "Sergey Melyukov"}
       - {language: ru, text: "Сергей Мелюков"}
-    companyIds: [611]
+    companyIds: [689]
     bio:
       - {language: en, text: "Web Engineer. At different times he used different languages and directions, and in the last\
             \ few years, he has focused on JS. Sergey is interested in developing CG applications, actively contributes to\
-            \ webpack, loves rare tasks such as analysis and work with AST, self-written bundlers, etc."}
+            \ Webpack, loves rare tasks such as analysis and work with AST, self-written bundlers, etc."}
       - {language: ru, text: "Веб-инженер. В разное время использовал разные языки и направления, а в последние несколько\
-            \ лет сосредоточен на JS. Интересуется разработкой CG-приложений, активно контрибьютит в webpack, любит редкие\
-            \ задачки типа анализа и работы с AST, самописные сборщики, и т.п."}
+            \ лет сосредоточен на JS. Интересуется разработкой CG-приложений, активно контрибьютит в OSS (Webpack, автор Statoscope),\
+            \ любит редкие задачки типа анализа и работы с AST, самописные сборщики, и т.п."}
     twitter: smelukov
+    gitHub: smelukov
     habr: smelukov
   - id: 1110
     photoFileName: 1110.jpg
@@ -17808,14 +17811,10 @@ speakers:
       - {language: ru, text: "Александр Канунников"}
     companyIds: [183]
     bio:
-      - {language: en, text: "12 years in web development, 8 years has been developing corporate web applications, including\
-            \ decision-making systems, production process control, and microbiological research. Open source contributor,\
-            \ consultant, and developer of developer tools. Russian Ember.js community organizer. Loves JavaScript, DOM API,\
-            \ AST."}
-      - {language: ru, text: "12 лет в веб-разработке, из которых 8 лет занимается разработкой корпоративных веб-приложени\
-            й, включая системы принятия решений, управления процессами производства и микробиологических исследований. Опе\
-            нсорс контрибьютор, консультант и разработчик инструментов для разработчиков. Организатор российского Ember.js-с\
-            ообщества. Любит JavaScript, DOM API, AST."}
+      - {language: en, text: "12+ years in FE, Lead front-end engineer, Ember.js lover, OSS contributor"}
+    twitter: vaier
+    gitHub: lifeart
+    habr: lifeart
   - id: 1290
     photoFileName: 1290.jpg
     name:
@@ -19680,14 +19679,16 @@ speakers:
     twitter: concurnas
   - id: 1428
     photoFileName: 1428.jpg
-    photoUpdatedAt: 2020-11-02T09:40:42.820Z[UTC]
+    photoUpdatedAt: 2021-08-27T07:30:27.760Z[UTC]
     name:
       - {language: en, text: "Semyon Levenson"}
+      - {language: ru, text: "Семён Левенсон"}
     companyIds: [689]
     bio:
       - {language: en, text: "Frontend developer since 2013. Semyon managed to work in a startup, state projects (Platon,\
-            \ Rosguard, Roscosmos), on the service for entrepreneurs Potok as team lead, developed a useful program for HR\
-            \ Huntflow. Now he does Yandex.Zen."}
+            \ Rosguard, Roscosmos). Worked in Rambler, developed a useful program for HR. Now he does Yandex.Zen."}
+      - {language: ru, text: "Фронтенд-разработчик с 2013 года, успел поработать в стартапе и над гос. проектами. Тимлидил\
+            \ в Рамблере, развивал полезную программу для HR, а сейчас помогает людям поймать дзен в Яндекс.Дзен."}
     gitHub: semeleven
   - id: 1429
     photoFileName: 1429.jpg
@@ -19810,10 +19811,11 @@ speakers:
             \ building software in Silicon valley. Currently with Uber primarily focusing on the frontend, but contributing\
             \ full-stack to systematically introduce GraphQL into established microservices architecture."}
       - language: ru
-        text: "Диана из Москвы, закончила МГТУ им. Н.Э. Баумана. Последние 12 лет живет и работает программистом в Кремние\
-            вой долине в районе Сан-Франциско.\n\nВ настоящее время работает в Uber и систематично добавляет GraphQL в мик\
-            росервисную архитектуру."
+        text: "Диана из Москвы, окончила МГТУ им. Н.Э. Баумана. Последние 12 лет живет и работает программистом в Кремниев\
+            ой долине в районе Сан-Франциско.\n\nВ настоящее время работает в Uber и систематично добавляет GraphQL в микр\
+            осервисную архитектуру."
     twitter: DianaSuvorova
+    gitHub: DianaSuvorova
   - id: 1439
     photoFileName: 1439.jpg
     photoUpdatedAt: 2020-10-07T12:42:57.023Z[UTC]
@@ -19844,17 +19846,18 @@ speakers:
     name:
       - {language: en, text: "Dmitriy Kovalenko"}
       - {language: ru, text: "Дмитрий Коваленко"}
-    companyIds: [126]
+    companyIds: [816]
     bio:
       - language: en
-        text: "Actively propagating web application safety. Love testing and works at Cypress.io for the second time. Material-UI\
-            \ core team member. Active (or not really) open source contributor. \n\nLove chihuahua, volleyball, OCaml, and\
-            \ cooking."
+        text: "Actively propagating web application safety. Loves testing and works at Cypress.io for second time. Material-UI\
+            \ core team member. Active (or not really) open source contributor. \r\n\r\nLoves chihuahua, volleyball, OCaml\
+            \ and cooking."
       - language: ru
-        text: "Пропагандирует надежность веб-приложений. Работает в Cypress.io уже во второй раз. Автор идеи компонентного\
-            \ тестирования в Cypress. Состоит в Material-UI core team. Активный (или не очень) опенсорсер. \n\nЛюбит чихуа\
-            хуа, волейбол, OCaml и готовить."
+        text: "Пропагандирует надежность и эффективность любых приложений.  Занимается опенсорсом, мейнтейнер проектов Material-UI,\
+            \ Cypress и парочки своих. Делает подкаст Goose&Duck и ругается на Rust. \r\n\r\nЛюбит чихуахуа, волейбол, OCaml\
+            \ и готовить."
     twitter: dmtrKovalenko
+    gitHub: dmtrKovalenko
   - id: 1442
     photoFileName: 1442.jpg
     photoUpdatedAt: 2020-10-08T13:05:23.016Z[UTC]
@@ -19888,9 +19891,9 @@ speakers:
       - {language: en, text: "Thomas Steiner"}
     companyIds: [217]
     bio:
-      - {language: en, text: "Thomas Steiner is a Developer Advocate at Google Hamburg, focused on making the Web a better\
-            \ place through standardization, creating and sharing best practices, and doing research. He blogs at https://blog.tomayac.com/\
-            \ and tweets as @tomayac."}
+      - {language: en, text: "Thomas Steiner is a Developer Relations Engineer at Google, focused on the Web and Project Fugu.\
+            \ He's an alum of University of Lyon (Postdoc), Polytechnic University of Barcelona (Ph.D.), and University of\
+            \ Karlsruhe (MA). Thomas blogs at http://blog.tomayac.com and tweets as @tomayac."}
     twitter: tomayac
     gitHub: tomayac
   - id: 1445
@@ -22339,12 +22342,13 @@ speakers:
       - {language: ru, text: "Никита Дубко"}
     companyIds: [689]
     bio:
-      - {language: en, text: "Frontend developer and CSS Evangelist. Editor of the Web Standards frontend news feed. The 5th\
-            \ voice of the Web Standards weekly podcast. Friendly beard."}
-      - {language: ru, text: "Фронтенд-разработчик и CSS-евангелист. Доброжелюбный бородач. Редактор новостей сообщества В\
-            еб-стандарты и пятый голос одноименного подкаста."}
+      - {language: en, text: "GDE on Web. Editor of the Web Standards frontend news feed. The 5th voice of the Web Standards\
+            \ weekly podcast. Friendly beard."}
+      - {language: ru, text: "Google Developer Expert по веб-технологиям. Дружелюбный бородач. Редактор новостей сообществ\
+            а «Веб-стандарты» и пятый голос одноименного подкаста."}
     twitter: dark_mefody
     gitHub: MeFoDy
+    habr: DarkMeFoDy
   - id: 1612
     photoFileName: 1612.jpg
     photoUpdatedAt: 2021-03-11T07:13:50.686Z[UTC]
@@ -25154,3 +25158,236 @@ speakers:
             дноименном C# анализаторе. Пишет скрипты в Jenkins для души"}
     twitter: nikola_ich
     habr: IchNikola
+  - id: 1800
+    photoFileName: 1800.jpg
+    photoUpdatedAt: 2021-08-31T08:42:09.469Z[UTC]
+    name:
+      - {language: en, text: "Aleksandr Baltsevich"}
+      - {language: ru, text: "Александр Бальцевич"}
+    companyIds: [808]
+    bio:
+      - {language: en, text: "Software developer with 10 years experience and frontend YouTube channel \"IT Siniak\". He studies\
+            \ React sources and share his progress. Loves to use the dependency inversion pattern. And always has ideas on\
+            \ how to improve/speed up your project!"}
+      - {language: ru, text: "Программист с 10-летним опытом и своим фронтендерским YouTube каналом «АйТи Синяк». Пытается\
+            \ изучить исходники React и делится своим прогрессом. Обожает применять инверсию зависимостей. У Александра вс\
+            егда есть идеи как улучшить/ускорить ваш проект!"}
+    twitter: it_sin9k
+    gitHub: baltsevicha
+  - id: 1801
+    photoFileName: 1801.jpg
+    photoUpdatedAt: 2021-09-21T08:29:03.810Z[UTC]
+    name:
+      - {language: en, text: "Laurie Voss"}
+    companyIds: [360]
+    bio:
+      - {language: en, text: "A web developer since 1996, with occasional breaks to found companies like awe.sm (2010) and\
+            \ npm (2014). Laurie likes making websites and making the web bigger and better. In his opinion, one of the best\
+            \ ways to do that is to encourage more people to do web development, by teaching them existing techniques and\
+            \ by building tools and services that make web development easier, so they don't have to learn so much."}
+    gitHub: seldo
+  - id: 1802
+    photoFileName: 1802.jpg
+    photoUpdatedAt: 2021-08-23T10:08:54.042Z[UTC]
+    name:
+      - {language: en, text: "Ali Gasymov"}
+      - {language: ru, text: "Али Гасымов"}
+    companyIds: [809]
+    bio:
+      - {language: en, text: "Tech Lead in Disco. In 2019 he became the main developer of the largest extension (15M MAU)\
+            \ for downloading videos from YouTube. Made over 20 extensions. Author of the most popular library for working\
+            \ with the Telegram API — @mtproto/core."}
+      - {language: ru, text: "Tech Lead в Disco. В 2019 году стал главным разработчиком самого большого расширения (15M MAU)\
+            \ для скачивания видео с YouTube. Сделал больше 20 расширений. Автор самой популярной библиотеки для работы с\
+            \ Telegram API — @mtproto/core."}
+    gitHub: alik0211
+  - id: 1803
+    photoFileName: 1803.jpg
+    photoUpdatedAt: 2021-09-17T16:03:03.155Z[UTC]
+    name:
+      - {language: en, text: "Anton Khaynovskiy"}
+      - {language: ru, text: "Антон Хайновский"}
+    companyIds: [810]
+    bio:
+      - {language: en, text: "6 years in frontend, Angular, Typescript, RxJS, recently moving education to the web."}
+      - {language: ru, text: "6 лет в фронтенде, Angular, Typescript, RxJS, в последнее время переносит образование в веб."}
+  - id: 1804
+    photoFileName: 1804.jpg
+    photoUpdatedAt: 2021-09-13T08:01:32.169Z[UTC]
+    name:
+      - {language: en, text: "Sergey Golovin"}
+      - {language: ru, text: "Сергей Головин"}
+    companyIds: [123]
+    bio:
+      - {language: en, text: "Programmer with 10 years of software development experience and a CTO at CSSSR, an Open Source\
+            \ enthusiast, a core-team member of RacketScript language. Co-author of Remote Talk and Callback Hell podcasts,\
+            \ a co-organizer of a local developers community in Kursk, and co-organizer of Meetup Universe metacommunity."}
+      - {language: ru, text: "Программист с десятилетним опытом разработки и CTO в компании CSSSR, Open Source-энтузиаст,\
+            \ core-team member языка RacketScript, ведущий подкастов Remote Talk и Callback Hell. Соорганизатор локального\
+            \ сообщества разработчиков в Курске, соорганизатор метасообщества Meetup Universe, объединяющего организаторов\
+            \ региональных IT-сообществ."}
+    twitter: _sgolovin
+    gitHub: daynin
+    habr: golovim
+  - id: 1805
+    photoFileName: 1805.jpg
+    photoUpdatedAt: 2021-09-30T08:42:06.615Z[UTC]
+    name:
+      - {language: en, text: "Ryan Carniato"}
+    companyIds: [171]
+    bio:
+      - {language: en, text: "Frontend JS performance enthusiast and long time super fan of fine grained reactive programming.\
+            \ Member of Marko core team. Author of SolidJS UI library."}
+    twitter: RyanCarniato
+    gitHub: ryansolid
+  - id: 1806
+    photoFileName: 1806.jpg
+    photoUpdatedAt: 2021-10-01T13:53:17.841Z[UTC]
+    name:
+      - {language: en, text: "Vadim Gorbachev"}
+      - {language: ru, text: "Вадим Горбачев"}
+    companyIds: [620]
+    bio:
+      - {language: en, text: "Vadim has been in the industry for about 10 years, for the last year he has been involved in\
+            \ VK video calls. He is studying for his master's degree at ITMO and is working on his thesis on WebRTC. Earlier\
+            \ he was the organizer of PiterJS, participated in the program committee of HolyJS."}
+      - {language: ru, text: "В индустрии около 10 лет, последний год занимается видеозвонками VK. Учится в ИТМО на магист\
+            ра и пишет диплом по WebRTC. Ранее был организатором PiterJS, участвовал в программном комитете HolyJS."}
+    twitter: _bmsdave
+    gitHub: bmsdave
+  - id: 1807
+    photoFileName: 1807.jpg
+    photoUpdatedAt: 2021-08-02T09:01:40.640Z[UTC]
+    name:
+      - {language: en, text: "Timur Shemsedinov"}
+      - {language: ru, text: "Тимур Шемсединов"}
+    companyIds: [811]
+    bio:
+      - language: en
+        text: "26 years in programming, researcher, lecturer, open source enthusiast, CTO at Salucyber, Chief architect at\
+            \ Metarhia technology stack. \r\nAuthor of 200 free video lectures, community organizer: NodeUA, Metaeducation,\
+            \ HowProgrammingWorks, speaker at over 55 conferences."
+      - language: ru
+        text: "Программист с 26-летним стажем, преподаватель, исследователь, open source-энтузиаст, CTO компании Salucyber,\
+            \ архитектор технологического стека Metarhi. \r\nАвтор более 200 открытых видео-лекций, организатор сообществ\
+            \ NodeUA, Metaeducation, HowProgrammingWorks, спикер на более чем 55 конференциях."
+    twitter: tshemsedinov
+    gitHub: tshemsedinov
+    habr: MarcusAurelius
+  - id: 1808
+    photoFileName: 1808.jpg
+    photoUpdatedAt: 2021-10-05T12:13:24.434Z[UTC]
+    name:
+      - {language: en, text: "Ivan Zhuravlev"}
+      - {language: ru, text: "Иван Журавлев"}
+    companyIds: [812]
+    bio:
+      - language: en
+        text: "Chief Technology Officer in TokenPlace. Qualified and reliable executive with enterprise level experience for\
+            \ 10+ years and industry knowledge about IT-business management and development. Adept in making key decisions\
+            \ and working hard with other professionals to achieve business goals and help tech-teams to reach their full\
+            \ potential. \r\n\r\nCommitted to bringing forth the highest level of design and development of modern information\
+            \ systems."
+      - {language: ru, text: "CTO проекта TokenPlace. Руководитель с опытом работы более 10 лет в области управления и раз\
+            работки ПО. Помогает техническим командам раскрыть свой потенциал. Стремится обеспечить высочайший уровень про\
+            ектирования и разработки современных информационных систем."}
+    gitHub: intech
+    habr: InteractiveTechnology
+  - id: 1809
+    photoFileName: 1809.jpg
+    photoUpdatedAt: 2021-09-16T07:51:55.719Z[UTC]
+    name:
+      - {language: en, text: "Igor Kamyshev"}
+      - {language: ru, text: "Игорь Камышев"}
+    companyIds: [813]
+    bio:
+      - {language: en, text: "Software engineer at Aviasales, working on the web platform to support product teams' sustainability\
+            \ and improve the quality of frontend engineer's life."}
+      - {language: ru, text: "Инженер программных продуктов в Aviasales, работает над веб-платформой и делает жизнь фронте\
+            ндеров чуть менее болезненной."}
+    twitter: kamyshev_code
+    gitHub: igorkamyshev
+    habr: igorkamyshev
+  - id: 1810
+    photoFileName: 1810.jpg
+    photoUpdatedAt: 2021-10-01T10:33:31.075Z[UTC]
+    name:
+      - {language: en, text: "Mikhail Vovrenchuk"}
+      - {language: ru, text: "Михаил Вовренчук"}
+    companyIds: [814]
+    bio:
+      - {language: en, text: "For the last six years he has been working on Pochta tech. Since the end of 2017 he has been\
+            \ developing the project pochta.ru. Leads the frontend development team. For the last year has been supporting\
+            \ the process of changing the site architecture, implementing DevOps and CI/CD processes on the project. Loves\
+            \ microservices and complex architecture."}
+      - {language: ru, text: "Последние шесть лет работает на проектах Почты России. С конца 2017 года занимается развитие\
+            м проекта pochta.ru. Руководит командой фронтенд-разработки. Последний год поддерживает процесс изменения архи\
+            тектуры сайта, внедряет DevOps и CI/CD процессы на проект. Любит микросервисы и сложную архитектуру."}
+  - id: 1811
+    photoFileName: 1811.jpg
+    photoUpdatedAt: 2021-09-29T14:17:27.822Z[UTC]
+    name:
+      - {language: en, text: "Alexey Migutsky"}
+      - {language: ru, text: "Алексей Мигуцкий"}
+    companyIds: [328]
+    bio:
+      - {language: en, text: "Full-stack Software Engineer with 10 years experience. Senior Engineer at Microsoft. Worked\
+            \ for 4 years on web version of Microsoft-To-Do, since 2020 works in Issue & Projects teams at GitHub"}
+      - {language: ru, text: "Full-stack Software Engineer c 10-летним опытом коммерческой разработки. Работает старшим ин\
+            женером в Microsoft. 4 года проработал над веб-версией Microsoft To-Do, с 2020 года работает в командах Issue\
+            \ & Projects в GitHub."}
+    twitter: mr_mig_by
+    gitHub: mr-mig
+  - id: 1812
+    photoFileName: 1812.jpg
+    photoUpdatedAt: 2021-09-17T06:38:24.869Z[UTC]
+    name:
+      - {language: en, text: "Alexey Berezin"}
+      - {language: ru, text: "Алексей Березин"}
+    companyIds: [815]
+    bio:
+      - language: en
+        text: "Frontend developer with four years of experience, currently working in video streaming.\nActively involved\
+            \ in OSS: has his own project, leads ts-essentials. Writes articles about TypeScript and players."
+      - language: ru
+        text: "Фронтенд-разработчик с четырехлетним опытом, в данный момент работает в видеостриминге.\nАктивно участвует\
+            \ в OSS: есть свой проект, ведет ts-essentials. Пишет статьи про TypeScript и плееры."
+    twitter: beraliv
+    gitHub: Beraliv
+  - id: 1813
+    photoFileName: 1813.jpg
+    photoUpdatedAt: 2021-10-05T12:25:37.348Z[UTC]
+    name:
+      - {language: en, text: "Artem Vorobev"}
+      - {language: ru, text: "Артем Воробьев"}
+    companyIds: [817]
+    bio:
+      - language: en
+        text: "Core contributor at 1inch network.\n\nStarted dApp development at 2018.\n\nWinner & participant of Ethereum\
+            \ Hackathons:\n- Mainstage prize at ETH Boston 2019 as part of ZeroPool team;\n- Mainstage prize at ETH Berlin\
+            \ 2018 as part of Matter Labs team;\n- ETH Denver 2018, 2019 bounty prizes;\n- ETH Capetown."
+      - language: ru
+        text: "Ведущий разработчик в 1inch network.\n\nНачал заниматься разработкой децентрализованных приложений в 2018 г\
+            оду.\n\nУчаствовал и выигрывал Ethereum-хакатоны:\n- Главная сцена ETH Boston 2019 участник команд ZeroPool;\n\
+            - Главная сцена ETH Berlin 2018 участник команды Matter Labs;\n- ETH Denver 2018, 2019;\n- ETH Capetown."
+    gitHub: artall64
+  - id: 1814
+    photoFileName: 1814.jpg
+    photoUpdatedAt: 2021-10-05T07:58:47.702Z[UTC]
+    name:
+      - {language: en, text: "Vadim Malyutin"}
+      - {language: ru, text: "Вадим Малютин"}
+    companyIds: [223]
+    bio:
+      - language: en
+        text: "Creative developer from St. Petersburg.\n\nHe started with freelancing, creating an IT community, participating\
+            \ in hackathons and ACM ICPC, then went into commercial development.\nWorked at Bekitzur, Yandex, and now Senior\
+            \ Software Engineer at Grid Dynamics.\nCo-founder of the world's first virtual clothing fitting on the web CLO-Z.\n\
+            Conducted and organized IT events, contests, intensive startup creation.\nCertified AWS developer."
+      - language: ru
+        text: "Креативный разработчик из Питера.\r\n\r\nНачинал с фриланса, создания IT-сообщества, участия в хакатонах и\
+            \ ACM ICPC, затем пошел в коммерческую разработку.\r\nРаботал в Bekitzur, Yandex, а теперь Senior Software Engineer\
+            \ в Grid Dynamics.\r\nСооснователь первой в мире виртуальной примерки одежды в вебе CLO-Z. \r\nПроводил и орга\
+            низовывал IT-эвенты, контесты, интенсив по созданию стартапов.\r\nСертифицированный разработчик AWS."
+    twitter: mfpjke
+    gitHub: mdusafp
