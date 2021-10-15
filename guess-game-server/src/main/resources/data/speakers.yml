@@ -25072,7 +25072,7 @@ speakers:
     name:
       - {language: en, text: "Karin-Aleksandra Monoid"}
       - {language: ru, text: "Карин-Александра Моноид"}
-    companyIds: []
+    companyIds: [807]
     bio:
       - {language: en, text: "Karin-Aleksandra Monoid is a Senior Software Engineer with background in various programming\
             \ languages. Currently she is specializing in Kotlin and advocating for functional programming (the good parts!).\

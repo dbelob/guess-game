@@ -2516,3 +2516,6 @@ companies:
   - id: 806
     name:
       - {language: en, text: Altenar}
+  - id: 807
+    name:
+      - {language: en, text: CircleCI}
