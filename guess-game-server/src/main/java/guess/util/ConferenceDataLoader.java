@@ -1776,5 +1776,6 @@ public class ConferenceDataLoader {
 //                LoadSettings.invalidTalksSet(Set.of("Открытие конференции Joker 2021")));
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2021, 11, 2), "2021msk");
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2021, 11, 8), "2021spbdevoops");
+//        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2021, 11, 15), "2021spbcpp");
     }
 }

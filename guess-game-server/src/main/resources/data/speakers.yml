@@ -4850,21 +4850,21 @@ speakers:
     photoFileName: 0332.jpg
     photoUpdatedAt: 2019-06-25T07:49:27.592Z[UTC]
     name:
-      - {language: en, text: "Antony Polukhin"}
+      - {language: en, text: "Anton Polukhin"}
       - {language: ru, text: "Антон Полухин"}
-    companyIds: [696]
+    companyIds: [718]
     bio:
       - language: en
-        text: "A representative of Russia at the C++ Standardization Committee. Author of several accepted proposals to the\
-            \ C++ standard.\n\nAuthor of the Boost libraries: TypeIndex, DLL, Stacktrace; maintainer of Any, Conversion, LexicalCast,\
-            \ Variant.\n\nAuthor of \"Boost C++ Application Development Cookbook\" and \"Boost C++ Application Development\
-            \ Cookbook, Second Edition\"."
+        text: "A representative of Russia at the ISO C++ Standardization Committee. Author of several accepted proposals to\
+            \ the C++ standard.\n\nAuthor of the Boost libraries: TypeIndex, DLL, Stacktrace; maintainer of Any, Conversion,\
+            \ LexicalCast, Variant.\n\nAuthor of \"Boost C++ Application Development Cookbook\" and \"Boost C++ Application\
+            \ Development Cookbook, Second Edition\"."
       - language: ru
-        text: "Эксперт-разработчик C++ в Яндекс.Такси.\n\nПредставитель России в ISO на международных заседаниях рабочей г\
-            руппы по стандартизации C++. Автор нескольких принятых предложений к стандарту языка C++.\n\nAвтор Boost-библи\
-            отек TypeIndex, DLL, Stacktrace и активный maintainer Any, Conversion, LexicalCast, Variant. \n\nАвтор книг «\
-            Boost C++ Application Development Cookbook» и «Boost C++ Application Development Cookbook, Second Edition».\n\n\
-            Изобретатель новой метапрограммной техники для рефлексии в C++14."
+        text: "Представитель России в ISO на международных заседаниях рабочей группы по стандартизации C++. Автор нескольк\
+            их принятых предложений к стандарту языка C++.\r\n\r\nAвтор Boost-библиотек TypeIndex, DLL, Stacktrace и актив\
+            ный maintainer Any, Conversion, LexicalCast, Variant. \r\n\r\nАвтор книг «Boost C++ Application Development Cookbook»\
+            \ и «Boost C++ Application Development Cookbook, Second Edition»."
+    gitHub: apolukhin
     habr: antoshkka
   - id: 333
     photoFileName: 0333.jpg
@@ -4891,16 +4891,20 @@ speakers:
     twitter: cppjedi
   - id: 334
     photoFileName: 0334.jpg
+    photoUpdatedAt: 2021-09-08T08:29:17.415Z[UTC]
     name:
       - {language: en, text: "Phil Nash"}
-    companyIds: [286]
+    companyIds: [489]
     bio:
-      - {language: en, text: "Phil is the author of the test frameworks Catch for C++ and Objective-C, and Swordfish for Swift.\
-            \ As Developer Advocate at JetBrains he's involved with CLion, AppCode and ReSharper C++. More generally he's\
-            \ an advocate for good testing practices, TDD and using the type system and functional techniques to reduce complexity\
-            \ and increase correctness. He's previously worked in Finance and Mobile as well as an independent consultant\
-            \ and coach specialising in TDD on iOS."}
+      - language: en
+        text: "Phil is the original author of the C++ test framework, Catch2, and composable command line parser, Clara. As\
+            \ Developer Advocate at SonarSource he's involved with SonarQube, SonarLint and SonarCloud, particularly in the\
+            \ context of C++. He's also the organiser of C++ London and C++ on Sea, as well as co-host and producer of the\
+            \ cpp.chat and No Diagnostic Required podcasts.\n\nMore generally he's an advocate for good testing practices,\
+            \ TDD and using the type system and functional techniques to reduce complexity and increase correctness. He's\
+            \ previously worked in Finance and Mobile offers training and coaching in TDD for C++."
     twitter: phil_nash
+    gitHub: philsquared
   - id: 335
     photoFileName: 0335.jpg
     name:
@@ -5049,15 +5053,16 @@ speakers:
     twitter: flex_ferrum
   - id: 346
     photoFileName: 0346.jpg
+    photoUpdatedAt: 2019-01-21T06:54:33.903Z[UTC]
     name:
       - {language: en, text: "Andrey Davydov"}
       - {language: ru, text: "Андрей Давыдов"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Andrey has been working in ReSharper C++ team, JetBrains for the last 3 years. Before that,\
+      - {language: en, text: "Andrey has been working in ReSharper C++ team, JetBrains for the last 5,5 years. Before that,\
             \ he worked in the GIS industry in the areas related to computational geometry and 3D-visualization."}
-      - {language: ru, text: "Последние 3 года Андрей работает в команде ReSharper C++ в JetBrains. В прошлом занимался пр\
-            омышленным программированием в областях, связанных с ГИС-ами и системами 3D-визуализации."}
+      - {language: ru, text: "Последние 5,5 лет Андрей работает в команде ReSharper C++ в JetBrains. В прошлом занимался п\
+            ромышленным программированием в областях, связанных с ГИС-ами и системами 3D-визуализации."}
   - id: 347
     photoFileName: 0347.jpg
     photoUpdatedAt: 2020-06-04T09:09:46.944Z[UTC]
@@ -5189,17 +5194,19 @@ speakers:
     companyIds: [27]
     bio:
       - language: en
-        text: "Alexander graduated from Control Systems School of Moscow Aviation Institute.\n\nHe was developing aero turbine\
+        text: "Alexander graduated from Control Systems School of Moscow Aviation Institute.\n\nHe was developing gas-turbine\
             \ engines vibration diagnostics system, then, for 10 years — server software for Sirena Travel, a flight booking\
-            \ system.\n\nCurrently Alexander is a senior developer in Moscow R&D office of Align Technology. He develops core\
-            \ of specialized 3D CAD system for designing orthodontic appliances. \n\nAlexander is passionate about cross-platform\
-            \ solutions. He's been working with C++ for more than 20 years."
+            \ system.\n\nCurrently Alexander is an expert software developer in Moscow R&D office of Align Technology. He\
+            \ develops core of specialized 3D CAD system for designing orthodontic appliances. \n\nAlexander is passionate\
+            \ about cross-platform solutions. He's been working with C++ for more than 20 years."
       - language: ru
         text: "Выпускник МАИ, факультет «Системы управления».\n\nЗанимался разработкой систем вибрационной диагностики ави\
             ационных газотурбинных двигателей, затем в течение десяти лет — разработкой серверного ПО системы бронирования\
-            \ авиаперевозок «Сирена-Трэвел».\n\nВ настоящее время — старший разработчик в московском R&D-офисе компании Align\
+            \ авиаперевозок «Сирена-Трэвел».\n\nВ настоящее время — ведущий разработчик в московском R&D-офисе компании Align\
             \ Technology. Развивает ядро специализированной 3D CAD-системы для дизайна ортодонтических приспособлений.\n\n\
             Ценитель и пропагандист кроссплатформенных решений, использует C++ более 20 лет."
+    twitter: holybrake
+    gitHub: holybrake
   - id: 358
     photoFileName: 0358.jpg
     photoUpdatedAt: 2020-04-29T14:29:36.893Z[UTC]
@@ -13992,9 +13999,11 @@ speakers:
       - {language: en, text: "Has been working as a C++ programmer for over 8 years, mostly in mobile communications and car\
             \ industry. Recently he became interested in metaprogramming and developing tools in C++ to make life of colleagues\
             \ a little easier."}
-      - {language: ru, text: "Работает C++ программистом уже на протяжении более 8 лет, в большей степени в сферах сотовой\
-            \ связи и автомобильной индустрии. В последнее время увлекся метапрограммированием и разработкой инструментов\
-            \ на C++, чтобы сделать жизнь коллег немножечко легче."}
+      - {language: ru, text: "Работает программистом C++ уже на протяжении более восьми лет, в большей степени в сферах со\
+            товой связи и автомобильной индустрии. В последнее время увлекся метапрограммированием и разработкой инструмен\
+            тов на C++, чтобы сделать жизнь коллег немного легче."}
+    gitHub: alex-ganyukhin
+    habr: alex-ganyukhin
   - id: 998
     photoFileName: 0998.jpg
     photoUpdatedAt: 2020-09-14T11:34:38.734Z[UTC]
@@ -15730,8 +15739,7 @@ speakers:
         text: "Старший С++ разработчик в Align Technology. Занимается разработкой общих системных компонентов и фреймворка\
             \ специализированной 3D CAD-системы.\n\nРанее разработал систему реалтайм мониторинга пациентов, а также систе\
             му сбора и обработки данных для self driving car. Участвовал в проекте Squid-proxy.\n\nВ область интересов вхо\
-            дят вопросы надежности ПО, компиляторостроения, системного программирования.\n\nВсегда старается докопаться до\
-            \ инстины."
+            дят вопросы надежности ПО, компиляторостроения, системного программирования."
     twitter: _valexey_
   - id: 1130
     photoFileName: 1130.jpg
@@ -18163,20 +18171,21 @@ speakers:
     companyIds: [248]
     bio:
       - language: en
-        text: "Founder of startup HyperIntegrate where he created a product that lets you connect Android as a filesystem\
-            \ on macOS.\nFor over 2 years he was a senior developer at DINO Systems and developed a real-time video transmission\
-            \ service.\nHis background is more than 10 years in Paragon Software on the position of team lead where he developed\
-            \ filesystem drivers for macOS, worked on filesystem implementation, snapshot system for block-devices (disk subsystem),\
-            \ boot loader, reverse-engineering, and many low-level things.\n\nIn his free time Evgeny research operation-systems\
-            \ internals, and microprocessor architectures."
+        text: "Senior engineer on compilers at Huawei. Takes part in the development of compilers and toolchains for Harmony\
+            \ OS. \nFounder of startup HyperIntegrate. Evgeny created the product that allows you to connect Android as a\
+            \ filesystem on macOS. \nWas more than 2 years the Senior Software Developer in DINO Systems. Took part in the\
+            \ development of a real-time video service. \nAnd behind are more than 10 years in Paragon Software on the position\
+            \ of a Team Lead. He developed filesystem drivers for macOS, worked on filesystem implementation, snapshot system\
+            \ for block-devices (disk subsystem), boot loader, reverse-engineering, and many low-level things. \nIn his free\
+            \ time, he researches operation-systems internals and microprocessor architectures."
       - language: ru
-        text: "Основатель стартапа HyperIntegrate, где создал продукт, позволяющий подключать Android как файловую систему\
-            \ на macOS.\nБольше 2 лет был старшим разработчиком в компании DINO Systems. Занимался разработкой сервиса пер\
-            едачи видео в реальном времени.\nЗа плечами более 10 лет опыта работы в Paragon Software, на позиции ведущего\
-            \ разработчика. Разрабатывал драйвера файловых систем под macOS, занимался имплементацией файловых систем, сис\
-            темы снепшотинга блочных (дисковых) устройств, boot загрузчика, реверс-инженирингом, и другими низкоуровневыми\
-            \ задачами.\n\nВ свободное время занимается изучением устройства операционных систем и процессорных архитектур\
-            ."
+        text: "Старший инженер по компиляторам в Huawei. Занимается разработкой компиляторов и тулчейна для Harmony OS. \n\
+            Основатель стартапа HyperIntegrate. Создал продукт, позволяющий подключать Android как файловую систему на macOS.\
+            \ \nБольше двух лет был старшим разработчиком в компании DINO Systems. Занимался разработкой сервиса передачи\
+            \ видео в реальном времени. \nЗа плечами более 10 лет опыта работы в Paragon Software на позиции ведущего разр\
+            аботчика. Разрабатывал драйвера файловых систем под macOS, занимался имплементацией файловых систем, системы с\
+            непшотинга блочных (дисковых) устройств, boot-загрузчика, реверс-инженирингом и другими низкоуровневыми задача\
+            ми. \nВ свободное время занимается изучением устройства операционных систем и процессорных архитектур."
   - id: 1319
     photoFileName: 1319.jpg
     photoUpdatedAt: 2020-06-25T09:52:48.294Z[UTC]
@@ -19233,10 +19242,11 @@ speakers:
       - {language: en, text: "Titus is a Senior Staff Software Engineer at Google, where he has worked since 2010. He founded\
             \ Abseil, Google's open source C++ library that underpins more than 250M lines of Google code with 12K+ active\
             \ internal users. He is one of the four arbiters for Google's official C++ style guidelines. For the last 9 years,\
-            \ Titus has been organizing, maintaining, and evolving the foundational components of Google’s C++ codebase using\
+            \ Titus has been organizing, maintaining, and evolving the foundational components of Google's C++ codebase using\
             \ modern automation and tooling. Titus is the former chair for the Library Evolution Working Group (LEWG) in WG21.\
             \ He is also the lead author for the book \"Software Engineering at Google.\""}
     twitter: tituswinters
+    gitHub: tituswinters
   - id: 1394
     photoFileName: 1394.jpg
     photoUpdatedAt: 2020-07-02T14:03:47.014Z[UTC]
@@ -25665,3 +25675,237 @@ speakers:
             \ возглавил продукт «хранилище для мониторинга» в компании «Флант». Пожизненно состоит в кружках «Хочу все зна\
             ть» и «Всегда готов поделиться тем, что уже узнал»."}
     twitter: magvai69
+  - id: 1832
+    photoFileName: 1832.jpg
+    photoUpdatedAt: 2020-06-24T14:09:39.849Z[UTC]
+    name:
+      - {language: en, text: "Alexander Borgardt"}
+      - {language: ru, text: "Александр Боргардт"}
+    companyIds: [620]
+    bio:
+      - language: en
+        text: "More than 10 years researches new approaches and creates solutions for advertisements, fintech and ML. \n\n\
+            Among fields of interests there are questions of developing distributed systems, parallel and concurrent handle\
+            \ of information. \n\nMakes the world better by [opensource](https://duckstax.com/) ."
+      - language: ru
+        text: "Более 10 лет занимается исследованием новых подходов и созданием решений в областях рекламы, финтеха и ML.\
+            \ \n\nВ область интересов входят вопросы разработки распределенных систем, параллельной и конкурентной обработ\
+            ки информации. \n\nУлучшает мир посредством [опенсорса](https://duckstax.com/)."
+    twitter: k0tbegem0t
+  - id: 1833
+    photoFileName: 1833.jpg
+    photoUpdatedAt: 2021-10-11T08:24:11.187Z[UTC]
+    name:
+      - {language: en, text: "Mikhail Lukin"}
+      - {language: ru, text: "Михаил Лукин"}
+    companyIds: [825]
+    bio:
+      - {language: en, text: "Mikhail has been working since 2008 mostly as a C++ developer. He participated in different\
+            \ projects from enterprise to embedded systems. For the last three years Michael has been developing GPGPU projects\
+            \ in OpenCL and CUDA."}
+      - {language: ru, text: "Работает программистом с 2008 года преимущественно на С++. Участвовал в разных проектах: от\
+            \ энтерпрайза до встраиваемых систем. Последние три года занимается программированием GPGPU на OpenCL и CUDA."}
+    gitHub: lukinma
+  - id: 1834
+    photoFileName: 1834.jpg
+    photoUpdatedAt: 2021-10-11T09:11:56.048Z[UTC]
+    name:
+      - {language: en, text: "Pavel Kryukov"}
+      - {language: ru, text: "Павел Крюков"}
+    companyIds: [826]
+    bio:
+      - {language: en, text: "Computer Science lecturer."}
+      - {language: ru, text: "Преподаватель архитектуры и микроархитектуры компьютера."}
+    gitHub: pavelkryukov
+  - id: 1835
+    photoFileName: 1835.jpg
+    photoUpdatedAt: 2021-10-06T10:44:16.111Z[UTC]
+    name:
+      - {language: en, text: "Andreas Fertig"}
+    companyIds: [827]
+    bio:
+      - language: en
+        text: "Andreas Fertig, CEO of Unique Code GmbH, is an experienced trainer and lecturer for C++ for standards 11 to\
+            \ 20.\n\nAndreas is involved in the C++ standardization committee, in which the new standards are developed. At\
+            \ international conferences, he presents how code can be written better. He publishes specialist articles, e.g.,\
+            \ for iX magazine, and has published several textbooks on C++.\n\nWith C++ Insights (https://cppinsights.io),\
+            \ Andreas has created an internationally recognized tool that enables users to look behind the scenes of C++ and\
+            \ thus to understand constructs even better.\n\nBefore working as a trainer and consultant, he worked for Philips\
+            \ Medizin Systeme GmbH for ten years as a C++ software developer and architect focusing on embedded systems."
+    twitter: Andreas__Fertig
+    gitHub: andreasfertig
+  - id: 1836
+    photoFileName: 1836.jpg
+    photoUpdatedAt: 2021-10-08T15:45:34.448Z[UTC]
+    name:
+      - {language: en, text: "Oleg Katkov"}
+      - {language: ru, text: "Олег Катков"}
+    companyIds: [828]
+    bio:
+      - {language: en, text: "Certified engineer with more than 15 years of experience in developing projects of various complexity.\
+            \ Main activities are systems programming, embedded systems (AVR, ARM, IAR) and signal processing."}
+      - {language: ru, text: "Дипломированный инженер с более чем пятнадцатилетним опытом разработки проектов различной сл\
+            ожности. Основные направления: системное программирование, встраиваемые системы(AVR, ARM, IAR) и обработка сиг\
+            налов."}
+    gitHub: Lezh1k
+  - id: 1837
+    photoFileName: 1837.jpg
+    photoUpdatedAt: 2021-10-11T08:03:41.747Z[UTC]
+    name:
+      - {language: en, text: "Konstantin Osipov"}
+      - {language: ru, text: "Константин Осипов"}
+    companyIds: [829]
+    bio:
+      - {language: en, text: "MySQL developer, then CTO at Tarantool, currently development director at ScyllaDB. He has 25\
+            \ years of C/C++ experience, but he couldn't master the language, it's some kind of complicated..."}
+      - {language: ru, text: "Разработчик MySQL, затем CTO в Tarantool, в настоящий момент — директор по разработке в ScyllaDB.\
+            \ Опыт С/C++ 25 лет, но язык так освоить и не смог, какой-то он сложный..."}
+    twitter: kostja_osipov
+    gitHub: kostja
+    habr: kostja
+  - id: 1838
+    photoFileName: 1838.jpg
+    photoUpdatedAt: 2020-06-25T11:25:17.046Z[UTC]
+    name:
+      - {language: en, text: "Pavel Kosov"}
+      - {language: ru, text: "Павел Косов"}
+    companyIds: [242]
+    bio:
+      - {language: en, text: "Senior Engineer at Huawei Russian Research Institute, LLVM Team. He has more than 10 years of\
+            \ experience in commercial development, his main experience is the creation and improvement of compilers for C/C++\
+            \ and system utilities for both common and exotic architectures. He was also engaged in the development of graphic\
+            \ and game engines for web/desktop/mobile apps."}
+      - language: ru
+        text: "Главный инженер Huawei Russian Research Institute, LLVM Team. За плечами более 10 лет в коммерческой разраб\
+            отке, основной опыт — создание и улучшение компиляторов для С/С++ и системных утилит как для распространенных\
+            , так и для довольно экзотических архитектур. Кроме этого, занимался разработкой графических и игровых движков\
+            \ для веб/десктоп/мобильных приложений. \n\nВ качестве хобби занимается исследованием возможностей функциональ\
+            ного программирования в С++."
+    gitHub: kpdev
+    habr: kpdev
+  - id: 1839
+    photoFileName: 1839.jpg
+    photoUpdatedAt: 2021-10-08T16:02:55.633Z[UTC]
+    name:
+      - {language: en, text: "Anders Schau Knatten"}
+    companyIds: [830]
+    bio:
+      - {language: en, text: "Anders started programming in Turbo Pascal in 1995, and has been programming professionally\
+            \ in various languages since 2001. He's currently a senior developer at Zivid, making 3D cameras for robot vision.\
+            \ He's the author of cppquiz.org and the blog C++ on a Friday."}
+    twitter: knatten
+    gitHub: knatten
+  - id: 1840
+    photoFileName: 1840.jpg
+    photoUpdatedAt: 2021-10-06T13:43:35.507Z[UTC]
+    name:
+      - {language: en, text: "Maksim Kita"}
+      - {language: ru, text: "Максим Кита"}
+    companyIds: [831]
+    bio:
+      - {language: en, text: "Developer ClickHouse."}
+      - {language: ru, text: "Разработчик ClickHouse."}
+    gitHub: kitaisreal
+    habr: mkita
+  - id: 1841
+    photoFileName: 1841.jpg
+    photoUpdatedAt: 2021-10-11T08:37:57.636Z[UTC]
+    name:
+      - {language: en, text: "Valery Mironov"}
+      - {language: ru, text: "Валерий Миронов"}
+    companyIds: [321]
+    bio:
+      - language: en
+        text: "С++ developer. Worked on Task Parallelism in several large projects.\n\nHave an interest in concurrent programming,\
+            \ distributed system, database development, and computer graphics.\n\nCurrently, he develops an open-source library\
+            \ https://github.com/YACLib/YACLib."
+      - language: ru
+        text: "С++ разработчик. Работал над Task Parallelism в нескольких крупных проектах.\n\nИнтересуется многопоточным\
+            \ программированием, распределенными системами, разработкой баз данных и компьютерной графикой.\n\nЗанимается\
+            \ разработкой опенсорс-библиотеки https://github.com/YACLib/YACLib."
+    gitHub: MBkkt
+  - id: 1842
+    photoFileName: 1842.jpg
+    photoUpdatedAt: 2021-10-05T13:31:57.896Z[UTC]
+    name:
+      - {language: en, text: "Dave Abrahams"}
+    companyIds: [12]
+    bio:
+      - {language: en, text: "Dave Abrahams is a specialist in programming language and library design. He is an original\
+            \ designer of the Swift programming language and the architect of its standard library, a founding member of Boost.org,\
+            \ a former longstanding member of the ISO C++ standardization committee, and co-author of a book in Bjarne Stroustrup's\
+            \ \"C++ In Depth\" series. He is currently a principal scientist at Adobe, where, with Sean Parent, he is responsible\
+            \ for the Software Technology Lab's mission to elevate the practice of programming through education, tools, and\
+            \ research."}
+    twitter: DaveAbrahams
+    gitHub: dabrahams
+  - id: 1843
+    photoFileName: 1843.jpg
+    photoUpdatedAt: 2021-09-30T06:03:00.135Z[UTC]
+    name:
+      - {language: en, text: "Vladimir Vishnevsky"}
+      - {language: ru, text: "Владимир Вишневский"}
+    companyIds: [267]
+    bio:
+      - {language: en, text: "Vladimir is a software engineer with more than 17 years of experience applying C++ for development\
+            \ of complex software systems in areas like distributed systems and networking. Before his recent switch to Intel\
+            \ he was for more than 6 years part of the effort to bring modern C++ into automotive embedded software development."}
+      - {language: ru, text: "Владимир — инженер с 17-летним опытом применения С++ для разработки сложных программных реше\
+            ний в таких областях, как высокопроизводительные распределенные системы, телекоммуникационные сети и встраивае\
+            мое ПО. До его недавнего перехода в Intel он более шести лет занимался разработкой на С++ для автомобильной ин\
+            дустрии."}
+  - id: 1844
+    photoFileName: 1844.jpg
+    photoUpdatedAt: 2021-10-05T13:19:02.568Z[UTC]
+    name:
+      - {language: en, text: "Anthony Williams"}
+    companyIds: [832]
+    bio:
+      - {language: en, text: "His primary area of expertise is in the development of multi-threaded applications and libraries\
+            \ in C++. Anthony is the author of C++ Concurrency in Action, published by Manning. He is a UK-based developer\
+            \ and trainer with over 20 years of experience in C++. He has been an active member of the BSI C++ Standards Panel\
+            \ since 2001, and is author or coauthor of many of the C++ Standards Committee papers that led up to the inclusion\
+            \ of the thread library in the C++11 Standard. He continues to work on new facilities to enhance the C++ concurrency\
+            \ toolkit, both with standards proposals, and implementations of those facilities. Anthony lives in the far west\
+            \ of Cornwall, England, where he currently spends most of his time developing automotive software."}
+    twitter: a_williams
+    gitHub: anthonywilliams
+  - id: 1845
+    photoFileName: 1845.jpg
+    photoUpdatedAt: 2021-10-11T09:20:03.534Z[UTC]
+    name:
+      - {language: en, text: "Anna Melekhova"}
+      - {language: ru, text: "Анна Мелехова"}
+    companyIds: [635]
+    bio:
+      - {language: en, text: "Software architect, team leader, kernel developer. Moved from virtual machine monitor to architecturing\
+            \ clouds and back to the kernel of KasperskyOS. Now Anna is inspired with delivering functional safety in KasperskyOS."}
+      - {language: ru, text: "Архитектор ПО, тимлид. Свыше десяти лет провела в ядре виртуальной машины, затем занималась\
+            \ архитектурными задачами на уровне облака, сейчас работает над обеспечением функциональной безопасности в ядр\
+            е KasperskyOS."}
+  - id: 1846
+    photoFileName: 1846.jpg
+    photoUpdatedAt: 2021-10-11T14:01:37.669Z[UTC]
+    name:
+      - {language: en, text: "Sergey Talantov"}
+      - {language: ru, text: "Сергей Талантов"}
+    companyIds: [635]
+    bio:
+      - {language: en, text: "Software architect, Security Champion, developer with overall experience 18 years in C++. I\
+            \ developed desktop and server software in the past. Currently concentrated on software security."}
+      - {language: ru, text: "Архитектор, Security Champion, разработчик с общим стажем программирования на С++ порядка 18\
+            \ лет. В прошлом разрабатывал серверное и десктопное ПО. Сейчас основные интересы связаны с проектированием и\
+            \ разработкой безопасного ПО."}
+  - id: 1847
+    photoFileName: 1847.jpg
+    photoUpdatedAt: 2021-10-07T13:12:38.169Z[UTC]
+    name:
+      - {language: en, text: "Greg Law"}
+    companyIds: [833]
+    bio:
+      - {language: en, text: "Greg is the co-founder, CEO and CTO at Undo and has 20 years' experience in the software industry.\
+            \ He holds a PhD from City University, London and while he mostly holds management roles these days, Greg is a\
+            \ coder at heart and likes to bridge the gap between the business and software world. In his spare time, Greg\
+            \ catches up on emails."}
+    twitter: gregthelaw
+    gitHub: gregthelaw

@@ -4,6 +4,10 @@ companySynonyms:
         "Alpha Laboratory",
         "Альфа-Банк: Альфа-Лаборатория"
     ]
+  - name: "Align Technology"
+    synonyms: [
+        "Align Technology Inc."
+    ]
   - name: "Amazon Web Services"
     synonyms: [
         AWS

@@ -2573,3 +2573,32 @@ companies:
   - id: 824
     name:
       - {language: en, text: "Grafana Labs"}
+  - id: 825
+    name:
+      - {language: en, text: "Sudo Ltd"}
+      - {language: ru, text: "ООО «Судо»"}
+  - id: 826
+    name:
+      - {language: en, text: MIPT}
+      - {language: ru, text: МФТИ}
+  - id: 827
+    name:
+      - {language: en, text: "Unique Code GmbH"}
+  - id: 828
+    name:
+      - {language: en, text: "Mad Devs"}
+  - id: 829
+    name:
+      - {language: en, text: ScyllaDB}
+  - id: 830
+    name:
+      - {language: en, text: Zivid}
+  - id: 831
+    name:
+      - {language: en, text: ClickHouse}
+  - id: 832
+    name:
+      - {language: en, text: "Woven Planet"}
+  - id: 833
+    name:
+      - {language: en, text: Undo}
