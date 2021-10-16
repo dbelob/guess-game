@@ -182,22 +182,19 @@ speakers:
     companyIds: [108]
     bio:
       - language: en
-        text: "Viktor Gamov is a Developer Advocate at Confluent, the company that makes an event streaming platform based\
-            \ on Apache Kafka.\nBack in his consultancy days, Viktor developed comprehensive expertise in building enterprise\
-            \ application architectures using open source technologies.\_\nHe enjoys helping architects and developers to\
-            \ design and develop low latency, scalable and highly available distributed systems.\nHe is a professional conference\
-            \ speaker on distributed systems, streaming data, JVM and\_DevOps topics, and is regular on events including JavaOne,\
-            \ Devoxx, OSCON, QCon, and others.\_\nHe co-authored O'Reilly's \"Enterprise Web Development\".\nHe blogs at http://gamov.io\
-            \ and co-hosts DevRelRad.io.\nFollow Viktor on Twitter @gamussa, where he posts there about gym life, food, open\
-            \ source, and, of course, Kafka and Confluent!"
+        text: "Victor Gamov is the co-founder and leader of the \"Parsing the Flights\" podcast, which is beloved by many\
+            \ programmers. He is also a Developer Advocate at Kong, which develops the Apache Kafka-based platform. Assists\
+            \ clients in the design and development of distributed streaming data processing systems. He is a co-author of\
+            \ the book Enterprise Web Development by O'Reilly Publishers. \n\nIn his spare time, Victor doesn't forget about\
+            \ the gym. He is a regular visitor to conferences of JUG Ru Group (JPoint, Joker, JBreak) and other international\
+            \ conferences (JavaOne, Devoxx, OSCON, Qcon). Tweets as @gamussa. Runs a channel about Kafka on Telegram."
       - language: ru
         text: "Виктор Гамов — сооснователь и лидер любимого многими программистами правильного подкаста «Разбор Полётов».\
-            \ По совместительству является Developer Advocate в компании Confluent, которая разрабатывает платформу на баз\
-            е Apache Kafka. Помогает клиентам в проектировании и разработке распределенных систем обработки потоковых данн\
-            ых. Соавтор книги «Enterprise Web Development» издательства O'Reilly.\n\nВ свободное от работы время Виктор не\
-            \ забывает про качалку и бицуху. Является завсегдатаем конференций JUG Ru Group (JPoint, Joker, JBreak) и друг\
-            их международных конференций (JavaOne, Devoxx, OSCON, Qcon). Пишет в Twitter как @gamussa. Ведет канал про Kafka\
-            \ в Telegram."
+            \ По совместительству является Developer Advocate в компании Kong, которая разрабатывает платформу на базе Apache\
+            \ Kafka. Помогает клиентам в проектировании и разработке распределенных систем обработки потоковых данных. Соа\
+            втор книги «Enterprise Web Development» издательства O'Reilly. \n\nВ свободное от работы время Виктор не забыв\
+            ает про качалку и бицуху. Является завсегдатаем конференций JUG Ru Group (JPoint, Joker, JBreak) и других межд\
+            ународных конференций (JavaOne, Devoxx, OSCON, Qcon). Пишет в Twitter как @gamussa. Ведет канал про Kafka в Telegram."
     twitter: gamussa
     gitHub: gAmUssA
     habr: gAmUssA
@@ -700,16 +697,15 @@ speakers:
     name:
       - {language: en, text: "Oleg Nenashev"}
       - {language: ru, text: "Олег Ненашев"}
-    companyIds: [97]
+    companyIds: []
     bio:
-      - {language: en, text: "Engineer at CloudBees, core team member in the Jenkins project. Since 2008 works in the areas\
-            \ of automation, infrastructures, and frameworks for mixed software-hardware projects, with the help of Jenkins\
-            \ and dozens of other tools. Oleg writes code, maintains Jenkins core and plugins, and organizes meetups and other\
-            \ community events."}
-      - {language: ru, text: "Разработчик в CloudBees, состоит в core team проекта Jenkins. C 2008 года занимается автомат\
-            изацией, инфраструктурой и фреймворкостроением для крупных программно-аппаратных проектов с помощью Jenkins и\
-            \ десятков других тулов. Пишет код, поддерживает ядро и плагины Jenkins, организует митапы в СПб и других горо\
-            дах."}
+      - {language: en, text: "Former CloudBees employee, core team member of the Jenkins project. Since 2008 works in the\
+            \ areas of automation, infrastructures, and frameworks for mixed software-hardware projects, with the help of\
+            \ Jenkins and dozens of other tools. Oleg writes code, maintains Jenkins core and plugins, and organizes meetups\
+            \ and other community events."}
+      - {language: ru, text: "Работал в CloudBees, в core team проекта Jenkins. C 2008 года занимается автоматизацией, инф\
+            раструктурой и фреймворкостроением для крупных программно-аппаратных проектов с помощью Jenkins и десятков дру\
+            гих тулов. Пишет код, поддерживает ядро и плагины Jenkins, организует митапы в СПб и других городах."}
     twitter: oleg_nenashev
     gitHub: oleg-nenashev
     habr: oleg-nenashev
@@ -1457,9 +1453,9 @@ speakers:
             \ be a Technical Lead on Kotlin/Native compiler and runtime effort. Previously used to work at Sun Microsystems,\
             \ EMC, Oracle, Google on various system-level software, such as HotSpot Java Virtual Machine, Dart VM, VirtualBox\
             \ hypervisor, and Native/Client runtime."}
-      - {language: ru, text: "Николай работает в JetBrains как руководитель направления Compose for Desktop. Ранее руковод\
-            ил проектом Kotlin/Native. До JetBrains участвовал в работе над HotSpot Java Virtual Machine и гипервизором VirtualBox\
-            \ в Oracle, и над Native/Client и Dart VM в Google."}
+      - {language: ru, text: "Николай — руководитель направления Compose for Desktop в JetBrains. Ранее руководил проектом\
+            \ Kotlin/Native. До JetBrains участвовал в работе над HotSpot Java Virtual Machine и гипервизором VirtualBox в\
+            \ Oracle, и над Native/Client и Dart VM в Google."}
     gitHub: olonho
   - id: 85
     photoFileName: 0085.jpg
@@ -3328,13 +3324,17 @@ speakers:
       - {language: ru, text: "Григорий Кошелев"}
     companyIds: [630]
     bio:
-      - {language: en, text: "Has more than 9 years of experience in commercial development on Java. Leads a small development\
-            \ team in Kontur, the biggest IT company in Ekaterinburg. Manages Java community inside of the company and in\
-            \ Ekaterinburg."}
-      - {language: ru, text: "Более 9 лет опыта промышленной разработки на Java. Григорий руководит небольшой инфраструкту\
-            рной командой в самой крупной IT-компании Екатеринбурга — «Контур». Занимается организацией и развитием Java-с\
-            ообщества внутри компании и в Екатеринбурге."}
+      - {language: en, text: "Grigory has been engaged in industrial development in Java since 2011. Since 2014, he has been\
+            \ working in Kontur, the largest IT company in Yekaterinburg, now he leads a small infrastructure team that provides\
+            \ tools for Observability (Vostok Hercules). Engaged in the development of the Java stack in the company and gives\
+            \ talks on Kafka, Java, Hercules, and related technologies."}
+      - {language: ru, text: "С 2011 года занимается промышленной разработкой на Java. С 2014 года работает в Контуре — са\
+            мой крупной IT-компании Екатеринбурга, сейчас руководит небольшой инфраструктурной командой, предоставляющей и\
+            нструменты для Observability (Vostok Hercules). Занимается развитием Java-стека в компании и выступает с докла\
+            дами про Kafka, Java, Hercules и связанные технологии."}
     twitter: GregoryKoshelev
+    gitHub: gnkoshelev
+    habr: gnkoshelev
   - id: 221
     photoFileName: 0221.jpg
     name:
@@ -4850,21 +4850,21 @@ speakers:
     photoFileName: 0332.jpg
     photoUpdatedAt: 2019-06-25T07:49:27.592Z[UTC]
     name:
-      - {language: en, text: "Antony Polukhin"}
+      - {language: en, text: "Anton Polukhin"}
       - {language: ru, text: "Антон Полухин"}
-    companyIds: [696]
+    companyIds: [718]
     bio:
       - language: en
-        text: "A representative of Russia at the C++ Standardization Committee. Author of several accepted proposals to the\
-            \ C++ standard.\n\nAuthor of the Boost libraries: TypeIndex, DLL, Stacktrace; maintainer of Any, Conversion, LexicalCast,\
-            \ Variant.\n\nAuthor of \"Boost C++ Application Development Cookbook\" and \"Boost C++ Application Development\
-            \ Cookbook, Second Edition\"."
+        text: "A representative of Russia at the ISO C++ Standardization Committee. Author of several accepted proposals to\
+            \ the C++ standard.\n\nAuthor of the Boost libraries: TypeIndex, DLL, Stacktrace; maintainer of Any, Conversion,\
+            \ LexicalCast, Variant.\n\nAuthor of \"Boost C++ Application Development Cookbook\" and \"Boost C++ Application\
+            \ Development Cookbook, Second Edition\"."
       - language: ru
-        text: "Эксперт-разработчик C++ в Яндекс.Такси.\n\nПредставитель России в ISO на международных заседаниях рабочей г\
-            руппы по стандартизации C++. Автор нескольких принятых предложений к стандарту языка C++.\n\nAвтор Boost-библи\
-            отек TypeIndex, DLL, Stacktrace и активный maintainer Any, Conversion, LexicalCast, Variant. \n\nАвтор книг «\
-            Boost C++ Application Development Cookbook» и «Boost C++ Application Development Cookbook, Second Edition».\n\n\
-            Изобретатель новой метапрограммной техники для рефлексии в C++14."
+        text: "Представитель России в ISO на международных заседаниях рабочей группы по стандартизации C++. Автор нескольк\
+            их принятых предложений к стандарту языка C++.\r\n\r\nAвтор Boost-библиотек TypeIndex, DLL, Stacktrace и актив\
+            ный maintainer Any, Conversion, LexicalCast, Variant. \r\n\r\nАвтор книг «Boost C++ Application Development Cookbook»\
+            \ и «Boost C++ Application Development Cookbook, Second Edition»."
+    gitHub: apolukhin
     habr: antoshkka
   - id: 333
     photoFileName: 0333.jpg
@@ -4891,16 +4891,20 @@ speakers:
     twitter: cppjedi
   - id: 334
     photoFileName: 0334.jpg
+    photoUpdatedAt: 2021-09-08T08:29:17.415Z[UTC]
     name:
       - {language: en, text: "Phil Nash"}
-    companyIds: [286]
+    companyIds: [489]
     bio:
-      - {language: en, text: "Phil is the author of the test frameworks Catch for C++ and Objective-C, and Swordfish for Swift.\
-            \ As Developer Advocate at JetBrains he's involved with CLion, AppCode and ReSharper C++. More generally he's\
-            \ an advocate for good testing practices, TDD and using the type system and functional techniques to reduce complexity\
-            \ and increase correctness. He's previously worked in Finance and Mobile as well as an independent consultant\
-            \ and coach specialising in TDD on iOS."}
+      - language: en
+        text: "Phil is the original author of the C++ test framework, Catch2, and composable command line parser, Clara. As\
+            \ Developer Advocate at SonarSource he's involved with SonarQube, SonarLint and SonarCloud, particularly in the\
+            \ context of C++. He's also the organiser of C++ London and C++ on Sea, as well as co-host and producer of the\
+            \ cpp.chat and No Diagnostic Required podcasts.\n\nMore generally he's an advocate for good testing practices,\
+            \ TDD and using the type system and functional techniques to reduce complexity and increase correctness. He's\
+            \ previously worked in Finance and Mobile offers training and coaching in TDD for C++."
     twitter: phil_nash
+    gitHub: philsquared
   - id: 335
     photoFileName: 0335.jpg
     name:
@@ -5049,15 +5053,16 @@ speakers:
     twitter: flex_ferrum
   - id: 346
     photoFileName: 0346.jpg
+    photoUpdatedAt: 2019-01-21T06:54:33.903Z[UTC]
     name:
       - {language: en, text: "Andrey Davydov"}
       - {language: ru, text: "Андрей Давыдов"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Andrey has been working in ReSharper C++ team, JetBrains for the last 3 years. Before that,\
+      - {language: en, text: "Andrey has been working in ReSharper C++ team, JetBrains for the last 5,5 years. Before that,\
             \ he worked in the GIS industry in the areas related to computational geometry and 3D-visualization."}
-      - {language: ru, text: "Последние 3 года Андрей работает в команде ReSharper C++ в JetBrains. В прошлом занимался пр\
-            омышленным программированием в областях, связанных с ГИС-ами и системами 3D-визуализации."}
+      - {language: ru, text: "Последние 5,5 лет Андрей работает в команде ReSharper C++ в JetBrains. В прошлом занимался п\
+            ромышленным программированием в областях, связанных с ГИС-ами и системами 3D-визуализации."}
   - id: 347
     photoFileName: 0347.jpg
     photoUpdatedAt: 2020-06-04T09:09:46.944Z[UTC]
@@ -5189,17 +5194,19 @@ speakers:
     companyIds: [27]
     bio:
       - language: en
-        text: "Alexander graduated from Control Systems School of Moscow Aviation Institute.\n\nHe was developing aero turbine\
+        text: "Alexander graduated from Control Systems School of Moscow Aviation Institute.\n\nHe was developing gas-turbine\
             \ engines vibration diagnostics system, then, for 10 years — server software for Sirena Travel, a flight booking\
-            \ system.\n\nCurrently Alexander is a senior developer in Moscow R&D office of Align Technology. He develops core\
-            \ of specialized 3D CAD system for designing orthodontic appliances. \n\nAlexander is passionate about cross-platform\
-            \ solutions. He's been working with C++ for more than 20 years."
+            \ system.\n\nCurrently Alexander is an expert software developer in Moscow R&D office of Align Technology. He\
+            \ develops core of specialized 3D CAD system for designing orthodontic appliances. \n\nAlexander is passionate\
+            \ about cross-platform solutions. He's been working with C++ for more than 20 years."
       - language: ru
         text: "Выпускник МАИ, факультет «Системы управления».\n\nЗанимался разработкой систем вибрационной диагностики ави\
             ационных газотурбинных двигателей, затем в течение десяти лет — разработкой серверного ПО системы бронирования\
-            \ авиаперевозок «Сирена-Трэвел».\n\nВ настоящее время — старший разработчик в московском R&D-офисе компании Align\
+            \ авиаперевозок «Сирена-Трэвел».\n\nВ настоящее время — ведущий разработчик в московском R&D-офисе компании Align\
             \ Technology. Развивает ядро специализированной 3D CAD-системы для дизайна ортодонтических приспособлений.\n\n\
             Ценитель и пропагандист кроссплатформенных решений, использует C++ более 20 лет."
+    twitter: holybrake
+    gitHub: holybrake
   - id: 358
     photoFileName: 0358.jpg
     photoUpdatedAt: 2020-04-29T14:29:36.893Z[UTC]
@@ -5415,20 +5422,23 @@ speakers:
             \ Go; любит K8s и Docker; в свободное время читает курс по веб-разработке."}
   - id: 372
     photoFileName: 0372.jpg
-    photoUpdatedAt: 2020-02-27T14:31:37.952Z[UTC]
+    photoUpdatedAt: 2021-10-06T13:06:45.735Z[UTC]
     name:
       - {language: en, text: "Evgeny Dekhtyarev"}
       - {language: ru, text: "Евгений Дехтярёв"}
     companyIds: [3]
     bio:
-      - {language: en, text: "Three years ago Evgeny came to 2GIS to organize its infrastructure. Since then he has changed\
+      - {language: en, text: "Many years ago Evgeny came to 2GIS to organize its infrastructure. Since then he has changed\
             \ his broom to Kubernetes robotic vacuum cleaner. Now he helps his teams use the infrastructure correctly and\
             \ without causing any harm to the company's budget. Recently he has been leading an infrastructure engineer team\
-            \ and procrastinating on loads of meetings every week."}
-      - {language: ru, text: "Три года назад пришел в 2ГИС наводить порядок в инфраструктуре. За это время сменил метёлку\
-            \ на робот-пылесос марки Kubernetes. Теперь помогает командам использовать инфраструктуру правильно и без боли\
-            \ для бюджета компании. С недавних времён руководит командой инфраструктурных инженеров и прокрастинирует на 100500\
-            \ встречах в неделю."}
+            \ and procrastinating on loads of meetings every week :)"}
+      - language: ru
+        text: "Много лет назад пришел в 2ГИС наводить порядок в инфраструктуре. За это время сменил метелку на робот-пылес\
+            ос марки Kubernetes, стал лидом крутой инфраструктурной команды и пробует организовать DevOps-команду для всей\
+            \ компании. Теперь помогает командам разработки использовать инфраструктуру и автоматизацию правильно и без бо\
+            ли для бюджета компании. \n\nПланирования, ревью приложений, парсинг требований разработки, SLA 99.9, встречи\
+            \ нонстопом — вот он, новый дивный мир :)"
+    gitHub: dekhtyarev
   - id: 373
     photoFileName: 0373.jpg
     name:
@@ -5512,17 +5522,18 @@ speakers:
     twitter: craigbox
   - id: 379
     photoFileName: 0379.jpg
+    photoUpdatedAt: 2021-03-31T07:35:10.824Z[UTC]
     name:
-      - {language: en, text: "Nicolay Ryzhikov"}
+      - {language: en, text: "Nikolay Ryzhikov"}
       - {language: ru, text: "Николай Рыжиков"}
     companyIds: [235]
     bio:
-      - {language: en, text: "Loves functional programming, Clojure, PostgreSQL, Health IT and open standards. Shares Agile\
-            \ values. Is the CTO of HealthSamurai, Clojure and FProg communities activist, a member of FHIR standard development\
-            \ committee."}
-      - {language: ru, text: "Любит программирование, в частности, функциональное, Clojure, PostgreSQL, Health IT и открыт\
-            ые стандарты. Разделяет ценности Agile. CTO HealthSamurai, активист Clojure и FProg-сообществ, член комитета п\
-            о разработке стандарта FHIR."}
+      - {language: en, text: "Likes Clojure, PostgreSQL, open-source code and open standards, flexible and careful approach\
+            \ in development. Actively participates in St. Petersburg communities FProg and Piter-United and Internet community\
+            \ Clojurians. Most part of his code and almost all his presentations can be found on GitHub — niquola."}
+      - {language: ru, text: "Любит Clojure, PostgreSQL, открытый код и открытые стандарты, гибкий и бережливый подход к р\
+            азработке. Активно учавствует в питерских сообществах FProg и Piter-United и интернет сообществе Clojurians. З\
+            начительную часть производимого Николаем кода и почти все его презентации можно найти на GitHub — niquola."}
     twitter: niquola
     gitHub: niquola
   - id: 380
@@ -7131,7 +7142,7 @@ speakers:
     twitter: SitnikAdam
   - id: 486
     photoFileName: 0486.jpg
-    photoUpdatedAt: 2020-03-13T10:32:03.885Z[UTC]
+    photoUpdatedAt: 2021-10-06T12:52:22.138Z[UTC]
     name:
       - {language: en, text: "Mete Atamel"}
     companyIds: [217]
@@ -7141,6 +7152,7 @@ speakers:
             \ Skype, Adobe, EMC, and Nokia building apps and services on various web, mobile and cloud platforms. Originally\
             \ from the island of Cyprus, he currently lives in Greenwich of London, not too far away from the prime meridian."}
     twitter: meteatamel
+    gitHub: meteatamel
   - id: 487
     photoFileName: 0487.jpg
     name:
@@ -11177,17 +11189,21 @@ speakers:
     twitter: terrakok
   - id: 784
     photoFileName: 0784.jpg
-    photoUpdatedAt: 2020-10-09T11:10:10.735Z[UTC]
+    photoUpdatedAt: 2021-10-01T10:02:31.283Z[UTC]
     name:
       - {language: en, text: "Kirill Rozov"}
       - {language: ru, text: "Кирилл Розов"}
-    companyIds: [761]
+    companyIds: [506]
     bio:
-      - {language: en, text: "Author of [Android Broadcast](https://androidbroadcast.dev/). Likes to share knowledge and make\
-            \ the life of developers simpler. Big fan of Kotlin and Coroutine."}
-      - {language: ru, text: "Создатель и автор проекта [Android Broadcast](https://androidbroadcast.dev/). Распространяет\
-            \ лучшие практики среди Android-разработчиков фуллтайм и всё это бесплатно. Большой фанат Kotlin и Coroutine."}
+      - {language: en, text: "Android developer with 9 years of experience. He left his career in development and became a\
+            \ blogger, and also work as Tech PR in Surf, helping to grow the personal brand of the employees from the company.\
+            \ Author of \"Android Broadcast\" Telegram and YouTube channel. Android & Kotlin Google Developer Expert."}
+      - {language: ru, text: "Android разработчик с 9 годами опытам за плечами. Оставил карьеру в разработке и стал блогер\
+            ом, а также занимается тех. пиаром в Surf, прокачивая личный бренд ребят из компании. Автор Telegram и YouTube\
+            \ канала \"Android Broadcast\". Google Developer Expert по Android и Kotlin."}
     twitter: kirill_rozov
+    gitHub: kirich1409
+    habr: kirich1409
   - id: 785
     photoFileName: 0785.jpg
     name:
@@ -11283,20 +11299,16 @@ speakers:
     twitter: Beefon
   - id: 791
     photoFileName: 0791.jpg
+    photoUpdatedAt: 2021-10-11T13:12:44.884Z[UTC]
     name:
       - {language: en, text: "Filip Babić"}
-    companyIds: [199]
+    companyIds: [835]
     bio:
-      - language: en
-        text: "Professional Android application developer focusing on optimization, testability, and stability by following\
-            \ SOLID principles, using programming design principles to his advantage in order to make each project, file,\
-            \ class, and method as reusable and clean as possible.\n\nBeing an active member of the programming community,\
-            \ Filip has held over 10 lectures and workshops locally and at KulenDayz, Mobilization and AppDevCon conferences,\
-            \ focusing on sharing knowledge and connecting people. Through these lectures he's grown his teaching and mentoring,\
-            \ becoming a strong pillar in the local community. He's also co-founded the Kotlin User Group Croatia and the\
-            \ Google Developers Group Osijek.\n\nFilip also writes and edits articles and books for the RayWenderlich publication\
-            \ and his personal Medium blog."
+      - {language: en, text: "Filip Babić is a senior Android developer from Croatia, and a Google Developer Expert for Android\
+            \ & Kotlin. He's currently working on building awesome things with Jetpack Compose, teaching people about topics\
+            \ in Android and Kotlin and sharing his knowledge in various types of community engagement."}
     twitter: filbabic
+    gitHub: filbabic
   - id: 792
     photoFileName: 0792.jpg
     name:
@@ -12487,6 +12499,7 @@ speakers:
       - {language: ru, text: "Выпускник бакалавриата и магистратуры «Программной инженерии» НИУ-ВШЭ. CTO и Co-founder в App\
             \ in the Air. Ведущий разработчик Empatika. Преподавал курсы разработки в НИУ-ВШЭ (iOS, Java), Moscoding (iOS\
             \ Swift) и Tceh (iOS Swift). Победитель нескольких зарубежных хакатонов."}
+    gitHub: wannabehero
   - id: 876
     photoFileName: 0876.jpg
     name:
@@ -13110,14 +13123,26 @@ speakers:
     twitter: Irigma
   - id: 929
     photoFileName: 0929.jpg
+    photoUpdatedAt: 2021-10-06T12:04:08.145Z[UTC]
     name:
       - {language: en, text: "Danis Tazetdinov"}
       - {language: ru, text: "Данис Тазетдинов"}
-    companyIds: [334]
+    companyIds: [183]
     bio:
-      - {language: en, text: "iOS Team Leader in EPAM Nizhny Novgorod."}
-      - {language: ru, text: "Руководитель iOS-команды EPAM Нижний Новгород."}
+      - language: en
+        text: "Apple platforms evangelist. 21 years in IT. Started with ERP systems, worked on Oracle solutions, made Enterprise\
+            \ information portals, retail solutions. Even used OS/2 at home.\n\nSwitched to mobile in 2010 (iOS, to be specific).\
+            \ Helped establishing mobile practice at the company. Now leads Apple competency at EPAM Systems, acts as architect\
+            \ and lead developer on various projects.\n\nTogether with great teams host Mobile People Talks and Apple Treats\
+            \ podcasts."
+      - language: ru
+        text: "Евангелист платформ Apple. 21 год в IT. Начинал с ERP систем, затем занимался решениями на Oracle, создавал\
+            \ корпоративные порталы, решения для ритейла. Даже использовал OS/2 дома как основную систему.\n\nВ 2010 году\
+            \ перешёл на мобильные платформы (если точнее – на iOS). Помог создать мобильную практику в компании. Сейчас в\
+            озглавляю компетенцию решений для платформ Apple в EPAM Systems, архитектором и ведущим разработчиком на разли\
+            чных проектах.\n\nСовместно с крутыми командами веду подкасты Mobile People Talks и Apple Treats."
     twitter: edeniska
+    gitHub: eDeniska
   - id: 930
     photoFileName: 0930.jpg
     photoUpdatedAt: 2019-04-17T08:58:57.021Z[UTC]
@@ -13704,16 +13729,20 @@ speakers:
     habr: digwnews
   - id: 978
     photoFileName: 0978.jpg
+    photoUpdatedAt: 2019-09-17T12:34:19.003Z[UTC]
     name:
       - {language: en, text: "Igor Kurochkin"}
       - {language: ru, text: "Игорь Курочкин"}
-    companyIds: [687]
+    companyIds: [818]
     bio:
-      - {language: en, text: "Auditing and consultancy team leader in Express 42. Helps companies develop DevOps practices\
-            \ and tools. Worked for Skype, Microsoft, Qik and Scalaxy."}
-      - {language: ru, text: "Лидер команды аудита и консалтинга в Express 42. Помогает компаниям в развитии DevOps-практи\
-            к и инструментов. Работал в компаниях Skype, Microsoft, Qik и Scalaxy."}
-    twitter: igoritl
+      - language: en
+        text: "Expert in DevOps, SRE and Team Topologies.\n\nEx-Express42, Ex-Microsoft, Ex-Skype, Ex-Qik."
+      - language: ru
+        text: "Эксперт по DevOps, SRE и Team Topologies. \n\nПомогает развивать современные процессы разработки, тестирова\
+            ния и эксплуатации в технологических компаниях. \n\nEx-Express42, Ex-Microsoft, Ex-Skype, Ex-Qik."
+    twitter: igorkurochkin
+    gitHub: ikurochkin
+    habr: IgorITL
   - id: 979
     photoFileName: 0979.jpg
     photoUpdatedAt: 2020-02-07T15:08:19.367Z[UTC]
@@ -13736,20 +13765,21 @@ speakers:
             ."}
   - id: 980
     photoFileName: 0980.jpg
+    photoUpdatedAt: 2021-10-13T10:34:41.837Z[UTC]
     name:
       - {language: en, text: "Dmitriy Stolyarov"}
       - {language: ru, text: "Дмитрий Столяров"}
     companyIds: [681]
     bio:
-      - {language: en, text: "CTO and co-founder of Flant company. 14 years with Linux, over 30 high load projects. Writes\
-            \ code in C++, PHP, Python, and Bash. Loves C and Ruby. Reads Go. Used to be a fan of Chef, lost his faith in\
-            \ it and turned towards Ansible. Understands Docker and Kubernetes. Architect and co-author of: nginx-http-rdns,\
-            \ pam_docker, php_fpm_docker, werf и loghouse."}
-      - {language: ru, text: "Технический директор и соучредитель компании Флант. 14 лет с Linux, 10 лет эксплуатации, бол\
-            ее 30 highload-проектов. Программирует на C++, PHP, Python и Bash. Любит C и Ruby. Читает на Go. Активно испол\
-            ьзовал Chef, но потерял в него веру и осваивает Ansible. Понимает Docker и Kubernetes. Архитектор и соавтор: nginx-http-rdns,\
-            \ pam_docker, php_fpm_docker, werf и loghouse."}
+      - {language: en, text: "CTO and co-founder of Flant. 17 years with Linux, 14 years in operation, including support of\
+            \ over 50 high load projects. Programmers in C, PHP, Python and Bash. Loves C. Reads Go. Understands Docker and\
+            \ Kubernetes. Architect and co-author of"}
+      - {language: ru, text: "Технический директор и соучредитель компании «Флант». 17 лет с Linux, 14 лет в эксплуатации\
+            , включая поддержку более 50 highload-проектов. Программирует на C, PHP, Python и Bash. Любит С. Читает на Go.\
+            \ Понимает Docker и Kubernetes. Архитектор и соавтор nginx-http-rdns, pam_docker, werf, deckhouse и okmeter."}
     twitter: dmistol
+    gitHub: distol
+    habr: distol
   - id: 981
     photoFileName: 0981.jpg
     photoUpdatedAt: 2019-05-30T11:45:32.042Z[UTC]
@@ -13981,9 +14011,11 @@ speakers:
       - {language: en, text: "Has been working as a C++ programmer for over 8 years, mostly in mobile communications and car\
             \ industry. Recently he became interested in metaprogramming and developing tools in C++ to make life of colleagues\
             \ a little easier."}
-      - {language: ru, text: "Работает C++ программистом уже на протяжении более 8 лет, в большей степени в сферах сотовой\
-            \ связи и автомобильной индустрии. В последнее время увлекся метапрограммированием и разработкой инструментов\
-            \ на C++, чтобы сделать жизнь коллег немножечко легче."}
+      - {language: ru, text: "Работает программистом C++ уже на протяжении более восьми лет, в большей степени в сферах со\
+            товой связи и автомобильной индустрии. В последнее время увлекся метапрограммированием и разработкой инструмен\
+            тов на C++, чтобы сделать жизнь коллег немного легче."}
+    gitHub: alex-ganyukhin
+    habr: alex-ganyukhin
   - id: 998
     photoFileName: 0998.jpg
     photoUpdatedAt: 2020-09-14T11:34:38.734Z[UTC]
@@ -15719,8 +15751,7 @@ speakers:
         text: "Старший С++ разработчик в Align Technology. Занимается разработкой общих системных компонентов и фреймворка\
             \ специализированной 3D CAD-системы.\n\nРанее разработал систему реалтайм мониторинга пациентов, а также систе\
             му сбора и обработки данных для self driving car. Участвовал в проекте Squid-proxy.\n\nВ область интересов вхо\
-            дят вопросы надежности ПО, компиляторостроения, системного программирования.\n\nВсегда старается докопаться до\
-            \ инстины."
+            дят вопросы надежности ПО, компиляторостроения, системного программирования."
     twitter: _valexey_
   - id: 1130
     photoFileName: 1130.jpg
@@ -17306,7 +17337,7 @@ speakers:
     photoFileName: 1246.jpg
     photoUpdatedAt: 2020-07-07T11:03:14.650Z[UTC]
     name:
-      - {language: en, text: "Ruslan Akhmetzyanov"}
+      - {language: en, text: "Ruslan Akhmetzianov"}
       - {language: ru, text: "Руслан Ахметзянов"}
     companyIds: [425]
     bio:
@@ -17316,7 +17347,7 @@ speakers:
       - {language: ru, text: "Занимается Developer Relations в Qameta Software. До этого пять лет проработал в JUG Ru Group\
             \ в качестве антибулшит-менеджера в маркетинге и руководителя Программного отдела. Научился разбираться во всё\
             м понемногу. В программировании разбирается как собака: всё понимает, но говорить не может!"}
-    twitter: ruslan_jug
+    twitter: ruslan_testops
     gitHub: Avaddon-tfa
     habr: ARG89
   - id: 1247
@@ -18152,20 +18183,21 @@ speakers:
     companyIds: [248]
     bio:
       - language: en
-        text: "Founder of startup HyperIntegrate where he created a product that lets you connect Android as a filesystem\
-            \ on macOS.\nFor over 2 years he was a senior developer at DINO Systems and developed a real-time video transmission\
-            \ service.\nHis background is more than 10 years in Paragon Software on the position of team lead where he developed\
-            \ filesystem drivers for macOS, worked on filesystem implementation, snapshot system for block-devices (disk subsystem),\
-            \ boot loader, reverse-engineering, and many low-level things.\n\nIn his free time Evgeny research operation-systems\
-            \ internals, and microprocessor architectures."
+        text: "Senior engineer on compilers at Huawei. Takes part in the development of compilers and toolchains for Harmony\
+            \ OS. \nFounder of startup HyperIntegrate. Evgeny created the product that allows you to connect Android as a\
+            \ filesystem on macOS. \nWas more than 2 years the Senior Software Developer in DINO Systems. Took part in the\
+            \ development of a real-time video service. \nAnd behind are more than 10 years in Paragon Software on the position\
+            \ of a Team Lead. He developed filesystem drivers for macOS, worked on filesystem implementation, snapshot system\
+            \ for block-devices (disk subsystem), boot loader, reverse-engineering, and many low-level things. \nIn his free\
+            \ time, he researches operation-systems internals and microprocessor architectures."
       - language: ru
-        text: "Основатель стартапа HyperIntegrate, где создал продукт, позволяющий подключать Android как файловую систему\
-            \ на macOS.\nБольше 2 лет был старшим разработчиком в компании DINO Systems. Занимался разработкой сервиса пер\
-            едачи видео в реальном времени.\nЗа плечами более 10 лет опыта работы в Paragon Software, на позиции ведущего\
-            \ разработчика. Разрабатывал драйвера файловых систем под macOS, занимался имплементацией файловых систем, сис\
-            темы снепшотинга блочных (дисковых) устройств, boot загрузчика, реверс-инженирингом, и другими низкоуровневыми\
-            \ задачами.\n\nВ свободное время занимается изучением устройства операционных систем и процессорных архитектур\
-            ."
+        text: "Старший инженер по компиляторам в Huawei. Занимается разработкой компиляторов и тулчейна для Harmony OS. \n\
+            Основатель стартапа HyperIntegrate. Создал продукт, позволяющий подключать Android как файловую систему на macOS.\
+            \ \nБольше двух лет был старшим разработчиком в компании DINO Systems. Занимался разработкой сервиса передачи\
+            \ видео в реальном времени. \nЗа плечами более 10 лет опыта работы в Paragon Software на позиции ведущего разр\
+            аботчика. Разрабатывал драйвера файловых систем под macOS, занимался имплементацией файловых систем, системы с\
+            непшотинга блочных (дисковых) устройств, boot-загрузчика, реверс-инженирингом и другими низкоуровневыми задача\
+            ми. \nВ свободное время занимается изучением устройства операционных систем и процессорных архитектур."
   - id: 1319
     photoFileName: 1319.jpg
     photoUpdatedAt: 2020-06-25T09:52:48.294Z[UTC]
@@ -19222,10 +19254,11 @@ speakers:
       - {language: en, text: "Titus is a Senior Staff Software Engineer at Google, where he has worked since 2010. He founded\
             \ Abseil, Google's open source C++ library that underpins more than 250M lines of Google code with 12K+ active\
             \ internal users. He is one of the four arbiters for Google's official C++ style guidelines. For the last 9 years,\
-            \ Titus has been organizing, maintaining, and evolving the foundational components of Google’s C++ codebase using\
+            \ Titus has been organizing, maintaining, and evolving the foundational components of Google's C++ codebase using\
             \ modern automation and tooling. Titus is the former chair for the Library Evolution Working Group (LEWG) in WG21.\
             \ He is also the lead author for the book \"Software Engineering at Google.\""}
     twitter: tituswinters
+    gitHub: tituswinters
   - id: 1394
     photoFileName: 1394.jpg
     photoUpdatedAt: 2020-07-02T14:03:47.014Z[UTC]
@@ -20081,18 +20114,15 @@ speakers:
     photoUpdatedAt: 2020-09-29T08:38:07.421Z[UTC]
     name:
       - {language: en, text: "Sasha Rosenbaum"}
-      - {language: ru, text: "Саша Розенбаум"}
-    companyIds: [213]
+    companyIds: [438]
     bio:
       - language: en
-        text: "Sasha is a Product Manager at GitHub, focused on helping engineers be successful with using GitHub for work\
-            \ as well as for open source.\n\nIn her career, Sasha has worked in development, operations, consulting, and cloud\
-            \ architecture. Sasha is an organizer of DevOpsDays Chicago, a chair of DeliveryConf, and a published author."
-      - language: ru
-        text: "Саша — product manager в GitHub, помогает инженерам удачно использовать GitHub для работы и опенсорса.\n\nЗ\
-            а время своей карьеры Саша поработала в разработке, операциях, консультировании и в облачной архитектуре. Саша\
-            \ также организатор DevOpsDay в Чикаго, председатель DeliveryConf и автор различных публикаций."
+        text: "Sasha is a Sr. Manager on the Managed OpenShift Black Belt team at Red Hat, where she is helping enterprise\
+            \ customers successfully migrate to managed OpenShift on customers' favorite public cloud.\n\nIn her career, Sasha\
+            \ worked in software development, operations, consulting, and cloud architecture. Sasha is an organizer of DevOpsDays\
+            \ Chicago, a chair of DeliveryConf, and a published author."
     twitter: DivineOps
+    gitHub: DivineOps
   - id: 1458
     photoFileName: 1458.jpg
     photoUpdatedAt: 2020-01-30T17:48:46.957Z[UTC]
@@ -20320,11 +20350,11 @@ speakers:
     photoUpdatedAt: 2020-10-14T09:12:01.332Z[UTC]
     name:
       - {language: en, text: "Juraci Paixão Kröhling"}
-    companyIds: [438]
+    companyIds: [824]
     bio:
-      - {language: en, text: "Juraci Paixão Kröhling is a software engineer at Red Hat working in the Distributed Tracing\
-            \ team. He's a maintainer on the Jaeger project and contributor to the OpenTelemetry project and has talked about\
-            \ distributed tracing at conferences like KubeCon, OpenSource Summit, FOSDEM, Devoxx, JavaLand, GIDS, among others."}
+      - {language: en, text: "Juraci Paixão Kröhling is a software engineer at Grafana Labs, a maintainer on the Jaeger project,\
+            \ and a contributor to the OpenTelemetry project. He has talked about distributed tracing at conferences like\
+            \ KubeCon, OpenSource Summit, FOSDEM, Devoxx, JavaLand, GIDS, among others."}
     twitter: jpkrohling
     gitHub: jpkrohling
   - id: 1475
@@ -21676,12 +21706,13 @@ speakers:
       - {language: ru, text: "Ильмир Усманов"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Ilmir has been developing compilers for 7 years. He contributed to GCC and art-compiler. Since\
-            \ 2017 he has been working on Kotlin at JetBrains. Responsible for coroutines, inline classes, and partly for\
-            \ contracts."}
-      - {language: ru, text: "Разрабатывает компиляторы уже 7 лет. Контрибьютил в GCC, art-compiler. С 2017 года работает\
-            \ в JetBrains в котлиновской команде. Отвечает за корутины, инлайн-классы и частично за контракты."}
+      - {language: en, text: "He has been developing compilers for 7 years, contributed to GCC and art-compiler. Since 2017\
+            \ he has been working on Kotlin at JetBrains. Responsible for coroutines, inline classes and partly for contracts."}
+      - {language: ru, text: "Разрабатывает компиляторы уже 7 лет. Контрибьютил в GCC, art-compiler. С 2017-го года работа\
+            ет в JetBrains в команде Kotlin. Отвечает за корутины, инлайн классы и частично за контракты."}
     twitter: IlmirMe
+    gitHub: ilmirus
+    habr: ilmirus
   - id: 1566
     photoFileName: 1566.jpg
     photoUpdatedAt: 2021-02-25T14:42:30.437Z[UTC]
@@ -22666,18 +22697,18 @@ speakers:
     habr: kefirr
   - id: 1632
     photoFileName: 1632.jpg
-    photoUpdatedAt: 2021-03-03T09:44:24.860Z[UTC]
+    photoUpdatedAt: 2021-10-11T16:13:59.848Z[UTC]
     name:
       - {language: en, text: "Oren Eini"}
     companyIds: [742]
     bio:
       - language: en
-        text: "Oren Eini, pseudonym Ayende Rahien, is a frequent blogger at ayende.com has over 20 years of experience in\
+        text: "Oren Eini, pseudonym Ayende Rahien, is a frequent blogger at ayende.com. Has over 20 years of experience in\
             \ the development world who strongly focuses on the Microsoft and .NET ecosystem. Oren has been recognized and\
-            \ awarded Microsoft's Most Valuable Professional from 2007-2020.\n\nHe's an internationally acclaimed presenter\
+            \ awarded Microsoft's Most Valuable Professional in 2007–2020.\r\n\r\nHe's an internationally acclaimed presenter\
             \ appearing at DevTeach, JAOO, QCon, Oredev, NDC, Yow! and Progressive.NET conferences, sharing his knowledge\
             \ via conferences and written works such as \"DSLs in Boo: Domain Specific Languages in .NET\", published by Manning\
-            \ and the \"Inside RavenDB\" guide to all things RavenDB.\n\nHe remains dedicated and focused on architecture\
+            \ and the \"Inside RavenDB\" guide to all things RavenDB.\r\n\r\nHe remains dedicated and focused on architecture\
             \ and best practices that promote quality software and zero-friction development."
     twitter: ayende
     gitHub: ayende
@@ -25391,3 +25422,681 @@ speakers:
             низовывал IT-эвенты, контесты, интенсив по созданию стартапов.\r\nСертифицированный разработчик AWS."
     twitter: mfpjke
     gitHub: mdusafp
+  - id: 1815
+    photoFileName: 1815.jpg
+    photoUpdatedAt: 2021-10-06T12:36:41.062Z[UTC]
+    name:
+      - {language: en, text: "Sergey Pronin"}
+      - {language: ru, text: "Сергей Пронин"}
+    companyIds: [395]
+    bio:
+      - {language: en, text: "Sergey is a passionate technology \"driver\". After graduation worked in various fields: internet\
+            \ service provider, financial sector and M&A business. Main focal points were infrastructure and products around\
+            \ it. At Percona as a Manager of Technical Product Management drives forward Kubernetes and Cloud databases solutions."}
+      - {language: ru, text: "После окончания университета работал в различных сферах: интернет-провайдер, финансовый сект\
+            ор, M&A-бизнес. Основными направлениями деятельности были инфраструктура и продукты вокруг нее. В настоящее вр\
+            емя Сергей работает в компании Percona в качестве руководителя Product Management, продвигая Kubernetes и обла\
+            чные базы данных."}
+    twitter: sergeypronin
+    gitHub: spron-in
+  - id: 1816
+    photoFileName: 1816.jpg
+    photoUpdatedAt: 2021-09-10T14:33:27.149Z[UTC]
+    name:
+      - {language: en, text: "Petr Zaitsev"}
+      - {language: ru, text: "Петр Зайцев"}
+    companyIds: [395]
+    bio:
+      - {language: en, text: "Petr Zaitsev is the CEO and co-founder of Percona. As one of the foremost experts on Open Source\
+            \ strategy and databases optimization, Petr leveraged both his technical vision and entrepreneurial skills to\
+            \ grow Percona from a two-person shop to one of the most respected open source companies in the business. Petr\
+            \ is a co-author of High-Performance MySQL: Optimization, Backups, and Replication, one of the most popular books\
+            \ on MySQL performance. Petr frequently speaks as an expert lecturer at Open Source, Databases, and related conferences."}
+      - {language: ru, text: "Петр Зайцев — со-основатель и генеральный директор компании Percona, основанной в 2006 году\
+            \ в США после работы в MySQL AB и в собственном стартапе SpyLog. Известный эксперт в опенсорс, базах данных, о\
+            птимизации производительности MySQL. Соавтор опубликованной издательством O’Reilly книги «MySQL. Оптимизация п\
+            роизводительности» (High Performance MySQL), одной из самых популярных книг по данной теме."}
+    twitter: peterzaitsev
+    gitHub: PeterZaitsev
+    habr: PeterZaitsev
+  - id: 1817
+    photoFileName: 1817.jpg
+    photoUpdatedAt: 2021-09-24T16:48:30.552Z[UTC]
+    name:
+      - {language: en, text: "Andrey Aleksandrov"}
+      - {language: ru, text: "Андрей Александров"}
+    companyIds: [187]
+    bio:
+      - language: en
+        text: "Expert in DevOps and Platform Teams.\n\nHelps IT companies build internal platforms and implement engineering\
+            \ practices.\n\nex-Express42, ex-DevOps Deflope"
+      - language: ru
+        text: "Эксперт по DevOps и Platform Teams.\n\nПомогает IT-компаниям строить внутренние платформы и внедрять инжене\
+            рные практики.\n\nex-Express42, ex-DevOps Deflope"
+    twitter: aladmit_twit
+    gitHub: aladmit
+  - id: 1818
+    photoFileName: 1818.jpg
+    photoUpdatedAt: 2021-10-04T08:27:35.152Z[UTC]
+    name:
+      - {language: en, text: "Rob Bos"}
+    companyIds: [601]
+    bio:
+      - {language: en, text: "Rob has a strong focus on ALM and DevOps, automating manual tasks and helping teams deliver\
+            \ value to the end-user faster, using Continuous Integration / Continuous Delivery and other DevOps techniques.\
+            \ This is applied on anything Rob comes across, whether it’s an application, infrastructure, serverless or Data\
+            \ Science environments. Additionally, Rob focusses on the management of production environments, including dashboarding,\
+            \ usage statistics for product owners and stakeholders, but also as part of the feedback loop to the developers."}
+    twitter: RobBos81
+    gitHub: rajbos
+  - id: 1819
+    photoFileName: 1819.jpg
+    photoUpdatedAt: 2021-10-06T12:45:20.793Z[UTC]
+    name:
+      - {language: en, text: "Evgeny Kharchenko"}
+      - {language: ru, text: "Евгений Харченко"}
+    companyIds: [429]
+    bio:
+      - {language: en, text: "DevOps & Agile culture promoter. Develops flexible methodologies in the CIS."}
+      - {language: ru, text: "DevOps & Agile промоутер, развивает гибкие методологии на просторах СНГ."}
+  - id: 1820
+    photoFileName: 1820.jpg
+    photoUpdatedAt: 2021-10-13T12:06:53.116Z[UTC]
+    name:
+      - {language: en, text: "Ilya Feoktistov"}
+      - {language: ru, text: "Илья Феоктистов"}
+    companyIds: [819]
+    bio:
+      - language: en
+        text: "More than 10 years in IT. Currently working as Head of Devops at Bling, Barcelona.\nPreviously was: DBA, backend\
+            \ developer, team leader of devops.\nCertified Kubernetes Administrator, lecturer at Skillbox and Otus. \nhttps://www.linkedin.com/in/ilya-feoktistov/"
+      - language: ru
+        text: "Более 10 лет в IT. Сейчас работает Head of Devops в компании Bling, Барселона.\nДо этого был: DBA, бэкенд-р\
+            азработчиком, тимлидом девопсов.\nCertified Kubernetes Administrator, преподаватель в Skillbox и Otus. \nhttps://www.linkedin.com/in/ilya-feoktistov/"
+    habr: ilia_reist
+  - id: 1821
+    photoFileName: 1821.jpg
+    photoUpdatedAt: 2021-10-13T12:03:43.834Z[UTC]
+    name:
+      - {language: en, text: "Kirill Kazakov"}
+      - {language: ru, text: "Кирилл Казаков"}
+    companyIds: [820]
+    bio:
+      - language: en
+        text: "Lead DevOps Engineer from a web development background.\r\n\r\nOverall 10+ years of IT industry experience,\
+            \ 4+ years of them as a DevOps.\r\n\r\nKirill has extensive experience of designing/building/refactoring Continuous\
+            \ Build, Integration, Delivery, Release and Deployment processes. \r\n\r\nHe really likes to use the best practices\
+            \ and popular, useful patterns in his job.\r\nExtensive experience of containerization, automatization, and related\
+            \ technologies.\r\n\r\nDevOps with love."
+      - language: ru
+        text: "Помогает выстраивать эффективные взаимоотношения между разработкой и системным администрированием; консульт\
+            ировать разработчиков, вместе приходить к лучшим решениям и практикам.\r\n\r\nОбширный опыт в проектировании и\
+            \ построении CI/CD процессов с нуля до продакшена.\r\n\r\nЕсть сертификат Certified Kubernetes Administrator (CKA).\r\
+            \n\r\nСостоит в кружках «Хочу все знать» и «С радостью поделюсь тем, что уже узнал»."
+    gitHub: kksudo
+  - id: 1822
+    photoFileName: 1822.jpg
+    photoUpdatedAt: 2021-10-06T12:26:14.743Z[UTC]
+    name:
+      - {language: en, text: "Lars Larsson"}
+    companyIds: [821]
+    bio:
+      - {language: en, text: "Lars has worked with cloud technology since 2008, both within industry and academia. He holds\
+            \ a PhD in computer science and is a senior cloud architect at Elastisys. He is one of the architects of Compliant\
+            \ Kubernetes, a Kubernetes distribution designed and developed especially to meet the high security demands of\
+            \ regulated industries."}
+    gitHub: llarsson
+  - id: 1823
+    photoFileName: 1823.jpg
+    photoUpdatedAt: 2021-10-04T11:54:05.990Z[UTC]
+    name:
+      - {language: en, text: "Alina Vlasova"}
+      - {language: ru, text: "Алина Власова"}
+    companyIds: [635]
+    bio:
+      - {language: en, text: "Has been working at Kaspersky since 2015. At the moment, she is the group manager of a group\
+            \ involved in the development of infrastructure for continuous integration."}
+      - {language: ru, text: "Работает в «Лаборатории Касперского» c 2015 года. В данный момент является руководителем гру\
+            ппы, занимающейся разработкой инфраструктуры для непрерывной интеграции."}
+  - id: 1824
+    photoFileName: 1824.jpg
+    photoUpdatedAt: 2021-10-08T08:19:15.441Z[UTC]
+    name:
+      - {language: en, text: "Vitaly Belyasov"}
+      - {language: ru, text: "Виталий Белясов"}
+    companyIds: [27]
+    bio:
+      - language: en
+        text: "Created FinOps function from scratch at Align Technology and experienced firsthand all the difficulties that\
+            \ arise in the process of such large-scale transformations.\n\nCo-founder of the Russian FinOps community finops.ru.\n\
+            \nBefore that he worked for 5 years at Accenture, where he mostly dealt with IT infrastructure development strategies\
+            \ for large Russian and international clients."
+      - language: ru
+        text: "Создал FinOps функцию с нуля в Align Technology и на собственном опыте ощутил все трудности, возникающие в\
+            \ процессе подобных масштабных трансформаций.\n\nСооснователь русскоязычного FinOps комьюнити finops.ru.\n\nДо\
+            \ этого 5 лет работал в Accenture, где занимался преимущественно стратегиями развития IT-инфраструктуры крупны\
+            х российских и международных клиентов."
+  - id: 1825
+    photoFileName: 1825.jpg
+    photoUpdatedAt: 2021-10-08T08:15:46.173Z[UTC]
+    name:
+      - {language: en, text: "Ilia Semenov"}
+      - {language: ru, text: "Илья Семенов"}
+    companyIds: [822]
+    bio:
+      - {language: en, text: "Ilia is a passionate Cloud Economist. He has been running FinOps at EA and leading in-house\
+            \ cloud cost management effort at Lyft. At the moment he is building an engineering-focused FinOps product with\
+            \ Cloudthread (YC S21) and developing RU FinOps community."}
+      - {language: ru, text: "Илья занимается облачными финансами с 2014 года и является признанным экспертом в этой облас\
+            ти. Построил FinOps с нуля в Electronic Arts (EA), руководил созданием системы управления облачными затратами\
+            \ в Lyft перед IPO, а сейчас работает над стартапом Cloudthread (FinOps с фокусом на процессах разработки, США\
+            , Y Combinator S21). Также Илья занимается развитием русскоязычной ветви FinOps Foundation - RU FinOps."}
+    gitHub: ilia-semenov
+  - id: 1826
+    photoFileName: 1826.jpg
+    photoUpdatedAt: 2021-10-12T07:19:29.233Z[UTC]
+    name:
+      - {language: en, text: "Joep Piscaer"}
+    companyIds: [823]
+    bio:
+      - {language: en, text: "Joep is a CTO, industry analyst and tech community builder. Author of Digital-First Events.\
+            \ Understands that tech is but a small part of successful organizations. His focus is on organizational excellence\
+            \ through technology, coaching management teams to adopt cloud-native technologies and DevOps, Lean and Agile\
+            \ ways of work."}
+    twitter: jpiscaer
+    gitHub: jpiscaer
+  - id: 1827
+    photoFileName: 1827.jpg
+    photoUpdatedAt: 2021-10-04T08:39:11.578Z[UTC]
+    name:
+      - {language: en, text: "Pavel Selivanov"}
+      - {language: ru, text: "Павел Селиванов"}
+    companyIds: [321]
+    bio:
+      - language: en
+        text: "Pavel Selivanov, Developer Advocate at Mail.ru Cloud Solutions.\r\nKubernetes fan.\r\nSpecializes in DevOps,\
+            \ IaC and CI/CD tools. Frequent speaker at Russian and International conferences. Authored several DevOps and\
+            \ Kubernetes training programs."
+      - language: ru
+        text: "Павел Селиванов, Developer Advocate в Mail.ru Cloud Solutions.\r\nФанат Kubernetes. \r\nСпециализируется на\
+            \ DevOps, инструментах IaC и CI/CD. Регулярно выступает на российских и международных конференциях. Является а\
+            втором нескольких курсов по DevOps и Kubernetes."
+    gitHub: pauljamm
+    habr: pauljamm
+  - id: 1828
+    photoFileName: 1828.jpg
+    photoUpdatedAt: 2021-10-12T12:47:55.961Z[UTC]
+    name:
+      - {language: en, text: "Lubov Grinkevich"}
+      - {language: ru, text: "Любовь Гринкевич"}
+    companyIds: [695]
+    bio:
+      - language: en
+        text: "Container ecosystem developer. Developed an inner cloud at Yandex, for the last three years she's been working\
+            \ on containers at Yandex.Cloud —  particularly on Container Registry and Managed Kubernetes. \r\n\r\nShe's keen\
+            \ on security problems as well as problems of deploying. Taking part in process automation and integrating security\
+            \ check in CI/CD pipelines."
+      - {language: ru, text: "Разработчик экосистемы контейнеров. В Яндексе разрабатывала внутреннее облако, последние три\
+            \ года занимается контейнерным стеком в Yandex.Cloud — Container Registry и Managed Kubernetes. Интересуется п\
+            роблемами безопасности и деплоя, участвует в автоматизации процессов и встраивании security-проверок в CI/CD-п\
+            айплайны."}
+  - id: 1829
+    photoFileName: 1829.jpg
+    photoUpdatedAt: 2021-10-12T12:52:17.135Z[UTC]
+    name:
+      - {language: en, text: "Alexey Mirtov"}
+      - {language: ru, text: "Алексей Миртов"}
+    companyIds: [695]
+    bio:
+      - {language: en, text: "Has been working in the field of information security and cloud technologies for 10 years. Worked\
+            \ in Bi.Zone, Sber, IBS"}
+      - {language: ru, text: "Работает с сфере информационной безопасности и облачных технологий 10 лет. Работал в Bi.Zone,\
+            \ Сбер, IBS"}
+    gitHub: mirtov-alexey
+  - id: 1830
+    photoFileName: 1830.jpg
+    photoUpdatedAt: 2021-10-13T10:38:58.174Z[UTC]
+    name:
+      - {language: en, text: "Andrey Kolashtov"}
+      - {language: ru, text: "Андрей Колаштов"}
+    companyIds: [681]
+    bio:
+      - {language: en, text: "Project manager and partner of Flant. Started out in 2007 as a web developer and Linux engineer.\
+            \ Later became a solution architect for high load application operation. Now the product manager in the monitoring\
+            \ department. Active participant of complex projects at the intersection of operation, SRE and observability."}
+      - {language: ru, text: "Руководитель проектов и партнер «Фланта». Начал свой путь в 2007 году как веб-разработчик и\
+            \ Linux-инженер. Позже стал архитектором решений по эксплуатации highload-приложений. Сейчас руководитель прод\
+            укта в подразделении мониторинга. Активный участник сложных проектов на стыке эксплуатации, SRE и observability."}
+    gitHub: kolashtov
+    habr: jambo
+  - id: 1831
+    photoFileName: 1831.jpg
+    photoUpdatedAt: 2021-10-13T10:44:21.862Z[UTC]
+    name:
+      - {language: en, text: "Vladimir Guryanov"}
+      - {language: ru, text: "Владимир Гурьянов"}
+    companyIds: [681]
+    bio:
+      - {language: en, text: "Engineer, teamlead and architect with 10-year experience. Graduated as a developer, but something\
+            \ went wrong, and he switched to exploitation. Learns Linux. Reads and writes in Go with a dictionary, likes Python.\
+            \ Has a certificate of Certified Kubernetes Administrator, but admits that he does not know what it is for. Is\
+            \ a product lead of 'storage monitoring' for Flant company. Is a member of 'Want-to-know-everything' and 'Love-to-share-knowledge'\
+            \ communities."}
+      - {language: ru, text: "Инженер, тимлид и архитектор с 10-летним стажем. В институте учился на разработчика, но не с\
+            рослось — ушел в эксплуатацию. С тех пор изучает Linux. Читает и пишет на Go со словарем, дружит с Python. Име\
+            ет сертификат Certified Kubernetes Administrator, но признается, что не понял, зачем он нужен. С недавних пор\
+            \ возглавил продукт «хранилище для мониторинга» в компании «Флант». Пожизненно состоит в кружках «Хочу все зна\
+            ть» и «Всегда готов поделиться тем, что уже узнал»."}
+    twitter: magvai69
+  - id: 1832
+    photoFileName: 1832.jpg
+    photoUpdatedAt: 2020-06-24T14:09:39.849Z[UTC]
+    name:
+      - {language: en, text: "Alexander Borgardt"}
+      - {language: ru, text: "Александр Боргардт"}
+    companyIds: [620]
+    bio:
+      - language: en
+        text: "More than 10 years researches new approaches and creates solutions for advertisements, fintech and ML. \n\n\
+            Among fields of interests there are questions of developing distributed systems, parallel and concurrent handle\
+            \ of information. \n\nMakes the world better by [opensource](https://duckstax.com/) ."
+      - language: ru
+        text: "Более 10 лет занимается исследованием новых подходов и созданием решений в областях рекламы, финтеха и ML.\
+            \ \n\nВ область интересов входят вопросы разработки распределенных систем, параллельной и конкурентной обработ\
+            ки информации. \n\nУлучшает мир посредством [опенсорса](https://duckstax.com/)."
+    twitter: k0tbegem0t
+  - id: 1833
+    photoFileName: 1833.jpg
+    photoUpdatedAt: 2021-10-11T08:24:11.187Z[UTC]
+    name:
+      - {language: en, text: "Mikhail Lukin"}
+      - {language: ru, text: "Михаил Лукин"}
+    companyIds: [825]
+    bio:
+      - {language: en, text: "Mikhail has been working since 2008 mostly as a C++ developer. He participated in different\
+            \ projects from enterprise to embedded systems. For the last three years Michael has been developing GPGPU projects\
+            \ in OpenCL and CUDA."}
+      - {language: ru, text: "Работает программистом с 2008 года преимущественно на С++. Участвовал в разных проектах: от\
+            \ энтерпрайза до встраиваемых систем. Последние три года занимается программированием GPGPU на OpenCL и CUDA."}
+    gitHub: lukinma
+  - id: 1834
+    photoFileName: 1834.jpg
+    photoUpdatedAt: 2021-10-11T09:11:56.048Z[UTC]
+    name:
+      - {language: en, text: "Pavel Kryukov"}
+      - {language: ru, text: "Павел Крюков"}
+    companyIds: [826]
+    bio:
+      - {language: en, text: "Computer Science lecturer."}
+      - {language: ru, text: "Преподаватель архитектуры и микроархитектуры компьютера."}
+    gitHub: pavelkryukov
+  - id: 1835
+    photoFileName: 1835.jpg
+    photoUpdatedAt: 2021-10-06T10:44:16.111Z[UTC]
+    name:
+      - {language: en, text: "Andreas Fertig"}
+    companyIds: [827]
+    bio:
+      - language: en
+        text: "Andreas Fertig, CEO of Unique Code GmbH, is an experienced trainer and lecturer for C++ for standards 11 to\
+            \ 20.\n\nAndreas is involved in the C++ standardization committee, in which the new standards are developed. At\
+            \ international conferences, he presents how code can be written better. He publishes specialist articles, e.g.,\
+            \ for iX magazine, and has published several textbooks on C++.\n\nWith C++ Insights (https://cppinsights.io),\
+            \ Andreas has created an internationally recognized tool that enables users to look behind the scenes of C++ and\
+            \ thus to understand constructs even better.\n\nBefore working as a trainer and consultant, he worked for Philips\
+            \ Medizin Systeme GmbH for ten years as a C++ software developer and architect focusing on embedded systems."
+    twitter: Andreas__Fertig
+    gitHub: andreasfertig
+  - id: 1836
+    photoFileName: 1836.jpg
+    photoUpdatedAt: 2021-10-08T15:45:34.448Z[UTC]
+    name:
+      - {language: en, text: "Oleg Katkov"}
+      - {language: ru, text: "Олег Катков"}
+    companyIds: [828]
+    bio:
+      - {language: en, text: "Certified engineer with more than 15 years of experience in developing projects of various complexity.\
+            \ Main activities are systems programming, embedded systems (AVR, ARM, IAR) and signal processing."}
+      - {language: ru, text: "Дипломированный инженер с более чем пятнадцатилетним опытом разработки проектов различной сл\
+            ожности. Основные направления: системное программирование, встраиваемые системы(AVR, ARM, IAR) и обработка сиг\
+            налов."}
+    gitHub: Lezh1k
+  - id: 1837
+    photoFileName: 1837.jpg
+    photoUpdatedAt: 2021-10-11T08:03:41.747Z[UTC]
+    name:
+      - {language: en, text: "Konstantin Osipov"}
+      - {language: ru, text: "Константин Осипов"}
+    companyIds: [829]
+    bio:
+      - {language: en, text: "MySQL developer, then CTO at Tarantool, currently development director at ScyllaDB. He has 25\
+            \ years of C/C++ experience, but he couldn't master the language, it's some kind of complicated..."}
+      - {language: ru, text: "Разработчик MySQL, затем CTO в Tarantool, в настоящий момент — директор по разработке в ScyllaDB.\
+            \ Опыт С/C++ 25 лет, но язык так освоить и не смог, какой-то он сложный..."}
+    twitter: kostja_osipov
+    gitHub: kostja
+    habr: kostja
+  - id: 1838
+    photoFileName: 1838.jpg
+    photoUpdatedAt: 2020-06-25T11:25:17.046Z[UTC]
+    name:
+      - {language: en, text: "Pavel Kosov"}
+      - {language: ru, text: "Павел Косов"}
+    companyIds: [242]
+    bio:
+      - {language: en, text: "Senior Engineer at Huawei Russian Research Institute, LLVM Team. He has more than 10 years of\
+            \ experience in commercial development, his main experience is the creation and improvement of compilers for C/C++\
+            \ and system utilities for both common and exotic architectures. He was also engaged in the development of graphic\
+            \ and game engines for web/desktop/mobile apps."}
+      - language: ru
+        text: "Главный инженер Huawei Russian Research Institute, LLVM Team. За плечами более 10 лет в коммерческой разраб\
+            отке, основной опыт — создание и улучшение компиляторов для С/С++ и системных утилит как для распространенных\
+            , так и для довольно экзотических архитектур. Кроме этого, занимался разработкой графических и игровых движков\
+            \ для веб/десктоп/мобильных приложений. \n\nВ качестве хобби занимается исследованием возможностей функциональ\
+            ного программирования в С++."
+    gitHub: kpdev
+    habr: kpdev
+  - id: 1839
+    photoFileName: 1839.jpg
+    photoUpdatedAt: 2021-10-08T16:02:55.633Z[UTC]
+    name:
+      - {language: en, text: "Anders Schau Knatten"}
+    companyIds: [830]
+    bio:
+      - {language: en, text: "Anders started programming in Turbo Pascal in 1995, and has been programming professionally\
+            \ in various languages since 2001. He's currently a senior developer at Zivid, making 3D cameras for robot vision.\
+            \ He's the author of cppquiz.org and the blog C++ on a Friday."}
+    twitter: knatten
+    gitHub: knatten
+  - id: 1840
+    photoFileName: 1840.jpg
+    photoUpdatedAt: 2021-10-06T13:43:35.507Z[UTC]
+    name:
+      - {language: en, text: "Maksim Kita"}
+      - {language: ru, text: "Максим Кита"}
+    companyIds: [831]
+    bio:
+      - {language: en, text: "Developer ClickHouse."}
+      - {language: ru, text: "Разработчик ClickHouse."}
+    gitHub: kitaisreal
+    habr: mkita
+  - id: 1841
+    photoFileName: 1841.jpg
+    photoUpdatedAt: 2021-10-11T08:37:57.636Z[UTC]
+    name:
+      - {language: en, text: "Valery Mironov"}
+      - {language: ru, text: "Валерий Миронов"}
+    companyIds: [321]
+    bio:
+      - language: en
+        text: "С++ developer. Worked on Task Parallelism in several large projects.\n\nHave an interest in concurrent programming,\
+            \ distributed system, database development, and computer graphics.\n\nCurrently, he develops an open-source library\
+            \ https://github.com/YACLib/YACLib."
+      - language: ru
+        text: "С++ разработчик. Работал над Task Parallelism в нескольких крупных проектах.\n\nИнтересуется многопоточным\
+            \ программированием, распределенными системами, разработкой баз данных и компьютерной графикой.\n\nЗанимается\
+            \ разработкой опенсорс-библиотеки https://github.com/YACLib/YACLib."
+    gitHub: MBkkt
+  - id: 1842
+    photoFileName: 1842.jpg
+    photoUpdatedAt: 2021-10-05T13:31:57.896Z[UTC]
+    name:
+      - {language: en, text: "Dave Abrahams"}
+    companyIds: [12]
+    bio:
+      - {language: en, text: "Dave Abrahams is a specialist in programming language and library design. He is an original\
+            \ designer of the Swift programming language and the architect of its standard library, a founding member of Boost.org,\
+            \ a former longstanding member of the ISO C++ standardization committee, and co-author of a book in Bjarne Stroustrup's\
+            \ \"C++ In Depth\" series. He is currently a principal scientist at Adobe, where, with Sean Parent, he is responsible\
+            \ for the Software Technology Lab's mission to elevate the practice of programming through education, tools, and\
+            \ research."}
+    twitter: DaveAbrahams
+    gitHub: dabrahams
+  - id: 1843
+    photoFileName: 1843.jpg
+    photoUpdatedAt: 2021-09-30T06:03:00.135Z[UTC]
+    name:
+      - {language: en, text: "Vladimir Vishnevsky"}
+      - {language: ru, text: "Владимир Вишневский"}
+    companyIds: [267]
+    bio:
+      - {language: en, text: "Vladimir is a software engineer with more than 17 years of experience applying C++ for development\
+            \ of complex software systems in areas like distributed systems and networking. Before his recent switch to Intel\
+            \ he was for more than 6 years part of the effort to bring modern C++ into automotive embedded software development."}
+      - {language: ru, text: "Владимир — инженер с 17-летним опытом применения С++ для разработки сложных программных реше\
+            ний в таких областях, как высокопроизводительные распределенные системы, телекоммуникационные сети и встраивае\
+            мое ПО. До его недавнего перехода в Intel он более шести лет занимался разработкой на С++ для автомобильной ин\
+            дустрии."}
+  - id: 1844
+    photoFileName: 1844.jpg
+    photoUpdatedAt: 2021-10-05T13:19:02.568Z[UTC]
+    name:
+      - {language: en, text: "Anthony Williams"}
+    companyIds: [832]
+    bio:
+      - {language: en, text: "His primary area of expertise is in the development of multi-threaded applications and libraries\
+            \ in C++. Anthony is the author of C++ Concurrency in Action, published by Manning. He is a UK-based developer\
+            \ and trainer with over 20 years of experience in C++. He has been an active member of the BSI C++ Standards Panel\
+            \ since 2001, and is author or coauthor of many of the C++ Standards Committee papers that led up to the inclusion\
+            \ of the thread library in the C++11 Standard. He continues to work on new facilities to enhance the C++ concurrency\
+            \ toolkit, both with standards proposals, and implementations of those facilities. Anthony lives in the far west\
+            \ of Cornwall, England, where he currently spends most of his time developing automotive software."}
+    twitter: a_williams
+    gitHub: anthonywilliams
+  - id: 1845
+    photoFileName: 1845.jpg
+    photoUpdatedAt: 2021-10-11T09:20:03.534Z[UTC]
+    name:
+      - {language: en, text: "Anna Melekhova"}
+      - {language: ru, text: "Анна Мелехова"}
+    companyIds: [635]
+    bio:
+      - {language: en, text: "Software architect, team leader, kernel developer. Moved from virtual machine monitor to architecturing\
+            \ clouds and back to the kernel of KasperskyOS. Now Anna is inspired with delivering functional safety in KasperskyOS."}
+      - {language: ru, text: "Архитектор ПО, тимлид. Свыше десяти лет провела в ядре виртуальной машины, затем занималась\
+            \ архитектурными задачами на уровне облака, сейчас работает над обеспечением функциональной безопасности в ядр\
+            е KasperskyOS."}
+  - id: 1846
+    photoFileName: 1846.jpg
+    photoUpdatedAt: 2021-10-11T14:01:37.669Z[UTC]
+    name:
+      - {language: en, text: "Sergey Talantov"}
+      - {language: ru, text: "Сергей Талантов"}
+    companyIds: [635]
+    bio:
+      - {language: en, text: "Software architect, Security Champion, developer with overall experience 18 years in C++. I\
+            \ developed desktop and server software in the past. Currently concentrated on software security."}
+      - {language: ru, text: "Архитектор, Security Champion, разработчик с общим стажем программирования на С++ порядка 18\
+            \ лет. В прошлом разрабатывал серверное и десктопное ПО. Сейчас основные интересы связаны с проектированием и\
+            \ разработкой безопасного ПО."}
+  - id: 1847
+    photoFileName: 1847.jpg
+    photoUpdatedAt: 2021-10-07T13:12:38.169Z[UTC]
+    name:
+      - {language: en, text: "Greg Law"}
+    companyIds: [833]
+    bio:
+      - {language: en, text: "Greg is the co-founder, CEO and CTO at Undo and has 20 years' experience in the software industry.\
+            \ He holds a PhD from City University, London and while he mostly holds management roles these days, Greg is a\
+            \ coder at heart and likes to bridge the gap between the business and software world. In his spare time, Greg\
+            \ catches up on emails."}
+    twitter: gregthelaw
+    gitHub: gregthelaw
+  - id: 1848
+    photoFileName: 1848.jpg
+    photoUpdatedAt: 2021-10-07T15:23:31.824Z[UTC]
+    name:
+      - {language: en, text: "Vyacheslav Slutsker"}
+      - {language: ru, text: "Вячеслав Слуцкер"}
+    companyIds: [810]
+    bio:
+      - {language: en, text: "Head of mobile platform development with strong technical background and management skills,\
+            \ worked as iOS developer and fullstack web developer"}
+      - {language: ru, text: "Руководитель разработки мобильной платформы группы приложений Skyeng, ранее руководитель сек\
+            тора в мобильной разработке компании Тензор. Имеет большой опыт в разработке, в том числе iOS-разработке и fullstack-web-р\
+            азработке."}
+    twitter: SlavaSlutsker
+  - id: 1849
+    photoFileName: 1849.jpg
+    photoUpdatedAt: 2021-10-11T13:17:46.991Z[UTC]
+    name:
+      - {language: en, text: "Márton Braun"}
+    companyIds: [835]
+    bio:
+      - {language: en, text: "A fan of Kotlin since the 1.0 of the language. Google Developer Expert for Kotlin."}
+    twitter: zsmb13
+    gitHub: zsmb13
+  - id: 1850
+    photoFileName: 1850.jpg
+    photoUpdatedAt: 2021-08-30T13:19:53.637Z[UTC]
+    name:
+      - {language: en, text: "George Emelyanov"}
+      - {language: ru, text: "Георгий Емельянов"}
+    companyIds: [836]
+    bio:
+      - {language: en, text: "George has been developing for Android since 2011. He's interested in trends in mobile development.\
+            \ Also, inspired by minimalistic UI and clean code."}
+      - {language: ru, text: "Разрабатывает приложения под Android c 2011 года. Интересуется тенденциями мобильной разрабо\
+            тки. Вдохновляется минималистичным UI и чистым кодом."}
+  - id: 1851
+    photoFileName: 1851.jpg
+    photoUpdatedAt: 2021-09-14T07:24:47.507Z[UTC]
+    name:
+      - {language: en, text: "Nikolay Dmitriev"}
+      - {language: ru, text: "Николай Дмитриев"}
+    companyIds: [836]
+    bio:
+      - language: en
+        text: "Senior/Lead Software Engineer with ten years of experience. He worked with different languages and different\
+            \ technologies such as Unity3D, iOS, Android, Flutter, and more recently KMM.\n\nThe most interesting projects\
+            \ that he had a chance to work on:\n- 5D VR Rides.\n- Startups: Kama, Rally Rd, Zabbai VR, Fishbowl.\n- Sony Rewards.\n\
+            - FinTech: Oakam and Wirecard Boons apps."
+      - language: ru
+        text: "Разработчик с более чем десятилетним опытом, работал с разными языками и разными технологиями, такими как Unity3D,\
+            \ iOS, Android, Flutter и с недавнего времени KMM.\n\nСамые интересные проекты, над которыми ему довелось пора\
+            ботать:\n- 5D VR Rides — аттракционы виртуальный реальности.\n- Стартапы: Kama, Rally Rd, Zabbai VR, Fishbowl.\n\
+            - Sony Rewards — приложения для бонусов в US.\n- FinTech: Oakam and Wirecard Boons apps."
+  - id: 1852
+    photoFileName: 1852.jpg
+    photoUpdatedAt: 2021-10-11T15:58:32.187Z[UTC]
+    name:
+      - {language: en, text: "Anastasia Sokolan"}
+      - {language: ru, text: "Анастасия Соколан"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "Chief development engineer in the Smart Home project, SberDevices department, participates in\
+            \ the creation of the Sber Salute app, teaches and creates content for SwiftBook when there is inspiration."}
+      - {language: ru, text: "Главный инженер по разработке в проекте «Умный дом», департамент SberDevices, участвует в со\
+            здании приложения «Сбер Салют», преподает и создает контент для SwiftBook, когда есть вдохновение."}
+  - id: 1853
+    photoFileName: 1853.jpg
+    photoUpdatedAt: 2021-09-23T10:37:48.515Z[UTC]
+    name:
+      - {language: en, text: "Maksim Shchepalin"}
+      - {language: ru, text: "Максим Щепалин"}
+    companyIds: [674]
+    bio:
+      - {language: en, text: "Doing a lot of CI/CD staff and really loves to automate all the things. He likes digging into\
+            \ details and figure out tools that developers use every day. Maksim likes solving complex and non-standard tasks\
+            \ that help the team to improve their processes."}
+      - {language: ru, text: "Занимается инфраструктурой, CI/CD и очень любит все автоматизировать. Ему нравится копаться\
+            \ в мелочах и разбираться во внутреннем устройстве инструментов, которые разработчики используют каждый день.\
+            \ Нравится решать сложные и нестандартные задачи, которые помогают улучшать процессы в команде. Периодически [п\
+            ишет статьи](https://habr.com/ru/users/lounah/posts/)"}
+    twitter: lounvhx
+  - id: 1854
+    photoFileName: 1854.jpg
+    photoUpdatedAt: 2021-08-31T08:59:25.761Z[UTC]
+    name:
+      - {language: en, text: "Mihail Rubanov"}
+      - {language: ru, text: "Михаил Рубанов"}
+    companyIds: [161]
+    bio:
+      - language: en
+        text: "Passionate about interfaces, accessibility, keyboards.\n\n- Wrote the book \"About iOS Accessibility.\n- Writes\
+            \ articles.\n- Runs a channel about mobile development at Dodo t.me/DodoMobile.\n\niOS Mobile Head at Dodo Engineering."
+      - language: ru
+        text: "Увлечен интерфейсами, доступностью, клавиатурами.\n\n- Написал книгу «Про доступность iOS».\n- Пишет статьи\
+            .\n- Ведет канал о мобильной разработке в Додо t.me/DodoMobile.\n\niOS Mobile Head в Dodo Engineering."
+    twitter: akaDuality
+    gitHub: akaDuality
+    habr: akaDuality
+  - id: 1855
+    photoFileName: 1855.jpg
+    photoUpdatedAt: 2021-09-28T21:24:48.160Z[UTC]
+    name:
+      - {language: en, text: "Pavlo Stavytskyi"}
+      - {language: ru, text: "Павел Ставицкий"}
+    companyIds: []
+    bio:
+      - language: en
+        text: "Pavlo is a software engineer that worked at companies such as Mastercard and Grab, Singapore. Interested in\
+            \ Android development, build systems, and Kotlin language.\r\nCurrently, he's studying for Ph.D. in software engineering."
+      - language: ru
+        text: "Павел — разработчик с опытом работы в компаниях Mastercard и Grab, Singapore. Интересуется Android-разработ\
+            кой, build системами и языком Kotlin.\r\nВ данный момент учится на Ph.D. в программной инженерии."
+    twitter: morfly_io
+    gitHub: morfly
+  - id: 1856
+    photoFileName: 1856.jpg
+    photoUpdatedAt: 2021-10-04T10:15:18.930Z[UTC]
+    name:
+      - {language: en, text: "Viktor Vihrov"}
+      - {language: ru, text: "Виктор Вихров"}
+    companyIds: [718]
+    bio:
+      - {language: en, text: "He develops the Android application Yandex Go. Taught Android for high school students at Samsung\
+            \ IT school for more than three years. Speaker of a course on digital accessibility."}
+      - {language: ru, text: "Разрабатывает Android-приложение Яндекс Go. Более трех лет преподавал для старшеклассников Android\
+            \ в IT школе Samsung. Спикер курса по цифровой доступности."}
+  - id: 1857
+    photoFileName: 1857.jpg
+    photoUpdatedAt: 2021-09-23T09:59:48.877Z[UTC]
+    name:
+      - {language: en, text: "Andrey Chupin"}
+      - {language: ru, text: "Андрей Чупин"}
+    companyIds: [620]
+    bio:
+      - {language: en, text: "He works in the Android infrastructure team at VK.com. Responsible for network layer, build\
+            \ systems, CI/CD, architecture and more. Has several years of iOS development experience in the past, is a certified\
+            \ Xcode hater, and in his spare time is involved in popularizing the Rust programming language."}
+      - {language: ru, text: "Работает в команде Android инфраструктуры ВКонтакте. Отвечает за сетевой слой, билд-системы\
+            , CI/CD, архитектуру и многое другое. В прошлом имеет несколько лет опыта разработки под iOS, дипломированный\
+            \ хейтер Xcode, в свободное время занимается популяризацией языка программирования Rust."}
+    gitHub: AndrewChupin
+  - id: 1858
+    photoFileName: 1858.jpg
+    photoUpdatedAt: 2021-08-31T12:57:38.250Z[UTC]
+    name:
+      - {language: en, text: "Nikolay Pakhomov"}
+      - {language: ru, text: "Николай Пахомов"}
+    companyIds: [465]
+    bio:
+      - language: en
+        text: "For over a year he has been developing system applications for devices at SberDevices. Prior to that, he worked\
+            \ at Yandex for over 2.5 years, where he took part in the development of Yandex.Launcher, Yandex.Telephone and\
+            \ Yandex.TV. In each of these projects, Nikolai had to deal with the peculiarities of systems development.\r\n\
+            \r\nLikes to talk about his findings and experiences at conferences. In 2019, he shared with the Android System\
+            \ Settings device at a Yandex meetup in Moscow, and later talked about it at Droidcon Kenya."
+      - language: ru
+        text: "Более года занимается разработкой системных приложений под устройства в СберДевайсес. До этого более 2,5 ле\
+            т работал в Яндексе, где принимал участие в разработке Яндекс.Лончера, Яндекс.Телефона и Яндекс.ТВ. В каждом и\
+            з этих проектов Николаю приходилось сталкиваться с особенностями системной разработки. \r\n\r\nЛюбит рассказыв\
+            ать о своих находках и опыте на конференциях. В 2019 году поделился с устройством Системных настроек Андроида\
+            \ на митапе Яндекса в Москве, а позже рассказал об этом на Droidcon Kenya."
+  - id: 1859
+    photoFileName: 1859.jpg
+    photoUpdatedAt: 2021-09-02T09:40:18.827Z[UTC]
+    name:
+      - {language: en, text: "Nikita Tipun"}
+      - {language: ru, text: "Никита Типун"}
+    companyIds: [136]
+    bio:
+      - language: en
+        text: "4 years in Android development. He develops projects in Kotlin, but recently, with the development of KMM,\
+            \ he often looks towards the cross-platform.\r\nHe's always looking for and trying new approaches in development\
+            \ and often offers to implement them in working projects."
+      - language: ru
+        text: "В Андроид-разработке уже 4 год. В основном разрабатывает проекты на Kotlin, но последнее время, с развитием\
+            \ КММ, частенько посматривает в сторону кроссплатформы.\r\nВсегда ищет и пробует новые подходы в разработке и\
+            \ зачастую предлагает внедрять их в рабочие проекты."

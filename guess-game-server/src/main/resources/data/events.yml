@@ -51,6 +51,17 @@ events:
     placeId: 24
     talkIds: [2659, 2660, 2661, 2662, 2663, 2664, 2838, 2665, 2666, 2667, 2668, 2669, 2670, 2671, 2672, 2673, 2674, 2675,
               2676, 2677, 2678, 2679, 2680, 2681, 2682]
+  - eventTypeId: 0
+    name:
+      - {language: en, text: "C++ Russia 2021"}
+    startDate: "2021-11-15"
+    endDate: "2021-11-18"
+    siteLink:
+      - {language: en, text: "https://cppconf.ru/en/"}
+      - {language: ru, text: "https://cppconf.ru/"}
+    placeId: 24
+    talkIds: [3389, 3390, 3391, 3392, 3393, 3394, 3395, 3396, 3397, 3398, 3399, 3400, 3401, 3402, 3403, 3404, 3405, 3406,
+              3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415, 3416]
   # DevOops
   - eventTypeId: 1
     name:
@@ -114,6 +125,17 @@ events:
     placeId: 24
     talkIds: [2761, 2762, 2763, 2835, 2765, 2766, 2767, 2768, 2769, 2770, 2771, 2772, 2773, 2836, 2774, 2775, 2776, 2777,
               2778, 2779, 2780, 2781, 2782, 2783, 2784, 2785, 2786, 2787, 2788, 2789, 2790, 2791, 2792, 2794, 2795, 2796, 2797]
+  - eventTypeId: 1
+    name:
+      - {language: en, text: "DevOops 2021"}
+    startDate: "2021-11-08"
+    endDate: "2021-11-11"
+    siteLink:
+      - {language: en, text: "https://devoops.ru/en/"}
+      - {language: ru, text: "https://devoops.ru/"}
+    placeId: 24
+    talkIds: [3366, 3367, 3368, 3369, 3370, 3371, 3372, 3373, 3374, 3375, 3376, 3377, 3378, 3379, 3380, 3381, 3382, 3383,
+              3384, 3385, 3386, 3387, 3388]
   # DotNext
   - eventTypeId: 2
     name:
@@ -1093,6 +1115,17 @@ events:
     talkIds: [2956, 2957, 2958, 2959, 3094, 3095, 2960, 2961, 2962, 2963, 3097, 2964, 2965, 2966, 2967, 3096, 3098, 2968,
               2969, 2970, 2971, 2972, 2973, 2974, 2975, 3099, 3100, 2976, 2977, 2978, 2986, 2980, 2981, 2982, 2983, 3114, 2984,
               2979, 2985, 3021]
+  - eventTypeId: 9
+    name:
+      - {language: en, text: "Mobius 2021 Msc"}
+      - {language: ru, text: "Mobius 2021 Мск"}
+    startDate: "2021-11-22"
+    endDate: "2021-11-25"
+    siteLink:
+      - {language: en, text: "https://mobius-moscow.ru/en/"}
+      - {language: ru, text: "https://mobius-moscow.ru/"}
+    placeId: 24
+    talkIds: [3417, 3418, 3419, 3420, 3421, 3422, 3423, 3424, 3425, 3426, 3427, 3428, 3429, 3430, 3431, 3432]
   # SPTDC
   - eventTypeId: 10
     name:
