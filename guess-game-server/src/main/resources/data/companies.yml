@@ -2602,3 +2602,9 @@ companies:
   - id: 833
     name:
       - {language: en, text: Undo}
+  - id: 835
+    name:
+      - {language: en, text: Stream}
+  - id: 836
+    name:
+      - {language: en, text: Apalon}

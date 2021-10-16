@@ -162,6 +162,10 @@ companySynonyms:
         Sberbank-Technology,
         Сбербанк-Технологии
     ]
+  - name: Skyeng
+    synonyms: [
+        Skeyng
+    ]
   - name: "Tune IT"
     synonyms: [
         Tune-IT
@@ -172,7 +176,8 @@ companySynonyms:
     ]
   - name: VK
     synonyms: [
-        VKontakte
+        VKontakte,
+        VK.com
     ]
   - name: "Yandex Go"
     synonyms: [
