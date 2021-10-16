@@ -1763,16 +1763,9 @@ public class ConferenceDataLoader {
 //                )
 //        );
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2021, 9, 18), "2021autumntt",
-//                new LoadSettings(
-//                        Collections.emptyMap(),
-//                        Set.of("Открытие фестиваля", "Разговор в студии", "Закрытие фестиваля"),
-//                        false
-//                ));
+//                LoadSettings.invalidTalksSet(Set.of("Открытие фестиваля", "Разговор в студии", "Закрытие фестиваля")));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2021, 10, 5), "2021msk",
-//                new LoadSettings(
-//                        Collections.emptyMap(),
-//                        Set.of("Открытие конференции Heisenbug 2021 Moscow", "Разговор в студии"),
-//                        false));
+//                LoadSettings.invalidTalksSet(Set.of("Открытие конференции Heisenbug 2021 Moscow", "Разговор в студии")));
 //        loadTalksSpeakersEvent(Conference.SMART_DATA, LocalDate.of(2021, 10, 11), "2021spbsmartdata",
 //                new LoadSettings(
 //                        Map.of(new NameCompany("Владимир Озеров", new Company(782, "Querify Labs")), 136L),
@@ -1780,10 +1773,8 @@ public class ConferenceDataLoader {
 //                        false));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2021, 10, 21), "2021msk");
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2021, 10, 25), "2021joker",
-//                new LoadSettings(
-//                        Collections.emptyMap(),
-//                        Set.of("Открытие конференции Joker 2021"),
-//                        false));
+//                LoadSettings.invalidTalksSet(Set.of("Открытие конференции Joker 2021")));
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2021, 11, 2), "2021msk");
+//        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2021, 11, 8), "2021spbdevoops");
     }
 }

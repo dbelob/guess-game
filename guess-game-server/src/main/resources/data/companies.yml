@@ -1291,7 +1291,7 @@ companies:
       - {language: en, text: "R.M.G. Holding B.V."}
   - id: 429
     name:
-      - {language: en, text: "Raiffeisen Bank International AG"}
+      - {language: en, text: "Raiffeisen Bank International"}
   - id: 430
     name:
       - {language: en, text: "Rambler Digital Solutions"}
@@ -2551,3 +2551,25 @@ companies:
   - id: 817
     name:
       - {language: en, text: "1inch Network"}
+  - id: 818
+    name:
+      - {language: en, text: "Independent expert"}
+      - {language: ru, text: "Независимый эксперт"}
+  - id: 819
+    name:
+      - {language: en, text: Bling}
+  - id: 820
+    name:
+      - {language: en, text: "Simplinic GmbH"}
+  - id: 821
+    name:
+      - {language: en, text: Elastisys}
+  - id: 822
+    name:
+      - {language: en, text: Cloudthread}
+  - id: 823
+    name:
+      - {language: en, text: "TLA Tech"}
+  - id: 824
+    name:
+      - {language: en, text: "Grafana Labs"}
