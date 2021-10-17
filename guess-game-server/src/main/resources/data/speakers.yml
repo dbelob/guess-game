@@ -1771,7 +1771,7 @@ speakers:
     photoFileName: 0105.jpg
     name:
       - {language: en, text: "Sanhong Li"}
-    companyIds: [25]
+    companyIds: [26]
     bio:
       - language: en
         text: "Sanhong Li is a JVM lead at Alibaba. He has been working on Java since 2004, where he began at Intel Asia-Pacific\
@@ -1950,7 +1950,7 @@ speakers:
     photoFileName: 0115.jpg
     name:
       - {language: en, text: "Chris Seaton"}
-    companyIds: [384]
+    companyIds: [383]
     bio:
       - language: en
         text: "Chris Seaton is Research Manager at the Virtual Machine Group in Oracle Labs, \nwhere he leads the work to\
@@ -2581,7 +2581,7 @@ speakers:
     photoFileName: 0157.jpg
     name:
       - {language: en, text: "Vojin Jovanovic"}
-    companyIds: [384]
+    companyIds: [383]
     bio:
       - {language: en, text: "Vojin does researches on compilers and virtual machines in Oracle Labs. Before Oracle, he did\
             \ a PhD in the Scala Lab at EPFL on embedding DSLs. Vojin believes that programs can be written abstractly and\
@@ -3017,7 +3017,7 @@ speakers:
     photoUpdatedAt: 2020-09-21T09:10:19.398Z[UTC]
     name:
       - {language: en, text: "Peter Lawrey"}
-    companyIds: [89]
+    companyIds: [88]
     bio:
       - language: en
         text: "Most answers on Stackoverflow for Java and the JVM.\nArchitect of the OpenHFT libraries downloaded 20M times.\n\
@@ -5395,7 +5395,7 @@ speakers:
     name:
       - {language: en, text: "Oksana Nekrasova"}
       - {language: ru, text: "Оксана Некрасова"}
-    companyIds: [138]
+    companyIds: [139]
     bio:
       - language: en
         text: "Oksana leads DevOps team at Dell EMC. Before this she participated in development, architecture and management\
@@ -5444,7 +5444,7 @@ speakers:
     name:
       - {language: en, text: "Anton Rymkus"}
       - {language: ru, text: "Антон Рымкус"}
-    companyIds: [138]
+    companyIds: [139]
     bio:
       - language: en
         text: "Anton works in a DevOps command for Dell EMC as an architect and team lead. Before that he worked for 15 years\
@@ -7052,7 +7052,7 @@ speakers:
     name:
       - {language: en, text: "Nikolay Gusev"}
       - {language: ru, text: "Николай Гусев"}
-    companyIds: [142]
+    companyIds: [141]
     bio:
       - language: en
         text: "Started as a C++ programmer at university and after became a C# developer. \nSince 2008, he worked at IBS as\
@@ -8742,7 +8742,7 @@ speakers:
     name:
       - {language: en, text: "Igor Balagurov"}
       - {language: ru, text: "Игорь Балагуров"}
-    companyIds: [778]
+    companyIds: [390]
     bio:
       - language: en
         text: "QA Automation Lead at Ozon Fintech\n\nIgor worked in several product companies and startups. He was engaged\
@@ -11447,7 +11447,7 @@ speakers:
     photoFileName: 0802.jpg
     name:
       - {language: en, text: "Royi Benyossef"}
-    companyIds: [458]
+    companyIds: [457]
     bio:
       - {language: en, text: "Royi Benyossef is the ecosystem relations manager at Samsung NEXT TLV, an early stage investment\
             \ and innovation arm that focuses on software and services. Royi is also an Android Google expert since 2013 with\
@@ -12537,7 +12537,7 @@ speakers:
     name:
       - {language: en, text: "Sergey Krapivenskiy"}
       - {language: ru, text: "Сергей Крапивенский"}
-    companyIds: [430]
+    companyIds: [431]
     bio:
       - {language: en, text: "Been developing mobile apps for almost 6 years. Now works as a group lead at Rambler Digital\
             \ Solutions. Speaks at various russian meetups and conferences, often about VIPER. Apart from that he is a technical\
@@ -15554,7 +15554,7 @@ speakers:
     name:
       - {language: en, text: "Aleksandr Bogachev"}
       - {language: ru, text: "Александр Богачёв"}
-    companyIds: [49]
+    companyIds: [730]
     bio:
       - {language: en, text: "12 years in web development. Backend-developer in the past. Worked at the bloody enterprise,\
             \ then moved to startup. One of Frontend Youth podcast participants. Dan Abramov said that Aleksandr is a prominent\
@@ -15852,7 +15852,7 @@ speakers:
     name:
       - {language: en, text: "Mikhail Kashkarov"}
       - {language: ru, text: "Михаил Кашкаров"}
-    companyIds: [459]
+    companyIds: [457]
     bio:
       - {language: en, text: "The developer of a compiler for neural networks in the Russian Samsung R&D center. He also worked\
             \ as a toolchain developer for OS."}
@@ -16696,7 +16696,7 @@ speakers:
     name:
       - {language: en, text: "Vyacheslav Kruglov"}
       - {language: ru, text: "Вячеслав Круглов"}
-    companyIds: [144]
+    companyIds: [143]
     bio:
       - {language: ru, text: "Team-lead, Java разработчик в T-Systems."}
     twitter: vv_kruglov
@@ -17307,7 +17307,7 @@ speakers:
     photoUpdatedAt: 2020-05-29T07:11:49.986Z[UTC]
     name:
       - {language: en, text: "Alex Kogan"}
-    companyIds: [384]
+    companyIds: [383]
     bio:
       - language: en
         text: "Alex Kogan is a research scientist at Oracle Labs where he works in the Distributed Systems Group. \nHe is\
@@ -18707,7 +18707,7 @@ speakers:
     name:
       - {language: en, text: "Anastasia Mladshova"}
       - {language: ru, text: "Анастасия Младшова"}
-    companyIds: [673]
+    companyIds: [141]
     bio:
       - {language: en, text: "Since 2003, she has tested mobiles, antivirus, streaming services, and more using Ruby, Python,\
             \ TypeScript, Java, and more. She has been working in Deutsche Bank Tech Center's dream team for 7 years — coordinates\
@@ -18880,7 +18880,7 @@ speakers:
     name:
       - {language: en, text: "Alexandr Sosorev"}
       - {language: ru, text: "Александр  Сосорев"}
-    companyIds: [137]
+    companyIds: [136]
     bio:
       - {language: en, text: "Started his career as an Android developer in a small startup. Now Alexandr leads mobile development\
             \ at Delivery Club: he is in charge of processes, development of mobile clients, building teams, etc. Once wrote\
@@ -19386,7 +19386,7 @@ speakers:
     name:
       - {language: en, text: "Andrey Damintcev"}
       - {language: ru, text: "Андрей Даминцев"}
-    companyIds: [144]
+    companyIds: [143]
     bio:
       - {language: en, text: "Andrey has been working in IT since 2011. He worked as a frontend and backend developer and\
             \ a team lead at Sigma-IT, Return on Intelligence (ex ExigenServices), Grid Dynamics. He joined the Deutsche Telekom\
@@ -19604,7 +19604,7 @@ speakers:
     name:
       - {language: en, text: "Maximilian Novikov"}
       - {language: ru, text: "Максимилиан Новиков"}
-    companyIds: [673]
+    companyIds: [141]
     bio:
       - language: en
         text: "Max is an IT professional with 15 years of experience in the fields of software engineering, development, and\
@@ -20934,7 +20934,7 @@ speakers:
     name:
       - {language: en, text: "Pavel Yakunin"}
       - {language: ru, text: "Павел Якунин"}
-    companyIds: [673]
+    companyIds: [141]
     bio:
       - language: en
         text: "Lead developer and the team lead for the big data team at Deutsche Bank Investment division.\n\nPavel joined\
@@ -21067,7 +21067,7 @@ speakers:
     name:
       - {language: en, text: "Andrey Zhukov"}
       - {language: ru, text: "Андрей Жуков"}
-    companyIds: [455]
+    companyIds: [454]
     bio:
       - {language: en, text: "Graduate of the Faculty of Geography, Moscow State University. Data Janitor since 2015. Long\
             \ ago was a cartographer and geospatial engineer, but decided not to stop there. Once made a corporate GIS for\
@@ -23832,7 +23832,7 @@ speakers:
     name:
       - {language: en, text: "Maksim Zabunkov"}
       - {language: ru, text: "Максим Забунков"}
-    companyIds: [772]
+    companyIds: [141]
     bio:
       - language: en
         text: "Started his career in 2005 as a C++ developer, then switched to C# .NET and soon became part of the Deutsche\
@@ -24754,7 +24754,7 @@ speakers:
     photoUpdatedAt: 2021-09-13T15:58:41.827Z[UTC]
     name:
       - {language: en, text: "Udi Dahan"}
-    companyIds: [797]
+    companyIds: [392]
     bio:
       - {language: en, text: "Udi Dahan is one of the world’s foremost experts on Service-Oriented Architecture and Domain-Driven\
             \ Design and also the creator of NServiceBus, the most popular service bus for .NET."}

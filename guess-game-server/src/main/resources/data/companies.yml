@@ -77,9 +77,6 @@ companies:
   - id: 24
     name:
       - {language: en, text: Algorand}
-  - id: 25
-    name:
-      - {language: en, text: Alibaba}
   - id: 26
     name:
       - {language: en, text: "Alibaba Group"}
@@ -149,9 +146,6 @@ companies:
   - id: 48
     name:
       - {language: en, text: Arenadata}
-  - id: 49
-    name:
-      - {language: en, text: "Arrival Ltd"}
   - id: 50
     name:
       - {language: en, text: "Arrival Robotics"}
@@ -269,9 +263,6 @@ companies:
   - id: 88
     name:
       - {language: en, text: "Chronicle Software"}
-  - id: 89
-    name:
-      - {language: en, text: "Chronicle Software Ltd"}
   - id: 90
     name:
       - {language: en, text: "Cirrus Labs"}
@@ -412,13 +403,7 @@ companies:
       - {language: en, text: Delightex}
   - id: 136
     name:
-      - {language: en, text: "Delivery club"}
-  - id: 137
-    name:
-      - {language: en, text: "Delivery Club Tech"}
-  - id: 138
-    name:
-      - {language: en, text: "Dell EMC"}
+      - {language: en, text: "Delivery Club"}
   - id: 139
     name:
       - {language: en, text: "Dell Technologies"}
@@ -428,15 +413,9 @@ companies:
   - id: 141
     name:
       - {language: en, text: "Deutsche Bank"}
-  - id: 142
-    name:
-      - {language: en, text: "Deutsche Bank Technology Centre"}
   - id: 143
     name:
       - {language: en, text: "Deutsche Telekom"}
-  - id: 144
-    name:
-      - {language: en, text: "Deutsche Telekom IT Solutions"}
   - id: 145
     name:
       - {language: en, text: Devbridge}
@@ -1154,9 +1133,6 @@ companies:
   - id: 383
     name:
       - {language: en, text: Oracle}
-  - id: 384
-    name:
-      - {language: en, text: "Oracle Labs"}
   - id: 385
     name:
       - {language: en, text: ORION}
@@ -1292,9 +1268,6 @@ companies:
   - id: 429
     name:
       - {language: en, text: "Raiffeisen Bank International"}
-  - id: 430
-    name:
-      - {language: en, text: "Rambler Digital Solutions"}
   - id: 431
     name:
       - {language: en, text: "Rambler Group"}
@@ -1366,23 +1339,13 @@ companies:
       - {language: en, text: "Roox Solutions"}
   - id: 454
     name:
-      - {language: en, text: "S7 IT"}
-  - id: 455
-    name:
-      - {language: en, text: "S7 Techlab"}
-      - {language: ru, text: "S7 Техлаб"}
+      - {language: en, text: "S7"}
   - id: 456
     name:
       - {language: en, text: Salesforce}
   - id: 457
     name:
       - {language: en, text: Samsung}
-  - id: 458
-    name:
-      - {language: en, text: "Samsung NEXT/GDE"}
-  - id: 459
-    name:
-      - {language: en, text: "Samsung R&D Russia"}
   - id: 460
     name:
       - {language: en, text: "San José State University"}
@@ -2080,10 +2043,6 @@ companies:
     name:
       - {language: en, text: Tensor}
       - {language: ru, text: Тензор}
-  - id: 673
-    name:
-      - {language: en, text: "Deutsche Bank Technology Center"}
-      - {language: ru, text: "ТехЦентр Дойче Банка"}
   - id: 674
     name:
       - {language: en, text: Tinkoff}
@@ -2408,9 +2367,6 @@ companies:
   - id: 771
     name:
       - {language: en, text: "Inspired Testing"}
-  - id: 772
-    name:
-      - {language: en, text: "Deutsche Bank Tech Center"}
   - id: 773
     name:
       - {language: en, text: YADRO}
@@ -2486,9 +2442,6 @@ companies:
   - id: 796
     name:
       - {language: en, text: DevBrothers}
-  - id: 797
-    name:
-      - {language: en, text: "Particular Software Ltd"}
   - id: 798
     name:
       - {language: en, text: "The Secret Circle Solutions"}
