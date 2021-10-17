@@ -1361,6 +1361,9 @@ companies:
   - id: 464
     name:
       - {language: en, text: SauceLabs}
+  - id: 465
+    name:
+      - {language: en, text: SberDevices}
   - id: 466
     name:
       - {language: en, text: "Scienta AS"}

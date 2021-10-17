@@ -12001,7 +12001,7 @@ speakers:
     name:
       - {language: en, text: "Anton Dudakov"}
       - {language: ru, text: "Антон Дудаков"}
-    companyIds: [665]
+    companyIds: [465]
     bio:
       - {language: en, text: "Anton worked at a startup Storia.me as a team lead for an Android application. Then he was the\
             \ team lead of the Android part of Yandex.Avto project. Now in SberDevices, he is responsible for embedded Android\
@@ -22451,7 +22451,7 @@ speakers:
     name:
       - {language: en, text: "Pavel Remizov"}
       - {language: ru, text: "Павел Ремизов"}
-    companyIds: [665]
+    companyIds: [465]
     bio:
       - {language: en, text: "Pavel makes products for humans using modern web technologies. He is certain that humans are\
             \ more important and that technologies come second. Pavel worked for startups, state-owned companies, and foreign\
@@ -23126,7 +23126,7 @@ speakers:
     name:
       - {language: en, text: "Anton Vinogradov"}
       - {language: ru, text: "Антон Виноградов"}
-    companyIds: [665]
+    companyIds: [465]
     bio:
       - {language: en, text: "Developer with over 10 years of experience in harsh enterprise and international startups. Built\
             \ the frontend of Alfa-Bank. Yandex.Search frontend architect. Supervised the development of Yandex.Video, Yandex.Station\
@@ -23463,7 +23463,7 @@ speakers:
     name:
       - {language: en, text: "Aleksandr Fomin"}
       - {language: ru, text: "Александр Фомин"}
-    companyIds: [665]
+    companyIds: [465]
     bio:
       - {language: en, text: "For the last 7 years, he has been working in QA. Most of his professional activity has been\
             \ developing software for the validation of GNSS receivers, controllers for automatic control of a tractor in\
@@ -23481,7 +23481,7 @@ speakers:
     name:
       - {language: en, text: "Aleksandr Grishin"}
       - {language: ru, text: "Александр Гришин"}
-    companyIds: [665]
+    companyIds: [465]
     bio:
       - {language: en, text: "Responsible for hardware quality at SberDevices. Aleksandr's responsibilities include the construction\
             \ of a manual and automated testing process in the factory, as well as matching all test procedures and methods\
@@ -23890,7 +23890,7 @@ speakers:
     name:
       - {language: en, text: "Roman Kurochkin"}
       - {language: ru, text: "Роман Курочкин"}
-    companyIds: [665]
+    companyIds: [465]
     bio:
       - {language: en, text: "Since the beginning of QA career, Roman has focused on hardware testing. Was involved in quality\
             \ assurance for SberPortal and OkkoSmartBox. Now the responsibilities include coordinating tasks, training new\
@@ -23906,7 +23906,7 @@ speakers:
     name:
       - {language: en, text: "Oleg Lomanov"}
       - {language: ru, text: "Олег Ломанов"}
-    companyIds: [665]
+    companyIds: [465]
     bio:
       - {language: en, text: "Oleg's career began with an authorized CPS service center. He was also interested in testing\
             \ theory and solving various problems in Java. Worked as a manual tester at YotaDevices. There he had a unique\
@@ -26070,7 +26070,7 @@ speakers:
     name:
       - {language: en, text: "Nikolay Pakhomov"}
       - {language: ru, text: "Николай Пахомов"}
-    companyIds: [665]
+    companyIds: [465]
     bio:
       - language: en
         text: "For over a year he has been developing system applications for devices at SberDevices. Prior to that, he worked\
