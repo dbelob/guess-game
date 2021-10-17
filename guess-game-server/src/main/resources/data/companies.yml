@@ -1361,9 +1361,6 @@ companies:
   - id: 464
     name:
       - {language: en, text: SauceLabs}
-  - id: 465
-    name:
-      - {language: en, text: SberDevices}
   - id: 466
     name:
       - {language: en, text: "Scienta AS"}
@@ -1811,10 +1808,6 @@ companies:
     name:
       - {language: en, text: Alfa-Bank}
       - {language: ru, text: Альфа-Банк}
-  - id: 614
-    name:
-      - {language: en, text: Alfa-Lab}
-      - {language: ru, text: Альфа-Лаборатория}
   - id: 615
     name:
       - {language: en, text: Amperka}
@@ -1931,14 +1924,6 @@ companies:
     name:
       - {language: en, text: "Mir Plat.Form"}
       - {language: ru, text: "Мир Plat.Form"}
-  - id: 644
-    name:
-      - {language: en, text: "NSPK JSC"}
-      - {language: ru, text: "Мир Plat.Form (АО НСПК)"}
-  - id: 645
-    name:
-      - {language: en, text: "Mir Plat.Form (NSPK)"}
-      - {language: ru, text: "Мир Plat.Form (НСПК)"}
   - id: 646
     name:
       - {language: en, text: MyOffice}
@@ -1951,10 +1936,6 @@ companies:
     name:
       - {language: en, text: MTS}
       - {language: ru, text: МТС}
-  - id: 649
-    name:
-      - {language: en, text: "MTS IT"}
-      - {language: ru, text: "МТС ИТ"}
   - id: 650
     name:
       - {language: en, text: "National Research University Higher School of Economics"}
@@ -1999,14 +1980,6 @@ companies:
     name:
       - {language: en, text: Prosoft-Systems}
       - {language: ru, text: Прософт-Системы}
-  - id: 661
-    name:
-      - {language: en, text: PSB}
-      - {language: ru, text: ПСБ}
-  - id: 662
-    name:
-      - {language: en, text: RaiffeisenBank}
-      - {language: ru, text: Райффайзенбанк}
   - id: 663
     name:
       - {language: en, text: Rosatom}
@@ -2107,30 +2080,6 @@ companies:
     name:
       - {language: en, text: Yandex}
       - {language: ru, text: Яндекс}
-  - id: 691
-    name:
-      - {language: en, text: "Yandex.Classifieds Technology"}
-      - {language: ru, text: "Яндекс.Вертикали Технологии"}
-  - id: 692
-    name:
-      - {language: en, text: Yandex.Money}
-      - {language: ru, text: Яндекс.Деньги}
-  - id: 693
-    name:
-      - {language: en, text: Yandex.Drive}
-      - {language: ru, text: Яндекс.Драйв}
-  - id: 694
-    name:
-      - {language: en, text: Yandex.Market}
-      - {language: ru, text: Яндекс.Маркет}
-  - id: 695
-    name:
-      - {language: en, text: Yandex.Cloud}
-      - {language: ru, text: Яндекс.Облако}
-  - id: 696
-    name:
-      - {language: en, text: Yandex.Taxi}
-      - {language: ru, text: Яндекс.Такси}
   - id: 697
     name:
       - {language: en, text: "Russian Microsoft MVP Community"}
@@ -2200,10 +2149,6 @@ companies:
     name:
       - {language: en, text: Auto.ru}
       - {language: ru, text: Авто.ру}
-  - id: 718
-    name:
-      - {language: en, text: "Yandex Go"}
-      - {language: ru, text: "Яндекс Go"}
   - id: 719
     name:
       - {language: en, text: INOSTUDIO}
@@ -2356,10 +2301,6 @@ companies:
   - id: 768
     name:
       - {language: en, text: GustoHQ}
-  - id: 769
-    name:
-      - {language: en, text: SberTech}
-      - {language: ru, text: СберТех}
   - id: 770
     name:
       - {language: en, text: Citymobil}

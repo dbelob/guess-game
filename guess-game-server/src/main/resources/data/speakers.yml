@@ -933,7 +933,7 @@ speakers:
     name:
       - {language: en, text: "Sergey Melnikov"}
       - {language: ru, text: "Сергей Мельников"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - {language: en, text: "Works on a high-frequency trading application at Raiffeisenbank since 2016. Basically, is into\
             \ speeding up the existing and writing the new low-latency Java code. Before that worked at Intel as an engineer\
@@ -1745,7 +1745,7 @@ speakers:
     name:
       - {language: en, text: "Vladislav Goncharov"}
       - {language: ru, text: "Владислав Гончаров"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: en, text: "Leading IT engineer at Sberbank Technology since 2016. Is involved in the Platform of Business\
             \ Development Support project— a universal tool to create business applications. His main responsibility is to\
@@ -1758,7 +1758,7 @@ speakers:
     name:
       - {language: en, text: "Nikolay Archakov"}
       - {language: ru, text: "Николай Арчаков"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: en, text: "Senior Architect in Sberbank Technology since 2012. He participates in development of Credit\
             \ Factory: system of processing and deciding on loan applications. His main area of responsibility is architecture\
@@ -1831,7 +1831,7 @@ speakers:
     name:
       - {language: en, text: "Anton Lenok"}
       - {language: ru, text: "Антон Ленок"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: en, text: "Software engineer at Sberbank Technology. Develops server side for Sberbank Online. In his projects\
             \ implements solutions that make engineers' life more fun: ELK, Docker, Kubernetes, reactive programming, etc."}
@@ -2014,7 +2014,7 @@ speakers:
     name:
       - {language: en, text: "Aleksey Dobrynin"}
       - {language: ru, text: "Алексей Добрынин"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: en, text: "Chief technical officer at Sberbank-Technology. Has been working in app development for more\
             \ than 10 years. During this time has gained vast experience in designing and creating systems of different size,\
@@ -2028,7 +2028,7 @@ speakers:
     name:
       - {language: en, text: "Ruslan Mikhalev"}
       - {language: ru, text: "Руслан Михалёв"}
-    companyIds: [614]
+    companyIds: [613]
     bio:
       - {language: en, text: "enior Developer at Alfa-Lab. Develops banking API in microservices, is interested in libraries\
             \ development, pays particular attention to the contract, user-friendliness and tools' flexibility. Is a big fan\
@@ -2244,7 +2244,7 @@ speakers:
     name:
       - {language: en, text: "Aleksey Kuragin"}
       - {language: ru, text: "Алексей Курагин"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: en, text: "Aleksey is an architect at Sberbank Technology. He has eight years’ experience of enterprise\
             \ app development. He works on the core of Sberbank Platform, designing, developing and trialling experimental\
@@ -2257,7 +2257,7 @@ speakers:
     name:
       - {language: en, text: "Viet Nguyen"}
       - {language: ru, text: "Вьет Нгуен"}
-    companyIds: [614]
+    companyIds: [613]
     bio:
       - {language: en, text: "I am a leading developer from Alpha-Laboratory. I'm working on internal API and microservices\
             \ infrastructure. Also, I'm conducting trainings within the company. Victim of DevOps with almost two years of\
@@ -2289,7 +2289,7 @@ speakers:
     name:
       - {language: en, text: "Iliya Volkov"}
       - {language: ru, text: "Илья Волков"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: en, text: "Saint Petersburg State University graduate, Sberbank Technology lead engineer with more than\
             \ 12 years of Java development experience. Working on highload systems design architecture, performance optimization,\
@@ -2325,7 +2325,7 @@ speakers:
     name:
       - {language: en, text: "Michael Peresypkin"}
       - {language: ru, text: "Михаил Пересыпкин"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: en, text: "MSU Faculty of Mechanics and Mathematics graduate with more than 17 years of experience in software\
             \ developing and integration. Has occupied positions ranging from programmer to system architect. An expert in\
@@ -2483,7 +2483,7 @@ speakers:
     name:
       - {language: en, text: "Ilya Sergeev"}
       - {language: ru, text: "Илья Сергеев"}
-    companyIds: [614]
+    companyIds: [613]
     bio:
       - {language: en, text: "Ilya is a developer at Alfa-laboratory. He is involved in the design of applications' architecture\
             \ and developing micro-servises. He went to the \"lab\" because of last year's Joker, thanks to the talk of my\
@@ -2648,7 +2648,7 @@ speakers:
     name:
       - {language: en, text: "Sergey Vladimirov"}
       - {language: ru, text: "Сергей Владимиров"}
-    companyIds: [644]
+    companyIds: [643]
     bio:
       - {language: en, text: "Designed and developed high-performance systems in NetCracker, Odnoklassniki (mail.ru), Sberbank,\
             \ lately at NSPK JST (MIR PS operator). Engaged in systems architecture, backend (Java), and even in frontend\
@@ -2677,7 +2677,7 @@ speakers:
     name:
       - {language: en, text: "Alexander Matorin"}
       - {language: ru, text: "Александр Маторин"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: ru, text: "Руководитель разработки в СберТехе. Занимается разработкой риск платформы банка, основанной\
             \ на микросервисах, и системой определения мошенничеств при совершении сделок на финансовых рынках. Преподает\
@@ -2752,7 +2752,7 @@ speakers:
     name:
       - {language: en, text: "Alexander Perkovsky"}
       - {language: ru, text: "Александр Перковский"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: ru, text: "Заместитель директора Центра Компетенции Платформы Поддержки Развития Бизнеса. Является одни\
             м из идеологов проекта по созданию новой Платформы банка и отвечает за спектр стратегических и инновационных р\
@@ -2776,7 +2776,7 @@ speakers:
     name:
       - {language: en, text: "Mikhail Ruzhentsev"}
       - {language: ru, text: "Михаил Руженцев"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - language: en
         text: "Head of IT systems development at Sberbank Technology.\nIs into the development and implementation of DevOps\
@@ -2792,7 +2792,7 @@ speakers:
     name:
       - {language: en, text: "Yegor Fedorov"}
       - {language: ru, text: "Егор Федоров"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: ru, text: "Работает в компании Сбербанк Технологии с 2012 года. На данный момент является главным архит\
             ектором системного ядра банка и отвечает за разработку, проектирование, апробацию и внедрение новых технологий\
@@ -2804,7 +2804,7 @@ speakers:
     name:
       - {language: en, text: "Maria Nasyrova"}
       - {language: ru, text: "Мария Насырова"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: ru, text: "Архитектор Лаборатории системного ядра СберТеха. Питает страсть к быстрой езде, HPC и создан\
             ию удобных инструментов разработки. Последние два года трудится над новым ORM-фреймворком для IMDG-приложений\
@@ -2820,7 +2820,7 @@ speakers:
     name:
       - {language: en, text: "Alexander Borisov"}
       - {language: ru, text: "Александр Борисов"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: ru, text: "Родился в Самаре. Образование: Самарский Государственный Аэрокосмический Университет, год ок\
             ончания – 2000. Стаж: 16 лет, из них 10 лет в сфере банковского IT. На текущий момент занимается КМ ППРБ в рол\
@@ -2830,7 +2830,7 @@ speakers:
     name:
       - {language: en, text: "Maria Besfamilnaya"}
       - {language: ru, text: "Мария Бесфамильная"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: ru, text: "Родилась в Санкт-Петербурге. Закончила Московский Государственный Университет имени М.В.Ломо\
             носова, год окончания – 2013. Стаж: 5 лет, из них 4 лет в сфере банковского IT. На текущий момент занимается К\
@@ -2858,7 +2858,7 @@ speakers:
     name:
       - {language: en, text: "Alexey Stolbovskih"}
       - {language: ru, text: "Алексей Столбовских"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: ru, text: "Родился в Воронеже. Образование: Воронежский Государственный Технический Университет, год ок\
             ончания – 2006. Стаж: 10 лет, из них 7 лет в сфере банковского IT. На текущий момент занимается КМ ППРБ в роли\
@@ -2868,7 +2868,7 @@ speakers:
     name:
       - {language: en, text: "Maxim Zelinsky"}
       - {language: ru, text: "Максим Зелинский"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: ru, text: "Начальник отдела развития платформы Единой Фронтальной Системы в СберТехе. Отвечает за ядро\
             \ и архитектуру одной из крупнейших банковских фронтальных систем в Европе. Занимается разработкой и архитекту\
@@ -2878,7 +2878,7 @@ speakers:
     name:
       - {language: en, text: "Dmitry Sokolov"}
       - {language: ru, text: "Дмитрий Соколов"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: ru, text: "Выпускник МГУ ЭСИ и МГТУ им. Н. Э. Баумана. Более 13 лет опыта автоматизации бизнеса кредитн\
             ых организаций, работал в таких компаниях как Union Card, Росевробанк, Финам и др. специализируюсь на технолог\
@@ -3117,7 +3117,7 @@ speakers:
     name:
       - {language: en, text: "Alexey Vishentsev"}
       - {language: ru, text: "Алексей Вишенцев"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: ru, text: "Инженер компании Сбербанк-Технологии. В прошлом инженер Deutsche Bank, Sun Microsystems и TogetherSoft.\
             \ Женат, воспитывает троих детей."}
@@ -3126,7 +3126,7 @@ speakers:
     name:
       - {language: en, text: "Ilya Agoshkov"}
       - {language: ru, text: "Илья Агошков"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: ru, text: "Разрабатывает на Java с 2004 года. С 2010 по 2012 год работал в компании DeutscheBank в кома\
             нде разработки трейдинговой платформы AutobahnFX. С 2012 года работает в компании Сбербанк-Технологии и руково\
@@ -3299,7 +3299,7 @@ speakers:
     name:
       - {language: en, text: "Anton Chernousov"}
       - {language: ru, text: "Антон Черноусов"}
-    companyIds: [695]
+    companyIds: [689]
     bio:
       - {language: en, text: "До перехода в Облако занимался разработкой автоматизированных систем предоставления хостинг\
             -услуг на базе виртуализации, внедрял Agile-процессы и занимался организацией сообществ разработчиков. Ведет п\
@@ -4379,7 +4379,7 @@ speakers:
     name:
       - {language: en, text: "Vadim Surpin"}
       - {language: ru, text: "Вадим Сурпин"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - language: en
         text: "Has been working on the direction of Big Data in Sberbank Technology since the very first day it was organized;\
@@ -4427,7 +4427,7 @@ speakers:
     name:
       - {language: en, text: "Alexey Sharapov"}
       - {language: ru, text: "Алексей Шарапов"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: en, text: "Alexey brings DevOps culture to the world of Java engineers at Sberbank Technology. While working\
             \ with building and infrastructure, he tries to make the world a better place and ease developers' work. Sberbank\
@@ -4444,7 +4444,7 @@ speakers:
     name:
       - {language: en, text: "Stanislav Yantsen"}
       - {language: ru, text: "Станислав Янцен"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: en, text: "Works at Sberbank Tecnhology as an architect in the «Individual deposits» development team.Has\
             \ an experience of developing and designing Java-based information systems for investment and retail banking."}
@@ -4456,7 +4456,7 @@ speakers:
     name:
       - {language: en, text: "Mikhail Getmanov"}
       - {language: ru, text: "Михаил Гетманов"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - language: en
         text: "Mikhail works at Sberbank Technology where he develops the new generation of client data management system\
@@ -4473,7 +4473,7 @@ speakers:
     name:
       - {language: en, text: "Dmitry Drozhzhin"}
       - {language: ru, text: "Дмитрий Дрожжин"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - language: en
         text: "Graduated from NSU faculty of physics. Chief development manager in Sberbank Technology working on the new\
@@ -4493,7 +4493,7 @@ speakers:
     name:
       - {language: en, text: "Vladimir Aseev"}
       - {language: ru, text: "Владимир Асеев"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: en, text: "Dealing with computers and programming since early 2000s. While in school, participated in National\
             \ Research University of Electronic Technology competitions with marquee component project (as a team member).\
@@ -4510,7 +4510,7 @@ speakers:
     name:
       - {language: en, text: "Andrey Bogoslovskih"}
       - {language: ru, text: "Андрей Богословских"}
-    companyIds: [769]
+    companyIds: [665]
   - id: 308
     photoFileName: 0308.jpg
     name:
@@ -4564,31 +4564,31 @@ speakers:
     name:
       - {language: en, text: "Dmitry Tkachev"}
       - {language: ru, text: "Дмитрий Ткачев"}
-    companyIds: [769]
+    companyIds: [665]
   - id: 313
     photoFileName: 0313.jpg
     name:
       - {language: en, text: "Artem Zhukov"}
       - {language: ru, text: "Артем Жуков"}
-    companyIds: [769]
+    companyIds: [665]
   - id: 314
     photoFileName: 0314.jpg
     name:
       - {language: en, text: "Evgeny Gorodov"}
       - {language: ru, text: "Евгений Городов"}
-    companyIds: [769]
+    companyIds: [665]
   - id: 315
     photoFileName: 0315.jpg
     name:
       - {language: en, text: "Alexey Kopylov"}
       - {language: ru, text: "Алексей Копылов"}
-    companyIds: [769]
+    companyIds: [665]
   - id: 316
     photoFileName: 0316.jpg
     name:
       - {language: en, text: "Igor Tyazhev"}
       - {language: ru, text: "Игорь Тяжев"}
-    companyIds: [769]
+    companyIds: [665]
   - id: 317
     photoFileName: 0317.jpg
     name:
@@ -4852,7 +4852,7 @@ speakers:
     name:
       - {language: en, text: "Anton Polukhin"}
       - {language: ru, text: "Антон Полухин"}
-    companyIds: [718]
+    companyIds: [689]
     bio:
       - language: en
         text: "A representative of Russia at the ISO C++ Standardization Committee. Author of several accepted proposals to\
@@ -5104,7 +5104,7 @@ speakers:
     name:
       - {language: en, text: "Sergei Fedorov"}
       - {language: ru, text: "Сергей Федоров"}
-    companyIds: [696]
+    companyIds: [689]
     bio:
       - {language: en, text: "Lead software engineer at Yandex.Taxi, works on developing an asynchronous framework for Taxi\
             \ back-end. Big fan of metaprogramming and open source."}
@@ -6139,7 +6139,7 @@ speakers:
     name:
       - {language: en, text: "Konstantin Gustov"}
       - {language: ru, text: "Константин Густов"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - {language: en, text: "Currently Konstantin works as an architect. He has been developing software for more than 10\
             \ years. Having started with C++ and a bit of Delphi, later he completely switched to .NET and C# and is really\
@@ -8282,7 +8282,7 @@ speakers:
     name:
       - {language: en, text: "Anatolii Plaskovskii"}
       - {language: ru, text: "Анатолий Пласковский"}
-    companyIds: [692]
+    companyIds: [689]
     bio:
       - {language: en, text: "Author and leader of performance analysis system at Yandex.Money, lead organizer of unique integration\
             \ experiments using real money, implementor of direct influence of load testing on the product release cycle."}
@@ -8468,7 +8468,7 @@ speakers:
     name:
       - {language: en, text: "Vitaly Chayko"}
       - {language: ru, text: "Виталий Чайко"}
-    companyIds: [769]
+    companyIds: [665]
   - id: 589
     photoFileName: 0589.jpg
     name:
@@ -11712,7 +11712,7 @@ speakers:
     name:
       - {language: en, text: "Eugene Antropov"}
       - {language: ru, text: "Евгений Антропов"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - language: en
         text: "Eugene started his developer career working with Apple platforms in 2010. He participated in developing various\
@@ -12001,7 +12001,7 @@ speakers:
     name:
       - {language: en, text: "Anton Dudakov"}
       - {language: ru, text: "Антон Дудаков"}
-    companyIds: [465]
+    companyIds: [665]
     bio:
       - {language: en, text: "Anton worked at a startup Storia.me as a team lead for an Android application. Then he was the\
             \ team lead of the Android part of Yandex.Avto project. Now in SberDevices, he is responsible for embedded Android\
@@ -12139,7 +12139,7 @@ speakers:
     name:
       - {language: en, text: "Vladimir Tebloev"}
       - {language: ru, text: "Владимир Теблоев"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - language: en
         text: "Is into Android development for about five years. Tech lead at Sberbank Technology, works on \"Dialogues\"\
@@ -12505,7 +12505,7 @@ speakers:
     name:
       - {language: en, text: "Dmitry Evstratov"}
       - {language: ru, text: "Дмитрий Евстратов"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - language: en
         text: "At first year in college (in 2005) started to dig frontend and experiment with Vanilla JavaScript. After graduation\
@@ -12610,7 +12610,7 @@ speakers:
     name:
       - {language: en, text: "Daniel Kalintsev"}
       - {language: ru, text: "Даниил Калинцев"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - language: en
         text: "In high school got actively engaged in olympic programming. While studying in university turned to developing\
@@ -13799,7 +13799,7 @@ speakers:
     name:
       - {language: en, text: "Konstantin Nifanin"}
       - {language: ru, text: "Константин Нифанин"}
-    companyIds: [649]
+    companyIds: [648]
     bio:
       - {language: en, text: "Experience in software development as DevOps — 5 years. Former system administrator. Migrated\
             \ from Rostov-on-Don to St. Petersburg in 2017. Currently, he is engaged in the transition of software development\
@@ -14252,7 +14252,7 @@ speakers:
     name:
       - {language: en, text: "Roman Prosin"}
       - {language: ru, text: "Роман Просин"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - {language: en, text: ".NET developer at Raiffeisenbank. Roman is a bright representative of the new school of innovation\
             \ in software development. He believes that any impact should lead to an improvement in the system. He convinced\
@@ -14821,7 +14821,7 @@ speakers:
     name:
       - {language: en, text: "Kirill Kozhuhar"}
       - {language: ru, text: "Кирилл Кожухар"}
-    companyIds: [693]
+    companyIds: [689]
     bio:
       - {language: en, text: "Develops an iOS version of Yandex.Drive. Before this, he developed an Android version of this\
             \ application. 10 years of experience in mobile application developing."}
@@ -14880,7 +14880,7 @@ speakers:
     name:
       - {language: en, text: "Gennady Evstratov"}
       - {language: ru, text: "Геннадий Евстратов"}
-    companyIds: [696]
+    companyIds: [689]
     bio:
       - {language: en, text: "Working on iOS version of the taximeter in Yandex.Taxi. Before that worked on iOS in Youla and\
             \ earlier did a lot of things. In mobile development for more than 10 years, in programming — almost 30. For a\
@@ -16199,7 +16199,7 @@ speakers:
     name:
       - {language: en, text: "Murad Tataev"}
       - {language: ru, text: "Мурад Татаев"}
-    companyIds: [694]
+    companyIds: [689]
     bio:
       - language: en
         text: "Murad has been developing for 5 years and 3 of them on iOS.\r\n\r\nHe started a career in Makhachkala and quickly\
@@ -16339,7 +16339,7 @@ speakers:
     name:
       - {language: en, text: "Ruslan Gumennyi"}
       - {language: ru, text: "Руслан Гуменный"}
-    companyIds: [691]
+    companyIds: [689]
     bio:
       - language: en
         text: "In the last few years Ruslan has been working at Yandex.Classifieds.\r\nHe managed to work on such projects\
@@ -16471,7 +16471,7 @@ speakers:
     name:
       - {language: en, text: "Viktor Danilov"}
       - {language: ru, text: "Виктор Данилов"}
-    companyIds: [695]
+    companyIds: [689]
     bio:
       - {language: en, text: "Viktor has been in IT since 2003. At Naumen he participated in the development of an educational\
             \ platform as a Python Developer, then he switched to Java and was engaged in electronic trading platforms for\
@@ -16568,7 +16568,7 @@ speakers:
     name:
       - {language: en, text: "Danila Dyugurov"}
       - {language: ru, text: "Данила Дюгуров"}
-    companyIds: [695]
+    companyIds: [689]
     bio:
       - {language: en, text: "Head of the Developer Platform at Yandex.Cloud. Graduated from the Faculty of Applied Mathematics\
             \ and Control Processes of Saint-Petersburg State University. In Yandex since 2007."}
@@ -17881,7 +17881,7 @@ speakers:
     name:
       - {language: en, text: "Aleksandr Finoshin"}
       - {language: ru, text: "Александр Финошин"}
-    companyIds: [661]
+    companyIds: [775]
     bio:
       - {language: en, text: "Прошел путь от разработчика до начальника отдела Android-разработки в ПСБ. В свободное от ра\
             боты время занимается футболом."}
@@ -17891,7 +17891,7 @@ speakers:
     name:
       - {language: en, text: "Anton Kolichev"}
       - {language: ru, text: "Антон Колычев"}
-    companyIds: [661]
+    companyIds: [775]
     bio:
       - {language: en, text: "В мобильной разработке с 2011 года. С 2016 iOS-разработчик мобильного приложения PSB-Mobile\
             \ для физических лиц клиентов ПСБ. С 2017 Антон руководит отделом мобильной разработки в ПСБ."}
@@ -17968,7 +17968,7 @@ speakers:
     name:
       - {language: en, text: "Dmitry Vdovin"}
       - {language: ru, text: "Дмитрий Вдовин"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - {language: en, text: "Software developer. Dmitry is sure that well-coordinated work is better than individual goals."}
       - {language: ru, text: "Software developer. Занимается продуктовой разработкой и уверен, что слаженная работа в кома\
@@ -18026,7 +18026,7 @@ speakers:
     name:
       - {language: en, text: "Ivan Glushnev"}
       - {language: ru, text: "Иван Глушнев"}
-    companyIds: [498]
+    companyIds: [729]
     bio:
       - {language: en, text: "Иван в Спортмастере с 2017 года и прошел пусть от разработчика до руководителя направления."}
     habr: ivanglushnev
@@ -18036,7 +18036,7 @@ speakers:
     name:
       - {language: en, text: "Aleksandr Utemov"}
       - {language: ru, text: "Александр Утёмов"}
-    companyIds: [644]
+    companyIds: [643]
     bio:
       - {language: en, text: "Работает в банковской сфере с 2001 года. Занимается тестированием ПО и программированием, в\
             \ том числе на весьма необычных языках: COBOL, TAL и др. С 2015 года перешел в компанию НСПК, где принял участ\
@@ -18048,7 +18048,7 @@ speakers:
     name:
       - {language: en, text: "Igor Kirichuk"}
       - {language: ru, text: "Игорь Киричук"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - {language: en, text: "Java Community Lead, занимается разработкой на Java уже 10 лет."}
   - id: 1308
@@ -18093,7 +18093,7 @@ speakers:
     name:
       - {language: en, text: "Sergey Kolesnikov"}
       - {language: ru, text: "Сергей Колесников"}
-    companyIds: [498]
+    companyIds: [729]
     bio:
       - language: en
         text: "Сергей работает начальником отдела эксплуатации online-сервисов.\nЗанимается сопровождением приложений от у\
@@ -18105,7 +18105,7 @@ speakers:
     name:
       - {language: en, text: "Sergey Orlov"}
       - {language: ru, text: "Сергей Орлов"}
-    companyIds: [498]
+    companyIds: [729]
     bio:
       - {language: en, text: "Head of the Competence Center for Web and Mobile Development at SMLab. A specialist with seventeen\
             \ years of experience in software development in a wide variety of languages and platforms. Now Sergey is helping\
@@ -18259,7 +18259,7 @@ speakers:
     name:
       - {language: en, text: "Sergey Pechenko"}
       - {language: ru, text: "Сергей Печенко"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - {language: en, text: "Инженер, программист, переводчик и издатель, практикует DevOps-подход уже 6 лет."}
   - id: 1327
@@ -18268,7 +18268,7 @@ speakers:
     name:
       - {language: en, text: "Aleksey Baranov"}
       - {language: ru, text: "Алексей Баранов"}
-    companyIds: [695]
+    companyIds: [689]
     bio:
       - {language: en, text: "Руководит разработкой сервиса Yandex Managed Service for Kubernetes и DevTools: public API,\
             \ SDK, CLI, Terraform. Занимался сетевым стеком, networking performance и serverside в браузере. Работал с сет\
@@ -18279,7 +18279,7 @@ speakers:
     name:
       - {language: en, text: "Anton Rykov"}
       - {language: ru, text: "Антон Рыков"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - {language: en, text: "Антон работает в индустрии более 10 лет, работал в таких компаниях, как Luxoft, Kaspersky Lab.\
             \ Руководит командой, занимающейся продвижением DevOps-культуры в банке, а также развитием инструментов для ра\
@@ -18310,7 +18310,7 @@ speakers:
     name:
       - {language: en, text: "Evgeniya Fedotova"}
       - {language: ru, text: "Евгения Федотова"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - {language: en, text: "Разработчик в команде Dev-to-dev, занимающейся созданием и поддержкой инструментов для разра\
             ботчиков."}
@@ -18320,7 +18320,7 @@ speakers:
     name:
       - {language: en, text: "Gleb Borisov"}
       - {language: ru, text: "Глеб Борисов"}
-    companyIds: [695]
+    companyIds: [689]
     bio:
       - {language: en, text: "До перехода в Облако занимался системой управления кластером внутреннего облака Яндекса, вне\
             дрял автоматизацию процессов и DevOps-культуру. Разбирается во многих сферах — от frontend-разработки до систе\
@@ -18733,7 +18733,7 @@ speakers:
     name:
       - {language: en, text: "Valeriy Bogdanov"}
       - {language: ru, text: "Валерий Богданов"}
-    companyIds: [645]
+    companyIds: [643]
     bio:
       - language: en
         text: "Developer with over twelve years of experience.\nNSPK employee since 2015, he currently leads a testing group\
@@ -18748,7 +18748,7 @@ speakers:
     name:
       - {language: en, text: "Tatiana Belskaya"}
       - {language: ru, text: "Татьяна Бельская"}
-    companyIds: [661]
+    companyIds: [775]
     bio:
       - {language: en, text: "Graduated from the Physics Department of Moscow State University with a degree in geophysics,\
             \ statistical processing of atmospheric processes. She ran her educational business for 15 years. In 2014 she\
@@ -18786,7 +18786,7 @@ speakers:
     name:
       - {language: en, text: "Alexander Gazarov"}
       - {language: ru, text: "Александр Газаров"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - {language: en, text: "There will be a small interview with Alexander Sosorev, Head of Mobile Development at Delivery\
             \ Club. He will tell about writing a «good» legacy code, approaches that are used in working with technical debt,\
@@ -18867,7 +18867,7 @@ speakers:
     name:
       - {language: en, text: "Roman Golofaev"}
       - {language: ru, text: "Роман Голофаев"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - {language: en, text: "Мobile developer since 2011. A large number of applications, services and projects in bank.\
             \ Currently his role is a Community lead."}
@@ -19532,7 +19532,7 @@ speakers:
     name:
       - {language: en, text: "Emil Ibragimov"}
       - {language: ru, text: "Эмиль Ибрагимов"}
-    companyIds: [695]
+    companyIds: [689]
     bio:
       - language: en
         text: "Graduating from the CT department at ITMO, before coming to Yandex had a bit of commercial experience with\
@@ -19742,7 +19742,7 @@ speakers:
     name:
       - {language: en, text: "Ilya Chertorylsky"}
       - {language: ru, text: "Илья  Черторыльский"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - {language: en, text: "Ilya started with the development of the firmware for chemical equipment and interfaces to it,\
             \ later devoted most of the time to the interfaces, then discovered endless possibilities of JS. He's engaged\
@@ -20447,7 +20447,7 @@ speakers:
     name:
       - {language: en, text: "Pavel Kulbida"}
       - {language: ru, text: "Павел Кульбида"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - {language: en, text: "Works at Raiffeisenbank. C# developer from 2007, wrote on C++ for 9 years. Has Microsoft statuses\
             \ like MCPD, MCTS, MCITP, MCP. Likes to create and develop desktop, web, and mobile projects. OmsDotNet organizer."}
@@ -20758,7 +20758,7 @@ speakers:
     name:
       - {language: en, text: "Evgeny Ermakov"}
       - {language: ru, text: "Евгений Ермаков"}
-    companyIds: [718]
+    companyIds: [689]
     bio:
       - {language: en, text: "More than 10 years of experience in IT. Architect of data warehouses and analysis systems at\
             \ Mail.ru Group and Yandex Go. Candidate of Technical Sciences, author of more than 10 papers in data analysis,\
@@ -20773,7 +20773,7 @@ speakers:
     name:
       - {language: en, text: "Nikolay Grebenshchikov"}
       - {language: ru, text: "Николай Гребенщиков"}
-    companyIds: [718]
+    companyIds: [689]
     bio:
       - {language: en, text: "Over 15 years of experience in the IT field. For the last 1.5 years, Nikolay has been developing\
             \ data storage at Yandex Go. Specializes in MPP Greenplum DBMS."}
@@ -20987,7 +20987,7 @@ speakers:
     name:
       - {language: en, text: "Vladimir Verstov"}
       - {language: ru, text: "Владимир Верстов"}
-    companyIds: [718]
+    companyIds: [689]
     bio:
       - {language: en, text: "The lead of the DMP development at Yandex.Go. More than 10 years of experience in IT. At the\
             \ university, Vladimir was engaged in parallel and distributed computing, developed his own CAD system, defended\
@@ -21839,7 +21839,7 @@ speakers:
     name:
       - {language: en, text: "Yerkebulan Abildin"}
       - {language: ru, text: "Еркебулан Абилдин"}
-    companyIds: [718]
+    companyIds: [689]
     bio:
       - language: en
         text: "iOS developer with about 7 years of experience.\nYerkebulan started his career as an iOS and Android developer\
@@ -22451,7 +22451,7 @@ speakers:
     name:
       - {language: en, text: "Pavel Remizov"}
       - {language: ru, text: "Павел Ремизов"}
-    companyIds: [465]
+    companyIds: [665]
     bio:
       - {language: en, text: "Pavel makes products for humans using modern web technologies. He is certain that humans are\
             \ more important and that technologies come second. Pavel worked for startups, state-owned companies, and foreign\
@@ -23126,7 +23126,7 @@ speakers:
     name:
       - {language: en, text: "Anton Vinogradov"}
       - {language: ru, text: "Антон Виноградов"}
-    companyIds: [465]
+    companyIds: [665]
     bio:
       - {language: en, text: "Developer with over 10 years of experience in harsh enterprise and international startups. Built\
             \ the frontend of Alfa-Bank. Yandex.Search frontend architect. Supervised the development of Yandex.Video, Yandex.Station\
@@ -23386,7 +23386,7 @@ speakers:
     name:
       - {language: en, text: "Anton Vinogradov"}
       - {language: ru, text: "Антон Виноградов"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: en, text: "Makes Apache Ignite and Sber better."}
       - {language: ru, text: "Делает Apache Ignite и Сбер лучше."}
@@ -23463,7 +23463,7 @@ speakers:
     name:
       - {language: en, text: "Aleksandr Fomin"}
       - {language: ru, text: "Александр Фомин"}
-    companyIds: [465]
+    companyIds: [665]
     bio:
       - {language: en, text: "For the last 7 years, he has been working in QA. Most of his professional activity has been\
             \ developing software for the validation of GNSS receivers, controllers for automatic control of a tractor in\
@@ -23481,7 +23481,7 @@ speakers:
     name:
       - {language: en, text: "Aleksandr Grishin"}
       - {language: ru, text: "Александр Гришин"}
-    companyIds: [465]
+    companyIds: [665]
     bio:
       - {language: en, text: "Responsible for hardware quality at SberDevices. Aleksandr's responsibilities include the construction\
             \ of a manual and automated testing process in the factory, as well as matching all test procedures and methods\
@@ -23631,7 +23631,7 @@ speakers:
     name:
       - {language: en, text: "Svetlana Rasihina"}
       - {language: ru, text: "Светлана Расихина"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - {language: en, text: "Community Lead in the Cash Management team of Raiffeisenbank. More than 4 years of experience\
             \ in testing in large banks. During career managed to work both with BDD frameworks and completely switch to the\
@@ -23645,7 +23645,7 @@ speakers:
     name:
       - {language: en, text: "Artem Maltsev"}
       - {language: ru, text: "Артём Мальцев"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - {language: en, text: "Working in Quality Assurance for 10 years, Artem started as a junior tester and then became\
             \ a test manager, a scrum-master, technical lead. He has joined Raiffeisenbank team in 2019 as a Senior QA specialist,\
@@ -23662,7 +23662,7 @@ speakers:
     name:
       - {language: en, text: "Ruslan Maksyutov"}
       - {language: ru, text: "Руслан Максютов"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - {language: en, text: "Working in Quality Assurance for 10 years. He mainly worked on banking projects, during his\
             \ work managed to test almost everything that is possible in the bank, excluding scoring and mobile applications.\
@@ -23678,7 +23678,7 @@ speakers:
     name:
       - {language: en, text: "Ivan Smolin"}
       - {language: ru, text: "Иван Смолин"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - {language: en, text: "Test automation engineer in the team of the Raiffeisenbank Recruitment Automation department.\
             \ He worked on international products for EPAM and Volkswagen Financial Services. Writes on the Java stack and\
@@ -23874,7 +23874,7 @@ speakers:
     name:
       - {language: en, text: "Daniil Suyagin"}
       - {language: ru, text: "Даниил Суягин"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - language: en
         text: "He has been testing for three years, one year of manual testing in gamedev and two years of automation testing\
@@ -23890,7 +23890,7 @@ speakers:
     name:
       - {language: en, text: "Roman Kurochkin"}
       - {language: ru, text: "Роман Курочкин"}
-    companyIds: [465]
+    companyIds: [665]
     bio:
       - {language: en, text: "Since the beginning of QA career, Roman has focused on hardware testing. Was involved in quality\
             \ assurance for SberPortal and OkkoSmartBox. Now the responsibilities include coordinating tasks, training new\
@@ -23906,7 +23906,7 @@ speakers:
     name:
       - {language: en, text: "Oleg Lomanov"}
       - {language: ru, text: "Олег Ломанов"}
-    companyIds: [465]
+    companyIds: [665]
     bio:
       - {language: en, text: "Oleg's career began with an authorized CPS service center. He was also interested in testing\
             \ theory and solving various problems in Java. Worked as a manual tester at YotaDevices. There he had a unique\
@@ -24062,7 +24062,7 @@ speakers:
     name:
       - {language: en, text: "Nikolay Izhikov"}
       - {language: ru, text: "Николай Ижиков"}
-    companyIds: [769]
+    companyIds: [665]
     bio:
       - {language: en, text: "I write code."}
       - {language: ru, text: "Пишу код."}
@@ -25166,7 +25166,7 @@ speakers:
     name:
       - {language: en, text: "Anton Malikov"}
       - {language: ru, text: "Антон Маликов"}
-    companyIds: [662]
+    companyIds: [429]
     bio:
       - language: en
         text: "Anton Malikov, .NET developer @ Raiffeisenbank.\r\nHe specializes in web applications. He started his career\
@@ -25629,7 +25629,7 @@ speakers:
     name:
       - {language: en, text: "Lubov Grinkevich"}
       - {language: ru, text: "Любовь Гринкевич"}
-    companyIds: [695]
+    companyIds: [689]
     bio:
       - language: en
         text: "Container ecosystem developer. Developed an inner cloud at Yandex, for the last three years she's been working\
@@ -25646,7 +25646,7 @@ speakers:
     name:
       - {language: en, text: "Alexey Mirtov"}
       - {language: ru, text: "Алексей Миртов"}
-    companyIds: [695]
+    companyIds: [689]
     bio:
       - {language: en, text: "Has been working in the field of information security and cloud technologies for 10 years. Worked\
             \ in Bi.Zone, Sber, IBS"}
@@ -26043,7 +26043,7 @@ speakers:
     name:
       - {language: en, text: "Viktor Vihrov"}
       - {language: ru, text: "Виктор Вихров"}
-    companyIds: [718]
+    companyIds: [689]
     bio:
       - {language: en, text: "He develops the Android application Yandex Go. Taught Android for high school students at Samsung\
             \ IT school for more than three years. Speaker of a course on digital accessibility."}
@@ -26070,7 +26070,7 @@ speakers:
     name:
       - {language: en, text: "Nikolay Pakhomov"}
       - {language: ru, text: "Николай Пахомов"}
-    companyIds: [465]
+    companyIds: [665]
     bio:
       - language: en
         text: "For over a year he has been developing system applications for devices at SberDevices. Prior to that, he worked\
