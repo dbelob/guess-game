@@ -1,6 +1,7 @@
 companySynonyms:
-  - name: Alfa-Lab
+  - name: Alfa-Bank
     synonyms: [
+        Alfa-Lab,
         "Alpha Laboratory",
         "Альфа-Банк: Альфа-Лаборатория"
     ]
@@ -12,9 +13,17 @@ companySynonyms:
     synonyms: [
         AWS
     ]
+  - name: "Alibaba Group"
+    synonyms: [
+        Alibaba
+    ]
   - name: "Align Technology"
     synonyms: [
         "Align Technology Inc"
+    ]
+  - name: Arrival
+    synonyms: [
+        "Arrival Ltd"
     ]
   - name: "Azul Systems"
     synonyms: [
@@ -34,6 +43,10 @@ companySynonyms:
     synonyms: [
         СFT
     ]
+  - name: "Chronicle Software"
+    synonyms: [
+        "Chronicle Software Ltd"
+    ]
   - name: Computas
     synonyms: [
         Сomputas
@@ -50,12 +63,24 @@ companySynonyms:
     synonyms: [
         "С++ Russia"
     ]
-  - name: "Deutsche Bank Technology Center"
+  - name: "Delivery Club"
     synonyms: [
+        "Delivery Club Tech"
+    ]
+  - name: "Dell Technologies"
+    synonyms: [
+        "Dell EMC"
+    ]
+  - name: "Deutsche Bank"
+    synonyms: [
+        "Deutsche Bank Technology Centre",
+        "Deutsche Bank Technology Center",
+        "Deutsche Bank Tech Center",
         "Russian Tech Centre Deutsche Bank"
     ]
-  - name: "Deutsche Telekom IT Solutions"
+  - name: "Deutsche Telekom"
     synonyms: [
+        "Deutsche Telekom IT Solutions",
         T-Systems
     ]
   - name: "EPAM Systems"
@@ -111,9 +136,21 @@ companySynonyms:
     synonyms: [
         Microsoft/GitHub
     ]
+  - name: "Mir Plat.Form"
+    synonyms: [
+        "Mir Plat.Form (NSPK)",
+        "NSPK JSC",
+        "Мир Plat.Form (АО НСПК)",
+        "Мир Plat.Form (НСПК)"
+    ]
   - name: "Kaspersky Lab"
     synonyms: [
         Kaspersky
+    ]
+  - name: MTS
+    synonyms: [
+        "MTS IT",
+        "МТС ИТ"
     ]
   - name: Netflix
     synonyms: [
@@ -131,9 +168,26 @@ companySynonyms:
     synonyms: [
         Odnoklassniki
     ]
+  - name: Oracle
+    synonyms: [
+        "Oracle Labs"
+    ]
+  - name: OZON
+    synonyms: [
+        "Ozon Fintech"
+    ]
+  - name: "Particular Software"
+    synonyms: [
+        "Particular Software Ltd"
+    ]
   - name: "Postgres Professional"
     synonyms: [
         PostgresPro
+    ]
+  - name: PromSvyasBank
+    synonyms: [
+        PSB,
+        ПСБ
     ]
   - name: PVS-Studio
     synonyms: [
@@ -141,7 +195,8 @@ companySynonyms:
     ]
   - name: "Rambler Group"
     synonyms: [
-        "Rambler&Co"
+        "Rambler&Co",
+        "Rambler Digital Solutions"
     ]
   - name: "Red Hat"
     synonyms: [
@@ -151,20 +206,36 @@ companySynonyms:
     synonyms: [
         "Raiffeisen Bank International AG",
         Raiffeisen,
-        Райффайзен
+        Райффайзен,
+        RaiffeisenBank,
+        Райффайзенбанк
+    ]
+  - name: S7
+    synonyms: [
+        "S7 IT",
+        "S7 Techlab",
+        "S7 Техлаб"
+    ]
+  - name: Samsung
+    synonyms: [
+        "Samsung NEXT/GDE",
+        "Samsung R&D Russia"
     ]
   - name: Sber
     synonyms: [
-        Sberbank
-    ]
-  - name: SberTech
-    synonyms: [
+        Sberbank,
+        SberTech,
+        СберТех,
         Sberbank-Technology,
         Сбербанк-Технологии
     ]
   - name: Skyeng
     synonyms: [
         Skeyng
+    ]
+  - name: Sportmaster
+    synonyms: [
+        "Sportmaster Lab"
     ]
   - name: "Tune IT"
     synonyms: [
@@ -179,12 +250,26 @@ companySynonyms:
         VKontakte,
         VK.com
     ]
-  - name: "Yandex Go"
+  - name: Yandex
     synonyms: [
+        "Yandex Go",
         "Yandex GO",
         "Яндекс GO",
+        "Яндекс Go",
         Yandex.Go,
-        Яндекс.Go
+        Яндекс.Go,
+        "Yandex.Classifieds Technology",
+        "Яндекс.Вертикали Технологии",
+        Yandex.Money,
+        Яндекс.Деньги,
+        Yandex.Drive,
+        Яндекс.Драйв,
+        Yandex.Market,
+        Яндекс.Маркет,
+        Yandex.Cloud,
+        Яндекс.Облако,
+        Yandex.Taxi,
+        Яндекс.Такси
     ]
   - name: "ZeptoLab LLC"
     synonyms: [
