@@ -2524,3 +2524,17 @@ companies:
   - id: 842
     name:
       - {language: en, text: luna}
+  - id: 843
+    name:
+      - {language: en, text: Self-employed}
+  - id: 844
+    name:
+      - {language: en, text: Gazprombank}
+      - {language: ru, text: Газпромбанк}
+  - id: 845
+    name:
+      - {language: en, text: Sibur}
+      - {language: ru, text: Сибур}
+  - id: 846
+    name:
+      - {language: en, text: "Banks Soft Systems"}

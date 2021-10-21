@@ -238,17 +238,16 @@ speakers:
     habr: krivopustov
   - id: 12
     photoFileName: 0012.jpg
+    photoUpdatedAt: 2019-05-06T15:11:31.536Z[UTC]
     name:
-      - {language: en, text: "Ivan Krylov"}
+      - {language: en, text: "Ivan Krilov"}
       - {language: ru, text: "Иван Крылов"}
-    companyIds: [63]
+    companyIds: []
     bio:
-      - {language: en, text: "Ivan has been involved in JVM and compilers development for more than 13 years, recently focusing\
-            \ on JIT compiler infrastructure in Zing virtual machine at Azul Systems. Ivan is a regular speaker at JUG.ru\
-            \ events and other Java conferences in Europe."}
-      - {language: ru, text: "Иван занимается разработкой виртуальных машин Java и компиляторов более 13 лет, в настоящее\
-            \ время развивает компиляторную инфраструктуру в виртуальной машине Zing в Azul Systems. Регулярный докладчик\
-            \ на конференциях JUG.ru и других европейских Java-конференциях."}
+      - {language: en, text: "Ivan Krylov is a JVM developer for the last 15 years. Ivan specialises in JIT compiler infrastructure\
+            \ and AOT compilation."}
+      - {language: ru, text: "Иван Крылов работает над JVM последние 15 лет. Занимается инфраструктурой JIT-компиляторов и\
+            \ AOT-компиляцией."}
     twitter: JohnWings
     gitHub: ivankrylov
   - id: 13
@@ -1144,7 +1143,7 @@ speakers:
       - {language: ru, text: "Олег Нижников"}
     companyIds: [674]
     bio:
-      - {language: en, text: "Scala developer, architect, zealot of functional programming. 13 years of backend development\
+      - {language: en, text: "Scala developer, architect, zealot of functional programming. 12 years of backend development\
             \ experience."}
       - {language: ru, text: "Скалист, архитектор, фанат функционального программирования. 13 лет бэкенд-разработки."}
     twitter: odomontois
@@ -1275,8 +1274,7 @@ speakers:
     photoUpdatedAt: 2019-07-30T08:02:32.434Z[UTC]
     name:
       - {language: en, text: "Sebastian Daschner"}
-      - {language: ru, text: "Себастьян Дашнер"}
-    companyIds: []
+    companyIds: [843]
     bio:
       - {language: en, text: "Sebastian Daschner is a self-employed Java consultant, author and trainer and is enthusiastic\
             \ about programming and Java. He is the author of the book \"Architecting Modern Java EE Applications\". Sebastian\
@@ -1284,19 +1282,10 @@ speakers:
             \ forming the future standards of Enterprise Java, and collaborating on various open source projects. For his\
             \ contributions in the Java community and ecosystem he was recognized as a Java Champion, Oracle Developer Champion,\
             \ and JavaOne Rockstar. Besides Java, Sebastian is a heavy user of cloud native technologies and anything related\
-            \ to enterprise software. Sebastian [evangelizes](https://blog.sebastian-daschner.com) computer science practices,\
+            \ to enterprise software. Sebastian evangelizes computer science practices on https://blog.sebastian-daschner.com,\
             \ in his newsletter, podcast, and videos, and on Twitter via @DaschnerS. Sebastian kickstarted the JOnsen and\
             \ jSpirit unconferences that connect Java developers throughout the globe. When not working with technology, he\
-            \ also loves coffee and to travel the world."}
-      - language: ru
-        text: "Себастьян — самозанятый Java-консультант, автор, тренер, любит программирование и Java. Написал книгу «Architecting\
-            \ Modern Java EE Applications». \nПринимает участие в организациях и процессах open source, например в JCP и Eclipse\
-            \ Foundation. Там он помогает формировать будущее стандартов Java Enterprise и работает над разными open source-п\
-            роектами. \nЗа свой вклад в сообщество и экосистему Java был признан Java Champion, Oracle Developer Champion\
-            \ и JavaOne RockStar. \nПомимо Java, Себастьян активно использует Cloud Native-технологии и всё связанное с enterprise-с\
-            офтом. \nСебастьян несёт в массы лучшие практики компьютерных технологий в своём [блоге](https://blog.sebastian-daschner.com/),\
-            \ в рассылке, подкасте и в твиттере (@DaschnerS). \nСебастьян запустил не-конференции JOnsen и jSpirit, объеди\
-            нившие разработчиков со всего земного шара. Любит кофе и путешествия."
+            \ also loves coffee and to travel around the world."}
     twitter: DaschnerS
     gitHub: sdaschner
     javaChampion: true
@@ -3466,16 +3455,10 @@ speakers:
       - {language: ru, text: "Андрей Беляев"}
     companyIds: [232]
     bio:
-      - language: en
-        text: "Developer Advocate at Haulmont.\nAndrey started working closely with Java in 2006. He worked for a long time\
-            \ in outsourcing, where he tried himself in almost all roles, except, perhaps, a designer. He was a developer,\
-            \ team leader, PM, and architect. Andrey is currently working on the CUBA framework at Haulmont, making RnD and\
-            \ representing the company at various events."
-      - language: ru
-        text: "Developer Advocate в компании Haulmont.\nС Java начал плотно работать с 2006 года. Долго работал в аутсорси\
-            нге, где попробовал себя почти во всех ролях, кроме, пожалуй, дизайнера. Был разработчиком, тимтехлидом, ПМом\
-            , архитектором. В настоящее время работает над фреймворком CUBA в компании Haulmont — делает RnD и представляе\
-            т компанию на разных мероприятиях."
+      - {language: en, text: "Developer Advocate в компании Haulmont. С Java начал плотно работать с 2006 года. Долго рабо\
+            тал в аутсорсинге, где попробовал себя почти во всех ролях, кроме, пожалуй, дизайнера. Был разработчиком, тимт\
+            ехлидом, ПМом, архитектором. В настоящее время работает над фреймворком Jmix в компании Haulmont — делает RnD\
+            \ и представляет компанию на разных мероприятиях"}
     twitter: belyaev_andrey
     gitHub: belyaev-andrey
     habr: a_belyaev
@@ -7983,13 +7966,18 @@ speakers:
       - {language: ru, text: "Артем Ерошенко"}
     companyIds: [425]
     bio:
-      - {language: en, text: "Artem works in web app testing automation for more than 8 years. He has worked in different\
-            \ teams and occupied different positions up to the head of automation testing group. Artem has a vast experience\
-            \ with popular tools (Selenium, HtmlElements, Allure, Jenkins). He codes mostly in Java and Groovy."}
-      - {language: ru, text: "Более 8 лет занимается автоматизацией тестирования веб-приложений. За это время работал в ра\
-            зных командах и в разных ролях: автоматизатор тестирования, менеджер команды разработки инструментов тестирова\
-            ния, руководитель группы автоматизации тестирования. Артем имеет большой опыт работы с популярными инструмента\
-            ми (Selenium, HtmlElements, Allure, Jenkins). Программирует в основном на Java, Groovy."}
+      - language: en
+        text: "The jack of all trades in the world of testing. In 10 years in the industry he managed to do, it seems, everything:\
+            \ \n-  done test automation;\n-  created the Allure Framework, dozens of plugins and integrations with popular\
+            \ tools (Selenium, HtmlElements, Allure, Jenkins);\n-  launch startup Qameta Software with the Allure TestOps\
+            \ test management platform;\n-  consult with about a hundred testing teams;\n-  to make the concept of TestOps\
+            \ itself a funny one;\n-  give presentations at conferences and dozens of meetups."
+      - language: ru
+        text: "Мастер на все руки из мира тестирования. За 10 лет в индустрии успел сделать, кажется, вообще все: \n-  поз\
+            аниматься автоматизацией тестирования;\n-  создать Allure Framework, десятки плагинов и интеграций с популярны\
+            ми тулами (Selenium, HtmlElements, Allure, Jenkins);\n-  запустить стартап Qameta Software с платформой управл\
+            ения тестированием Allure TestOps;\n-  проконсультировать около сотни команд тестировщиков;\n-  забаззвордить\
+            \ само понятие TestOps;\n-  выступить с докладами на конференциях и десятках митапов."
     twitter: eroshenkoam
     gitHub: eroshenkoam
     habr: eroshenkoam
@@ -24866,12 +24854,12 @@ speakers:
             \ physics methods laboratory at MIPT and the head of the group of the same name at JetBrains Research.\n\nHe also\
             \ has a Ph.D. in particle physics, and more than 12 years of development experience, including commercial development.\
             \ Mostly in Java, but the last 4 years in Kotlin, apart from that there have been Python, Groovy, Julia, and so\
-            \ on."
+            \ on. Kotlin GDE in 2021."
       - language: ru
         text: "Преподает физику, математическую статистику и Kotlin в МФТИ, заместитель руководителя лаборатории методов я\
             дерно-физических экспериментов в МФТИ и руководитель одноименной группы в JetBrains Research.\n\nЗа плечами ка\
             ндидатская диссертация по физике частиц, больше 12 лет опыта разработки, в том числе коммерческой. В основном\
-            \ на Java, но в последние 4 года Kotlin, кроме этого были Python, Groovy, Julia и так далее."
+            \ на Java, но в последние 4 года Kotlin, кроме этого были Python, Groovy, Julia и так далее. GDE по Kotlin в 2021."
     twitter: noraltavir
     gitHub: altavir
     habr: darksnake
@@ -26322,3 +26310,249 @@ speakers:
     bio:
       - {language: ru, text: "В Altenar отвечает за рекрутинг, адаптацию, корпоративную культуру, внутренние коммуникации\
             , программы стажировок и  Vladimir Tech talks."}
+  - id: 1877
+    photoFileName: 1877.jpg
+    photoUpdatedAt: 2021-10-19T19:40:33.828Z[UTC]
+    name:
+      - {language: en, text: "Andrey Umnov"}
+      - {language: ru, text: "Андрей Умнов"}
+    companyIds: [621]
+    bio:
+      - {language: en, text: "Five years in IT, the last three years devoted to Java. Worked in large and small startups,\
+            \ now backend developer at VTB. He specializes in Spring, the ability to make a clever face, and the meaningful\
+            \ \"Hmmm\" on calls. He likes to look for non-standard and complicated approaches to solving familiar problems\
+            \ (though usually everything is much better solved with standard and simple ones)."}
+      - {language: ru, text: "Пять лет в IT, три последних года посвятил Java. Работал в больших и малых стартапах, сейчас\
+            \ бэкенд-разработчик в ВТБ. Специализируется на Spring, умении делать умное лицо и многозначительном «Гммм» на\
+            \ созвонах. Любит искать нестандартные и сложные подходы к решению привычных задач (хотя обычно все куда лучше\
+            \ решается стандартными и простыми)."}
+  - id: 1878
+    photoFileName: 1878.jpg
+    photoUpdatedAt: 2021-10-19T19:43:23.849Z[UTC]
+    name:
+      - {language: en, text: "Nikita Burtsev"}
+      - {language: ru, text: "Никита Бурцев"}
+    companyIds: [643]
+    bio:
+      - language: en
+        text: "In commercial development since 2013. Until 2018 I was a full-stack developer on Intersystems Cache + Adobe\
+            \ Flex technologies. Since the fall of 2018 I switched to Java. Now developing as a backend developer. Interested\
+            \ in creating scalable/distributed systems.\r\nSince the end of 2020 works in Mir Plat.Form team on payment system\
+            \ clearing project."
+      - language: ru
+        text: "В коммерческой разработке с 2013 года. До 2018 года был фуллстек-разработчиком на технологиях Intersystems\
+            \ Cache + Adobe Flex. С осени 2018 перешел на Java. Сейчас развивается как бэкенд-разработчик. Интересуется со\
+            зданием масштабируемых/распределенных систем.\r\nC конца 2020 года работает в команде Мир Plat.Form на проекте\
+            \ клиринга платежных систем."
+  - id: 1879
+    photoFileName: 1879.jpg
+    photoUpdatedAt: 2021-10-19T07:55:26.875Z[UTC]
+    name:
+      - {language: en, text: "Alexander Grigoryev"}
+      - {language: ru, text: "Александр Григорьев"}
+    companyIds: [447]
+    bio:
+      - {language: en, text: "Alex has been developing Java backends for 4 years, now works at Revolut in the Finance Core\
+            \ team. He doesn’t like Spring and Hibernate. He likes sailboats and turning slow and clumsy systems into fast\
+            \ and beautiful ones."}
+      - {language: ru, text: "Александр пишет бэкенды на Java последние 4 года, сейчас — в Revolut в команде Core Finance.\
+            \ Не любит Spring и Hibernate. Любит парусные яхты, а также превращать медленные и корявые системы в быстрые и\
+            \ красивые."}
+  - id: 1880
+    photoFileName: 1880.jpg
+    photoUpdatedAt: 2021-09-20T18:59:49.065Z[UTC]
+    name:
+      - {language: en, text: "Simon Martinelli"}
+    companyIds: [800]
+    bio:
+      - {language: en, text: "Simon Martinelli is a passionate Java, performance optimization and application integration\
+            \ expert with more than 25 years of experience creating efficient programming solutions as a developer, architect,\
+            \ and technical lead. An active member of the Java community process, he has made key contributions to JSR-352\
+            \ Batch Applications, JSR-354 Money, and Currency API. In addition to coaching and teaching clients to optimize\
+            \ IT functions within business environments, he has been an Adjunct Professor at Berne University of Applied Science\
+            \ in Switzerland"}
+    twitter: simas_ch
+    gitHub: simasch
+  - id: 1881
+    photoFileName: 1881.jpg
+    photoUpdatedAt: 2021-10-14T15:16:45.006Z[UTC]
+    name:
+      - {language: en, text: "Yury Khabarov"}
+      - {language: ru, text: "Юрий Хабаров"}
+    companyIds: [143]
+    bio:
+      - {language: en, text: "Yuri works in the Cloud Billing team, where he has been creating various components in billing\
+            \ systems for five years."}
+      - {language: ru, text: "Юрий работает в команде Cloud Billing, где уже в течение пяти лет занимается созданием разли\
+            чных компонентов в биллинговых системах."}
+  - id: 1882
+    photoFileName: 1882.jpg
+    photoUpdatedAt: 2021-10-20T20:43:10.778Z[UTC]
+    name:
+      - {language: en, text: "Anastasia Artamonova"}
+      - {language: ru, text: "Анастасия Артамонова"}
+    companyIds: [643]
+    bio:
+      - {language: en, text: "She organizes IT training, prepares speakers, writes articles, and regularly experiences the\
+            \ dissonance of understanding how necessary soft skills are in IT, but how difficult it is to deal with them in\
+            \ practice. She looks for ways to resolve this contradiction so that no IT person gets hurt."}
+      - {language: ru, text: "Занимается организацией обучения ИТ-специалистов, готовит спикеров, пишет статьи и регулярно\
+            \ переживает диссонанс от понимания, насколько софт-скилы в ИТ необходимы, но как сложно с ними приходится на\
+            \ деле. Ищет способы разрешения этого противоречия  так, чтобы ни один айтишник не пострадал."}
+    habr: Anastasia_Art
+  - id: 1883
+    photoFileName: 1883.jpg
+    photoUpdatedAt: 2021-10-19T19:37:10.020Z[UTC]
+    name:
+      - {language: en, text: "Aleksandr Shigaev"}
+      - {language: ru, text: "Александр Шигаев"}
+    companyIds: [844]
+    bio:
+      - language: en
+        text: "Head of developing management of growth of middle system in retail, department of front system of Gazprombank\
+            \ retail.\r\n\r\nWas a tech lead of one of Gazprombank projects. Was a senior Java developer at Home Credit bank\
+            \ and Java developer at ReInform."
+      - language: ru
+        text: "Руководитель разработки управления развитием мидл-систем розничного бизнеса департамента фронтальных систем\
+            \ розничного бизнеса Газпромбанка.\r\n\r\nВыполнял обязанности техлида на одном из проектов в Газпромбанке. Бы\
+            л старшим Java-разработчиком в Банке Хоум Кредит и Java-разработчиком в компании ReInform."
+  - id: 1884
+    photoFileName: 1884.jpg
+    photoUpdatedAt: 2021-10-19T19:27:53.910Z[UTC]
+    name:
+      - {language: en, text: "Ivan Belorechev"}
+      - {language: ru, text: "Иван Белоречев"}
+    companyIds: [318]
+    bio:
+      - {language: en, text: "Ivan graduated from ISU with a degree in applied mathematics and computer science. He worked\
+            \ as a project manager at the ADICT web studio, as a Java / Groovy developer at KMS Lighthouse. This year Ivan\
+            \ joined Luxoft Automotive as a Java developer."}
+      - {language: ru, text: "Иван окончил ИГУ по направлению прикладной математики и информатики. Работал проектным менед\
+            жером в веб-студии ADICT, Java/Groovy разработчиком в KMS Lighthouse, а с этого года трудится Java-разработчик\
+            ом в Luxoft Automotive."}
+    gitHub: iWhiver
+  - id: 1885
+    photoFileName: 1885.jpg
+    photoUpdatedAt: 2021-10-20T09:57:24.748Z[UTC]
+    name:
+      - {language: en, text: "Dmitry Margolis"}
+      - {language: ru, text: "Дмитрий Марголис"}
+    companyIds: [728]
+    bio:
+      - {language: en, text: "Лид Java-направления в Accenture Russia."}
+  - id: 1886
+    photoFileName: 1886.jpg
+    photoUpdatedAt: 2021-10-20T09:01:04.746Z[UTC]
+    name:
+      - {language: en, text: "Anton Fedoseev"}
+      - {language: ru, text: "Антон  Федосеев"}
+    companyIds: [845]
+    bio:
+      - language: en
+        text: "Work experience — 15 years.\r\nProgramming languages: С/С++, Java, Kotlin, TypeScript\r\nDeveloped  distributed\
+            \ systems of real-time simulators with hybrid user interfaces. At now, he is a developer of the remote assistant\
+            \ system \"Remote Expert AR\""
+      - language: ru
+        text: "Стаж в разработке — 15 лет.\r\nОсновные языки программирования: С/С++, Java, Kotlin, TypeScript\r\nЗанималс\
+            я разработкой распределенных тренажёрных систем реального времени с гибридной системой управления. Разработчик\
+            \ системы удалённой консультации «Удаленный эксперт AR»."
+  - id: 1887
+    photoFileName: 1887.jpg
+    photoUpdatedAt: 2021-10-19T19:32:00.256Z[UTC]
+    name:
+      - {language: en, text: "Maksim Tikhonov"}
+      - {language: ru, text: "Максим Тихонов"}
+    companyIds: [844]
+    bio:
+      - {language: en, text: "Develops and implements real-time analytics systems and applies predictive models. In addition\
+            \ is a Java team lead in real-time developing analytics systems Unit in GPB."}
+      - {language: ru, text: "Занимается разработкой и архитектурой систем потоковой аналитики и применения моделей. Также\
+            \ тимлид Java в управлении разработки аналитических систем реального времени."}
+  - id: 1888
+    photoFileName: 1888.jpg
+    photoUpdatedAt: 2021-10-20T09:37:54.331Z[UTC]
+    name:
+      - {language: en, text: "Vitaly Chizhkov"}
+      - {language: ru, text: "Виталий Чижков"}
+    companyIds: [728]
+    bio:
+      - {language: en, text: "Senior Java Developer Accenture Russia."}
+  - id: 1889
+    photoFileName: 1889.jpg
+    photoUpdatedAt: 2021-10-20T11:13:35.758Z[UTC]
+    name:
+      - {language: en, text: "Dmitry Svalov"}
+      - {language: ru, text: "Дмитрий Свалов"}
+    companyIds: [846]
+    bio:
+      - {language: en, text: "He has been working at BSS for more than 10 years. Since 2017 - technical director, responsible\
+            \ for technological development of the company and product architecture. He has more than 20 years of experience\
+            \ in implementing information systems for credit institutions. He participated in the implementation of projects\
+            \ for Sberbank, VTB, RSHB, Otkritie Bank, DOM.RF, Sovcombank, VBRR, Novikombank, AK Bars Bank, SMP Bank, Rossiya\
+            \ Bank, UBRIR, RGS-Bank, Center-Invest Bank, ZIL plant, etc. Worked as an architect, development manager, head\
+            \ of bank automation, team leader and developer. Passionate about machine learning and data analysis."}
+      - {language: ru, text: "Работает в компании BSS более 10 лет. С 2017 года — технический директор, отвечает за технол\
+            огическое развитие компании и архитектуру продуктов. Имеет более чем двадцатилетний опыт реализации информацио\
+            нных систем для кредитных организаций. Участвовал в реализации проектов для Сбербанка, ВТБ, РСХБ, банка Открыт\
+            ие, ДОМ.РФ, Совкомбанка, ВБРР, Новикомбанка, АК Барс Банка, СМП банка, банка Россия, УБРиР, РГС-Банка, Центр-И\
+            нвест банка, завода ЗИЛ и др. Работал на должностях архитектора, руководителя разработки, руководителя автомат\
+            изации банка, руководителя группы и разработчика. Увлекается машинным обучением и анализом данных."}
+  - id: 1890
+    photoFileName: 1890.jpg
+    photoUpdatedAt: 2021-10-20T20:43:41.143Z[UTC]
+    name:
+      - {language: en, text: "Stanislav Tretyakov"}
+      - {language: ru, text: "Станислав Третьяков"}
+    companyIds: [318]
+    bio:
+      - {language: en, text: "Stanislav has been with the Luxoft team for a year and a half, during which he managed to work\
+            \ on a payment processing system for a large foreign bank. He is now building the infrastructure in one of Russia’\
+            s banks."}
+      - {language: ru, text: "Станислав в команде Luxoft уже полтора года, за это время он успел поработать над системой о\
+            бработки платежей для крупного иностранного банка, а сейчас занимается налаживанием инфраструктуры в одном из\
+            \ отечественных банков."}
+  - id: 1891
+    photoFileName: 1891.jpg
+    photoUpdatedAt: 2021-10-20T20:43:59.956Z[UTC]
+    name:
+      - {language: en, text: "Tatyana Kutepova"}
+      - {language: ru, text: "Татьяна Кутепова"}
+    companyIds: [318]
+    bio:
+      - {language: en, text: "Has been in the profession for about a year, has been working at Luxoft since February 2021.\
+            \ I started from the position of a record manager, and about six months ago I turned into recruiters. Works with\
+            \ specializations: Java, QA Manual, JS (React, Angular), C #, System / Business Analytics, Project / Program /\
+            \ Delivery Manager, etc."}
+      - {language: ru, text: "В профессии около года, в Люксофт работает с февраля 2021 года. Начала с позиции ресечера, о\
+            коло полугода назад переросла в рекрутеры. Работает со специализациями: Java, QA Manual, JS (React, Angular),\
+            \ C#, System/Business Analytics, Project/Program/Delivery Manager и др."}
+  - id: 1892
+    photoFileName: 1892.jpg
+    photoUpdatedAt: 2021-10-20T20:36:49.600Z[UTC]
+    name:
+      - {language: en, text: "Roman Ivanov"}
+      - {language: ru, text: "Роман Иванов"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "Chief Engineer at SberTech."}
+      - {language: ru, text: "Главный инженер в СберТех."}
+  - id: 1893
+    photoFileName: 1893.jpg
+    photoUpdatedAt: 2021-10-20T20:39:36.269Z[UTC]
+    name:
+      - {language: en, text: "Maria Levanova"}
+      - {language: ru, text: "Мария Леванова"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "Product owner, SberTech"}
+      - {language: ru, text: "Product owner, Сбертех"}
+  - id: 1894
+    photoFileName: 1894.jpg
+    photoUpdatedAt: 2021-10-20T20:41:38.189Z[UTC]
+    name:
+      - {language: en, text: "Evgeniy Brazhnikov"}
+      - {language: ru, text: "Евгений Бражников"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "TeamLead, SberTech"}
+      - {language: ru, text: "TeamLead, Сбертех"}
