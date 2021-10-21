@@ -2505,3 +2505,22 @@ companies:
   - id: 836
     name:
       - {language: en, text: Apalon}
+  - id: 837
+    name:
+      - {language: en, text: Maxima}
+  - id: 838
+    name:
+      - {language: en, text: "Ak Bars"}
+      - {language: ru, text: "Ак Барс Цифровые Технологии"}
+  - id: 839
+    name:
+      - {language: en, text: SmartCAT}
+  - id: 840
+    name:
+      - {language: en, text: Belkasoft}
+  - id: 841
+    name:
+      - {language: en, text: SovcomTech}
+  - id: 842
+    name:
+      - {language: en, text: luna}

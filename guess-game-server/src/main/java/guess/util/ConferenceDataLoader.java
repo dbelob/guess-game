@@ -1771,7 +1771,11 @@ public class ConferenceDataLoader {
 //                        Map.of(new NameCompany("Владимир Озеров", new Company(782, "Querify Labs")), 136L),
 //                        Set.of("Открытие конференции SmartData 2021", "Разговор в телевизоре", "Закрытие конференции SmartData 2021"),
 //                        false));
-//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2021, 10, 21), "2021msk");
+//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2021, 10, 21), "2021msk",
+//                LoadSettings.invalidTalksSet(Set.of("Открытие конференции DotNext 2021 Moscow",
+//                        "Игра со знатоками в формате интеллектуального казино. Часть 1",
+//                        "Игра со знатоками в формате интеллектуального казино. Часть 2",
+//                        "DotNext 2021 Virtual Afterparty", "Закрытие конференции DotNext 2021 Moscow")));
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2021, 10, 25), "2021joker",
 //                LoadSettings.invalidTalksSet(Set.of("Открытие конференции Joker 2021")));
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2021, 11, 2), "2021msk");

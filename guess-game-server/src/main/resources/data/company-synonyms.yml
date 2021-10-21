@@ -1,4 +1,9 @@
 companySynonyms:
+  - name: "Ak Bars"
+    synonyms: [
+        AkBars,
+        "АкБарс Цифровые Технологии"
+    ]
   - name: Alfa-Bank
     synonyms: [
         Alfa-Lab,
