@@ -697,15 +697,16 @@ speakers:
     name:
       - {language: en, text: "Oleg Nenashev"}
       - {language: ru, text: "Олег Ненашев"}
-    companyIds: []
+    companyIds: [97]
     bio:
-      - {language: en, text: "Former CloudBees employee, core team member of the Jenkins project. Since 2008 works in the\
-            \ areas of automation, infrastructures, and frameworks for mixed software-hardware projects, with the help of\
-            \ Jenkins and dozens of other tools. Oleg writes code, maintains Jenkins core and plugins, and organizes meetups\
-            \ and other community events."}
-      - {language: ru, text: "Работал в CloudBees, в core team проекта Jenkins. C 2008 года занимается автоматизацией, инф\
-            раструктурой и фреймворкостроением для крупных программно-аппаратных проектов с помощью Jenkins и десятков дру\
-            гих тулов. Пишет код, поддерживает ядро и плагины Jenkins, организует митапы в СПб и других городах."}
+      - {language: en, text: "Engineer at CloudBees, core team member in the Jenkins project. Since 2008 works in the areas\
+            \ of automation, infrastructures, and frameworks for mixed software-hardware projects, with the help of Jenkins\
+            \ and dozens of other tools. Oleg writes code, maintains Jenkins core and plugins, and organizes meetups and other\
+            \ community events."}
+      - {language: ru, text: "Разработчик в CloudBees, состоит в core team проекта Jenkins. C 2008 года занимается автомат\
+            изацией, инфраструктурой и фреймворкостроением для крупных программно-аппаратных проектов с помощью Jenkins и\
+            \ десятков других тулов. Пишет код, поддерживает ядро и плагины Jenkins, организует митапы в СПб и других горо\
+            дах."}
     twitter: oleg_nenashev
     gitHub: oleg-nenashev
     habr: oleg-nenashev
@@ -7342,7 +7343,7 @@ speakers:
     photoFileName: 0499.jpg
     photoUpdatedAt: 2021-10-12T13:50:30.483Z[UTC]
     name:
-      - {language: en, text: "Sergey Vasilev"}
+      - {language: en, text: "Sergey Vasiliev"}
       - {language: ru, text: "Сергей Васильев"}
     companyIds: [424]
     bio:
@@ -7989,18 +7990,13 @@ speakers:
       - {language: ru, text: "Артем Ерошенко"}
     companyIds: [425]
     bio:
-      - language: en
-        text: "The jack of all trades in the world of testing. In 10 years in the industry he managed to do, it seems, everything:\
-            \ \n-  done test automation;\n-  created the Allure Framework, dozens of plugins and integrations with popular\
-            \ tools (Selenium, HtmlElements, Allure, Jenkins);\n-  launch startup Qameta Software with the Allure TestOps\
-            \ test management platform;\n-  consult with about a hundred testing teams;\n-  to make the concept of TestOps\
-            \ itself a funny one;\n-  give presentations at conferences and dozens of meetups."
-      - language: ru
-        text: "Мастер на все руки из мира тестирования. За 10 лет в индустрии успел сделать, кажется, вообще все: \n-  поз\
-            аниматься автоматизацией тестирования;\n-  создать Allure Framework, десятки плагинов и интеграций с популярны\
-            ми тулами (Selenium, HtmlElements, Allure, Jenkins);\n-  запустить стартап Qameta Software с платформой управл\
-            ения тестированием Allure TestOps;\n-  проконсультировать около сотни команд тестировщиков;\n-  забаззвордить\
-            \ само понятие TestOps;\n-  выступить с докладами на конференциях и десятках митапов."
+      - {language: en, text: "Artem works in web app testing automation for more than 8 years. He has worked in different\
+            \ teams and occupied different positions up to the head of automation testing group. Artem has a vast experience\
+            \ with popular tools (Selenium, HtmlElements, Allure, Jenkins). He codes mostly in Java and Groovy."}
+      - {language: ru, text: "Более 8 лет занимается автоматизацией тестирования веб-приложений. За это время работал в ра\
+            зных командах и в разных ролях: автоматизатор тестирования, менеджер команды разработки инструментов тестирова\
+            ния, руководитель группы автоматизации тестирования. Артем имеет большой опыт работы с популярными инструмента\
+            ми (Selenium, HtmlElements, Allure, Jenkins). Программирует в основном на Java, Groovy."}
     twitter: eroshenkoam
     gitHub: eroshenkoam
     habr: eroshenkoam
@@ -17337,7 +17333,7 @@ speakers:
     photoFileName: 1246.jpg
     photoUpdatedAt: 2020-07-07T11:03:14.650Z[UTC]
     name:
-      - {language: en, text: "Ruslan Akhmetzianov"}
+      - {language: en, text: "Ruslan Akhmetzyanov"}
       - {language: ru, text: "Руслан Ахметзянов"}
     companyIds: [425]
     bio:
