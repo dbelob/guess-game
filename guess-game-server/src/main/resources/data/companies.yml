@@ -2541,3 +2541,9 @@ companies:
   - id: 847
     name:
       - {language: en, text: OCS}
+  - id: 848
+    name:
+      - {language: ru, text: "Первая Грузовая Компания"}
+  - id: 849
+    name:
+      - {language: en, text: "Unicon Business Solutions"}

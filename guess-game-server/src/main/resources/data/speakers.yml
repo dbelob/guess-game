@@ -1620,21 +1620,23 @@ speakers:
     gitHub: tajila
   - id: 96
     photoFileName: 0096.jpg
+    photoUpdatedAt: 2019-04-22T13:04:30.711Z[UTC]
     name:
-      - {language: en, text: "Andrey Kogun"}
+      - {language: en, text: "Andrei Kogun"}
       - {language: ru, text: "Андрей Когунь"}
     companyIds: [633]
     bio:
-      - {language: en, text: "Born in Moscow, Andrey has been working in IT for more than 15 years, for the last 6 years -\
-            \ in KROK. During his career he took part in many custom development projects, mainly e-document flow systems\
-            \ and business processes automatization for several big Russian companies as a senior developer and an architect.\
-            \ At the universities of Moscow, he delivers lectures in development basics with the use of Java technologies.\
-            \ Organizer and leader of [Moscow Java developers community](https://jug.msk.ru)."}
-      - {language: ru, text: "Родом из Москвы, в IT более 15 лет. Сейчас работает в компании КРОК, уже более 6 лет. За сво\
-            ю карьеру принял участие в большом количестве проектов по заказной разработке, в основном систем электронного\
-            \ документооборота и автоматизации бизнес-процессов для ряда крупных российских компаний в роли ведущего разра\
-            ботчика и архитектора. Преподает для студентов московских вузов курсы по основам разработки с применением Java-т\
-            ехнологий. Основатель и организатор встреч московского сообщества Java-разработчиков [JUG.MSK](https://jug.msk.ru)."}
+      - {language: en, text: "Andrei has been working in IT for more than 15 years, head of the developers at Croc Code. During\
+            \ his career he took part in many custom development projects, mainly e-document flow systems and business processes\
+            \ automatization for several big Russian companies as a senior developer and an architect. At the universities\
+            \ of Moscow, he delivers lectures in development basics with the use of Java technologies. Organizer and leader\
+            \ of <a href=\"https://jugmsk.timepad.ru/events/\" target=\"_blank\">Moscow Java developers community</a>."}
+      - {language: ru, text: "В IT более 15 лет. Руководитель группы разработчиков в Croc Code. За свою карьеру принял уча\
+            стие в большом количестве проектов по заказной разработке, в основном систем электронного документооборота и а\
+            втоматизации бизнес-процессов для ряда крупных российских компаний в роли ведущего разработчика и архитектора\
+            . Преподает для студентов московских вузов курсы по основам разработки с применением Java-технологий. Основате\
+            ль и организатор встреч московского сообщества Java-разработчиков <a href=\"https://jugmsk.timepad.ru/events/\"\
+            \ target=\"_blank\">JUG.MSK</a>."}
     twitter: andrei_kogun
     gitHub: kogun
     habr: AKogun47
@@ -17943,15 +17945,15 @@ speakers:
     twitter: Semper_Viventem
   - id: 1299
     photoFileName: 1299.jpg
-    photoUpdatedAt: 2021-04-05T12:46:33.387Z[UTC]
+    photoUpdatedAt: 2021-10-21T21:09:34.588Z[UTC]
     name:
-      - {language: en, text: "Dmitry Vdovin"}
+      - {language: en, text: "Dmitrii Vdovin"}
       - {language: ru, text: "Дмитрий Вдовин"}
     companyIds: [429]
     bio:
-      - {language: en, text: "Software developer. Dmitry is sure that well-coordinated work is better than individual goals."}
-      - {language: ru, text: "Software developer. Занимается продуктовой разработкой и уверен, что слаженная работа в кома\
-            нде важнее индивидуального результата."}
+      - {language: en, text: "Dmitry is sure that well-coordinated work is better than individual goals."}
+      - {language: ru, text: "Занимается продуктовой разработкой и уверен, что слаженная работа в команде важнее индивидуа\
+            льного результата."}
     habr: vdovin_ds
   - id: 1300
     photoFileName: 1300.jpg
@@ -17991,14 +17993,14 @@ speakers:
             делений в ИТ, пробует и применяет реактивные подходы, и придерживается общемировых трендов в разработке."}
   - id: 1304
     photoFileName: 1304.jpg
-    photoUpdatedAt: 2020-06-26T14:26:47.359Z[UTC]
+    photoUpdatedAt: 2021-10-22T15:16:23.540Z[UTC]
     name:
-      - {language: en, text: "Yuriy Milyutin"}
+      - {language: en, text: "Yuriy Milutin"}
       - {language: ru, text: "Юрий Милютин"}
     companyIds: [665]
     bio:
-      - {language: en, text: "Юрий руководит разработкой крупнейшего сервиса Эквайринга в Европе. 5 лет в Сбербанке, 10 в\
-            \ Java-разработке. Спасает мир, сдерживает хаос, нанимает лучших представителей человечества."}
+      - {language: en, text: "Software Engineering Manager, Sber"}
+      - {language: ru, text: "Software Engineering Manager, Сбер"}
   - id: 1305
     photoFileName: 1305.jpg
     photoUpdatedAt: 2020-06-25T10:11:47.834Z[UTC]
@@ -26555,3 +26557,238 @@ speakers:
     bio:
       - {language: en, text: "TeamLead, SberTech"}
       - {language: ru, text: "TeamLead, Сбертех"}
+  - id: 1895
+    photoFileName: 1895.jpg
+    photoUpdatedAt: 2021-10-22T12:54:45.814Z[UTC]
+    name:
+      - {language: en, text: "Vladislav  Verminsky"}
+      - {language: ru, text: "Владислав Верминский"}
+    companyIds: [429]
+    bio:
+      - language: en
+        text: "Lead of improving Java development.\r\n\r\nDevelops JVM community at Raiffeisenbank. Wrote desktop apps, was\
+            \ engaged in web and server development."
+      - language: ru
+        text: "Руководитель направления по развитию Java-разработки.\r\n\r\nЗанимается развитием JVM-сообщества в Райффайз\
+            енбанке. За свою карьеру писал десктопные приложения, занимался веб- и серверной разработкой."
+  - id: 1896
+    photoFileName: 1896.jpg
+    photoUpdatedAt: 2021-10-22T12:56:49.857Z[UTC]
+    name:
+      - {language: en, text: "Vladislav Valitsky"}
+      - {language: ru, text: "Владислав Валицкий"}
+    companyIds: [429]
+    bio:
+      - language: en
+        text: "Started his career in 2011. Now is a tech lead in a number of Raiffeisenbank teams. Develops internal services\
+            \ which build comfortable environment for employees. \n\nNow they develop on Kotlin, use Spring as a major framework,\
+            \ and GraphQL is used both for integrating with frontend and backend-to-backend."
+      - language: ru
+        text: "Начал свою IT карьеру в 2011 году. Сейчас — технический лидер в нескольких командах Райффайзенбанка. Занима\
+            ется развитием внутренних сервисов, которые создают комфортные условия для работы сотрудников.\n\nНа текущий м\
+            омент разработка ведется на Kotlin, в качестве основного фреймворка используется Spring, а GraphQL используетс\
+            я как для интеграции с фронтендом, так и для интеграций backend-to-backend."
+  - id: 1897
+    photoFileName: 1897.jpg
+    photoUpdatedAt: 2021-10-22T13:01:55.115Z[UTC]
+    name:
+      - {language: en, text: "Andrej Mychka"}
+      - {language: ru, text: "Андрей Мычка"}
+    companyIds: [429]
+    bio:
+      - {language: en, text: "Senior Java development improvement expert, Raiffeisenbank"}
+      - {language: ru, text: "Cтарший эксперт по развитию Java-разработки, Райффайзенбанк"}
+  - id: 1898
+    photoFileName: 1898.jpg
+    photoUpdatedAt: 2021-10-21T10:27:16.618Z[UTC]
+    name:
+      - {language: en, text: "Dmitry Arkhipov"}
+      - {language: ru, text: "Дмитрий Архипов"}
+    companyIds: [845]
+    bio:
+      - language: en
+        text: "Solution architect at fintech companies where he worked on different projects, from UI to highload computational\
+            \ and analytical systems.\r\n\r\nIn 2018 he decided to try digitalizing the industrial company called SIBUR, having\
+            \ joined the team as an architect.\r\n\r\nHe believes that digitalization starts not from software, but from the\
+            \ people, their approaches to work and processes."
+      - language: ru
+        text: "Solution-архитектор в финтех-компаниях, где работал над разными проектами: от пользовательских порталов до\
+            \ нагруженных расчетно-аналитических систем. \r\n\r\nВ 2018 году решил попробовать себя в цифровизации произво\
+            дственной компании СИБУР, присоединившись к команде в роли архитектора. \r\n\r\nВерит, что цифровизация начина\
+            ется не с программного обеспечения, а с людей, их подходов к работе и процессов."
+  - id: 1899
+    photoFileName: 1899.jpg
+    photoUpdatedAt: 2021-10-21T10:53:44.772Z[UTC]
+    name:
+      - {language: en, text: "Alina Makeeva"}
+      - {language: ru, text: "Алина Макеева"}
+    companyIds: [848]
+    bio:
+      - {language: ru, text: "Сениор фронтенд разработчик с функциями лида. 6 лет в фронтенд разработке, начиная с фулл ст\
+            ек, чистого js, jQuery, сквозь все разнообразие современных фреймворков и технологий. Лучше всего умеет причин\
+            ять добро бизнесу и команде в рамках внедрения best practice для ускорения, упрощения и повышения прозрачности\
+            \ процесса разработки, а также для ui/ux."}
+  - id: 1900
+    photoFileName: 1900.jpg
+    photoUpdatedAt: 2021-10-21T11:00:15.715Z[UTC]
+    name:
+      - {language: en, text: "Ilya Simonenko"}
+      - {language: ru, text: "Илья Симоненко"}
+    companyIds: [665]
+    bio:
+      - {language: ru, text: "Лидер разработки в одной из продуктовых команд Штаба “Киб”. Строил и продолжает строить карь\
+            еру в финтехе с 2017."}
+  - id: 1901
+    photoFileName: 1901.jpg
+    photoUpdatedAt: 2021-10-21T11:04:58.288Z[UTC]
+    name:
+      - {language: en, text: "Olga Yusupova"}
+      - {language: ru, text: "Ольга Юсупова"}
+    companyIds: [849]
+    bio:
+      - {language: ru, text: "Руководитель отдела разработки программных продуктов. Более 14 лет опыта на проектах внедрен\
+            ия программных продуктов SAP. Большой опыт руководящей работы, от управления группами интеграции и разработки\
+            \ до управления проектами. Сертифицирована в области проектного управления по PMP, получила дополнительное обр\
+            азование в сфере ИТ MBA CIO Информационный менеджмент, прошла программу повышения квалификации CDO Цифровая тр\
+            ансформация для ИТ-руководителей."}
+  - id: 1902
+    photoFileName: 1902.jpg
+    photoUpdatedAt: 2021-10-21T11:07:46.325Z[UTC]
+    name:
+      - {language: en, text: "Pavel Doronin"}
+      - {language: ru, text: "Павел Доронин"}
+    companyIds: []
+    bio:
+      - {language: ru, text: "Основатель AI community, CEO AI Today."}
+  - id: 1903
+    photoFileName: 1903.jpg
+    photoUpdatedAt: 2021-10-20T09:06:16.948Z[UTC]
+    name:
+      - {language: en, text: "Pavel Iukhnevich"}
+      - {language: ru, text: "Павел Юхневич"}
+    companyIds: [447]
+    bio:
+      - {language: en, text: "Pavel is a Lead software engineer in the trading team. He has been in the IT sphere since 2010\
+            \ and joined Revolut in 2017. He was involved in “Revolut for Business” launch, automation of support function,\
+            \ fraud prevention, user authentication and authorization, later on he moved to the trading team. Pavel works\
+            \ mostly with the platform part - trades execution, ledger, reconciliation, infrastructure. Pavel is actively\
+            \ mentoring colleagues and is also leading the system design review group at the company level."}
+      - {language: ru, text: "Главный инженер в команде трейдинга. В IT с 2010 года, в Revolut с 2017. За четыре года в Revolut\
+            \ успел поработать над запуском «Revolut для бизнеса», автоматизацией работы поддержки, предотвращением мошенн\
+            ичества, аутентификацией и авторизацией пользователей, после чего перешел в команду трейдинга. Больше всего ра\
+            ботает над платформенной частью — непосредственное исполнение трейдов, леджер, реконсиляции, инфраструктура. А\
+            ктивно занимается менторством коллег. Лидер группы по рассмотрению архитектурных предложений на уровне компани\
+            и."}
+  - id: 1904
+    photoFileName: 1904.jpg
+    photoUpdatedAt: 2021-10-20T09:12:15.354Z[UTC]
+    name:
+      - {language: en, text: "Anton Batiaev"}
+      - {language: ru, text: "Антон Батяев"}
+    companyIds: [447]
+    bio:
+      - {language: en, text: "Anton has been coding since 2010. Started with C ++ and ACM ICPC, then switched to java. For\
+            \ the last 5 years he has worked in fintech, doing financial mathematics, risk calculations and derivatives trading.\
+            \ At Revolut Anton is currently working as a technical product owner for the trading platform, risk market making\
+            \ and market data teams, developing everything that happens under the hood of trading, from receiving financial\
+            \ quotes to settlements for transactions, risk assurance and P&L."}
+      - {language: ru, text: "Программирует с 2010 года. Начинал c С++ и ACM ICPC, потом переключился на java. Последние 5\
+            \ лет занимается финтехом, в частности финансовой математикой, расчетами рисков и торговлей деривативами. В Revolut\
+            \ сейчас работает техническим продукт оунером команд трейдинг платформы, маркет мейкинг риска и маркет даты, р\
+            азвивая все то, что происходит под капотом трейдинга, начиная с получения котировок, заканчивая расчетами по с\
+            делкам, учетом риска и P&L"}
+    gitHub: batiaev
+    habr: batiaev
+  - id: 1905
+    photoFileName: 1905.jpg
+    photoUpdatedAt: 2021-10-21T21:24:09.674Z[UTC]
+    name:
+      - {language: en, text: "Baatr Erdniev"}
+      - {language: ru, text: "Баатр Эрдниев"}
+    companyIds: [621]
+    bio:
+      - {language: en, text: "Has 5 years of Java/ESQL/MsgFlow-development experience in integration solutions (green bank\
+            \ card-to-card transfers are implemented on the his team bus), 5 years of team-lead integration and infrastructure\
+            \ projects (from ESB/bus services to MSA-backend patching). Advocates a sensible sensible view on solving any\
+            \ problems, helps working developers in diagnosing complex bugs (from finding Russian \"с\" in mappings, to defining\
+            \ strategies for applying rules of mapping creation on the fly classes through reflexion)."}
+      - {language: ru, text: "За плечами 5 лет Java/ESQL/MsgFlow-разработки интеграционных решений (переводы в зеленом бан\
+            ке с карты на карту реализованы на шине команды Баатра), 5 лет team-lead интеграционных и инфраструктурных про\
+            ектов (от сервисов ESB/bus до патчинга MSA-backend). Пропагандирует здравый осмысленный взгляд на решение любы\
+            х задач, помогает работягам-разработчикам в диагностике сложных багов (от поиска русских «с» в маппингах, до о\
+            пределения стратегий применения правил маппинга создания на лету классов через рефлексию)."}
+  - id: 1906
+    photoFileName: 1906.jpg
+    photoUpdatedAt: 2021-10-21T21:26:19.263Z[UTC]
+    name:
+      - {language: en, text: "Aleksandr Shuvaev"}
+      - {language: ru, text: "Александр Шуваев"}
+    companyIds: [621]
+    bio:
+      - language: en
+        text: "10 лет в IT-сфере, из них 3 года в Enterprise-разработке. Занимался разработкой нового и поддержкой старого\
+            \ функционала информационной системы по управлению фондами капитального ремонта. Предложил и реализовал перево\
+            д системы на новый техстек. С тех пор продолжает идти по этой дорожке, но уже в новом проекте. \n\nСейчас зани\
+            мается переводом микросервисов, реализацией различных PoC, поддержкой Knowledge Base - накопленных знаний кома\
+            нды о встречающихся по пути миграции непроходимых болот, опасных зверей и несъедобных растений."
+  - id: 1907
+    photoFileName: 1907.jpg
+    photoUpdatedAt: 2021-10-21T21:28:36.601Z[UTC]
+    name:
+      - {language: en, text: "Roman Danilov"}
+      - {language: ru, text: "Роман Данилов"}
+    companyIds: [621]
+    bio:
+      - {language: en, text: "Водолей, 6 лет в коммерческой Java разработке, из них 3 года в области финтеха - разработка\
+            \ бэкенда высоконагруженной биржевой платформы для британского заказчика Alpha Capital Markets. Меломан. Не ув\
+            ажает эластик и кафку по причине tls."}
+  - id: 1908
+    photoFileName: 1908.jpg
+    photoUpdatedAt: 2021-10-22T15:19:13.932Z[UTC]
+    name:
+      - {language: en, text: "Aleksandr Tokarev"}
+      - {language: ru, text: "Александр Токарев"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "Head of R&D, SberTech"}
+      - {language: ru, text: "Head of R&D, СберТех"}
+  - id: 1909
+    photoFileName: 1909.jpg
+    photoUpdatedAt: 2021-10-12T08:28:54.517Z[UTC]
+    name:
+      - {language: en, text: "Secret guest"}
+      - {language: ru, text: "Тайный гость"}
+    companyIds: []
+    bio:
+      - {language: en, text: "Secret guest"}
+      - {language: ru, text: "Тайный гость"}
+  - id: 1910
+    photoFileName: 1910.jpg
+    photoUpdatedAt: 2021-10-19T08:36:46.978Z[UTC]
+    name:
+      - {language: en, text: "Sergey Lukin"}
+      - {language: ru, text: "Сергей Лукин"}
+    companyIds: [143]
+    bio:
+      - {language: en, text: "Architect, works with IT systems, but more often with people."}
+      - {language: ru, text: "Архитектор, работает с IT-системами, но чаще с людьми."}
+  - id: 1911
+    photoFileName: 1911.jpg
+    photoUpdatedAt: 2021-10-19T08:41:53.569Z[UTC]
+    name:
+      - {language: en, text: "Robert Aksenov"}
+      - {language: ru, text: "Роберт Аксенов"}
+    companyIds: [143]
+    bio:
+      - {language: en, text: "Product owner of two system teams, develops corporate ALM and infrastructure."}
+      - {language: ru, text: "Product owner двух системных команд, развивает корпоративный ALM и инфраструктуру."}
+  - id: 1912
+    photoFileName: 1912.jpg
+    photoUpdatedAt: 2021-10-19T08:47:03.820Z[UTC]
+    name:
+      - {language: en, text: "Vladimir Muravyov"}
+      - {language: ru, text: "Владимир Муравьев"}
+    companyIds: [143]
+    bio:
+      - {language: en, text: "Lead Configuration Manager, works as a DevOps engineer, not focusing on the Ops part."}
+      - {language: ru, text: "Lead Configuration Manager, работает как DevOps-инженер, не делая упора на Ops часть."}
