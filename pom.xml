@@ -34,7 +34,7 @@
         <mockito.version>4.0.0</mockito.version>
         <sl4j.version>1.7.32</sl4j.version>
         <snakeyaml.version>1.29</snakeyaml.version>
-        <spring-boot.version>2.5.5</spring-boot.version>
+        <spring-boot.version>2.5.6</spring-boot.version>
         <springfox.swagger>3.0.0</springfox.swagger>
 
         <ng.build.arguments>-- --prod=true</ng.build.arguments>
