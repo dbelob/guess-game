@@ -62,7 +62,8 @@ companySynonyms:
     ]
   - name: CROC
     synonyms: [
-        KROK
+        KROK,
+        "Croc Code"
     ]
   - name: "C++ Russia"
     synonyms: [
