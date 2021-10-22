@@ -14365,21 +14365,26 @@ speakers:
     twitter: msaboff
   - id: 1026
     photoFileName: 1026.jpg
-    photoUpdatedAt: 2019-11-01T14:31:00.998Z[UTC]
+    photoUpdatedAt: 2021-10-18T13:17:27.517Z[UTC]
     name:
       - {language: en, text: "Ivan Popelyshev"}
       - {language: ru, text: "Иван Попелышев"}
     companyIds: [119]
     bio:
       - language: en
-        text: "Ivan helps people with Canvas 2d/WebGL projects, knows many practical cases.\n\nIvan works with HTML5 games\
-            \ since 2012 (gameofbombs.com), he's a member of the core PixiJS team since 2016. When he studied in the math\
-            \ department at Moscow State University he participated in many algorithm competitions, including ICPC Finals."
+        text: "Ivan helps people with Canvas 2d/WebGL projects, sometimes invents new things in web graphics. \n\nIvan works\
+            \ with HTML5 games since 2012 (gameofbombs.com), he's a member of the core PixiJS team since 2016. When he studied\
+            \ in the math department at Moscow State University, he participated in many algorithm competitions, including\
+            \ ICPC Finals. \n\nIvan participated in conversion of one of biggest Flash projects (facebook.com/playthehousehold)\
+            \ to special platform that can build both to Flash and to HTML5."
       - language: ru
-        text: "Иван помогает всем желающим с Canvas 2d/WebGL проектами, из-за этого знает много практических кейсов.\n\nЗа\
-            нимается играми на HTML5 с 2012 года (gameofbombs.com), состоит в ядре команды PixiJS с 2015. Учился на мехмат\
-            е МГУ, участвовал в алгоритмических соревнованиях, таких как финал ICPC."
+        text: "Иван помогает всем желающим с Canvas 2d/WebGL-проектами и иногда случайно открывает новые вещи в веб-график\
+            е. \n\nЗанимается играми на HTML5 с 2012 года (gameofbombs.com), состоит в ядре команды PixiJS с 2015. Учился\
+            \ на мехмате МГУ, участвовал в алгоритмических соревнованиях, таких как финал ICPC. \n\nУчаствовал в переводе\
+            \ одной из самых больших Flash-игр (facebook.com/playthehousehold) на собственную платформу, которая может соб\
+            ираться как в старый Flash, так и в HTML5."
     twitter: ivanpopelyshev
+    gitHub: ivanpopelyshev
   - id: 1027
     photoFileName: 1027.jpg
     name:
@@ -22346,7 +22351,7 @@ speakers:
       - {language: ru, text: "В разработке 12 лет. Certified Spring Professional, TOGAF 9 Certified."}
   - id: 1611
     photoFileName: 1611.jpg
-    photoUpdatedAt: 2021-03-10T08:24:16.329Z[UTC]
+    photoUpdatedAt: 2021-10-18T17:17:23.559Z[UTC]
     name:
       - {language: en, text: "Nikita Dubko"}
       - {language: ru, text: "Никита Дубко"}
@@ -22354,8 +22359,8 @@ speakers:
     bio:
       - {language: en, text: "GDE on Web. Editor of the Web Standards frontend news feed. The 5th voice of the Web Standards\
             \ weekly podcast. Friendly beard."}
-      - {language: ru, text: "Google Developer Expert по веб-технологиям. Дружелюбный бородач. Редактор новостей сообществ\
-            а «Веб-стандарты» и пятый голос одноименного подкаста."}
+      - {language: ru, text: "Google Developer Expert по веб-технологиям. Доброжелюбный бородач. Редактор новостей сообщес\
+            тва «Веб-стандарты» и пятый голос одноименного подкаста."}
     twitter: dark_mefody
     gitHub: MeFoDy
     habr: DarkMeFoDy
@@ -25176,12 +25181,12 @@ speakers:
       - {language: ru, text: "Александр Бальцевич"}
     companyIds: [808]
     bio:
-      - {language: en, text: "Software developer with 10 years experience and frontend YouTube channel \"IT Siniak\". He studies\
-            \ React sources and share his progress. Loves to use the dependency inversion pattern. And always has ideas on\
-            \ how to improve/speed up your project!"}
-      - {language: ru, text: "Программист с 10-летним опытом и своим фронтендерским YouTube каналом «АйТи Синяк». Пытается\
-            \ изучить исходники React и делится своим прогрессом. Обожает применять инверсию зависимостей. У Александра вс\
-            егда есть идеи как улучшить/ускорить ваш проект!"}
+      - {language: en, text: "Software developer with 10 years experience and frontend YouTube channel [\"IT Siniak\"](https://www.youtube.com/channel/UClgj-KWiNaOo9H1rz1ISO6Q).\
+            \ He studies React sources and share his progress. Loves to use the dependency inversion pattern. And always has\
+            \ ideas on how to improve/speed up your project!"}
+      - {language: ru, text: "Программист с 10-летним опытом и своим фронтендерским YouTube-каналом [«АйТи Синяк»](https://www.youtube.com/channel/UClgj-KWiNaOo9H1rz1ISO6Q).\
+            \ Пытается изучить исходники React и делится своим прогрессом. Обожает применять инверсию зависимостей. У Алек\
+            сандра всегда есть идеи как улучшить/ускорить ваш проект!"}
     twitter: it_sin9k
     gitHub: baltsevicha
   - id: 1801
