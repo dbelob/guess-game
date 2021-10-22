@@ -20595,15 +20595,14 @@ speakers:
     name:
       - {language: en, text: "Alexey Chirkin"}
       - {language: ru, text: "Алексей Чиркин"}
-    companyIds: [183]
+    companyIds: [847]
     bio:
       - {language: en, text: "Information technology engineer-teacher. 8 years in IT. Alexey went from 1C development to .NET.\
-            \ Worked at Delovye linii, Yandex.Money, now he has been at EPAM for over a year and a half. A fan of paper books,\
-            \ performance, platform internals, and evolution of programming languages. Founder of SamDotNet Community."}
+            \ Worked at Delovye linii, Yandex.Money, EPAM. A fan of paper books, performance, platform internals, and evolution\
+            \ of programming languages. Founder of SamDotNet Community."}
       - {language: ru, text: "Инженер-педагог в области информационных технологий по образованию. 8 лет в IT. Прошёл путь\
-            \ от 1С-разработки до .NET. Работал в «Деловых Линиях», «Яндекс.Деньги», уже более полутора лет в EPAM. Яростн\
-            ый поклонник «бумажных» книг, перформанса и «кишочков» платформы, а также эволюции языков программирования. Ос\
-            нователь SamDotNet Community."}
+            \ от 1С-разработки до .NET. Работал в «Деловых Линиях», «Яндекс.Деньги», EPAM. Яростный поклонник бумажных кни\
+            г, перформанса и «кишочков» платформы, а также эволюции языков программирования. Основатель SamDotNet Community."}
   - id: 1496
     photoFileName: 1496.jpg
     photoUpdatedAt: 2020-11-30T08:40:58.458Z[UTC]
