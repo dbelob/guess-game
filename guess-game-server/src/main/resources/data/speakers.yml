@@ -18171,7 +18171,7 @@ speakers:
     name:
       - {language: en, text: "Evgeny Erokhin"}
       - {language: ru, text: "Евгений Ерохин"}
-    companyIds: [248]
+    companyIds: [242]
     bio:
       - language: en
         text: "Senior engineer on compilers at Huawei. Takes part in the development of compilers and toolchains for Harmony\
@@ -25889,7 +25889,7 @@ speakers:
     gitHub: anthonywilliams
   - id: 1845
     photoFileName: 1845.jpg
-    photoUpdatedAt: 2021-10-11T09:20:03.534Z[UTC]
+    photoUpdatedAt: 2021-10-22T15:56:17.916Z[UTC]
     name:
       - {language: en, text: "Anna Melekhova"}
       - {language: ru, text: "Анна Мелехова"}
