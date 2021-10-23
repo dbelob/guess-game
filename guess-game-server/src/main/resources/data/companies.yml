@@ -2553,3 +2553,12 @@ companies:
   - id: 851
     name:
       - {language: en, text: Kong}
+  - id: 852
+    name:
+      - {language: en, text: "Spark Networks"}
+  - id: 853
+    name:
+      - {language: en, text: "Capital One"}
+  - id: 854
+    name:
+      - {language: en, text: fin_hood}

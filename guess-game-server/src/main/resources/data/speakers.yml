@@ -3781,18 +3781,19 @@ speakers:
       - {language: ru, text: "Виталий Фридман"}
     companyIds: [482]
     bio:
-      - {language: en, text: "Vitaly Friedman loves beautiful content and doesn’t like to give in easily. Originally from\
-            \ Minsk, Belarus, he studied computer science and mathematics in Germany where he has discovered his passion for\
-            \ typography, writing and design. After working as a freelancing designer and developer for 6 years, he co-founded\
-            \ Smashing Magazine, one of the largest online magazines dedicated to Web design and development. Vitaly is writer,\
-            \ co-author and editor of both Smashing Books. He is now working as the editor-in-chief of Smashing Magazine in\
-            \ the lovely city of Germany, Freiburg."}
-      - {language: ru, text: "Виталий Фридман любит красивый контент и никогда просто так не сдаётся. Родом из Минска, Бел\
-            арусь, Виталий изучал информатику и математику в Германии, где обнаружил интерес к типографии, письму и дизайн\
-            у. Проработав в качестве фрилансера дизайнером и разработчиком в течение шести лет, он основал Smashing Magazine,\
-            \ один из ведущих онлайн-журналов о дизайне и веб-разработке. Виталий — автор, соавтор и редактор всех Smashing\
-            \ Books. В настоящее время занимает позицию креативного директора Smashing Magazine, и обычно обитает где-то м\
-            ежду Брюсселем, Нью-Йорком, Будапештом, Дюссельдорфом и Вильнюсом."}
+      - language: en
+        text: "Vitaly Friedman loves beautiful content and never give up. Was born in Minsk (Belarus), studied information\
+            \ technology and mathematics in Germany where he took interest in typography, writing texts and design. Having\
+            \ worked as a designer and developer for 6 years, he co-founded Smashing Magazine, one of the largest online magazines\
+            \ about web design and development. \n\nVitaly is the author, co-author and editor of all Smashing Books. Now\
+            \ he is a creative director of Smashing Magazine in Europe and usually is somewhere around Brussels, New York,\
+            \ Budapest, Düsseldorf and Vilnius."
+      - {language: ru, text: "Виталий Фридман любит красивый контент и никогда просто так не сдается. Родился в Минске, Бе\
+            ларусь, изучал информатику и математику в Германии, где увлекся типографикой, написанием текстов и дизайном. П\
+            роработав на фрилансе дизайнером и разработчиком 6 лет, стал соучредителем Smashing Magazine — одного из крупн\
+            ейших онлайн-журналов о веб-дизайне и разработке. Виталий — автор, соавтор и редактор всех Smashing Books. В н\
+            астоящее время занимает позицию креативного директора журнала Smashing Magazine в Европе, обычно обитает где-т\
+            о между Брюсселем, Нью-Йорком, Будапештом, Дюссельдорфом и Вильнюсом."}
     twitter: smashingmag
     gitHub: vitalyfriedman
   - id: 261
@@ -11593,11 +11594,10 @@ speakers:
       - {language: ru, text: "Фёдор Цымбал"}
     companyIds: [386]
     bio:
-      - {language: en, text: "For the past 7 years, he has been bringing up Android OS on all kinds of hardware. So today\
-            \ Fedor has accumulated some experience in this area that he would be happy to share with an interested audience."}
-      - {language: ru, text: "Последние 5 лет занимается поднятием различных версий Андроида на всевозможных железках. На\
-            \ данный момент уже накопился определенный опыт в этом деле, которым Федор хотел бы поделиться с заинтересован\
-            ной аудиторией."}
+      - {language: en, text: "He has been working at Orion Innovations (formerly Mera) for the last 12 years, 7 years of which\
+            \ he has been working on the development of different versions of Android on all kinds of hardware."}
+      - {language: ru, text: "Последние 12 лет работает в компании Orion Innovations (ранее Mera), 7 лет из них занимается\
+            \ поднятием различных версий Android на всевозможных железках."}
     twitter: ftsymbal
     gitHub: ftsymbal
   - id: 814
@@ -12296,12 +12296,13 @@ speakers:
     name:
       - {language: en, text: "Dmitry Kurkin"}
       - {language: ru, text: "Дмитрий Куркин"}
-    companyIds: [14]
+    companyIds: [852]
     bio:
       - {language: en, text: "Spent a lot of time for messengers in Mail.Ru, has taken part in Yandex.Navigator and Yandex.Auto.\
             \ From time to time makes talks about developing for iOS."}
       - {language: ru, text: "Много лет занимался мессенджерами в Mail.Ru, поучаствовал в Яндекс.Навигаторе и Яндекс.Авто\
             . Время от времени выступает с докладами про разработку под iOS."}
+    twitter: sclown
   - id: 863
     photoFileName: 0863.jpg
     name:
@@ -14829,19 +14830,23 @@ speakers:
     twitter: hamen
   - id: 1059
     photoFileName: 1059.jpg
+    photoUpdatedAt: 2021-10-15T09:35:17.113Z[UTC]
     name:
       - {language: en, text: "Giorgio Natili"}
-    companyIds: [32]
+    companyIds: [853]
     bio:
       - language: en
-        text: "On paper, Giorgio is an engineering lead at Amazon where he works with the layout team of the Kindle organization\
-            \ solving the problem of converting, delivering and rendering the content of millions of books on billions of\
-            \ devices on every supported language.\n\nIn a parallel universe, he fosters the vision of an inclusive and diverse\
-            \ community where great training is affordable to everyone. To achieve this goal, Giorgio runs several conferences\
-            \ (Droidcon Boston and SwiftFest), participated in many meetups in Boston, Seattle, and New York, and spoke at\
-            \ conferences covering his favorite topics: Android, Angular, Machine Learning, Swift and TDD. \n\nHe has the\
-            \ honor of being part of the Google Developer Experts program."
+        text: "On paper, I am a Director of engineering at Capital One where I lead the team the integrates insightful experiences\
+            \ and personalizations in all the supported surfaces for all the Capital One customers. In the past, I had the\
+            \ privilege to lead the Kindle rendering team solving the problem of delivering millions of books on billions\
+            \ of devices in every supported language. Also, I worked as an engineering lead in Amazon Payments and implemented\
+            \ payments methods and regulations for Brazil.\n\nIn a parallel universe, I foster my vision of an inclusive and\
+            \ diverse community where great training is affordable to everyone. To achieve this goal, I run several conferences\
+            \ (Droidcon Boston and SwiftFest), participate in many meetups in Boston, Seattle, and New York, and speak at\
+            \ conferences covering my favorite topics: Android, Angular, Machine Learning, Swift and TDD.\n\nI have the honor\
+            \ of being part of the Google Developer Experts program."
     twitter: giorgionatili
+    gitHub: GiorgioNatili
   - id: 1060
     photoFileName: 1060.jpg
     name:
@@ -16286,6 +16291,7 @@ speakers:
             \ source-инструментами для реализации поисковых интерфейсов на мобильных платформах. Очень скучает по родному\
             \ Петербургу и наведывается туда при каждом удобном случае."}
     twitter: VladislavFitc
+    gitHub: VladislavFitz
   - id: 1169
     photoFileName: 1169.jpg
     photoUpdatedAt: 2020-04-24T08:33:29.873Z[UTC]
@@ -18924,19 +18930,19 @@ speakers:
     twitter: maluginp
   - id: 1373
     photoFileName: 1373.jpg
-    photoUpdatedAt: 2020-09-18T11:41:50.443Z[UTC]
+    photoUpdatedAt: 2021-10-19T11:45:09.371Z[UTC]
     name:
       - {language: en, text: "Mikhail Zotyev"}
       - {language: ru, text: "Михаил Зотьев"}
     companyIds: [506]
     bio:
-      - {language: en, text: "Flutter developer and team lead at Surf. Engaged in cross-platform development. In the past,\
-            \ a game developer with five years of experience. From time to time, he writes articles, tries to share interesting\
-            \ information with the community."}
-      - {language: ru, text: "Flutter-разработчик и тимлид в компании Surf. Занимается кросплатформенной разработкой. В пр\
-            ошлом — гейм-девелопер с пятилетним стажем. Периодически пишет статьи, старается делиться с комьюнити интересн\
-            ой информацией."}
+      - {language: en, text: "Flutter Department TechLead at Surf. Author of the telegram channel Oh, my Flutter. In the past,\
+            \ a game developer with five years of experience."}
+      - {language: ru, text: "Техлид Flutter-отдела в компании Surf. Автор телеграм-канала Oh, my Flutter. В прошлом гейм\
+            -девелопер с пятилетним стажем."}
     twitter: MbIXJkee
+    gitHub: MbIXjkee
+    habr: mbixjkee
   - id: 1374
     photoFileName: 1374.jpg
     photoUpdatedAt: 2020-10-01T12:17:49.224Z[UTC]
@@ -21682,15 +21688,14 @@ speakers:
     photoFileName: 1564.jpg
     photoUpdatedAt: 2021-03-03T09:03:50.469Z[UTC]
     name:
-      - {language: en, text: "Georgy Ostrobrod"}
+      - {language: en, text: "George Ostrobrod"}
       - {language: ru, text: "Георгий Остроброд"}
     companyIds: [713]
     bio:
-      - {language: en, text: "10 years of experience in commercial development, most of which is the development of image\
-            \ processing libraries, both cross-platform and exclusively for iOS. More than 5 years Georgy spent on developing\
-            \ components for one graphics editor (OpenGL + Metal, iOS + macOS), now he makes them for Procreate (Metal, iOS)."}
-      - {language: ru, text: "10 лет опыта коммерческой разработки, большая часть из которого — разработка библиотек для о\
-            бработки изображений, как кроссплатформенных, так и исключительно под iOS. Более 5 лет потратил на разработку\
+      - {language: en, text: "I was graduated SFedU. Then worked for about 7 years in CVisionLab, where I did image processing\
+            \ and libraries for various apps including image editing apps. Now I do about the same for Procreate."}
+      - {language: ru, text: "10 лет опыта коммерческой разработки, большая часть из которого - разработка библиотек для о\
+            бработки изображений. Как кросс-платформенных, так и исключительно под iOS. Более 5 лет потратил на разработку\
             \ компонент для одного графического редактора (OpenGL + Metal, iOS + macOS), теперь делает для Procreate (Metal,\
             \ iOS)."}
     twitter: GOstrobrod
@@ -21900,16 +21905,19 @@ speakers:
     twitter: samokryl
   - id: 1578
     photoFileName: 1578.jpg
-    photoUpdatedAt: 2021-03-11T06:53:25.778Z[UTC]
+    photoUpdatedAt: 2021-10-20T14:36:19.199Z[UTC]
     name:
       - {language: en, text: "Sevastyan Zhukov"}
       - {language: ru, text: "Севастьян Жуков"}
-    companyIds: [686]
+    companyIds: [813]
     bio:
-      - {language: en, text: "Android DevOps-engineer from CFT. Sevastyan used to be an Android developer, but now he develops\
-            \ the infrastructure and improves the processes of Android teams."}
-      - {language: ru, text: "Android DevOps-инженер в компании ЦФТ. Раньше занимался Android-разработкой, а сейчас развив\
-            ает инфраструктуру и совершенствует процессы Android-команд компании."}
+      - {language: en, text: "Sevastian is involved in the development of infrastructure and processes for mobile teams in\
+            \ Aviasales. He was an Android developer in the past, but 2 years ago he started working on Mobile DevOps and\
+            \ cannot stop it."}
+      - {language: ru, text: "Севастьян занимается развитием инфраструктуры и процессов мобильных команд в Aviasales. В пр\
+            ошлом Android-разработчик, но 2 года назад начал заниматься Mobile DevOps и не может с этим завязать."}
+    gitHub: MrSwimmer
+    habr: MrSwimmer
   - id: 1579
     photoFileName: 1579.jpg
     photoUpdatedAt: 2021-03-16T11:55:53.762Z[UTC]
@@ -22917,19 +22925,20 @@ speakers:
     gitHub: densvr
   - id: 1646
     photoFileName: 1646.jpg
-    photoUpdatedAt: 2021-04-05T14:09:07.488Z[UTC]
+    photoUpdatedAt: 2021-10-19T08:29:46.079Z[UTC]
     name:
       - {language: en, text: "Maria Vodolazkaya"}
       - {language: ru, text: "Мария Водолазкая"}
     companyIds: [633]
     bio:
-      - {language: en, text: "Maria has 7 years of experience in iOS development. She has managed to experience many projects,\
-            \ from a weather alarm clock to the EDM mobile client. In her spare time, she is writing a Ph.D. thesis on hyperparameter\
-            \ optimization in ML, teaches math logic, and leads a sports programming class at MPEI."}
-      - {language: ru, text: "Занимается iOS-разработкой более 7 лет. За это время успела пощупать 1000 и 1 проект: от буд\
-            ильника с погодой до мобильного клиента системы электронного документооборота. Сейчас развивается в роли тимли\
-            да. В свободное от работы время пишет кандидатскую по гиперпараметрической оптимизации в машинном обучении, пр\
-            еподает матлогику и ведет кружок спортивного программирования в МЭИ."}
+      - {language: en, text: "Maria has a 7-year of iOS development experience. She has managed to experience many projects,\
+            \ from a weather alarm clock to the EDM mobile client and social network. In her spare time, she is writing a\
+            \ Ph.D. thesis on hyperparameter optimization in ML, teaches math logic, and leads a sports programming class\
+            \ at MPEI."}
+      - {language: ru, text: "Занимается iOS-разработкой более 7 лет. За это время успела пощупать 1000 и 1 проект – от бу\
+            дильника с погодой до мобильного клиента системы электронного документооборота и соцсети. Сейчас развивается в\
+            \ роли тимлида. В свободное от работы время пишет кандидатскую по гиперпараметрической оптимизации в машинном\
+            \ обучении, преподает матлогику и ведет кружок спортивного программирования в МЭИ."}
     gitHub: vodolazkayamv
     habr: scanavie
   - id: 1647
@@ -26857,3 +26866,99 @@ speakers:
             \ @cote in Twitter."}
     twitter: cote
     gitHub: cote
+  - id: 1916
+    photoFileName: 1916.jpg
+    photoUpdatedAt: 2021-10-19T11:53:17.587Z[UTC]
+    name:
+      - {language: en, text: "Renat Gafarov"}
+      - {language: ru, text: "Ренат Гафаров"}
+    companyIds: [621]
+    bio:
+      - language: en
+        text: "6 years in iOS development, 3.5 years of them in fintech. Renat worked on applications for VTB, Sberbank, Alfa.\r\
+            \n\r\nAt VTB, he manages the technical platform team, is responsible for the technical side of the iOS application\
+            \ of VTB Online. In his spare time, he writes on Golang and invests in cryptoeconomics."
+      - language: ru
+        text: "В iOS 6 лет — из них 3,5 года в финтехе. Работал над приложениями ВТБ, Сбера, Альфа-Банка.\n\nВ ВТБ управля\
+            ет технической командой платформы, отвечает за техническую сторону iOS-приложения «ВТБ Онлайн». В свободное вр\
+            емя пишет на Golang и занимается инвестициями в криптоэкономику."
+    gitHub: RenatGafarov
+  - id: 1917
+    photoFileName: 1917.jpg
+    photoUpdatedAt: 2021-10-19T13:12:49.799Z[UTC]
+    name:
+      - {language: en, text: "Ivan Shafran"}
+      - {language: ru, text: "Иван Шафран"}
+    companyIds: [620]
+    bio:
+      - language: en
+        text: "He works in the VK Android call team. He calls himself about a hundred times a day.\nKotlin lover. Spontaneously\
+            \ writes articles on Medium and open source projects on Github. Teaches Android for beginners."
+      - language: ru
+        text: "Работает в команде Android звонков VK. Звонит сам себе около сотни раз в день.\r\nЛюбит Kotlin. Спонтанно п\
+            ишет статьи на Medium и опенорс-проекты на Github. Преподает Android для начинающих."
+    twitter: NotShafran
+    gitHub: IvanShafran
+    habr: IvanShafran
+  - id: 1918
+    photoFileName: 1918.jpg
+    photoUpdatedAt: 2021-10-19T13:17:48.609Z[UTC]
+    name:
+      - {language: en, text: "Nikita Razymnyi"}
+      - {language: ru, text: "Никита Разумный"}
+    companyIds: [620]
+    bio:
+      - {language: en, text: "Works in the VKontakte video team. Responsible for the mobile SDK and the iOS client of VK calls."}
+      - {language: ru, text: "Работает в команде видео ВКонтакте. Отвечает за мобильное SDK и iOS-клиент VK звонков."}
+  - id: 1919
+    photoFileName: 1919.jpg
+    photoUpdatedAt: 2021-10-19T13:56:36.689Z[UTC]
+    name:
+      - {language: en, text: "Nadezhda Kulikova"}
+      - {language: ru, text: "Надежда Куликова"}
+    companyIds: [386]
+    bio:
+      - {language: en, text: "Senior developer at Orion Innovation. I've been doing mobile development for over 7 years. Extensive\
+            \ experience in various projects: VOIP, Android TV, Automotive."}
+      - {language: ru, text: "Старший разработчик в компании Orion Innovation. Занимается мобильной разработкой более 7 ле\
+            т. Большой опыт в проектах разного рода: VOIP, Android TV,  Automotive."}
+  - id: 1920
+    photoFileName: 1920.jpg
+    photoUpdatedAt: 2021-10-20T10:18:07.261Z[UTC]
+    name:
+      - {language: en, text: "Andrey Smirnov"}
+      - {language: ru, text: "Андрей Смирнов"}
+    companyIds: [854]
+    bio:
+      - language: en
+        text: "In the past was a fullstack C# developer .NET.\r\n\r\nIn the recent past was a front-end developer on Dart/Angular,\
+            \ co-author of Flutter mobile developer course at Otus.\r\n\r\nNow is a Flutter developer.\r\n\r\nIn the alternative\
+            \ future in a mobile native developer."
+      - language: ru
+        text: "В прошлом fullstack C# developer .NET.\r\n\r\nВ недавнем прошлом фронтенд-разработчик на Dart/Angular, соав\
+            тор курса Flutter mobile developer на платформе Otus.\r\n\r\nСейчас Flutter developer.\r\n\r\nВ альтернативном\
+            \ будущем mobile native developer."
+    twitter: dushesatwork
+  - id: 1921
+    photoFileName: 1921.jpg
+    photoUpdatedAt: 2021-10-21T11:14:44.946Z[UTC]
+    name:
+      - {language: en, text: "Vadim Petrov"}
+      - {language: ru, text: "Вадим Петров"}
+    companyIds: [689]
+    bio:
+      - {language: en, text: "Biography will be added soon."}
+      - {language: ru, text: "Биография будет опубликована в ближайшее время."}
+    gitHub: PetrovVadim
+  - id: 1922
+    photoFileName: 1922.jpg
+    photoUpdatedAt: 2021-10-21T11:12:13.128Z[UTC]
+    name:
+      - {language: en, text: "Alexander Semashko"}
+      - {language: ru, text: "Александр Семашко"}
+    companyIds: [689]
+    bio:
+      - {language: en, text: "Joined Yandex a long time ago. Currently my work is concentrated mostly around the performance\
+            \ of our browser and search app."}
+      - {language: ru, text: "Давно работает в Яндексе, сейчас занимается проблемами скорости работы браузера и поискового\
+            \ приложения."}
