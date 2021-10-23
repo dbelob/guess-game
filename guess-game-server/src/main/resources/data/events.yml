@@ -59,8 +59,9 @@ events:
     siteLink:
       - {language: en, text: "https://cppconf.ru/en/"}
       - {language: ru, text: "https://cppconf.ru/"}
+    youtubeLink: https://live.jugru.org/cpp
     placeId: 24
-    talkIds: [3389, 3390, 3391, 3392, 3393, 3394, 3395, 3396, 3397, 3398, 3399, 3400, 3401, 3402, 3403, 3404, 3405, 3406,
+    talkIds: [3389, 3394, 3391, 3392, 3393, 3390, 3395, 3396, 3397, 3398, 3399, 3400, 3401, 3402, 3403, 3404, 3405, 3406,
               3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415, 3416]
   # DevOops
   - eventTypeId: 1
@@ -134,8 +135,8 @@ events:
       - {language: en, text: "https://devoops.ru/en/"}
       - {language: ru, text: "https://devoops.ru/"}
     placeId: 24
-    talkIds: [3366, 3367, 3368, 3369, 3370, 3371, 3372, 3373, 3374, 3375, 3376, 3377, 3378, 3379, 3380, 3381, 3382, 3383,
-              3384, 3385, 3386, 3387, 3388]
+    talkIds: [3366, 3367, 3368, 3476, 3370, 3371, 3477, 3372, 3373, 3374, 3478, 3375, 3376, 3377, 3479, 3379, 3380, 3381,
+              3382, 3383, 3384, 3385, 3480, 3387, 3388, 3481, 3378, 3482]
   # DotNext
   - eventTypeId: 2
     name:
@@ -1128,8 +1129,10 @@ events:
     siteLink:
       - {language: en, text: "https://mobius-moscow.ru/en/"}
       - {language: ru, text: "https://mobius-moscow.ru/"}
+    youtubeLink: https://live.jugru.org/mobius
     placeId: 24
-    talkIds: [3417, 3418, 3419, 3420, 3421, 3422, 3423, 3424, 3425, 3426, 3427, 3428, 3429, 3430, 3431, 3432]
+    talkIds: [3417, 3418, 3419, 3483, 3484, 3425, 3422, 3485, 3427, 3423, 3421, 3428, 3424, 3486, 3487, 3488, 3489, 3490,
+              3491, 3492, 3493, 3494, 3495, 3426, 3420, 3432, 3429, 3496, 3431, 3497]
   # SPTDC
   - eventTypeId: 10
     name:

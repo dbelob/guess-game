@@ -2547,3 +2547,18 @@ companies:
   - id: 849
     name:
       - {language: en, text: "Unicon Business Solutions"}
+  - id: 850
+    name:
+      - {language: en, text: "DevOps Research"}
+  - id: 851
+    name:
+      - {language: en, text: Kong}
+  - id: 852
+    name:
+      - {language: en, text: "Spark Networks"}
+  - id: 853
+    name:
+      - {language: en, text: "Capital One"}
+  - id: 854
+    name:
+      - {language: en, text: fin_hood}
