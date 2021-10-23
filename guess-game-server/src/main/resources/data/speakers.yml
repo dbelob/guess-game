@@ -26451,7 +26451,7 @@ speakers:
     photoUpdatedAt: 2021-10-20T09:01:04.746Z[UTC]
     name:
       - {language: en, text: "Anton Fedoseev"}
-      - {language: ru, text: "Антон  Федосеев"}
+      - {language: ru, text: "Антон Федосеев"}
     companyIds: [845]
     bio:
       - language: en
