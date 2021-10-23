@@ -179,22 +179,24 @@ speakers:
     name:
       - {language: en, text: "Victor Gamov"}
       - {language: ru, text: "Виктор Гамов"}
-    companyIds: [108]
+    companyIds: [851]
     bio:
-      - language: en
-        text: "Victor Gamov is the co-founder and leader of the \"Parsing the Flights\" podcast, which is beloved by many\
-            \ programmers. He is also a Developer Advocate at Kong, which develops the Apache Kafka-based platform. Assists\
-            \ clients in the design and development of distributed streaming data processing systems. He is a co-author of\
-            \ the book Enterprise Web Development by O'Reilly Publishers. \n\nIn his spare time, Victor doesn't forget about\
-            \ the gym. He is a regular visitor to conferences of JUG Ru Group (JPoint, Joker, JBreak) and other international\
-            \ conferences (JavaOne, Devoxx, OSCON, Qcon). Tweets as @gamussa. Runs a channel about Kafka on Telegram."
+      - {language: en, text: "Viktor Gamov is a Principal Developer Advocate at Kong, a cloud connectivity company. Viktor\
+            \ has comprehensive expertise in building distributed systems and cloud-native architectures using open source\
+            \ technologies. He enjoys helping architects and developers design and develop low latency, scalable, and highly\
+            \ available systems. He is a professional conference speaker on distributed systems, streaming data, JVM and DevOps\
+            \ topics, and is regular on events including JavaOne, Devoxx, OSCON, QCon, and others.  He co-authored O’Reilly’\
+            s «Enterprise Web Development.» He blogs at gamov.io and co-hosts «Crazy Russians in Devoops» and «DevRelRad.io»\
+            \ podcasts. Follow Viktor on Twitter @gamussa, where he posts there about gym life, food, open-source, and, of\
+            \ course, Kong and Cloud!"}
       - language: ru
         text: "Виктор Гамов — сооснователь и лидер любимого многими программистами правильного подкаста «Разбор Полётов».\
-            \ По совместительству является Developer Advocate в компании Kong, которая разрабатывает платформу на базе Apache\
-            \ Kafka. Помогает клиентам в проектировании и разработке распределенных систем обработки потоковых данных. Соа\
-            втор книги «Enterprise Web Development» издательства O'Reilly. \n\nВ свободное от работы время Виктор не забыв\
-            ает про качалку и бицуху. Является завсегдатаем конференций JUG Ru Group (JPoint, Joker, JBreak) и других межд\
-            ународных конференций (JavaOne, Devoxx, OSCON, Qcon). Пишет в Twitter как @gamussa. Ведет канал про Kafka в Telegram."
+            \ По совместительству является Principal Developer Advocate в компании Kong, которая разрабатывает инструменты\
+            \ для полного цикла работы с API. Помогает клиентам в проектировании и разработке распределенных систем. Соавт\
+            ор книги «Kafka in Action» и «Enterprise Web Development».\n\nВ свободное от работы время Виктор не забывает п\
+            ро качалку и бицуху. Является завсегдатаем конференций JUG Ru Group (JPoint, Joker, JBreak) и других междунаро\
+            дных конференций (JavaOne, Devoxx, OSCON, Qcon). Пишет в Twitter как @gamussa. Ведет канал про Kafka и Kong в\
+            \ Telegram."
     twitter: gamussa
     gitHub: gAmUssA
     habr: gAmUssA
@@ -636,23 +638,22 @@ speakers:
     companyIds: [287]
     bio:
       - language: en
-        text: "Baruch Sadogursky (a.k.a JBaruch) is the Head of DevOps Advocacy and a Developer Advocate at JFrog. His passion\
-            \ is speaking about technology. Well, speaking in general, but doing it about technology makes him look smart,\
-            \ and 19 years of hi-tech experience sure helps. When he’s not on stage (or on a plane to get there), he learns\
-            \ about technology, people and how they work, or more precisely, don’t work together.\n\nHe is a co-author of\
-            \ the Liquid Software book, a CNCF ambassador and a passionate conference speaker on DevOps, DevSecOps, digital\
-            \ transformation, containers and cloud-native, artifact management and other topics, and is a regular at the industry’\
-            s most prestigious events including DockerCon, Devoxx, DevOps Days, OSCON, Qcon, JavaOne and many others. You\
-            \ can see some of his talks at jfrog.com/shownotes"
+        text: "Baruch Sadogursky (a.k.a JBaruch) is the Head of Developer Relations and a Developer Advocate at JFrog. His\
+            \ passion is speaking about technology. Well, speaking in general, but doing it about technology makes him look\
+            \ smart, and 18 years of hi-tech experience sure helps. When he's not on stage (or on a plane to get there), he\
+            \ learns about technology, people and how they work, or more precisely, don't work together.\r\n\r\nHe is a CNCF\
+            \ ambassador, Developer Champion, and a professional conference speaker on DevOps, DevSecOps, Go, Java and many\
+            \ other topics, and is a regular at the industry's most prestigious events including DockerCon, GopherCon, Devoxx,\
+            \ DevOps Days, OSCON, Qcon, JavaOne and many others. You can see some of his talks at jfrog.com/shownotes"
       - language: ru
-        text: "Барух Садогурский (a.k.a. JBaruch) — Head of DevOps Advocacy и Developer Advocate в компании JFrog. Больше\
-            \ всего любит рассказывать о технологиях — то есть просто поболтать любит, но человек, говорящий о технологиях\
-            , имеет умный вид, да и 18 лет опыта в сфере высоких технологий никуда не делись. Когда он не выступает (ну, и\
-            ли не летит к месту следующего выступления), то изучает технологии, людей и то, как они работают, точнее, не р\
-            аботают вместе.\n\nБарух — соавтор книги «Liquid Software», CNCF ambassador и профессиональный спикер по таким\
-            \ темам, как DevOps, DevSecOps, Go, Java и др. Он регулярно выступает на таких известных конференциях, как Joker,\
-            \ JPoint, DevOops, Heisenbug, DockerCon, GopherCon, Devoxx, DevOps Days, OSCON, Qcon, JavaOne и др. Некоторые\
-            \ его доклады можно посмотреть здесь: jfrog.com/shownotes"
+        text: "Барух Садогурский (a.k.a. JBaruch) — Head of Developer Relations и Developer Advocate в компании JFrog. Бол\
+            ьше всего любит рассказывать о технологиях — то есть просто поболтать любит, но человек, говорящий о технологи\
+            ях, имеет умный вид, да и 18 лет опыта в сфере высоких технологий никуда не делись. Когда он не выступает (ну\
+            , или не летит к месту следующего выступления), то изучает технологии, людей и то, как они работают, точнее, н\
+            е работают вместе.\r\n\r\nБарух — соавтор книги «Liquid Software», CNCF ambassador и профессиональный спикер п\
+            о таким темам, как DevOps, DevSecOps, Go, Java и др. Он регулярно выступает на таких известных конференциях, к\
+            ак Joker, JPoint, DevOops, Heisenbug, DockerCon, GopherCon, Devoxx, DevOps Days, OSCON, Qcon, JavaOne и др. Не\
+            которые его доклады можно посмотреть здесь: jfrog.com/shownotes"
     twitter: jbaruch
     gitHub: jbaruch
     habr: jbaruch
@@ -696,16 +697,15 @@ speakers:
     name:
       - {language: en, text: "Oleg Nenashev"}
       - {language: ru, text: "Олег Ненашев"}
-    companyIds: [97]
+    companyIds: []
     bio:
-      - {language: en, text: "Engineer at CloudBees, core team member in the Jenkins project. Since 2008 works in the areas\
-            \ of automation, infrastructures, and frameworks for mixed software-hardware projects, with the help of Jenkins\
-            \ and dozens of other tools. Oleg writes code, maintains Jenkins core and plugins, and organizes meetups and other\
-            \ community events."}
-      - {language: ru, text: "Разработчик в CloudBees, состоит в core team проекта Jenkins. C 2008 года занимается автомат\
-            изацией, инфраструктурой и фреймворкостроением для крупных программно-аппаратных проектов с помощью Jenkins и\
-            \ десятков других тулов. Пишет код, поддерживает ядро и плагины Jenkins, организует митапы в СПб и других горо\
-            дах."}
+      - {language: en, text: "Former CloudBees employee, core team member of the Jenkins project. Since 2008 works in the\
+            \ areas of automation, infrastructures, and frameworks for mixed software-hardware projects, with the help of\
+            \ Jenkins and dozens of other tools. Oleg writes code, maintains Jenkins core and plugins, and organizes meetups\
+            \ and other community events."}
+      - {language: ru, text: "Работал в CloudBees, в core team проекта Jenkins. C 2008 года занимается автоматизацией, инф\
+            раструктурой и фреймворкостроением для крупных программно-аппаратных проектов с помощью Jenkins и десятков дру\
+            гих тулов. Пишет код, поддерживает ядро и плагины Jenkins, организует митапы в СПб и других городах."}
     twitter: oleg_nenashev
     gitHub: oleg-nenashev
     habr: oleg-nenashev
@@ -5361,7 +5361,7 @@ speakers:
     photoFileName: 0369.jpg
     photoUpdatedAt: 2019-08-25T12:12:54.587Z[UTC]
     name:
-      - {language: en, text: "Alexey Kirpichnikov"}
+      - {language: en, text: "Aleksey Kirpichnikov"}
       - {language: ru, text: "Алексей Кирпичников"}
     companyIds: [630]
     bio:
@@ -5376,6 +5376,8 @@ speakers:
             \ все остальное, что нужно разработчику, чтобы сосредоточиться на развитии сервиса и не тратить время на экспл\
             уатацию.\n\nДо Контура Алексей был тимлидом команды разработки Яндекс.Такси и довел инфраструктуру бэкендов эт\
             ого сервиса от основания до миллионного заказа."
+    gitHub: beevee
+    habr: BeeVee
   - id: 370
     photoFileName: 0370.jpg
     name:
@@ -13712,13 +13714,16 @@ speakers:
     name:
       - {language: en, text: "Igor Kurochkin"}
       - {language: ru, text: "Игорь Курочкин"}
-    companyIds: [818]
+    companyIds: [850]
     bio:
       - language: en
-        text: "Expert in DevOps, SRE and Team Topologies.\n\nEx-Express42, Ex-Microsoft, Ex-Skype, Ex-Qik."
+        text: "Expert in DevOps, SRE and Team Topologies. \n\nHe was head of analysis and consulting at Express 42. Worked\
+            \ as a platform and SRE engineer at Microsoft, Skype and Qik. Helped develop DevOps practices at Avito, Uchi.ru,\
+            \ Tinkoff Bank, Rosbank, Raiffeisenbank, NSPK, Wild Apricot, Pushwoosh, retailCRM, Skyeng, Delimobil and Lamoda."
       - language: ru
-        text: "Эксперт по DevOps, SRE и Team Topologies. \n\nПомогает развивать современные процессы разработки, тестирова\
-            ния и эксплуатации в технологических компаниях. \n\nEx-Express42, Ex-Microsoft, Ex-Skype, Ex-Qik."
+        text: "Эксперт по DevOps, SRE и Team Topologies. \n\nРуководил направлением анализа и консалтинга в Express 42. Ра\
+            ботал платформенным и SRE-инженером в Microsoft, Skype и Qik. Помогал развивать DevOps практики в Авито, Учи.р\
+            у, Тинькофф банк, Росбанк, Райффайзенбанк, НСПК, Wild Apricot, Pushwoosh, retailCRM, Skyeng, Делимобиль и Lamoda."
     twitter: igorkurochkin
     gitHub: ikurochkin
     habr: IgorITL
@@ -17323,7 +17328,7 @@ speakers:
     photoFileName: 1246.jpg
     photoUpdatedAt: 2020-07-07T11:03:14.650Z[UTC]
     name:
-      - {language: en, text: "Ruslan Akhmetzyanov"}
+      - {language: en, text: "Ruslan Akhmetzianov"}
       - {language: ru, text: "Руслан Ахметзянов"}
     companyIds: [425]
     bio:
@@ -20027,15 +20032,22 @@ speakers:
     photoUpdatedAt: 2020-08-20T12:51:32.328Z[UTC]
     name:
       - {language: en, text: "Victoria Almazova"}
+      - {language: ru, text: "Виктория Алмазова"}
     companyIds: [328]
     bio:
       - language: en
-        text: "Security girl in Microsoft Norway with an experience of more than 14 years in security. She spends all her\
-            \ time working closely with developers and architects to make security built-in from the design level. She is\
-            \ a big supporter of making security as culture and shifting security to the left. Victoria believes that empowering\
-            \ developers and architects in security tasks by helping with education will increase the security level without\
-            \ increasing additional workload.\n\nDuring her free time, she deep dives into cloud security, development, identity,\
-            \ and access management."
+        text: "Victoria has than 15 years of experience as a security expert, she also worked in different business areas\
+            \ challenging different security states thru a unique viewpoint by bringing humor sense.\n\nAlthough Victoria\
+            \ is passionate in all security areas, the most significant interest lies in Identity and access management, and\
+            \ DevSecOps. In her belief Zero Trust and a heavy focus on security in development by shifting it left are the\
+            \ way to go.\n\nYou can find her either working for Microsoft and helping customers or on a stage, where she shares\
+            \ security practices sometimes in an opinionated and humorous way."
+      - language: ru
+        text: "Виктория имеет около 15 лет опыта в качестве эксперта по вопросам безопасности, также она работала в различ\
+            ных бизнес-сферах, бросая вызов различным состояниям безопасности. \n\nНесмотря на то, что Виктория любит все\
+            \ области безопасности, ее главные интересы лежат в индентификации, управлении доступом и DevSecOps. По ее мне\
+            нию, Zero Trust и внимание к безопасности при разработке — это правильный путь.\n\nСейчас вы можете найти ее в\
+            \ Майкрософте или на сцене, где она делится практиками по обеспечению безопасности."
     twitter: texnokot
   - id: 1453
     photoFileName: 1453.jpg
@@ -22687,12 +22699,12 @@ speakers:
     companyIds: [742]
     bio:
       - language: en
-        text: "Oren Eini, pseudonym Ayende Rahien, is a frequent blogger at ayende.com has over 20 years of experience in\
+        text: "Oren Eini, pseudonym Ayende Rahien, is a frequent blogger at ayende.com. Has over 20 years of experience in\
             \ the development world who strongly focuses on the Microsoft and .NET ecosystem. Oren has been recognized and\
-            \ awarded Microsoft's Most Valuable Professional from 2007-2020.\n\nHe's an internationally acclaimed presenter\
+            \ awarded Microsoft's Most Valuable Professional in 2007–2020.\r\n\r\nHe's an internationally acclaimed presenter\
             \ appearing at DevTeach, JAOO, QCon, Oredev, NDC, Yow! and Progressive.NET conferences, sharing his knowledge\
             \ via conferences and written works such as \"DSLs in Boo: Domain Specific Languages in .NET\", published by Manning\
-            \ and the \"Inside RavenDB\" guide to all things RavenDB.\n\nHe remains dedicated and focused on architecture\
+            \ and the \"Inside RavenDB\" guide to all things RavenDB.\r\n\r\nHe remains dedicated and focused on architecture\
             \ and best practices that promote quality software and zero-friction development."
     twitter: ayende
     gitHub: ayende
@@ -25481,8 +25493,16 @@ speakers:
       - {language: ru, text: "Евгений Харченко"}
     companyIds: [429]
     bio:
-      - {language: en, text: "DevOps & Agile culture promoter. Develops flexible methodologies in the CIS."}
-      - {language: ru, text: "DevOps & Agile промоутер, развивает гибкие методологии на просторах СНГ."}
+      - language: en
+        text: "DevOps & Agile culture promoter. Develops flexible methodologies in the CIS.\nSenior Community Lead DevOps\
+            \ at Raiffeisenbank, he develops a professional DevOps community both in the bank and globally at all available\
+            \ sites."
+      - language: ru
+        text: "DevOps & Agile промоутер, развивает гибкие методологии на просторах СНГ. \nSenior Community Lead DevOps в Р\
+            айффайзенбанке, развивает профессиональное DevOps community как в банке, так и глобально на всех доступных пло\
+            щадках."
+    twitter: EvgenyKharchen1
+    gitHub: evgeniy-kharchenko
   - id: 1820
     photoFileName: 1820.jpg
     photoUpdatedAt: 2021-10-13T12:06:53.116Z[UTC]
@@ -26797,3 +26817,43 @@ speakers:
     bio:
       - {language: en, text: "Lead Configuration Manager, works as a DevOps engineer, not focusing on the Ops part."}
       - {language: ru, text: "Lead Configuration Manager, работает как DevOps-инженер, не делая упора на Ops часть."}
+  - id: 1913
+    photoFileName: 1913.jpg
+    photoUpdatedAt: 2021-10-05T10:24:42.765Z[UTC]
+    name:
+      - {language: en, text: "Kerim Satirli"}
+    companyIds: [230]
+    bio:
+      - {language: en, text: "Engineer with a passion for automation and community."}
+    twitter: ksatirli
+    gitHub: ksatirli
+  - id: 1914
+    photoFileName: 1914.jpg
+    photoUpdatedAt: 2021-10-22T17:51:13.937Z[UTC]
+    name:
+      - {language: en, text: "Melissa McKay"}
+    companyIds: [287]
+    bio:
+      - {language: en, text: "Melissa is a long-time developer/software engineer turned international speaker and is currently\
+            \ a Developer Advocate for JFrog, Inc., sharing in the mission to improve the developer experience with DevOps\
+            \ methodologies. Her background and experience as a software engineer span a slew of languages, technologies,\
+            \ and tools used in the development and operation of enterprise products and services. She is a mom, Java Champion,\
+            \ Docker Captain, co-author of the upcoming book DevOps Tools for Java Developers, a huge fan of UNconferences,\
+            \ and is always on the lookout for ways to grow and learn. Given her passion for teaching, sharing, and inspiring\
+            \ fellow practitioners, you are likely to cross paths with her in the conference circuit — both online and off!"}
+    twitter: melissajmckay
+    gitHub: mjmckay
+  - id: 1915
+    photoFileName: 1915.jpg
+    photoUpdatedAt: 2021-10-18T10:01:31.380Z[UTC]
+    name:
+      - {language: en, text: "Michael Coté"}
+    companyIds: [577]
+    bio:
+      - {language: en, text: "Michael Coté focuses studies how large organizations get better at building software to run\
+            \ better and grow their business. His books Changing Mindsets, Monolithic Transformation, and The Business Bottleneck\
+            \ cover this topic. He’s been an industry analyst at RedMonk and 451 Research, done corporate strategy and M&A,\
+            \ and was a programmer. He also co-hosts several podcasts, including Software Defined Talk. Cf. cote.io, and is\
+            \ @cote in Twitter."}
+    twitter: cote
+    gitHub: cote

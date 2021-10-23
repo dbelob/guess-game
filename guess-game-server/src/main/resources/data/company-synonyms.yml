@@ -256,6 +256,10 @@ companySynonyms:
         VKontakte,
         VK.com
     ]
+  - name: VMware
+    synonyms: [
+        "VMware Tanzu"
+    ]
   - name: Yandex
     synonyms: [
         "Yandex Go",
