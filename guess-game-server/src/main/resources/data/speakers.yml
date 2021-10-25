@@ -721,7 +721,7 @@ speakers:
             уководителя проектов и технического лидера участвовал в полном цикле разработки более десятка крупных и средни\
             х систем, от этапа сбора требований до ввода в промышленную эксплуатацию. Руководил командой разработки в коли\
             честве 50 и более человек. С конца 2014 года занял позицию директора по проектам в компании Haulmont."}
-    twitter: alekseystukalov
+    twitter: AlekseyStukalov
     gitHub: aleksey-stukalov
     habr: aleksey-stukalov
   - id: 40
@@ -26962,3 +26962,16 @@ speakers:
             \ of our browser and search app."}
       - {language: ru, text: "Давно работает в Яндексе, сейчас занимается проблемами скорости работы браузера и поискового\
             \ приложения."}
+  - id: 1923
+    photoFileName: 1923.jpg
+    name:
+      - {language: en, text: "Andrey Oganesyan"}
+      - {language: ru, text: "Андрей Оганесян"}
+    companyIds: [232]
+    bio:
+      - {language: ru, text: "Developer Advocate. До прихода в HAULMONT работал в аутсорсе. Сейчас занимается развитием\
+            \ и продвижением JPA Buddy, а также ведет корпоративный блог, где разбирает лучшие практики использования\
+            \ JPA/Hibernate и как это все работает под капотом."}
+    twitter: an_oganesyan
+    gitHub: andreyoganesyan
+    habr: andreyoganesyan
