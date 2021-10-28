@@ -140,11 +140,10 @@ speakers:
       - {language: en, text: "Producer @ JUG Ru Group, organizes the largest conferences for developers in Russia. In the\
             \ last 6 years Alexey's team arranged more than 50 conferences. Alexey has a very different background: from Software\
             \ Engineer @ Oracle (JCK, Java Platform Group) to DevRel @ Odnoklassiniki."}
-      - language: ru
-        text: "Алексей Федоров — продюсер в JUG Ru Group, организатор крупнейших в России конференций для программистов и\
-            \ сочувствующих. В данный момент фокусируется на процессах и инструментах для проведения онлайн-мероприятий. \n\
-            За 8 лет Алексей с командой провели более 80 конференций и 150 митапов. В прошлом работал программистом в Oracle\
-            \ и деврелом в Одноклассниках."
+      - {language: ru, text: "Алексей Федоров — продюсер в JUG Ru Group, организатор крупнейших в России конференций для п\
+            рограммистов и сочувствующих. В данный момент фокусируется на процессах и инструментах для проведения онлайн-м\
+            ероприятий. За 8 лет Алексей с командой провели более 80 конференций и 150 митапов. В прошлом работал программ\
+            истом в Oracle и деврелом в Одноклассниках."}
     twitter: 23derevo
     gitHub: 23derevo
     habr: 23derevo
@@ -631,7 +630,7 @@ speakers:
             \ участия в ее разработке."}
   - id: 35
     photoFileName: 0035.jpg
-    photoUpdatedAt: 2020-02-05T13:23:25.016Z[UTC]
+    photoUpdatedAt: 2021-10-25T13:44:15.439Z[UTC]
     name:
       - {language: en, text: "Baruch Sadogursky"}
       - {language: ru, text: "Барух Садогурский"}
@@ -3293,9 +3292,10 @@ speakers:
       - {language: ru, text: "Антон Черноусов"}
     companyIds: [689]
     bio:
-      - {language: en, text: "До перехода в Облако занимался разработкой автоматизированных систем предоставления хостинг\
-            -услуг на базе виртуализации, внедрял Agile-процессы и занимался организацией сообществ разработчиков. Ведет п\
-            одкаст [«The Art Of Programming».](http://bit.ly/TAOPiTunes)"}
+      - {language: en, text: "Developer advocate в Yandex.Cloud. Имеет большой опыт в engineering managment. До этого был\
+            \ Java-разработчиком и кампус амбасадором Sun/Oracle в Иркутске. Ведет свой подкаст про разаработку \"The art\
+            \ of programming\" (200+ выпусков). Постоянный участник других российских подкастов (Разбор полетов, Радио-т)\
+            \ и конференций."}
     twitter: golodnyj
     gitHub: golodnyj
     habr: golodnyj
@@ -3931,14 +3931,17 @@ speakers:
     mvp: true
   - id: 268
     photoFileName: 0268.jpg
+    photoUpdatedAt: 2019-05-14T07:08:41.541Z[UTC]
     name:
       - {language: en, text: "Mikhail Druzhinin"}
       - {language: ru, text: "Михаил Дружинин"}
-    companyIds: [130]
+    companyIds: [34]
     bio:
-      - {language: ru, text: "Архитектор в компании DataArt. Много и часто разбирался с архитектурами различных систем, ос\
-            обенно когда они оказывались в состоянии, близком к «нужно всё переписать». Неравнодушен к обеспечению того, ч\
-            тобы системы не разваливались от случайно залетевшего дятла."}
+      - {language: en, text: "The software development manager in Amazon. 13 years in IT. Java development and architecture\
+            \ trainer in Luxoft Training Center."}
+      - {language: ru, text: "Технический менеджер в компании Amazon. 13 лет в IT. Тренер по архитектуре и Java-разработке\
+            . Управлял проектами как Team Lead и PM. Участвовал во многих проектах в роли архитектора."}
+    twitter: xomyakus
   - id: 269
     photoFileName: 0269.jpg
     name:
@@ -15035,14 +15038,16 @@ speakers:
     bio:
       - language: en
         text: "Andrey graduated from SPbU \"Mathematics and Mechanics\" faculty. He was developing a graphical stack of JDK\
-            \ libraries (AWT/Swing/JavaFX) for few years in Sun and Oracle. Andrey supervised the development team in QuickOffice,\
-            \ was responsible for the functionality QuickPoint component, worked as a manager of load testing group in NetCracker.\n\
-            \nCurrently, Andrey is the production department lead at JUG Ru Group."
+            \ libraries (AWT / Swing / JavaFX) for few years in Sun and Oracle. Andrey supervised the development team in\
+            \ QuickOffice, was responsible for the functionality QuickPoint component, worked as a manager of load testing\
+            \ group in NetCracker.\n\nCurrently, Andrey is the program director and organizer of JUG.ru Group conferences,\
+            \ Java conferences JPoint, Joker and JBreak, JUG.ru and CodeFreeze community meetings in St. Petersburg and Moscow."
       - language: ru
-        text: "Закончил матмех СПбГУ. Несколько лет разрабатывал графический стек библиотек JDK (AWT/Swing/JavaFX) в Sun и\
+        text: "Окончил матмех СПбГУ. Несколько лет разрабатывал графический стек библиотек JDK (AWT/Swing/JavaFX) в Sun и\
             \ Oracle. Руководил группой разработки в компании QuickOffice, отвечал за функциональность компонента QuickPoint.\
-            \ Работал менеджером группы нагрузочного тестирования в компании NetCracker.\n\nНа данный момент Андрей — дире\
-            ктор департамента производства в JUG Ru Group."
+            \ Работал менеджером группы нагрузочного тестирования в компании NetCracker.\n\nНа данный момент Андрей — прог\
+            раммный директор и организатор конференций команды JUG.ru Group, Java-конференций JPoint, Joker и JBreak, встр\
+            еч JUG.ru и сообщества CodeFreeze в Петербурге и Москве."
     twitter: it_improve
     habr: real_ales
   - id: 1077
@@ -16987,19 +16992,20 @@ speakers:
             \ программированием и typelevel-стеком. В настоящее время является старшим Big Data-разработчиком в Grid Dynamics."}
   - id: 1222
     photoFileName: 1222.jpg
-    photoUpdatedAt: 2020-05-08T16:34:51.205Z[UTC]
+    photoUpdatedAt: 2021-10-28T10:07:39.054Z[UTC]
     name:
       - {language: en, text: "Nathaniel Schutta"}
     companyIds: [577]
     bio:
       - {language: en, text: "Nathaniel T. Schutta is a software architect focused on cloud computing and building usable\
             \ applications. A proponent of polyglot programming, Nate has written multiple books and appeared in various videos.\
-            \ Nate is a seasoned speaker regularly presenting at conferences worldwide, [No Fluff Just Stuff](https://nofluffjuststuff.com/home/main)\
-            \ symposia, meetups, universities, and user groups. In addition to his day job, Nate is an adjunct professor at\
-            \ the University of Minnesota where he teaches students to embrace (and evaluate) technical change. Driven to\
-            \ rid the world of bad presentations, Nate coauthored the book Presentation Patterns with Neal Ford and Matthew\
-            \ McCullough. Nate recently published Thinking Architecturally available as a free download from Pivotal."}
+            \ Nate is a seasoned speaker regularly presenting at conferences worldwide, No Fluff Just Stuff symposia, meetups,\
+            \ universities, and user groups. In addition to his day job, Nate is an adjunct professor at the University of\
+            \ Minnesota where he teaches students to embrace (and evaluate) technical change. Driven to rid the world of bad\
+            \ presentations, Nate coauthored the book Presentation Patterns with Neal Ford and Matthew McCullough. Nate also\
+            \ published Thinking Architecturally and Responsible Microservices available as a free download from VMware."}
     twitter: ntschutta
+    gitHub: ntschutta
   - id: 1223
     photoFileName: 1223.jpg
     photoUpdatedAt: 2020-04-17T12:20:31.891Z[UTC]
@@ -22704,12 +22710,12 @@ speakers:
     companyIds: [742]
     bio:
       - language: en
-        text: "Oren Eini, pseudonym Ayende Rahien, is a frequent blogger at ayende.com has over 20 years of experience in\
+        text: "Oren Eini, pseudonym Ayende Rahien, is a frequent blogger at ayende.com. Has over 20 years of experience in\
             \ the development world who strongly focuses on the Microsoft and .NET ecosystem. Oren has been recognized and\
-            \ awarded Microsoft's Most Valuable Professional from 2007-2020.\n\nHe's an internationally acclaimed presenter\
+            \ awarded Microsoft's Most Valuable Professional in 2007–2020.\r\n\r\nHe's an internationally acclaimed presenter\
             \ appearing at DevTeach, JAOO, QCon, Oredev, NDC, Yow! and Progressive.NET conferences, sharing his knowledge\
             \ via conferences and written works such as \"DSLs in Boo: Domain Specific Languages in .NET\", published by Manning\
-            \ and the \"Inside RavenDB\" guide to all things RavenDB.\n\nHe remains dedicated and focused on architecture\
+            \ and the \"Inside RavenDB\" guide to all things RavenDB.\r\n\r\nHe remains dedicated and focused on architecture\
             \ and best practices that promote quality software and zero-friction development."
     twitter: ayende
     gitHub: ayende
@@ -25533,16 +25539,16 @@ speakers:
     companyIds: [820]
     bio:
       - language: en
-        text: "Lead DevOps Engineer from a web development background.\r\n\r\nOverall 10+ years of IT industry experience,\
-            \ 4+ years of them as a DevOps.\r\n\r\nKirill has extensive experience of designing/building/refactoring Continuous\
-            \ Build, Integration, Delivery, Release and Deployment processes. \r\n\r\nHe really likes to use the best practices\
-            \ and popular, useful patterns in his job.\r\nExtensive experience of containerization, automatization, and related\
-            \ technologies.\r\n\r\nDevOps with love."
+        text: "Helps build effective relationships between development and system administration; advise developers, and come\
+            \ up with best solutions and practices together.\nCurrently working at Simplinic GmbH as Lead DevOps Engineer.\n\
+            \nCertified Kubernetes Administrator (CKA), teaches at Otus, writes courses for SkillFactory.\nHe is a member\
+            \ of \"I want to know everything\" and \"I'm happy to share what I've already learned\" groups."
       - language: ru
         text: "Помогает выстраивать эффективные взаимоотношения между разработкой и системным администрированием; консульт\
-            ировать разработчиков, вместе приходить к лучшим решениям и практикам.\r\n\r\nОбширный опыт в проектировании и\
-            \ построении CI/CD процессов с нуля до продакшена.\r\n\r\nЕсть сертификат Certified Kubernetes Administrator (CKA).\r\
-            \n\r\nСостоит в кружках «Хочу все знать» и «С радостью поделюсь тем, что уже узнал»."
+            ировать разработчиков, вместе приходить к лучшим решениям и практикам.\nВ настоящее время работает в компании\
+            \ Simplinic GmbH на позиции Lead DevOps Engineer.\n\nЕсть сертификат Certified Kubernetes Administrator (CKA),\
+            \ преподает в Otus, пишет курсы для SkillFactory.\nСостоит в кружках «Хочу все знать» и «С радостью поделюсь т\
+            ем, что уже узнал»."
     gitHub: kksudo
   - id: 1822
     photoFileName: 1822.jpg
@@ -25621,7 +25627,7 @@ speakers:
     name:
       - {language: en, text: "Pavel Selivanov"}
       - {language: ru, text: "Павел Селиванов"}
-    companyIds: [321]
+    companyIds: [620]
     bio:
       - language: en
         text: "Pavel Selivanov, Developer Advocate at Mail.ru Cloud Solutions.\r\nKubernetes fan.\r\nSpecializes in DevOps,\
@@ -27006,3 +27012,19 @@ speakers:
             \ involved in the implementation of several CSS features, among he has remark the CSS Grid Layout specification."}
     twitter: lajava77
     gitHub: javifernandez
+  - id: 1927
+    photoFileName: 1927.jpg
+    photoUpdatedAt: 2019-05-30T15:08:44.200Z[UTC]
+    name:
+      - {language: en, text: "Alexey Akopyan"}
+      - {language: ru, text: "Алексей Акопян"}
+    companyIds: [139]
+    bio:
+      - {language: en, text: "In 18 years in the IT-industry I went the way \"from the Varangians to the Greeks\", from a\
+            \ developer to a manager. Worked in such companies as Sun Microsystems, Oracle, Luxoft. For the last 4 years has\
+            \ been heading the development of the software part of the internal cloud service at Dell EMC. He likes to change\
+            \ the worldview of customers and JUG.ru Group conferences."}
+      - {language: ru, text: "За 18 лет в IT-индустрии прошел путь «из варяг в греки», от разработчика до менеджера. Работ\
+            ал в таких компаниях, как Sun Microsystems, Oracle, Luxoft. Последние 4 года возглавляет отдел разработки прог\
+            раммной части внутреннего облачного сервиса в Dell EMC. Любит менять мировоззрение заказчиков и конференции JUG.ru\
+            \ Group."}
