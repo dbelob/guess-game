@@ -2562,3 +2562,6 @@ companies:
   - id: 854
     name:
       - {language: en, text: fin_hood}
+  - id: 855
+    name:
+      - {language: en, text: ‹div›RIOTS}

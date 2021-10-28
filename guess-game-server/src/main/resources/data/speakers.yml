@@ -14477,18 +14477,11 @@ speakers:
     name:
       - {language: en, text: "Nikita Mostovoy"}
       - {language: ru, text: "Никита Мостовой"}
-    companyIds: [234]
+    companyIds: [194]
     bio:
-      - language: en
-        text: "Lead frontend developer at HeadHunter. Started from an intern at HeadHunter developers school and now he has\
-            \ been teaching for over 5 years in this school. \nNikita has been working at 5 different teams during all career.\
-            \ A member of the architecture team for the last year. The security of user data, the architecture, and the infrastructure\
-            \ of the project are the most important things at his work."
+      - {language: en, text: "Developer at Facebook, HolyJS program committee member. Architecture, Infrastructure, Performance."}
       - language: ru
-        text: "Ведущий фронтенд-разработчик в компании HeadHunter. Начинал с интерна в школе разработчиков ХХ, где ведет л\
-            екции уже более 5 лет. \nЗа свою карьеру поработал в 5 командах. \nПоследний год работает в команде архитектур\
-            ы основного сайта, где безопасность пользовательских данных, архитектура и инфраструктура проекта — на первом\
-            \ месте."
+        text: "Разработчик в Facebook, член программного комитета HolyJS. \nАрхитектура, инфра, перформанс."
     twitter: xnimorz
     habr: xnim
   - id: 1034
@@ -26969,3 +26962,47 @@ speakers:
     twitter: an_oganesyan
     gitHub: andreyoganesyan
     habr: andreyoganesyan
+  - id: 1924
+    photoFileName: 1924.jpg
+    photoUpdatedAt: 2021-10-26T12:09:18.305Z[UTC]
+    name:
+      - {language: en, text: "Matthias Dugue"}
+    companyIds: [855]
+    bio:
+      - {language: en, text: "Principal Developer Advocate at ‹div›RIOTS - makers of Backlight, a Design Systems IDE built\
+            \ for Designers and Developers - m4dz is a curious animal. Former Frontend Dev, Devtools enthusiast, he has made\
+            \ the Developer eXperience (DX) his cherished topic. All the Web technologies are under his radar to get things\
+            \ ever simpler. His moto: \"Developers are users just like you.\" As a life-long dreamer his favorite book will\
+            \ ever remains \"Alice's Adventures in Wonderland\"."}
+    twitter: m4d_z
+    gitHub: m4dz
+  - id: 1925
+    photoFileName: 1925.jpg
+    photoUpdatedAt: 2021-10-27T07:41:35.864Z[UTC]
+    name:
+      - {language: en, text: "Dmitriy Zlygin"}
+      - {language: ru, text: "Дмитрий Злыгин"}
+    companyIds: [156]
+    bio:
+      - language: en
+        text: "Develops only front-end for more than five years. Works with JavaScript with varying success for more than\
+            \ 20 years, has seen Netscape Navigator and IE 4.0.\r\n\r\nWith coming of Vue.js left back-end and joined frontenders,\
+            \ but with time understood the benefits of React. Now he's working on web client for video conferences at DINS."
+      - language: ru
+        text: "Более пяти лет разрабатывает исключительно фронтенд. Третье десятилетие с переменным успехом работает с JavaScript,\
+            \ повидал и Netscape Navigator, и IE 4.0. \r\n\r\nС появлением Vue.js забросил бэкенд и перешел в стан фронтен\
+            деров, но со временем осознал и все прелести React. Сейчас работает над веб-клиентом для видеоконференций в ко\
+            мпании  DINS."
+    gitHub: JSmith01
+  - id: 1926
+    photoFileName: 1926.jpg
+    photoUpdatedAt: 2021-10-26T12:24:40.406Z[UTC]
+    name:
+      - {language: en, text: "Javier Fernández"}
+    companyIds: [252]
+    bio:
+      - {language: en, text: "He is  member of the Web Platform team at Igalia and member of the CSS WG, specialized on the\
+            \ layout and rendering stack of different web engines (webkit and blink mainly). Along the last years, he has\
+            \ involved in the implementation of several CSS features, among he has remark the CSS Grid Layout specification."}
+    twitter: lajava77
+    gitHub: javifernandez
