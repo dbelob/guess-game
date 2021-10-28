@@ -7890,17 +7890,18 @@ speakers:
     habr: barancev
   - id: 548
     photoFileName: 0548.jpg
-    photoUpdatedAt: 2020-10-01T12:09:39.494Z[UTC]
+    photoUpdatedAt: 2021-10-26T10:00:02.148Z[UTC]
     name:
       - {language: en, text: "Ekaterina Bateeva"}
       - {language: ru, text: "Екатерина Батеева"}
-    companyIds: [648]
+    companyIds: [856]
     bio:
-      - {language: en, text: "Works at MTS. For about seven years Ekaterina has been engaged in automation testing. For about\
-            \ four years she has been an engineer in the automation of mobile applications. She has also been an iOS developer\
-            \ for the last 1.5 years."}
-      - {language: ru, text: "Работает в МТС. Около семи лет занималась автоматизацией тестирования. Из них четыре года ав\
-            томатизацией мобильных приложений. Последние 1,5 года она iOS-разработчик."}
+      - {language: en, text: "Works in the educational portal Swiftbook.ru. For about seven years she has been engaged in\
+            \ automation testing. For about four years has been an engineer in the automation of mobile applications. Last\
+            \ 2.5 years is an iOS developer."}
+      - {language: ru, text: "Работает в образовательном портале Swiftbook.ru. Около семи лет занималась автоматизацией те\
+            стирования. Из них четыре года — автоматизацией мобильных приложений. Последние 2,5 года iOS разработчик."}
+    habr: Neifmetus
   - id: 549
     photoFileName: 0549.jpg
     name:
@@ -11906,14 +11907,16 @@ speakers:
     habr: trimonovds
   - id: 834
     photoFileName: 0834.jpg
+    photoUpdatedAt: 2021-10-26T10:32:20.330Z[UTC]
     name:
       - {language: en, text: "Martin Mitrevski"}
-    companyIds: [356]
+    companyIds: [835]
     bio:
-      - {language: en, text: "Martin Mitrevski works as a technical lead at Netcetera, developing apps in several areas, such\
-            \ as transport, indoor navigation, virtual reality, entertainment and publishing. He is the author of the book\
-            \ “Developing Conversational Interfaces for iOS”. Martin shares his knowledge on his blog martinmitrevski.com\
+      - {language: en, text: "Martin Mitrevski is a Senior iOS Architect at Stream, working on a chat SDK. He is the author\
+            \ of the book “Developing Conversational Interfaces for iOS”. Martin shares his knowledge on his blog martinmitrevski.com\
             \ and as a conference speaker."}
+    twitter: mitrevski
+    gitHub: martinmitrevski
   - id: 835
     photoFileName: 0835.jpg
     name:
@@ -27033,3 +27036,91 @@ speakers:
             ал в таких компаниях, как Sun Microsystems, Oracle, Luxoft. Последние 4 года возглавляет отдел разработки прог\
             раммной части внутреннего облачного сервиса в Dell EMC. Любит менять мировоззрение заказчиков и конференции JUG.ru\
             \ Group."}
+  - id: 1928
+    photoFileName: 1928.jpg
+    photoUpdatedAt: 2021-10-22T10:35:05.549Z[UTC]
+    name:
+      - {language: en, text: "Alexander Tsybulko"}
+      - {language: ru, text: "Александр Цыбулько"}
+    companyIds: [234]
+    bio:
+      - language: en
+        text: "- Ten years in iOS development. Started in outsourcing, but for the last six years has been working with products.\n\
+            - Took part in a cool startup for managing an organization. Ran in there as the first mobile developer, raised\
+            \ the development and work of the mobile team, improved its interaction with designers, testers and back.\n- In\
+            \ search of a community in Belarus, came to the iOS school RSSchool. Has been mentoring there for three years\
+            \ now, writing tasks and conducting social interviews.\n- In hh.ru is working on an application for employers,\
+            \ conducts social interviews and at the same time brought in iOS Hiring Day.\n- Likes to debate about architecture\
+            \ and development approaches."
+      - language: ru
+        text: "- Александр десять лет в iOS-разработке. Начинал в аутсорсе, но последние шесть лет работает с продуктами.\n\
+            - Поучаствовал в крутом стартапе по управлению организацией. Влетел туда первым мобильным разработчиком, подня\
+            л разработку и работу мобильной команды, ее взаимодействие с дизайнерами, тестировщиками и бэком.\n- В поисках\
+            \ комьюнити в Беларуси пришел в iOS-школу RSSchool. Менторит там уже три года, пишет задачи и проводит собесы\
+            .\n- В hh.ru занимается приложением для работодателей, проводит собесы и заодно затащил iOS Hiring Day\n- Люби\
+            т поспорить про архитектуру и подходы в разработке."
+    gitHub: atsybulko
+  - id: 1929
+    photoFileName: 1929.jpg
+    photoUpdatedAt: 2021-10-28T07:21:24.513Z[UTC]
+    name:
+      - {language: en, text: "Denis Kudinov"}
+      - {language: ru, text: "Денис Кудинов"}
+    companyIds: [635]
+    bio:
+      - language: en
+        text: "He has been engaged in iOS development since 2013. Previously worked for such companies as RedMadRobot, Acronis.\r\
+            \nSince 2017 he has been working at Kaspersky as a Development Team Lead. He is engaged in security solutions\
+            \ in the business segment."
+      - language: ru
+        text: "Занимается iOS-разработкой с 2013 года. Ранее работал в таких компаниях как RedMadRobot, Acronis.\r\nС 2017\
+            \ года работает в Kaspersky на позиции Development Team Lead. Занимается решениями по безопасности в бизнес-се\
+            гменте."
+    twitter: kudinovdw
+  - id: 1930
+    photoFileName: 1930.jpg
+    photoUpdatedAt: 2021-10-20T10:18:07.261Z[UTC]
+    name:
+      - {language: en, text: "Andrey  Smirnov"}
+      - {language: ru, text: "Андрей  Смирнов"}
+    companyIds: [854]
+    bio:
+      - language: en
+        text: "In the past was a fullstack C# developer .NET.\r\n\r\nIn the recent past was a front-end developer on Dart/Angular,\
+            \ co-author of Flutter mobile developer course at Otus.\r\n\r\nNow is a Flutter developer.\r\n\r\nIn the alternative\
+            \ future in a mobile native developer."
+      - language: ru
+        text: "В прошлом fullstack C# developer .NET.\r\n\r\nВ недавнем прошлом фронтенд-разработчик на Dart/Angular, соав\
+            тор курса Flutter mobile developer на платформе Otus.\r\n\r\nСейчас Flutter developer.\r\n\r\nВ альтернативном\
+            \ будущем mobile native developer."
+    twitter: dushesatwork
+  - id: 1931
+    photoFileName: 1931.jpg
+    photoUpdatedAt: 2021-10-26T10:44:31.149Z[UTC]
+    name:
+      - {language: en, text: "Joe Birch"}
+    companyIds: [857]
+    bio:
+      - {language: en, text: "Joe is Android Engineer and Google Developer Expert for Android based in Brighton, UK working\
+            \ on the Android team at Buffer. He has passionate about coding and love creating robust, polished and exciting\
+            \ projects for mobile, the web, TV, wearables and he’ll probably be toying with whatever the new thing is at the\
+            \ time you’re reading this – he loves to be constantly learning. He has also a keen writer as he love to share\
+            \ his learnings and experiences with others."}
+    twitter: hitherejoe
+    gitHub: hitherejoe
+  - id: 1932
+    photoFileName: 1932.jpg
+    photoUpdatedAt: 2021-10-22T16:31:59.514Z[UTC]
+    name:
+      - {language: en, text: "Sergey Vikhlyaev"}
+      - {language: ru, text: "Сергей Вихляев"}
+    companyIds: [665]
+    bio:
+      - language: en
+        text: "Head of iOS Mobile development of the consumer lending team for the Sbol mobile application.\n\nUltimate projects\
+            \ - Sber, Rendez-Vous."
+      - language: ru
+        text: "Руководитель направления iOS разработки команды потребительского кредитования мобильного приложения СБОЛ. \r\
+            \n\r\nПринимал непосредственное участие в более чем 12 проектах, доведённых до AppStore. Два наиболее популярн\
+            ых приложения — МП СБОЛ, и Rendez-Vous. \r\n\r\nРазвивает сообщество разработчиков iOSnick."
+    gitHub: VikhlyaevSergey
