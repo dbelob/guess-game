@@ -2562,3 +2562,13 @@ companies:
   - id: 854
     name:
       - {language: en, text: fin_hood}
+  - id: 855
+    name:
+      - {language: en, text: ‹div›RIOTS}
+  - id: 856
+    name:
+      - {language: en, text: AvitoTech}
+      - {language: ru, text: АвитоТех}
+  - id: 857
+    name:
+      - {language: en, text: Buffer}
