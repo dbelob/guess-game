@@ -27077,23 +27077,6 @@ speakers:
             \ года работает в Kaspersky на позиции Development Team Lead. Занимается решениями по безопасности в бизнес-се\
             гменте."
     twitter: kudinovdw
-  - id: 1930
-    photoFileName: 1930.jpg
-    photoUpdatedAt: 2021-10-20T10:18:07.261Z[UTC]
-    name:
-      - {language: en, text: "Andrey  Smirnov"}
-      - {language: ru, text: "Андрей  Смирнов"}
-    companyIds: [854]
-    bio:
-      - language: en
-        text: "In the past was a fullstack C# developer .NET.\r\n\r\nIn the recent past was a front-end developer on Dart/Angular,\
-            \ co-author of Flutter mobile developer course at Otus.\r\n\r\nNow is a Flutter developer.\r\n\r\nIn the alternative\
-            \ future in a mobile native developer."
-      - language: ru
-        text: "В прошлом fullstack C# developer .NET.\r\n\r\nВ недавнем прошлом фронтенд-разработчик на Dart/Angular, соав\
-            тор курса Flutter mobile developer на платформе Otus.\r\n\r\nСейчас Flutter developer.\r\n\r\nВ альтернативном\
-            \ будущем mobile native developer."
-    twitter: dushesatwork
   - id: 1931
     photoFileName: 1931.jpg
     photoUpdatedAt: 2021-10-26T10:44:31.149Z[UTC]

@@ -1787,6 +1787,7 @@ public class ConferenceDataLoader {
 //                LoadSettings.invalidTalksSet(Set.of("Открытие конференции DevOops 2021", "Закрытие конференции DevOops 2021")));
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2021, 11, 15), "2021spbcpp",
 //                LoadSettings.invalidTalksSet(Set.of("Открытие конференции C++ Russia 2021")));
-//        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2021, 11, 22), "2021msk");
+//        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2021, 11, 22), "2021msk",
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Андрей  Смирнов", new Company(854, "fin_hood")), 1920L)));
     }
 }
