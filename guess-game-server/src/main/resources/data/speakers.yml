@@ -25907,11 +25907,16 @@ speakers:
       - {language: ru, text: "Анна Мелехова"}
     companyIds: [635]
     bio:
-      - {language: en, text: "Software architect, team leader, kernel developer. Moved from virtual machine monitor to architecturing\
-            \ clouds and back to the kernel of KasperskyOS. Now Anna is inspired with delivering functional safety in KasperskyOS."}
-      - {language: ru, text: "Архитектор ПО, тимлид. Свыше десяти лет провела в ядре виртуальной машины, затем занималась\
-            \ архитектурными задачами на уровне облака, сейчас работает над обеспечением функциональной безопасности в ядр\
-            е KasperskyOS."}
+      - language: en
+        text: "Software Architect, Team Lead. In charge of Secure Platform Development in cybernetic KasperskyOS. She has\
+            \ over 10 years of experience in virtual machine kernel development, as well as in cloud development and microservices\
+            \ architecture.\n\nShe teaches at MIPT and Innopolis, likes to turn study into a process of mutual knowledge enrichment,\
+            \ and work into an equally shared drive."
+      - language: ru
+        text: "Архитектор ПО, тимлид. Занимается Secure Platform Development в кибериммунной KasperskyOS. За плечами — бол\
+            ее 10 лет в разработке ядра виртуальной машины, а также в облачной разработке и архитектуре микросервисов.\n\n\
+            Преподает в МФТИ и в Иннополисе, любит превращать учебу в процесс взаимного обогащения знаниями, а работу — в\
+            \ столь же совместный драйв."
   - id: 1846
     photoFileName: 1846.jpg
     photoUpdatedAt: 2021-10-11T14:01:37.669Z[UTC]
