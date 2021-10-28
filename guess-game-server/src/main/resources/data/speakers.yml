@@ -3457,10 +3457,14 @@ speakers:
       - {language: ru, text: "Андрей Беляев"}
     companyIds: [232]
     bio:
-      - {language: en, text: "Developer Advocate в компании Haulmont. С Java начал плотно работать с 2006 года. Долго рабо\
+      - {language: en, text: "Developer Advocate at Haulmont. He started working closely with Java in 2006. He worked in outsourcing\
+            \ for a long time, where he tried himself in almost all roles, except perhaps the designer. Was a developer, a\
+            \ team lead, a PM, an architect. He's currently working on the Jmix framework at Haulmont - doing RnD and representing\
+            \ the company at various events."}
+      - {language: ru, text: "Developer Advocate в компании Haulmont. С Java начал плотно работать с 2006 года. Долго рабо\
             тал в аутсорсинге, где попробовал себя почти во всех ролях, кроме, пожалуй, дизайнера. Был разработчиком, тимт\
             ехлидом, ПМом, архитектором. В настоящее время работает над фреймворком Jmix в компании Haulmont — делает RnD\
-            \ и представляет компанию на разных мероприятиях"}
+            \ и представляет компанию на разных мероприятиях."}
     twitter: belyaev_andrey
     gitHub: belyaev-andrey
     habr: a_belyaev
@@ -25037,7 +25041,7 @@ speakers:
     gitHub: mp911de
   - id: 1789
     photoFileName: 1789.jpg
-    photoUpdatedAt: 2021-09-27T07:13:43.361Z[UTC]
+    photoUpdatedAt: 2021-10-25T13:06:00.571Z[UTC]
     name:
       - {language: en, text: "Akhtiam Sakaev"}
       - {language: ru, text: "Ахтям Сакаев"}
@@ -26634,7 +26638,7 @@ speakers:
       - {language: ru, text: "Cтарший эксперт по развитию Java-разработки, Райффайзенбанк"}
   - id: 1898
     photoFileName: 1898.jpg
-    photoUpdatedAt: 2021-10-21T10:27:16.618Z[UTC]
+    photoUpdatedAt: 2021-10-25T09:37:31.512Z[UTC]
     name:
       - {language: en, text: "Dmitry Arkhipov"}
       - {language: ru, text: "Дмитрий Архипов"}
@@ -26786,16 +26790,6 @@ speakers:
     bio:
       - {language: en, text: "Head of R&D, SberTech"}
       - {language: ru, text: "Head of R&D, СберТех"}
-  - id: 1909
-    photoFileName: 1909.jpg
-    photoUpdatedAt: 2021-10-12T08:28:54.517Z[UTC]
-    name:
-      - {language: en, text: "Secret guest"}
-      - {language: ru, text: "Тайный гость"}
-    companyIds: []
-    bio:
-      - {language: en, text: "Secret guest"}
-      - {language: ru, text: "Тайный гость"}
   - id: 1910
     photoFileName: 1910.jpg
     photoUpdatedAt: 2021-10-19T08:36:46.978Z[UTC]
