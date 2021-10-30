@@ -2210,6 +2210,8 @@ class ConferenceDataLoaderTest {
             final String SPEAKER_NAME4 = "Имя4";
             final String SPEAKER_NAME5 = "Имя5";
             final String SPEAKER_NAME6 = "Имя6";
+            final String SPEAKER_NAME7 = "Имя7";
+            final String SPEAKER_NAME8 = "Имя8";
             final String COMPANY_NAME0 = "Компания0";
             final String COMPANY_NAME1 = "Компания1";
             final String COMPANY_NAME2 = "Компания2";
@@ -2259,13 +2261,25 @@ class ConferenceDataLoaderTest {
             speaker6.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME6)));
             speaker6.setCompanies(Collections.singletonList(null));
 
+            Speaker speaker7 = new Speaker();
+            speaker7.setId(7);
+            speaker7.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME7)));
+            speaker7.setCompanies(null);
+
+            Speaker speaker8 = new Speaker();
+            speaker8.setId(8);
+            speaker8.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME8)));
+            speaker8.setCompanies(Collections.emptyList());
+
             NameCompany nameCompany0 = new NameCompany(SPEAKER_NAME0, company0);
             NameCompany nameCompany1 = new NameCompany(SPEAKER_NAME1, company1);
             NameCompany nameCompany6 = new NameCompany(SPEAKER_NAME6, null);
+            NameCompany nameCompany7 = new NameCompany(SPEAKER_NAME7, null);
+            NameCompany nameCompany8 = new NameCompany(SPEAKER_NAME8, null);
 
             SpeakerLoadMaps speakerLoadMaps = new SpeakerLoadMaps(
-                    Map.of(nameCompany0, 0L, nameCompany1, 1L, nameCompany6, 6L),
-                    Map.of(0L, speaker0),
+                    Map.of(nameCompany0, 0L, nameCompany1, 1L, nameCompany6, 6L, nameCompany7, 7L, nameCompany8, 8L),
+                    Map.of(0L, speaker0, 7L, speaker7, 8L, speaker8),
                     Collections.emptyMap(),
                     Collections.emptyMap());
 
@@ -2276,7 +2290,9 @@ class ConferenceDataLoaderTest {
                     arguments(speaker3, speakerLoadMaps, null),
                     arguments(speaker4, speakerLoadMaps, null),
                     arguments(speaker5, speakerLoadMaps, null),
-                    arguments(speaker6, speakerLoadMaps, NullPointerException.class)
+                    arguments(speaker6, speakerLoadMaps, NullPointerException.class),
+                    arguments(speaker7, speakerLoadMaps, null),
+                    arguments(speaker8, speakerLoadMaps, null)
             );
         }
 
