@@ -1288,7 +1288,7 @@ public class ConferenceDataLoader {
         Long resourceSpeakerId = null;
         Company speakerCompany = null;
 
-        if ((speaker.getCompanies() != null) && (speaker.getCompanies().size() > 0)) {
+        if ((speaker.getCompanies() != null) && !speaker.getCompanies().isEmpty()) {
             for (Company company : speaker.getCompanies()) {
                 resourceSpeakerId = speakerLoadMaps.getKnownSpeakerIdsMap().get(
                         new NameCompany(
