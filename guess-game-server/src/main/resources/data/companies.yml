@@ -2572,3 +2572,10 @@ companies:
   - id: 857
     name:
       - {language: en, text: Buffer}
+  - id: 858
+    name:
+      - {language: en, text: FreeNow}
+  - id: 859
+    name:
+      - {language: en, text: VSU}
+      - {language: ru, text: "Воронежский государственный университет"}

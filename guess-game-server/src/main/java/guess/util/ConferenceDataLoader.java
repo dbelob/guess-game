@@ -1766,9 +1766,7 @@ public class ConferenceDataLoader {
 //                        Collections.emptyMap(),
 //                        Set.of("Day 1 closing", "Day 2 opening", "Break", "Day 2 closing", "Day 3 opening",
 //                                "Day 3 closing", "Day 4 opening", "Hydra 2021 Virtual Afterparty"),
-//                        false
-//                )
-//        );
+//                        false));
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2021, 9, 18), "2021autumntt",
 //                LoadSettings.invalidTalksSet(Set.of("Открытие фестиваля", "Разговор в студии", "Закрытие фестиваля")));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2021, 10, 5), "2021msk",
@@ -1791,9 +1789,9 @@ public class ConferenceDataLoader {
 //                                "Разговор в студии: в мире рефакторинга", "Разговор в студии: Scala для всех",
 //                                "Разговор в студии: что не смогла Java 17?", "Разговор в студии: Kotlin против всех",
 //                                "Тематическая дискуссия: кто слез с Java 8, расскажите как это получилось"),
-//                        false
-//                ));
-//        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2021, 11, 2), "2021msk");
+//                        false));
+//        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2021, 11, 2), "2021msk",
+//                LoadSettings.invalidTalksSet(Set.of("Открытие конференции HolyJS 2021 Moscow", "Игра «Holy Чудес»")));
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2021, 11, 8), "2021spbdevoops",
 //                LoadSettings.invalidTalksSet(Set.of("Открытие конференции DevOops 2021", "Закрытие конференции DevOops 2021")));
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2021, 11, 15), "2021spbcpp",
