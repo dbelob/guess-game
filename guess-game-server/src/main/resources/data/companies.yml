@@ -2579,3 +2579,6 @@ companies:
     name:
       - {language: en, text: VSU}
       - {language: ru, text: "Воронежский государственный университет"}
+  - id: 860
+    name:
+      - {language: en, text: AtomicJar}

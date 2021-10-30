@@ -417,20 +417,17 @@ speakers:
     gitHub: iNikem
   - id: 23
     photoFileName: 0023.jpg
-    photoUpdatedAt: 2019-05-07T12:50:07.865Z[UTC]
+    photoUpdatedAt: 2021-10-29T13:47:08.335Z[UTC]
     name:
       - {language: en, text: "Oleg Šelajev"}
       - {language: ru, text: "Олег Шелаев"}
-    companyIds: [383]
+    companyIds: [860]
     bio:
-      - {language: en, text: "Oleg Šelajev is a developer advocate for the GraalVM project at Oracle Labs, which aims to make\
-            \ programs run faster and developers more productive. He helps to organize VirtualJUG, the online Java User Group,\
-            \ and a GDG chapter in Tartu, Estonia. Became a Java Champion in 2017. Loves pizza and playing chess. Favorite\
-            \ languages: Java, JavaScript, and Clojure."}
-      - {language: ru, text: "Олег — developer advocate проекта GraalVM в OracleLabs, организатор VirtualJUG и митапов GDG\
-            \ Tartu. В 2017 году стал Java Champion. Любит виртуальные машины, компиляторы, смотреть, как бегут бенчмарки\
-            , почти все языки программирования и немного шахматы."}
-    twitter: shelajev
+      - {language: en, text: "Oleg Šelajev is a developer advocate at AtomicJar working integration tests with Testcontainers\
+            \ better for everyone in the community. VirtualJUG leader. In 2017 became a Java Champion."}
+      - {language: ru, text: "Олег Шелаев — Developer advocate в AtomicJar, работающей над улучшением интеграционных тесто\
+            в с Testcontainers для всех членов сообщества. Лидер VirtualJUG. В 2017 году стал Java Champion."}
+    twitter: shelajevoleg
     gitHub: shelajev
     javaChampion: true
   - id: 24
