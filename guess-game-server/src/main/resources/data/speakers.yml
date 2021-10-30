@@ -21704,12 +21704,11 @@ speakers:
       - {language: ru, text: "Георгий Остроброд"}
     companyIds: [713]
     bio:
-      - {language: en, text: "I was graduated SFedU. Then worked for about 7 years in CVisionLab, where I did image processing\
-            \ and libraries for various apps including image editing apps. Now I do about the same for Procreate."}
-      - {language: ru, text: "10 лет опыта коммерческой разработки, большая часть из которого - разработка библиотек для о\
-            бработки изображений. Как кросс-платформенных, так и исключительно под iOS. Более 5 лет потратил на разработку\
-            \ компонент для одного графического редактора (OpenGL + Metal, iOS + macOS), теперь делает для Procreate (Metal,\
-            \ iOS)."}
+      - {language: en, text: "R&D Software Engineer from Tasmania. Georgy has been working for 2.5 years for Savage Software\
+            \ (Procreate). He also solved image processing and computer graphics tasks for 8 years. Took part in developing\
+            \ Pixelmator editor."}
+      - {language: ru, text: "R&D разработчик из Тасмании. 2,5 года работает в Savage Software (Procreate). До этого 8 лет\
+            \ занимался задачами компьютерной графики и обработкой изображений. Участвовал в разработке Pixelmator."}
     twitter: GOstrobrod
   - id: 1565
     photoFileName: 1565.jpg
@@ -26960,8 +26959,10 @@ speakers:
       - {language: ru, text: "Вадим Петров"}
     companyIds: [689]
     bio:
-      - {language: en, text: "Biography will be added soon."}
-      - {language: ru, text: "Биография будет опубликована в ближайшее время."}
+      - {language: en, text: "At Yandex since 2014. He has been working on Yandex.Browser performance since the beginning.\
+            \ Now he is in charge of the service that works on the speed of various Yandex applications for Android."}
+      - {language: ru, text: "В Яндексе с 2014 года. С самого начала занимается производительностью Яндекс.Браузера. Сейча\
+            с руководит службой, которая работает над скоростью различных приложений Яндекса под Android."}
     gitHub: PetrovVadim
   - id: 1922
     photoFileName: 1922.jpg
