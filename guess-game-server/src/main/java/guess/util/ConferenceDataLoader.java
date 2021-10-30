@@ -1783,16 +1783,16 @@ public class ConferenceDataLoader {
 //                        "Игра со знатоками в формате интеллектуального казино. Часть 1",
 //                        "Игра со знатоками в формате интеллектуального казино. Часть 2",
 //                        "DotNext 2021 Virtual Afterparty", "Закрытие конференции DotNext 2021 Moscow")));
-        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2021, 10, 25), "2021joker",
-                new LoadSettings(
-                        Map.of(new NameCompany("Тайный гость", null), 35L),
-                        Set.of("Открытие конференции Joker 2021", "Закрытие конференции Joker 2021",
-                                "Разговор в студии: роботы пишут код, а код пока не пишет роботов", "Разговор в студии про Quarkus",
-                                "Разговор в студии: в мире рефакторинга", "Разговор в студии: Scala для всех",
-                                "Разговор в студии: что не смогла Java 17?", "Разговор в студии: Kotlin против всех",
-                                "Тематическая дискуссия: кто слез с Java 8, расскажите как это получилось"),
-                        false
-                ));
+//        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2021, 10, 25), "2021joker",
+//                new LoadSettings(
+//                        Map.of(new NameCompany("Тайный гость", null), 35L),
+//                        Set.of("Открытие конференции Joker 2021", "Закрытие конференции Joker 2021",
+//                                "Разговор в студии: роботы пишут код, а код пока не пишет роботов", "Разговор в студии про Quarkus",
+//                                "Разговор в студии: в мире рефакторинга", "Разговор в студии: Scala для всех",
+//                                "Разговор в студии: что не смогла Java 17?", "Разговор в студии: Kotlin против всех",
+//                                "Тематическая дискуссия: кто слез с Java 8, расскажите как это получилось"),
+//                        false
+//                ));
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2021, 11, 2), "2021msk");
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2021, 11, 8), "2021spbdevoops",
 //                LoadSettings.invalidTalksSet(Set.of("Открытие конференции DevOops 2021", "Закрытие конференции DevOops 2021")));
