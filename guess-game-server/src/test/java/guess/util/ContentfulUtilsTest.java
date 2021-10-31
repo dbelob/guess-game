@@ -1678,76 +1678,89 @@ class ContentfulUtilsTest {
     class ExtractLocaleItemsTest {
         private Stream<Arguments> data() {
             return Stream.of(
-                    arguments(null, null, true, Collections.emptyList()),
-                    arguments(null, "", true, Collections.emptyList()),
-                    arguments("", null, true, Collections.emptyList()),
-                    arguments("", "", true, Collections.emptyList()),
-                    arguments("value0", null, true, List.of(
+                    arguments(null, null, true, false, Collections.emptyList()),
+                    arguments(null, "", true, false, Collections.emptyList()),
+                    arguments("", null, true, false, Collections.emptyList()),
+                    arguments("", "", true, false, Collections.emptyList()),
+                    arguments("value0", null, true, false, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
                                     "value0"))),
-                    arguments("value0", "", true, List.of(
+                    arguments("value0", "", true, false, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
                                     "value0"))),
-                    arguments("value0", "value0", true, List.of(
+                    arguments("value0", "value0", true, false, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
                                     "value0"))),
-                    arguments("value0", "value1", true, List.of(
+                    arguments("value0", "value1", true, false, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
                                     "value0"),
                             new LocaleItem(
                                     Language.RUSSIAN.getCode(),
                                     "value1"))),
-                    arguments(null, "value1", true, List.of(
+                    arguments(null, "value1", true, false, List.of(
                             new LocaleItem(
                                     Language.RUSSIAN.getCode(),
                                     "value1"))),
-                    arguments("", "value1", true, List.of(
+                    arguments("", "value1", true, false, List.of(
                             new LocaleItem(
                                     Language.RUSSIAN.getCode(),
                                     "value1"))),
-                    arguments(null, null, false, Collections.emptyList()),
-                    arguments(null, "", false, Collections.emptyList()),
-                    arguments("", null, false, Collections.emptyList()),
-                    arguments("", "", false, Collections.emptyList()),
-                    arguments("value0", null, false, List.of(
+                    arguments(null, null, false, false, Collections.emptyList()),
+                    arguments(null, "", false, false, Collections.emptyList()),
+                    arguments("", null, false, false, Collections.emptyList()),
+                    arguments("", "", false, false, Collections.emptyList()),
+                    arguments("value0", null, false, false, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
                                     "value0"))),
-                    arguments("value0", "", false, List.of(
+                    arguments("value0", "", false, false, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
                                     "value0"))),
-                    arguments("value0", "value0", false, List.of(
+                    arguments("value0", "value0", false, false, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
                                     "value0"))),
-                    arguments("value0", "value1", false, List.of(
+                    arguments("value0", "value1", false, false, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
                                     "value0"),
                             new LocaleItem(
                                     Language.RUSSIAN.getCode(),
                                     "value1"))),
-                    arguments(null, "value1", false, List.of(
+                    arguments(null, "value1", false, false, List.of(
                             new LocaleItem(
                                     Language.RUSSIAN.getCode(),
                                     "value1"))),
-                    arguments("", "value1", false, List.of(
+                    arguments("", "value1", false, false, List.of(
                             new LocaleItem(
                                     Language.RUSSIAN.getCode(),
-                                    "value1")))
+                                    "value1"))),
+                    arguments("", "value1  value2", false, false, List.of(
+                            new LocaleItem(
+                                    Language.RUSSIAN.getCode(),
+                                    "value1  value2"))),
+                    arguments("", "value1  value2", false, true, List.of(
+                            new LocaleItem(
+                                    Language.RUSSIAN.getCode(),
+                                    "value1 value2")))
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence, List<LocaleItem> expected) {
-            assertEquals(expected, ContentfulUtils.extractLocaleItems(enText, ruText, checkEnTextExistence));
-            assertEquals(expected, ContentfulUtils.extractLocaleItems(enText, ruText));
+        void extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence, boolean removeDuplicateWhiteSpaces,
+                                List<LocaleItem> expected) {
+            assertEquals(expected, ContentfulUtils.extractLocaleItems(enText, ruText, checkEnTextExistence, removeDuplicateWhiteSpaces));
+
+            if (!removeDuplicateWhiteSpaces) {
+                assertEquals(expected, ContentfulUtils.extractLocaleItems(enText, ruText, checkEnTextExistence));
+                assertEquals(expected, ContentfulUtils.extractLocaleItems(enText, ruText));
+            }
         }
     }
 
