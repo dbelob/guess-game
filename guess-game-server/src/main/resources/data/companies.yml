@@ -2582,3 +2582,16 @@ companies:
   - id: 860
     name:
       - {language: en, text: AtomicJar}
+  - id: 861
+    name:
+      - {language: en, text: "Zinc Prod Podcast"}
+      - {language: ru, text: "Цинковый прод"}
+  - id: 862
+    name:
+      - {language: en, text: LuckyGroup}
+  - id: 863
+    name:
+      - {language: en, text: "Hell Yeah, JavaScript.Ninja"}
+  - id: 864
+    name:
+      - {language: en, text: ЮMoney}
