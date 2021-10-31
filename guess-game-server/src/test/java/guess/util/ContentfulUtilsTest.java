@@ -44,6 +44,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
+import org.mockito.internal.verification.VerificationModeFactory;
 import org.mockito.stubbing.Answer;
 import org.springframework.web.client.RestTemplate;
 
@@ -704,7 +705,7 @@ class ContentfulUtilsTest {
             mockedStatic.when(() -> ContentfulUtils.getSpeakers(Mockito.any(ContentfulUtils.ConferenceSpaceInfo.class), Mockito.nullable(String.class)))
                     .thenCallRealMethod();
             mockedStatic.when(() -> ContentfulUtils.createSpeaker(
-                    Mockito.any(ContentfulSpeaker.class), Mockito.anyMap(), Mockito.anySet(), Mockito.any(AtomicLong.class), Mockito.any(AtomicLong.class), Mockito.anyBoolean()))
+                            Mockito.any(ContentfulSpeaker.class), Mockito.anyMap(), Mockito.anySet(), Mockito.any(AtomicLong.class), Mockito.any(AtomicLong.class), Mockito.anyBoolean()))
                     .thenReturn(new Speaker());
             mockedStatic.when(() -> ContentfulUtils.getAssetMap(Mockito.any(ContentfulResponse.class)))
                     .thenReturn(Collections.emptyMap());
@@ -732,8 +733,8 @@ class ContentfulUtilsTest {
     void createSpeaker() {
         try (MockedStatic<ContentfulUtils> mockedStatic = Mockito.mockStatic(ContentfulUtils.class)) {
             mockedStatic.when(() -> ContentfulUtils.createSpeaker(
-                    Mockito.any(ContentfulSpeaker.class), Mockito.anyMap(), Mockito.anySet(), Mockito.any(AtomicLong.class),
-                    Mockito.any(AtomicLong.class), Mockito.anyBoolean()))
+                            Mockito.any(ContentfulSpeaker.class), Mockito.anyMap(), Mockito.anySet(), Mockito.any(AtomicLong.class),
+                            Mockito.any(AtomicLong.class), Mockito.anyBoolean()))
                     .thenCallRealMethod();
             mockedStatic.when(() -> ContentfulUtils.extractPhoto(Mockito.nullable(ContentfulLink.class), Mockito.anyMap(), Mockito.anySet(), Mockito.nullable(String.class)))
                     .thenReturn(new UrlDates(null, null, null));
@@ -938,7 +939,8 @@ class ContentfulUtilsTest {
                     arguments("%42", IllegalArgumentException.class, null),
                     arguments("%dougqh", IllegalArgumentException.class, null),
                     arguments("dougqh%", IllegalArgumentException.class, null),
-                    arguments("dou%gqh", IllegalArgumentException.class, null)
+                    arguments("dou%gqh", IllegalArgumentException.class, null),
+                    arguments("anton.okolelov", null, "anton-okolelov")
             );
         }
 
@@ -987,7 +989,7 @@ class ContentfulUtilsTest {
             mockedStatic.when(() -> ContentfulUtils.getTalks(Mockito.any(ContentfulUtils.ConferenceSpaceInfo.class), Mockito.nullable(String.class), Mockito.anyBoolean()))
                     .thenCallRealMethod();
             mockedStatic.when(() -> ContentfulUtils.createTalk(
-                    Mockito.any(ContentfulTalk.class), Mockito.anyMap(), Mockito.anySet(), Mockito.anySet(), Mockito.anyMap(), Mockito.any(AtomicLong.class)))
+                            Mockito.any(ContentfulTalk.class), Mockito.anyMap(), Mockito.anySet(), Mockito.anySet(), Mockito.anyMap(), Mockito.any(AtomicLong.class)))
                     .thenReturn(new Talk());
             mockedStatic.when(() -> ContentfulUtils.getSpeakerMap(Mockito.any(ContentfulTalkResponse.class), Mockito.anyMap(), Mockito.anySet()))
                     .thenReturn(Collections.emptyMap());
@@ -1083,7 +1085,7 @@ class ContentfulUtilsTest {
     void createTalk() {
         try (MockedStatic<ContentfulUtils> mockedStatic = Mockito.mockStatic(ContentfulUtils.class)) {
             mockedStatic.when(() -> ContentfulUtils.createTalk(
-                    Mockito.any(ContentfulTalk.class), Mockito.anyMap(), Mockito.anySet(), Mockito.anySet(), Mockito.anyMap(), Mockito.any(AtomicLong.class)))
+                            Mockito.any(ContentfulTalk.class), Mockito.anyMap(), Mockito.anySet(), Mockito.anySet(), Mockito.anyMap(), Mockito.any(AtomicLong.class)))
                     .thenCallRealMethod();
             mockedStatic.when(() -> ContentfulUtils.extractLocaleItems(Mockito.anyString(), Mockito.anyString(), Mockito.anyBoolean()))
                     .thenReturn(Collections.emptyList());
@@ -1202,7 +1204,7 @@ class ContentfulUtilsTest {
                 mockedStatic.when(() -> ContentfulUtils.getSpeakerMap(Mockito.any(ContentfulTalkResponse.class), Mockito.nullable(Map.class), Mockito.nullable(Set.class)))
                         .thenCallRealMethod();
                 mockedStatic.when(() -> ContentfulUtils.createSpeaker(
-                        Mockito.any(ContentfulSpeaker.class), Mockito.nullable(Map.class), Mockito.nullable(Set.class), Mockito.any(AtomicLong.class), Mockito.any(AtomicLong.class), Mockito.anyBoolean()))
+                                Mockito.any(ContentfulSpeaker.class), Mockito.nullable(Map.class), Mockito.nullable(Set.class), Mockito.any(AtomicLong.class), Mockito.any(AtomicLong.class), Mockito.anyBoolean()))
                         .thenReturn(speaker);
 
                 assertEquals(expected, ContentfulUtils.getSpeakerMap(response, assetMap, assetErrorSet));
@@ -1357,18 +1359,43 @@ class ContentfulUtilsTest {
     class ExtractStringTest {
         private Stream<Arguments> data() {
             return Stream.of(
-                    arguments(null, null),
-                    arguments("", ""),
-                    arguments(" value0", "value0"),
-                    arguments("value1 ", "value1"),
-                    arguments(" value2 ", "value2")
+                    arguments(null, false, null),
+                    arguments(null, true, null),
+                    arguments("", false, ""),
+                    arguments("", true, ""),
+                    arguments(" value0", false, "value0"),
+                    arguments(" value0", true, "value0"),
+                    arguments("value1 ", false, "value1"),
+                    arguments("value1 ", true, "value1"),
+                    arguments(" value2 ", false, "value2"),
+                    arguments(" value2 ", true, "value2"),
+                    arguments("value3  value4", false, "value3  value4"),
+                    arguments("value3  value4", true, "value3 value4")
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void extractBoolean(String value, String expected) {
-            assertEquals(expected, ContentfulUtils.extractString(value));
+        void extractBoolean(String value, boolean removeDuplicateWhiteSpaces, String expected) {
+            assertEquals(expected, ContentfulUtils.extractString(value, removeDuplicateWhiteSpaces));
+        }
+    }
+
+    @Test
+    void extractString() {
+        final String SOURCE = "source";
+
+        try (MockedStatic<ContentfulUtils> mockedStatic = Mockito.mockStatic(ContentfulUtils.class)) {
+            mockedStatic.when(() -> ContentfulUtils.extractString(Mockito.anyString()))
+                    .thenCallRealMethod();
+            mockedStatic.when(() -> ContentfulUtils.extractString(Mockito.anyString(), Mockito.anyBoolean()))
+                    .thenReturn("42");
+
+            ContentfulUtils.extractString(SOURCE);
+
+            mockedStatic.verify(() -> ContentfulUtils.extractString(SOURCE), VerificationModeFactory.times(1));
+            mockedStatic.verify(() -> ContentfulUtils.extractString(SOURCE, false), VerificationModeFactory.times(1));
+            mockedStatic.verifyNoMoreInteractions();
         }
     }
 
@@ -1651,76 +1678,89 @@ class ContentfulUtilsTest {
     class ExtractLocaleItemsTest {
         private Stream<Arguments> data() {
             return Stream.of(
-                    arguments(null, null, true, Collections.emptyList()),
-                    arguments(null, "", true, Collections.emptyList()),
-                    arguments("", null, true, Collections.emptyList()),
-                    arguments("", "", true, Collections.emptyList()),
-                    arguments("value0", null, true, List.of(
+                    arguments(null, null, true, false, Collections.emptyList()),
+                    arguments(null, "", true, false, Collections.emptyList()),
+                    arguments("", null, true, false, Collections.emptyList()),
+                    arguments("", "", true, false, Collections.emptyList()),
+                    arguments("value0", null, true, false, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
                                     "value0"))),
-                    arguments("value0", "", true, List.of(
+                    arguments("value0", "", true, false, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
                                     "value0"))),
-                    arguments("value0", "value0", true, List.of(
+                    arguments("value0", "value0", true, false, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
                                     "value0"))),
-                    arguments("value0", "value1", true, List.of(
+                    arguments("value0", "value1", true, false, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
                                     "value0"),
                             new LocaleItem(
                                     Language.RUSSIAN.getCode(),
                                     "value1"))),
-                    arguments(null, "value1", true, List.of(
+                    arguments(null, "value1", true, false, List.of(
                             new LocaleItem(
                                     Language.RUSSIAN.getCode(),
                                     "value1"))),
-                    arguments("", "value1", true, List.of(
+                    arguments("", "value1", true, false, List.of(
                             new LocaleItem(
                                     Language.RUSSIAN.getCode(),
                                     "value1"))),
-                    arguments(null, null, false, Collections.emptyList()),
-                    arguments(null, "", false, Collections.emptyList()),
-                    arguments("", null, false, Collections.emptyList()),
-                    arguments("", "", false, Collections.emptyList()),
-                    arguments("value0", null, false, List.of(
+                    arguments(null, null, false, false, Collections.emptyList()),
+                    arguments(null, "", false, false, Collections.emptyList()),
+                    arguments("", null, false, false, Collections.emptyList()),
+                    arguments("", "", false, false, Collections.emptyList()),
+                    arguments("value0", null, false, false, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
                                     "value0"))),
-                    arguments("value0", "", false, List.of(
+                    arguments("value0", "", false, false, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
                                     "value0"))),
-                    arguments("value0", "value0", false, List.of(
+                    arguments("value0", "value0", false, false, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
                                     "value0"))),
-                    arguments("value0", "value1", false, List.of(
+                    arguments("value0", "value1", false, false, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
                                     "value0"),
                             new LocaleItem(
                                     Language.RUSSIAN.getCode(),
                                     "value1"))),
-                    arguments(null, "value1", false, List.of(
+                    arguments(null, "value1", false, false, List.of(
                             new LocaleItem(
                                     Language.RUSSIAN.getCode(),
                                     "value1"))),
-                    arguments("", "value1", false, List.of(
+                    arguments("", "value1", false, false, List.of(
                             new LocaleItem(
                                     Language.RUSSIAN.getCode(),
-                                    "value1")))
+                                    "value1"))),
+                    arguments("", "value1  value2", false, false, List.of(
+                            new LocaleItem(
+                                    Language.RUSSIAN.getCode(),
+                                    "value1  value2"))),
+                    arguments("", "value1  value2", false, true, List.of(
+                            new LocaleItem(
+                                    Language.RUSSIAN.getCode(),
+                                    "value1 value2")))
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence, List<LocaleItem> expected) {
-            assertEquals(expected, ContentfulUtils.extractLocaleItems(enText, ruText, checkEnTextExistence));
-            assertEquals(expected, ContentfulUtils.extractLocaleItems(enText, ruText));
+        void extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence, boolean removeDuplicateWhiteSpaces,
+                                List<LocaleItem> expected) {
+            assertEquals(expected, ContentfulUtils.extractLocaleItems(enText, ruText, checkEnTextExistence, removeDuplicateWhiteSpaces));
+
+            if (!removeDuplicateWhiteSpaces) {
+                assertEquals(expected, ContentfulUtils.extractLocaleItems(enText, ruText, checkEnTextExistence));
+                assertEquals(expected, ContentfulUtils.extractLocaleItems(enText, ruText));
+            }
         }
     }
 

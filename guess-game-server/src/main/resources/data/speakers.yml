@@ -9656,13 +9656,16 @@ speakers:
     name:
       - {language: en, text: "Artem Kobzar"}
       - {language: ru, text: "Артём Кобзарь"}
-    companyIds: []
+    companyIds: [863]
     bio:
-      - {language: en, text: "[Hegel.js](https://hegel.js.org) creator, [JavaScript.Ninja](https://javascript.ninja) sempai,\
-            \ [UnderJS](https://underjs.ru) podcast host, pagan, outcast, traditionalist, post-modernist, underdog."}
-      - {language: ru, text: "Создатель [Hegel.js](https://hegel.js.org), сэмпай в [JavaScript.Ninja](https://javascript.ninja),\
-            \ ведущий подкаста [UnderJS](https://underjs.ru), язычник, маргинал, традиционалист, постмодернист, андердог."}
+      - language: en
+        text: "JavaScript.Ninja courses teacher. On the tech fringe.\n\nLikes functional programming, compilers and open source."
+      - language: ru
+        text: "Преподаватель на курсах JavaScript.Ninja. Маргинал от мира технологий.\n\nЛюбитель ФП, компиляторов и open\
+            \ source."
     twitter: rage_monk
+    gitHub: JSMonk
+    habr: JSMonk
   - id: 671
     photoFileName: 0671.jpg
     photoUpdatedAt: 2019-04-09T07:13:48.254Z[UTC]
@@ -9948,6 +9951,7 @@ speakers:
             \ безграничные возможности для реализации его идей."}
   - id: 692
     photoFileName: 0692.jpg
+    photoUpdatedAt: 2018-11-16T15:00:44.785Z[UTC]
     name:
       - {language: en, text: "Dmitry Patsura"}
       - {language: ru, text: "Дмитрий Пацура"}
@@ -27007,14 +27011,19 @@ speakers:
     photoFileName: 1925.jpg
     photoUpdatedAt: 2021-10-29T09:39:47.480Z[UTC]
     name:
-      - {language: en, text: "Dmitry Zlygin"}
+      - {language: en, text: "Dmitriy Zlygin"}
       - {language: ru, text: "Дмитрий Злыгин"}
     companyIds: [156]
     bio:
-      - {language: en, text: "Dmitry Zlygin is a front-end developer and he works on a web-client for video conferences at\
-            \ DINS. He was a speaker at DINS IT Evening, PiterJS и Holy JS."}
-      - {language: ru, text: "Дмитрий Злыгин — фронтенд-разработчик. Спикер на DINS IT Evening, PiterJS и Holy JS. Работае\
-            т над веб-клиентом для видеоконференций в компании  DINS."}
+      - language: en
+        text: "Develops only front-end for more than five years. Works with JavaScript with varying success for more than\
+            \ 20 years, has seen Netscape Navigator and IE 4.0.\r\n\r\nWith coming of Vue.js left back-end and joined frontenders,\
+            \ but with time understood the benefits of React. Now he's working on web client for video conferences at DINS."
+      - language: ru
+        text: "Более пяти лет разрабатывает исключительно фронтенд. Третье десятилетие с переменным успехом работает с JavaScript,\
+            \ повидал и Netscape Navigator, и IE 4.0. \r\n\r\nС появлением Vue.js забросил бэкенд и перешел в стан фронтен\
+            деров, но со временем осознал и все прелести React. Сейчас работает над веб-клиентом для видеоконференций в ко\
+            мпании  DINS."
     gitHub: JSmith01
   - id: 1926
     photoFileName: 1926.jpg
@@ -27293,3 +27302,110 @@ speakers:
             уте «Стрелка», а затем — ведущим веб-инженером в Revolut над эквайринг-продуктом и над созданием дизайн-систем\
             ы."
     gitHub: exah
+  - id: 1946
+    photoFileName: 1946.jpg
+    photoUpdatedAt: 2021-10-31T15:14:00.446Z[UTC]
+    name:
+      - {language: en, text: "Anton Okolelov"}
+      - {language: ru, text: "Антон Околелов"}
+    companyIds: [861]
+    bio:
+      - language: en
+        text: "Teamlead of the Go-team, co-host of the podcast \"Zinc Prod\".\r\nHas been programming professionally for almost\
+            \ 20 years. Worked in a variety of positions: layout designer, programmer, techlead, teamlead, co-founder, etc.\
+            \ Knows several programming languages."
+      - language: ru
+        text: "Тимлид Go-команды, соведущий подкаста \"Цинковый прод\".\r\nПрограммирует профессионально почти 20 лет. Раб\
+            отал на самых разных должностях: верстальщик, программист, техлид, тимлид, соучредитель и т. д. Знает нескольк\
+            о языков программирования."
+    twitter: AntonOkolelov
+    gitHub: anton-okolelov
+    habr: varanio
+  - id: 1947
+    photoFileName: 1947.jpg
+    photoUpdatedAt: 2021-10-31T15:16:41.322Z[UTC]
+    name:
+      - {language: en, text: "Oleg Gritsak"}
+      - {language: ru, text: "Олег Грицак"}
+    companyIds: [862]
+    bio:
+      - {language: en, text: "CTO http://lucky-group.com, host of the podcast \"Zinc Prod."}
+      - {language: ru, text: "CTO http://lucky-group.com, ведущий подкаста «Цинковый прод»."}
+    twitter: hack3p
+    gitHub: hack3p
+  - id: 1948
+    photoFileName: 1948.jpg
+    photoUpdatedAt: 2021-10-31T15:19:17.463Z[UTC]
+    name:
+      - {language: en, text: "Nikita Vasilchenko"}
+      - {language: ru, text: "Никита Васильченко"}
+    companyIds: []
+    bio:
+      - {language: en, text: "Teamlead in one European online bank."}
+      - {language: ru, text: "Тимлид в одном европейском онлайн-банке."}
+  - id: 1949
+    photoFileName: 1949.jpg
+    photoUpdatedAt: 2021-10-30T09:51:53.201Z[UTC]
+    name:
+      - {language: en, text: "Yulia Miotsen"}
+      - {language: ru, text: "Юлия Миоцен"}
+    companyIds: [689]
+    bio:
+      - {language: en, text: "By day she is a product designer. By night she is an animator on pure CSS. Google Developer\
+            \ Expert on web technologies."}
+      - {language: ru, text: "Днем — продуктовый дизайнер. Ночью — аниматор на чистом CSS. Google Developer Expert по веб\
+            -технологиям."}
+    twitter: julia_miocene
+  - id: 1950
+    photoFileName: 1950.jpg
+    photoUpdatedAt: 2021-10-31T15:00:55.480Z[UTC]
+    name:
+      - {language: en, text: "Vladislav Kozulya"}
+      - {language: ru, text: "Владислав Козуля"}
+    companyIds: []
+    bio:
+      - {language: en, text: "Ex-CTO Kassa MoiSklad, author of the slightly popular microblog."}
+      - {language: ru, text: "Ex-CTO Касса МойСклад, автор слегка популярного микроблога."}
+    twitter: vkozulya
+    gitHub: 5angel
+    habr: 5angel
+  - id: 1951
+    photoFileName: 1951.jpg
+    photoUpdatedAt: 2021-04-14T07:47:36.857Z[UTC]
+    name:
+      - {language: en, text: "Aleksey Khlebaev"}
+      - {language: ru, text: "Алексей Хлебаев"}
+    companyIds: [864]
+    bio:
+      - {language: en, text: "10 years in development. Started as a content manager. Now he's a senior frontend. Host of the\
+            \ Frontend Yunost podcast."}
+      - {language: ru, text: "10 лет в разработке. Начинал контент-менеджером. Теперь синьор фронтендер. Ведущий подкаста\
+            \ Фронтенд Юность."}
+    twitter: alekseikhlebaev
+    gitHub: fual
+  - id: 1952
+    photoFileName: 1952.jpg
+    photoUpdatedAt: 2021-10-31T15:36:33.969Z[UTC]
+    name:
+      - {language: en, text: "Alexander Shoronov"}
+      - {language: ru, text: "Александр Шоронов"}
+    companyIds: [76]
+    bio:
+      - {language: en, text: "Got into development at the beginning of the century, when he hacked the text file store of\
+            \ records in the game \"Minesweeper\" in Windows 3.1 and became the winner. He develops interfaces and systems\
+            \ in fintech (Yandex.Money), education (Yandex), transport (Bolt). His hobbies in IT include operating system\
+            \ devices, computer graphics and visualization. He writes mostly in TypeScript and C. If his hands are away from\
+            \ his favorite Anne Pro II, he likes to look at the sky through a telescope, take a walk with his dog in a new\
+            \ city, read books with a passion and learn new languages: regular and programming. He knows several ways to get\
+            \ out of ViM, how to solve the Hanoi Tower problem when there are three of you and only one computer, and how\
+            \ to build Linux from scratch. The same guy from the Frontend Youth podcast."}
+      - {language: ru, text: "Увлёкся разработкой в начале века, когда хакнул текстовый файл-хранилище рекордов в игре «Са\
+            пёр» в Windows 3.1 и стал победителем. Занимается разработкой интерфейсов и систем в финтехе (Яндекс.Деньги),\
+            \ образовании (Яндекс), транспорте (Bolt). В IT увлечён темами устройства операционных систем, компьютерной гр\
+            афики и визуализации. Пишет преимущественно на TypeScript и C. Если его руки далеко от любимой Anne Pro II, то\
+            \ любит смотреть на небо через телескоп, гулять с собакой по новым для него городам, с упоением читать книги и\
+            \ изучать новые языки: обычные и программирования. Знает несколько способов как выйти из ViM, как решить задач\
+            у про Ханойскую башню если вас трое, а компьютер один, а также как собрать Linux from scratch. Тот самый из по\
+            дкаста «Фронтенд Юность»."}
+    twitter: underoot
+    gitHub: underoot
