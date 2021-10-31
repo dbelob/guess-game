@@ -44,6 +44,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
+import org.mockito.internal.verification.VerificationModeFactory;
 import org.mockito.stubbing.Answer;
 import org.springframework.web.client.RestTemplate;
 
@@ -1358,18 +1359,43 @@ class ContentfulUtilsTest {
     class ExtractStringTest {
         private Stream<Arguments> data() {
             return Stream.of(
-                    arguments(null, null),
-                    arguments("", ""),
-                    arguments(" value0", "value0"),
-                    arguments("value1 ", "value1"),
-                    arguments(" value2 ", "value2")
+                    arguments(null, false, null),
+                    arguments(null, true, null),
+                    arguments("", false, ""),
+                    arguments("", true, ""),
+                    arguments(" value0", false, "value0"),
+                    arguments(" value0", true, "value0"),
+                    arguments("value1 ", false, "value1"),
+                    arguments("value1 ", true, "value1"),
+                    arguments(" value2 ", false, "value2"),
+                    arguments(" value2 ", true, "value2"),
+                    arguments("value3  value4", false, "value3  value4"),
+                    arguments("value3  value4", true, "value3 value4")
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void extractBoolean(String value, String expected) {
-            assertEquals(expected, ContentfulUtils.extractString(value));
+        void extractBoolean(String value, boolean removeDuplicateWhiteSpaces, String expected) {
+            assertEquals(expected, ContentfulUtils.extractString(value, removeDuplicateWhiteSpaces));
+        }
+    }
+
+    @Test
+    void extractString() {
+        final String SOURCE = "source";
+
+        try (MockedStatic<ContentfulUtils> mockedStatic = Mockito.mockStatic(ContentfulUtils.class)) {
+            mockedStatic.when(() -> ContentfulUtils.extractString(Mockito.anyString()))
+                    .thenCallRealMethod();
+            mockedStatic.when(() -> ContentfulUtils.extractString(Mockito.anyString(), Mockito.anyBoolean()))
+                    .thenReturn("42");
+
+            ContentfulUtils.extractString(SOURCE);
+
+            mockedStatic.verify(() -> ContentfulUtils.extractString(SOURCE), VerificationModeFactory.times(1));
+            mockedStatic.verify(() -> ContentfulUtils.extractString(SOURCE, false), VerificationModeFactory.times(1));
+            mockedStatic.verifyNoMoreInteractions();
         }
     }
 
