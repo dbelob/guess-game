@@ -525,7 +525,7 @@ public class ContentfulUtils {
                         urlDates.getUrl(),
                         urlDates.getUpdatedAt()
                 ),
-                extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName(), checkEnTextExistence),
+                extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName(), checkEnTextExistence, true),
                 createCompanies(contentfulSpeaker, companyId, checkEnTextExistence),
                 extractLocaleItems(contentfulSpeaker.getFields().getBioEn(), contentfulSpeaker.getFields().getBio(), checkEnTextExistence),
                 new Speaker.SpeakerSocials(
@@ -559,7 +559,7 @@ public class ContentfulUtils {
 
             companies.add(new Company(
                     companyId.getAndDecrement(),
-                    extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany(), checkEnTextExistence)));
+                    extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany(), checkEnTextExistence, true)));
 
             return companies;
         } else {
@@ -851,11 +851,32 @@ public class ContentfulUtils {
     /**
      * Extracts string, i.e. trims not null string.
      *
+     * @param value                      source value
+     * @param removeDuplicateWhiteSpaces {@code true} if need to remove duplicate white spaces, {@code false} otherwise
+     * @return extracted string
+     */
+    static String extractString(String value, boolean removeDuplicateWhiteSpaces) {
+        if (value != null) {
+            String trimmedValue = value.trim();
+
+            if (removeDuplicateWhiteSpaces) {
+                return trimmedValue.replaceAll("\\s+", " ");
+            } else {
+                return trimmedValue;
+            }
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Extracts string, i.e. trims not null string.
+     *
      * @param value source value
      * @return extracted string
      */
     static String extractString(String value) {
-        return (value != null) ? value.trim() : null;
+        return extractString(value, false);
     }
 
     /**
@@ -1016,14 +1037,15 @@ public class ContentfulUtils {
     /**
      * Extracts local items.
      *
-     * @param enText               English text
-     * @param ruText               Russian text
-     * @param checkEnTextExistence {@code true} if need to check English text existence, {@code false} otherwise
+     * @param enText                     English text
+     * @param ruText                     Russian text
+     * @param checkEnTextExistence       {@code true} if need to check English text existence, {@code false} otherwise
+     * @param removeDuplicateWhiteSpaces {@code true} if need to remove duplicate white spaces, {@code false} otherwise
      * @return local items
      */
-    static List<LocaleItem> extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence) {
-        enText = extractString(enText);
-        ruText = extractString(ruText);
+    static List<LocaleItem> extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence, boolean removeDuplicateWhiteSpaces) {
+        enText = extractString(enText, removeDuplicateWhiteSpaces);
+        ruText = extractString(ruText, removeDuplicateWhiteSpaces);
 
         if (checkEnTextExistence &&
                 ((enText == null) || enText.isEmpty()) &&
@@ -1050,6 +1072,18 @@ public class ContentfulUtils {
         }
 
         return localeItems;
+    }
+
+    /**
+     * Extracts local items.
+     *
+     * @param enText               English text
+     * @param ruText               Russian text
+     * @param checkEnTextExistence {@code true} if need to check English text existence, {@code false} otherwise
+     * @return local items
+     */
+    static List<LocaleItem> extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence) {
+        return extractLocaleItems(enText, ruText, checkEnTextExistence, false);
     }
 
     /**
