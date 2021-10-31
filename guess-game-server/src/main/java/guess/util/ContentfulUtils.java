@@ -615,6 +615,10 @@ public class ContentfulUtils {
      * @return extracted GitHub username
      */
     public static String extractGitHub(String value) {
+        if (value != null) {
+            value = value.replaceAll("\\.+", "-");
+        }
+
         return extractProperty(value, new ExtractSet(
                 List.of(
                         new ExtractPair("^[\\s]*((http(s)?://)?github.com/)?([a-zA-Z0-9\\-]+)(/)?[\\s]*$", 4),

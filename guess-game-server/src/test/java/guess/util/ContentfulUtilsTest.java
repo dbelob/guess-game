@@ -704,7 +704,7 @@ class ContentfulUtilsTest {
             mockedStatic.when(() -> ContentfulUtils.getSpeakers(Mockito.any(ContentfulUtils.ConferenceSpaceInfo.class), Mockito.nullable(String.class)))
                     .thenCallRealMethod();
             mockedStatic.when(() -> ContentfulUtils.createSpeaker(
-                    Mockito.any(ContentfulSpeaker.class), Mockito.anyMap(), Mockito.anySet(), Mockito.any(AtomicLong.class), Mockito.any(AtomicLong.class), Mockito.anyBoolean()))
+                            Mockito.any(ContentfulSpeaker.class), Mockito.anyMap(), Mockito.anySet(), Mockito.any(AtomicLong.class), Mockito.any(AtomicLong.class), Mockito.anyBoolean()))
                     .thenReturn(new Speaker());
             mockedStatic.when(() -> ContentfulUtils.getAssetMap(Mockito.any(ContentfulResponse.class)))
                     .thenReturn(Collections.emptyMap());
@@ -732,8 +732,8 @@ class ContentfulUtilsTest {
     void createSpeaker() {
         try (MockedStatic<ContentfulUtils> mockedStatic = Mockito.mockStatic(ContentfulUtils.class)) {
             mockedStatic.when(() -> ContentfulUtils.createSpeaker(
-                    Mockito.any(ContentfulSpeaker.class), Mockito.anyMap(), Mockito.anySet(), Mockito.any(AtomicLong.class),
-                    Mockito.any(AtomicLong.class), Mockito.anyBoolean()))
+                            Mockito.any(ContentfulSpeaker.class), Mockito.anyMap(), Mockito.anySet(), Mockito.any(AtomicLong.class),
+                            Mockito.any(AtomicLong.class), Mockito.anyBoolean()))
                     .thenCallRealMethod();
             mockedStatic.when(() -> ContentfulUtils.extractPhoto(Mockito.nullable(ContentfulLink.class), Mockito.anyMap(), Mockito.anySet(), Mockito.nullable(String.class)))
                     .thenReturn(new UrlDates(null, null, null));
@@ -938,7 +938,8 @@ class ContentfulUtilsTest {
                     arguments("%42", IllegalArgumentException.class, null),
                     arguments("%dougqh", IllegalArgumentException.class, null),
                     arguments("dougqh%", IllegalArgumentException.class, null),
-                    arguments("dou%gqh", IllegalArgumentException.class, null)
+                    arguments("dou%gqh", IllegalArgumentException.class, null),
+                    arguments("anton.okolelov", null, "anton-okolelov")
             );
         }
 
@@ -987,7 +988,7 @@ class ContentfulUtilsTest {
             mockedStatic.when(() -> ContentfulUtils.getTalks(Mockito.any(ContentfulUtils.ConferenceSpaceInfo.class), Mockito.nullable(String.class), Mockito.anyBoolean()))
                     .thenCallRealMethod();
             mockedStatic.when(() -> ContentfulUtils.createTalk(
-                    Mockito.any(ContentfulTalk.class), Mockito.anyMap(), Mockito.anySet(), Mockito.anySet(), Mockito.anyMap(), Mockito.any(AtomicLong.class)))
+                            Mockito.any(ContentfulTalk.class), Mockito.anyMap(), Mockito.anySet(), Mockito.anySet(), Mockito.anyMap(), Mockito.any(AtomicLong.class)))
                     .thenReturn(new Talk());
             mockedStatic.when(() -> ContentfulUtils.getSpeakerMap(Mockito.any(ContentfulTalkResponse.class), Mockito.anyMap(), Mockito.anySet()))
                     .thenReturn(Collections.emptyMap());
@@ -1083,7 +1084,7 @@ class ContentfulUtilsTest {
     void createTalk() {
         try (MockedStatic<ContentfulUtils> mockedStatic = Mockito.mockStatic(ContentfulUtils.class)) {
             mockedStatic.when(() -> ContentfulUtils.createTalk(
-                    Mockito.any(ContentfulTalk.class), Mockito.anyMap(), Mockito.anySet(), Mockito.anySet(), Mockito.anyMap(), Mockito.any(AtomicLong.class)))
+                            Mockito.any(ContentfulTalk.class), Mockito.anyMap(), Mockito.anySet(), Mockito.anySet(), Mockito.anyMap(), Mockito.any(AtomicLong.class)))
                     .thenCallRealMethod();
             mockedStatic.when(() -> ContentfulUtils.extractLocaleItems(Mockito.anyString(), Mockito.anyString(), Mockito.anyBoolean()))
                     .thenReturn(Collections.emptyList());
@@ -1202,7 +1203,7 @@ class ContentfulUtilsTest {
                 mockedStatic.when(() -> ContentfulUtils.getSpeakerMap(Mockito.any(ContentfulTalkResponse.class), Mockito.nullable(Map.class), Mockito.nullable(Set.class)))
                         .thenCallRealMethod();
                 mockedStatic.when(() -> ContentfulUtils.createSpeaker(
-                        Mockito.any(ContentfulSpeaker.class), Mockito.nullable(Map.class), Mockito.nullable(Set.class), Mockito.any(AtomicLong.class), Mockito.any(AtomicLong.class), Mockito.anyBoolean()))
+                                Mockito.any(ContentfulSpeaker.class), Mockito.nullable(Map.class), Mockito.nullable(Set.class), Mockito.any(AtomicLong.class), Mockito.any(AtomicLong.class), Mockito.anyBoolean()))
                         .thenReturn(speaker);
 
                 assertEquals(expected, ContentfulUtils.getSpeakerMap(response, assetMap, assetErrorSet));
