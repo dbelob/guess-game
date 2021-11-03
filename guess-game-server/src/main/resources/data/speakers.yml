@@ -7976,13 +7976,18 @@ speakers:
       - {language: ru, text: "Артем Ерошенко"}
     companyIds: [425]
     bio:
-      - {language: en, text: "Artem works in web app testing automation for more than 8 years. He has worked in different\
-            \ teams and occupied different positions up to the head of automation testing group. Artem has a vast experience\
-            \ with popular tools (Selenium, HtmlElements, Allure, Jenkins). He codes mostly in Java and Groovy."}
-      - {language: ru, text: "Более 8 лет занимается автоматизацией тестирования веб-приложений. За это время работал в ра\
-            зных командах и в разных ролях: автоматизатор тестирования, менеджер команды разработки инструментов тестирова\
-            ния, руководитель группы автоматизации тестирования. Артем имеет большой опыт работы с популярными инструмента\
-            ми (Selenium, HtmlElements, Allure, Jenkins). Программирует в основном на Java, Groovy."}
+      - language: en
+        text: "The jack of all trades in the world of testing. In 10 years in the industry he managed to do, it seems, everything:\
+            \ \n-  done test automation;\n-  created the Allure Framework, dozens of plugins and integrations with popular\
+            \ tools (Selenium, HtmlElements, Allure, Jenkins);\n-  launch startup Qameta Software with the Allure TestOps\
+            \ test management platform;\n-  consult with about a hundred testing teams;\n-  to make the concept of TestOps\
+            \ itself a funny one;\n-  give presentations at conferences and dozens of meetups."
+      - language: ru
+        text: "Мастер на все руки из мира тестирования. За 10 лет в индустрии успел сделать, кажется, вообще все: \n-  поз\
+            аниматься автоматизацией тестирования;\n-  создать Allure Framework, десятки плагинов и интеграций с популярны\
+            ми тулами (Selenium, HtmlElements, Allure, Jenkins);\n-  запустить стартап Qameta Software с платформой управл\
+            ения тестированием Allure TestOps;\n-  проконсультировать около сотни команд тестировщиков;\n-  забаззвордить\
+            \ само понятие TestOps;\n-  выступить с докладами на конференциях и десятках митапов."
     twitter: eroshenkoam
     gitHub: eroshenkoam
     habr: eroshenkoam
@@ -26608,7 +26613,7 @@ speakers:
     photoFileName: 1895.jpg
     photoUpdatedAt: 2021-10-22T12:54:45.814Z[UTC]
     name:
-      - {language: en, text: "Vladislav  Verminsky"}
+      - {language: en, text: "Vladislav Verminsky"}
       - {language: ru, text: "Владислав Верминский"}
     companyIds: [429]
     bio:
@@ -26671,11 +26676,10 @@ speakers:
       - {language: ru, text: "Алина Макеева"}
     companyIds: [848]
     bio:
-      - {language: en, text: "Senior front-end developer and a lead. Six years in front-end, starting from full stack, JS,\
-            \ jQuery. Is highly good at bringing benefit to business and the team when implement"}
-      - {language: ru, text: "Сениор фронтенд-разработчик с функциями лида. Шесть лет во фронтенд-разработке, начиная с фу\
-            ллстека, чистого JS, jQuery. Лучше всего умеет причинять добро бизнесу и команде в рамках внедрения best practice\
-            \ для ускорения, упрощения и повышения прозрачности процесса разработки, а также для UI/UX."}
+      - {language: ru, text: "Сениор фронтенд разработчик с функциями лида. 6 лет в фронтенд разработке, начиная с фулл ст\
+            ек, чистого js, jQuery, сквозь все разнообразие современных фреймворков и технологий. Лучше всего умеет причин\
+            ять добро бизнесу и команде в рамках внедрения best practice для ускорения, упрощения и повышения прозрачности\
+            \ процесса разработки, а также для ui/ux."}
   - id: 1900
     photoFileName: 1900.jpg
     photoUpdatedAt: 2021-10-28T20:25:08.121Z[UTC]
@@ -26684,12 +26688,8 @@ speakers:
       - {language: ru, text: "Илья Симоненко"}
     companyIds: [665]
     bio:
-      - language: en
-        text: "Chief engineer. Java. Sber.\r\n\r\nLead of development in one of product teams of CIB. Has been building career\
-            \ at fintech since 2017."
-      - language: ru
-        text: "Главный инженер-программист. Java. Сбер.\r\n\r\nЛидер разработки в одной из продуктовых команд Штаба «КИБ»\
-            . Строил и продолжает строить карьеру в финтехе с 2017 года."
+      - {language: ru, text: "Лидер разработки в одной из продуктовых команд Штаба “Киб”. Строил и продолжает строить карь\
+            еру в финтехе с 2017."}
   - id: 1901
     photoFileName: 1901.jpg
     photoUpdatedAt: 2021-10-21T11:04:58.288Z[UTC]
