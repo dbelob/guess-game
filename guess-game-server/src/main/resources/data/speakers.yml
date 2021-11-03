@@ -16291,7 +16291,7 @@ speakers:
             ет лекции по языку программирования Java и разработке мобильных приложений на платформе Android."
   - id: 1168
     photoFileName: 1168.jpg
-    photoUpdatedAt: 2020-04-27T07:49:43.914Z[UTC]
+    photoUpdatedAt: 2021-11-01T16:03:06.544Z[UTC]
     name:
       - {language: en, text: "Vladislav Fitz"}
       - {language: ru, text: "Владислав Фиц"}
@@ -21939,6 +21939,7 @@ speakers:
             \ cannot stop it."}
       - {language: ru, text: "Севастьян занимается развитием инфраструктуры и процессов мобильных команд в Aviasales. В пр\
             ошлом Android-разработчик, но 2 года назад начал заниматься Mobile DevOps и не может с этим завязать."}
+    twitter: Seva_Zhukov
     gitHub: MrSwimmer
     habr: MrSwimmer
   - id: 1579

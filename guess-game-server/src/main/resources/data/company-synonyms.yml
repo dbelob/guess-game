@@ -260,7 +260,9 @@ companySynonyms:
     synonyms: [
         VKontakte,
         VK.com,
-        "VK Cloud Solutions"
+        "VK Cloud Solutions",
+        "VK Calls",
+        "VK Звонки"
     ]
   - name: VMware
     synonyms: [
