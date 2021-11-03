@@ -529,16 +529,14 @@ eventTypes:
         text: "VideoTech is an tech conference dedicated to matters of video streaming. At the conference, specialists in\
             \ technologies for streaming share their knowledge and experience with colleagues from all over the world. The\
             \ conference's mission is to create a professional community for developers and engineers working on streaming\
-            \ platforms, players, content delivery and other aspects of this field.\n\nKey topics:\n\nWebRTC;\nVideo delivery;\n\
-            Audio and video codecs;\nDevices and players;\nStorage and packaging;\nVideo quality;\nMonitoring;\nML/AI.\nThe\
-            \ next conference, VideoTech 2021, will be held online on December 1-3."
+            \ platforms, players, content delivery and other aspects of this field.\n\nKey topics:\n- WebRTC;\n- Video delivery;\n- \
+            Audio and video codecs;\n- Devices and players;\n- Storage and packaging;\n- Video quality;\n- Monitoring;\n- ML/AI."
       - language: ru
         text: "VideoTech — это техническая конференция, посвященная вопросам потоковой передачи видео. На ней специалисты\
             \ по технологиям из области стриминга делятся знаниями и опытом с коллегами. Миссия конференции — сформировать\
             \ профессиональное сообщество разработчиков и инженеров, работающих над стриминговыми платформами, плеерами, д\
-            оставкой контента и другими аспектами этой сферы.\n\nОсновные темы конференции:\n\nWebRTC;\nРаздача видео;\nКо\
-            деки аудио и видео;\nУстройства и плееры;\nХранение и упаковка;\nКачество видео;\nМониторинг;\nML/AI.\nБлижайш\
-            ая конференция, VideoTech 2021, пройдет 1-3 декабря онлайн."
+            оставкой контента и другими аспектами этой сферы.\n\nОсновные темы конференции:\n- WebRTC;\n- Раздача видео;\n- Ко\
+            деки аудио и видео;\n- Устройства и плееры;\n- Хранение и упаковка;\n- Качество видео;\n- Мониторинг;\n- ML/AI."
     siteLink:
       - {language: en, text: "https://vtconf.com/en/"}
       - {language: ru, text: "https://vtconf.com/"}
