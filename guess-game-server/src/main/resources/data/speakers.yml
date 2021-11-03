@@ -9656,7 +9656,7 @@ speakers:
     name:
       - {language: en, text: "Artem Kobzar"}
       - {language: ru, text: "Артём Кобзарь"}
-    companyIds: [863]
+    companyIds: [286]
     bio:
       - language: en
         text: "JavaScript.Ninja courses teacher. On the tech fringe.\n\nLikes functional programming, compilers and open source."
@@ -9955,7 +9955,7 @@ speakers:
     name:
       - {language: en, text: "Dmitry Patsura"}
       - {language: ru, text: "Дмитрий Пацура"}
-    companyIds: [315]
+    companyIds: [865]
     bio:
       - language: en
         text: "Developer with 10 years of experience, developed a lot of projected in open source, from a static analyzer\
@@ -10381,7 +10381,7 @@ speakers:
     name:
       - {language: en, text: "Andrey Melikhov"}
       - {language: ru, text: "Андрей Мелихов"}
-    companyIds: [730]
+    companyIds: [868]
     bio:
       - {language: en, text: "Mythical full-stack, host of the Devshakhta channel on Youtube, co-host of the Web Standards\
             \ podcast. Good architecture evangelist, an expert on Node.js and other JavaScript runtimes. Apologist for DevOps\
@@ -12639,13 +12639,16 @@ speakers:
     habr: StrLght
   - id: 884
     photoFileName: 0884.jpg
+    photoUpdatedAt: 2021-10-30T18:20:16.544Z[UTC]
     name:
-      - {language: en, text: "Stanislav Tsyganov"}
+      - {language: en, text: "Stanislav Tsiganov"}
       - {language: ru, text: "Станислав Цыганов"}
-    companyIds: [431]
+    companyIds: [676]
     bio:
-      - {language: ru, text: "Разработчик Rambler&Co. Программирую под iOS в течение 4 лет. Принимаю участие в разработке\
-            \ Афиша.Ресторанов, написал Рамблер.Новости."}
+      - {language: en, text: "Teamlead mobile teams at Tutu.ru. Podlodka podcast host. Organizer of Podlodka Crew conferences.\
+            \ Author and maintainer https://tlroadmap.io/."}
+      - {language: ru, text: "Тимлид мобильных команд в Туту.ру. Хост подкаста Podlodka. Организатор конференций Podlodka\
+            \ Crew. Автор и мейнтейнер https://tlroadmap.io/."}
     twitter: DevAlloy
   - id: 885
     photoFileName: 0885.jpg
@@ -14407,18 +14410,21 @@ speakers:
     gitHub: ivanpopelyshev
   - id: 1027
     photoFileName: 1027.jpg
+    photoUpdatedAt: 2020-02-06T09:10:34.819Z[UTC]
     name:
       - {language: en, text: "Sergey Rubanov"}
       - {language: ru, text: "Сергей Рубанов"}
-    companyIds: [435]
+    companyIds: [867]
     bio:
       - {language: en, text: "BeerJS Moscow, BeerJS Summit, MoscowJS and WebAssembly Moscow meetup organizer, digital nomad,\
             \ TC39 invited expert, WebAssembly Community Group participant, certified beer sommelier and community guy whose\
             \ glass is always half full."}
       - {language: ru, text: "Организатор BeerJS Moscow, BeerJS Summit, MoscowJS и WebAssembly Moscow meetup, цифровой коч\
             евник, приглашенный эксперт TC39, участник WebAssembly Community Group, сертифицированный пивной сомелье, и community\
-            \ guy, чей стакан всегда наполовину полон. Ведёт канал https://t.me/juliarderity в Telegram."}
+            \ guy, чей стакан всегда наполовину полон. Ведёт канал https://t.me/webnya в Telegram."}
     twitter: chicoxyzzy
+    gitHub: chicoxyzzy
+    habr: chico
   - id: 1028
     photoFileName: 1028.jpg
     name:
@@ -17774,13 +17780,15 @@ speakers:
     photoFileName: 1283.jpg
     photoUpdatedAt: 2020-06-19T15:16:50.885Z[UTC]
     name:
-      - {language: en, text: "Yaroslava Suspicina"}
+      - {language: en, text: "Yaroslava Suspitsina"}
       - {language: ru, text: "Ярослава Суспицина"}
     companyIds: [621]
     bio:
       - {language: en, text: "Из художника в разработчики. В школьные годы изучала веб-дизайн, подрабатывала на фрилансе.\
             \ Являясь студентом, уже имела опыт разработки фронтенда для B2B- и B2C-приложений. Увлекается рисованием, фот\
             ографией и сноубордом."}
+      - {language: ru, text: "React-леди со стажем 5 лет. Опыт разработки b2b и b2c приложений. Ушла из художников покорят\
+            ь фронтенд. Любит JS, кофе и котиков"}
   - id: 1284
     photoFileName: 1284.jpg
     photoUpdatedAt: 2020-06-17T09:22:09.156Z[UTC]
@@ -22402,7 +22410,7 @@ speakers:
     photoUpdatedAt: 2021-03-11T07:13:50.686Z[UTC]
     name:
       - {language: en, text: "Roman Ponomarev"}
-      - {language: ru, text: "Роман Пономарёв"}
+      - {language: ru, text: "Роман Пономарев"}
     companyIds: [730]
     bio:
       - {language: en, text: "One of the creators of the DevSchacht community and co-host of the Frontend Youth podcast. When\
@@ -26332,12 +26340,15 @@ speakers:
     name:
       - {language: en, text: "Sergey Ivanov"}
       - {language: ru, text: "Сергей Иванов"}
-    companyIds: [806]
+    companyIds: []
     bio:
-      - {language: en, text: "Systems architect at Altenar. He's interested in academic programming languages and potential\
-            \ applications of their concepts in .NET. He's humbly waiting for shapes/roles being implemented in C#."}
-      - {language: ru, text: "Системный архитектор в Altenar. Интересуется академическими языками программирования и возмо\
-            жным применением их концепций в .NET. Смиренно ждёт реализации shapes/roles в C#."}
+      - {language: en, text: "Frontend developer (JavaScript/TypeScript), mentor. Sergey is interested in software development\
+            \ in general and also shows interest in functional programming. Writes articles. Has his own Telegram channel.\
+            \ Not directly related to area 51."}
+      - {language: ru, text: "Фронтенд-разработчик (JavaScript/TypeScript), наставник. Интересуется разработкой программно\
+            го обеспечения в целом, также проявляет интерес к функциональному программированию. Пишет статьи. Ведет Телегр\
+            ам-канал. Имеет не прямое отношение к зоне 51 (нет)."}
+    twitter: xufocoder
   - id: 1875
     photoFileName: 1875.jpg
     photoUpdatedAt: 2021-10-18T14:27:44.764Z[UTC]
@@ -26676,10 +26687,11 @@ speakers:
       - {language: ru, text: "Алина Макеева"}
     companyIds: [848]
     bio:
-      - {language: ru, text: "Сениор фронтенд разработчик с функциями лида. 6 лет в фронтенд разработке, начиная с фулл ст\
-            ек, чистого js, jQuery, сквозь все разнообразие современных фреймворков и технологий. Лучше всего умеет причин\
-            ять добро бизнесу и команде в рамках внедрения best practice для ускорения, упрощения и повышения прозрачности\
-            \ процесса разработки, а также для ui/ux."}
+      - {language: en, text: "Senior front-end developer and a lead. Six years in front-end, starting from full stack, JS,\
+            \ jQuery. Is highly good at bringing benefit to business and the team when implement"}
+      - {language: ru, text: "Сениор фронтенд-разработчик с функциями лида. Шесть лет во фронтенд-разработке, начиная с фу\
+            ллстека, чистого JS, jQuery. Лучше всего умеет причинять добро бизнесу и команде в рамках внедрения best practice\
+            \ для ускорения, упрощения и повышения прозрачности процесса разработки, а также для UI/UX."}
   - id: 1900
     photoFileName: 1900.jpg
     photoUpdatedAt: 2021-10-28T20:25:08.121Z[UTC]
@@ -26688,8 +26700,12 @@ speakers:
       - {language: ru, text: "Илья Симоненко"}
     companyIds: [665]
     bio:
-      - {language: ru, text: "Лидер разработки в одной из продуктовых команд Штаба “Киб”. Строил и продолжает строить карь\
-            еру в финтехе с 2017."}
+      - language: en
+        text: "Chief engineer. Java. Sber.\r\n\r\nLead of development in one of product teams of CIB. Has been building career\
+            \ at fintech since 2017."
+      - language: ru
+        text: "Главный инженер-программист. Java. Сбер.\r\n\r\nЛидер разработки в одной из продуктовых команд Штаба «КИБ»\
+            . Строил и продолжает строить карьеру в финтехе с 2017 года."
   - id: 1901
     photoFileName: 1901.jpg
     photoUpdatedAt: 2021-10-21T11:04:58.288Z[UTC]
@@ -27004,19 +27020,14 @@ speakers:
     photoFileName: 1925.jpg
     photoUpdatedAt: 2021-10-29T09:39:47.480Z[UTC]
     name:
-      - {language: en, text: "Dmitriy Zlygin"}
+      - {language: en, text: "Dmitry Zlygin"}
       - {language: ru, text: "Дмитрий Злыгин"}
     companyIds: [156]
     bio:
-      - language: en
-        text: "Develops only front-end for more than five years. Works with JavaScript with varying success for more than\
-            \ 20 years, has seen Netscape Navigator and IE 4.0.\r\n\r\nWith coming of Vue.js left back-end and joined frontenders,\
-            \ but with time understood the benefits of React. Now he's working on web client for video conferences at DINS."
-      - language: ru
-        text: "Более пяти лет разрабатывает исключительно фронтенд. Третье десятилетие с переменным успехом работает с JavaScript,\
-            \ повидал и Netscape Navigator, и IE 4.0. \r\n\r\nС появлением Vue.js забросил бэкенд и перешел в стан фронтен\
-            деров, но со временем осознал и все прелести React. Сейчас работает над веб-клиентом для видеоконференций в ко\
-            мпании  DINS."
+      - {language: en, text: "Dmitry Zlygin is a front-end developer and he works on a web-client for video conferences at\
+            \ DINS. He was a speaker at DINS IT Evening, PiterJS и Holy JS."}
+      - {language: ru, text: "Дмитрий Злыгин — фронтенд-разработчик. Спикер на DINS IT Evening, PiterJS и Holy JS. Работае\
+            т над веб-клиентом для видеоконференций в компании  DINS."}
     gitHub: JSmith01
   - id: 1926
     photoFileName: 1926.jpg
@@ -27167,7 +27178,7 @@ speakers:
       - {language: en, text: "Andrey Sokolov — front-end developer at DINS. Apart from his job enjoys creating weird Telegram-bots.\
             \ Andrey participated in inner and public meetups of DINS, took part in CodeFest as a member of our crew."}
       - {language: ru, text: "Андрей Соколов — фронтенд-разработчик в DINS. Помимо работы увлекается написанием странных Telegram-б\
-            отов. Выступал на внутренних и внешних митапах DINS, участвовать в CodeFest."}
+            отов. Выступал на внутренних и внешних митапах DINS, участвовал в CodeFest."}
   - id: 1937
     photoFileName: 1937.jpg
     photoUpdatedAt: 2021-10-29T11:54:51.913Z[UTC]
@@ -27370,10 +27381,10 @@ speakers:
       - {language: ru, text: "Алексей Хлебаев"}
     companyIds: [864]
     bio:
-      - {language: en, text: "10 years in development. Started as a content manager. Now he's a senior frontend. Host of the\
-            \ Frontend Yunost podcast."}
-      - {language: ru, text: "10 лет в разработке. Начинал контент-менеджером. Теперь синьор фронтендер. Ведущий подкаста\
-            \ Фронтенд Юность."}
+      - {language: en, text: "10 years in development. Started as a content manager. Now he's a senior frontend in [Yoomoney](https://yoomoney.ru/).\
+            \ Host of the Frontend Yunost podcast."}
+      - {language: ru, text: "10 лет в разработке. Начинал контент-менеджером. Теперь сеньор фронтендер в компании [ЮMoney](https://yoomoney.ru/).\
+            \ Ведущий подкаста «Фронтенд Юность»."}
     twitter: alekseikhlebaev
     gitHub: fual
   - id: 1952
@@ -27402,3 +27413,48 @@ speakers:
             дкаста «Фронтенд Юность»."}
     twitter: underoot
     gitHub: underoot
+  - id: 1953
+    photoFileName: 1953.jpg
+    photoUpdatedAt: 2021-11-01T18:18:41.187Z[UTC]
+    name:
+      - {language: en, text: "Oleg Kondrashin"}
+      - {language: ru, text: "Олег Кондрашин"}
+    companyIds: [845]
+    bio:
+      - {language: en, text: "In IT he has experience in three areas: development, testing and maintenance. Now he leads the\
+            \ practice, which unites test engineers and infrastructure engineers. At present he is engaged in changing the\
+            \ internal culture of interaction dev, sec, ops at Sibur Digital."}
+      - {language: ru, text: "В IT был с трех сторон - разработка, тестирование и сопровождение. Сейчас является руководит\
+            елем практики, которая объединяет в себе инженеров по тестированию и инженеров по инфраструктуре. На данный мо\
+            мент занимется изменением внутренней культуры взаимодействия dev, sec и ops в Сибур Диджитал."}
+    gitHub: okondrashin
+    habr: okondrashin
+  - id: 1954
+    photoFileName: 1954.jpg
+    photoUpdatedAt: 2021-11-02T10:51:13.666Z[UTC]
+    name:
+      - {language: en, text: "Oleg Garipov"}
+      - {language: ru, text: "Олег Гарипов"}
+    companyIds: [621]
+    bio:
+      - {language: en, text: "He has more than 10 years in IT, created various digital services around the world at IBM, was\
+            \ involved in the development of Sberbank Business for a long time, and is now responsible for the happy future\
+            \ of Internet banking for SMB at VTB."}
+      - {language: ru, text: "Более 10 лет в IT, создавал различные цифровые сервисы по всему миру в IBM, долгое время зан\
+            имался развитием «Сбербанк Бизнес», а сейчас отвечает за счастливое будущее интернет-банка для СМБ в ВТБ."}
+  - id: 1955
+    photoFileName: 1955.jpg
+    photoUpdatedAt: 2021-11-02T12:58:43.407Z[UTC]
+    name:
+      - {language: en, text: "Alexander Myshov"}
+      - {language: ru, text: "Александр Мышов"}
+    companyIds: [866]
+    bio:
+      - {language: en, text: "Full-stack developer with experience in 2GIS and Yandex. Loves the web and everything connected\
+            \ with it. Involved in organizing mitaps and conferences. For the last three years has been running the [Defront](https://t.me/defront)\
+            \ telegram channel."}
+      - {language: ru, text: "Фуллстек-разработчик с опытом работы в 2ГИС и Яндекс. Любит веб и всё, что с ним связано. За\
+            нимается организацией митапов и конференций. Последние три года ведет телеграм-канал [Defront](https://t.me/defront)."}
+    twitter: myshov
+    gitHub: myshov
+    habr: Myshov

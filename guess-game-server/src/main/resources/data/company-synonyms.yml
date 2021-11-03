@@ -235,6 +235,11 @@ companySynonyms:
         Sberbank-Technology,
         Сбербанк-Технологии
     ]
+  - name: Sibur
+    synonyms: [
+        "SIBUR Digital",
+        "СИБУР Диджитал"
+    ]
   - name: Skyeng
     synonyms: [
         Skeyng
