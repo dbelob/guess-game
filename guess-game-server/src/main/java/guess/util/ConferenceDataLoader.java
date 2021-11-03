@@ -212,7 +212,7 @@ public class ConferenceDataLoader {
         // Read event types, places, events, companies, speakers, talks from resource files
         var resourceSourceInformation = YamlUtils.readSourceInformation();
         Optional<EventType> resourceOptionalEventType = resourceSourceInformation.getEventTypes().stream()
-                .filter(et -> et.getConference().equals(conference))
+                .filter(et -> conference.equals(et.getConference()))
                 .findFirst();
         var resourceEventType = resourceOptionalEventType
                 .orElseThrow(() -> new IllegalStateException(String.format("No event type found for conference %s (in resource files)", conference)));
@@ -1799,5 +1799,7 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2021, 11, 15), "2021spbcpp",
 //                LoadSettings.invalidTalksSet(Set.of("Открытие конференции C++ Russia 2021")));
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2021, 11, 22), "2021msk");
+//        loadTalksSpeakersEvent(Conference.VIDEO_TECH, LocalDate.of(2021, 12, 1), "2021videotech",
+//                LoadSettings.invalidTalksSet(Set.of("Открытие конференции VideoTech 2021", "Закрытие конференции VideoTech 2021")));
     }
 }

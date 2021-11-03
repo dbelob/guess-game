@@ -2508,3 +2508,13 @@ events:
     placeId: 24
     talkIds: [2890, 2885, 2886, 2887, 2888, 2889, 2884, 2891, 2892, 2893, 2894, 2895, 2896, 2897, 2898, 2899, 2900, 2901,
               2902, 2903, 2904, 2905, 2906, 2907, 2908, 2909, 2910, 2911]
+  # VideoTech
+  - eventTypeId: 17
+    name:
+      - {language: en, text: "VideoTech 2021"}
+    startDate: "2021-12-01"
+    endDate: "2021-12-03"
+    siteLink:
+      - {language: en, text: "https://vtconf.com/"}
+    placeId: 24
+    talkIds: [3542, 3543, 3544, 3545, 3546, 3547, 3548, 3549, 3550, 3551, 3552]

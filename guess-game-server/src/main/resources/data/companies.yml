@@ -2610,3 +2610,9 @@ companies:
   - id: 869
     name:
       - {language: en, text: ArangoDB}
+  - id: 870
+    name:
+      - {language: en, text: V-Nova}
+  - id: 871
+    name:
+      - {language: en, text: "Stanford University"}

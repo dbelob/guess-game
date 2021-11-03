@@ -11625,16 +11625,17 @@ speakers:
             ение. Основной профиль деятельности: аппаратные платформы, Linux и bare metal-системы."}
   - id: 815
     photoFileName: 0815.jpg
+    photoUpdatedAt: 2021-10-25T14:45:37.254Z[UTC]
     name:
       - {language: en, text: "Ivan Grigoriev"}
       - {language: ru, text: "Иван Григорьев"}
-    companyIds: [653]
+    companyIds: [620]
     bio:
       - {language: en, text: "Full stack developer since 2008. Generally works with video: streaming, coding, playing and\
-            \ everything related. At Odnoklassniki works on OK Live application, video platform, calls and conferences."}
-      - {language: ru, text: "Занимается full stack-разработкой с 2008 года. В основном работал в области видео: стриминг\
-            , кодирование, проигрывание и всё, что с этим связано. В Одноклассниках занимается приложением OK Live, платфо\
-            рмой видео, звонками и конференциями."}
+            \ everything related. Currently leads VK Video Calls development team."}
+      - {language: ru, text: "Занимается фуллстек-разработкой с 2008 года. В основном работал в области видео: стриминг, к\
+            одирование, проигрывание и всё, что с этим связано. В настоящее время руководит командой, которая занимается В\
+            идеозвонками ВК."}
     habr: IvanGrigorev
   - id: 816
     photoFileName: 0816.jpg
@@ -15787,6 +15788,7 @@ speakers:
             . Active member of SPb C++ community."}
       - {language: ru, text: "Software Engineer в компании Dins, в свободное время занимается метапрограммированием и разв\
             итием С++ сообщества в СПб."}
+    gitHub: Toxa-man
   - id: 1132
     photoFileName: 1132.jpg
     photoUpdatedAt: 2020-02-12T08:34:08.899Z[UTC]
@@ -25302,7 +25304,7 @@ speakers:
     gitHub: ryansolid
   - id: 1806
     photoFileName: 1806.jpg
-    photoUpdatedAt: 2021-10-01T13:53:17.841Z[UTC]
+    photoUpdatedAt: 2021-10-25T13:55:13.338Z[UTC]
     name:
       - {language: en, text: "Vadim Gorbachev"}
       - {language: ru, text: "Вадим Горбачев"}
@@ -25315,6 +25317,7 @@ speakers:
             ра и пишет диплом по WebRTC. Ранее был организатором PiterJS, участвовал в программном комитете HolyJS."}
     twitter: _bmsdave
     gitHub: bmsdave
+    habr: bmsdave
   - id: 1807
     photoFileName: 1807.jpg
     photoUpdatedAt: 2021-08-02T09:01:40.640Z[UTC]
@@ -26914,24 +26917,23 @@ speakers:
     gitHub: RenatGafarov
   - id: 1917
     photoFileName: 1917.jpg
-    photoUpdatedAt: 2021-10-19T13:12:49.799Z[UTC]
+    photoUpdatedAt: 2021-11-02T08:43:25.965Z[UTC]
     name:
       - {language: en, text: "Ivan Shafran"}
       - {language: ru, text: "Иван Шафран"}
     companyIds: [620]
     bio:
-      - language: en
-        text: "He works in the VK Android call team. He calls himself about a hundred times a day.\nKotlin lover. Spontaneously\
-            \ writes articles on Medium and open source projects on Github. Teaches Android for beginners."
+      - {language: en, text: "Works in the Android VK Calls team. Calls himself about a hundred times a day. Loves Kotlin.\
+            \ Spontaneously writes articles on Medium and open-source projects on Github. Teaches Android for beginners."}
       - language: ru
-        text: "Работает в команде Android звонков VK. Звонит сам себе около сотни раз в день.\r\nЛюбит Kotlin. Спонтанно п\
+        text: "Работает в команде Android-звонков VK. Звонит сам себе около сотни раз в день.\r\nЛюбит Kotlin. Спонтанно п\
             ишет статьи на Medium и опенорс-проекты на Github. Преподает Android для начинающих."
     twitter: NotShafran
     gitHub: IvanShafran
     habr: IvanShafran
   - id: 1918
     photoFileName: 1918.jpg
-    photoUpdatedAt: 2021-10-19T13:17:48.609Z[UTC]
+    photoUpdatedAt: 2021-11-02T08:49:51.572Z[UTC]
     name:
       - {language: en, text: "Nikita Razymnyi"}
       - {language: ru, text: "Никита Разумный"}
@@ -27472,3 +27474,105 @@ speakers:
     bio:
       - {language: en, text: "У Антона имеется 15-летний опыт построения и трансформации ИТ-инфраструктур enterprise-уровн\
             я. Последние три года концентрировался на проектировании и развертывании гибридных и облачных решений."}
+  - id: 1957
+    photoFileName: 1957.jpg
+    photoUpdatedAt: 2021-10-26T10:36:23.112Z[UTC]
+    name:
+      - {language: en, text: "Alex Gutarin"}
+      - {language: ru, text: "Александр Гутарин"}
+    companyIds: [358]
+    bio:
+      - {language: en, text: "A seasoned engineering leader experienced in delivering challenging large scale projects in\
+            \ online media, advertisement, and search."}
+      - {language: ru, text: "Опытный инженер-лидер, имеющий опыт реализации сложных крупномасштабных проектов в онлайн-СМ\
+            И, рекламе и поиске."}
+    twitter: AxGn
+  - id: 1958
+    photoFileName: 1958.jpg
+    photoUpdatedAt: 2021-11-02T08:35:11.961Z[UTC]
+    name:
+      - {language: en, text: "Ruslan Gilmutdinov"}
+      - {language: ru, text: "Руслан Гильмутдинов"}
+    companyIds: [280]
+    bio:
+      - language: en
+        text: "Adaptive streaming expert at IVI (\"the Netflix of Russia\").\r\nProud (former) member of a bunch of tech geniuses\
+            \ (www.streamroot.io) who made a dream of p2p-assisted video streaming happen.\r\nVideo streaming, WebRTC & WebAssembly\
+            \ enthusiast, focuse on optimizing video delivery on the client side."
+      - language: ru
+        text: "Руслан занимается клиентской (web) стороной видеостриминга в IVI.\r\nДо IVI вместе со стартапом Streamroot,\
+            \ разработавшим технологию кроссплатформенного p2p-стриминга на базе протокола WebRTC, прошел путь от MVP до м\
+            ногомиллионных live-трансляций «без разрывов» и успешного exit'а.\r\nИнтересуется WebRTC, WebAssembly, адаптив\
+            ным стримингом и задачами в области оптимизации доставки видео на клиентской стороне."
+    gitHub: ruslandinov
+  - id: 1959
+    photoFileName: 1959.jpg
+    photoUpdatedAt: 2021-11-02T14:37:01.747Z[UTC]
+    name:
+      - {language: en, text: "Max Kolesin"}
+      - {language: ru, text: "Макс Колесин"}
+    companyIds: [870]
+    bio:
+      - {language: en, text: "Max is a Senior Software Developer at V-Nova. Before V-Nova worked in video streaming and data\
+            \ visualization projects. His area of expertise is development for the GPUs. Interested in all things automation."}
+      - {language: ru, text: "Старший разработчик в V-Nova. До этого работал в проектах видеостриминга и визуализации данн\
+            ых. Специализируется на разработке под GPU. Интересуется автоматизацией процессов разработки."}
+  - id: 1960
+    photoFileName: 1960.jpg
+    photoUpdatedAt: 2021-11-02T14:25:20.381Z[UTC]
+    name:
+      - {language: en, text: "Olga Popova"}
+      - {language: ru, text: "Ольга Попова"}
+    companyIds: [689]
+    bio:
+      - {language: en, text: "Since 2019, Olga has been developing a video player and integrating it into various Yandex services.\
+            \ She's interested in the streaming industry and the extensive range of challenges arising in this sphere. Olga\
+            \ graduated from National Research Nuclear University MEPhI."}
+      - {language: ru, text: "С 2019 года занимается развитием видеоплеера и его интеграцией на различные сервисы Яндекса\
+            . Интересуется индустрией стриминга и широким спектром проблем, возникающих в этой сфере. Окончила НИЯУ МИФИ."}
+  - id: 1961
+    photoFileName: 1961.jpg
+    photoUpdatedAt: 2021-10-29T10:29:18.537Z[UTC]
+    name:
+      - {language: en, text: "Te-Yuan Huang"}
+    companyIds: [358]
+    bio:
+      - {language: en, text: "Te-Yuan (TY) Huang is an engineering manager at Netflix, leading the effort to improve playback\
+            \ quality through adaptive streaming and the joint optimizations between Netflix’s content delivery networks,\
+            \ encoding technologies, and players. TY was born and raised in Taiwan, moved to the US in 2008 for her PhD study\
+            \ at Stanford. TY joined Netflix in 2014 after she graduated from Stanford."}
+    twitter: huangty
+    gitHub: huangty
+  - id: 1962
+    photoFileName: 1962.jpg
+    photoUpdatedAt: 2021-11-01T16:19:53.648Z[UTC]
+    name:
+      - {language: en, text: "Alexey Schurov"}
+      - {language: ru, text: "Алексей Щуров"}
+    companyIds: [689]
+    bio:
+      - {language: en, text: "Embarked on his career with a local telecom provider in 2006. After striking the ceiling, came\
+            \ to Moscow in 2013 to improve the streaming service of Channel One Russia. Beyond six months of continuous infrastructure\
+            \ amplify, Alexey successfully broadcasted the record-breaking Winter Olympics 2014. Next, continued increasing\
+            \ the scale and variety of content in NGENIX CDN. Since 2019, Alexey has been progressively developing a video\
+            \ streaming platform for Yandex services, including the leading on the Russian market online cinema KinoPoisk."}
+      - {language: ru, text: "Начал карьеру в местном телекоме в 2006 году. Достиг потолка и в 2013 году приехал в Москву\
+            \ растить стриминг Первого канала. Через шесть месяцев непрерывного развития инфраструктуры успешно показал ре\
+            кордную по нагрузке Зимнюю Олимпиаду 2014. Далее продолжил наращивать масштабы и разнообразие контента в NGENIX\
+            \ CDN. С 2019 года развивает платформу видеотрансляций для сервисов Яндекса, включая лидирующий на российском\
+            \ рынке онлайн-кинотеатр КиноПоиск."}
+  - id: 1963
+    photoFileName: 1963.jpg
+    photoUpdatedAt: 2021-10-29T10:36:00.381Z[UTC]
+    name:
+      - {language: en, text: "Pulkit Tandon"}
+    companyIds: [871]
+    bio:
+      - language: en
+        text: "Pulkit Tandon is a Ph.D. student in the Electrical Engineering department at Stanford University. His research\
+            \ focuses on data compression, neural engineering, perceptual engineering and brain-machine-interfaces with components\
+            \ of algorithms, hardware and experiments. \r\n\r\nHe was also an intern at Netflix, where he worked on improving\
+            \ video compression using deep-learning, and on objective video quality metrics. Prior to joining Stanford, he\
+            \ received a bachelor degree in technology from Indian Institute of Technology, Bombay."
+    twitter: tandon_pulkit
+    gitHub: tpulkit
