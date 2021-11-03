@@ -24184,7 +24184,7 @@ speakers:
     photoUpdatedAt: 2021-09-30T19:53:43.750Z[UTC]
     name:
       - {language: en, text: "Alexey Goncharuk"}
-      - {language: ru, text: "Алексей  Гончарук"}
+      - {language: ru, text: "Алексей Гончарук"}
     companyIds: [782]
     bio:
       - {language: en, text: "Alexey Goncharuk is the Chief Researcher at Querify Labs where he works on researching query\
@@ -24433,7 +24433,7 @@ speakers:
     photoUpdatedAt: 2021-10-06T15:29:31.031Z[UTC]
     name:
       - {language: en, text: "Dmitry Gronsky"}
-      - {language: ru, text: "Дмитрий  Гронский"}
+      - {language: ru, text: "Дмитрий Гронский"}
     companyIds: [390]
     bio:
       - {language: en, text: "Lead developer in ML platform development team. Before this, worked in stack of DS / DE / MLE\
