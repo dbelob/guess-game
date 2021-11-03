@@ -235,6 +235,11 @@ companySynonyms:
         Sberbank-Technology,
         Сбербанк-Технологии
     ]
+  - name: Sibur
+    synonyms: [
+        "SIBUR Digital",
+        "СИБУР Диджитал"
+    ]
   - name: Skyeng
     synonyms: [
         Skeyng
@@ -255,7 +260,9 @@ companySynonyms:
     synonyms: [
         VKontakte,
         VK.com,
-        "VK Cloud Solutions"
+        "VK Cloud Solutions",
+        "VK Calls",
+        "VK Звонки"
     ]
   - name: VMware
     synonyms: [

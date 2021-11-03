@@ -139,6 +139,7 @@ public class ContentfulUtils {
         CONFERENCE_SPACE_INFO_MAP.put(Conference.SPTDC, ConferenceSpaceInfo.COMMON_SPACE_INFO);
         CONFERENCE_SPACE_INFO_MAP.put(Conference.DEV_OOPS, ConferenceSpaceInfo.COMMON_SPACE_INFO);
         CONFERENCE_SPACE_INFO_MAP.put(Conference.SMART_DATA, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        CONFERENCE_SPACE_INFO_MAP.put(Conference.VIDEO_TECH, ConferenceSpaceInfo.COMMON_SPACE_INFO);
         CONFERENCE_SPACE_INFO_MAP.put(Conference.HOLY_JS, ConferenceSpaceInfo.HOLY_JS_SPACE_INFO);
         CONFERENCE_SPACE_INFO_MAP.put(Conference.DOT_NEXT, ConferenceSpaceInfo.DOT_NEXT_SPACE_INFO);
         CONFERENCE_SPACE_INFO_MAP.put(Conference.HEISENBUG, ConferenceSpaceInfo.HEISENBUG_SPACE_INFO);
@@ -153,6 +154,7 @@ public class ContentfulUtils {
         CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.SPTDC, "SPTDC");
         CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.DEV_OOPS, "DevOops");
         CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.SMART_DATA, "SmartData");
+        CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.VIDEO_TECH, "VideoTech");
         CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.HOLY_JS, "HolyJS");
         CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.DOT_NEXT, "DotNext");
         CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.HEISENBUG, "Heisenbug");

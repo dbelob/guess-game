@@ -17,5 +17,6 @@ public enum Conference {
     SPTDC,
     SMART_DATA,
     TECH_TRAIN,
+    VIDEO_TECH,
     SNOW_ONE
 }

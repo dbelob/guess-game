@@ -2595,3 +2595,24 @@ companies:
   - id: 864
     name:
       - {language: en, text: ЮMoney}
+  - id: 865
+    name:
+      - {language: en, text: "Cube Dev"}
+  - id: 866
+    name:
+      - {language: en, text: Defront}
+  - id: 867
+    name:
+      - {language: en, text: "BeerJS / TC39"}
+  - id: 868
+    name:
+      - {language: en, text: Osome}
+  - id: 869
+    name:
+      - {language: en, text: ArangoDB}
+  - id: 870
+    name:
+      - {language: en, text: V-Nova}
+  - id: 871
+    name:
+      - {language: en, text: "Stanford University"}
