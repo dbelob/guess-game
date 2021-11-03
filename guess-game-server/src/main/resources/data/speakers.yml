@@ -15051,14 +15051,16 @@ speakers:
     bio:
       - language: en
         text: "Andrey graduated from SPbU \"Mathematics and Mechanics\" faculty. He was developing a graphical stack of JDK\
-            \ libraries (AWT/Swing/JavaFX) for few years in Sun and Oracle. Andrey supervised the development team in QuickOffice,\
-            \ was responsible for the functionality QuickPoint component, worked as a manager of load testing group in NetCracker.\n\
-            \nCurrently, Andrey is the production department lead at JUG Ru Group."
+            \ libraries (AWT / Swing / JavaFX) for few years in Sun and Oracle. Andrey supervised the development team in\
+            \ QuickOffice, was responsible for the functionality QuickPoint component, worked as a manager of load testing\
+            \ group in NetCracker.\n\nCurrently, Andrey is the program director and organizer of JUG.ru Group conferences,\
+            \ Java conferences JPoint, Joker and JBreak, JUG.ru and CodeFreeze community meetings in St. Petersburg and Moscow."
       - language: ru
-        text: "Закончил матмех СПбГУ. Несколько лет разрабатывал графический стек библиотек JDK (AWT/Swing/JavaFX) в Sun и\
+        text: "Окончил матмех СПбГУ. Несколько лет разрабатывал графический стек библиотек JDK (AWT/Swing/JavaFX) в Sun и\
             \ Oracle. Руководил группой разработки в компании QuickOffice, отвечал за функциональность компонента QuickPoint.\
-            \ Работал менеджером группы нагрузочного тестирования в компании NetCracker.\n\nНа данный момент Андрей — дире\
-            ктор департамента производства в JUG Ru Group."
+            \ Работал менеджером группы нагрузочного тестирования в компании NetCracker.\n\nНа данный момент Андрей — прог\
+            раммный директор и организатор конференций команды JUG.ru Group, Java-конференций JPoint, Joker и JBreak, встр\
+            еч JUG.ru и сообщества CodeFreeze в Петербурге и Москве."
     twitter: it_improve
     habr: real_ales
   - id: 1077
@@ -17348,7 +17350,7 @@ speakers:
     photoFileName: 1246.jpg
     photoUpdatedAt: 2020-07-07T11:03:14.650Z[UTC]
     name:
-      - {language: en, text: "Ruslan Akhmetzyanov"}
+      - {language: en, text: "Ruslan Akhmetzianov"}
       - {language: ru, text: "Руслан Ахметзянов"}
     companyIds: [425]
     bio:
@@ -22728,12 +22730,12 @@ speakers:
     companyIds: [742]
     bio:
       - language: en
-        text: "Oren Eini, pseudonym Ayende Rahien, is a frequent blogger at ayende.com has over 20 years of experience in\
+        text: "Oren Eini, pseudonym Ayende Rahien, is a frequent blogger at ayende.com. Has over 20 years of experience in\
             \ the development world who strongly focuses on the Microsoft and .NET ecosystem. Oren has been recognized and\
-            \ awarded Microsoft's Most Valuable Professional from 2007-2020.\n\nHe's an internationally acclaimed presenter\
+            \ awarded Microsoft's Most Valuable Professional in 2007–2020.\r\n\r\nHe's an internationally acclaimed presenter\
             \ appearing at DevTeach, JAOO, QCon, Oredev, NDC, Yow! and Progressive.NET conferences, sharing his knowledge\
             \ via conferences and written works such as \"DSLs in Boo: Domain Specific Languages in .NET\", published by Manning\
-            \ and the \"Inside RavenDB\" guide to all things RavenDB.\n\nHe remains dedicated and focused on architecture\
+            \ and the \"Inside RavenDB\" guide to all things RavenDB.\r\n\r\nHe remains dedicated and focused on architecture\
             \ and best practices that promote quality software and zero-friction development."
     twitter: ayende
     gitHub: ayende
@@ -27458,3 +27460,13 @@ speakers:
     twitter: myshov
     gitHub: myshov
     habr: Myshov
+  - id: 1956
+    photoFileName: 1956.jpg
+    photoUpdatedAt: 2021-08-26T07:38:01.656Z[UTC]
+    name:
+      - {language: en, text: "Anton Kovalenko"}
+      - {language: ru, text: "Антон Коваленко"}
+    companyIds: [318]
+    bio:
+      - {language: en, text: "У Антона имеется 15-летний опыт построения и трансформации ИТ-инфраструктур enterprise-уровн\
+            я. Последние три года концентрировался на проектировании и развертывании гибридных и облачных решений."}

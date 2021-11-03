@@ -1794,7 +1794,8 @@ public class ConferenceDataLoader {
 //                LoadSettings.invalidTalksSet(Set.of("Открытие конференции HolyJS 2021 Moscow", "Закрытие конференции HolyJS 2021 Moscow",
 //                        "Игра «Holy Чудес»", "Разговор про уровни разработчиков")));
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2021, 11, 8), "2021spbdevoops",
-//                LoadSettings.invalidTalksSet(Set.of("Открытие конференции DevOops 2021", "Закрытие конференции DevOops 2021")));
+//                LoadSettings.invalidTalksSet(Set.of("Открытие конференции DevOops 2021", "Закрытие конференции DevOops 2021",
+//                        "DevOops 2021 Virtual Afterparty")));
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2021, 11, 15), "2021spbcpp",
 //                LoadSettings.invalidTalksSet(Set.of("Открытие конференции C++ Russia 2021")));
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2021, 11, 22), "2021msk");
