@@ -25862,7 +25862,7 @@ speakers:
     name:
       - {language: en, text: "Valery Mironov"}
       - {language: ru, text: "Валерий Миронов"}
-    companyIds: [321]
+    companyIds: [869]
     bio:
       - language: en
         text: "С++ developer. Worked on Task Parallelism in several large projects.\n\nHave an interest in concurrent programming,\
@@ -25928,10 +25928,11 @@ speakers:
     companyIds: [635]
     bio:
       - language: en
-        text: "Software Architect, Team Lead. In charge of Secure Platform Development in cybernetic KasperskyOS. She has\
-            \ over 10 years of experience in virtual machine kernel development, as well as in cloud development and microservices\
-            \ architecture.\n\nShe teaches at MIPT and Innopolis, likes to turn study into a process of mutual knowledge enrichment,\
-            \ and work into an equally shared drive."
+        text: "Software architect, team leader. Now Anna is inspired with delivering functional safety in KasperskyOS. She\
+            \ has 10 years of virtualization development under her belt. Anna's background includes cloud development (DRS,\
+            \ schedulers) and microservices architecture.\n\nAnna is an associate professor at MIPT and at Innopolis university.\
+            \ She likes to transform teaching into a process of mutual enrichment and enjoy seeing her ex-students to become\
+            \ her teachers."
       - language: ru
         text: "Архитектор ПО, тимлид. Занимается Secure Platform Development в кибериммунной KasperskyOS. За плечами — бол\
             ее 10 лет в разработке ядра виртуальной машины, а также в облачной разработке и архитектуре микросервисов.\n\n\

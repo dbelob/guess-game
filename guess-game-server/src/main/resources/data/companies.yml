@@ -2607,3 +2607,6 @@ companies:
   - id: 868
     name:
       - {language: en, text: Osome}
+  - id: 869
+    name:
+      - {language: en, text: ArangoDB}
