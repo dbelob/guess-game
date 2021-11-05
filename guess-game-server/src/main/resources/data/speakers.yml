@@ -9506,7 +9506,7 @@ speakers:
     name:
       - {language: en, text: "Pavel Chertorogov"}
       - {language: ru, text: "Павел Черторогов"}
-    companyIds: [315]
+    companyIds: [421]
     bio:
       - {language: en, text: "Information Systems Architect, Open Source Maintainer. Made more than 15 reports on GraphQL.\
             \ He has extensive practical knowledge of backend, frontend, administration and architecture building. In 2016\
@@ -9658,11 +9658,10 @@ speakers:
       - {language: ru, text: "Артём Кобзарь"}
     companyIds: [286]
     bio:
-      - language: en
-        text: "JavaScript.Ninja courses teacher. On the tech fringe.\n\nLikes functional programming, compilers and open source."
-      - language: ru
-        text: "Преподаватель на курсах JavaScript.Ninja. Маргинал от мира технологий.\n\nЛюбитель ФП, компиляторов и open\
-            \ source."
+      - {language: en, text: "Developer on the Kotlin JS/WASM team, host of the [UnderJS](https://underjs.ru/) podcast, and\
+            \ a fan of cracking your favorite JavaScript and making something human out of it."}
+      - {language: ru, text: "Разработчик в команде Kotlin JS/WASM, ведущий подкаста [UnderJS](https://underjs.ru/), любит\
+            ель расковырять твой любимый JavaScript и сделать из него что-то людское."}
     twitter: rage_monk
     gitHub: JSMonk
     habr: JSMonk
@@ -22415,7 +22414,7 @@ speakers:
     photoUpdatedAt: 2021-03-11T07:13:50.686Z[UTC]
     name:
       - {language: en, text: "Roman Ponomarev"}
-      - {language: ru, text: "Роман Пономарев"}
+      - {language: ru, text: "Роман Пономарёв"}
     companyIds: [730]
     bio:
       - {language: en, text: "One of the creators of the DevSchacht community and co-host of the Frontend Youth podcast. When\
@@ -27575,6 +27574,7 @@ speakers:
     gitHub: tpulkit
   - id: 1964
     photoFileName: 1964.jpg
+    photoUpdatedAt: 2020-11-19T12:17:48.840Z[UTC]
     name:
       - {language: en, text: "Sergey Ivanov"}
       - {language: ru, text: "Сергей Иванов"}
