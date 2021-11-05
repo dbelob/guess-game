@@ -187,7 +187,7 @@ public class Speaker extends Identifier {
 
     public List<LocaleItem> getNameWithLastNameFirst() {
         if (name == null) {
-            return name;
+            return null;
         }
 
         List<LocaleItem> result = new ArrayList<>();

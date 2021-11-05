@@ -520,6 +520,7 @@ public class ContentfulUtils {
     static Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
                                  Set<String> assetErrorSet, AtomicLong speakerId, AtomicLong companyId, boolean checkEnTextExistence) {
         var urlDates = extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn());
+        var speakerFixedName = getSpeakerFixedName(contentfulSpeaker.getFields().getName());
 
         return new Speaker(
                 speakerId.getAndDecrement(),
@@ -527,7 +528,7 @@ public class ContentfulUtils {
                         urlDates.getUrl(),
                         urlDates.getUpdatedAt()
                 ),
-                extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName(), checkEnTextExistence, true),
+                extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), speakerFixedName, checkEnTextExistence, true),
                 createCompanies(contentfulSpeaker, companyId, checkEnTextExistence),
                 extractLocaleItems(contentfulSpeaker.getFields().getBioEn(), contentfulSpeaker.getFields().getBio(), checkEnTextExistence),
                 new Speaker.SpeakerSocials(
@@ -1451,6 +1452,50 @@ public class ContentfulUtils {
                 entryErrorSet.remove(entryId);
             }
         }
+    }
+
+    /**
+     * Gets fixed name.
+     *
+     * @param name name
+     * @return fixed name
+     */
+    static String getSpeakerFixedName(String name) {
+        final Map<String, String> FIXED_LAST_NAMES = Map.of("Богачев", "Богачёв", "Горбачев", "Горбачёв",
+                "Королев", "Королёв", "Плетнев", "Плетнёв", "Пономарев", "Пономарёв",
+                "Толкачев", "Толкачёв", "Усачев", "Усачёв", "Федоров", "Фёдоров", "Шипилев", "Шипилёв");
+        final Map<String, String> FIXED_FIRST_NAMES = Map.of("Алена", "Алёна", "Артем", "Артём",
+                "Петр", "Пётр", "Семен", "Семён", "Федор", "Фёдор");
+
+        if ((name == null) || name.isEmpty()) {
+            return name;
+        }
+
+        // Change last names
+        for (var fixedLastName : FIXED_LAST_NAMES.entrySet()) {
+            String nameWithFixedLastName = name.replaceAll(String.format("\\b%s$", fixedLastName.getKey()), fixedLastName.getValue());
+
+            if (!name.equals(nameWithFixedLastName)) {
+                log.warn("Speaker last name is changed; original: {}, changed: {}", name, nameWithFixedLastName);
+                name = nameWithFixedLastName;
+
+                break;
+            }
+        }
+
+        // Change first names
+        for (var fixedFirstName : FIXED_FIRST_NAMES.entrySet()) {
+            String nameWithFixedFirstName = name.replaceAll(String.format("^%s\\b", fixedFirstName.getKey()), fixedFirstName.getValue());
+
+            if (!name.equals(nameWithFixedFirstName)) {
+                log.warn("Speaker first name is changed; original: {}, changed: {}", name, nameWithFixedFirstName);
+                name = nameWithFixedFirstName;
+
+                break;
+            }
+        }
+
+        return name;
     }
 
     /**

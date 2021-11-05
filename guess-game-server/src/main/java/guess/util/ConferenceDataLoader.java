@@ -1791,11 +1791,15 @@ public class ConferenceDataLoader {
 //                                "Тематическая дискуссия: кто слез с Java 8, расскажите как это получилось"),
 //                        false));
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2021, 11, 2), "2021msk",
-//                LoadSettings.invalidTalksSet(Set.of("Открытие конференции HolyJS 2021 Moscow", "Закрытие конференции HolyJS 2021 Moscow",
-//                        "Игра «Holy Чудес»", "Разговор про уровни разработчиков")));
+//                new LoadSettings(
+//                        Map.of(new NameCompany("Сергей Иванов", null), 1964L),
+//                        Set.of("Открытие конференции HolyJS 2021 Moscow", "Закрытие конференции HolyJS 2021 Moscow",
+//                                "Игра «Holy Чудес»", "Разговор про уровни разработчиков"),
+//                        false
+//                ));
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2021, 11, 8), "2021spbdevoops",
 //                LoadSettings.invalidTalksSet(Set.of("Открытие конференции DevOops 2021", "Закрытие конференции DevOops 2021",
-//                        "DevOops 2021 Virtual Afterparty")));
+//                        "DevOops 2021 Virtual Afterparty: насущные вопросы DevOps")));
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2021, 11, 15), "2021spbcpp",
 //                LoadSettings.invalidTalksSet(Set.of("Открытие конференции C++ Russia 2021")));
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2021, 11, 22), "2021msk");

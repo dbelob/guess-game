@@ -2047,6 +2047,31 @@ class ContentfulUtilsTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getSpeakerFixedName method tests")
+    class GetSpeakerFixedNameTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, null),
+                    arguments("", ""),
+                    arguments("Alexey Fyodorov", "Alexey Fyodorov"),
+                    arguments("Алексей Федоров", "Алексей Фёдоров"),
+                    arguments("Алексей Фёдоров", "Алексей Фёдоров"),
+                    arguments("Федор Алексеев", "Фёдор Алексеев"),
+                    arguments("Фёдор Алексеев", "Фёдор Алексеев"),
+                    arguments("Федор Федоров", "Фёдор Фёдоров"),
+                    arguments("Фёдор Фёдоров", "Фёдор Фёдоров")
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getSpeakerFixedName(String name, String expected) {
+            assertEquals(expected, ContentfulUtils.getSpeakerFixedName(name));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("needUpdate method tests (EventType)")
     class NeedUpdateEventTypeTest {
         private Stream<Arguments> data() {
