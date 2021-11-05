@@ -1461,10 +1461,10 @@ public class ContentfulUtils {
      * @return fixed name
      */
     static String getSpeakerFixedName(String name) {
-        final Map<String, String> FIXED_LAST_NAMES = Map.of("Богачев", "Богачёв", "Горбачев", "Горбачёв",
+        Map<String, String> fixedLastNames = Map.of("Богачев", "Богачёв", "Горбачев", "Горбачёв",
                 "Королев", "Королёв", "Плетнев", "Плетнёв", "Пономарев", "Пономарёв",
                 "Толкачев", "Толкачёв", "Усачев", "Усачёв", "Федоров", "Фёдоров", "Шипилев", "Шипилёв");
-        final Map<String, String> FIXED_FIRST_NAMES = Map.of("Алена", "Алёна", "Артем", "Артём",
+        Map<String, String> fixedFirstNames = Map.of("Алена", "Алёна", "Артем", "Артём",
                 "Петр", "Пётр", "Семен", "Семён", "Федор", "Фёдор");
 
         if ((name == null) || name.isEmpty()) {
@@ -1472,7 +1472,7 @@ public class ContentfulUtils {
         }
 
         // Change last names
-        for (var fixedLastName : FIXED_LAST_NAMES.entrySet()) {
+        for (var fixedLastName : fixedLastNames.entrySet()) {
             String nameWithFixedLastName = name.replaceAll(String.format("\\b%s$", fixedLastName.getKey()), fixedLastName.getValue());
 
             if (!name.equals(nameWithFixedLastName)) {
@@ -1484,7 +1484,7 @@ public class ContentfulUtils {
         }
 
         // Change first names
-        for (var fixedFirstName : FIXED_FIRST_NAMES.entrySet()) {
+        for (var fixedFirstName : fixedFirstNames.entrySet()) {
             String nameWithFixedFirstName = name.replaceAll(String.format("^%s\\b", fixedFirstName.getKey()), fixedFirstName.getValue());
 
             if (!name.equals(nameWithFixedFirstName)) {
