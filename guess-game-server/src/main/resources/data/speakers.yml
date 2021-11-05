@@ -26921,11 +26921,10 @@ speakers:
       - {language: ru, text: "Иван Шафран"}
     companyIds: [620]
     bio:
-      - language: en
-        text: "He works in the VK Android call team. He calls himself about a hundred times a day.\nKotlin lover. Spontaneously\
-            \ writes articles on Medium and open source projects on Github. Teaches Android for beginners."
+      - {language: en, text: "Works in the Android VK Calls team. Calls himself about a hundred times a day. Loves Kotlin.\
+            \ Spontaneously writes articles on Medium and open-source projects on Github. Teaches Android for beginners."}
       - language: ru
-        text: "Работает в команде Android звонков VK. Звонит сам себе около сотни раз в день.\r\nЛюбит Kotlin. Спонтанно п\
+        text: "Работает в команде Android-звонков VK. Звонит сам себе около сотни раз в день.\r\nЛюбит Kotlin. Спонтанно п\
             ишет статьи на Medium и опенорс-проекты на Github. Преподает Android для начинающих."
     twitter: NotShafran
     gitHub: IvanShafran
@@ -27699,3 +27698,43 @@ speakers:
       - {language: ru, text: "Опытный пользователь интернета с 1998-го. Занимался поддержкой публичных облаков на OpenVZ/Xen/KVM.\
             \ Системный инженер CDN G-Core Labs в команде DNS c марта 2020 года."}
     gitHub: clickfreak
+  - id: 1972
+    photoFileName: 1972.jpg
+    photoUpdatedAt: 2021-11-04T11:52:17.297Z[UTC]
+    name:
+      - {language: en, text: "Mikhail Golubev"}
+      - {language: ru, text: "Михаил Голубев"}
+    companyIds: [34]
+    bio:
+      - {language: en, text: "Mike is a Solutions Architect helping AWS customers to realize the full potential of the cloud\
+            \ technologies. He works in IT for more than 15 years, starting as a freelance developer and then transitioning\
+            \ through multiple roles and teams, including support team, professional services and pre-sales. Before AWS he\
+            \ worked in CloudBlue (an Ingram Micro business) with Telcos and Distributors across EMEA to expand their product\
+            \ portfolio with cloud services."}
+      - {language: ru, text: "Михаил работает архитектором в компании AWS, где помогает клиентам строить эффективные решен\
+            ия в облаке. Больше 15 лет в IT, начинал как фриланс-разработчик, а затем прошёл через несколько ролей в разны\
+            х командах, включая техническую поддержку, professional services и pre-sales. До AWS работал в компании CloudBlue\
+            \ (Ingram Micro), где помогал телеком-провайдерам и IT-дистрибьюторам в Европе, на Ближнем Востоке и в Африке\
+            \ расширить своё портфолио облачными сервисами."}
+  - id: 1973
+    photoFileName: 1973.jpg
+    photoUpdatedAt: 2021-11-04T12:05:19.458Z[UTC]
+    name:
+      - {language: en, text: "Ilya Galimyanov"}
+      - {language: ru, text: "Илья Галимьянов"}
+    companyIds: [648]
+    bio:
+      - language: en
+        text: "Tech-lead of the OTT team at WASD.TV, a division of eSposrts at MTS Digital. He develops infrastructure and\
+            \ software for receiving/processing/storage/delivery of video broadcasts. Before MTS he worked at Facecast where\
+            \ he developed media content processing software and Evacoder iron video encoder software.\r\nLoves distributed\
+            \ and fault-tolerant systems, beautiful code, and beer.\r\nProfessionally burned out from watching video content\
+            \ and Big Buck Bunny (even though he's waiting for part 2 to come out!)."
+      - language: ru
+        text: "Tech-lead команды OTT в WASD.TV — подразделения eSposrts в MTS Digital. Занимается разработкой инфраструкту\
+            ры и ПО для приема/обработки/хранения/доставки видеотрансляций. До MTS работал в Facecast, где разрабатывал ПО\
+            \ для обработки медиаконтента и ПО для железного видео энкодера Evacoder.\nЛюбит распределенные и отказоустойч\
+            ивые системы, красивый код и пиво.\nПрофессионально выгорел от просмотра видеоконтента и Big Buck Bunny (хоть\
+            \ и ждет выхода второй части!)."
+    gitHub: ZloyDyadka
+    habr: ZloyDyadka

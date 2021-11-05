@@ -1476,7 +1476,7 @@ public class ContentfulUtils {
             String nameWithFixedLastName = name.replaceAll(String.format("\\b%s$", fixedLastName.getKey()), fixedLastName.getValue());
 
             if (!name.equals(nameWithFixedLastName)) {
-                log.warn("Last name is changed; original: {}, changed: {}", name, nameWithFixedLastName);
+                log.warn("Speaker last name is changed; original: {}, changed: {}", name, nameWithFixedLastName);
                 name = nameWithFixedLastName;
 
                 break;
@@ -1488,7 +1488,7 @@ public class ContentfulUtils {
             String nameWithFixedFirstName = name.replaceAll(String.format("^%s\\b", fixedFirstName.getKey()), fixedFirstName.getValue());
 
             if (!name.equals(nameWithFixedFirstName)) {
-                log.warn("First name is changed; original: {}, changed: {}", name, nameWithFixedFirstName);
+                log.warn("Speaker first name is changed; original: {}, changed: {}", name, nameWithFixedFirstName);
                 name = nameWithFixedFirstName;
 
                 break;
