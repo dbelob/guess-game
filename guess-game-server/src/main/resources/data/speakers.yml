@@ -134,11 +134,11 @@ speakers:
     photoUpdatedAt: 2021-04-15T18:15:19.395Z[UTC]
     name:
       - {language: en, text: "Alexey Fyodorov"}
-      - {language: ru, text: "Алексей Федоров"}
+      - {language: ru, text: "Алексей Фёдоров"}
     companyIds: [291]
     bio:
       - {language: en, text: "Producer @ JUG Ru Group, organizes the largest conferences for developers in Russia. In the\
-            \ last 6 years Alexey's team arranged more than 50 conferences. Alexey has a very different background: from Software\
+            \ last 8 years Alexey's team arranged more than 80 conferences. Alexey has a very different background: from Software\
             \ Engineer @ Oracle (JCK, Java Platform Group) to DevRel @ Odnoklassiniki."}
       - {language: ru, text: "Алексей Федоров — продюсер в JUG Ru Group, организатор крупнейших в России конференций для п\
             рограммистов и сочувствующих. В данный момент фокусируется на процессах и инструментах для проведения онлайн-м\
@@ -1017,7 +1017,7 @@ speakers:
     photoUpdatedAt: 2021-08-13T07:06:20.468Z[UTC]
     name:
       - {language: en, text: "Artem Shutak"}
-      - {language: ru, text: "Артем Шутак"}
+      - {language: ru, text: "Артём Шутак"}
     companyIds: [653]
     bio:
       - language: en
@@ -2779,7 +2779,7 @@ speakers:
     photoFileName: 0172.jpg
     name:
       - {language: en, text: "Yegor Fedorov"}
-      - {language: ru, text: "Егор Федоров"}
+      - {language: ru, text: "Егор Фёдоров"}
     companyIds: [665]
     bio:
       - {language: ru, text: "Работает в компании Сбербанк Технологии с 2012 года. На данный момент является главным архит\
@@ -3537,7 +3537,7 @@ speakers:
     photoFileName: 0240.jpg
     name:
       - {language: en, text: "Petr Kudryavtsev"}
-      - {language: ru, text: "Петр Кудрявцев"}
+      - {language: ru, text: "Пётр Кудрявцев"}
     companyIds: [383]
   - id: 241
     photoFileName: 0241.jpg
@@ -4560,7 +4560,7 @@ speakers:
     photoFileName: 0313.jpg
     name:
       - {language: en, text: "Artem Zhukov"}
-      - {language: ru, text: "Артем Жуков"}
+      - {language: ru, text: "Артём Жуков"}
     companyIds: [665]
   - id: 314
     photoFileName: 0314.jpg
@@ -4718,7 +4718,7 @@ speakers:
     photoFileName: 0324.jpg
     name:
       - {language: en, text: "Artem Marinov"}
-      - {language: ru, text: "Артем Маринов"}
+      - {language: ru, text: "Артём Маринов"}
     companyIds: [157]
     bio:
       - {language: en, text: "Has been into advertising technologies since 2013. The last two years was working at Data-Centric\
@@ -5094,7 +5094,7 @@ speakers:
     photoFileName: 0350.jpg
     name:
       - {language: en, text: "Sergei Fedorov"}
-      - {language: ru, text: "Сергей Федоров"}
+      - {language: ru, text: "Сергей Фёдоров"}
     companyIds: [689]
     bio:
       - {language: en, text: "Lead software engineer at Yandex.Taxi, works on developing an asynchronous framework for Taxi\
@@ -5565,7 +5565,7 @@ speakers:
     photoFileName: 0382.jpg
     name:
       - {language: en, text: "Artem Kalichkin"}
-      - {language: ru, text: "Артем Каличкин"}
+      - {language: ru, text: "Артём Каличкин"}
     companyIds: [686]
     bio:
       - language: ru
@@ -5748,7 +5748,7 @@ speakers:
     photoFileName: 0395.jpg
     name:
       - {language: en, text: "Semyon Checherinda"}
-      - {language: ru, text: "Семен Чечеринда"}
+      - {language: ru, text: "Семён Чечеринда"}
     companyIds: [689]
     bio:
       - {language: en, text: "Software engineer. As a part of the Yandex development of data storage and processing system\
@@ -7973,7 +7973,7 @@ speakers:
     photoUpdatedAt: 2020-10-09T13:22:56.315Z[UTC]
     name:
       - {language: en, text: "Artem Eroshenko"}
-      - {language: ru, text: "Артем Ерошенко"}
+      - {language: ru, text: "Артём Ерошенко"}
     companyIds: [425]
     bio:
       - language: en
@@ -8649,7 +8649,7 @@ speakers:
     photoFileName: 0602.jpg
     name:
       - {language: en, text: "Artem Nikitin"}
-      - {language: ru, text: "Артем Никитин"}
+      - {language: ru, text: "Артём Никитин"}
     companyIds: [175]
     bio:
       - {language: en, text: "Started on the client side of different web applications, then moved to the backend and now\
@@ -9290,7 +9290,7 @@ speakers:
     photoFileName: 0645.jpg
     name:
       - {language: en, text: "Artem Zinnatullin"}
-      - {language: ru, text: "Артем Зиннатуллин"}
+      - {language: ru, text: "Артём Зиннатуллин"}
     companyIds: [319]
     bio:
       - language: en
@@ -9940,7 +9940,7 @@ speakers:
     photoFileName: 0691.jpg
     name:
       - {language: en, text: "Artem Kunets"}
-      - {language: ru, text: "Артем Кунец"}
+      - {language: ru, text: "Артём Кунец"}
     companyIds: [27]
     bio:
       - {language: en, text: "Artem is developing a 3D application in Align Technology and researching the possibilities of\
@@ -11943,7 +11943,7 @@ speakers:
     photoFileName: 0836.jpg
     name:
       - {language: en, text: "Artem Logutov"}
-      - {language: ru, text: "Артем Логутов"}
+      - {language: ru, text: "Артём Логутов"}
     companyIds: [686]
     bio:
       - {language: en, text: "Is into information security since school days, thus choosing to study at Novosibirsk State\
@@ -12846,7 +12846,7 @@ speakers:
     photoFileName: 0905.jpg
     name:
       - {language: en, text: "Artem Kiselev"}
-      - {language: ru, text: "Артем Киселев"}
+      - {language: ru, text: "Артём Киселев"}
     companyIds: [675]
   - id: 906
     photoFileName: 0906.jpg
@@ -12864,7 +12864,7 @@ speakers:
     photoFileName: 0908.jpg
     name:
       - {language: en, text: "Fyodor Nesterenko"}
-      - {language: ru, text: "Федор Нестеренко"}
+      - {language: ru, text: "Фёдор Нестеренко"}
     companyIds: [608]
   - id: 909
     photoFileName: 0909.jpg
@@ -13202,7 +13202,7 @@ speakers:
     photoUpdatedAt: 2021-03-15T07:43:00.821Z[UTC]
     name:
       - {language: en, text: "Artem Zaitsev"}
-      - {language: ru, text: "Артем Зайцев"}
+      - {language: ru, text: "Артём Зайцев"}
     companyIds: [506]
     bio:
       - {language: en, text: "Leads the Flutter department at Surf, does a pet project, loves to talk about architecture."}
@@ -13648,7 +13648,7 @@ speakers:
     photoUpdatedAt: 2019-08-21T08:15:24.436Z[UTC]
     name:
       - {language: en, text: "Fedor Chemashkin"}
-      - {language: ru, text: "Федор Чемашкин"}
+      - {language: ru, text: "Фёдор Чемашкин"}
     companyIds: [139]
     bio:
       - language: en
@@ -13667,7 +13667,7 @@ speakers:
     photoFileName: 0974.jpg
     name:
       - {language: en, text: "Fedor Korotkov"}
-      - {language: ru, text: "Федор Коротков"}
+      - {language: ru, text: "Фёдор Коротков"}
     companyIds: [90]
     bio:
       - {language: en, text: "Chief X Officer at Cirrus Labs. Fedor spent many years at the industry leading companies building\
@@ -17869,7 +17869,7 @@ speakers:
     photoFileName: 1290.jpg
     name:
       - {language: en, text: "Peter Tretyakov"}
-      - {language: ru, text: "Петр Третьяков"}
+      - {language: ru, text: "Пётр Третьяков"}
     companyIds: [440]
     bio:
       - {language: en, text: "Peter started his developer way from web apps on Ruby on Rails. When Apple finally introduced\
@@ -17944,7 +17944,7 @@ speakers:
     photoUpdatedAt: 2020-03-13T11:36:08.513Z[UTC]
     name:
       - {language: en, text: "Petr Kozlov"}
-      - {language: ru, text: "Петр Козлов"}
+      - {language: ru, text: "Пётр Козлов"}
     companyIds: [440]
     bio:
       - {language: en, text: "Android developer and project lead in Redmadrobot. In Android development since 2016: started\
@@ -19469,7 +19469,7 @@ speakers:
     photoUpdatedAt: 2020-11-23T11:37:54.207Z[UTC]
     name:
       - {language: en, text: "Artem Seleznev"}
-      - {language: ru, text: "Артем Селезнев"}
+      - {language: ru, text: "Артём Селезнев"}
     companyIds: [665]
     bio:
       - {language: en, text: "Artem works on a project to assess technical risks for a company and project risks into the\
@@ -19578,7 +19578,7 @@ speakers:
     photoUpdatedAt: 2020-10-22T11:42:36.236Z[UTC]
     name:
       - {language: en, text: "Simon Ogorodnik"}
-      - {language: ru, text: "Семен Огородник"}
+      - {language: ru, text: "Семён Огородник"}
     companyIds: [286]
     bio:
       - {language: en, text: "Simon Ogorodnik works on Kotlin at JetBrains, initially joined the Kotlin IDE team at age of\
@@ -20305,7 +20305,7 @@ speakers:
     photoUpdatedAt: 2020-10-07T09:22:50.631Z[UTC]
     name:
       - {language: en, text: "Artem Zhelezov"}
-      - {language: ru, text: "Артем Железов"}
+      - {language: ru, text: "Артём Железов"}
     companyIds: [200]
     bio:
       - {language: en, text: "An engineer-physicist by education, for 8 years he was engaged in computer modeling of various\
@@ -22138,7 +22138,7 @@ speakers:
     photoUpdatedAt: 2021-03-11T09:57:38.820Z[UTC]
     name:
       - {language: en, text: "Fedor Sazonov"}
-      - {language: ru, text: "Федор Сазонов"}
+      - {language: ru, text: "Фёдор Сазонов"}
     companyIds: [665]
     bio:
       - language: en
@@ -24226,7 +24226,7 @@ speakers:
     photoUpdatedAt: 2021-08-11T10:14:05.580Z[UTC]
     name:
       - {language: en, text: "Artem Aliev"}
-      - {language: ru, text: "Артем Алиев"}
+      - {language: ru, text: "Артём Алиев"}
     companyIds: [242]
     bio:
       - {language: en, text: "Artem is a Huawei expert in big data technologies and graph databases. Before that, he integrated\
@@ -24370,7 +24370,7 @@ speakers:
     photoUpdatedAt: 2021-09-06T14:27:40.295Z[UTC]
     name:
       - {language: en, text: "Artem Yudovin"}
-      - {language: ru, text: "Артем Юдовин"}
+      - {language: ru, text: "Артём Юдовин"}
     companyIds: [784]
     bio:
       - {language: en, text: "For the last 5 years, Artem has been working in the area of Big Data. In this area, he came\
@@ -25307,7 +25307,7 @@ speakers:
     photoUpdatedAt: 2021-10-25T13:55:13.338Z[UTC]
     name:
       - {language: en, text: "Vadim Gorbachev"}
-      - {language: ru, text: "Вадим Горбачев"}
+      - {language: ru, text: "Вадим Горбачёв"}
     companyIds: [620]
     bio:
       - {language: en, text: "Vadim has been in the industry for about 10 years, for the last year he has been involved in\
@@ -25422,7 +25422,7 @@ speakers:
     photoUpdatedAt: 2021-10-05T12:25:37.348Z[UTC]
     name:
       - {language: en, text: "Artem Vorobev"}
-      - {language: ru, text: "Артем Воробьев"}
+      - {language: ru, text: "Артём Воробьев"}
     companyIds: [817]
     bio:
       - language: en
@@ -25476,7 +25476,7 @@ speakers:
     photoUpdatedAt: 2021-09-10T14:33:27.149Z[UTC]
     name:
       - {language: en, text: "Petr Zaitsev"}
-      - {language: ru, text: "Петр Зайцев"}
+      - {language: ru, text: "Пётр Зайцев"}
     companyIds: [395]
     bio:
       - {language: en, text: "Petr Zaitsev is the CEO and co-founder of Percona. As one of the foremost experts on Open Source\
@@ -26151,7 +26151,7 @@ speakers:
     photoUpdatedAt: 2021-10-18T10:52:22.827Z[UTC]
     name:
       - {language: en, text: "Alena Maltseva"}
-      - {language: ru, text: "Алена Мальцева"}
+      - {language: ru, text: "Алёна Мальцева"}
     companyIds: [837]
     bio:
       - {language: en, text: "A practitioner with unique experience in team building and development. She has more than 10\
@@ -27252,7 +27252,7 @@ speakers:
     photoUpdatedAt: 2021-10-30T10:44:49.169Z[UTC]
     name:
       - {language: en, text: "Alena Batitskaya"}
-      - {language: ru, text: "Алена Батицкая"}
+      - {language: ru, text: "Алёна Батицкая"}
     companyIds: []
     bio:
       - {language: en, text: "Frontrunner, freelancer. She has been doing online education for 7 years, teaching. Speaker,\
