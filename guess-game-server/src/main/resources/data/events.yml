@@ -2514,7 +2514,7 @@ events:
     name:
       - {language: en, text: "VideoTech 2021"}
     startDate: "2021-12-01"
-    endDate: "2021-09-03"
+    endDate: "2021-12-03"
     siteLink:
       - {language: en, text: "https://vtconf.com/"}
     placeId: 24
