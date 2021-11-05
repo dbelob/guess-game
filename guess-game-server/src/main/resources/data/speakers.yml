@@ -26347,15 +26347,12 @@ speakers:
     name:
       - {language: en, text: "Sergey Ivanov"}
       - {language: ru, text: "Сергей Иванов"}
-    companyIds: []
+    companyIds: [806]
     bio:
-      - {language: en, text: "Frontend developer (JavaScript/TypeScript), mentor. Sergey is interested in software development\
-            \ in general and also shows interest in functional programming. Writes articles. Has his own Telegram channel.\
-            \ Not directly related to area 51."}
-      - {language: ru, text: "Фронтенд-разработчик (JavaScript/TypeScript), наставник. Интересуется разработкой программно\
-            го обеспечения в целом, также проявляет интерес к функциональному программированию. Пишет статьи. Ведет Телегр\
-            ам-канал. Имеет не прямое отношение к зоне 51 (нет)."}
-    twitter: xufocoder
+      - {language: en, text: "Systems architect at Altenar. He's interested in academic programming languages and potential\
+            \ applications of their concepts in .NET. He's humbly waiting for shapes/roles being implemented in C#."}
+      - {language: ru, text: "Системный архитектор в Altenar. Интересуется академическими языками программирования и возмо\
+            жным применением их концепций в .NET. Смиренно ждёт реализации shapes/roles в C#."}
   - id: 1875
     photoFileName: 1875.jpg
     photoUpdatedAt: 2021-10-18T14:27:44.764Z[UTC]
@@ -27576,3 +27573,18 @@ speakers:
             \ received a bachelor degree in technology from Indian Institute of Technology, Bombay."
     twitter: tandon_pulkit
     gitHub: tpulkit
+  - id: 1964
+    photoFileName: 1964.jpg
+    name:
+      - {language: en, text: "Sergey Ivanov"}
+      - {language: ru, text: "Сергей Иванов"}
+    companyIds: [872]
+    bio:
+      - {language: en, text: "Frontend developer (JavaScript/TypeScript), mentor. Sergey is interested in software development\
+            \ in general and also shows interest in functional programming. Writes articles. Has his own Telegram channel.\
+            \ Not directly related to area 51."}
+      - {language: ru, text: "Фронтенд-разработчик (JavaScript/TypeScript), наставник. Интересуется разработкой программно\
+            го обеспечения в целом, также проявляет интерес к функциональному программированию. Пишет статьи. Ведет Телегр\
+            ам-канал. Имеет не прямое отношение к зоне 51 (нет)."}
+    twitter: xufocoder
+    gitHub: ufocoder
