@@ -693,15 +693,17 @@ speakers:
     name:
       - {language: en, text: "Oleg Nenashev"}
       - {language: ru, text: "Олег Ненашев"}
-    companyIds: []
+    companyIds: [873]
     bio:
-      - {language: en, text: "Former CloudBees employee, core team member of the Jenkins project. Since 2008 works in the\
-            \ areas of automation, infrastructures, and frameworks for mixed software-hardware projects, with the help of\
-            \ Jenkins and dozens of other tools. Oleg writes code, maintains Jenkins core and plugins, and organizes meetups\
-            \ and other community events."}
-      - {language: ru, text: "Работал в CloudBees, в core team проекта Jenkins. C 2008 года занимается автоматизацией, инф\
-            раструктурой и фреймворкостроением для крупных программно-аппаратных проектов с помощью Jenkins и десятков дру\
-            гих тулов. Пишет код, поддерживает ядро и плагины Jenkins, организует митапы в СПб и других городах."}
+      - {language: en, text: "Open source software and open hardware advocate. Oleg is working on open source programs and\
+            \ Keptn community at the Dynatrace Innovation Lab. He is a TOC chair and community ambassador in the Continuous\
+            \ Delivery Foundation. Oleg is a core maintainer and board member in Jenkins where he writes code, mentors contributors,\
+            \ and organizes community events and Google Summer of Code in the project. He also organizes Jenkins and CDF meetups\
+            \ in Russia."}
+      - {language: ru, text: "Работает над опенсорсными программами и сообществом Kepth в Dynatrace Innovation Lab. Предсе\
+            датель Technical Oversight Committee в Continuous Delivery Foundation. Мейнтейнер ядра и один из лидеров сообщ\
+            ества Jenkins, состоит в governance board проекта. Также организует митапы Jenkins и CDF в Санкт-Петербурге и\
+            \ Москве."}
     twitter: oleg_nenashev
     gitHub: oleg-nenashev
     habr: oleg-nenashev
@@ -13732,7 +13734,7 @@ speakers:
     name:
       - {language: en, text: "Igor Kurochkin"}
       - {language: ru, text: "Игорь Курочкин"}
-    companyIds: [850]
+    companyIds: [874]
     bio:
       - language: en
         text: "Expert in DevOps, SRE and Team Topologies. \n\nHe was head of analysis and consulting at Express 42. Worked\
@@ -15050,17 +15052,17 @@ speakers:
     companyIds: [291]
     bio:
       - language: en
-        text: "Andrey graduated from SPbU \"Mathematics and Mechanics\" faculty. He was developing a graphical stack of JDK\
-            \ libraries (AWT / Swing / JavaFX) for few years in Sun and Oracle. Andrey supervised the development team in\
-            \ QuickOffice, was responsible for the functionality QuickPoint component, worked as a manager of load testing\
-            \ group in NetCracker.\n\nCurrently, Andrey is the program director and organizer of JUG.ru Group conferences,\
-            \ Java conferences JPoint, Joker and JBreak, JUG.ru and CodeFreeze community meetings in St. Petersburg and Moscow."
+        text: "Graduated from the mathematics department of St. Petersburg State University. A programmer since school, a\
+            \ pragmatist in life and a co-owner of the business of organizing conferences for IT people.\nDeveloped JDK libraries\
+            \ at Sun Microsystems and Oracle for several years. \nManaged the mobile development team at QuickOffice. \nLed\
+            \ a distributed load testing team at NetCracker.\nCurrently Director of Operations at JUG Ru Group. Tends to trust\
+            \ facts and figures."
       - language: ru
-        text: "Окончил матмех СПбГУ. Несколько лет разрабатывал графический стек библиотек JDK (AWT/Swing/JavaFX) в Sun и\
-            \ Oracle. Руководил группой разработки в компании QuickOffice, отвечал за функциональность компонента QuickPoint.\
-            \ Работал менеджером группы нагрузочного тестирования в компании NetCracker.\n\nНа данный момент Андрей — прог\
-            раммный директор и организатор конференций команды JUG.ru Group, Java-конференций JPoint, Joker и JBreak, встр\
-            еч JUG.ru и сообщества CodeFreeze в Петербурге и Москве."
+        text: "Окончил матмех СПбГУ. Программист со школы, прагматик в жизни и совладелец бизнеса по организации конференц\
+            ий для айтишников.\nНесколько лет разрабатывал библиотеки JDK в Sun Microsystems и Oracle. \nРуководил группой\
+            \ мобильной разработки в компании QuickOffice. \nБыл руководителем распределенной группы нагрузочного тестиров\
+            ания в NetCracker.\nВ настоящее время директор по производству в JUG Ru Group. Склонен доверять фактам и цифра\
+            м."
     twitter: it_improve
     habr: real_ales
   - id: 1077
@@ -25542,7 +25544,7 @@ speakers:
     photoFileName: 1820.jpg
     photoUpdatedAt: 2021-10-13T12:06:53.116Z[UTC]
     name:
-      - {language: en, text: "Ilya Feoktistov"}
+      - {language: en, text: "Ilia Feoktistov"}
       - {language: ru, text: "Илья Феоктистов"}
     companyIds: [819]
     bio:
@@ -27588,3 +27590,111 @@ speakers:
             ам-канал. Имеет не прямое отношение к зоне 51 (нет)."}
     twitter: xufocoder
     gitHub: ufocoder
+  - id: 1965
+    photoFileName: 1965.jpg
+    photoUpdatedAt: 2021-11-04T09:31:02.768Z[UTC]
+    name:
+      - {language: en, text: "Igor Nikolaev"}
+      - {language: ru, text: "Игорь Николаев"}
+    companyIds: [643]
+    bio:
+      - {language: en, text: "Leader of a team of engineers for automation of NSPC and World Plat.Form development processes.\
+            \ Engages in standardization and automation of processes related to all phases of CI/CD construction. Helps implement\
+            \ DevOps and replicate proven and effective solutions."}
+      - {language: ru, text: "Тимлид команды инженеров по автоматизации процессов разработки НСПК и Мир Plat.Form. Занимае\
+            тся стандартизацией и автоматизацией процессов, связанных со всеми этапами построения CI/CD. Помогает внедрять\
+            \ DevOps и тиражировать проверенные и эффективные решения."}
+  - id: 1966
+    photoFileName: 1966.jpg
+    photoUpdatedAt: 2021-11-02T14:14:55.116Z[UTC]
+    name:
+      - {language: en, text: "Lev Goncharov"}
+      - {language: ru, text: "Лев Гончаров"}
+    companyIds: [143]
+    bio:
+      - {language: en, text: "A broad-minded engineer with extensive experience in putting infrastructure in order. Lecturer\
+            \ at the internal DevOps school at Deutsche Telekom IT Solutions. The developer of the official Ansible module\
+            \ vmware_content_deploy_ovf_template."}
+      - {language: ru, text: "Инженер с широким кругозором и богатым опытом приведения инфраструктуры в порядок. Преподава\
+            тель во внутренней DevOps-школе Deutsche Telekom IT Solutions. Разработчик официального Ansible-модуля vmware_content_deploy_ovf_template."}
+    gitHub: ultral
+  - id: 1967
+    photoFileName: 1967.jpg
+    photoUpdatedAt: 2021-11-04T09:25:24.774Z[UTC]
+    name:
+      - {language: en, text: "Aleksandr Glukhov"}
+      - {language: ru, text: "Александр Глухов"}
+    companyIds: [143]
+    bio:
+      - {language: en, text: "Works at product team developing customer center functionalities of telekom.de. His IT career\
+            \ longs more than 12 years and he started as DevOps in DT IT after more than 3 years of experience as a senior\
+            \ linux administrator at one of retail networks, where he worked on internal projects of infrastructure/telephony/online\
+            \ retail and development processes facilitation. Aleksandr is also a mentor and a coach of containerization technology\
+            \ and Docker in internal DevOps School at Deutsche Telekom IT Solutions."}
+      - {language: ru, text: "Александр работает в продуктовой команде, которая разрабатывает функциональности для личного\
+            \ кабинета пользователя в telekom.de. В IT больше 12 лет, в DevOps пришел в DT IT после работы senior linux administrator\
+            \ в крупной ритейл-сети, где занимался проектами развития инфраструктуры, телефонии, онлайн-продаж и фасилитац\
+            ии процессов разработки. Ментор и преподаватель (технологии контейнеризации и Docker) во внутренней DevOps-шко\
+            ле Deutsche Telekom IT Solutions."}
+  - id: 1968
+    photoFileName: 1968.jpg
+    photoUpdatedAt: 2021-11-03T13:59:53.736Z[UTC]
+    name:
+      - {language: en, text: "Rushan Akmetdinov"}
+      - {language: ru, text: "Рушан Акметдинов"}
+    companyIds: [318]
+    bio:
+      - {language: en, text: "Engaged in different infrastructure automations and other CI/CD processes. Successfully took\
+            \ part in creating production incidents and their elimination. For the last couple of years Rushan interviewed\
+            \ over 250 people for Luxoft."}
+      - {language: ru, text: "Много лет занимается различными инфраструктурными автоматизациями и прочими CI/CD-процессами\
+            . Успешно участвовал в создании продакшен-инцидентов и их последующем устранении. За последние пару лет Рушан\
+            \ провел более 250 технических интервью с кандидатами Luxoft."}
+  - id: 1969
+    photoFileName: 1969.jpg
+    photoUpdatedAt: 2021-11-03T13:54:07.356Z[UTC]
+    name:
+      - {language: en, text: "Oleg Saprykin"}
+      - {language: ru, text: "Олег Сапрыкин"}
+    companyIds: [318]
+    bio:
+      - language: en
+        text: "Oleg works as DevOps engineer at Luxoft.\r\n\r\nWorks in IT for around 10 years, went from support to DevOps.\r\
+            \n\r\nNow works in a team who create trade platform.\r\n\r\nFell in love with Devops, automation, opportunity\
+            \ to learn something new and 'steal' something that works fine."
+      - language: ru
+        text: "Олег — девопс-инженер в компании Luxoft.\r\n\r\nВ IT уже около 10 лет, прошел путь от саппорта офиса и сист\
+            емного администрирования до DevOps.\r\n\r\nСейчас работает в команде, создающей торговую платформу.\r\n\r\nЗа\
+            \ несколько лет в профессии влюбился в DevOps, автоматизацию, возможность узнавать новое и «красть» то, что уж\
+            е проверено."
+  - id: 1970
+    photoFileName: 1970.jpg
+    photoUpdatedAt: 2021-11-02T14:07:33.828Z[UTC]
+    name:
+      - {language: en, text: "Bogdan Kurnosov"}
+      - {language: ru, text: "Богдан Курносов"}
+    companyIds: [875]
+    bio:
+      - {language: en, text: "Head of Backend at G-Core Labs. He worked his way up from Go programmer to lead, and then to\
+            \ head of backend development of the company. His entire programming career has been involved with all sorts of\
+            \ cloud services, from Docker container orchestration to clouds and CDNs. Now he's busy making sure the company's\
+            \ products are fast-paced, high quality, secure, and developers enjoy working for the company."}
+      - {language: ru, text: "Head of Backend в компании G-Core Labs. Прошёл путь от Go программиста до лида, а затем до р\
+            уководителя бэкенд-разработки компании. Вся его программистская карьера была связана с разного рода облачными\
+            \ сервисами — от оркестрации Docker-контейнеров до облаков и CDN. Сейчас занимается тем, чтобы продукты компан\
+            ии динамично развивались с достаточным уровнем качества и безопасности, а разработчикам нравилось работать в к\
+            омпании."}
+    gitHub: gofort
+  - id: 1971
+    photoFileName: 1971.jpg
+    photoUpdatedAt: 2021-11-02T13:44:34.853Z[UTC]
+    name:
+      - {language: en, text: "Konstantin Novakovsky"}
+      - {language: ru, text: "Константин Новаковский"}
+    companyIds: [875]
+    bio:
+      - {language: en, text: "Experienced Internet user since 1998. He has done public cloud support on OpenVZ/Xen/KVM. CDN\
+            \ G-Core Labs system engineer on the DNS team since March 2020."}
+      - {language: ru, text: "Опытный пользователь интернета с 1998-го. Занимался поддержкой публичных облаков на OpenVZ/Xen/KVM.\
+            \ Системный инженер CDN G-Core Labs в команде DNS c марта 2020 года."}
+    gitHub: clickfreak

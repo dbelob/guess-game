@@ -2619,3 +2619,12 @@ companies:
   - id: 872
     name:
       - {language: en, text: "UfoStation Podcast"}
+  - id: 873
+    name:
+      - {language: en, text: Dynatrace}
+  - id: 874
+    name:
+      - {language: en, text: Enabling.team}
+  - id: 875
+    name:
+      - {language: en, text: "G-Core Labs"}
