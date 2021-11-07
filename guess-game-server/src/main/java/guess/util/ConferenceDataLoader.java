@@ -1795,8 +1795,7 @@ public class ConferenceDataLoader {
 //                        Map.of(new NameCompany("Сергей Иванов", null), 1964L),
 //                        Set.of("Открытие конференции HolyJS 2021 Moscow", "Закрытие конференции HolyJS 2021 Moscow",
 //                                "Игра «Holy Чудес»", "Разговор про уровни разработчиков"),
-//                        false
-//                ));
+//                        false));
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2021, 11, 8), "2021spbdevoops",
 //                LoadSettings.invalidTalksSet(Set.of("Открытие конференции DevOops 2021", "Закрытие конференции DevOops 2021",
 //                        "DevOops 2021 Virtual Afterparty: насущные вопросы DevOps")));

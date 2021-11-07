@@ -2543,6 +2543,7 @@ companies:
       - {language: en, text: OCS}
   - id: 848
     name:
+      - {language: en, text: "Freight One"}
       - {language: ru, text: "Первая Грузовая Компания"}
   - id: 849
     name:
