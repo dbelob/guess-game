@@ -5167,6 +5167,7 @@ speakers:
             \ he had encountered: dependency management. He joined JFrog to develop Conan, the C/C++ package manager, with\
             \ the aim of alleviating that pain."}
     twitter: jgsogo
+    gitHub: jgsogo
   - id: 356
     photoFileName: 0356.jpg
     name:
@@ -5515,6 +5516,7 @@ speakers:
             \ smoothed! He started his career as a systems administrator, and has worked in development, deployment, DevOps,\
             \ consulting, advisory and management roles."}
     twitter: craigbox
+    gitHub: craigbox
   - id: 379
     photoFileName: 0379.jpg
     photoUpdatedAt: 2021-03-31T07:35:10.824Z[UTC]
@@ -5787,6 +5789,7 @@ speakers:
             \nIttai is co-steering and co-chairing the <a href=\"https://aft.acm.org/\" target=\"_blank\">first ACM conference\
             \ on Advances in Financial Technologies</a>."
     twitter: ittaia
+    gitHub: ittaiab
   - id: 398
     photoFileName: 0398.jpg
     name:
@@ -6380,6 +6383,7 @@ speakers:
       - {language: en, text: "Chris is a Software Engineer working on C#/.NET support for Google Cloud Platform. He is mainly\
             \ focused on existing and new .NET gRPC client libraries."}
     twitter: chrisdunelm
+    gitHub: chrisdunelm
   - id: 438
     photoFileName: 0438.jpg
     name:
@@ -6500,6 +6504,7 @@ speakers:
             \ him to join the Orleans project to qualitatively improve developer productivity in that area. Recently Sergey\
             \ joined Temporal Technologies to continue his quest to liberate developers from writing mundane code."}
     twitter: sergeybykov
+    gitHub: sergeybykov
   - id: 446
     photoFileName: 0446.jpg
     name:
@@ -6516,6 +6521,7 @@ speakers:
             \ Programming Language\", along with the articles like \"Simplify Your Exception-Safe Code - Forever\" (in co-authorship\
             \ with Petru Marginean) and \"Mojo: Move of Joint Objects\". The full list can be found here: http://erdani.com/index.php/articles/"
     twitter: incomputable
+    gitHub: andralex
   - id: 447
     photoFileName: 0447.jpg
     name:
@@ -7399,6 +7405,7 @@ speakers:
             \ industry. Maurice is also active in the open source community. He teaches ECMAScript, TypeScript, React, Angular\
             \ JS and ASP.NET MVC courses. Since 2005, he has received Microsoft’s Yearly Most Valuable Professional Award.\
             \ Further, Maurice is active in the Dutch dotNED user group and organizes it meetings."}
+    gitHub: mauricedb
     mvp: true
   - id: 504
     photoFileName: 0504.jpg
@@ -7534,6 +7541,7 @@ speakers:
       - {language: en, text: "Roman Ageev"}
       - {language: ru, text: "Роман Агеев"}
     companyIds: []
+    gitHub: RomanAgeev
   - id: 519
     photoFileName: 0519.jpg
     name:
@@ -7849,6 +7857,8 @@ speakers:
       - {language: en, text: "Liliia writes code every day, mainly on Kotlin or Java, not to automate but to test."}
       - {language: ru, text: "Лилия ежедневно пишет код, в основном на Kotlin и Java, но не для того, чтобы автоматизирова\
             ть, а для того, чтобы тестировать."}
+    twitter: var_lynx
+    gitHub: wild-lynx
   - id: 546
     photoFileName: 0546.jpg
     name:
@@ -7862,6 +7872,7 @@ speakers:
             \ in testing big data, business analytics, and game level regression testing using AI. Alexander performs both\
             \ system testing and exploratory testing with a focus on assisting teams with high-quality deliveries. He is a\
             \ frequent speaker at international conferences including both STAREAST and STARWEST."}
+    twitter: aandelkovic
   - id: 547
     photoFileName: 0547.jpg
     name:
@@ -8600,6 +8611,7 @@ speakers:
             аботал 3 года в 2ГИС, разрабатывая в основном внутренние инструменты, включая систему непрерывного тестировани\
             я пакетов данных и open source-реализацию WebDriver для автоматизации тестирования под Windows Phone."
     twitter: NickAb
+    gitHub: NickAb
     habr: NickAb
   - id: 599
     photoFileName: 0599.jpg
@@ -9247,6 +9259,8 @@ speakers:
             \ .NET Framework, T4, WPF, SQL Server, Selenium WebDriver, Jenkins. He won MVP status at Code Project (2016) and\
             \ MVB (Most Valuable Blogger) at DZone. Outside his work at Progress, Anton a trainer at ITCE where he leads trainings\
             \ related to ISTQB exams. More information about Anton in his blog: http://automatetheplanet.com/about-anton-angelov/."}
+    twitter: angelovstanton
+    gitHub: angelovstanton
   - id: 643
     photoFileName: 0643.jpg
     name:
@@ -9694,6 +9708,7 @@ speakers:
             \ emphasis is building powerful and easy-to-use APIs for scalable and fast applications. He is continuously working\
             \ with the V8 team and the TC39 committee to improve the developer experience with JavaScript."}
     twitter: BridgeAR
+    gitHub: BridgeAR
   - id: 673
     photoFileName: 0673.jpg
     name:
@@ -10475,6 +10490,7 @@ speakers:
             \ to work on software. He has worked at a HPC lab, an agency and a newspaper, as a data journalist. He is now\
             \ working on the AgTech startup CommodiTrader."}
     twitter: emilbayes
+    gitHub: emilbayes
   - id: 730
     photoFileName: 0730.jpg
     photoUpdatedAt: 2020-06-01T10:47:56.768Z[UTC]
@@ -13474,6 +13490,7 @@ speakers:
             \ in server-side multi-thread development, EE application development, in Comet technologies applied to web development,\
             \ web network protocols (HTTP, WebSocket, SPDY, HTTP/2) and in high performance JVM tuning."
     twitter: simonebordet
+    gitHub: sbordet
   - id: 962
     photoFileName: 0962.jpg
     name:
@@ -13618,6 +13635,7 @@ speakers:
             \ speaks at international conferences on several topics related to Distributed systems & Programming Languages.\
             \ You can know more him via his <a href=\"http://www.nikhilbarthwal.com/\" target=\"_blank\">homepage</a>."}
     twitter: nikhilbarthwal
+    gitHub: nikhilbarthwal
   - id: 972
     photoFileName: 0972.jpg
     name:
@@ -14360,6 +14378,8 @@ speakers:
     name:
       - {language: en, text: "Aki Rose Braun"}
     companyIds: []
+    twitter: gesa
+    gitHub: gesa
   - id: 1023
     photoFileName: 1023.jpg
     photoUpdatedAt: 2019-08-28T09:07:30.878Z[UTC]
@@ -14369,6 +14389,8 @@ speakers:
     bio:
       - {language: en, text: "Google Developer Expert in web technologies. Founder of PerfPerfPerf which helps other companies\
             \ earn more money by making web applications faster. Acts on the stage and writes articles."}
+    twitter: iamakulov
+    gitHub: iamakulov
   - id: 1024
     photoFileName: 1024.jpg
     name:
@@ -14709,6 +14731,7 @@ speakers:
             \ 2012 he's living and working in Vienna. When Adrián is not at the office he enjoys a good read, working his\
             \ way through any delicious recipe and indulging his love for traveling to new places."}
     twitter: bolonio
+    gitHub: bolonio
   - id: 1049
     photoFileName: 1049.jpg
     name:
@@ -15359,6 +15382,7 @@ speakers:
             \ and Developer Advocate for Vaadin. Sven is working on Mutation Testing of Web apps and Distributed UnitTesting\
             \ besides his evergreen topic Core Java and DevSecOps."}
     twitter: SvenRuppert
+    gitHub: svenruppert
   - id: 1099
     photoFileName: 1099.jpg
     name:
@@ -15598,6 +15622,7 @@ speakers:
             \ adopted the Zen, especially Simple Is Better Than Complex. He's a developer with too much taste for breadth-first\
             \ exploration, struggling with work-life balance."}
     twitter: jacekbj
+    gitHub: jacekbj
   - id: 1117
     photoFileName: 1117.jpg
     photoUpdatedAt: 2019-12-06T08:50:46.469Z[UTC]
@@ -15842,6 +15867,7 @@ speakers:
       - {language: ru, text: "С++ инженер в Align Technology. Окончил ММФ НГУ. Волей судьбы удалось познакомиться с С/С++\
             \ в Intel MKL, мобильной/core-разработке 2ГИС и Я.Браузере."}
     twitter: ivafanas
+    gitHub: ivafanas
   - id: 1136
     photoFileName: 1136.jpg
     photoUpdatedAt: 2019-12-23T13:37:57.083Z[UTC]
@@ -16577,6 +16603,7 @@ speakers:
             \ but entertaining side-projects. She also volunteers with area non-profits geared towards getting more women\
             \ and other underrepresented minorities into tech."
     twitter: Dixie3Flatline
+    gitHub: katcosgrove
   - id: 1188
     photoFileName: 1188.jpg
     photoUpdatedAt: 2020-03-17T09:47:30.399Z[UTC]
@@ -16859,6 +16886,7 @@ speakers:
       - {language: en, text: "Mohammed is a community catalyst, a true open-source believer and has contributed to various\
             \ open source projects. He currently works at Xhub, a DevOps software company, as Head Of Engineering."}
     twitter: laytoun
+    gitHub: aboullaite
   - id: 1212
     photoFileName: 1212.jpg
     photoUpdatedAt: 2019-12-26T14:00:54.659Z[UTC]
@@ -16902,6 +16930,7 @@ speakers:
             \ leisure, he participates in the JCP as an Expert Group member for the Java EE 6 and 7, EJB 3.X, JAX-RS, CDI,\
             \ and JPA 2.X JSRs."
     twitter: AdamBien
+    gitHub: AdamBien
     javaChampion: true
   - id: 1215
     photoFileName: 1215.jpg
@@ -17097,6 +17126,7 @@ speakers:
             \ PhD is in the field of distributed and parallel computing, and focuses on concurrent, non-blocking data structures\
             \ and their memory management. Prior to her graduate studies (2002-2009) she was a CAD Tools developer at Intel\
             \ and later a microcode developer in storage group at IBM Haifa Research Lab (HRL)."}
+    gitHub: sanastas
   - id: 1229
     photoFileName: 1229.jpg
     photoUpdatedAt: 2020-04-28T11:39:18.303Z[UTC]
@@ -17394,6 +17424,7 @@ speakers:
             \ IST, Dan was affiliated with ETH Zurich and Microsoft Research, Cambridge, UK. Prior to that, he was a Postdoctoral\
             \ Associate at MIT CSAIL, working with Prof. Nir Shavit. He received his PhD from the EPFL, under the guidance\
             \ of Prof. Rachid Guerraoui.\r\n\r\nHis research is supported through a 2018 ERC Starting Grant."
+    gitHub: dalistarh
   - id: 1249
     photoFileName: 1249.jpg
     photoUpdatedAt: 2020-06-12T09:54:42.556Z[UTC]
@@ -17854,6 +17885,7 @@ speakers:
             \ параллельных структур данных.\n\nДо ИТМО Виталий работал в IST Austria под руководством профессора Дэна Алис\
             тарха и получил докторскую степень в парижском университете Париж VII имени Дени Дидро и университете ИТМО под\
             \ руководством профессора Петра Кузнецова."
+    gitHub: Aksenov239
   - id: 1289
     photoFileName: 1289.jpg
     photoUpdatedAt: 2020-06-20T15:16:49.916Z[UTC]
@@ -18084,6 +18116,8 @@ speakers:
             \ Testing Java Microservices for Manning and the Istio Refcard and is a contributor to several open source projects.\
             \ He has been a Java champion since 2017 and is an international speaker, speaking on new testing techniques for\
             \ microservices, continuous delivery in the 21st century, and Java."}
+    twitter: alexsotob
+    gitHub: lordofthejars
   - id: 1309
     photoFileName: 1309.jpg
     photoUpdatedAt: 2020-06-26T15:57:36.255Z[UTC]
@@ -19213,6 +19247,7 @@ speakers:
             \ hoping to contribute positively to the infosec and C++ communities. She is also involved in the #include organization\
             \ hoping to improve diversity and inclusion in the C++ community."
     twitter: pati_gallardo
+    gitHub: patricia-gallardo
   - id: 1390
     photoFileName: 1390.jpg
     photoUpdatedAt: 2020-10-22T12:55:26.107Z[UTC]
@@ -19574,6 +19609,7 @@ speakers:
             \ APIs. He previously worked on many of the tool and profiling APIs including the JSR-163 implementation and other\
             \ serviceability features. He is currently focused on Project Loom with the aim to reduce the effort of writing,\
             \ maintaining, and observing high-throughput concurrent applications."}
+    gitHub: AlanBateman
   - id: 1415
     photoFileName: 1415.jpg
     photoUpdatedAt: 2020-10-22T11:42:36.236Z[UTC]
@@ -20104,6 +20140,8 @@ speakers:
             \ His primary interests are in security, containers, and DevOps.\n\nBefore joining AWS, he was a customer for\
             \ 8 years building in the FinTech, HealthCare, and Online Gaming space. In his 14 years of software development\
             \ experience, he has worked on C."
+    twitter: cobusbernard
+    gitHub: cobusbernard
   - id: 1455
     photoFileName: 1455.jpg
     photoUpdatedAt: 2020-09-30T12:06:11.265Z[UTC]
@@ -20179,6 +20217,7 @@ speakers:
             \ in telecommunications, software development, higher education, and now the cloud-native field, where he is a\
             \ field engineer at Rancher Labs."}
     twitter: eamonb
+    gitHub: ebauman
   - id: 1460
     photoFileName: 1460.jpg
     photoUpdatedAt: 2020-10-13T11:52:31.425Z[UTC]
@@ -20351,6 +20390,7 @@ speakers:
             \ survive the 10th-floor test, better known today as the cloud while actively promoting the DevOps idea !\n\n\
             His blog titled \"Everything is a Freaking DNS Problem\" can be found at http://www.krisbuytaert.be/blog/"
     twitter: KrisBuytaert
+    gitHub: KrisBuytaert
   - id: 1472
     photoFileName: 1472.jpg
     photoUpdatedAt: 2020-09-29T10:50:18.802Z[UTC]
@@ -20438,6 +20478,7 @@ speakers:
             \ interpreter and arms control inspector. Prior to Amazon, Eric was the Chief Technology Officer at AutoLoop,\
             \ a leading automotive software company."}
     twitter: ericzbeard
+    gitHub: ericzbeard
   - id: 1479
     photoFileName: 1479.jpg
     photoUpdatedAt: 2020-11-05T12:56:44.800Z[UTC]
@@ -20472,6 +20513,7 @@ speakers:
         text: ".NET Backend Developer/Architect at NRK TV, NRKs streaming service (tv.nrk.no)\nIn the last few years, Bjø\
             rn has had an interest in domain-driven design its relation to building resilient services."
     twitter: bjartnes
+    gitHub: bjartwolf
   - id: 1482
     photoFileName: 1482.jpg
     photoUpdatedAt: 2020-11-30T07:41:44.470Z[UTC]
@@ -20640,6 +20682,7 @@ speakers:
       - {language: ru, text: "Разработчик в компании Positive Technologies. Интересуется распределёнными системами, информ\
             ационной безопасностью и в свободное время почитывает про функциональное программирование."}
     twitter: rafaelldi
+    gitHub: rafaelldi
     habr: rafaelldi
   - id: 1495
     photoFileName: 1495.jpg
@@ -21761,6 +21804,7 @@ speakers:
             \ небольшой внутренней команды. Занимается вопросами модуляризации, архитектуры и настройкой процессов код рев\
             ью и интервью."
     twitter: Wackaloon
+    gitHub: Wackaloon
   - id: 1567
     photoFileName: 1567.jpg
     photoUpdatedAt: 2021-03-12T07:35:55.749Z[UTC]
@@ -21876,6 +21920,8 @@ speakers:
         text: "iOS-разработчик со стажем около 7 лет. \nНачинал свою карьеру в качестве iOS и Android-разработчика в старт\
             апе, но затем сосредоточился на разработке под iOS.\nРаботал в различных стартапах в Юго-Восточной Азии и Каза\
             хстане.\nПоследние 2,5 года разрабатывает приложение «Яндекс Go»."
+    gitHub: Yerkenabildin
+    habr: yerkenabildin
   - id: 1574
     photoFileName: 1574.jpg
     photoUpdatedAt: 2021-03-09T09:06:29.378Z[UTC]
@@ -24191,6 +24237,7 @@ speakers:
             \ Before that, he worked in Databricks performance engineering and benchmarking team. \n\nSabir was born in Kazakhstan\
             \ and since then has lived in 4 different countries. He's interested in learning new languages, technologies,\
             \ and sports, mostly powerlifting and Russian kettlebells."
+    twitter: sabirakhadov
   - id: 1732
     photoFileName: 1732.jpg
     photoUpdatedAt: 2021-09-30T19:53:43.750Z[UTC]
@@ -24573,6 +24620,8 @@ speakers:
             \ finding creative solutions for complex problems, especially if it involves code. Previously, Itai worked at\
             \ Microsoft and Ridge on data infrastructure, tooling, and performance. Itai received his B.S. degree in Computer\
             \ Science and an MBA from Tel Aviv University."}
+    twitter: itaiad200
+    gitHub: itaiad200
   - id: 1757
     photoFileName: 1757.jpg
     photoUpdatedAt: 2021-08-16T07:20:50.012Z[UTC]
@@ -24943,6 +24992,7 @@ speakers:
             \ В данный момент TeamLead в Cloud/Tooling-команде, которая разрабатывает GridGain Control Center - инструмент\
             \ для мониторинга и менеджмента распределенных баз данных Apache Ignite и GridGain."}
     twitter: wirtzleg
+    gitHub: wirtsleg
   - id: 1780
     photoFileName: 1780.jpg
     photoUpdatedAt: 2021-08-26T09:29:57.815Z[UTC]
