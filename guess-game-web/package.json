@@ -25,7 +25,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@ngx-translate/core": "^14.0.0",
-    "@ngx-translate/http-loader": "^6.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
     "bootstrap": "^4.6.0",
     "chart.js": "^3.6.0",
     "core-js": "^3.19.1",
