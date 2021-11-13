@@ -3936,11 +3936,12 @@ speakers:
       - {language: ru, text: "Михаил Дружинин"}
     companyIds: [34]
     bio:
-      - {language: en, text: "The software development manager in Amazon. 13 years in IT. Java development and architecture\
+      - {language: en, text: "The software development manager in Amazon. 15 years in IT. Java development and architecture\
             \ trainer in Luxoft Training Center."}
-      - {language: ru, text: "Технический менеджер в компании Amazon. 13 лет в IT. Тренер по архитектуре и Java-разработке\
+      - {language: ru, text: "Технический менеджер в компании Amazon. 15 лет в IT. Тренер по архитектуре и Java-разработке\
             . Управлял проектами как Team Lead и PM. Участвовал во многих проектах в роли архитектора."}
     twitter: xomyakus
+    gitHub: xomyakus
   - id: 269
     photoFileName: 0269.jpg
     name:
@@ -25672,7 +25673,7 @@ speakers:
     photoUpdatedAt: 2021-10-08T08:15:46.173Z[UTC]
     name:
       - {language: en, text: "Ilia Semenov"}
-      - {language: ru, text: "Илья Семенов"}
+      - {language: ru, text: "Илья Семёнов"}
     companyIds: [822]
     bio:
       - {language: en, text: "Ilia is a passionate Cloud Economist. He has been running FinOps at EA and leading in-house\
@@ -27103,14 +27104,13 @@ speakers:
       - {language: ru, text: "Алексей Акопян"}
     companyIds: [139]
     bio:
-      - {language: en, text: "In 18 years in the IT-industry I went the way \"from the Varangians to the Greeks\", from a\
-            \ developer to a manager. Worked in such companies as Sun Microsystems, Oracle, Luxoft. For the last 4 years has\
-            \ been heading the development of the software part of the internal cloud service at Dell EMC. He likes to change\
-            \ the worldview of customers and JUG.ru Group conferences."}
-      - {language: ru, text: "За 18 лет в IT-индустрии прошел путь «из варяг в греки», от разработчика до менеджера. Работ\
-            ал в таких компаниях, как Sun Microsystems, Oracle, Luxoft. Последние 4 года возглавляет отдел разработки прог\
-            раммной части внутреннего облачного сервиса в Dell EMC. Любит менять мировоззрение заказчиков и конференции JUG.ru\
-            \ Group."}
+      - {language: en, text: "Alexey is an IT elder, he started his career as a developer in Sun Microsystems contracting\
+            \ company \"Elbrus MCST\" and grew into international teams manager in such companies like Oracle, Luxoft and\
+            \ EMC. Now he leads the software development for internal Dell Technologies cloud and lab resources management."}
+      - {language: ru, text: "Алексей — старожил IT, начал заниматься программированием ещё в 90-х. Прошёл путь от инженер\
+            а-программиста в МЦСТ \"Эльбрус\" до руководителя международных команд в таких компаниях, как Oracle, Luxoft и\
+            \ EMC. Сейчас  отвечает за разработку и поддержку программного обеспечения внутреннего облака и системы управл\
+            ения доступом к ресурсам лабораторий и датацентров Dell Technologies."}
   - id: 1928
     photoFileName: 1928.jpg
     photoUpdatedAt: 2021-10-22T10:35:05.549Z[UTC]
