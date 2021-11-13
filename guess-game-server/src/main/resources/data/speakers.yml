@@ -11768,10 +11768,11 @@ speakers:
             нк Онлайн."}
   - id: 823
     photoFileName: 0823.jpg
+    photoUpdatedAt: 2018-11-02T10:24:27.773Z[UTC]
     name:
       - {language: en, text: "Alexander Korshak"}
       - {language: ru, text: "Александр Коршак"}
-    companyIds: [325]
+    companyIds: [877]
     bio:
       - {language: en, text: "Alex has been specializing in Android application development since 2009. Currently, he changed\
             \ the focus from mobile app development to mobile VR app development (not game development). He graduated from\
@@ -11782,6 +11783,7 @@ speakers:
             . Н. И. Лобачевского, факультет вычислительной математики и кибернетики по специальности «Компьютерная графика\
             ». Утверждает, что родился с баскетбольным мячом и клавиатурой в руках."}
     twitter: alex_korshak
+    gitHub: akorshak
   - id: 824
     photoFileName: 0824.jpg
     name:
@@ -12053,20 +12055,23 @@ speakers:
     gitHub: aleksandergrzyb
   - id: 843
     photoFileName: 0843.jpg
+    photoUpdatedAt: 2018-02-19T07:43:40.200Z[UTC]
     name:
       - {language: en, text: "Artur Badretdinov"}
       - {language: ru, text: "Артур Бадретдинов"}
-    companyIds: [580]
+    companyIds: [876]
     bio:
-      - {language: en, text: "Is of the opinion that every program engineer is a developer, yet not every developer is a program\
+      - {language: en, text: "Artur believes that every program engineer is a developer, yet not every developer is a program\
             \ engineer. Writes code in such a way as not to feel ashamed later. Works hard to make his programs not only do\
-            \ their job, but also have clear logic that can be extended by other people. At Vyng company makes Android ringtones\
-            \ unique."}
+            \ their job, but also have clear logic that can be extended by other people.  Makes barbers’ lives easier at Squire\
+            \ Tech."}
       - {language: ru, text: "Считает, что каждый программный инженер — разработчик, но не каждый разработчик — программны\
             й инженер. Пишет код так, чтобы потом за него не было стыдно. Работает над тем, чтобы программа не просто дела\
-            ла своё дело, но и её логика была понятна и расширяема другими людьми. В последнее время делает рингтоны под Android\
-            \ уникальными в компании Vyng."}
+            ла своё дело, но и её логика была понятна и расширяема другими людьми. Делает жизнь барберов проще в компании\
+            \ Squire."}
+    twitter: ArtursTwit
     gitHub: Gaket
+    habr: Virtyoz
   - id: 844
     photoFileName: 0844.jpg
     name:
@@ -14871,7 +14876,7 @@ speakers:
     twitter: hamen
   - id: 1059
     photoFileName: 1059.jpg
-    photoUpdatedAt: 2021-10-15T09:35:17.113Z[UTC]
+    photoUpdatedAt: 2021-11-09T08:00:08.256Z[UTC]
     name:
       - {language: en, text: "Giorgio Natili"}
     companyIds: [853]
@@ -26970,10 +26975,11 @@ speakers:
       - {language: ru, text: "Иван Шафран"}
     companyIds: [620]
     bio:
-      - {language: en, text: "Works in the Android VK Calls team. Calls himself about a hundred times a day. Loves Kotlin.\
-            \ Spontaneously writes articles on Medium and open-source projects on Github. Teaches Android for beginners."}
+      - language: en
+        text: "He works in the VK Android call team. He calls himself about a hundred times a day.\nKotlin lover. Spontaneously\
+            \ writes articles on Medium and open source projects on Github. Teaches Android for beginners."
       - language: ru
-        text: "Работает в команде Android-звонков VK. Звонит сам себе около сотни раз в день.\r\nЛюбит Kotlin. Спонтанно п\
+        text: "Работает в команде Android звонков VK. Звонит сам себе около сотни раз в день.\r\nЛюбит Kotlin. Спонтанно п\
             ишет статьи на Medium и опенорс-проекты на Github. Преподает Android для начинающих."
     twitter: NotShafran
     gitHub: IvanShafran
@@ -27940,3 +27946,34 @@ speakers:
       - {language: ru, text: "В программировании 30 лет. Последние 10 лет отдал транспортным алгоритмам: как разработчик,\
             \ как лид и теперь, как руководитель группы команд."}
     habr: kab
+  - id: 1985
+    photoFileName: 1985.jpg
+    photoUpdatedAt: 2021-04-07T07:43:00.025Z[UTC]
+    name:
+      - {language: en, text: "Sergey Ermolaev"}
+      - {language: ru, text: "Сергей Ермолаев"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "Lead mobile in SberX, organizer of Android Academy and other interesting activities. Loves compose,\
+            \ machine learning and everything new and fashionable!"}
+      - {language: ru, text: "Лид мобилки в SberX, организатор Android Academy и других интересных активностей. Любит compose,\
+            \ machine learning и все самое новое и модное!"}
+    gitHub: ermolnik
+    habr: ermolnik
+  - id: 1986
+    photoFileName: 1986.jpg
+    photoUpdatedAt: 2021-11-08T08:08:50.966Z[UTC]
+    name:
+      - {language: en, text: "Roman Aymaletdinov"}
+      - {language: ru, text: "Роман Аймалетдинов"}
+    companyIds: [770]
+    bio:
+      - language: en
+        text: "He works in the Citimobile client application development team. Mainly deals with product tasks. Before Citimobile\
+            \ worked at EPAM, started his career working for SiriusXM. \r\nMore than four years in mobile development."
+      - language: ru
+        text: "Работает в команде разработки клиентского приложения Ситимобил. В основном занимается продуктовыми задачами\
+            . До Ситимобила работал в  EPAM, начал карьеру, работая на SiriusXM. \r\nБолее четырех лет в мобильной разрабо\
+            тке."
+    gitHub: Evleaps
+    habr: Evleaps

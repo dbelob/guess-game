@@ -2629,3 +2629,9 @@ companies:
   - id: 875
     name:
       - {language: en, text: "G-Core Labs"}
+  - id: 876
+    name:
+      - {language: en, text: Squire}
+  - id: 877
+    name:
+      - {language: en, text: "Orion Innovations"}
