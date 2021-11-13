@@ -3936,11 +3936,12 @@ speakers:
       - {language: ru, text: "Михаил Дружинин"}
     companyIds: [34]
     bio:
-      - {language: en, text: "The software development manager in Amazon. 13 years in IT. Java development and architecture\
+      - {language: en, text: "The software development manager in Amazon. 15 years in IT. Java development and architecture\
             \ trainer in Luxoft Training Center."}
-      - {language: ru, text: "Технический менеджер в компании Amazon. 13 лет в IT. Тренер по архитектуре и Java-разработке\
+      - {language: ru, text: "Технический менеджер в компании Amazon. 15 лет в IT. Тренер по архитектуре и Java-разработке\
             . Управлял проектами как Team Lead и PM. Участвовал во многих проектах в роли архитектора."}
     twitter: xomyakus
+    gitHub: xomyakus
   - id: 269
     photoFileName: 0269.jpg
     name:
@@ -5094,8 +5095,9 @@ speakers:
             нутри движка игры, таких как ресурсная подсистема, рендеринг, анимации, интеграция со скриптовыми языками."}
   - id: 350
     photoFileName: 0350.jpg
+    photoUpdatedAt: 2021-11-11T11:31:02.808Z[UTC]
     name:
-      - {language: en, text: "Sergei Fedorov"}
+      - {language: en, text: "Sergey Fedorov"}
       - {language: ru, text: "Сергей Фёдоров"}
     companyIds: [689]
     bio:
@@ -5103,6 +5105,7 @@ speakers:
             \ back-end. Big fan of metaprogramming and open source."}
       - {language: ru, text: "Ведущий разработчик в «Яндекс.Такси», занимается разработкой асинхронного фреймворка для бэк\
             енда Такси. Большой любитель метапрограммирования и open source."}
+    gitHub: zmij
   - id: 351
     photoFileName: 0351.jpg
     photoUpdatedAt: 2020-01-22T13:48:22.084Z[UTC]
@@ -6131,6 +6134,7 @@ speakers:
             \ MVP, crew member at Techorama, global organizer of the Global Azure Bootcamp and speaks at local meetups and\
             \ usergroups."
     twitter: WesleyCabus
+    gitHub: wcabus
     mvp: true
   - id: 421
     photoFileName: 0421.jpg
@@ -6558,6 +6562,7 @@ speakers:
             \ known for \"telling it how it is\" — taking today's topics and sharing with you war stories and experience to\
             \ help you assess them."}
     twitter: ICooper
+    gitHub: iancooper
   - id: 450
     photoFileName: 0450.jpg
     photoUpdatedAt: 2019-05-16T14:50:40.859Z[UTC]
@@ -7240,6 +7245,7 @@ speakers:
       - {language: en, text: "A software engineer at Stack Overflow in London. Marco writes about software development, coding,\
             \ architecture and team leadership. He also speaks at conferences worldwide."}
     twitter: sklivvz
+    gitHub: sklivvz
   - id: 493
     photoFileName: 0493.jpg
     name:
@@ -7954,6 +7960,7 @@ speakers:
             \ He recently has been helping companies with digital transformation, moving towards continuous delivery and building\
             \ a DevOps culture. He also is an automated testing zealot, practices TDD almost exclusively."}
     twitter: timcochran
+    gitHub: tcochran
   - id: 552
     photoFileName: 0552.jpg
     name:
@@ -7964,6 +7971,7 @@ speakers:
             \ software professionally. In 2009, he created Node.js. Ryan managed the project through its initial years of\
             \ development, before yielding it in favor of other interests like build systems, computer vision, and electronic\
             \ music. Currently he lives in Brooklyn."}
+    gitHub: ry
   - id: 553
     photoFileName: 0553.jpg
     name:
@@ -9149,6 +9157,7 @@ speakers:
             \ a Bachelor’s degree in Computer Science, with a minor in Music Technology, from the world-renowned School of\
             \ Computer Science at Carnegie Mellon University in Pittsburgh."}
     twitter: thedancuellar
+    gitHub: penguinho
   - id: 635
     photoFileName: 0635.jpg
     name:
@@ -9516,6 +9525,7 @@ speakers:
             \ JS ecosystem, and is always trying to find better and more efficient ways to solve problems. His motto is \"\
             strive to be lazy\"."}
     twitter: thewizardlucas
+    gitHub: lucasfcosta
   - id: 660
     photoFileName: 0660.jpg
     photoUpdatedAt: 2019-03-29T15:07:56.283Z[UTC]
@@ -9769,6 +9779,7 @@ speakers:
             \ a Google Developer Expert, Alex has contributed to the open source community with a focus on web technologies\
             \ and neurotech."}
     twitter: castillo__io
+    gitHub: alexcastillo
   - id: 678
     photoFileName: 0678.jpg
     name:
@@ -10377,6 +10388,7 @@ speakers:
             \ of Tilton, the ugliest programming language that was not specifically designed to be an ugly programming language.\
             \ He is best known for having discovered that there are good parts in JavaScript. This was an important and unexpected\
             \ discovery. He also discovered the JSON, the world’s most loved data format."}
+    gitHub: douglascrockford
   - id: 722
     photoFileName: 0722.jpg
     name:
@@ -11115,6 +11127,7 @@ speakers:
             \ she also enjoys travelling and attending conferences and meetups. Her latest obsession is conversational apps\
             \ and IoT."}
     twitter: ElizaCamber
+    gitHub: elizacamber
   - id: 779
     photoFileName: 0779.jpg
     photoUpdatedAt: 2020-06-14T11:56:09.511Z[UTC]
@@ -11765,10 +11778,11 @@ speakers:
             нк Онлайн."}
   - id: 823
     photoFileName: 0823.jpg
+    photoUpdatedAt: 2018-11-02T10:24:27.773Z[UTC]
     name:
       - {language: en, text: "Alexander Korshak"}
       - {language: ru, text: "Александр Коршак"}
-    companyIds: [325]
+    companyIds: [877]
     bio:
       - {language: en, text: "Alex has been specializing in Android application development since 2009. Currently, he changed\
             \ the focus from mobile app development to mobile VR app development (not game development). He graduated from\
@@ -11779,6 +11793,7 @@ speakers:
             . Н. И. Лобачевского, факультет вычислительной математики и кибернетики по специальности «Компьютерная графика\
             ». Утверждает, что родился с баскетбольным мячом и клавиатурой в руках."}
     twitter: alex_korshak
+    gitHub: akorshak
   - id: 824
     photoFileName: 0824.jpg
     name:
@@ -11888,6 +11903,7 @@ speakers:
             \ and currently as part of his job he advocates developers by exploring new technologies, speaking at conferences\
             \ and sharing knowledge."
     twitter: fernando_cejas
+    gitHub: android10
   - id: 831
     photoFileName: 0831.jpg
     name:
@@ -12050,20 +12066,23 @@ speakers:
     gitHub: aleksandergrzyb
   - id: 843
     photoFileName: 0843.jpg
+    photoUpdatedAt: 2018-02-19T07:43:40.200Z[UTC]
     name:
       - {language: en, text: "Artur Badretdinov"}
       - {language: ru, text: "Артур Бадретдинов"}
-    companyIds: [580]
+    companyIds: [876]
     bio:
-      - {language: en, text: "Is of the opinion that every program engineer is a developer, yet not every developer is a program\
+      - {language: en, text: "Artur believes that every program engineer is a developer, yet not every developer is a program\
             \ engineer. Writes code in such a way as not to feel ashamed later. Works hard to make his programs not only do\
-            \ their job, but also have clear logic that can be extended by other people. At Vyng company makes Android ringtones\
-            \ unique."}
+            \ their job, but also have clear logic that can be extended by other people.  Makes barbers’ lives easier at Squire\
+            \ Tech."}
       - {language: ru, text: "Считает, что каждый программный инженер — разработчик, но не каждый разработчик — программны\
             й инженер. Пишет код так, чтобы потом за него не было стыдно. Работает над тем, чтобы программа не просто дела\
-            ла своё дело, но и её логика была понятна и расширяема другими людьми. В последнее время делает рингтоны под Android\
-            \ уникальными в компании Vyng."}
+            ла своё дело, но и её логика была понятна и расширяема другими людьми. Делает жизнь барберов проще в компании\
+            \ Squire."}
+    twitter: ArtursTwit
     gitHub: Gaket
+    habr: Virtyoz
   - id: 844
     photoFileName: 0844.jpg
     name:
@@ -13545,6 +13564,7 @@ speakers:
             \ JUG and founded the JNation Conference in Portugal. When he is not working, he hangs out with friends, play\
             \ computer games and spends time with family."}
     twitter: radcortez
+    gitHub: radcortez
   - id: 966
     photoFileName: 0966.jpg
     name:
@@ -13904,6 +13924,8 @@ speakers:
       - {language: en, text: "Marshall has been programming professionally for 35 years. He is the author of Boost.Algorithm,\
             \ and has been a contributor to Boost for more than 15 years. He is the chairman of the Library working group\
             \ of the C++ standard committee. He is the lead developer for libc++, the C++ standard library for LLVM."}
+    twitter: mclow
+    gitHub: mclow
   - id: 989
     photoFileName: 0989.jpg
     name:
@@ -14145,6 +14167,7 @@ speakers:
             \ multithreaded programming, but he finds any challenging subject interesting. These days he uses C#/TypeScript\
             \ but remains interested in many different languages."
     twitter: aSteveCleary
+    gitHub: StephenCleary
     mvp: true
   - id: 1006
     photoFileName: 1006.jpg
@@ -14837,6 +14860,7 @@ speakers:
             \ IBM and Intel. He regularly talks about software testing at conferences around the world, and organizes the\
             \ Israeli Selenium Meetup group."}
     twitter: carmiadam
+    gitHub: carmiadam
   - id: 1056
     photoFileName: 1056.jpg
     name:
@@ -14868,7 +14892,7 @@ speakers:
     twitter: hamen
   - id: 1059
     photoFileName: 1059.jpg
-    photoUpdatedAt: 2021-10-15T09:35:17.113Z[UTC]
+    photoUpdatedAt: 2021-11-09T08:00:08.256Z[UTC]
     name:
       - {language: en, text: "Giorgio Natili"}
     companyIds: [853]
@@ -15654,6 +15678,7 @@ speakers:
             \ resources, semantic web, and domain-specific knowledge systems. He considers software development less of a\
             \ job and more of a daily practice; curiosity and excitement being his driving force."}
     twitter: AlexCulliere
+    gitHub: Nachasic
   - id: 1120
     photoFileName: 1120.jpg
     photoUpdatedAt: 2020-01-15T14:05:17.821Z[UTC]
@@ -15667,6 +15692,7 @@ speakers:
             \ and he shares his knowledge on ITNEXT and GDG-NL communities as a co-organizer and speaker. He's also interested\
             \ in photography, capturing night photos specifically."}
     twitter: onderceylan
+    gitHub: onderceylan
   - id: 1121
     photoFileName: 1121.jpg
     name:
@@ -15804,7 +15830,7 @@ speakers:
             \ improving the performance of main libraries."}
   - id: 1131
     photoFileName: 1131.jpg
-    photoUpdatedAt: 2020-02-20T10:46:56.125Z[UTC]
+    photoUpdatedAt: 2021-11-08T08:23:40.037Z[UTC]
     name:
       - {language: en, text: "Anton Kvyatkovsky"}
       - {language: ru, text: "Антон Квятковский"}
@@ -15908,11 +15934,11 @@ speakers:
     bio:
       - language: en
         text: "C++ developer and Product Owner at Nokia.\n\n10 years of commercial development experience in avionics and\
-            \ telecommunications. Spent the last 6 years writing code for LTE/5G core networks. Mentor and evangelist of modern\
+            \ telecommunications. Spent the last 7 years writing code for LTE/5G core networks. Mentor and evangelist of modern\
             \ development approaches. A fan of Linux kernel and well-written specs."
       - language: ru
         text: "С++ разработчик и Product Owner в Nokia.\n\n10 лет опыта коммерческой разработки в авионике и телекоммуника\
-            циях. Последние 6 лет пишет код для опорных сетей LTE/5G. Ментор и евангелист современных подходов в разработк\
+            циях. Последние 7 лет пишет код для опорных сетей LTE/5G. Ментор и евангелист современных подходов в разработк\
             е. Фанат линуксового ядра и хорошо написанных спецификаций."
     twitter: st_1ena
   - id: 1139
@@ -16774,6 +16800,7 @@ speakers:
             \ Introduction to Reliable and Secure Distributed Programming. While at IBM Research he made essential contributions\
             \ to the development of Hyperledger Fabric, a blockchain platform aimed business use."
     twitter: cczurich
+    gitHub: cca88
   - id: 1203
     photoFileName: 1203.jpg
     photoUpdatedAt: 2020-01-27T13:49:39.201Z[UTC]
@@ -16984,6 +17011,7 @@ speakers:
             \ and creating web applications for events at the Lab. His recent passion is around raising awareness about the\
             \ energy consumption of technology and discovering ways to help reduce technologies' carbon footprint."}
     twitter: Jamie_Lee_C
+    gitHub: jamiecoleman92
   - id: 1219
     photoFileName: 1219.jpg
     photoUpdatedAt: 2020-05-06T08:24:53.152Z[UTC]
@@ -18449,13 +18477,6 @@ speakers:
     bio:
       - {language: en, text: "Старший разработчик в Лаборатории Касперского, занимается разработкой систем автоматического\
             \ обнаружения новых видов вредоносного ПО."}
-  - id: 1338
-    photoFileName: 1338.jpg
-    photoUpdatedAt: 2020-06-01T10:07:06.100Z[UTC]
-    name:
-      - {language: en, text: "Члены ПК DevOops"}
-    companyIds: []
-    bio: []
   - id: 1339
     photoFileName: 1339.jpg
     photoUpdatedAt: 2020-09-14T09:38:16.809Z[UTC]
@@ -19322,10 +19343,11 @@ speakers:
       - {language: ru, text: "Илья Шишков"}
     companyIds: [689]
     bio:
-      - {language: en, text: "Yandex Senior Developer, co-author of the Coursera online specialization \"The art of development\
-            \ on modern C++\"."}
-      - {language: ru, text: "Старший разработчик компании Яндекс, соавтор онлайн-специализации на Coursera «Искусство раз\
-            работки на современном C++»."}
+      - {language: en, text: "Senior developer at Yandex, co-author of the online specialization \"The Art of Development\
+            \ in Modern C++\" and the online course \"Programmer's Algorithmic Foundation\"."}
+      - {language: ru, text: "Старший разработчик компании Яндекс, соавтор онлайн-специализации «Искусство разработки на с\
+            овременном C++» и онлайн-курса «Алгоритмический фундамент программиста»."}
+    gitHub: ishfb
     habr: ishfb
   - id: 1395
     photoFileName: 1395.jpg
@@ -24331,6 +24353,7 @@ speakers:
             \ as part of several startups in his career. Tejas is an International Keynote Speaker and periodically conducts\
             \ seminars on Micro services, NFTs, Software Development & Cloud Computing and has a Masters Degree in Electrical\
             \ & Computer Engineering from Carnegie Mellon University, with a specialization in Computer Systems."
+    twitter: chopra_tejas
     gitHub: chopratejas
   - id: 1738
     photoFileName: 1738.jpg
@@ -25257,18 +25280,16 @@ speakers:
             держки, так что немало знает о пользовательских требованиях к ПО."}
   - id: 1799
     photoFileName: 1799.jpg
-    photoUpdatedAt: 2021-10-14T08:22:23.406Z[UTC]
+    photoUpdatedAt: 2021-11-09T19:53:44.651Z[UTC]
     name:
       - {language: en, text: "Nikolay Mironov"}
       - {language: ru, text: "Николай Миронов"}
     companyIds: [424]
     bio:
-      - {language: en, text: "Tech Lead of the Tools&DevOps team at PVS-Studio. Nikolay develops and maintains utilities and\
-            \ plugins for developers to work with the static analyzer more conveniently. He also participated in developing\
-            \ the analyzer for C#. Writes scripts for Jenkins for fun."}
+      - {language: en, text: "Tech Lead of the Tools&DevOps team at PVS-Studio. Develops and supports utilities and plugins\
+            \ for developers to work with the static analyzer more conveniently. Writes scripts in Jenkins as a hobby."}
       - {language: ru, text: "Tech Lead команды Tools&DevOps компании PVS-Studio. Занимается разработкой и поддержкой утил\
-            ит и плагинов для более удобной работы со статическим анализатором. Дополнительно успел оставить свой след в о\
-            дноименном C# анализаторе. Пишет скрипты в Jenkins для души"}
+            ит и плагинов для более удобной работы со статическим анализатором. Пишет скрипты в Jenkins для души"}
     twitter: nikola_ich
     habr: IchNikola
   - id: 1800
@@ -25672,7 +25693,7 @@ speakers:
     photoUpdatedAt: 2021-10-08T08:15:46.173Z[UTC]
     name:
       - {language: en, text: "Ilia Semenov"}
-      - {language: ru, text: "Илья Семенов"}
+      - {language: ru, text: "Илья Семёнов"}
     companyIds: [822]
     bio:
       - {language: en, text: "Ilia is a passionate Cloud Economist. He has been running FinOps at EA and leading in-house\
@@ -25978,21 +25999,18 @@ speakers:
     photoFileName: 1845.jpg
     photoUpdatedAt: 2021-10-22T15:56:17.916Z[UTC]
     name:
-      - {language: en, text: "Anna Melekhova"}
+      - {language: en, text: "Anna Melehova"}
       - {language: ru, text: "Анна Мелехова"}
     companyIds: [635]
     bio:
-      - language: en
-        text: "Software architect, team leader. Now Anna is inspired with delivering functional safety in KasperskyOS. She\
-            \ has 10 years of virtualization development under her belt. Anna's background includes cloud development (DRS,\
-            \ schedulers) and microservices architecture.\n\nAnna is an associate professor at MIPT and at Innopolis university.\
-            \ She likes to transform teaching into a process of mutual enrichment and enjoy seeing her ex-students to become\
-            \ her teachers."
-      - language: ru
-        text: "Архитектор ПО, тимлид. Занимается Secure Platform Development в кибериммунной KasperskyOS. За плечами — бол\
-            ее 10 лет в разработке ядра виртуальной машины, а также в облачной разработке и архитектуре микросервисов.\n\n\
-            Преподает в МФТИ и в Иннополисе, любит превращать учебу в процесс взаимного обогащения знаниями, а работу — в\
-            \ столь же совместный драйв."
+      - {language: en, text: "Software Architect, Team Lead. In charge of Secure Platform Development in cybernetic KasperskyOS.\
+            \ She has over 10 years of experience in virtual machine kernel development, as well as in cloud development and\
+            \ microservices architecture. She teaches at MIPT and Innopolis, likes to turn study into a process of mutual\
+            \ knowledge enrichment, and work into an equally shared drive."}
+      - {language: ru, text: "Архитектор ПО, тимлид. Занимается Secure Platform Development в кибериммунной KasperskyOS. З\
+            а плечами — более 10 лет в разработке ядра виртуальной машины, а также в облачной разработке и архитектуре мик\
+            росервисов. Преподает в МФТИ и в Иннополисе, любит превращать учебу в процесс взаимного обогащения знаниями, а\
+            \ работу — в столь же совместный драйв."}
   - id: 1846
     photoFileName: 1846.jpg
     photoUpdatedAt: 2021-10-11T14:01:37.669Z[UTC]
@@ -27103,14 +27121,13 @@ speakers:
       - {language: ru, text: "Алексей Акопян"}
     companyIds: [139]
     bio:
-      - {language: en, text: "In 18 years in the IT-industry I went the way \"from the Varangians to the Greeks\", from a\
-            \ developer to a manager. Worked in such companies as Sun Microsystems, Oracle, Luxoft. For the last 4 years has\
-            \ been heading the development of the software part of the internal cloud service at Dell EMC. He likes to change\
-            \ the worldview of customers and JUG.ru Group conferences."}
-      - {language: ru, text: "За 18 лет в IT-индустрии прошел путь «из варяг в греки», от разработчика до менеджера. Работ\
-            ал в таких компаниях, как Sun Microsystems, Oracle, Luxoft. Последние 4 года возглавляет отдел разработки прог\
-            раммной части внутреннего облачного сервиса в Dell EMC. Любит менять мировоззрение заказчиков и конференции JUG.ru\
-            \ Group."}
+      - {language: en, text: "Alexey is an IT elder, he started his career as a developer in Sun Microsystems contracting\
+            \ company \"Elbrus MCST\" and grew into international teams manager in such companies like Oracle, Luxoft and\
+            \ EMC. Now he leads the software development for internal Dell Technologies cloud and lab resources management."}
+      - {language: ru, text: "Алексей — старожил IT, начал заниматься программированием ещё в 90-х. Прошёл путь от инженер\
+            а-программиста в МЦСТ \"Эльбрус\" до руководителя международных команд в таких компаниях, как Oracle, Luxoft и\
+            \ EMC. Сейчас  отвечает за разработку и поддержку программного обеспечения внутреннего облака и системы управл\
+            ения доступом к ресурсам лабораторий и датацентров Dell Technologies."}
   - id: 1928
     photoFileName: 1928.jpg
     photoUpdatedAt: 2021-10-22T10:35:05.549Z[UTC]
@@ -27526,14 +27543,16 @@ speakers:
     photoFileName: 1957.jpg
     photoUpdatedAt: 2021-10-26T10:36:23.112Z[UTC]
     name:
-      - {language: en, text: "Alex Gutarin"}
+      - {language: en, text: "Alexander Gutarin"}
       - {language: ru, text: "Александр Гутарин"}
     companyIds: [358]
     bio:
-      - {language: en, text: "A seasoned engineering leader experienced in delivering challenging large scale projects in\
-            \ online media, advertisement, and search."}
-      - {language: ru, text: "Опытный инженер-лидер, имеющий опыт реализации сложных крупномасштабных проектов в онлайн-СМ\
-            И, рекламе и поиске."}
+      - {language: en, text: "Head of Development at Netflix, where he helped build [Open Connect](https://openconnect.netflix.com/en/),\
+            \ one of the two largest Content Delivery Networks in the world. Before that he was responsible for content delivery\
+            \ at Hulu. He has experience with complex, large-scale projects in search and advertising."}
+      - {language: ru, text: "Руководитель отдела разработки в Netflix, где помог построить [Open Connect](https://openconnect.netflix.com/en/),\
+            \ одну из двух крупнейших Content Delivery Networks в мире. До этого отвечал за content delivery в Hulu. Имеет\
+            \ опыт реализации сложных крупномасштабных проектов в поиске и рекламе."}
     twitter: AxGn
   - id: 1958
     photoFileName: 1958.jpg
@@ -27788,3 +27807,413 @@ speakers:
             \ и ждет выхода второй части!)."
     gitHub: ZloyDyadka
     habr: ZloyDyadka
+  - id: 1974
+    photoFileName: 1974.jpg
+    photoUpdatedAt: 2021-11-08T11:22:17.032Z[UTC]
+    name:
+      - {language: en, text: "Denis Chetverikov"}
+      - {language: ru, text: "Денис Четвериков"}
+    companyIds: [3]
+    bio:
+      - {language: en, text: "Makes a graphics engine, the work of which can be seen in Android and iOS applications. During\
+            \ 15 years in the industry participated in the development of UI-framework, breathed life into several embedded\
+            \ devices and not only."}
+      - {language: ru, text: "Делает графический движок, работу которого можно увидеть в приложениях Android и iOS. За 15\
+            \ лет в индустрии участвовал в разработке UI-фреймворка, вдохнул жизнь в несколько embedded-устройств и не тол\
+            ько."}
+  - id: 1975
+    photoFileName: 1975.jpg
+    photoUpdatedAt: 2021-11-08T11:06:22.462Z[UTC]
+    name:
+      - {language: en, text: "Alexey Totmakov"}
+      - {language: ru, text: "Алексей Тотмаков"}
+    companyIds: [635]
+    bio:
+      - {language: en, text: "Head of B2B development and Core Technologies at Kaspersky Lab. In programming since the age\
+            \ of 14, the first programming language is C++. I started my career as a software developer. Now I'm in charge\
+            \ of development, that is, I help developers do their work most efficiently. I study modern approaches to the\
+            \ organization of software development, the experience of successful companies and the engineering practices adopted\
+            \ in them."}
+      - {language: ru, text: "Руководитель разработки корпоративных продуктов и базовых технологий в Лаборатории Касперско\
+            го. В программировании с 14 лет, первый язык программирования — C++. Карьеру начинал разработчиком. Сейчас рук\
+            оводит разработкой, то есть помогает разработчикам делать их работу наиболее рационально. Изучает современные\
+            \ подходы к организации процессов разработки, опыт успешных компаний и принятые в них инженерные практики."}
+  - id: 1976
+    photoFileName: 1976.jpg
+    photoUpdatedAt: 2021-11-08T11:16:32.926Z[UTC]
+    name:
+      - {language: en, text: "Mikhail Aleynikov"}
+      - {language: ru, text: "Михаил Алейников"}
+    companyIds: [3]
+    bio:
+      - {language: en, text: "For three years he has been doing the Traffic Project, the hero of the fight against tech debt\
+            \ in the team."}
+      - {language: ru, text: "Три года делает проект «Пробки», герой борьбы с техдолгом в команде."}
+    gitHub: bobro-krab
+  - id: 1977
+    photoFileName: 1977.jpg
+    photoUpdatedAt: 2021-11-10T20:58:30.531Z[UTC]
+    name:
+      - {language: en, text: "Philip Khandeliants"}
+      - {language: ru, text: "Филипп Хандельянц"}
+    companyIds: [424]
+    bio:
+      - {language: en, text: "The Lead of C++ development at PVS-Studio. He has been developing the PVS-Studio static analyzer\
+            \ for over 5 years. Authored a series of lectures on modern C++. C++ is his second soulmate."}
+      - {language: ru, text: "Руководитель команды разработки C++ анализатора PVS-Studio. Занимается разработкой статическ\
+            ого анализатора более 5 лет. Автор курса лекций по современному C++. Спит в обнимку со стандартом C++."}
+    gitHub: khandeliants
+    habr: khandeliants
+  - id: 1978
+    photoFileName: 1978.jpg
+    photoUpdatedAt: 2021-11-10T21:03:08.158Z[UTC]
+    name:
+      - {language: en, text: "Yuri Minaev"}
+      - {language: ru, text: "Юрий Минаев"}
+    companyIds: [424]
+    bio:
+      - {language: en, text: "The Architect of the PVS-Studio analyzer for C++. Has been developing the static analyzer for\
+            \ three years. Fighting against legacy code — this was a losing fight before he started. Hates leaky abstractions."}
+      - {language: ru, text: "Архитектор C++ анализатора PVS-Studio. Занимается разработкой статического анализатора более\
+            \ трех лет. Ведет неравный бой с legacy-кодом. Ненавидит дырявые абстракции."}
+    habr: YMinaev
+  - id: 1979
+    photoFileName: 1979.jpg
+    photoUpdatedAt: 2021-11-08T11:11:18.492Z[UTC]
+    name:
+      - {language: en, text: "Ilya Makarov"}
+      - {language: ru, text: "Илья Макаров"}
+    companyIds: [3]
+    bio:
+      - {language: en, text: "C++ developer on the 3D maps team at 2GIS."}
+      - {language: ru, text: "C++ разработчик в команде 3D-карт в 2ГИС."}
+    gitHub: sadads1337
+  - id: 1980
+    photoFileName: 1980.jpg
+    photoUpdatedAt: 2021-11-08T14:46:04.556Z[UTC]
+    name:
+      - {language: en, text: "Oleg Soldatov"}
+      - {language: ru, text: "Олег Солдатов"}
+    companyIds: [318]
+    bio:
+      - {language: en, text: TBD}
+      - language: ru
+        text: "Ведущий эксперт «ЛЮКСОФТ» по межличностным коммуникациям и личной эффективности.\r\nВоенный переводчик кита\
+            йского и английского языков, маркетолог и социальный психолог.\r\nИмеет 20-летний опыт создания и управления к\
+            омандами в IT-стартапах в России, Сербии, Китае, Грузии, Казахстане, Филиппинах.\r\nСпециализация: лидерство и\
+            \ коммуникация, мотивация и личная эффективность, управление стрессом и выгоранием."
+  - id: 1981
+    photoFileName: 1981.jpg
+    photoUpdatedAt: 2021-11-08T14:55:00.135Z[UTC]
+    name:
+      - {language: en, text: "Leonid Sadofiev"}
+      - {language: ru, text: "Леонид Садофьев"}
+    companyIds: [318]
+    bio:
+      - {language: en, text: "Lead Developer at Luxoft. He started programming in C back in 1990. He has been working as a\
+            \ full-time programmer since 2001. He has been working as an architect/technical lead since 2002. Main interests:\
+            \ system programming (MS Windows, Linux, embedded systems), application architecture development based on C++\
+            \ class libraries, low-level Assembler programming. Main programming languages: C++, C, Assembler. Has been working\
+            \ at Luxoft for about three years in the Automotive direction."}
+      - {language: ru, text: "Lead Developer в Luxoft. Начал программировать на языке C в далеком 1990 году. C 2001 года р\
+            аботает программистом фуллтайм. С 2002 года — на позициях архитектора/технического лида. Основные области инте\
+            ресов: системное программирование (MS Windows, Linux, embedded systems), разработка архитектуры приложения на\
+            \ основе библиотек классов C++, низкоуровневое программирование на Assembler. Основные языки программирования\
+            : C++, C, Assembler. В Luxoft работает уже порядка трех лет по направлению Automotive."}
+  - id: 1982
+    photoFileName: 1982.jpg
+    photoUpdatedAt: 2020-06-24T14:19:24.483Z[UTC]
+    name:
+      - {language: en, text: "Egor Suvorov"}
+      - {language: ru, text: "Егор Суворов"}
+    companyIds: [650]
+    bio:
+      - {language: en, text: "Teaches a one-year C ++ course for bachelors at the HSE. Interested in compilers, the diploma\
+            \ focuses on type-safe FFI between C ++ and JavaScript. Trained on C ++ at Google and think-cell. Winner of the\
+            \ ACM ICPC 2014 World Cup as part of the St. Petersburg State University team. Graduated from St. Petersburg Academic\
+            \ University, Computer Science Center, and graduate studies at the Higher School of Economics."}
+      - {language: ru, text: "Ведёт годовой курс по C++ для первокурсников бакалавриата НИУ ВШЭ — Санкт-Петербург. Интерес\
+            уется компиляторами, диплом посвящён типобезопасному FFI между C++ и JavaScript. Стажировался на C++ в Google\
+            \ и think-cell. Победитель чемпионата мира ACM ICPC 2014 в составе команды СПбГУ. Закончил Санкт-Петербургский\
+            \ Академический Университет, Computer Science Center и магистратуру в НИУ ВШЭ — Санкт-Петербург."}
+    gitHub: yeputons
+    habr: yeputons
+  - id: 1983
+    photoFileName: 1983.jpg
+    photoUpdatedAt: 2021-11-08T14:11:55.090Z[UTC]
+    name:
+      - {language: en, text: "Mikhail Mitrofanov"}
+      - {language: ru, text: "Михаил Митрофанов"}
+    companyIds: [3]
+    bio:
+      - {language: en, text: "Mikhail deals with routing algorithms and their optimization."}
+      - {language: ru, text: "Занимается алгоритмами маршрутизации и их оптимизацией."}
+  - id: 1984
+    photoFileName: 1984.jpg
+    photoUpdatedAt: 2021-11-08T14:15:49.932Z[UTC]
+    name:
+      - {language: en, text: "Arkady Kapustinsky"}
+      - {language: ru, text: "Аркадий Капустинский"}
+    companyIds: [3]
+    bio:
+      - {language: en, text: "In programming for 30 years. He has given the last 10 years to transport algorithms: as a developer,\
+            \ as a lead, and now as a team leader."}
+      - {language: ru, text: "В программировании 30 лет. Последние 10 лет отдал транспортным алгоритмам: как разработчик,\
+            \ как лид и теперь, как руководитель группы команд."}
+    habr: kab
+  - id: 1985
+    photoFileName: 1985.jpg
+    photoUpdatedAt: 2021-04-07T07:43:00.025Z[UTC]
+    name:
+      - {language: en, text: "Sergey Ermolaev"}
+      - {language: ru, text: "Сергей Ермолаев"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "Lead mobile in SberX, organizer of Android Academy and other interesting activities. Loves compose,\
+            \ machine learning and everything new and fashionable!"}
+      - {language: ru, text: "Лид мобилки в SberX, организатор Android Academy и других интересных активностей. Любит compose,\
+            \ machine learning и все самое новое и модное!"}
+    gitHub: ermolnik
+    habr: ermolnik
+  - id: 1986
+    photoFileName: 1986.jpg
+    photoUpdatedAt: 2021-11-08T08:08:50.966Z[UTC]
+    name:
+      - {language: en, text: "Roman Aymaletdinov"}
+      - {language: ru, text: "Роман Аймалетдинов"}
+    companyIds: [770]
+    bio:
+      - language: en
+        text: "He works in the Citimobile client application development team. Mainly deals with product tasks. Before Citimobile\
+            \ worked at EPAM, started his career working for SiriusXM. \r\nMore than four years in mobile development."
+      - language: ru
+        text: "Работает в команде разработки клиентского приложения Ситимобил. В основном занимается продуктовыми задачами\
+            . До Ситимобила работал в  EPAM, начал карьеру, работая на SiriusXM. \r\nБолее четырех лет в мобильной разрабо\
+            тке."
+    gitHub: Evleaps
+    habr: Evleaps
+  - id: 1987
+    photoFileName: 1987.jpg
+    photoUpdatedAt: 2021-11-12T05:18:26.552Z[UTC]
+    name:
+      - {language: en, text: "Yury Kamyshenko"}
+      - {language: ru, text: "Юрий Камышенко"}
+    companyIds: [878]
+    bio:
+      - language: en
+        text: "Yuri has been working in IT for almost 14 years. By education he is a radio engineer. Started with C++ in a\
+            \ product company, then a few years of outsourced work in the company DataArt with a lot of interesting projects.\
+            \ Also there, 11 years ago I've moved to mobile development for iOS. He managed to participate in the projects\
+            \ both for foreign customers and for the CIS market. Then worked in a startup to form a mobile bank within the\
+            \ company YOTA as an iOS team leader.  Last 7 years working for Tango, live streaming company.\r\n\r\nHe has handled\
+            \ various tasks and has an impressive track record of leading development teams. Lately he has been working on\
+            \ a video team where he and his colleagues are building a cool video platform."
+      - language: ru
+        text: "Юрий работает в IT вот уже почти 14 лет. По образованию инженер-радиотехник. Начинал с С++ в продуктовой ко\
+            мпании, затем было несколько лет работы в аутсорсе в компании DataArt c множеством интересных проектов. Там же\
+            , 11 лет назад, и перешел в мобильную разработку под iOS. Ему удалось поучаствовать в проектах как для зарубеж\
+            ных заказчиков, так и для рынка СНГ. Затем работал в стартапе по формированию мобильного банка в рамках компан\
+            ии YOTA, в качестве iOS-тимлида.  В последние 7 лет работает в компании Tango, live streaming.\r\n\r\nЗанималс\
+            я различными задачами и имеет внушительный опыт руководства командами разработчиков. В последнее время работае\
+            т в видеокоманде, где вместе с коллегами строит крутую видеоплатформу."
+  - id: 1988
+    photoFileName: 1988.jpg
+    photoUpdatedAt: 2021-11-04T12:20:21.121Z[UTC]
+    name:
+      - {language: en, text: "Dmitry Baidaev"}
+      - {language: ru, text: "Дмитрий Байдаев"}
+    companyIds: [879]
+    bio:
+      - {language: en, text: "Development of VoIP calls and conferences. Climbing is his passion."}
+      - {language: ru, text: "Разрабатывает видеозвонки и серверные части конференций. Увлекается скалолазанием."}
+  - id: 1989
+    photoFileName: 1989.jpg
+    photoUpdatedAt: 2021-11-10T12:03:44.285Z[UTC]
+    name:
+      - {language: en, text: "Dmitry Vatolin"}
+      - {language: ru, text: "Дмитрий Ватолин"}
+    companyIds: [880]
+    bio:
+      - language: en
+        text: "Dmitry Sergeevich Vatolin.  Candidate of physical and mathematical sciences. Head of computer graphics laboratory\
+            \ at CS MSU.\r\n\r\nTeaches computer graphics courses and courses about methods of compressing and processing\
+            \ video since 1997. Author of popular web sites dedicated to the algorithms of processing and compressing video\
+            \ (https://compression.ru/video, https://videoprocessing.github.io/, https://videoprocessing.ai).\r\n\r\nSpecializes\
+            \ in research on algorithms of compressing video, state-of-art methods of measuring quality and processing of\
+            \ digital video. Among most popular public projects, there are annual comparisons of video codecs, reports about\
+            \ techical quality of stereo movies and video processing benchmarks.\r\n\r\nWas in charge of more than 40 commercial\
+            \ projects with companies like Intel, Cisco, Real Networks, Samsung, Huawei, Broadcom etc. Number one author at\
+            \ Habr contributing to hubs like AR and VR, AI, Video, Video Technology.\r\n\r\nTook part in launching 6 startups,\
+            \ four of which are more than 15 years old now. Believes in future of sparse light fields, and believes that all\
+            \ video will become 4D by the end of XXI century. Doubts that Homo Sapiens is truly reasonable."
+      - language: ru
+        text: "К.ф.-м.н., заведующий лабораторией компьютерной графики ВМК МГУ. \r\n\r\nЧитает курсы по компьютерной графи\
+            ке и методам сжатия/обработки видео с 1997 года. Создатель популярных сайтов, посвященных алгоритмам обработки\
+            \ и сжатия видео (https://compression.ru/video, https://videoprocessing.github.io/, https://videoprocessing.ai).\
+            \ \r\n\r\nСпециализируется на исследованиях в области алгоритмов сжатия видео, современных методах измерения к\
+            ачества и обработке цифрового видео. Наиболее известные публичные проекты: ежегодные сравнения видеокодеков, о\
+            тчеты по техническому качеству стереофильмов и бенчмарки videoprocessing. \r\n\r\nРуководил 40+ коммерческими\
+            \ проектами с компаниями Intel, Cisco, Real Networks, Samsung, Huawei, Broadcom и др. Без учета редакторов авт\
+            ор № 1 на Хабре в хабах «AR и VR», «Искусственный интеллект», «Работа с видео» и «Видеотехника».\r\n\r\nУчаств\
+            овал в запуске шести стартапов, возраст четырех из которых перевалил за 15 лет. Верит в будущее разреженных св\
+            етовых полей и в то, что все видео до конца века станет четырехмерным. Сомневается в разумности Homo Sapiens."
+    habr: 3Dvideo
+  - id: 1990
+    photoFileName: 1990.jpg
+    photoUpdatedAt: 2021-10-11T14:25:30.360Z[UTC]
+    name:
+      - {language: en, text: "Maksim Lapshin"}
+      - {language: ru, text: "Максим Лапшин"}
+    companyIds: [881]
+    bio:
+      - {language: en, text: "Maskim graduated from faculty of computational mathematics and cybernetics MSU and takes interest\
+            \ in technologies of transferring video via Internet. Created server of video streaming and Erlyvideo company,\
+            \ which is in top-50 of most important companies in online video area."}
+      - {language: ru, text: "Максим — выпускник факультета вычислительной математики и кибернетики МГУ и уже более 10 лет\
+            \ интересуется технологиями передачи видео через интернет. Создал видеостриминговый сервер и компанию «Эрливид\
+            ео», которая входит в список 50 самых важных в сфере онлайн-видео."}
+    gitHub: maxlapshin
+    habr: erlyvideo
+  - id: 1991
+    photoFileName: 1991.jpg
+    photoUpdatedAt: 2021-11-10T06:26:48.330Z[UTC]
+    name:
+      - {language: en, text: "Ryan Jespersen"}
+    companyIds: [882]
+    bio:
+      - {language: en, text: "Ryan has over 20 years of experience in the digital video, broadcast and streaming industries;\
+            \ specializing in live streaming workflows, protocols, cloud computing and complex video delivery systems at companies\
+            \ including Millicast, Wowza, HP and Siemens."}
+    twitter: ryan_jespersen
+  - id: 1992
+    photoFileName: 1992.jpg
+    photoUpdatedAt: 2021-11-11T15:01:10.842Z[UTC]
+    name:
+      - {language: en, text: "Irina Lamarr"}
+      - {language: ru, text: "Ирина Ламарр"}
+    companyIds: [883]
+    bio:
+      - language: en
+        text: "WebSDK developer at Voximplant.\r\n\r\nFor the last couple of years develops SDK for audio and video calls\
+            \ and conferences based on WebRTC, sometimes is even ready to describe herself as an expert in WebRTC, but at\
+            \ this very moment new version of Safari comes, and confidence somehow diappeares :)\r\n\r\nTried to work as frontend,\
+            \ and backend. and mobile developer. In her free time reads release notes and digs into source code of browsers."
+      - language: ru
+        text: "WebSDK-разработчик в компании Voximplant.\r\n\r\nПоследние пару лет разрабатывает SDK для аудио- и видеозво\
+            нков и конференций на базе WebRTC, иногда даже готова описать себя как эксперта в WebRTC, но именно в этот мом\
+            ент выходит новая версия Safari и уверенность как рукой снимает:) \_\r\n\r\nДо этого попробовала себя в роли и\
+            \ фронтенд, и бэкенд, и мобильного разработчика. В свободное время читает release notes и ковыряет исходники б\
+            раузеров."
+    gitHub: irgalamarr
+  - id: 1993
+    photoFileName: 1993.jpg
+    photoUpdatedAt: 2021-11-10T14:47:14.305Z[UTC]
+    name:
+      - {language: en, text: "Aleksander Patrushev"}
+      - {language: ru, text: "Александр Патрушев"}
+    companyIds: [34]
+    bio:
+      - language: en
+        text: "15 years in IT, and every new step was completely different from the previous one:\r\n\r\nx86 system engineer\
+            \ -> IBM Power Systems system engineer - > VMware system engineer -> AWS Solution Architect -> AWS AI/ML Solution\
+            \ Architect.\r\n\r\nEvery time Aleksander jumped out of his comfort zone and ran towards new ideas. At the moment\
+            \ he is AI/ML Amazon Web Services architect who helps everyone to learn how to adapt ML and cloud technologies\
+            \ to business tasks."
+      - language: ru
+        text: "15 лет в ИТ, и каждый новый этап в карьере был противопоставлением предыдущему: \r\n\r\nx86 system engineer\
+            \ -> IBM Power Systems system engineer - > VMware system engineer -> AWS Solution Architect -> AWS AI/ML Solution\
+            \ Architect. \r\n\r\nКаждый раз выпрыгивал из зоны комфорта и бежал навстречу новым идеям. На текущий момент а\
+            рхитектор AI/ML Amazon Web Services, помогающий всем желающим пройти захватывающий путь адаптации технологий м\
+            ашинного обучения и облачных технологий к бизнес-задачам."
+    gitHub: patrick-239
+  - id: 1994
+    photoFileName: 1994.jpg
+    photoUpdatedAt: 2021-09-28T13:01:57.760Z[UTC]
+    name:
+      - {language: en, text: "Alexey Gusev"}
+      - {language: ru, text: "Алексей Гусев"}
+    companyIds: [689]
+    bio:
+      - {language: en, text: "He makes a video player in Yandex. He speaks at conferences, contributes to open-source."}
+      - {language: ru, text: "Делает видеоплеер в Яндексе. Выступает на конференциях, контрибьютит в open-source."}
+  - id: 1995
+    photoFileName: 1995.jpg
+    photoUpdatedAt: 2021-11-08T07:55:12.682Z[UTC]
+    name:
+      - {language: en, text: "Dmitry Kravtsov"}
+      - {language: ru, text: "Дмитрий Кравцов"}
+    companyIds: [689]
+    bio:
+      - {language: en, text: "Developer of the Yandex video platform."}
+      - {language: ru, text: "Разработчик видеоплатформы Яндекса."}
+  - id: 1996
+    photoFileName: 1996.jpg
+    photoUpdatedAt: 2021-09-30T17:01:14.178Z[UTC]
+    name:
+      - {language: en, text: "Mikhail Mazanov"}
+      - {language: ru, text: "Михаил Мазанов"}
+    companyIds: [689]
+    bio:
+      - language: en
+        text: "Works with Internet video technologies since 2007 and is an expert in this field.\r\n\r\nIs fond of all aspects\
+            \ of Internet video, from multi-camera filming to live broadcast delivery and worldwide recordings to all the\
+            \ screens.\r\n\r\nNow Mikhail works as a lead project manager at Yandex. He's responsible for developing and managing\
+            \ DRM at Kinopoisk and other Yandex services. Provides technical support for Yandex.Studio projects. Manages a\
+            \ team of more than 10 developers and experts in video technologies.\r\n\r\nThe second Mikhail's job is consulting\
+            \ and managing OVP project at OBS. He is responsible for Olympic Games Internet broadcast. Worked at Olympic Games\
+            \ in 2016, 2018 and 2020."
+      - language: ru
+        text: "Работает с технологиями интернет-видео с 2007 года, эксперт в этой области.\r\n\r\nУвлечен всеми областями\
+            \ интернет-видео: от многокамерной съемки до доставки прямых трансляций и записей по всему миру на все экраны\
+            . \r\n\r\nСейчас Михаил работает ведущим менеджером проектов в Яндексе. Отвечает за разработку и управление си\
+            стемой кодирования и защиты (DRM) лицензионного контента в Кинопоиске https://hd.kinopoisk.ru/ и других сервис\
+            ах Яндекса. Занимается техническим сопровождением проектов Яндекс.Студии https://studio.yandex.ru/. Управляет\
+            \ командой из более, чем десяти разработчиков и экспертов по видео технологиям.\r\n\r\nВторая работа Михаила —\
+            \ консультирование и менеджмент проекта Olympic Video Player (OVP) в Олимпийской вещательной службе (Olympic Broadcasting\
+            \ Services, OBS) https://www.obs.tv. Отвечает за бесперебойную трансляцию Олимпийских Игр в интернет. Работал\
+            \ на Играх 2016 в Рио, 2018 в Пхёнчхане и 2020 в Токио."
+  - id: 1997
+    photoFileName: 1997.jpg
+    photoUpdatedAt: 2021-11-12T04:29:55.815Z[UTC]
+    name:
+      - {language: en, text: "Pavel Matsula"}
+      - {language: ru, text: "Павел Мацула"}
+    companyIds: [620]
+    bio:
+      - language: en
+        text: "Head of team developing native clients at VK for the last 1,5 years.\r\n\r\nPreviously worked on distributed\
+            \ backend in other large company. Used to do research in mathematical and imitation modelling, and also developed\
+            \ interpretator for modelling language. Used to read lectures on C++ and AST. \r\n\r\nTakes interest in tasks\
+            \ for optimizing any code performance. Used to be a professional musician, so the tasks of real-time audio processing\
+            \ are of special interest for him."
+      - language: ru
+        text: "Последние полтора года руководит командой разработки нативных клиентов в VK. \r\n\r\nПеред этим работал над\
+            \ распределенным бэкендом в другой крупной технологической компании. В прошлом занимался научными исследования\
+            ми в области математического и имитационного моделирования, в том числе разрабатывал интерпретатор для языка м\
+            оделирования, а также долгое время читал лекции по C++ и АСД в университете. \r\n\r\nНаибольший интерес вызыва\
+            ют задачи оптимизации производительности любого кода, до которого удается дотянуться. Профессионально занималс\
+            я музыкой, поэтому отдельный личный интерес представляют задачи обработки аудио в реальном времени."
+  - id: 1998
+    photoFileName: 1998.jpg
+    photoUpdatedAt: 2021-11-11T14:40:38.623Z[UTC]
+    name:
+      - {language: en, text: "Aleksandr Shishkov"}
+      - {language: ru, text: "Александр Шишков"}
+    companyIds: [884]
+    bio:
+      - language: en
+        text: "Alexander Shishkov is VP of R&D at itSeez3D, the company that brought realistic 3D avatars and 3D scanning\
+            \ to consumers. He has been working in the field of computer vision for the last ten years. \r\n\r\nPrior to itSeez3D,\
+            \ he worked at Itseez, where he had developed technologies including counting systems, object detection, and image\
+            \ retrieval systems. He had been a member of the core OpenCV development team for many years. He is a co-author\
+            \ of a few books including \"Instant OpenCV for iOS\" and several courses for Nizhny Novgorod State University,\
+            \ where he had been working as a lector for about 10 years."
+      - language: ru
+        text: "Вице-президент по разработке в компании Itseez3D, где занимается продуктами для создания реалистичных 3D-ав\
+            атаров и 3D-сканирования. Более десяти лет работает в области компьютерного зрения. \r\n\r\nРанее работал в ко\
+            мпании Itseez, где участвовал в разработке систем подсчета людей на основе видео, детектирования объектов, рас\
+            познавания автомобильных номеров и других. Был одним из разработчиков библиотеки OpenCV в течение долгого врем\
+            ени. Автор нескольких книг, включая «Instant OpenCV for iOS», и многих учебных курсов для Нижегородского госуд\
+            арственного университета имени Н. И. Лобачевского, где преподавал около десяти лет."
+    gitHub: alekcac
+    habr: alekcac

@@ -2629,3 +2629,33 @@ companies:
   - id: 875
     name:
       - {language: en, text: "G-Core Labs"}
+  - id: 876
+    name:
+      - {language: en, text: Squire}
+  - id: 877
+    name:
+      - {language: en, text: "Orion Innovations"}
+  - id: 878
+    name:
+      - {language: en, text: TangoMe}
+      - {language: ru, text: "ТангоМи СТП"}
+  - id: 879
+    name:
+      - {language: en, text: "IVA Technologies"}
+  - id: 880
+    name:
+      - {language: en, text: MSU}
+      - {language: ru, text: МГУ}
+  - id: 881
+    name:
+      - {language: en, text: Erlyvideo}
+      - {language: ru, text: Эрливидео}
+  - id: 882
+    name:
+      - {language: en, text: "Millicast, Inc."}
+  - id: 883
+    name:
+      - {language: en, text: Voximplant}
+  - id: 884
+    name:
+      - {language: en, text: "Itseez3D Inc."}

@@ -159,6 +159,11 @@ companySynonyms:
         "МТС ИТ",
         "MTS DIGITAL"
     ]
+  - name: "National Research University Higher School of Economics"
+    synonyms: [
+        "HSE University — Saint Petersburg",
+        "НИУ ВШЭ — Санкт-Петербург"
+    ]
   - name: Netflix
     synonyms: [
         "Netflix Inc."
@@ -234,7 +239,8 @@ companySynonyms:
         SberTech,
         СберТех,
         Sberbank-Technology,
-        Сбербанк-Технологии
+        Сбербанк-Технологии,
+        SberX
     ]
   - name: Sibur
     synonyms: [
@@ -288,7 +294,9 @@ companySynonyms:
         Yandex.Cloud,
         Яндекс.Облако,
         Yandex.Taxi,
-        Яндекс.Такси
+        Яндекс.Такси,
+        "Kinopoisk (Yandex)",
+        "Кинопоиск (Яндекс)"
     ]
   - name: "ZeptoLab LLC"
     synonyms: [
