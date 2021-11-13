@@ -6134,6 +6134,7 @@ speakers:
             \ MVP, crew member at Techorama, global organizer of the Global Azure Bootcamp and speaks at local meetups and\
             \ usergroups."
     twitter: WesleyCabus
+    gitHub: wcabus
     mvp: true
   - id: 421
     photoFileName: 0421.jpg
@@ -6561,6 +6562,7 @@ speakers:
             \ known for \"telling it how it is\" — taking today's topics and sharing with you war stories and experience to\
             \ help you assess them."}
     twitter: ICooper
+    gitHub: iancooper
   - id: 450
     photoFileName: 0450.jpg
     photoUpdatedAt: 2019-05-16T14:50:40.859Z[UTC]
@@ -7243,6 +7245,7 @@ speakers:
       - {language: en, text: "A software engineer at Stack Overflow in London. Marco writes about software development, coding,\
             \ architecture and team leadership. He also speaks at conferences worldwide."}
     twitter: sklivvz
+    gitHub: sklivvz
   - id: 493
     photoFileName: 0493.jpg
     name:
@@ -7957,6 +7960,7 @@ speakers:
             \ He recently has been helping companies with digital transformation, moving towards continuous delivery and building\
             \ a DevOps culture. He also is an automated testing zealot, practices TDD almost exclusively."}
     twitter: timcochran
+    gitHub: tcochran
   - id: 552
     photoFileName: 0552.jpg
     name:
@@ -7967,6 +7971,7 @@ speakers:
             \ software professionally. In 2009, he created Node.js. Ryan managed the project through its initial years of\
             \ development, before yielding it in favor of other interests like build systems, computer vision, and electronic\
             \ music. Currently he lives in Brooklyn."}
+    gitHub: ry
   - id: 553
     photoFileName: 0553.jpg
     name:
@@ -9152,6 +9157,7 @@ speakers:
             \ a Bachelor’s degree in Computer Science, with a minor in Music Technology, from the world-renowned School of\
             \ Computer Science at Carnegie Mellon University in Pittsburgh."}
     twitter: thedancuellar
+    gitHub: penguinho
   - id: 635
     photoFileName: 0635.jpg
     name:
@@ -9519,6 +9525,7 @@ speakers:
             \ JS ecosystem, and is always trying to find better and more efficient ways to solve problems. His motto is \"\
             strive to be lazy\"."}
     twitter: thewizardlucas
+    gitHub: lucasfcosta
   - id: 660
     photoFileName: 0660.jpg
     photoUpdatedAt: 2019-03-29T15:07:56.283Z[UTC]
@@ -9772,6 +9779,7 @@ speakers:
             \ a Google Developer Expert, Alex has contributed to the open source community with a focus on web technologies\
             \ and neurotech."}
     twitter: castillo__io
+    gitHub: alexcastillo
   - id: 678
     photoFileName: 0678.jpg
     name:
@@ -10380,6 +10388,7 @@ speakers:
             \ of Tilton, the ugliest programming language that was not specifically designed to be an ugly programming language.\
             \ He is best known for having discovered that there are good parts in JavaScript. This was an important and unexpected\
             \ discovery. He also discovered the JSON, the world’s most loved data format."}
+    gitHub: douglascrockford
   - id: 722
     photoFileName: 0722.jpg
     name:
@@ -11118,6 +11127,7 @@ speakers:
             \ she also enjoys travelling and attending conferences and meetups. Her latest obsession is conversational apps\
             \ and IoT."}
     twitter: ElizaCamber
+    gitHub: elizacamber
   - id: 779
     photoFileName: 0779.jpg
     photoUpdatedAt: 2020-06-14T11:56:09.511Z[UTC]
@@ -11893,6 +11903,7 @@ speakers:
             \ and currently as part of his job he advocates developers by exploring new technologies, speaking at conferences\
             \ and sharing knowledge."
     twitter: fernando_cejas
+    gitHub: android10
   - id: 831
     photoFileName: 0831.jpg
     name:
@@ -13553,6 +13564,7 @@ speakers:
             \ JUG and founded the JNation Conference in Portugal. When he is not working, he hangs out with friends, play\
             \ computer games and spends time with family."}
     twitter: radcortez
+    gitHub: radcortez
   - id: 966
     photoFileName: 0966.jpg
     name:
@@ -13912,6 +13924,8 @@ speakers:
       - {language: en, text: "Marshall has been programming professionally for 35 years. He is the author of Boost.Algorithm,\
             \ and has been a contributor to Boost for more than 15 years. He is the chairman of the Library working group\
             \ of the C++ standard committee. He is the lead developer for libc++, the C++ standard library for LLVM."}
+    twitter: mclow
+    gitHub: mclow
   - id: 989
     photoFileName: 0989.jpg
     name:
@@ -14153,6 +14167,7 @@ speakers:
             \ multithreaded programming, but he finds any challenging subject interesting. These days he uses C#/TypeScript\
             \ but remains interested in many different languages."
     twitter: aSteveCleary
+    gitHub: StephenCleary
     mvp: true
   - id: 1006
     photoFileName: 1006.jpg
@@ -14845,6 +14860,7 @@ speakers:
             \ IBM and Intel. He regularly talks about software testing at conferences around the world, and organizes the\
             \ Israeli Selenium Meetup group."}
     twitter: carmiadam
+    gitHub: carmiadam
   - id: 1056
     photoFileName: 1056.jpg
     name:
@@ -15662,6 +15678,7 @@ speakers:
             \ resources, semantic web, and domain-specific knowledge systems. He considers software development less of a\
             \ job and more of a daily practice; curiosity and excitement being his driving force."}
     twitter: AlexCulliere
+    gitHub: Nachasic
   - id: 1120
     photoFileName: 1120.jpg
     photoUpdatedAt: 2020-01-15T14:05:17.821Z[UTC]
@@ -15675,6 +15692,7 @@ speakers:
             \ and he shares his knowledge on ITNEXT and GDG-NL communities as a co-organizer and speaker. He's also interested\
             \ in photography, capturing night photos specifically."}
     twitter: onderceylan
+    gitHub: onderceylan
   - id: 1121
     photoFileName: 1121.jpg
     name:
@@ -16782,6 +16800,7 @@ speakers:
             \ Introduction to Reliable and Secure Distributed Programming. While at IBM Research he made essential contributions\
             \ to the development of Hyperledger Fabric, a blockchain platform aimed business use."
     twitter: cczurich
+    gitHub: cca88
   - id: 1203
     photoFileName: 1203.jpg
     photoUpdatedAt: 2020-01-27T13:49:39.201Z[UTC]
@@ -16992,6 +17011,7 @@ speakers:
             \ and creating web applications for events at the Lab. His recent passion is around raising awareness about the\
             \ energy consumption of technology and discovering ways to help reduce technologies' carbon footprint."}
     twitter: Jamie_Lee_C
+    gitHub: jamiecoleman92
   - id: 1219
     photoFileName: 1219.jpg
     photoUpdatedAt: 2020-05-06T08:24:53.152Z[UTC]
@@ -24340,6 +24360,7 @@ speakers:
             \ as part of several startups in his career. Tejas is an International Keynote Speaker and periodically conducts\
             \ seminars on Micro services, NFTs, Software Development & Cloud Computing and has a Masters Degree in Electrical\
             \ & Computer Engineering from Carnegie Mellon University, with a specialization in Computer Systems."
+    twitter: chopra_tejas
     gitHub: chopratejas
   - id: 1738
     photoFileName: 1738.jpg
