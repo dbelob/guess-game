@@ -5095,8 +5095,9 @@ speakers:
             нутри движка игры, таких как ресурсная подсистема, рендеринг, анимации, интеграция со скриптовыми языками."}
   - id: 350
     photoFileName: 0350.jpg
+    photoUpdatedAt: 2021-11-11T11:31:02.808Z[UTC]
     name:
-      - {language: en, text: "Sergei Fedorov"}
+      - {language: en, text: "Sergey Fedorov"}
       - {language: ru, text: "Сергей Фёдоров"}
     companyIds: [689]
     bio:
@@ -5104,6 +5105,7 @@ speakers:
             \ back-end. Big fan of metaprogramming and open source."}
       - {language: ru, text: "Ведущий разработчик в «Яндекс.Такси», занимается разработкой асинхронного фреймворка для бэк\
             енда Такси. Большой любитель метапрограммирования и open source."}
+    gitHub: zmij
   - id: 351
     photoFileName: 0351.jpg
     photoUpdatedAt: 2020-01-22T13:48:22.084Z[UTC]
@@ -15909,11 +15911,11 @@ speakers:
     bio:
       - language: en
         text: "C++ developer and Product Owner at Nokia.\n\n10 years of commercial development experience in avionics and\
-            \ telecommunications. Spent the last 6 years writing code for LTE/5G core networks. Mentor and evangelist of modern\
+            \ telecommunications. Spent the last 7 years writing code for LTE/5G core networks. Mentor and evangelist of modern\
             \ development approaches. A fan of Linux kernel and well-written specs."
       - language: ru
         text: "С++ разработчик и Product Owner в Nokia.\n\n10 лет опыта коммерческой разработки в авионике и телекоммуника\
-            циях. Последние 6 лет пишет код для опорных сетей LTE/5G. Ментор и евангелист современных подходов в разработк\
+            циях. Последние 7 лет пишет код для опорных сетей LTE/5G. Ментор и евангелист современных подходов в разработк\
             е. Фанат линуксового ядра и хорошо написанных спецификаций."
     twitter: st_1ena
   - id: 1139
@@ -19323,10 +19325,11 @@ speakers:
       - {language: ru, text: "Илья Шишков"}
     companyIds: [689]
     bio:
-      - {language: en, text: "Yandex Senior Developer, co-author of the Coursera online specialization \"The art of development\
-            \ on modern C++\"."}
-      - {language: ru, text: "Старший разработчик компании Яндекс, соавтор онлайн-специализации на Coursera «Искусство раз\
-            работки на современном C++»."}
+      - {language: en, text: "Senior developer at Yandex, co-author of the online specialization \"The Art of Development\
+            \ in Modern C++\" and the online course \"Programmer's Algorithmic Foundation\"."}
+      - {language: ru, text: "Старший разработчик компании Яндекс, соавтор онлайн-специализации «Искусство разработки на с\
+            овременном C++» и онлайн-курса «Алгоритмический фундамент программиста»."}
+    gitHub: ishfb
     habr: ishfb
   - id: 1395
     photoFileName: 1395.jpg
@@ -25258,18 +25261,16 @@ speakers:
             держки, так что немало знает о пользовательских требованиях к ПО."}
   - id: 1799
     photoFileName: 1799.jpg
-    photoUpdatedAt: 2021-10-14T08:22:23.406Z[UTC]
+    photoUpdatedAt: 2021-11-09T19:53:44.651Z[UTC]
     name:
       - {language: en, text: "Nikolay Mironov"}
       - {language: ru, text: "Николай Миронов"}
     companyIds: [424]
     bio:
-      - {language: en, text: "Tech Lead of the Tools&DevOps team at PVS-Studio. Nikolay develops and maintains utilities and\
-            \ plugins for developers to work with the static analyzer more conveniently. He also participated in developing\
-            \ the analyzer for C#. Writes scripts for Jenkins for fun."}
+      - {language: en, text: "Tech Lead of the Tools&DevOps team at PVS-Studio. Develops and supports utilities and plugins\
+            \ for developers to work with the static analyzer more conveniently. Writes scripts in Jenkins as a hobby."}
       - {language: ru, text: "Tech Lead команды Tools&DevOps компании PVS-Studio. Занимается разработкой и поддержкой утил\
-            ит и плагинов для более удобной работы со статическим анализатором. Дополнительно успел оставить свой след в о\
-            дноименном C# анализаторе. Пишет скрипты в Jenkins для души"}
+            ит и плагинов для более удобной работы со статическим анализатором. Пишет скрипты в Jenkins для души"}
     twitter: nikola_ich
     habr: IchNikola
   - id: 1800
@@ -25979,21 +25980,18 @@ speakers:
     photoFileName: 1845.jpg
     photoUpdatedAt: 2021-10-22T15:56:17.916Z[UTC]
     name:
-      - {language: en, text: "Anna Melekhova"}
+      - {language: en, text: "Anna Melehova"}
       - {language: ru, text: "Анна Мелехова"}
     companyIds: [635]
     bio:
-      - language: en
-        text: "Software architect, team leader. Now Anna is inspired with delivering functional safety in KasperskyOS. She\
-            \ has 10 years of virtualization development under her belt. Anna's background includes cloud development (DRS,\
-            \ schedulers) and microservices architecture.\n\nAnna is an associate professor at MIPT and at Innopolis university.\
-            \ She likes to transform teaching into a process of mutual enrichment and enjoy seeing her ex-students to become\
-            \ her teachers."
-      - language: ru
-        text: "Архитектор ПО, тимлид. Занимается Secure Platform Development в кибериммунной KasperskyOS. За плечами — бол\
-            ее 10 лет в разработке ядра виртуальной машины, а также в облачной разработке и архитектуре микросервисов.\n\n\
-            Преподает в МФТИ и в Иннополисе, любит превращать учебу в процесс взаимного обогащения знаниями, а работу — в\
-            \ столь же совместный драйв."
+      - {language: en, text: "Software Architect, Team Lead. In charge of Secure Platform Development in cybernetic KasperskyOS.\
+            \ She has over 10 years of experience in virtual machine kernel development, as well as in cloud development and\
+            \ microservices architecture. She teaches at MIPT and Innopolis, likes to turn study into a process of mutual\
+            \ knowledge enrichment, and work into an equally shared drive."}
+      - {language: ru, text: "Архитектор ПО, тимлид. Занимается Secure Platform Development в кибериммунной KasperskyOS. З\
+            а плечами — более 10 лет в разработке ядра виртуальной машины, а также в облачной разработке и архитектуре мик\
+            росервисов. Преподает в МФТИ и в Иннополисе, любит превращать учебу в процесс взаимного обогащения знаниями, а\
+            \ работу — в столь же совместный драйв."}
   - id: 1846
     photoFileName: 1846.jpg
     photoUpdatedAt: 2021-10-11T14:01:37.669Z[UTC]
@@ -27788,3 +27786,157 @@ speakers:
             \ и ждет выхода второй части!)."
     gitHub: ZloyDyadka
     habr: ZloyDyadka
+  - id: 1974
+    photoFileName: 1974.jpg
+    photoUpdatedAt: 2021-11-08T11:22:17.032Z[UTC]
+    name:
+      - {language: en, text: "Denis Chetverikov"}
+      - {language: ru, text: "Денис Четвериков"}
+    companyIds: [3]
+    bio:
+      - {language: en, text: "Makes a graphics engine, the work of which can be seen in Android and iOS applications. During\
+            \ 15 years in the industry participated in the development of UI-framework, breathed life into several embedded\
+            \ devices and not only."}
+      - {language: ru, text: "Делает графический движок, работу которого можно увидеть в приложениях Android и iOS. За 15\
+            \ лет в индустрии участвовал в разработке UI-фреймворка, вдохнул жизнь в несколько embedded-устройств и не тол\
+            ько."}
+  - id: 1975
+    photoFileName: 1975.jpg
+    photoUpdatedAt: 2021-11-08T11:06:22.462Z[UTC]
+    name:
+      - {language: en, text: "Alexey Totmakov"}
+      - {language: ru, text: "Алексей Тотмаков"}
+    companyIds: [635]
+    bio:
+      - {language: en, text: "Head of B2B development and Core Technologies at Kaspersky Lab. In programming since the age\
+            \ of 14, the first programming language is C++. I started my career as a software developer. Now I'm in charge\
+            \ of development, that is, I help developers do their work most efficiently. I study modern approaches to the\
+            \ organization of software development, the experience of successful companies and the engineering practices adopted\
+            \ in them."}
+      - {language: ru, text: "Руководитель разработки корпоративных продуктов и базовых технологий в Лаборатории Касперско\
+            го. В программировании с 14 лет, первый язык программирования — C++. Карьеру начинал разработчиком. Сейчас рук\
+            оводит разработкой, то есть помогает разработчикам делать их работу наиболее рационально. Изучает современные\
+            \ подходы к организации процессов разработки, опыт успешных компаний и принятые в них инженерные практики."}
+  - id: 1976
+    photoFileName: 1976.jpg
+    photoUpdatedAt: 2021-11-08T11:16:32.926Z[UTC]
+    name:
+      - {language: en, text: "Mikhail Aleynikov"}
+      - {language: ru, text: "Михаил Алейников"}
+    companyIds: [3]
+    bio:
+      - {language: en, text: "For three years he has been doing the Traffic Project, the hero of the fight against tech debt\
+            \ in the team."}
+      - {language: ru, text: "Три года делает проект «Пробки», герой борьбы с техдолгом в команде."}
+    gitHub: bobro-krab
+  - id: 1977
+    photoFileName: 1977.jpg
+    photoUpdatedAt: 2021-11-10T20:58:30.531Z[UTC]
+    name:
+      - {language: en, text: "Philip Khandeliants"}
+      - {language: ru, text: "Филипп Хандельянц"}
+    companyIds: [424]
+    bio:
+      - {language: en, text: "The Lead of C++ development at PVS-Studio. He has been developing the PVS-Studio static analyzer\
+            \ for over 5 years. Authored a series of lectures on modern C++. C++ is his second soulmate."}
+      - {language: ru, text: "Руководитель команды разработки C++ анализатора PVS-Studio. Занимается разработкой статическ\
+            ого анализатора более 5 лет. Автор курса лекций по современному C++. Спит в обнимку со стандартом C++."}
+    gitHub: khandeliants
+    habr: khandeliants
+  - id: 1978
+    photoFileName: 1978.jpg
+    photoUpdatedAt: 2021-11-10T21:03:08.158Z[UTC]
+    name:
+      - {language: en, text: "Yuri Minaev"}
+      - {language: ru, text: "Юрий Минаев"}
+    companyIds: [424]
+    bio:
+      - {language: en, text: "The Architect of the PVS-Studio analyzer for C++. Has been developing the static analyzer for\
+            \ three years. Fighting against legacy code — this was a losing fight before he started. Hates leaky abstractions."}
+      - {language: ru, text: "Архитектор C++ анализатора PVS-Studio. Занимается разработкой статического анализатора более\
+            \ трех лет. Ведет неравный бой с legacy-кодом. Ненавидит дырявые абстракции."}
+    habr: YMinaev
+  - id: 1979
+    photoFileName: 1979.jpg
+    photoUpdatedAt: 2021-11-08T11:11:18.492Z[UTC]
+    name:
+      - {language: en, text: "Ilya Makarov"}
+      - {language: ru, text: "Илья Макаров"}
+    companyIds: [3]
+    bio:
+      - {language: en, text: "C++ developer on the 3D maps team at 2GIS."}
+      - {language: ru, text: "C++ разработчик в команде 3D-карт в 2ГИС."}
+    gitHub: sadads1337
+  - id: 1980
+    photoFileName: 1980.jpg
+    photoUpdatedAt: 2021-11-08T14:46:04.556Z[UTC]
+    name:
+      - {language: en, text: "Oleg Soldatov"}
+      - {language: ru, text: "Олег Солдатов"}
+    companyIds: [318]
+    bio:
+      - {language: en, text: TBD}
+      - language: ru
+        text: "Ведущий эксперт «ЛЮКСОФТ» по межличностным коммуникациям и личной эффективности.\r\nВоенный переводчик кита\
+            йского и английского языков, маркетолог и социальный психолог.\r\nИмеет 20-летний опыт создания и управления к\
+            омандами в IT-стартапах в России, Сербии, Китае, Грузии, Казахстане, Филиппинах.\r\nСпециализация: лидерство и\
+            \ коммуникация, мотивация и личная эффективность, управление стрессом и выгоранием."
+  - id: 1981
+    photoFileName: 1981.jpg
+    photoUpdatedAt: 2021-11-08T14:55:00.135Z[UTC]
+    name:
+      - {language: en, text: "Leonid Sadofiev"}
+      - {language: ru, text: "Леонид Садофьев"}
+    companyIds: [318]
+    bio:
+      - {language: en, text: "Lead Developer at Luxoft. He started programming in C back in 1990. He has been working as a\
+            \ full-time programmer since 2001. He has been working as an architect/technical lead since 2002. Main interests:\
+            \ system programming (MS Windows, Linux, embedded systems), application architecture development based on C++\
+            \ class libraries, low-level Assembler programming. Main programming languages: C++, C, Assembler. Has been working\
+            \ at Luxoft for about three years in the Automotive direction."}
+      - {language: ru, text: "Lead Developer в Luxoft. Начал программировать на языке C в далеком 1990 году. C 2001 года р\
+            аботает программистом фуллтайм. С 2002 года — на позициях архитектора/технического лида. Основные области инте\
+            ресов: системное программирование (MS Windows, Linux, embedded systems), разработка архитектуры приложения на\
+            \ основе библиотек классов C++, низкоуровневое программирование на Assembler. Основные языки программирования\
+            : C++, C, Assembler. В Luxoft работает уже порядка трех лет по направлению Automotive."}
+  - id: 1982
+    photoFileName: 1982.jpg
+    photoUpdatedAt: 2020-06-24T14:19:24.483Z[UTC]
+    name:
+      - {language: en, text: "Egor Suvorov"}
+      - {language: ru, text: "Егор Суворов"}
+    companyIds: [650]
+    bio:
+      - {language: en, text: "Teaches a one-year C ++ course for bachelors at the HSE. Interested in compilers, the diploma\
+            \ focuses on type-safe FFI between C ++ and JavaScript. Trained on C ++ at Google and think-cell. Winner of the\
+            \ ACM ICPC 2014 World Cup as part of the St. Petersburg State University team. Graduated from St. Petersburg Academic\
+            \ University, Computer Science Center, and graduate studies at the Higher School of Economics."}
+      - {language: ru, text: "Ведёт годовой курс по C++ для первокурсников бакалавриата НИУ ВШЭ — Санкт-Петербург. Интерес\
+            уется компиляторами, диплом посвящён типобезопасному FFI между C++ и JavaScript. Стажировался на C++ в Google\
+            \ и think-cell. Победитель чемпионата мира ACM ICPC 2014 в составе команды СПбГУ. Закончил Санкт-Петербургский\
+            \ Академический Университет, Computer Science Center и магистратуру в НИУ ВШЭ — Санкт-Петербург."}
+    gitHub: yeputons
+    habr: yeputons
+  - id: 1983
+    photoFileName: 1983.jpg
+    photoUpdatedAt: 2021-11-08T14:11:55.090Z[UTC]
+    name:
+      - {language: en, text: "Mikhail Mitrofanov"}
+      - {language: ru, text: "Михаил Митрофанов"}
+    companyIds: [3]
+    bio:
+      - {language: en, text: "Mikhail deals with routing algorithms and their optimization."}
+      - {language: ru, text: "Занимается алгоритмами маршрутизации и их оптимизацией."}
+  - id: 1984
+    photoFileName: 1984.jpg
+    photoUpdatedAt: 2021-11-08T14:15:49.932Z[UTC]
+    name:
+      - {language: en, text: "Arkady Kapustinsky"}
+      - {language: ru, text: "Аркадий Капустинский"}
+    companyIds: [3]
+    bio:
+      - {language: en, text: "In programming for 30 years. He has given the last 10 years to transport algorithms: as a developer,\
+            \ as a lead, and now as a team leader."}
+      - {language: ru, text: "В программировании 30 лет. Последние 10 лет отдал транспортным алгоритмам: как разработчик,\
+            \ как лид и теперь, как руководитель группы команд."}
+    habr: kab
