@@ -18477,13 +18477,6 @@ speakers:
     bio:
       - {language: en, text: "Старший разработчик в Лаборатории Касперского, занимается разработкой систем автоматического\
             \ обнаружения новых видов вредоносного ПО."}
-  - id: 1338
-    photoFileName: 1338.jpg
-    photoUpdatedAt: 2020-06-01T10:07:06.100Z[UTC]
-    name:
-      - {language: en, text: "Члены ПК DevOops"}
-    companyIds: []
-    bio: []
   - id: 1339
     photoFileName: 1339.jpg
     photoUpdatedAt: 2020-09-14T09:38:16.809Z[UTC]
