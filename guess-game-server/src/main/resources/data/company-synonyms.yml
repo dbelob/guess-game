@@ -294,7 +294,9 @@ companySynonyms:
         Yandex.Cloud,
         Яндекс.Облако,
         Yandex.Taxi,
-        Яндекс.Такси
+        Яндекс.Такси,
+        "Kinopoisk (Yandex)",
+        "Кинопоиск (Яндекс)"
     ]
   - name: "ZeptoLab LLC"
     synonyms: [

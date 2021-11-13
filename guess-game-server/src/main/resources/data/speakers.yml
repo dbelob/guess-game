@@ -15812,7 +15812,7 @@ speakers:
             \ improving the performance of main libraries."}
   - id: 1131
     photoFileName: 1131.jpg
-    photoUpdatedAt: 2020-02-20T10:46:56.125Z[UTC]
+    photoUpdatedAt: 2021-11-08T08:23:40.037Z[UTC]
     name:
       - {language: en, text: "Anton Kvyatkovsky"}
       - {language: ru, text: "Антон Квятковский"}
@@ -26975,11 +26975,10 @@ speakers:
       - {language: ru, text: "Иван Шафран"}
     companyIds: [620]
     bio:
-      - language: en
-        text: "He works in the VK Android call team. He calls himself about a hundred times a day.\nKotlin lover. Spontaneously\
-            \ writes articles on Medium and open source projects on Github. Teaches Android for beginners."
+      - {language: en, text: "Works in the Android VK Calls team. Calls himself about a hundred times a day. Loves Kotlin.\
+            \ Spontaneously writes articles on Medium and open-source projects on Github. Teaches Android for beginners."}
       - language: ru
-        text: "Работает в команде Android звонков VK. Звонит сам себе около сотни раз в день.\r\nЛюбит Kotlin. Спонтанно п\
+        text: "Работает в команде Android-звонков VK. Звонит сам себе около сотни раз в день.\r\nЛюбит Kotlin. Спонтанно п\
             ишет статьи на Medium и опенорс-проекты на Github. Преподает Android для начинающих."
     twitter: NotShafran
     gitHub: IvanShafran
@@ -27530,14 +27529,16 @@ speakers:
     photoFileName: 1957.jpg
     photoUpdatedAt: 2021-10-26T10:36:23.112Z[UTC]
     name:
-      - {language: en, text: "Alex Gutarin"}
+      - {language: en, text: "Alexander Gutarin"}
       - {language: ru, text: "Александр Гутарин"}
     companyIds: [358]
     bio:
-      - {language: en, text: "A seasoned engineering leader experienced in delivering challenging large scale projects in\
-            \ online media, advertisement, and search."}
-      - {language: ru, text: "Опытный инженер-лидер, имеющий опыт реализации сложных крупномасштабных проектов в онлайн-СМ\
-            И, рекламе и поиске."}
+      - {language: en, text: "Head of Development at Netflix, where he helped build [Open Connect](https://openconnect.netflix.com/en/),\
+            \ one of the two largest Content Delivery Networks in the world. Before that he was responsible for content delivery\
+            \ at Hulu. He has experience with complex, large-scale projects in search and advertising."}
+      - {language: ru, text: "Руководитель отдела разработки в Netflix, где помог построить [Open Connect](https://openconnect.netflix.com/en/),\
+            \ одну из двух крупнейших Content Delivery Networks в мире. До этого отвечал за content delivery в Hulu. Имеет\
+            \ опыт реализации сложных крупномасштабных проектов в поиске и рекламе."}
     twitter: AxGn
   - id: 1958
     photoFileName: 1958.jpg
@@ -27977,3 +27978,228 @@ speakers:
             тке."
     gitHub: Evleaps
     habr: Evleaps
+  - id: 1987
+    photoFileName: 1987.jpg
+    photoUpdatedAt: 2021-11-12T05:18:26.552Z[UTC]
+    name:
+      - {language: en, text: "Yury Kamyshenko"}
+      - {language: ru, text: "Юрий Камышенко"}
+    companyIds: [878]
+    bio:
+      - language: en
+        text: "Yuri has been working in IT for almost 14 years. By education he is a radio engineer. Started with C++ in a\
+            \ product company, then a few years of outsourced work in the company DataArt with a lot of interesting projects.\
+            \ Also there, 11 years ago I've moved to mobile development for iOS. He managed to participate in the projects\
+            \ both for foreign customers and for the CIS market. Then worked in a startup to form a mobile bank within the\
+            \ company YOTA as an iOS team leader.  Last 7 years working for Tango, live streaming company.\r\n\r\nHe has handled\
+            \ various tasks and has an impressive track record of leading development teams. Lately he has been working on\
+            \ a video team where he and his colleagues are building a cool video platform."
+      - language: ru
+        text: "Юрий работает в IT вот уже почти 14 лет. По образованию инженер-радиотехник. Начинал с С++ в продуктовой ко\
+            мпании, затем было несколько лет работы в аутсорсе в компании DataArt c множеством интересных проектов. Там же\
+            , 11 лет назад, и перешел в мобильную разработку под iOS. Ему удалось поучаствовать в проектах как для зарубеж\
+            ных заказчиков, так и для рынка СНГ. Затем работал в стартапе по формированию мобильного банка в рамках компан\
+            ии YOTA, в качестве iOS-тимлида.  В последние 7 лет работает в компании Tango, live streaming.\r\n\r\nЗанималс\
+            я различными задачами и имеет внушительный опыт руководства командами разработчиков. В последнее время работае\
+            т в видеокоманде, где вместе с коллегами строит крутую видеоплатформу."
+  - id: 1988
+    photoFileName: 1988.jpg
+    photoUpdatedAt: 2021-11-04T12:20:21.121Z[UTC]
+    name:
+      - {language: en, text: "Dmitry Baidaev"}
+      - {language: ru, text: "Дмитрий Байдаев"}
+    companyIds: [879]
+    bio:
+      - {language: en, text: "Development of VoIP calls and conferences. Climbing is his passion."}
+      - {language: ru, text: "Разрабатывает видеозвонки и серверные части конференций. Увлекается скалолазанием."}
+  - id: 1989
+    photoFileName: 1989.jpg
+    photoUpdatedAt: 2021-11-10T12:03:44.285Z[UTC]
+    name:
+      - {language: en, text: "Dmitry Vatolin"}
+      - {language: ru, text: "Дмитрий Ватолин"}
+    companyIds: [880]
+    bio:
+      - language: en
+        text: "Dmitry Sergeevich Vatolin.  Candidate of physical and mathematical sciences. Head of computer graphics laboratory\
+            \ at CS MSU.\r\n\r\nTeaches computer graphics courses and courses about methods of compressing and processing\
+            \ video since 1997. Author of popular web sites dedicated to the algorithms of processing and compressing video\
+            \ (https://compression.ru/video, https://videoprocessing.github.io/, https://videoprocessing.ai).\r\n\r\nSpecializes\
+            \ in research on algorithms of compressing video, state-of-art methods of measuring quality and processing of\
+            \ digital video. Among most popular public projects, there are annual comparisons of video codecs, reports about\
+            \ techical quality of stereo movies and video processing benchmarks.\r\n\r\nWas in charge of more than 40 commercial\
+            \ projects with companies like Intel, Cisco, Real Networks, Samsung, Huawei, Broadcom etc. Number one author at\
+            \ Habr contributing to hubs like AR and VR, AI, Video, Video Technology.\r\n\r\nTook part in launching 6 startups,\
+            \ four of which are more than 15 years old now. Believes in future of sparse light fields, and believes that all\
+            \ video will become 4D by the end of XXI century. Doubts that Homo Sapiens is truly reasonable."
+      - language: ru
+        text: "К.ф.-м.н., заведующий лабораторией компьютерной графики ВМК МГУ. \r\n\r\nЧитает курсы по компьютерной графи\
+            ке и методам сжатия/обработки видео с 1997 года. Создатель популярных сайтов, посвященных алгоритмам обработки\
+            \ и сжатия видео (https://compression.ru/video, https://videoprocessing.github.io/, https://videoprocessing.ai).\
+            \ \r\n\r\nСпециализируется на исследованиях в области алгоритмов сжатия видео, современных методах измерения к\
+            ачества и обработке цифрового видео. Наиболее известные публичные проекты: ежегодные сравнения видеокодеков, о\
+            тчеты по техническому качеству стереофильмов и бенчмарки videoprocessing. \r\n\r\nРуководил 40+ коммерческими\
+            \ проектами с компаниями Intel, Cisco, Real Networks, Samsung, Huawei, Broadcom и др. Без учета редакторов авт\
+            ор № 1 на Хабре в хабах «AR и VR», «Искусственный интеллект», «Работа с видео» и «Видеотехника».\r\n\r\nУчаств\
+            овал в запуске шести стартапов, возраст четырех из которых перевалил за 15 лет. Верит в будущее разреженных св\
+            етовых полей и в то, что все видео до конца века станет четырехмерным. Сомневается в разумности Homo Sapiens."
+    habr: 3Dvideo
+  - id: 1990
+    photoFileName: 1990.jpg
+    photoUpdatedAt: 2021-10-11T14:25:30.360Z[UTC]
+    name:
+      - {language: en, text: "Maksim Lapshin"}
+      - {language: ru, text: "Максим Лапшин"}
+    companyIds: [881]
+    bio:
+      - {language: en, text: "Maskim graduated from faculty of computational mathematics and cybernetics MSU and takes interest\
+            \ in technologies of transferring video via Internet. Created server of video streaming and Erlyvideo company,\
+            \ which is in top-50 of most important companies in online video area."}
+      - {language: ru, text: "Максим — выпускник факультета вычислительной математики и кибернетики МГУ и уже более 10 лет\
+            \ интересуется технологиями передачи видео через интернет. Создал видеостриминговый сервер и компанию «Эрливид\
+            ео», которая входит в список 50 самых важных в сфере онлайн-видео."}
+    gitHub: maxlapshin
+    habr: erlyvideo
+  - id: 1991
+    photoFileName: 1991.jpg
+    photoUpdatedAt: 2021-11-10T06:26:48.330Z[UTC]
+    name:
+      - {language: en, text: "Ryan Jespersen"}
+    companyIds: [882]
+    bio:
+      - {language: en, text: "Ryan has over 20 years of experience in the digital video, broadcast and streaming industries;\
+            \ specializing in live streaming workflows, protocols, cloud computing and complex video delivery systems at companies\
+            \ including Millicast, Wowza, HP and Siemens."}
+    twitter: ryan_jespersen
+  - id: 1992
+    photoFileName: 1992.jpg
+    photoUpdatedAt: 2021-11-11T15:01:10.842Z[UTC]
+    name:
+      - {language: en, text: "Irina Lamarr"}
+      - {language: ru, text: "Ирина Ламарр"}
+    companyIds: [883]
+    bio:
+      - language: en
+        text: "WebSDK developer at Voximplant.\r\n\r\nFor the last couple of years develops SDK for audio and video calls\
+            \ and conferences based on WebRTC, sometimes is even ready to describe herself as an expert in WebRTC, but at\
+            \ this very moment new version of Safari comes, and confidence somehow diappeares :)\r\n\r\nTried to work as frontend,\
+            \ and backend. and mobile developer. In her free time reads release notes and digs into source code of browsers."
+      - language: ru
+        text: "WebSDK-разработчик в компании Voximplant.\r\n\r\nПоследние пару лет разрабатывает SDK для аудио- и видеозво\
+            нков и конференций на базе WebRTC, иногда даже готова описать себя как эксперта в WebRTC, но именно в этот мом\
+            ент выходит новая версия Safari и уверенность как рукой снимает:) \_\r\n\r\nДо этого попробовала себя в роли и\
+            \ фронтенд, и бэкенд, и мобильного разработчика. В свободное время читает release notes и ковыряет исходники б\
+            раузеров."
+    gitHub: irgalamarr
+  - id: 1993
+    photoFileName: 1993.jpg
+    photoUpdatedAt: 2021-11-10T14:47:14.305Z[UTC]
+    name:
+      - {language: en, text: "Aleksander Patrushev"}
+      - {language: ru, text: "Александр Патрушев"}
+    companyIds: [34]
+    bio:
+      - language: en
+        text: "15 years in IT, and every new step was completely different from the previous one:\r\n\r\nx86 system engineer\
+            \ -> IBM Power Systems system engineer - > VMware system engineer -> AWS Solution Architect -> AWS AI/ML Solution\
+            \ Architect.\r\n\r\nEvery time Aleksander jumped out of his comfort zone and ran towards new ideas. At the moment\
+            \ he is AI/ML Amazon Web Services architect who helps everyone to learn how to adapt ML and cloud technologies\
+            \ to business tasks."
+      - language: ru
+        text: "15 лет в ИТ, и каждый новый этап в карьере был противопоставлением предыдущему: \r\n\r\nx86 system engineer\
+            \ -> IBM Power Systems system engineer - > VMware system engineer -> AWS Solution Architect -> AWS AI/ML Solution\
+            \ Architect. \r\n\r\nКаждый раз выпрыгивал из зоны комфорта и бежал навстречу новым идеям. На текущий момент а\
+            рхитектор AI/ML Amazon Web Services, помогающий всем желающим пройти захватывающий путь адаптации технологий м\
+            ашинного обучения и облачных технологий к бизнес-задачам."
+    gitHub: patrick-239
+  - id: 1994
+    photoFileName: 1994.jpg
+    photoUpdatedAt: 2021-09-28T13:01:57.760Z[UTC]
+    name:
+      - {language: en, text: "Alexey Gusev"}
+      - {language: ru, text: "Алексей Гусев"}
+    companyIds: [689]
+    bio:
+      - {language: en, text: "He makes a video player in Yandex. He speaks at conferences, contributes to open-source."}
+      - {language: ru, text: "Делает видеоплеер в Яндексе. Выступает на конференциях, контрибьютит в open-source."}
+  - id: 1995
+    photoFileName: 1995.jpg
+    photoUpdatedAt: 2021-11-08T07:55:12.682Z[UTC]
+    name:
+      - {language: en, text: "Dmitry Kravtsov"}
+      - {language: ru, text: "Дмитрий Кравцов"}
+    companyIds: [689]
+    bio:
+      - {language: en, text: "Developer of the Yandex video platform."}
+      - {language: ru, text: "Разработчик видеоплатформы Яндекса."}
+  - id: 1996
+    photoFileName: 1996.jpg
+    photoUpdatedAt: 2021-09-30T17:01:14.178Z[UTC]
+    name:
+      - {language: en, text: "Mikhail Mazanov"}
+      - {language: ru, text: "Михаил Мазанов"}
+    companyIds: [689]
+    bio:
+      - language: en
+        text: "Works with Internet video technologies since 2007 and is an expert in this field.\r\n\r\nIs fond of all aspects\
+            \ of Internet video, from multi-camera filming to live broadcast delivery and worldwide recordings to all the\
+            \ screens.\r\n\r\nNow Mikhail works as a lead project manager at Yandex. He's responsible for developing and managing\
+            \ DRM at Kinopoisk and other Yandex services. Provides technical support for Yandex.Studio projects. Manages a\
+            \ team of more than 10 developers and experts in video technologies.\r\n\r\nThe second Mikhail's job is consulting\
+            \ and managing OVP project at OBS. He is responsible for Olympic Games Internet broadcast. Worked at Olympic Games\
+            \ in 2016, 2018 and 2020."
+      - language: ru
+        text: "Работает с технологиями интернет-видео с 2007 года, эксперт в этой области.\r\n\r\nУвлечен всеми областями\
+            \ интернет-видео: от многокамерной съемки до доставки прямых трансляций и записей по всему миру на все экраны\
+            . \r\n\r\nСейчас Михаил работает ведущим менеджером проектов в Яндексе. Отвечает за разработку и управление си\
+            стемой кодирования и защиты (DRM) лицензионного контента в Кинопоиске https://hd.kinopoisk.ru/ и других сервис\
+            ах Яндекса. Занимается техническим сопровождением проектов Яндекс.Студии https://studio.yandex.ru/. Управляет\
+            \ командой из более, чем десяти разработчиков и экспертов по видео технологиям.\r\n\r\nВторая работа Михаила —\
+            \ консультирование и менеджмент проекта Olympic Video Player (OVP) в Олимпийской вещательной службе (Olympic Broadcasting\
+            \ Services, OBS) https://www.obs.tv. Отвечает за бесперебойную трансляцию Олимпийских Игр в интернет. Работал\
+            \ на Играх 2016 в Рио, 2018 в Пхёнчхане и 2020 в Токио."
+  - id: 1997
+    photoFileName: 1997.jpg
+    photoUpdatedAt: 2021-11-12T04:29:55.815Z[UTC]
+    name:
+      - {language: en, text: "Pavel Matsula"}
+      - {language: ru, text: "Павел Мацула"}
+    companyIds: [620]
+    bio:
+      - language: en
+        text: "Head of team developing native clients at VK for the last 1,5 years.\r\n\r\nPreviously worked on distributed\
+            \ backend in other large company. Used to do research in mathematical and imitation modelling, and also developed\
+            \ interpretator for modelling language. Used to read lectures on C++ and AST. \r\n\r\nTakes interest in tasks\
+            \ for optimizing any code performance. Used to be a professional musician, so the tasks of real-time audio processing\
+            \ are of special interest for him."
+      - language: ru
+        text: "Последние полтора года руководит командой разработки нативных клиентов в VK. \r\n\r\nПеред этим работал над\
+            \ распределенным бэкендом в другой крупной технологической компании. В прошлом занимался научными исследования\
+            ми в области математического и имитационного моделирования, в том числе разрабатывал интерпретатор для языка м\
+            оделирования, а также долгое время читал лекции по C++ и АСД в университете. \r\n\r\nНаибольший интерес вызыва\
+            ют задачи оптимизации производительности любого кода, до которого удается дотянуться. Профессионально занималс\
+            я музыкой, поэтому отдельный личный интерес представляют задачи обработки аудио в реальном времени."
+  - id: 1998
+    photoFileName: 1998.jpg
+    photoUpdatedAt: 2021-11-11T14:40:38.623Z[UTC]
+    name:
+      - {language: en, text: "Aleksandr Shishkov"}
+      - {language: ru, text: "Александр Шишков"}
+    companyIds: [884]
+    bio:
+      - language: en
+        text: "Alexander Shishkov is VP of R&D at itSeez3D, the company that brought realistic 3D avatars and 3D scanning\
+            \ to consumers. He has been working in the field of computer vision for the last ten years. \r\n\r\nPrior to itSeez3D,\
+            \ he worked at Itseez, where he had developed technologies including counting systems, object detection, and image\
+            \ retrieval systems. He had been a member of the core OpenCV development team for many years. He is a co-author\
+            \ of a few books including \"Instant OpenCV for iOS\" and several courses for Nizhny Novgorod State University,\
+            \ where he had been working as a lector for about 10 years."
+      - language: ru
+        text: "Вице-президент по разработке в компании Itseez3D, где занимается продуктами для создания реалистичных 3D-ав\
+            атаров и 3D-сканирования. Более десяти лет работает в области компьютерного зрения. \r\n\r\nРанее работал в ко\
+            мпании Itseez, где участвовал в разработке систем подсчета людей на основе видео, детектирования объектов, рас\
+            познавания автомобильных номеров и других. Был одним из разработчиков библиотеки OpenCV в течение долгого врем\
+            ени. Автор нескольких книг, включая «Instant OpenCV for iOS», и многих учебных курсов для Нижегородского госуд\
+            арственного университета имени Н. И. Лобачевского, где преподавал около десяти лет."
+    gitHub: alekcac
+    habr: alekcac
