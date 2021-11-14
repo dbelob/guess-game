@@ -4971,6 +4971,7 @@ speakers:
             \ of the ISO C++ committee, and part of the <a href=\"http://includecpp.org\" target=\"_blank\">#include < C++\
             \ ></a> team. He is passionate about building communities, clean code, good tools, and the evolution of C++."}
     twitter: timur_audio
+    gitHub: timuraudio
   - id: 341
     photoFileName: 0341.jpg
     name:
@@ -6607,6 +6608,7 @@ speakers:
             \ he is the author of the book \"Rx.NET in Action\" published by Manning (http://manning.com/dresher/). \n\nHe\
             \ blogs at http://blogs.microsoft.co.il/iblogger/ and you can reach out to him via Twitter @tamir_dresher."
     twitter: tamir_dresher
+    gitHub: tamirdresher
     mvp: true
   - id: 453
     photoFileName: 0453.jpg
@@ -11108,6 +11110,7 @@ speakers:
             \ is not coding, then he is recording new episodes as co-host for TheContext podcast or writing his thoughts down\
             \ in his blog. \n\nHe is a sports maniac and particularly likes football. Really, he likes football a lot!"
     twitter: sockeqwe
+    gitHub: sockeqwe
   - id: 777
     photoFileName: 0777.jpg
     name:
@@ -11160,6 +11163,7 @@ speakers:
             \ An Android developer since Froyo, he's currently trying to learn two of the world's toughest languages at the\
             \ same time: German and Haskell."}
     twitter: dammitandy
+    gitHub: abdyer
   - id: 781
     photoFileName: 0781.jpg
     name:
@@ -13643,6 +13647,7 @@ speakers:
             \ gym. Yes, she's one of those! She also enjoys biking (motorcycles and/or bicycles), shooting, eating, reading,\
             \ and hanging with her 5-year-old rescue pup."
     twitter: jldeen
+    gitHub: jldeen
   - id: 971
     photoFileName: 0971.jpg
     name:
@@ -13938,6 +13943,7 @@ speakers:
             \ taught several courses there, including Data Structures, Computability and Complexity, and Formal Languages\
             \ and Automata."}
     twitter: hankadusikova
+    gitHub: hanickadot
   - id: 990
     photoFileName: 0990.jpg
     name:
@@ -14101,6 +14107,7 @@ speakers:
             \ in graphics, audio, IO and all things game related. He plays piano, sings for the Brighton Festival Chorus,\
             \ teaches Tai Chi, raises teenagers and promotes diversity and inclusion in the C++ community."}
     twitter: hatcat01
+    gitHub: hatcat
   - id: 1001
     photoFileName: 1001.jpg
     name:
@@ -15504,6 +15511,7 @@ speakers:
             \ international VueConf. Since then, he has been coordinating multiple Vue meetups in Poland. When not coding,\
             \ he is probably practicing his latte art skills or playing with his camera."}
     twitter: DamianDulisz
+    gitHub: shentao
   - id: 1106
     photoFileName: 1106.jpg
     photoUpdatedAt: 2020-02-10T11:08:56.056Z[UTC]
@@ -17722,6 +17730,7 @@ speakers:
             \ service force.\nAnnyce also spent 7 years working at the Washington Post. One of her most exciting projects\
             \ at the Post was working on the PostTV Android application."
     twitter: brwngrldev
+    gitHub: adavis
   - id: 1272
     photoFileName: 1272.jpg
     photoUpdatedAt: 2020-06-14T13:52:51.787Z[UTC]
@@ -19761,6 +19770,7 @@ speakers:
             \ across Spring portfolio, and created the Spring Fu experimental project which introduces KoFu and JaFu DSLs\
             \ to configure Spring Boot in a functional way."}
     twitter: sdeleuze
+    gitHub: sdeleuze
   - id: 1425
     photoFileName: 1425.jpg
     photoUpdatedAt: 2020-10-01T13:15:17.393Z[UTC]
@@ -20150,6 +20160,7 @@ speakers:
       - {language: en, text: "DevOps and media enthusiast with an open mind. Released DevOps on to the world by starting devopsdays.\
             \ Now working in the field of media in the race to make video truely interactive."}
     twitter: patrickdebois
+    gitHub: jedi4ever
   - id: 1454
     photoFileName: 1454.jpg
     photoUpdatedAt: 2020-11-11T17:27:40.482Z[UTC]
