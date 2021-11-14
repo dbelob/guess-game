@@ -17,7 +17,7 @@ import guess.domain.statistics.speaker.SpeakerStatistics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -49,7 +49,7 @@ public class StatisticsServiceImpl implements StatisticsService {
     public EventTypeStatistics getEventTypeStatistics(boolean isConferences, boolean isMeetups, Long organizerId) {
         List<EventType> eventTypes = getStatisticsEventTypes(isConferences, isMeetups, organizerId, null);
         List<EventTypeMetrics> eventTypeMetricsList = new ArrayList<>();
-        var currentDate = LocalDate.now();
+        var currentLocalDateTime = LocalDateTime.now(ZoneId.of("UTC"));
         LocalDate totalsStartDate = null;
         long totalsAge = 0;
         long totalsDuration = 0;
@@ -74,7 +74,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                 event.getTalks().forEach(t -> eventTypeSpeakers.addAll(t.getSpeakers()));
             }
 
-            long eventTypeAge = getEventTypeAge(eventTypeStartDate, currentDate);
+            long eventTypeAge = getEventTypeAge(eventTypeStartDate, eventType.getTimeZoneId(), currentLocalDateTime);
             long eventTypeJavaChampionsQuantity = eventTypeSpeakers.stream()
                     .filter(Speaker::isJavaChampion)
                     .count();
@@ -128,11 +128,26 @@ public class StatisticsServiceImpl implements StatisticsService {
                 ));
     }
 
-    static long getEventTypeAge(LocalDate eventTypeStartDate, LocalDate currentDate) {
+    /**
+     * Gets event type age.
+     *
+     * @param eventTypeStartDate   start date of event type
+     * @param zoneId               time-zone ID of event type
+     * @param currentLocalDateTime current local date time in UTC
+     * @return event type age
+     */
+    static long getEventTypeAge(LocalDate eventTypeStartDate, ZoneId zoneId, LocalDateTime currentLocalDateTime) {
         if (eventTypeStartDate == null) {
             return 0;
         } else {
-            return ChronoUnit.YEARS.between(eventTypeStartDate, currentDate);
+            LocalDateTime eventTypeStartLocalDateTime = ZonedDateTime.of(
+                            eventTypeStartDate,
+                            LocalTime.of(0, 0, 0),
+                            zoneId)
+                    .withZoneSameInstant(ZoneId.of("UTC"))
+                    .toLocalDateTime();
+
+            return ChronoUnit.YEARS.between(eventTypeStartLocalDateTime, currentLocalDateTime);
         }
     }
 
