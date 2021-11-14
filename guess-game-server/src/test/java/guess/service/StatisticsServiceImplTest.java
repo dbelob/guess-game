@@ -27,6 +27,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.Collections;
 import java.util.List;
@@ -110,15 +111,18 @@ class StatisticsServiceImplTest {
         eventType0.setId(0);
         eventType0.setConference(Conference.JPOINT);
         eventType0.setOrganizer(organizer0);
+        eventType0.setTimeZoneId(ZoneId.of("Europe/Moscow"));
 
         eventType1 = new EventType();
         eventType1.setId(1);
         eventType1.setOrganizer(organizer1);
+        eventType1.setTimeZoneId(ZoneId.of("Europe/Moscow"));
 
         eventType2 = new EventType();
         eventType2.setId(2);
         eventType2.setConference(Conference.JOKER);
         eventType2.setOrganizer(organizer1);
+        eventType2.setTimeZoneId(ZoneId.of("Europe/Moscow"));
 
         company0 = new Company();
         company0.setId(0);
@@ -281,7 +285,7 @@ class StatisticsServiceImplTest {
         );
         EventTypeMetrics eventTypeMetrics1 = new EventTypeMetrics(
                 eventType1,
-                NOW_DATE,
+                EVENT_START_DATE1,
                 ChronoUnit.YEARS.between(EVENT_START_DATE1, NOW_DATE),
                 1,
                 1,
@@ -290,7 +294,7 @@ class StatisticsServiceImplTest {
         );
         EventTypeMetrics eventTypeMetrics2 = new EventTypeMetrics(
                 eventType2,
-                NOW_DATE,
+                EVENT_START_DATE2,
                 ChronoUnit.YEARS.between(EVENT_START_DATE2, NOW_DATE),
                 1,
                 1,
@@ -315,7 +319,7 @@ class StatisticsServiceImplTest {
         EventTypeStatistics expected1 = createEventTypeStatistics(
                 List.of(eventTypeMetrics1),
                 new EventType(),
-                actual1.getTotals().getStartDate(),
+                EVENT_START_DATE1,
                 ChronoUnit.YEARS.between(EVENT_START_DATE1, NOW_DATE),
                 1,
                 1,
