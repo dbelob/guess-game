@@ -50,7 +50,8 @@ public class StatisticsServiceImpl implements StatisticsService {
         List<EventType> eventTypes = getStatisticsEventTypes(isConferences, isMeetups, organizerId, null);
         List<EventTypeMetrics> eventTypeMetricsList = new ArrayList<>();
         var currentDate = LocalDate.now();
-        LocalDate totalsStartDate = currentDate;
+        LocalDate totalsStartDate = null;
+        long totalsAge = 0;
         long totalsDuration = 0;
         long totalsEventsQuantity = 0;
         long totalsTalksQuantity = 0;
@@ -58,13 +59,13 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         for (EventType eventType : eventTypes) {
             // Event type metrics
-            LocalDate eventTypeStartDate = currentDate;
+            LocalDate eventTypeStartDate = null;
             long eventTypeDuration = 0;
             long eventTypeTalksQuantity = 0;
             Set<Speaker> eventTypeSpeakers = new HashSet<>();
 
             for (Event event : eventType.getEvents()) {
-                if (event.getStartDate().isBefore(eventTypeStartDate)) {
+                if ((eventTypeStartDate == null) || event.getStartDate().isBefore(eventTypeStartDate)) {
                     eventTypeStartDate = event.getStartDate();
                 }
 
@@ -73,6 +74,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                 event.getTalks().forEach(t -> eventTypeSpeakers.addAll(t.getSpeakers()));
             }
 
+            long eventTypeAge = getEventTypeAge(eventTypeStartDate, currentDate);
             long eventTypeJavaChampionsQuantity = eventTypeSpeakers.stream()
                     .filter(Speaker::isJavaChampion)
                     .count();
@@ -83,7 +85,7 @@ public class StatisticsServiceImpl implements StatisticsService {
             eventTypeMetricsList.add(new EventTypeMetrics(
                     eventType,
                     eventTypeStartDate,
-                    ChronoUnit.YEARS.between(eventTypeStartDate, currentDate),
+                    eventTypeAge,
                     eventTypeDuration,
                     eventType.getEvents().size(),
                     eventTypeSpeakers.size(),
@@ -91,8 +93,13 @@ public class StatisticsServiceImpl implements StatisticsService {
             ));
 
             // Totals metrics
-            if (eventTypeStartDate.isBefore(totalsStartDate)) {
+            if ((eventTypeStartDate != null) &&
+                    ((totalsStartDate == null) || eventTypeStartDate.isBefore(totalsStartDate))) {
                 totalsStartDate = eventTypeStartDate;
+            }
+
+            if (totalsAge < eventTypeAge) {
+                totalsAge = eventTypeAge;
             }
 
             totalsDuration += eventTypeDuration;
@@ -113,12 +120,20 @@ public class StatisticsServiceImpl implements StatisticsService {
                 new EventTypeMetrics(
                         new EventType(),
                         totalsStartDate,
-                        ChronoUnit.YEARS.between(totalsStartDate, currentDate),
+                        totalsAge,
                         totalsDuration,
                         totalsEventsQuantity,
                         totalsSpeakers.size(),
                         new Metrics(totalsTalksQuantity, totalsJavaChampionsQuantity, totalsMvpsQuantity)
                 ));
+    }
+
+    static long getEventTypeAge(LocalDate eventTypeStartDate, LocalDate currentDate) {
+        if (eventTypeStartDate == null) {
+            return 0;
+        } else {
+            return ChronoUnit.YEARS.between(eventTypeStartDate, currentDate);
+        }
     }
 
     @Override
