@@ -160,7 +160,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                                 ((eventTypeId == null) || (e.getEventType().getId() == eventTypeId))))
                 .collect(Collectors.toList());
         List<EventMetrics> eventMetricsList = new ArrayList<>();
-        var totalsStartDate = LocalDate.now();
+        LocalDate totalsStartDate = null;
         long totalsDuration = 0;
         long totalsTalksQuantity = 0;
         Set<Speaker> totalsSpeakers = new HashSet<>();
@@ -190,7 +190,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                     eventMvpsQuantity));
 
             // Totals metrics
-            if (event.getStartDate().isBefore(totalsStartDate)) {
+            if ((totalsStartDate == null) || event.getStartDate().isBefore(totalsStartDate)) {
                 totalsStartDate = event.getStartDate();
             }
 
