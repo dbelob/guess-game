@@ -149,7 +149,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                     .withZoneSameInstant(ZoneId.of("UTC"))
                     .toLocalDateTime();
 
-            return ChronoUnit.YEARS.between(eventTypeStartLocalDateTime, currentLocalDateTime);
+            return Math.max(0, ChronoUnit.YEARS.between(eventTypeStartLocalDateTime, currentLocalDateTime));
         }
     }
 
