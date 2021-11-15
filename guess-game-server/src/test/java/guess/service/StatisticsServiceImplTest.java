@@ -27,7 +27,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Collections;
 import java.util.List;
@@ -129,27 +131,29 @@ class StatisticsServiceImplTest {
         Organizer organizer1 = new Organizer();
         organizer1.setId(1);
 
+        ZoneId zoneId0 = ZoneId.of("Europe/Moscow");
+
         eventType0 = new EventType();
         eventType0.setId(0);
         eventType0.setConference(Conference.JPOINT);
         eventType0.setOrganizer(organizer0);
-        eventType0.setTimeZoneId(ZoneId.of("Europe/Moscow"));
+        eventType0.setTimeZoneId(zoneId0);
 
         eventType1 = new EventType();
         eventType1.setId(1);
         eventType1.setOrganizer(organizer1);
-        eventType1.setTimeZoneId(ZoneId.of("Europe/Moscow"));
+        eventType1.setTimeZoneId(zoneId0);
 
         eventType2 = new EventType();
         eventType2.setId(2);
         eventType2.setConference(Conference.JOKER);
         eventType2.setOrganizer(organizer1);
-        eventType2.setTimeZoneId(ZoneId.of("Europe/Moscow"));
+        eventType2.setTimeZoneId(zoneId0);
 
         eventType3 = new EventType();
         eventType3.setId(3);
         eventType3.setOrganizer(organizer1);
-        eventType3.setTimeZoneId(ZoneId.of("Europe/Moscow"));
+        eventType3.setTimeZoneId(zoneId0);
 
         company0 = new Company();
         company0.setId(0);
@@ -425,6 +429,55 @@ class StatisticsServiceImplTest {
                         mvpsQuantity
                 )
         );
+    }
+
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getEventTypeAge method with parameters tests")
+    class GetEventTypeAgeTest {
+        private Stream<Arguments> data() {
+            var zoneId = ZoneId.of("Europe/Moscow");
+            var currentLocalDateTime = ZonedDateTime.of(
+                            2021, 11, 15, 0, 0, 0, 0,
+                            zoneId)
+                    .withZoneSameInstant(ZoneId.of("UTC"))
+                    .toLocalDateTime();
+
+            LocalDate localDate0 = currentLocalDateTime
+                    .plus(1, ChronoUnit.YEARS)
+                    .plus(1, ChronoUnit.DAYS)
+                    .toLocalDate();
+            LocalDate localDate1 = currentLocalDateTime
+                    .plus(2, ChronoUnit.YEARS)
+                    .plus(1, ChronoUnit.DAYS)
+                    .toLocalDate();
+            LocalDate localDate2 = currentLocalDateTime
+                    .minus(1, ChronoUnit.YEARS)
+                    .minus(1, ChronoUnit.DAYS)
+                    .toLocalDate();
+            LocalDate localDate3 = currentLocalDateTime
+                    .minus(2, ChronoUnit.YEARS)
+                    .minus(1, ChronoUnit.DAYS)
+                    .toLocalDate();
+
+            return Stream.of(
+                    arguments(null, null, null, 0),
+                    arguments(null, zoneId, null, 0),
+                    arguments(null, null, currentLocalDateTime, 0),
+                    arguments(null, zoneId, currentLocalDateTime, 0),
+                    arguments(localDate0, zoneId, currentLocalDateTime, 0),
+                    arguments(localDate1, zoneId, currentLocalDateTime, 0),
+                    arguments(localDate2, zoneId, currentLocalDateTime, 1),
+                    arguments(localDate3, zoneId, currentLocalDateTime, 2)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getEventTypeAge(LocalDate eventTypeStartDate, ZoneId zoneId, LocalDateTime currentLocalDateTime, long expected) {
+            assertEquals(expected, StatisticsServiceImpl.getEventTypeAge(eventTypeStartDate, zoneId, currentLocalDateTime));
+        }
     }
 
     @Test
