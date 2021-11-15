@@ -17,7 +17,7 @@ import guess.domain.statistics.speaker.SpeakerStatistics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -49,8 +49,9 @@ public class StatisticsServiceImpl implements StatisticsService {
     public EventTypeStatistics getEventTypeStatistics(boolean isConferences, boolean isMeetups, Long organizerId) {
         List<EventType> eventTypes = getStatisticsEventTypes(isConferences, isMeetups, organizerId, null);
         List<EventTypeMetrics> eventTypeMetricsList = new ArrayList<>();
-        var currentDate = LocalDate.now();
-        LocalDate totalsStartDate = currentDate;
+        var currentLocalDateTime = LocalDateTime.now(ZoneId.of("UTC"));
+        LocalDate totalsStartDate = null;
+        long totalsAge = 0;
         long totalsDuration = 0;
         long totalsEventsQuantity = 0;
         long totalsTalksQuantity = 0;
@@ -58,14 +59,16 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         for (EventType eventType : eventTypes) {
             // Event type metrics
-            LocalDate eventTypeStartDate = currentDate;
+            LocalDate eventTypeStartDate = null;
+            ZoneId eventTypeZoneId = null;
             long eventTypeDuration = 0;
             long eventTypeTalksQuantity = 0;
             Set<Speaker> eventTypeSpeakers = new HashSet<>();
 
             for (Event event : eventType.getEvents()) {
-                if (event.getStartDate().isBefore(eventTypeStartDate)) {
+                if ((eventTypeStartDate == null) || event.getStartDate().isBefore(eventTypeStartDate)) {
                     eventTypeStartDate = event.getStartDate();
+                    eventTypeZoneId = event.getFinalTimeZoneId();
                 }
 
                 eventTypeDuration += (ChronoUnit.DAYS.between(event.getStartDate(), event.getEndDate()) + 1);
@@ -73,6 +76,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                 event.getTalks().forEach(t -> eventTypeSpeakers.addAll(t.getSpeakers()));
             }
 
+            long eventTypeAge = getEventTypeAge(eventTypeStartDate, eventTypeZoneId, currentLocalDateTime);
             long eventTypeJavaChampionsQuantity = eventTypeSpeakers.stream()
                     .filter(Speaker::isJavaChampion)
                     .count();
@@ -83,7 +87,7 @@ public class StatisticsServiceImpl implements StatisticsService {
             eventTypeMetricsList.add(new EventTypeMetrics(
                     eventType,
                     eventTypeStartDate,
-                    ChronoUnit.YEARS.between(eventTypeStartDate, currentDate),
+                    eventTypeAge,
                     eventTypeDuration,
                     eventType.getEvents().size(),
                     eventTypeSpeakers.size(),
@@ -91,8 +95,13 @@ public class StatisticsServiceImpl implements StatisticsService {
             ));
 
             // Totals metrics
-            if (eventTypeStartDate.isBefore(totalsStartDate)) {
+            if ((eventTypeStartDate != null) &&
+                    ((totalsStartDate == null) || eventTypeStartDate.isBefore(totalsStartDate))) {
                 totalsStartDate = eventTypeStartDate;
+            }
+
+            if (totalsAge < eventTypeAge) {
+                totalsAge = eventTypeAge;
             }
 
             totalsDuration += eventTypeDuration;
@@ -113,12 +122,35 @@ public class StatisticsServiceImpl implements StatisticsService {
                 new EventTypeMetrics(
                         new EventType(),
                         totalsStartDate,
-                        ChronoUnit.YEARS.between(totalsStartDate, currentDate),
+                        totalsAge,
                         totalsDuration,
                         totalsEventsQuantity,
                         totalsSpeakers.size(),
                         new Metrics(totalsTalksQuantity, totalsJavaChampionsQuantity, totalsMvpsQuantity)
                 ));
+    }
+
+    /**
+     * Gets event type age.
+     *
+     * @param eventTypeStartDate   start date of event type
+     * @param zoneId               time-zone ID of event type
+     * @param currentLocalDateTime current local date time in UTC
+     * @return event type age
+     */
+    static long getEventTypeAge(LocalDate eventTypeStartDate, ZoneId zoneId, LocalDateTime currentLocalDateTime) {
+        if (eventTypeStartDate == null) {
+            return 0;
+        } else {
+            LocalDateTime eventTypeStartLocalDateTime = ZonedDateTime.of(
+                            eventTypeStartDate,
+                            LocalTime.of(0, 0, 0),
+                            zoneId)
+                    .withZoneSameInstant(ZoneId.of("UTC"))
+                    .toLocalDateTime();
+
+            return Math.max(0, ChronoUnit.YEARS.between(eventTypeStartLocalDateTime, currentLocalDateTime));
+        }
     }
 
     @Override
@@ -130,7 +162,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                                 ((eventTypeId == null) || (e.getEventType().getId() == eventTypeId))))
                 .collect(Collectors.toList());
         List<EventMetrics> eventMetricsList = new ArrayList<>();
-        var totalsStartDate = LocalDate.now();
+        LocalDate totalsStartDate = null;
         long totalsDuration = 0;
         long totalsTalksQuantity = 0;
         Set<Speaker> totalsSpeakers = new HashSet<>();
@@ -160,7 +192,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                     eventMvpsQuantity));
 
             // Totals metrics
-            if (event.getStartDate().isBefore(totalsStartDate)) {
+            if ((totalsStartDate == null) || event.getStartDate().isBefore(totalsStartDate)) {
                 totalsStartDate = event.getStartDate();
             }
 
