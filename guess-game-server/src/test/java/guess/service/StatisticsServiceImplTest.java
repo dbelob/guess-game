@@ -65,6 +65,7 @@ class StatisticsServiceImplTest {
     private static EventType eventType1;
     private static EventType eventType2;
     private static EventType eventType3;
+    private static EventType eventType4;
     private static Event event0;
     private static Event event1;
     private static Event event2;
@@ -155,6 +156,11 @@ class StatisticsServiceImplTest {
         eventType3.setOrganizer(organizer1);
         eventType3.setTimeZoneId(zoneId0);
 
+        eventType4 = new EventType();
+        eventType4.setId(4);
+        eventType4.setOrganizer(organizer1);
+        eventType4.setTimeZoneId(zoneId0);
+
         company0 = new Company();
         company0.setId(0);
 
@@ -237,7 +243,7 @@ class StatisticsServiceImplTest {
 
     @BeforeEach
     void setUp() {
-        Mockito.when(eventTypeDao.getEventTypes()).thenReturn(List.of(eventType0, eventType1, eventType2, eventType3));
+        Mockito.when(eventTypeDao.getEventTypes()).thenReturn(List.of(eventType0, eventType1, eventType2, eventType3, eventType4));
         Mockito.when(eventDao.getEvents()).thenReturn(List.of(event0, event1, event2, event3, event4, event5));
     }
 
@@ -360,6 +366,15 @@ class StatisticsServiceImplTest {
                 0,
                 new Metrics(0, 0, 0)
         );
+        EventTypeMetrics eventTypeMetrics4 = new EventTypeMetrics(
+                eventType4,
+                null,
+                0,
+                0,
+                0,
+                0,
+                new Metrics(0, 0, 0)
+        );
 
         EventTypeStatistics expected0 = createEventTypeStatistics(
                 Collections.emptyList(),
@@ -375,7 +390,7 @@ class StatisticsServiceImplTest {
         assertEquals(expected0, actual0);
 
         EventTypeStatistics expected1 = createEventTypeStatistics(
-                List.of(eventTypeMetrics1, eventTypeMetrics3),
+                List.of(eventTypeMetrics1, eventTypeMetrics3, eventTypeMetrics4),
                 new EventType(),
                 EVENT_START_DATE5,
                 ChronoUnit.YEARS.between(EVENT_START_DATE5, NOW_DATE),
@@ -401,7 +416,7 @@ class StatisticsServiceImplTest {
         assertEquals(expected2, actual2);
 
         EventTypeStatistics expected3 = createEventTypeStatistics(
-                List.of(eventTypeMetrics0, eventTypeMetrics1, eventTypeMetrics2, eventTypeMetrics3),
+                List.of(eventTypeMetrics0, eventTypeMetrics1, eventTypeMetrics2, eventTypeMetrics3, eventTypeMetrics4),
                 new EventType(),
                 EVENT_START_DATE5,
                 ChronoUnit.YEARS.between(EVENT_START_DATE5, NOW_DATE),
@@ -644,7 +659,7 @@ class StatisticsServiceImplTest {
                 createSpeakerStatistics(
                         List.of(speakerMetrics1),
                         new Speaker(),
-                        1, 2, 2, 0, 1
+                        1, 2, 3, 0, 1
                 ),
                 statisticsService.getSpeakerStatistics(false, true, null, null));
         assertEquals(
@@ -658,7 +673,7 @@ class StatisticsServiceImplTest {
                 createSpeakerStatistics(
                         List.of(speakerMetrics0, speakerMetrics1, speakerMetrics2),
                         new Speaker(),
-                        3, 6, 4, 1, 1
+                        3, 6, 5, 1, 1
                 ),
                 statisticsService.getSpeakerStatistics(true, true, null, null));
 
@@ -755,28 +770,28 @@ class StatisticsServiceImplTest {
                         new Speaker(),
                         0, 0, 0, 0, 0
                 ),
-                statisticsService.getSpeakerStatistics(false, false, null, 4L));
+                statisticsService.getSpeakerStatistics(false, false, null, 42L));
         assertEquals(
                 createSpeakerStatistics(
                         Collections.emptyList(),
                         new Speaker(),
                         0, 0, 0, 0, 0
                 ),
-                statisticsService.getSpeakerStatistics(false, true, null, 4L));
+                statisticsService.getSpeakerStatistics(false, true, null, 42L));
         assertEquals(
                 createSpeakerStatistics(
                         Collections.emptyList(),
                         new Speaker(),
                         0, 0, 0, 0, 0
                 ),
-                statisticsService.getSpeakerStatistics(true, false, null, 4L));
+                statisticsService.getSpeakerStatistics(true, false, null, 42L));
         assertEquals(
                 createSpeakerStatistics(
                         Collections.emptyList(),
                         new Speaker(),
                         0, 0, 0, 0, 0
                 ),
-                statisticsService.getSpeakerStatistics(true, true, null, 4L));
+                statisticsService.getSpeakerStatistics(true, true, null, 42L));
     }
 
     private CompanyStatistics createCompanyStatistics(List<CompanyMetrics> companyMetricsList, Company company,
