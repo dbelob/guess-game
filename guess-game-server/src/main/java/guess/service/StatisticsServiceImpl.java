@@ -60,6 +60,7 @@ public class StatisticsServiceImpl implements StatisticsService {
         for (EventType eventType : eventTypes) {
             // Event type metrics
             LocalDate eventTypeStartDate = null;
+            ZoneId eventTypeZoneId = null;
             long eventTypeDuration = 0;
             long eventTypeTalksQuantity = 0;
             Set<Speaker> eventTypeSpeakers = new HashSet<>();
@@ -67,6 +68,7 @@ public class StatisticsServiceImpl implements StatisticsService {
             for (Event event : eventType.getEvents()) {
                 if ((eventTypeStartDate == null) || event.getStartDate().isBefore(eventTypeStartDate)) {
                     eventTypeStartDate = event.getStartDate();
+                    eventTypeZoneId = event.getFinalTimeZoneId();
                 }
 
                 eventTypeDuration += (ChronoUnit.DAYS.between(event.getStartDate(), event.getEndDate()) + 1);
@@ -74,7 +76,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                 event.getTalks().forEach(t -> eventTypeSpeakers.addAll(t.getSpeakers()));
             }
 
-            long eventTypeAge = getEventTypeAge(eventTypeStartDate, eventType.getTimeZoneId(), currentLocalDateTime);
+            long eventTypeAge = getEventTypeAge(eventTypeStartDate, eventTypeZoneId, currentLocalDateTime);
             long eventTypeJavaChampionsQuantity = eventTypeSpeakers.stream()
                     .filter(Speaker::isJavaChampion)
                     .count();
