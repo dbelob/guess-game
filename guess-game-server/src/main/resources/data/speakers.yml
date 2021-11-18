@@ -199,6 +199,7 @@ speakers:
     twitter: gamussa
     gitHub: gAmUssA
     habr: gAmUssA
+    javaChampion: true
   - id: 10
     photoFileName: 0010.jpg
     name:
@@ -5888,6 +5889,7 @@ speakers:
             \ worldwide. Currently, Dino is Corporate Digital Strategist at BaxEnergy and practices with renewable energy\
             \ and artificial intelligence. Next book is \"Introducing Machine Learning in .NET\". Get in touch at youbiquitous.net."}
     twitter: despos
+    gitHub: despos
     mvp: true
   - id: 405
     photoFileName: 0405.jpg
@@ -10160,6 +10162,7 @@ speakers:
             \ while Pinterest was being migrated to React. Before that used to work as a software engineer on Newsfeed at\
             \ Facebook."}
     twitter: eelyafi
+    gitHub: eelyafi
   - id: 705
     photoFileName: 0705.jpg
     name:
@@ -12804,6 +12807,7 @@ speakers:
             \ in the Netherlands. He has a passion for UX and design. He regularly speaks at Mobile Developer conferences\
             \ or is giving workshops. And let’s not forget who is a co-founder/organizer of the GDG Dutch Android User Group."}
     twitter: welsinga
+    gitHub: welsinga
   - id: 895
     photoFileName: 0895.jpg
     name:
@@ -14541,6 +14545,7 @@ speakers:
             \nCo-Organiser @ AngularUP Annual Conference \nCo-Organiser and manager @ Angular-IL meetup\nWriter for <a href=\"\
             http://angularindepth.com/\" target=\"_blank\">AngularInDepth</a>"
     twitter: eliraneliassy
+    gitHub: eliraneliassy
   - id: 1033
     photoFileName: 1033.jpg
     photoUpdatedAt: 2019-09-02T14:41:55.063Z[UTC]
@@ -16267,6 +16272,7 @@ speakers:
       - {language: en, text: "Thomas is an Android Engineer. For the past 5 years he has been in Lyft's Growth team. He previously\
             \ worked at Pocket and Eventbrite. He is currently based in Seattle, WA."}
     twitter: lethargicpanda
+    gitHub: lethargicpanda
   - id: 1163
     photoFileName: 1163.jpg
     photoUpdatedAt: 2020-04-16T13:38:03.883Z[UTC]
