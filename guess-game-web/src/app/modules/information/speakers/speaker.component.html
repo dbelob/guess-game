@@ -46,17 +46,17 @@
         </div>
         <div *ngIf="speakerDetails.speaker?.twitter" class="col-auto">
           <a href="{{twitterUrlPrefix}}/{{speakerDetails.speaker.twitter}}" class="text-primary">
-            <i class="fa fa-twitter"></i>{{speakerDetails.speaker.twitter}}
+            <i class="fab fa-twitter"></i>{{speakerDetails.speaker.twitter}}
           </a>
         </div>
         <div *ngIf="speakerDetails.speaker?.gitHub" class="col-auto">
           <a href="{{gitHubUrlPrefix}}/{{speakerDetails.speaker.gitHub}}" class="text-dark">
-            <i class="fa fa-github"></i>{{speakerDetails.speaker.gitHub}}
+            <i class="fab fa-github"></i>{{speakerDetails.speaker.gitHub}}
           </a>
         </div>
         <div *ngIf="speakerDetails.speaker?.habr" class="col-auto">
           <a href="{{habrUrlPrefix}}/{{speakerDetails.speaker.habr}}" class="text-habr">
-            <i class="fa fa-h-square"></i>{{speakerDetails.speaker.habr}}
+            <i class="fas fa-h-square"></i>{{speakerDetails.speaker.habr}}
           </a>
         </div>
       </div>
