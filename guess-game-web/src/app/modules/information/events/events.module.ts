@@ -6,7 +6,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
-import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { GeneralModule } from '../../general/general.module';
 import { InformationModule } from '../information.module';
 import { MessageModule } from '../../message/message.module';
@@ -25,7 +24,6 @@ import { EventsSwitcherComponent } from './events-switcher.component';
     FormsModule,
     CheckboxModule,
     DropdownModule,
-    FontAwesomeModule,
     RouterModule,
     TableModule,
     GeneralModule,
