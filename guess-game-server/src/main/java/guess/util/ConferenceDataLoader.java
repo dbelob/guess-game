@@ -138,7 +138,8 @@ public class ConferenceDataLoader {
                         et.setLogoFileName(resourceEventType.getLogoFileName());
 
                         fillStringAttributeValue(resourceEventType::getSpeakerdeckLink, et::getSpeakerdeckLink, et::setSpeakerdeckLink);
-                        fillEventTypeTimeZone(et, resourceEventType);
+                        fillStringAttributeValue(resourceEventType::getHabrLink, et::getHabrLink, et::setHabrLink);
+                        fillStringAttributeValue(resourceEventType::getTimeZone, et::getTimeZone, et::setTimeZone);
 
                         if (ContentfulUtils.needUpdate(resourceEventType, et)) {
                             // Event type need to update
@@ -152,19 +153,6 @@ public class ConferenceDataLoader {
                 Collections.emptyList(),
                 eventTypesToAppend,
                 eventTypesToUpdate);
-    }
-
-    /**
-     * Fill time zone of event type.
-     *
-     * @param targetEventType   target event type
-     * @param resourceEventType resource event type
-     */
-    static void fillEventTypeTimeZone(EventType targetEventType, EventType resourceEventType) {
-        if ((resourceEventType.getTimeZone() != null) && !resourceEventType.getTimeZone().isEmpty() &&
-                ((targetEventType.getTimeZone() == null) || targetEventType.getTimeZone().isEmpty())) {
-            targetEventType.setTimeZone(resourceEventType.getTimeZone());
-        }
     }
 
     /**

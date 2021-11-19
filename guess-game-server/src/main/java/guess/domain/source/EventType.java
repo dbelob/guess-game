@@ -18,9 +18,10 @@ public class EventType extends Descriptionable {
         private final String youtubeLink;
         private final String telegramLink;
         private final String speakerdeckLink;
+        private final String habrLink;
 
         public EventTypeLinks(List<LocaleItem> siteLink, String vkLink, String twitterLink, String facebookLink, String youtubeLink,
-                              String telegramLink, String speakerdeckLink) {
+                              String telegramLink, String speakerdeckLink, String habrLink) {
             this.siteLink = siteLink;
             this.vkLink = vkLink;
             this.twitterLink = twitterLink;
@@ -28,6 +29,7 @@ public class EventType extends Descriptionable {
             this.youtubeLink = youtubeLink;
             this.telegramLink = telegramLink;
             this.speakerdeckLink = speakerdeckLink;
+            this.habrLink = habrLink;
         }
     }
 
@@ -50,6 +52,7 @@ public class EventType extends Descriptionable {
     private String youtubeLink;
     private String telegramLink;
     private String speakerdeckLink;
+    private String habrLink;
     private String logoFileName;
     private List<Event> events = new ArrayList<>();
     private boolean inactive;
@@ -75,6 +78,7 @@ public class EventType extends Descriptionable {
         this.youtubeLink = links.youtubeLink;
         this.telegramLink = links.telegramLink;
         this.speakerdeckLink = links.speakerdeckLink;
+        this.habrLink = links.habrLink;
         this.logoFileName = logoFileName;
         this.events = events;
         this.inactive = attributes.inactive;
@@ -148,6 +152,14 @@ public class EventType extends Descriptionable {
 
     public void setSpeakerdeckLink(String speakerdeckLink) {
         this.speakerdeckLink = speakerdeckLink;
+    }
+
+    public String getHabrLink() {
+        return habrLink;
+    }
+
+    public void setHabrLink(String habrLink) {
+        this.habrLink = habrLink;
     }
 
     public String getLogoFileName() {

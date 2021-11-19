@@ -377,7 +377,7 @@ public class YamlUtils {
                     new PropertyMatcher(EventType.class,
                             List.of("id", "conference", "logoFileName", "organizerId", "name", "shortDescription",
                                     "longDescription", "siteLink", "vkLink", "twitterLink", "facebookLink", "youtubeLink",
-                                    "telegramLink", "timeZone")),
+                                    "telegramLink", "speakerdeckLink", "habrLink", "timeZone")),
                     new PropertyMatcher(Place.class,
                             List.of("id", "city", "venueAddress", "mapCoordinates")),
                     new PropertyMatcher(Event.class,

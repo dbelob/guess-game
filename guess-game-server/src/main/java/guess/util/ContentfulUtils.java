@@ -294,6 +294,7 @@ public class ContentfulUtils {
                         (fbLink != null) ? getFirstMapValue(fbLink) : null,
                         (youtubeLink != null) ? getFirstMapValue(youtubeLink) : null,
                         (telegramLink != null) ? getFirstMapValue(telegramLink) : null,
+                        null,
                         null
                 ),
                 Collections.emptyList(),
@@ -1519,6 +1520,7 @@ public class ContentfulUtils {
                 equals(a.getYoutubeLink(), b.getYoutubeLink()) &&
                 equals(a.getTelegramLink(), b.getTelegramLink()) &&
                 equals(a.getSpeakerdeckLink(), b.getSpeakerdeckLink()) &&
+                equals(a.getHabrLink(), b.getHabrLink()) &&
                 equals(a.getOrganizer(), b.getOrganizer()) &&
                 equals(a.getTimeZone(), b.getTimeZone()));
     }

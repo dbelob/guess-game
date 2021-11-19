@@ -284,6 +284,10 @@ class ContentfulUtilsTest {
             eventType6.setId(-1);
             eventType6.setSpeakerdeckLink(null);
 
+            EventType eventType7 = new EventType();
+            eventType7.setId(-1);
+            eventType7.setHabrLink(null);
+
             return Stream.of(
                     arguments(contentfulEventType0, new AtomicLong(-1), eventType0),
                     arguments(contentfulEventType1, new AtomicLong(-1), eventType1),
@@ -291,7 +295,8 @@ class ContentfulUtilsTest {
                     arguments(contentfulEventType3, new AtomicLong(-1), eventType3),
                     arguments(contentfulEventType4, new AtomicLong(-1), eventType4),
                     arguments(contentfulEventType5, new AtomicLong(-1), eventType5),
-                    arguments(contentfulEventType6, new AtomicLong(-1), eventType6)
+                    arguments(contentfulEventType6, new AtomicLong(-1), eventType6),
+                    arguments(contentfulEventType6, new AtomicLong(-1), eventType7)
             );
         }
 
@@ -307,6 +312,7 @@ class ContentfulUtilsTest {
             assertEquals(expected.getYoutubeLink(), actual.getYoutubeLink());
             assertEquals(expected.getTelegramLink(), actual.getTelegramLink());
             assertEquals(expected.getSpeakerdeckLink(), actual.getSpeakerdeckLink());
+            assertEquals(expected.getHabrLink(), actual.getHabrLink());
         }
     }
 
@@ -2092,6 +2098,7 @@ class ContentfulUtilsTest {
             eventType0.setYoutubeLink("youtubeLink0");
             eventType0.setTelegramLink("telegramLink0");
             eventType0.setSpeakerdeckLink("speakerdeckLink0");
+            eventType0.setHabrLink("habrLink0");
             eventType0.setOrganizer(organizer0);
             eventType0.setTimeZone("Europe/Moscow");
 
@@ -2226,7 +2233,7 @@ class ContentfulUtilsTest {
             eventType14.setYoutubeLink("youtubeLink0");
             eventType14.setTelegramLink("telegramLink0");
             eventType14.setSpeakerdeckLink("speakerdeckLink0");
-            eventType14.setOrganizer(organizer1);
+            eventType14.setHabrLink("habrLink14");
 
             EventType eventType15 = new EventType();
             eventType15.setId(0);
@@ -2242,7 +2249,25 @@ class ContentfulUtilsTest {
             eventType15.setYoutubeLink("youtubeLink0");
             eventType15.setTelegramLink("telegramLink0");
             eventType15.setSpeakerdeckLink("speakerdeckLink0");
-            eventType15.setOrganizer(organizer0);
+            eventType15.setHabrLink("habrLink0");
+            eventType15.setOrganizer(organizer1);
+
+            EventType eventType16 = new EventType();
+            eventType16.setId(0);
+            eventType16.setConference(Conference.JPOINT);
+            eventType16.setLogoFileName("logoFileName0");
+            eventType16.setName(List.of(new LocaleItem("en", "name0")));
+            eventType16.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
+            eventType16.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
+            eventType16.setSiteLink(List.of(new LocaleItem("en", "siteLink0")));
+            eventType16.setVkLink("vkLink0");
+            eventType16.setTwitterLink("twitterLink0");
+            eventType16.setFacebookLink("facebookLink0");
+            eventType16.setYoutubeLink("youtubeLink0");
+            eventType16.setTelegramLink("telegramLink0");
+            eventType16.setSpeakerdeckLink("speakerdeckLink0");
+            eventType16.setHabrLink("habrLink0");
+            eventType16.setOrganizer(organizer0);
 
             return Stream.of(
                     arguments(eventType0, eventType0, false),
@@ -2260,7 +2285,8 @@ class ContentfulUtilsTest {
                     arguments(eventType0, eventType12, true),
                     arguments(eventType0, eventType13, true),
                     arguments(eventType0, eventType14, true),
-                    arguments(eventType0, eventType15, true)
+                    arguments(eventType0, eventType15, true),
+                    arguments(eventType0, eventType16, true)
             );
         }
 
