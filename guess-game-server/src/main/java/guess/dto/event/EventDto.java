@@ -22,9 +22,10 @@ public class EventDto extends EventBriefDto {
         private final String facebookLink;
         private final String telegramLink;
         private final String speakerdeckLink;
+        private final String habrLink;
 
         public EventDtoLinks(String siteLink, String youtubeLink, String vkLink, String twitterLink, String facebookLink,
-                             String telegramLink, String speakerdeckLink) {
+                             String telegramLink, String speakerdeckLink, String habrLink) {
             this.siteLink = siteLink;
             this.youtubeLink = youtubeLink;
             this.vkLink = vkLink;
@@ -32,6 +33,7 @@ public class EventDto extends EventBriefDto {
             this.facebookLink = facebookLink;
             this.telegramLink = telegramLink;
             this.speakerdeckLink = speakerdeckLink;
+            this.habrLink = habrLink;
         }
     }
 
@@ -81,6 +83,10 @@ public class EventDto extends EventBriefDto {
         return links.speakerdeckLink;
     }
 
+    public String getHabrLink() {
+        return links.habrLink;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -100,6 +106,7 @@ public class EventDto extends EventBriefDto {
         String eventTypeFacebookLink = (eventType != null) ? eventType.getFacebookLink() : null;
         String eventTypeTelegramLink = (eventType != null) ? eventType.getTelegramLink() : null;
         String eventTypeSpeakerdeckLink = (eventType != null) ? eventType.getSpeakerdeckLink() : null;
+        String eventTypeHabrLink = (eventType != null) ? eventType.getHabrLink() : null;
         String description = (eventType != null) ? LocalizationUtils.getString(eventType.getShortDescription(), language) : null;
 
         return new EventDto(
@@ -112,7 +119,8 @@ public class EventDto extends EventBriefDto {
                         eventTypeTwitterLink,
                         eventTypeFacebookLink,
                         eventTypeTelegramLink,
-                        eventTypeSpeakerdeckLink
+                        eventTypeSpeakerdeckLink,
+                        eventTypeHabrLink
                 ),
                 mapCoordinates,
                 description);
