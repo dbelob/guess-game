@@ -2662,3 +2662,9 @@ companies:
   - id: 885
     name:
       - {language: en, text: "Self Employed"}
+  - id: 886
+    name:
+      - {language: en, text: Tango}
+  - id: 887
+    name:
+      - {language: en, text: Reddit}

@@ -7916,13 +7916,16 @@ speakers:
     name:
       - {language: en, text: "Ekaterina Bateeva"}
       - {language: ru, text: "Екатерина Батеева"}
-    companyIds: [856]
+    companyIds: [611]
     bio:
-      - {language: en, text: "Works in the educational portal Swiftbook.ru. For about seven years she has been engaged in\
-            \ automation testing. For about four years has been an engineer in the automation of mobile applications. Last\
-            \ 2.5 years is an iOS developer."}
-      - {language: ru, text: "Работает в образовательном портале Swiftbook.ru. Около семи лет занималась автоматизацией те\
-            стирования. Из них четыре года — автоматизацией мобильных приложений. Последние 2,5 года iOS разработчик."}
+      - {language: en, text: "She has been involved in automated testing for about 7 years. Created QA department at Tinkoff\
+            \ Fintech School. She has been working on iOS development for the last three years. Developed projects for large\
+            \ companies in areas such as physics, medicine and classifide. Also in the role of a mentor she helps novice developers\
+            \ and testers to get their first job in IT and create their own projects."}
+      - {language: ru, text: "Занималась автоматизированным тестированием около семи лет. Создала направление QA на базе Tinkoff\
+            \ Fintech School. Последние три года занималась iOS-разработкой. Разрабатывала проекты в крупных компаниях в т\
+            аких областях, как физтех, медицина и классифайд. Также в роли ментора помогает начинающим разработчикам и тес\
+            тировщикам получать первую работу в IT и создавать свои pet-проекты."}
     habr: Neifmetus
   - id: 549
     photoFileName: 0549.jpg
@@ -11440,18 +11443,20 @@ speakers:
     twitter: libranner
   - id: 799
     photoFileName: 0799.jpg
+    photoUpdatedAt: 2020-06-10T09:50:19.517Z[UTC]
     name:
       - {language: en, text: "Mikhail Emeljanov"}
       - {language: ru, text: "Михаил Емельянов"}
-    companyIds: [686]
+    companyIds: [631]
     bio:
       - language: en
-        text: "Android developer since 2010, Mikhail worked on different projects, from multimedia to fintech.\n\nMikhail\
-            \ is a snowboarder enjoying powder and high springboards. He also loves music and plays guitar."
+        text: "Mikhail is an Android developer since 2010 and worked on different projects, from multimedia to fintech.\n\n\
+            Mikhail is a snowboarder enjoying powder and high springboards. He also loves music and plays guitar."
       - language: ru
         text: "В Android-разработке с 2010 года. Участвовал в разработке проектов от мультимедийных до финтеха.\n\nКатаетс\
             я на сноуборде, любит пухляк и высокие трамплины. Меломан, играет на гитаре."
     twitter: mike_emelyanov
+    gitHub: michaem
   - id: 800
     photoFileName: 0800.jpg
     name:
@@ -11603,20 +11608,21 @@ speakers:
             \ iOS. Увлекается электроникой и верит в светлое будущее IoT."}
   - id: 811
     photoFileName: 0811.jpg
+    photoUpdatedAt: 2021-11-16T13:26:21.948Z[UTC]
     name:
       - {language: en, text: "Dmitry Vasilyev"}
       - {language: ru, text: "Дмитрий Васильев"}
     companyIds: [207]
     bio:
-      - {language: en, text: "Dmitry started developing on Android in 2014. In the same year he wrote \"USE (Unified State\
-            \ Examination) public bank\" (later \"PASSING USE\") application for Android and iOS, which made it to the top\
-            \ 10 in the Education category. Worked on many projects, such as \"Benefits calculator\", \"RZD (Russian Railways)\
-            \ for Passengers\", \"RZD Online\". In 2017 ran \"Development on Android from scratch\" courses in Penza within\
-            \ the scope of GDG Penza. Currently is iFunny developer in the FunCorp company."}
-      - {language: ru, text: "Начал заниматься Android-разработкой в 2014 году. В том же году написал и вывел в топ-10 в к\
-            атегории «Образование» приложение «Открытый банк ЕГЭ» на Android и iOS, которое впоследствии стало РЕШУ ЕГЭ. Р\
-            аботал над такими проектами, как «Калькулятор льгот», «РЖД Пассажирам», «РЖД Онлайн». В 2017 году провёл курсы\
-            \ Android-разработки с нуля в г. Пенза в рамках GDG Penza. В данный момент — разработчик iFunny в компании FunCorp."}
+      - language: en
+        text: "Dmitry started working on Android development in 2014. In the same year he wrote and brought to the top 10\
+            \ in the category \"Education\" an application on Android and iOS. Worked on projects such as Benefit Calculator,\
+            \ RZD Passengers, iFunny, and ABPV. \r\nNow he is the team leader of Android team at FUNCORP."
+      - language: ru
+        text: "Начал заниматься Android-разработкой в 2014 году. В том же году написал и вывел в топ-10 в категории «Образ\
+            ование» приложение «Открытый банк ЕГЭ» на Android и iOS, которое впоследствии стало РЕШУ ЕГЭ. Работал над таки\
+            ми проектами, как «Калькулятор льгот», «РЖД Пассажирам», iFunny, ABPV. \r\nСейчас тимлид Android-команды в ком\
+            пании FUNCORP."
     gitHub: smartvdd
     habr: smartdev
   - id: 812
@@ -13222,10 +13228,10 @@ speakers:
     bio:
       - {language: en, text: "Alexander is experienced a lot in enterprise development, in IT for more than 15 years. He worked\
             \ in the field of the nuclear industry, taxation, telecom. Recently, he specialized mainly in a microservice architecture,\
-            \ but now his main interest is Flutter. Aleksandr, Lead Software Engineer, Co-Head of Flutter Competency at EPAM\
+            \ but now his main interest is Flutter. Aleksandr, Chief Software Engineer, Co-Head of Flutter Competency at EPAM\
             \ Systems, Flutter and Dart GDE (Google Developer Expert), organizer of GDG Moscow community, host of podcasts\
             \ Mobile People Talks and Flutter Dev Podcast."}
-      - {language: ru, text: "Александр, Lead Software Engineer, Co-Head of Flutter Competency в EPAM Systems, Flutter and\
+      - {language: ru, text: "Александр, Chief Software Engineer, Co-Head of Flutter Competency в EPAM Systems, Flutter and\
             \ Dart GDE (Google Developer Expert). Профессионально занимается разработкой больше 15 лет, раньше работал с С\
             ++ и С#, потом писал микросервисы на Java, но с появлением Flutter активно увлекся разработкой на Dart. Flutter-э\
             нтузиаст. Организатор комьюнити GDG Moscow. Ведущий на подкастах Mobile People Talks и Flutter Dev Podcast."}
@@ -14846,23 +14852,21 @@ speakers:
             зык — Scala, инструменты Jmeter/Gatling."}
   - id: 1054
     photoFileName: 1054.jpg
-    photoUpdatedAt: 2020-02-07T12:46:41.312Z[UTC]
+    photoUpdatedAt: 2021-11-17T10:56:05.283Z[UTC]
     name:
       - {language: en, text: "Alexey Tyurin"}
       - {language: ru, text: "Алексей Тюрин"}
-    companyIds: [620]
+    companyIds: [886]
     bio:
-      - {language: en, text: "Engaged in testing automation for over 7 years. Started from automation of banking platform\
+      - {language: en, text: "Engaged in testing automation for over 9 years. Started from automation of banking platform\
             \ on a C-like language. Developed web application autotests on Selenium and Java. Has been engaged in testing\
-            \ automation of Android application for 5 years. During that time he tried various automation tools from Robotium\
+            \ automation of Android application for 7 years. During that time he tried various automation tools from Robotium\
             \ and Appium to Espresso. Tries to promote automation in all areas of testing. Initiate of Kotlin and Espresso\
             \ in Android development."}
-      - language: ru
-        text: "В автоматизации тестирования уже больше 7 лет. Начинал с автоматизации банковской платформы на C-подобном я\
-            зыке. Разрабатывал автотесты веб-приложений на Selenium и Java. Уже 5 лет занимается автоматизацией тестирован\
-            ия Android-приложений. За это время опробовал множество инструментов автоматизации: от Robotium и Appium до Espresso.\
-            \ \nПытается продвигать автоматизацию во всех областях тестирования. Является адептом Kotlin и Espresso в Android-р\
-            азработке."
+      - {language: ru, text: "В автоматизации тестирования уже больше 9 лет. Начинал с автоматизации банковской платформы\
+            \ на C-подобном языке. Разрабатывал автотесты веб-приложений на Selenium и Java. Уже 7 лет занимается автомати\
+            зацией тестирования Android-приложений. За это время опробовал множество инструментов автоматизации: от Robotium\
+            \ и Appium до Espresso. Является адептом Kotlin и Espresso в Android-разработке."}
   - id: 1055
     photoFileName: 1055.jpg
     name:
@@ -15112,18 +15116,16 @@ speakers:
       - {language: ru, text: "Андрей Дмитриев"}
     companyIds: [291]
     bio:
-      - language: en
-        text: "Graduated from the mathematics department of St. Petersburg State University. A programmer since school, a\
-            \ pragmatist in life and a co-owner of the business of organizing conferences for IT people.\nDeveloped JDK libraries\
-            \ at Sun Microsystems and Oracle for several years. \nManaged the mobile development team at QuickOffice. \nLed\
-            \ a distributed load testing team at NetCracker.\nCurrently Director of Operations at JUG Ru Group. Tends to trust\
-            \ facts and figures."
-      - language: ru
-        text: "Окончил матмех СПбГУ. Программист со школы, прагматик в жизни и совладелец бизнеса по организации конференц\
-            ий для айтишников.\nНесколько лет разрабатывал библиотеки JDK в Sun Microsystems и Oracle. \nРуководил группой\
-            \ мобильной разработки в компании QuickOffice. \nБыл руководителем распределенной группы нагрузочного тестиров\
-            ания в NetCracker.\nВ настоящее время директор по производству в JUG Ru Group. Склонен доверять фактам и цифра\
-            м."
+      - {language: en, text: "Graduated from the mathematics department of St. Petersburg State University. A programmer since\
+            \ school, a pragmatist in life and a co-owner of the business of organizing conferences for IT people. Developed\
+            \ JDK libraries at Sun Microsystems and Oracle for several years. Managed the mobile development team at QuickOffice.\
+            \ Led a distributed load testing team at NetCracker. Currently Director of Operations at JUG Ru Group. Tends to\
+            \ trust facts and figures."}
+      - {language: ru, text: "Окончил матмех СПбГУ. Программист со школы, прагматик в жизни и совладелец бизнеса по органи\
+            зации конференций для айтишников. Несколько лет разрабатывал библиотеки JDK в Sun Microsystems и Oracle. Руков\
+            одил группой мобильной разработки в компании QuickOffice. Был руководителем распределенной группы нагрузочного\
+            \ тестирования в NetCracker. В настоящее время директор по производству в JUG Ru Group. Склонен доверять факта\
+            м и цифрам."}
     twitter: it_improve
     habr: real_ales
   - id: 1077
@@ -18901,16 +18903,11 @@ speakers:
     companyIds: [567]
     bio:
       - language: en
-        text: "Developer with over 7 years of commercial development experience. She is engaged in native iOS (Swift/Objective-С\
-            ) and Android (Kotlin/Java), cross-platform (KMP, Xamarin) development. Develops the architecture of mobile applications\
-            \ for both platforms, manages the direction team. Leads junior developers.\nTeacher for iOS Advanced 2.0 and iOS\
-            \ Basic courses at Otus. In her free time, Anna enjoys painting, studies Chinese and German."
-      - language: ru
-        text: "Разработчик с более 7 годами опыта коммерческой разработки. Занимается нативной разработкой iOS (Swift/Objective-С\
-            ) и Android (Kotlin/Java), кроссплатформенной (KMP, Xamarin). Разрабатывает архитектуру мобильных приложений д\
-            ля обеих платформ, управляет командой направления. Ведет младших разработчиков (менторство).\nПреподаватель на\
-            \ курсах «iOS Advanced 2.0» и «iOS Базовый» в Otus.\nВ свободное время увлекается живописью, изучает китайский\
-            \ и немецкий языки."
+        text: "Мобильный разработчик с более 6 годами опыта коммерческой разработки. Занимается нативной разработкой iOS (Swift/Objective-c)\
+            \ и Android (Kotlin/Java), кросс-платформенной (KMP, Xamarin). Разрабатывает архитектуру мобильных приложений\
+            \ для обеих платформ, управляет командой направления. Ведет младших разработчиков (менторство).\r\nПреподавате\
+            ль на курсах \"iOS Advanced 2.0\" и \"iOS Базовый\" в Otus\r\nВ свободное время увлекается живописью, изучает\
+            \ китайский и немецкий языки."
     twitter: anioutkajarkova
     gitHub: anioutkazharkova
     habr: anioutka
@@ -23089,33 +23086,25 @@ speakers:
       - {language: ru, text: "Член платформенной команды СберБанк Онлайн."}
   - id: 1649
     photoFileName: 1649.jpg
-    photoUpdatedAt: 2021-04-05T14:34:36.555Z[UTC]
+    photoUpdatedAt: 2021-11-17T11:01:44.903Z[UTC]
     name:
       - {language: en, text: "Valentin Chernov"}
       - {language: ru, text: "Валентин Чернов"}
     companyIds: [641]
     bio:
-      - {language: en, text: "Extensive experience in the development and testing of mobile applications. Participated in\
-            \ the creation of more than a dozen applications, including those using cross-platform technologies (Xamarin).\
-            \ Valentin has been programming on Swift, Objective-C. He also works with CI/CD (gitlab), Jira, Apple developer\
-            \ console, Apple foundation. Valentin is engaged in the design of complex architectural solutions using Visual\
-            \ Paradigm."}
-      - {language: ru, text: "Большой опыт в разработке и тестировании мобильных приложений. Участвовал в создании дюжины\
-            \ приложений, в том числе и с применением кроссплатформенных технологий (Xamarin). Программирует на Swift, Objective-C.\
-            \ Работает с CI/CD (gitlab), Jira, Apple developer console, Apple foundation. Занимается проектированием сложн\
-            ых архитектурных решений с использованием Visual Paradigm."}
+      - {language: en, text: "Head of mobile iOS development."}
+      - {language: ru, text: "Руководитель мобильной разработки по направлению iOS."}
     gitHub: mrbesford
   - id: 1650
     photoFileName: 1650.jpg
-    photoUpdatedAt: 2021-04-05T15:29:34.132Z[UTC]
+    photoUpdatedAt: 2021-11-17T11:51:24.380Z[UTC]
     name:
       - {language: en, text: "Alexey Novikov"}
       - {language: ru, text: "Алексей Новиков"}
     companyIds: [390]
     bio:
-      - {language: en, text: "More than 7 years in iOS development including 5 years in big e-commerce companies such as Lazada\
-            \ and Ozon."}
-      - {language: ru, text: "В iOS-разработке более 7 лет. Из них 5 лет в крупных e-commerce-проектах Lazada и Ozon."}
+      - {language: en, text: "Head of the mobile application development team \"Mobile Platform\"."}
+      - {language: ru, text: "Руководитель группы отдела разработки мобильных приложений «Мобильная платформа»"}
   - id: 1651
     photoFileName: 1651.jpg
     photoUpdatedAt: 2021-04-13T18:10:15.203Z[UTC]
@@ -27016,10 +27005,11 @@ speakers:
       - {language: ru, text: "Иван Шафран"}
     companyIds: [620]
     bio:
-      - {language: en, text: "Works in the Android VK Calls team. Calls himself about a hundred times a day. Loves Kotlin.\
-            \ Spontaneously writes articles on Medium and open-source projects on Github. Teaches Android for beginners."}
+      - language: en
+        text: "He works in the VK Android call team. He calls himself about a hundred times a day.\nKotlin lover. Spontaneously\
+            \ writes articles on Medium and open source projects on Github. Teaches Android for beginners."
       - language: ru
-        text: "Работает в команде Android-звонков VK. Звонит сам себе около сотни раз в день.\r\nЛюбит Kotlin. Спонтанно п\
+        text: "Работает в команде Android звонков VK. Звонит сам себе около сотни раз в день.\r\nЛюбит Kotlin. Спонтанно п\
             ишет статьи на Medium и опенорс-проекты на Github. Преподает Android для начинающих."
     twitter: NotShafran
     gitHub: IvanShafran
@@ -27212,7 +27202,7 @@ speakers:
     gitHub: hitherejoe
   - id: 1932
     photoFileName: 1932.jpg
-    photoUpdatedAt: 2021-10-22T16:31:59.514Z[UTC]
+    photoUpdatedAt: 2021-11-20T17:40:43.350Z[UTC]
     name:
       - {language: en, text: "Sergey Vikhlyaev"}
       - {language: ru, text: "Сергей Вихляев"}
@@ -28255,3 +28245,285 @@ speakers:
             \ systems and the human systems of the engineering organisation. In his spare time, Mark likes to climb tall things\
             \ and try not to fall off."}
     twitter: undoio
+  - id: 2000
+    photoFileName: 2000.jpg
+    photoUpdatedAt: 2021-11-16T13:51:09.575Z[UTC]
+    name:
+      - {language: en, text: "Ivan Budnikov"}
+      - {language: ru, text: "Иван Будников"}
+    companyIds: [621]
+    bio:
+      - {language: en, text: "In iOS development since 2013, I've seen the most significant changes, starting with the introduction\
+            \ of ARC, migration from Objective-C to Swift and the widespread introduction of Agile. Managed different teams\
+            \ and went from team leader to developer and back again at different times. Now as an IT lead he leads a cross-functional\
+            \ mobile development team at VTB."}
+      - {language: ru, text: "В iOS-разработке с 2013 года, застал самые значительные изменения, начиная с внедрения ARC,\
+            \ миграции с Objective-C на Swift и повсеместного внедрения Agile. Руководил различными командами и в разное в\
+            ремя переходил из тимлида в разработчики и обратно. Сейчас в качестве IT-лида руководит кроссфункциональной ко\
+            мандой мобильной разработки в ВТБ."}
+    gitHub: i-budnikov
+  - id: 2001
+    photoFileName: 2001.jpg
+    photoUpdatedAt: 2021-11-16T13:56:40.198Z[UTC]
+    name:
+      - {language: en, text: "Chingiz Bayshurin"}
+      - {language: ru, text: "Чингиз Байшурин"}
+    companyIds: [729]
+    bio:
+      - language: en
+        text: "He has been in mobile development since 2015. During this time Chingiz has tried himself as an iOS- and Android-developer.\
+            \ Created and ran my own mini studio for contract software development.\r\n\r\nHe has experience in creating his\
+            \ own startup. Was the captain of the prize-winning team of the state competition of startups in the field of\
+            \ open data in 2015.\r\n\r\nFor the last 3 years has been developing specifically as an inhouse specialist with\
+            \ increasing managerial competencies.\r\n\r\nHe has been working at Sportmaster for more than 2 years. Loves the\
+            \ powerful mobile community, focus on continuous development.\r\n\r\nBelieves that the most important thing is\
+            \ not to stop learning and pumping up her skills."
+      - language: ru
+        text: "В мобильной разработке с 2015 года. За это время Чингиз попробовал себя в роли iOS- и Android-разработчика\
+            . Создавал и вел свою мини-студию по контрактной разработке софта.\r\n\r\nИмеет опыт создания собственного ста\
+            ртапа. Был капитаном команды-призера госконкурса стартапов в области открытых данных в 2015 году.\r\n\r\nПосле\
+            дние 3 года развивается как inhouse-специалист с увеличивающимся менеджерскими компетенциями.\r\n\r\nВ «Спортм\
+            астере» работает более 2 лет. Любит мощное мобайл-комьюнити, ориентацию на постоянное развитие.\r\n\r\nСчитает\
+            , что самое главное — не прекращать учится и прокачивать свои навыки."
+    gitHub: Chingiz-888
+  - id: 2002
+    photoFileName: 2002.jpg
+    photoUpdatedAt: 2021-11-16T14:10:28.188Z[UTC]
+    name:
+      - {language: en, text: "Alexander Kartashov"}
+      - {language: ru, text: "Александр Карташов"}
+    companyIds: [729]
+    bio:
+      - language: en
+        text: "Started with asm for microcontrollers and C. After going the way of backend (Python, Java) and web development,\
+            \ Alexander switched to Cordova + ExtJS hybrid development. After that he decided to do native development for\
+            \ Android, combining mobile development with backend development in Java (Spring Boot) and Kotlin (Ktor + Netty),\
+            \ occasionally looking into CI/CD.\r\nWorked on both typical small projects - employee workstations and data collection\
+            \ terminals, and large-scale combines-super-app. \r\nHe has dealt with Android security, acted as a security champion,\
+            \ designed a corporate EMM system (Innopolis) as a solution architect and developed its mobile part. \r\nNow he\
+            \ is working on a corporate application for vendors, with occasional switching to R&D and CI/CD. \r\nTouched almost\
+            \ every library and trending technology, including Flutter, Go, Closure, iOS (native)."
+      - language: ru
+        text: "Начинал с asm для микроконтроллеров и C. Пройдя по пути бэкенда (Python, Java) и web-разработки, Александр\
+            \ перешёл к гибридной разработке на Cordova + ExtJS. После чего решил заняться нативной разработкой под Android,\
+            \ совмещая мобильную разработку с созданием бэкенда на Java (Spring Boot) и Kotlin (Ktor + Netty), периодическ\
+            и заглядывая в CI/CD.\r\nПоработал как над типовыми мелкими проектами — рабочими местами сотрудников и термина\
+            лами сбора данных, так и над масштабными комбайнами-super-app. \r\nПогрузился в безопасность Android, выступал\
+            \ в роли security champion, спроектировал корпоративную ЕММ-систему (Иннополис) в роли solution architect и ра\
+            зработал её мобильную часть. \r\nСейчас работает над корпоративным приложением для поставщиков с периодическим\
+            \ переключением на R&D и CI/CD. \r\nПотрогал почти каждую библиотеку и трендовую технологию, в том числе Flutter,\
+            \ Go, Closure, iOS (native)."
+  - id: 2003
+    photoFileName: 2003.jpg
+    photoUpdatedAt: 2021-11-17T10:48:09.915Z[UTC]
+    name:
+      - {language: en, text: "Gleb Uvarkin"}
+      - {language: ru, text: "Глеб Уваркин"}
+    companyIds: [621]
+    bio:
+      - {language: en, text: "Developer of the VTB Online iOS platform team. Developed software for microcontrollers in C,\
+            \ but then fell in love with Swift. In his spare time, he is completing his master's program at MIPT."}
+      - {language: ru, text: "Разработчик платформенной команды iOS «ВТБ Онлайн». Занимался разработкой ПО для микроконтро\
+            ллеров на С, но потом влюбился в Swift. В свободное время постигает магистерскую программу МФТИ."}
+    gitHub: glebka35
+  - id: 2004
+    photoFileName: 2004.jpg
+    photoUpdatedAt: 2021-11-17T10:52:24.671Z[UTC]
+    name:
+      - {language: en, text: "Aivar Vucins"}
+      - {language: ru, text: "Айвар Вуцинс"}
+    companyIds: [621]
+    bio:
+      - {language: en, text: "He's been in iOS for a few years. Worked on fintech applications most of the time. VTB handles\
+            \ tasks from UI to CI in the platform team"}
+      - {language: ru, text: "В iOS несколько лет. Большую часть времени работал над финтех приложениями. В ВТБ занимается\
+            \ проблемами от UI до CI в команде платформы."}
+  - id: 2005
+    photoFileName: 2005.jpg
+    photoUpdatedAt: 2021-11-17T10:43:21.025Z[UTC]
+    name:
+      - {language: en, text: "Sergey Gusakov"}
+      - {language: ru, text: "Сергей Гусаков"}
+    companyIds: [390]
+    bio:
+      - {language: en, text: "Leading mobile application developer at Ozon. For the last 2.5 years has been working in the\
+            \ iOS-application platform team."}
+      - {language: ru, text: "Ведущий разработчик мобильных приложений в компании Ozon. Последние 2,5 года работает в кома\
+            нде платформы iOS-приложения."}
+  - id: 2006
+    photoFileName: 2006.jpg
+    photoUpdatedAt: 2021-11-17T11:32:35.058Z[UTC]
+    name:
+      - {language: en, text: "Kirill Stulnikov"}
+      - {language: ru, text: "Кирилл Стульников"}
+    companyIds: [641]
+    bio:
+      - {language: en, text: "He mainly deals with architectural tasks and development/support of key features of MegaFon\
+            \ personal account. He has personal projects with more than 1 million downloads on Google Play. He also actively\
+            \ promotes and uses CI/CD."}
+      - {language: ru, text: "В основном занимается архитектурными задачами и разработкой/поддержкой ключевых возможностей\
+            \ личного кабинета MegaFon. Есть личные проекты с более чем 1 млн скачиваний в Google Play. Также активно прод\
+            вигает и использует CI/CD."}
+  - id: 2007
+    photoFileName: 2007.jpg
+    photoUpdatedAt: 2021-11-17T11:39:06.282Z[UTC]
+    name:
+      - {language: en, text: "Vladislav Shlapakov"}
+      - {language: ru, text: "Владислав Шлапаков"}
+    companyIds: [641]
+    bio:
+      - {language: en, text: "Android developer of Megafon personal account. Mainly deals with product tasks. Has more than\
+            \ two years of experience with RxJava and other multithreading tools."}
+      - {language: ru, text: "Android-разработчик личного кабинета «МегаФон». В основном занимается продуктовыми задачами\
+            . Имеет более двух лет опыта работы с RxJava и другими инструментами многопоточной работы."}
+  - id: 2008
+    photoFileName: 2008.jpg
+    photoUpdatedAt: 2021-02-18T07:42:59.480Z[UTC]
+    name:
+      - {language: en, text: "Tatyana Ryabova"}
+      - {language: ru, text: "Татьяна Рябова"}
+    companyIds: [506]
+    bio:
+      - {language: en, text: "At 17 Tatiana sold her soul to Yandex, but at 19 she successfully bought it out to study Rocket\
+            \ Science in the south of France. She likes Android development but occasionally looks at Flutter."}
+      - {language: ru, text: "В 17 лет продала свою душу Яндексу, а в 19 успешно выкупила её, чтобы изучать Rocket Science\
+            \ на юге Франции. Любит Android-разработку, но периодически заглядывается на Flutter."}
+  - id: 2009
+    photoFileName: 2009.jpg
+    photoUpdatedAt: 2021-11-16T14:38:17.969Z[UTC]
+    name:
+      - {language: en, text: "Sergey Afanasyev"}
+      - {language: ru, text: "Сергей Афанасьев"}
+    companyIds: [147]
+    bio:
+      - language: en
+        text: "He started working as a mobile developer more than 10 years ago, when the first mobile projects started to\
+            \ appear.\r\nHe has tested almost everything in this field, from J2ME and Blackberry to smart watches and smartphones\
+            \ that outperform laptops.\r\nHe is passionate about motorsports, skiing and music."
+      - language: ru
+        text: "Начал работать мобильным разработчиком более 10 лет назад, когда только стали появляться первые мобильные п\
+            роекты.\r\nПротестировал почти все в этой области — от J2ME и Blackberry до умных часов и смартфонов, опережаю\
+            щих по производительности ноутбуки.\r\nУвлекается автоспортом, горными лыжами и музыкой."
+  - id: 2010
+    photoFileName: 2010.jpg
+    photoUpdatedAt: 2021-11-16T14:41:58.621Z[UTC]
+    name:
+      - {language: en, text: "Dmitriy Derbenyov"}
+      - {language: ru, text: "Дмитрий Дербенёв"}
+    companyIds: [147]
+    bio:
+      - {language: en, text: "7 years in management, starting as a project manager in an outsourcing company. Now Dmitry is\
+            \ responsible for the frontend department, which consists of 60+ developers and 10 team leaders in 3 different\
+            \ countries. In his spare time, he hikes around the world."}
+      - {language: ru, text: "7 лет в менеджменте, начинал с должности менеджера проектов в аутсорсинговой компании. Сейча\
+            с Дмитрий отвечает за фронтенд-отдел, состоящий из 60+ разработчиков и 10 тимлидов в 3 разных странах. В свобо\
+            дное время ходит в походы по всему миру."}
+  - id: 2011
+    photoFileName: 2011.jpg
+    photoUpdatedAt: 2021-11-17T11:56:07.167Z[UTC]
+    name:
+      - {language: en, text: "Gleb Efimov"}
+      - {language: ru, text: "Глеб Ефимов"}
+    companyIds: [886]
+    bio:
+      - {language: en, text: "He has been writing mobile applications for 8 years, mostly for iOS. During this time he has\
+            \ managed to take part in the development of cross-platform frameworks, bank applications and a fitness-on-demand\
+            \ service. Now he coordinates cross-functional teams and continues to work on the iOS client."}
+      - {language: ru, text: "Пишет мобильные приложения уже 8 лет, главным образом под iOS. За это время успел принять уч\
+            астие в разработке кроссплатформенных фреймворков, банковских приложений и fitness-on-demand сервиса. Сейчас к\
+            оординирует кроссфункциональные команды и продолжает работать над iOS-клиентом."}
+  - id: 2012
+    photoFileName: 2012.jpg
+    photoUpdatedAt: 2021-11-17T11:59:19.311Z[UTC]
+    name:
+      - {language: en, text: "Denis Tkachenko"}
+      - {language: ru, text: "Денис Ткаченко"}
+    companyIds: [886]
+    bio:
+      - {language: en, text: "For the last two years he has focused on live streaming. His range of tasks includes such fun\
+            \ things as integration, optimizing data transfer protocols (like SRT or RTMP) and applying visual effects in\
+            \ user scenarios."}
+      - {language: ru, text: "Последние два года сфокусирован на live streaming. В спектр его задач входят такие занимател\
+            ьные вещи как интеграция, оптимизация протоколов передачи данных (например SRT или RTMP) и применение визуальн\
+            ых эффектов в пользовательских сценариях."}
+    gitHub: uzicus
+  - id: 2013
+    photoFileName: 2013.jpg
+    photoUpdatedAt: 2021-11-17T12:02:24.155Z[UTC]
+    name:
+      - {language: en, text: "Nikolay Kudashov"}
+      - {language: ru, text: "Николай Кудашов"}
+    companyIds: [887]
+    bio:
+      - {language: en, text: "Nikolay has always wanted to make games, but has been writing interfaces for 10 years. For the\
+            \ last 8 years he has been working on Telegram for Android, but the eggplant animation did the trick. Now Nikolay\
+            \ works for the benefit of communities on Reddit."}
+      - {language: ru, text: "Николай всегда хотел делать игры, но уже 10 лет пишет интерфейсы. Последние 8 лет работал на\
+            д Telegram для Android, но анимация баклажана сделала своё дело. Теперь Николай трудится на благо сообществ в\
+            \ Reddit."}
+  - id: 2014
+    photoFileName: 2014.jpg
+    photoUpdatedAt: 2021-11-16T13:47:43.029Z[UTC]
+    name:
+      - {language: en, text: "Alexander Vereshchagin"}
+      - {language: ru, text: "Александр Верещагин"}
+    companyIds: [147]
+    bio:
+      - {language: en, text: "Alexander has been developing for Android for six years. He loves mobile development for its\
+            \ ever-evolving technologies. In the course of his work, he integrated Kotlin into a project. Lately, he has been\
+            \ busy studying Kotlin Multiplatform."}
+      - {language: ru, text: "Александр уже 6 лет занимается разработкой под Android. Любит мобильную разработку за то, чт\
+            о технологии в ней постоянно развиваются. За время своей работы внедрил Kotlin в проект, последнее время провё\
+            л в изучении Kotlin Multiplatform."}
+  - id: 2015
+    photoFileName: 2015.jpg
+    photoUpdatedAt: 2021-11-16T13:32:34.643Z[UTC]
+    name:
+      - {language: en, text: "Ilya Merkulov"}
+      - {language: ru, text: "Илья Меркулов"}
+    companyIds: [207]
+    bio:
+      - {language: en, text: "9 years in mobile development. Went from iPhone 4s to iPhone 13, from Xcode 4.3 to Xcode 13.2.\
+            \ Ilya believes that writing beautiful code is comparable to writing paintings."}
+      - {language: ru, text: "Девять лет в мобильной разработке — прошел путь от iPhone 4s до iPhone 13, от Xcode 4.3 до Xcode\
+            \ 13.2. Считает, что написание красивого кода сравнимо с написанием картин."}
+  - id: 2016
+    photoFileName: 2016.jpg
+    photoUpdatedAt: 2021-11-16T13:38:07.953Z[UTC]
+    name:
+      - {language: en, text: "Maxim Timokhin"}
+      - {language: ru, text: "Максим Тимохин"}
+    companyIds: [207]
+    bio:
+      - {language: en, text: "Has been working in mobile development at FUNCORP for 1.5 years, writing in ObjC/Swift. Before\
+            \ that he worked in web development for 10 years."}
+      - {language: ru, text: "1,5 года занимается мобильной разработкой в FUNCORP, пишет на ObjC/Swift. До этого 10 лет пр\
+            оработал в веб-разработке"}
+    gitHub: timokhin
+    habr: timokhin
+  - id: 2017
+    photoFileName: 2017.jpg
+    photoUpdatedAt: 2021-11-16T13:41:42.075Z[UTC]
+    name:
+      - {language: en, text: "Alexander Kolobanov"}
+      - {language: ru, text: "Александр Колобанов"}
+    companyIds: [207]
+    bio:
+      - {language: en, text: "He has been in mobile development since 2006, when there was still Java ME and phones with buttons.\
+            \ Since the appearance of the iPhone managed to write several games for iOS, and then started working with Android.\
+            \  In 2016, he became Android TeamLead at FUNCORP, and now holds the position of Deputy CTO"}
+      - {language: ru, text: "Занимается мобильной разработкой с 2006 года, когда еще была Java ME и телефоны с кнопками.\
+            \ С появления iPhone успел написать несколько игр для iOS, а затем стал работать с Android.  В 2016 году стал\
+            \ Android Team Lead в компании FUNCORP, сейчас занимает должность Deputy CTO."}
+    gitHub: voidshad
+    habr: Voidshad
+  - id: 2018
+    photoFileName: 2018.jpg
+    photoUpdatedAt: 2021-11-17T11:48:47.038Z[UTC]
+    name:
+      - {language: en, text: "Alexander Sviridov"}
+      - {language: ru, text: "Александр Свиридов"}
+    companyIds: [390]
+    bio:
+      - {language: en, text: "Head of mobile development."}
+      - {language: ru, text: "Руководитель отдела мобильной разработки."}
