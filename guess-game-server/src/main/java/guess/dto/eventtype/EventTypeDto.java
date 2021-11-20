@@ -11,24 +11,33 @@ import java.util.stream.Collectors;
  * Event type DTO.
  */
 public class EventTypeDto extends EventTypeBriefDto {
-    public static class EventTypeDtoLinks {
-        private final String siteLink;
+    public static class EventTypeDtoSocialLinks {
         private final String vkLink;
         private final String twitterLink;
         private final String facebookLink;
-        private final String youtubeLink;
         private final String telegramLink;
-        private final String speakerdeckLink;
+        private final String habrLink;
 
-        public EventTypeDtoLinks(String siteLink, String vkLink, String twitterLink, String facebookLink, String youtubeLink,
-                                 String telegramLink, String speakerdeckLink) {
-            this.siteLink = siteLink;
+        public EventTypeDtoSocialLinks(String vkLink, String twitterLink, String facebookLink, String telegramLink, String habrLink) {
             this.vkLink = vkLink;
             this.twitterLink = twitterLink;
             this.facebookLink = facebookLink;
-            this.youtubeLink = youtubeLink;
             this.telegramLink = telegramLink;
+            this.habrLink = habrLink;
+        }
+    }
+
+    public static class EventTypeDtoLinks {
+        private final String siteLink;
+        private final String youtubeLink;
+        private final String speakerdeckLink;
+        private final EventTypeDtoSocialLinks socialLinks;
+
+        public EventTypeDtoLinks(String siteLink, String youtubeLink, String speakerdeckLink, EventTypeDtoSocialLinks socialLinks) {
+            this.siteLink = siteLink;
+            this.youtubeLink = youtubeLink;
             this.speakerdeckLink = speakerdeckLink;
+            this.socialLinks = socialLinks;
         }
     }
 
@@ -52,15 +61,15 @@ public class EventTypeDto extends EventTypeBriefDto {
     }
 
     public String getVkLink() {
-        return links.vkLink;
+        return links.socialLinks.vkLink;
     }
 
     public String getTwitterLink() {
-        return links.twitterLink;
+        return links.socialLinks.twitterLink;
     }
 
     public String getFacebookLink() {
-        return links.facebookLink;
+        return links.socialLinks.facebookLink;
     }
 
     public String getYoutubeLink() {
@@ -68,11 +77,15 @@ public class EventTypeDto extends EventTypeBriefDto {
     }
 
     public String getTelegramLink() {
-        return links.telegramLink;
+        return links.socialLinks.telegramLink;
     }
 
     public String getSpeakerdeckLink() {
         return links.speakerdeckLink;
+    }
+
+    public String getHabrLink() {
+        return links.socialLinks.habrLink;
     }
 
     public static EventTypeDto convertToDto(EventType eventType, Language language) {
@@ -89,12 +102,15 @@ public class EventTypeDto extends EventTypeBriefDto {
                 description,
                 new EventTypeDtoLinks(
                         LocalizationUtils.getString(eventType.getSiteLink(), language),
-                        eventType.getVkLink(),
-                        eventType.getTwitterLink(),
-                        eventType.getFacebookLink(),
                         eventType.getYoutubeLink(),
-                        eventType.getTelegramLink(),
-                        eventType.getSpeakerdeckLink()
+                        eventType.getSpeakerdeckLink(),
+                        new EventTypeDtoSocialLinks(
+                                eventType.getVkLink(),
+                                eventType.getTwitterLink(),
+                                eventType.getFacebookLink(),
+                                eventType.getTelegramLink(),
+                                eventType.getHabrLink()
+                        )
                 ));
     }
 

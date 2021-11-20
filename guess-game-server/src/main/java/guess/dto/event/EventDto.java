@@ -13,25 +13,33 @@ import java.util.stream.Collectors;
  * Event DTO.
  */
 public class EventDto extends EventBriefDto {
-    public static class EventDtoLinks {
-        private final String siteLink;
-        private final String youtubeLink;
-
+    public static class EventDtoSocialLinks {
         private final String vkLink;
         private final String twitterLink;
         private final String facebookLink;
         private final String telegramLink;
-        private final String speakerdeckLink;
+        private final String habrLink;
 
-        public EventDtoLinks(String siteLink, String youtubeLink, String vkLink, String twitterLink, String facebookLink,
-                             String telegramLink, String speakerdeckLink) {
-            this.siteLink = siteLink;
-            this.youtubeLink = youtubeLink;
+        public EventDtoSocialLinks(String vkLink, String twitterLink, String facebookLink, String telegramLink, String habrLink) {
             this.vkLink = vkLink;
             this.twitterLink = twitterLink;
             this.facebookLink = facebookLink;
             this.telegramLink = telegramLink;
+            this.habrLink = habrLink;
+        }
+    }
+
+    public static class EventDtoLinks {
+        private final String siteLink;
+        private final String youtubeLink;
+        private final String speakerdeckLink;
+        private final EventDtoSocialLinks socialLinks;
+
+        public EventDtoLinks(String siteLink, String youtubeLink, String speakerdeckLink, EventDtoSocialLinks socialLinks) {
+            this.siteLink = siteLink;
+            this.youtubeLink = youtubeLink;
             this.speakerdeckLink = speakerdeckLink;
+            this.socialLinks = socialLinks;
         }
     }
 
@@ -62,23 +70,27 @@ public class EventDto extends EventBriefDto {
     }
 
     public String getVkLink() {
-        return links.vkLink;
+        return links.socialLinks.vkLink;
     }
 
     public String getTwitterLink() {
-        return links.twitterLink;
+        return links.socialLinks.twitterLink;
     }
 
     public String getFacebookLink() {
-        return links.facebookLink;
+        return links.socialLinks.facebookLink;
     }
 
     public String getTelegramLink() {
-        return links.telegramLink;
+        return links.socialLinks.telegramLink;
     }
 
     public String getSpeakerdeckLink() {
         return links.speakerdeckLink;
+    }
+
+    public String getHabrLink() {
+        return links.socialLinks.habrLink;
     }
 
     public String getDescription() {
@@ -100,6 +112,7 @@ public class EventDto extends EventBriefDto {
         String eventTypeFacebookLink = (eventType != null) ? eventType.getFacebookLink() : null;
         String eventTypeTelegramLink = (eventType != null) ? eventType.getTelegramLink() : null;
         String eventTypeSpeakerdeckLink = (eventType != null) ? eventType.getSpeakerdeckLink() : null;
+        String eventTypeHabrLink = (eventType != null) ? eventType.getHabrLink() : null;
         String description = (eventType != null) ? LocalizationUtils.getString(eventType.getShortDescription(), language) : null;
 
         return new EventDto(
@@ -108,11 +121,14 @@ public class EventDto extends EventBriefDto {
                 new EventDtoLinks(
                         ((eventSiteLink != null) && !eventSiteLink.isEmpty()) ? eventSiteLink : eventTypeSiteLink,
                         ((eventYoutubeLink != null) && !eventYoutubeLink.isEmpty()) ? eventYoutubeLink : eventTypeYoutubeLink,
-                        eventTypeVkLink,
-                        eventTypeTwitterLink,
-                        eventTypeFacebookLink,
-                        eventTypeTelegramLink,
-                        eventTypeSpeakerdeckLink
+                        eventTypeSpeakerdeckLink,
+                        new EventDtoSocialLinks(
+                                eventTypeVkLink,
+                                eventTypeTwitterLink,
+                                eventTypeFacebookLink,
+                                eventTypeTelegramLink,
+                                eventTypeHabrLink
+                        )
                 ),
                 mapCoordinates,
                 description);

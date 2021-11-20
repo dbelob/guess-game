@@ -86,7 +86,7 @@ export class EventComponent implements OnInit {
   isEventLinksVisible() {
     return this.eventDetails.event?.siteLink || this.eventDetails.event?.facebookLink || this.eventDetails.event?.vkLink ||
       this.eventDetails.event?.twitterLink || this.eventDetails.event?.youtubeLink || this.eventDetails.event?.telegramLink ||
-      this.eventDetails.event?.speakerdeckLink;
+      this.eventDetails.event?.speakerdeckLink || this.eventDetails.event?.habrLink;
   }
 
   isSpeakersListVisible() {

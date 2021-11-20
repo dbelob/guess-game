@@ -32,6 +32,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/cppugrussia/
     youtubeLink: https://www.youtube.com/channel/UCJ9v015sPgEi0jJXe_zanjA
     telegramLink: https://t.me/cpprussia
+    habrLink: https://habr.com/ru/company/jugru
     timeZone: Europe/Moscow
   - id: 1
     conference: DEV_OOPS
@@ -77,6 +78,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/devoopsconf
     youtubeLink: https://www.youtube.com/channel/UCjnQreLMbpKsfJwDnHGZLxg
     telegramLink: https://t.me/devOopsconf
+    habrLink: https://habr.com/ru/company/jugru
     timeZone: Europe/Moscow
   - id: 2
     conference: DOT_NEXT
@@ -112,6 +114,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/dotnextconf/
     youtubeLink: https://www.youtube.com/channel/UCNPwMPudMEw-gnAT4zh_UZg
     telegramLink: https://t.me/dotnextconf
+    habrLink: https://habr.com/ru/company/jugru
     timeZone: Europe/Moscow
   - id: 3
     conference: HEISENBUG
@@ -150,6 +153,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/heisenbugconf/
     youtubeLink: https://www.youtube.com/channel/UCX6fjZa167tSy_4ryTLcOBw
     telegramLink: https://t.me/heisenbugconf
+    habrLink: https://habr.com/ru/company/jugru
     timeZone: Europe/Moscow
   - id: 4
     conference: HOLY_JS
@@ -185,6 +189,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/holyjs/
     youtubeLink: https://www.youtube.com/channel/UC2Jwo4Q0s-ucjGseHP8XUSQ
     telegramLink: https://t.me/holyjsconf
+    habrLink: https://habr.com/ru/company/jugru
     timeZone: Europe/Moscow
   - id: 5
     conference: HYDRA
@@ -225,6 +230,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/hydraconf
     youtubeLink: https://www.youtube.com/channel/UCcwI0q9tsGZYZDvz5mLsXZA/featured
     telegramLink: https://t.me/hydraconf
+    habrLink: https://habr.com/ru/company/jugru
     timeZone: Europe/Moscow
   - id: 6
     conference: JBREAK
@@ -254,6 +260,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/jbreakconf/
     youtubeLink: https://www.youtube.com/channel/UCYrGYT7BswsJGkmG7-IAF8g
     telegramLink: https://telegram.me/jbreak
+    habrLink: https://habr.com/ru/company/jugru
     inactive: true
     timeZone: Europe/Moscow
   - id: 8
@@ -293,6 +300,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/jokerconf
     youtubeLink: https://www.youtube.com/user/JUGRuVideo
     telegramLink: https://t.me/jokerconf
+    habrLink: https://habr.com/ru/company/jugru
     timeZone: Europe/Moscow
   - id: 7
     conference: JPOINT
@@ -328,6 +336,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/jpointconf/
     youtubeLink: https://www.youtube.com/user/JUGRuVideo
     telegramLink: https://telegram.me/jpointconf
+    habrLink: https://habr.com/ru/company/jugru
     timeZone: Europe/Moscow
   - id: 9
     conference: MOBIUS
@@ -358,6 +367,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/mobiusconf/
     youtubeLink: https://www.youtube.com/c/MobiusConf
     telegramLink: https://t.me/mobiusconf
+    habrLink: https://habr.com/ru/company/jugru
     timeZone: Europe/Moscow
   - id: 11
     conference: SMART_DATA
@@ -383,6 +393,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/smartdataconf
     youtubeLink: https://www.youtube.com/channel/UCfCOJWNC_ipu34-LVvPUeCg
     telegramLink: https://t.me/smartdataconf
+    habrLink: https://habr.com/ru/company/jugru
     timeZone: Europe/Moscow
   - id: 10
     conference: SPTDC
@@ -399,6 +410,7 @@ eventTypes:
     siteLink:
       - {language: en, text: "https://sptdc.ru/"}
     youtubeLink: https://www.youtube.com/channel/UCYoIFJ96Kn_Ziayw8av-IAA
+    habrLink: https://habr.com/ru/company/jugru
     timeZone: Europe/Moscow
   - id: 12
     conference: TECH_TRAIN
@@ -439,6 +451,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/techtrainfest/
     youtubeLink: https://www.youtube.com/channel/UCJoerW5eDOz5qu7I2CYi7xg
     telegramLink: https://t.me/techtrainfest
+    habrLink: https://habr.com/ru/company/jugru
     timeZone: Europe/Moscow
   - id: 13
     logoFileName: jugmsk.jpg
@@ -472,6 +485,7 @@ eventTypes:
     vkLink: https://vk.com/jugru
     twitterLink: https://twitter.com/jugru
     youtubeLink: https://www.youtube.com/channel/UCYrGYT7BswsJGkmG7-IAF8g
+    habrLink: https://habr.com/ru/company/jugru
     timeZone: Europe/Moscow
   - id: 15
     logoFileName: jugnsk.jpg
@@ -545,4 +559,5 @@ eventTypes:
     facebookLink: https://www.facebook.com/videotechconf/
     youtubeLink: https://www.youtube.com/channel/UC16ztwLQMXcS4aqCWvbkj3Q
     telegramLink: https://t.me/videotech_conf
+    habrLink: https://habr.com/ru/company/jugru
     timeZone: Europe/Moscow

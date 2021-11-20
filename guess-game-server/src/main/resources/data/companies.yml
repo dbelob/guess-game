@@ -2659,3 +2659,15 @@ companies:
   - id: 884
     name:
       - {language: en, text: "Itseez3D Inc."}
+  - id: 885
+    name:
+      - {language: en, text: "Self Employed"}
+  - id: 886
+    name:
+      - {language: en, text: Tango}
+  - id: 887
+    name:
+      - {language: en, text: Reddit}
+  - id: 888
+    name:
+      - {language: en, text: VLC}

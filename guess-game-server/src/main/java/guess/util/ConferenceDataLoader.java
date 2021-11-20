@@ -138,7 +138,8 @@ public class ConferenceDataLoader {
                         et.setLogoFileName(resourceEventType.getLogoFileName());
 
                         fillStringAttributeValue(resourceEventType::getSpeakerdeckLink, et::getSpeakerdeckLink, et::setSpeakerdeckLink);
-                        fillEventTypeTimeZone(et, resourceEventType);
+                        fillStringAttributeValue(resourceEventType::getHabrLink, et::getHabrLink, et::setHabrLink);
+                        fillStringAttributeValue(resourceEventType::getTimeZone, et::getTimeZone, et::setTimeZone);
 
                         if (ContentfulUtils.needUpdate(resourceEventType, et)) {
                             // Event type need to update
@@ -152,19 +153,6 @@ public class ConferenceDataLoader {
                 Collections.emptyList(),
                 eventTypesToAppend,
                 eventTypesToUpdate);
-    }
-
-    /**
-     * Fill time zone of event type.
-     *
-     * @param targetEventType   target event type
-     * @param resourceEventType resource event type
-     */
-    static void fillEventTypeTimeZone(EventType targetEventType, EventType resourceEventType) {
-        if ((resourceEventType.getTimeZone() != null) && !resourceEventType.getTimeZone().isEmpty() &&
-                ((targetEventType.getTimeZone() == null) || targetEventType.getTimeZone().isEmpty())) {
-            targetEventType.setTimeZone(resourceEventType.getTimeZone());
-        }
     }
 
     /**
@@ -1803,7 +1791,10 @@ public class ConferenceDataLoader {
 //                LoadSettings.invalidTalksSet(Set.of("Открытие конференции C++ Russia 2021", "Закрытие конференции С++ Russia 2021",
 //                        "Разговор в студии о С++ в Embedded", "Разговор в студии о С++ в компиляторах",
 //                        "Разговор в студии о С++ в GamеDev", "Разговор в студии о С++ в HFT", "Разговор в студии о С++ в базах данных")));
-//        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2021, 11, 22), "2021msk");
+//        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2021, 11, 22), "2021msk",
+//                LoadSettings.invalidTalksSet(Set.of("Открытие конференции Mobius 2021", "Открытие 2 день", "Открытие 3 день",
+//                        "Открытие 4 день", "Разговор в студии «Все оттенки удалёнки»", "Викторина Mobius Moscow 2021",
+//                        "«Своя игра»: Mobius edition", "Закрытие конференции Mobius 2021", "Mobius 2021 Virtual Afterparty")));
 //        loadTalksSpeakersEvent(Conference.VIDEO_TECH, LocalDate.of(2021, 12, 1), "2021videotech",
 //                LoadSettings.invalidTalksSet(Set.of("Открытие конференции VideoTech 2021", "Закрытие конференции VideoTech 2021")));
     }

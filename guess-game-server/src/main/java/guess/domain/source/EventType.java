@@ -10,24 +10,33 @@ import java.util.List;
  * Event type.
  */
 public class EventType extends Descriptionable {
-    public static class EventTypeLinks {
-        private final List<LocaleItem> siteLink;
+    public static class EventTypeSocialLinks {
         private final String vkLink;
         private final String twitterLink;
         private final String facebookLink;
-        private final String youtubeLink;
         private final String telegramLink;
-        private final String speakerdeckLink;
+        private final String habrLink;
 
-        public EventTypeLinks(List<LocaleItem> siteLink, String vkLink, String twitterLink, String facebookLink, String youtubeLink,
-                              String telegramLink, String speakerdeckLink) {
-            this.siteLink = siteLink;
+        public EventTypeSocialLinks(String vkLink, String twitterLink, String facebookLink, String telegramLink, String habrLink) {
             this.vkLink = vkLink;
             this.twitterLink = twitterLink;
             this.facebookLink = facebookLink;
-            this.youtubeLink = youtubeLink;
             this.telegramLink = telegramLink;
+            this.habrLink = habrLink;
+        }
+    }
+
+    public static class EventTypeLinks {
+        private final List<LocaleItem> siteLink;
+        private final String youtubeLink;
+        private final String speakerdeckLink;
+        private final EventTypeSocialLinks socialLinks;
+
+        public EventTypeLinks(List<LocaleItem> siteLink, String youtubeLink, String speakerdeckLink, EventTypeSocialLinks socialLinks) {
+            this.siteLink = siteLink;
+            this.youtubeLink = youtubeLink;
             this.speakerdeckLink = speakerdeckLink;
+            this.socialLinks = socialLinks;
         }
     }
 
@@ -50,6 +59,7 @@ public class EventType extends Descriptionable {
     private String youtubeLink;
     private String telegramLink;
     private String speakerdeckLink;
+    private String habrLink;
     private String logoFileName;
     private List<Event> events = new ArrayList<>();
     private boolean inactive;
@@ -69,12 +79,13 @@ public class EventType extends Descriptionable {
 
         this.conference = conference;
         this.siteLink = links.siteLink;
-        this.vkLink = links.vkLink;
-        this.twitterLink = links.twitterLink;
-        this.facebookLink = links.facebookLink;
+        this.vkLink = links.socialLinks.vkLink;
+        this.twitterLink = links.socialLinks.twitterLink;
+        this.facebookLink = links.socialLinks.facebookLink;
         this.youtubeLink = links.youtubeLink;
-        this.telegramLink = links.telegramLink;
+        this.telegramLink = links.socialLinks.telegramLink;
         this.speakerdeckLink = links.speakerdeckLink;
+        this.habrLink = links.socialLinks.habrLink;
         this.logoFileName = logoFileName;
         this.events = events;
         this.inactive = attributes.inactive;
@@ -148,6 +159,14 @@ public class EventType extends Descriptionable {
 
     public void setSpeakerdeckLink(String speakerdeckLink) {
         this.speakerdeckLink = speakerdeckLink;
+    }
+
+    public String getHabrLink() {
+        return habrLink;
+    }
+
+    public void setHabrLink(String habrLink) {
+        this.habrLink = habrLink;
     }
 
     public String getLogoFileName() {
