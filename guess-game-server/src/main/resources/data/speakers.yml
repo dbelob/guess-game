@@ -25303,10 +25303,12 @@ speakers:
       - {language: ru, text: "Николай Миронов"}
     companyIds: [424]
     bio:
-      - {language: en, text: "Tech Lead of the Tools&DevOps team at PVS-Studio. Develops and supports utilities and plugins\
-            \ for developers to work with the static analyzer more conveniently. Writes scripts in Jenkins as a hobby."}
+      - {language: en, text: "Tech Lead of the Tools&DevOps team at PVS-Studio. Nikolay develops and maintains utilities and\
+            \ plugins for developers to work with the static analyzer more conveniently. He also participated in developing\
+            \ the analyzer for C#. Writes scripts for Jenkins for fun."}
       - {language: ru, text: "Tech Lead команды Tools&DevOps компании PVS-Studio. Занимается разработкой и поддержкой утил\
-            ит и плагинов для более удобной работы со статическим анализатором. Пишет скрипты в Jenkins для души"}
+            ит и плагинов для более удобной работы со статическим анализатором. Дополнительно успел оставить свой след в о\
+            дноименном C# анализаторе. Пишет скрипты в Jenkins для души"}
     twitter: nikola_ich
     habr: IchNikola
   - id: 1800
