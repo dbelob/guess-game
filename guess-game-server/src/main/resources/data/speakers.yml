@@ -25392,7 +25392,7 @@ speakers:
     gitHub: ryansolid
   - id: 1806
     photoFileName: 1806.jpg
-    photoUpdatedAt: 2021-10-25T13:55:13.338Z[UTC]
+    photoUpdatedAt: 2021-11-17T20:18:51.869Z[UTC]
     name:
       - {language: en, text: "Vadim Gorbachev"}
       - {language: ru, text: "Вадим Горбачёв"}
@@ -27005,11 +27005,10 @@ speakers:
       - {language: ru, text: "Иван Шафран"}
     companyIds: [620]
     bio:
-      - language: en
-        text: "He works in the VK Android call team. He calls himself about a hundred times a day.\nKotlin lover. Spontaneously\
-            \ writes articles on Medium and open source projects on Github. Teaches Android for beginners."
+      - {language: en, text: "Works in the Android VK Calls team. Calls himself about a hundred times a day. Loves Kotlin.\
+            \ Spontaneously writes articles on Medium and open-source projects on Github. Teaches Android for beginners."}
       - language: ru
-        text: "Работает в команде Android звонков VK. Звонит сам себе около сотни раз в день.\r\nЛюбит Kotlin. Спонтанно п\
+        text: "Работает в команде Android-звонков VK. Звонит сам себе около сотни раз в день.\r\nЛюбит Kotlin. Спонтанно п\
             ишет статьи на Medium и опенорс-проекты на Github. Преподает Android для начинающих."
     twitter: NotShafran
     gitHub: IvanShafran
@@ -28015,7 +28014,7 @@ speakers:
     name:
       - {language: en, text: "Yury Kamyshenko"}
       - {language: ru, text: "Юрий Камышенко"}
-    companyIds: [878]
+    companyIds: [886]
     bio:
       - language: en
         text: "Yuri has been working in IT for almost 14 years. By education he is a radio engineer. Started with C++ in a\
@@ -28180,15 +28179,15 @@ speakers:
             \ and managing OVP project at OBS. He is responsible for Olympic Games Internet broadcast. Worked at Olympic Games\
             \ in 2016, 2018 and 2020."
       - language: ru
-        text: "Работает с технологиями интернет-видео с 2007 года, эксперт в этой области.\r\n\r\nУвлечен всеми областями\
-            \ интернет-видео: от многокамерной съемки до доставки прямых трансляций и записей по всему миру на все экраны\
-            . \r\n\r\nСейчас Михаил работает ведущим менеджером проектов в Яндексе. Отвечает за разработку и управление си\
-            стемой кодирования и защиты (DRM) лицензионного контента в Кинопоиске https://hd.kinopoisk.ru/ и других сервис\
-            ах Яндекса. Занимается техническим сопровождением проектов Яндекс.Студии https://studio.yandex.ru/. Управляет\
-            \ командой из более, чем десяти разработчиков и экспертов по видео технологиям.\r\n\r\nВторая работа Михаила —\
-            \ консультирование и менеджмент проекта Olympic Video Player (OVP) в Олимпийской вещательной службе (Olympic Broadcasting\
-            \ Services, OBS) https://www.obs.tv. Отвечает за бесперебойную трансляцию Олимпийских Игр в интернет. Работал\
-            \ на Играх 2016 в Рио, 2018 в Пхёнчхане и 2020 в Токио."
+        text: "Работает с технологиями интернет-видео с 2007 года, эксперт в этой области.\n\nУвлечен всеми областями инте\
+            рнет-видео: от многокамерной съемки до доставки прямых трансляций и записей по всему миру на все экраны. \n\nС\
+            ейчас Михаил работает ведущим менеджером проектов в Яндексе. Отвечает за разработку и управление системой коди\
+            рования и защиты (DRM) лицензионного контента в [Кинопоиске](https://hd.kinopoisk.ru/) и других сервисах Яндек\
+            са. Занимается техническим сопровождением проектов [Яндекс.Студии](https://studio.yandex.ru/). Управляет коман\
+            дой из более, чем десяти разработчиков и экспертов по видео технологиям.\n\nВторая работа Михаила — консультир\
+            ование и менеджмент проекта Olympic Video Player (OVP) в Олимпийской вещательной службе ([Olympic Broadcasting\
+            \ Services](https://www.obs.tv), OBS). Отвечает за бесперебойную трансляцию Олимпийских Игр в интернет. Работа\
+            л на Играх 2016 в Рио, 2018 в Пхёнчхане и 2020 в Токио."
   - id: 1997
     photoFileName: 1997.jpg
     photoUpdatedAt: 2021-11-12T04:29:55.815Z[UTC]
@@ -28527,3 +28526,88 @@ speakers:
     bio:
       - {language: en, text: "Head of mobile development."}
       - {language: ru, text: "Руководитель отдела мобильной разработки."}
+  - id: 2019
+    photoFileName: 2019.jpg
+    photoUpdatedAt: 2021-11-18T07:17:49.039Z[UTC]
+    name:
+      - {language: en, text: "Nikolay Ivanov"}
+      - {language: ru, text: "Николай Иванов"}
+    companyIds: [886]
+    bio:
+      - {language: en, text: "A graduate of the Mathematics Department of St. Petersburg State University. Engaged in development\
+            \ for the last 15 years. He has contributed to such companies as Borland, Alcatel-Lucent, SPB Software, Yandex.\
+            \ For the last 6 years has been working in Tango, where he deals with the general architecture of the systems,\
+            \ video and Android infrastructure. Professionally reads code."}
+      - {language: ru, text: "Выпускник матмеха СПбГУ. Занимается разработкой последние 15 лет. Отметился вкладом в такие\
+            \ компании как Borland, Alcatel-Lucent, SPB Software, Yandex. Последние 6 лет работает в Tango, где занимается\
+            \ общей архитектурой систем, видео- и Android-инфраструктурой. Профессионально читает код."}
+  - id: 2020
+    photoFileName: 2020.jpg
+    photoUpdatedAt: 2021-11-18T08:25:23.753Z[UTC]
+    name:
+      - {language: en, text: "Ilya Tsvetkov"}
+      - {language: ru, text: "Илья Цветков"}
+    companyIds: [886]
+    bio:
+      - {language: en, text: "He is a graduate of the Department of High Technology and Mathematics at Moscow State University.\
+            \ Engaged in digital video engineering since 2007. Specializes in real-time video - from GPU processing to streaming\
+            \ over the Internet. He took part in AMD projects, Arrival, and is currently creating a platform for video streaming\
+            \ in Tango."}
+      - {language: ru, text: "Выпускник факультета ВМК МГУ. Занимается инженерией в области цифрового видео с 2007 года. С\
+            пециализируется на работе с видео в режиме реального времени – от обработки на GPU до стриминга через интернет\
+            . Участвовал в проектах AMD, Arrival, а сейчас создаёт платформу для видеостриминга в Tango."}
+    gitHub: itsvetkov
+  - id: 2021
+    photoFileName: 2021.jpg
+    photoUpdatedAt: 2021-09-30T15:03:39.352Z[UTC]
+    name:
+      - {language: en, text: "Igor Sheko"}
+      - {language: ru, text: "Игорь Шеко"}
+    companyIds: [883]
+    bio:
+      - language: en
+        text: "Lead frontend developer at Voximplant. Before that he was the co-founder and technical director of the Appatbox\
+            \ web development studio and the Rocketcallback callback service. \nHe develops WebSDK at Voximplant, participates\
+            \ in social projects for the charity foundation «Takie dela» and takes care of a small colony of plastic two-headed\
+            \ dinosaurs. \nAs part of the development teams, nominated for several Digital Storytelling awards in 2017 (Visa\
+            \ pour l'image, Great Eight, Press Photo Digital Storytelling Contest)."
+      - language: ru
+        text: "Lead фронтенд-разработчик в компании Voximplant. До этого был сооснователем и техническим директором студии\
+            \ веб-разработки Appatbox и сервиса обратных звонков Rocketcallback. \nРазрабатывает WebSDK в Voximplant, учас\
+            твует в социальных проектах для благотворительного фонда «Такие дела» и заботится о небольшой колонии пластико\
+            вых двухголовых динозавров. \nВ составе команд разработки номинирован на несколько премий за Digital Storytelling\
+            \ в 2017 году (Visa pour l'image, Great Eight, Press Photo Digital Storytelling Contest)."
+    gitHub: irbisadm
+    habr: irbisadm
+  - id: 2022
+    photoFileName: 2022.jpg
+    photoUpdatedAt: 2021-11-16T11:41:50.836Z[UTC]
+    name:
+      - {language: en, text: "Jean-Baptiste Kempf"}
+    companyIds: [888]
+    bio:
+      - language: en
+        text: "Jean-Baptiste Kempf is an open source developer, a multimedia specialist, and a startup founder.\r\n\r\nHe\
+            \ is the president of the VideoLAN non-profit org, one of the lead developers of VLC and maintainer of numerous\
+            \ open source libraries. He has lead numerous projects around VLC and the VideoLAN community, including ports\
+            \ of VLC on mobile platforms and LGPL relicensing of libVLC.\r\n\r\nJean-Baptiste has worked with numerous technologies,\
+            \ from C and ASM to JS. I've coded in C/C++ (VLC), C# (VLC for WinRT), Objective-C (VLC for iOS), Java (VLC for\
+            \ Android).\r\n\r\nHe has a M.S. in Computer Architecture from Université Paris-Sud in the LRI faculty, and a\
+            \ M.S. in Engineering from the École Centrale Paris.\r\n\r\nHe has worked at the CEA, STMicroelectronics, the\
+            \ French Embassy in the USA, Fair Play Interactive. He is a proud alumni of VIA Centrale Réseaux, the AdR and\
+            \ the gala.\r\n\r\nJean-Baptiste love cats, movies (including bad ones), skiing and sailing."
+    gitHub: jbkempf
+  - id: 2023
+    photoFileName: 2023.jpg
+    photoUpdatedAt: 2021-11-15T10:21:33.596Z[UTC]
+    name:
+      - {language: en, text: "Anton Teichrieb"}
+      - {language: ru, text: "Антон Тейхриб"}
+    companyIds: [810]
+    bio:
+      - {language: en, text: "Anton has over 15 years of experience in IT, works with WebRTC since 2013 in a cloud contact\
+            \ center. First worked as a developer, then as a head of development department. In 2019 joined Skyeng as a product\
+            \ manager. Now is a head of communication platform at Skyeng."}
+      - {language: ru, text: "У Антона более 15 лет опыта работы в IT, с WebRTC с 2013 года в облачном контакт-центре. Сна\
+            чала в качестве разработчика, а затем — руководителя отдела разработки. В 2019 году перешел в Skyeng как менед\
+            жер продукта. Сейчас возглавляет коммуникационную платформу в Skyeng."}

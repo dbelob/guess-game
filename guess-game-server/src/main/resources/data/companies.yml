@@ -2668,3 +2668,6 @@ companies:
   - id: 887
     name:
       - {language: en, text: Reddit}
+  - id: 888
+    name:
+      - {language: en, text: VLC}
