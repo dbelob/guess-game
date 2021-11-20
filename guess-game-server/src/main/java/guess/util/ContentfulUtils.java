@@ -289,13 +289,15 @@ public class ContentfulUtils {
                         extractLocaleItems(
                                 extractString(et.getFields().getSiteLink().get(ENGLISH_LOCALE)),
                                 extractString(et.getFields().getSiteLink().get(RUSSIAN_LOCALE))),
-                        (vkLink != null) ? getFirstMapValue(vkLink) : null,
-                        (twLink != null) ? getFirstMapValue(twLink) : null,
-                        (fbLink != null) ? getFirstMapValue(fbLink) : null,
                         (youtubeLink != null) ? getFirstMapValue(youtubeLink) : null,
-                        (telegramLink != null) ? getFirstMapValue(telegramLink) : null,
                         null,
-                        null
+                        new EventType.EventTypeSocialLinks(
+                                (vkLink != null) ? getFirstMapValue(vkLink) : null,
+                                (twLink != null) ? getFirstMapValue(twLink) : null,
+                                (fbLink != null) ? getFirstMapValue(fbLink) : null,
+                                (telegramLink != null) ? getFirstMapValue(telegramLink) : null,
+                                null
+                        )
                 ),
                 Collections.emptyList(),
                 new Organizer(JUG_RU_GROUP_ORGANIZER_ID, Collections.emptyList()),
