@@ -4931,9 +4931,13 @@ speakers:
       - {language: ru, text: "Александр Гранин"}
     companyIds: []
     bio:
-      - {language: en, text: "Haskell developer, likes functional programming. Speaker, writer, researcher."}
-      - {language: ru, text: "Любитель функционального программирования, хаскеллист, спикер, исследователь, писатель."}
+      - {language: en, text: "Software Architect, author of books on software design and architecture, international speaker,\
+            \ experienced and well-known Haskell developer."}
+      - {language: ru, text: "Software Architect, автор книг по дизайну и архитектуре ПО, международный спикер, опытный и\
+            \ известный хаскеллист."}
     twitter: graninas
+    gitHub: graninas
+    habr: graninas
   - id: 338
     photoFileName: 0338.jpg
     name:
@@ -6514,19 +6518,17 @@ speakers:
     gitHub: sergeybykov
   - id: 446
     photoFileName: 0446.jpg
+    photoUpdatedAt: 2021-11-13T21:01:25.938Z[UTC]
     name:
       - {language: en, text: "Andrei Alexandrescu"}
-    companyIds: [520]
+    companyIds: [885]
     bio:
-      - language: en
-        text: "Romanian-born Computer Scientist Andrei Alexandrescu is an expert in a broad range of topics including software\
-            \ systems design and implementation, programming language design, library design, all aspects of the C++ and D\
-            \ programming languages, Machine Learning, and Natural Language Processing. His creative approach to problem solving,\
-            \ broad knowledge, and charismatic presence make Andrei a sought-after invited speaker at conferences worldwide.\
-            \ \n\nAndrei's books and articles have had a marked influence in the software industry. He is the author of such\
-            \ best-sellers as \"Modern C++ Design\", \"C++ Coding Standards\" (in co-authorship with Herb Sutter), \"The D\
-            \ Programming Language\", along with the articles like \"Simplify Your Exception-Safe Code - Forever\" (in co-authorship\
-            \ with Petru Marginean) and \"Mojo: Move of Joint Objects\". The full list can be found here: http://erdani.com/index.php/articles/"
+      - {language: en, text: "Andrei Alexandrescu is a researcher, software engineer, and author. He wrote three best-selling\
+            \ books on programming (Modern C++ Design, C++ Coding Standards, and The D Programming Language) and numerous\
+            \ articles and papers on wide-ranging topics from programming to language design to Machine Learning to Natural\
+            \ Language Processing. Andrei holds a PhD in Computer Science from the University of Washington and a BSc in Electrical\
+            \ Engineering from University \"Politehnica\" Bucharest. He is the Vice President of the D Language Foundation.\
+            \ Website: https://erdani.com."}
     twitter: incomputable
     gitHub: andralex
   - id: 447
@@ -17440,19 +17442,25 @@ speakers:
     habr: ARG89
   - id: 1247
     photoFileName: 1247.jpg
-    photoUpdatedAt: 2019-04-17T09:03:07.704Z[UTC]
+    photoUpdatedAt: 2021-06-08T13:13:43.808Z[UTC]
     name:
       - {language: en, text: "Pavel Filonov"}
       - {language: ru, text: "Павел Филонов"}
-    companyIds: [635]
+    companyIds: [257]
     bio:
-      - {language: en, text: "For more than 5 years Pavel is developing software in the IT security area. For more than 3\
-            \ years he is actively using data analysis methods to develop and implement machine learning techniques in IT\
-            \ security. Before starting his developer career, Pavel was a radiophysics researcher and a higher school teacher."}
-      - {language: ru, text: "Более 5 лет занимается разработкой ПО в области информационной безопасности. Более 3 лет акт\
-            ивно использует методы анализа данных для разработки и внедрения методов машинного обучения в ИБ. До начала ка\
-            рьеры разработчика занимался исследованиями в области радиофизики и преподаванием в высшей школе."}
+      - language: en
+        text: "Pavel is engaged in online education in the field of C ++ and ML.\n\nAs a leader, he developed the Data Science\
+            \ team at Kaspersky, which provides functionality based on machine learning for the company's products and services.\n\
+            \nIn the role of Data Scientist, he participated in the development of Kaspersky MLAD and MDR AI Analyst.\n\n\
+            As a C ++ developer, he participated in the creation of MaxPatrol SIEM.\n\nFor many years Pavel has been teaching\
+            \ computer science disciplines at MSTU GA."
+      - language: ru
+        text: "Занимается онлайн образованием в области C++ и ML.\n\nВ роли руководителя развивал Data Science команду в Kaspersky,\
+            \ которая предоставляет для продуктов и сервисов компании функционал на основе машинного обучения.\n\nВ роли Data\
+            \ Scientist участвовал в разработке Kaspersky MLAD и MDR AI Analyst.\n\nВ роли разработчика C++ участвовал в с\
+            оздании MaxPatrol SIEM.\n\nВ течение многих лет преподает computer science дисциплины в МГТУ ГА."
     twitter: filonovpv
+    gitHub: sdukshis
   - id: 1248
     photoFileName: 1248.jpg
     photoUpdatedAt: 2019-05-06T06:49:55.631Z[UTC]
@@ -19374,6 +19382,8 @@ speakers:
       - {language: en, text: "Sebastian Theophil studied Computer Science in Berlin and Toulouse and holds a Ph.D. in Computer\
             \ Science from the Humboldt University of Berlin. He has been working at think-cell Software since its founding\
             \ in 2002 and has recently been working on porting think-cell to the Mac."}
+    twitter: cpp_theo
+    gitHub: stheophil
   - id: 1396
     photoFileName: 1396.jpg
     photoUpdatedAt: 2020-10-20T13:48:00.099Z[UTC]
@@ -25303,12 +25313,10 @@ speakers:
       - {language: ru, text: "Николай Миронов"}
     companyIds: [424]
     bio:
-      - {language: en, text: "Tech Lead of the Tools&DevOps team at PVS-Studio. Nikolay develops and maintains utilities and\
-            \ plugins for developers to work with the static analyzer more conveniently. He also participated in developing\
-            \ the analyzer for C#. Writes scripts for Jenkins for fun."}
+      - {language: en, text: "Tech Lead of the Tools&DevOps team at PVS-Studio. Develops and supports utilities and plugins\
+            \ for developers to work with the static analyzer more conveniently. Writes scripts in Jenkins as a hobby."}
       - {language: ru, text: "Tech Lead команды Tools&DevOps компании PVS-Studio. Занимается разработкой и поддержкой утил\
-            ит и плагинов для более удобной работы со статическим анализатором. Дополнительно успел оставить свой след в о\
-            дноименном C# анализаторе. Пишет скрипты в Jenkins для души"}
+            ит и плагинов для более удобной работы со статическим анализатором. Пишет скрипты в Jenkins для души"}
     twitter: nikola_ich
     habr: IchNikola
   - id: 1800
@@ -28236,3 +28244,14 @@ speakers:
             арственного университета имени Н. И. Лобачевского, где преподавал около десяти лет."
     gitHub: alekcac
     habr: alekcac
+  - id: 1999
+    photoFileName: 1999.jpg
+    photoUpdatedAt: 2021-11-18T12:49:38.137Z[UTC]
+    name:
+      - {language: en, text: "Mark Williamson"}
+    companyIds: [833]
+    bio:
+      - {language: en, text: "Mark has worked at Undo for 7 years. As Software Architect he works to optimise both software\
+            \ systems and the human systems of the engineering organisation. In his spare time, Mark likes to climb tall things\
+            \ and try not to fall off."}
+    twitter: undoio
