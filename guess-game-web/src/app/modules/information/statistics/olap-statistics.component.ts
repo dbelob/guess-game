@@ -429,19 +429,19 @@ export class OlapStatisticsComponent implements OnInit {
   isNoEventTypesDataFoundVisible() {
     return ((this.selectedCubeType === CubeType.EventTypes) &&
       this.olapStatistics?.eventTypeStatistics?.metricsList &&
-      (this.olapStatistics?.eventTypeStatistics.metricsList.length === 0));
+      (this.olapStatistics.eventTypeStatistics.metricsList.length === 0));
   }
 
   isEventTypesListVisible() {
     return ((this.selectedCubeType === CubeType.EventTypes) &&
       this.olapStatistics?.eventTypeStatistics?.metricsList &&
-      (this.olapStatistics?.eventTypeStatistics.metricsList.length > 0));
+      (this.olapStatistics.eventTypeStatistics.metricsList.length > 0));
   }
 
   isNoSpeakersDataFoundVisible() {
     return ((this.selectedCubeType === CubeType.Speakers) &&
       this.olapStatistics?.speakerStatistics?.metricsList &&
-      (this.olapStatistics?.speakerStatistics.metricsList.length === 0));
+      (this.olapStatistics.speakerStatistics.metricsList.length === 0));
   }
 
   isSpeakersListVisible() {
@@ -617,6 +617,10 @@ export class OlapStatisticsComponent implements OnInit {
       default:
         return null;
     }
+  }
+
+  isChartsVisible() {
+    return this.isEventTypesListVisible() || this.isSpeakersListVisible() || this.isCompaniesListVisible();
   }
 
   isDetailsChartVisible() {
