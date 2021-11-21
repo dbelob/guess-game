@@ -103,11 +103,13 @@
       {{getCubeTypeMessageKeyByCube(selectedCubeType) | translate}} – {{getMeasureTypeMessageKeyByCube(selectedMeasureType) | translate}}
     </div>
 
-    <app-chart-type-switcher [type]="getChartType()" (detailsClick)="detailsChart()" (totalClick)="totalChart()"></app-chart-type-switcher>
+    <div *ngIf="isChartsVisible()">
+      <app-chart-type-switcher [type]="getChartType()" (detailsClick)="detailsChart()" (totalClick)="totalChart()"></app-chart-type-switcher>
 
-    <div class="ml-1 mr-1 mb-2">
-      <p-chart *ngIf="isDetailsChartVisible()" type="line" [data]="allLineData" [options]="allLineOptions"></p-chart>
-      <p-chart *ngIf="isTotalChartVisible()" type="line" [data]="totalLineData" [options]="totalLineOptions"></p-chart>
+      <div class="ml-1 mr-1 mb-2">
+        <p-chart *ngIf="isDetailsChartVisible()" type="line" [data]="allLineData" [options]="allLineOptions"></p-chart>
+        <p-chart *ngIf="isTotalChartVisible()" type="line" [data]="totalLineData" [options]="totalLineOptions"></p-chart>
+      </div>
     </div>
 
     <div *ngIf="isNoEventTypesDataFoundVisible()" class="alert text-center m-2">

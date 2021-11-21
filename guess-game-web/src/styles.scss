@@ -61,9 +61,6 @@
   .container-dialog {
     max-width: 540px;
   }
-  .container-information {
-    max-width: 566px;
-  }
   .img-guess-logo {
     width: 48px;
     height: auto;
@@ -86,9 +83,6 @@
 @media (min-width: 768px) {
   .container-dialog {
     max-width: 720px;
-  }
-  .container-information {
-    max-width: 758px;
   }
   .img-guess-logo {
     width: 64px;
@@ -113,9 +107,6 @@
   .container-dialog {
     max-width: 720px;
   }
-  .container-information {
-    max-width: 972px;
-  }
   .img-guess-logo {
     width: 82px;
     height: auto;
@@ -139,9 +130,6 @@
   .container-dialog {
     max-width: 720px;
   }
-  .container-information {
-    max-width: 1160px;
-  }
   .img-guess-logo {
     width: 100px;
     height: auto;
@@ -162,12 +150,6 @@
 }
 
 @media (min-width: 1400px) {
-  .container-information {
-    max-width: 1300px;
-  }
-}
-
-@media (min-width: 1600px) {
   .container-information {
     max-width: 1400px;
   }
