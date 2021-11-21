@@ -1680,6 +1680,7 @@ speakers:
             \ writing Java software based on Eclipse RCP. Rabea configures Continuous Integration servers and tries to automate\
             \ the deployments as much as possible. Sometimes she also does Javascript, C#, VBA or other languages she needs\
             \ to complete her current task."
+    twitter: rgransberger
     gitHub: rgra
     javaChampion: true
   - id: 100
@@ -4966,6 +4967,7 @@ speakers:
             \nNow he is an independent instructor giving seminars about modern C++ and Python. He published several books\
             \ in various languages about modern C++ and concurrency in particular."
     twitter: rainer_grimm
+    gitHub: RainerGrimm
   - id: 340
     photoFileName: 0340.jpg
     name:
@@ -5881,6 +5883,7 @@ speakers:
             \nHe likes to travel, but spends most of his time in San Diego with his amazingly patient wife Rachel, three wonderful\
             \ daughters, a dozen avocado trees and the occasional rattlesnake."
     twitter: jongalloway
+    gitHub: jongalloway
   - id: 404
     photoFileName: 0404.jpg
     name:
@@ -6057,6 +6060,7 @@ speakers:
             \ book \"Mastering F#\". Currently works as a web engineer using F# and Fable for highly productive and reliable\
             \ software development."}
     twitter: alfonsogcnunez
+    gitHub: alfonsogarciacaro
   - id: 415
     photoFileName: 0415.jpg
     name:
@@ -6883,6 +6887,7 @@ speakers:
             \ she worked a lot on boot performance monitoring, identifying bottlenecks in the Windows boot process and on\
             \ monitoring user-experience on the Web."}
     twitter: dinagozil
+    gitHub: dinazil
   - id: 471
     photoFileName: 0471.jpg
     photoUpdatedAt: 2020-10-09T11:46:49.029Z[UTC]
@@ -10148,6 +10153,7 @@ speakers:
             \ to Electronics (Manning).\n\nAs a counterpoint to this futuristic vantage, she lives in the forest in Vermont\
             \ and enjoys anachronistic hobbies. She reads and reads and reads."
     twitter: lyzadanger
+    gitHub: lyzadanger
   - id: 703
     photoFileName: 0703.jpg
     name:
@@ -10883,6 +10889,7 @@ speakers:
             \ like DraftJS Plugins & Carte Blanche and earlier this year Nik participated in Stripe’s Open Source Retreat.\
             \ He organises the ReactJS Vienna Meet-up and recently joined the startup Serverless."}
     twitter: nikgraf
+    gitHub: nikgraf
   - id: 756
     photoFileName: 0756.jpg
     name:
@@ -11274,6 +11281,7 @@ speakers:
             \ His interests include machine learning, mobile security and clean architecture. In his spare time he likes to\
             \ travel, run and play computer games."}
     twitter: mauricegavin
+    gitHub: mauricegavin
   - id: 787
     photoFileName: 0787.jpg
     photoUpdatedAt: 2019-03-12T14:16:07.619Z[UTC]
@@ -14641,6 +14649,7 @@ speakers:
             \ to solve meaningful problems. He is passionate about performance and is always looking for solutions through\
             \ technology to offer the best experience to users."}
     twitter: midudev
+    gitHub: midudev
   - id: 1039
     photoFileName: 1039.jpg
     photoUpdatedAt: 2020-05-26T11:07:18.715Z[UTC]
@@ -15519,6 +15528,7 @@ speakers:
             \ using creative coding, machine learning and hardware. She also loves giving back to the community by making\
             \ all her prototypes open source, mentoring, blogging and speaking at conferences."}
     twitter: devdevcharlie
+    gitHub: charliegerard
   - id: 1105
     photoFileName: 1105.jpg
     photoUpdatedAt: 2019-10-28T10:20:09.477Z[UTC]
@@ -17059,6 +17069,7 @@ speakers:
             \ us to learn from mistakes and build on successes. As a Developer Advocate for JetBrains, she gets to share all\
             \ the interesting things she’s constantly discovering."}
     twitter: trisha_gee
+    gitHub: trishagee
     javaChampion: true
   - id: 1220
     photoFileName: 1220.jpg
@@ -17171,6 +17182,7 @@ speakers:
             \ has won best-paper awards at FAST '18 and FAST '20. She was selected for the Rising Stars in EECS ’18 workshop.\
             \ She is a recipient of a Facebook PhD Fellowship in 2019."}
     twitter: AishwaryaGanlat
+    gitHub: aganesan4
   - id: 1228
     photoFileName: 1228.jpg
     photoUpdatedAt: 2020-04-27T08:53:41.611Z[UTC]
@@ -19432,6 +19444,7 @@ speakers:
             \ company and spent more than a decade making console games. When he's not hacking on Compiler Explorer, Matt\
             \ enjoys writing emulators for old 8-bit computer hardware."}
     twitter: mattgodbolt
+    gitHub: mattgodbolt
   - id: 1399
     photoFileName: 1399.jpg
     photoUpdatedAt: 2020-09-15T11:02:24.306Z[UTC]
@@ -19600,6 +19613,7 @@ speakers:
             \ through code, trying to deduce what the author really wanted it to do. If he could figure out how to set the\
             \ good stuff to music, he would write a grand symphony entitled \"In Fondo alla Coda\"."}
     twitter: _johnsgp
+    gitHub: johnsgp
   - id: 1410
     photoFileName: 1410.jpg
     photoUpdatedAt: 2020-09-18T14:00:34.512Z[UTC]
@@ -20158,6 +20172,8 @@ speakers:
             \ on infrastructure management and Cloud on the 3 major public cloud providers. Experienced in the finance sector,\
             \ specifically on high-performance payment platforms and systems compliance.\nRegular speaker at conferences and\
             \ meetups.\nFederico holds an MSc in Software Engineering from City University London."
+    twitter: s0rc3r3r01
+    gitHub: s0rc3r3r01
   - id: 1452
     photoFileName: 1452.jpg
     photoUpdatedAt: 2020-08-20T12:51:32.328Z[UTC]
