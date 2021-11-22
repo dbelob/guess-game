@@ -21,7 +21,7 @@ class LocaleDaoImplTest {
 
             localeDao.getLanguage(httpSession);
 
-            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.getLanguage(httpSession));
+            mockedStatic.verify(() -> HttpSessionUtils.getLanguage(httpSession), Mockito.times(1));
         }
     }
 
@@ -33,7 +33,7 @@ class LocaleDaoImplTest {
 
             localeDao.setLanguage(language, httpSession);
 
-            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.setLanguage(language, httpSession));
+            mockedStatic.verify(() -> HttpSessionUtils.setLanguage(language, httpSession), Mockito.times(1));
         }
     }
 }
