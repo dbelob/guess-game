@@ -22,7 +22,7 @@ class AnswerDaoImplTest {
 
             answerDao.getAnswerSets(httpSession);
 
-            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.getAnswerSets(httpSession));
+            mockedStatic.verify(() -> HttpSessionUtils.getAnswerSets(httpSession), Mockito.times(1));
         }
     }
 
@@ -33,7 +33,7 @@ class AnswerDaoImplTest {
 
             answerDao.clearAnswerSets(httpSession);
 
-            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.clearAnswerSets(httpSession));
+            mockedStatic.verify(() -> HttpSessionUtils.clearAnswerSets(httpSession), Mockito.times(1));
         }
     }
 
@@ -48,7 +48,7 @@ class AnswerDaoImplTest {
 
             answerDao.addAnswerSet(answerSet, httpSession);
 
-            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.addAnswerSet(answerSet, httpSession));
+            mockedStatic.verify(() -> HttpSessionUtils.addAnswerSet(answerSet, httpSession), Mockito.times(1));
         }
     }
 }

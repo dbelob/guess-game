@@ -31,7 +31,7 @@ class StateDaoImplTest {
 
             stateDao.getGameState(httpSession);
 
-            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.getGameState(httpSession));
+            mockedStatic.verify(() -> HttpSessionUtils.getGameState(httpSession), Mockito.times(1));
         }
     }
 
@@ -43,7 +43,7 @@ class StateDaoImplTest {
 
             stateDao.setGameState(state, httpSession);
 
-            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.setGameState(state, httpSession));
+            mockedStatic.verify(() -> HttpSessionUtils.setGameState(state, httpSession), Mockito.times(1));
         }
     }
 
@@ -54,7 +54,7 @@ class StateDaoImplTest {
 
             stateDao.getStartParameters(httpSession);
 
-            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.getStartParameters(httpSession));
+            mockedStatic.verify(() -> HttpSessionUtils.getStartParameters(httpSession), Mockito.times(1));
         }
     }
 
@@ -70,7 +70,7 @@ class StateDaoImplTest {
 
             stateDao.setStartParameters(startParameters, httpSession);
 
-            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.setStartParameters(startParameters, httpSession));
+            mockedStatic.verify(() -> HttpSessionUtils.setStartParameters(startParameters, httpSession), Mockito.times(1));
         }
     }
 
@@ -81,7 +81,7 @@ class StateDaoImplTest {
 
             stateDao.clearStartParameters(httpSession);
 
-            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.clearStartParameters(httpSession));
+            mockedStatic.verify(() -> HttpSessionUtils.clearStartParameters(httpSession), Mockito.times(1));
         }
     }
 
@@ -92,7 +92,7 @@ class StateDaoImplTest {
 
             stateDao.getQuestionAnswersSet(httpSession);
 
-            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.getQuestionAnswersSet(httpSession));
+            mockedStatic.verify(() -> HttpSessionUtils.getQuestionAnswersSet(httpSession), Mockito.times(1));
         }
     }
 
@@ -129,7 +129,7 @@ class StateDaoImplTest {
 
             stateDao.setQuestionAnswersSet(questionAnswersSet, httpSession);
 
-            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.setQuestionAnswersSet(questionAnswersSet, httpSession));
+            mockedStatic.verify(() -> HttpSessionUtils.setQuestionAnswersSet(questionAnswersSet, httpSession), Mockito.times(1));
         }
     }
 
@@ -140,7 +140,7 @@ class StateDaoImplTest {
 
             stateDao.clearQuestionAnswersSet(httpSession);
 
-            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.clearQuestionAnswersSet(httpSession));
+            mockedStatic.verify(() -> HttpSessionUtils.clearQuestionAnswersSet(httpSession), Mockito.times(1));
         }
     }
 }
