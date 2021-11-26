@@ -12379,11 +12379,12 @@ speakers:
       - {language: ru, text: "Дмитрий Куркин"}
     companyIds: [852]
     bio:
-      - {language: en, text: "Spent a lot of time for messengers in Mail.Ru, has taken part in Yandex.Navigator and Yandex.Auto.\
-            \ From time to time makes talks about developing for iOS."}
+      - {language: en, text: "Spent a lot of time on messengers in Mail.Ru, has taken part in Yandex.Navigator and Yandex.Auto.\
+            \ From time to time presents talks about development for iOS."}
       - {language: ru, text: "Много лет занимался мессенджерами в Mail.Ru, поучаствовал в Яндекс.Навигаторе и Яндекс.Авто\
             . Время от времени выступает с докладами про разработку под iOS."}
     twitter: sclown
+    gitHub: sclown
   - id: 863
     photoFileName: 0863.jpg
     name:
@@ -15137,18 +15138,16 @@ speakers:
       - {language: ru, text: "Андрей Дмитриев"}
     companyIds: [291]
     bio:
-      - language: en
-        text: "Graduated from the mathematics department of St. Petersburg State University. A programmer since school, a\
-            \ pragmatist in life and a co-owner of the business of organizing conferences for IT people.\nDeveloped JDK libraries\
-            \ at Sun Microsystems and Oracle for several years. \nManaged the mobile development team at QuickOffice. \nLed\
-            \ a distributed load testing team at NetCracker.\nCurrently Director of Operations at JUG Ru Group. Tends to trust\
-            \ facts and figures."
-      - language: ru
-        text: "Окончил матмех СПбГУ. Программист со школы, прагматик в жизни и совладелец бизнеса по организации конференц\
-            ий для айтишников.\nНесколько лет разрабатывал библиотеки JDK в Sun Microsystems и Oracle. \nРуководил группой\
-            \ мобильной разработки в компании QuickOffice. \nБыл руководителем распределенной группы нагрузочного тестиров\
-            ания в NetCracker.\nВ настоящее время директор по производству в JUG Ru Group. Склонен доверять фактам и цифра\
-            м."
+      - {language: en, text: "Graduated from the mathematics department of St. Petersburg State University. A programmer since\
+            \ school, a pragmatist in life and a co-owner of the business of organizing conferences for IT people. Developed\
+            \ JDK libraries at Sun Microsystems and Oracle for several years. Managed the mobile development team at QuickOffice.\
+            \ Led a distributed load testing team at NetCracker. Currently Director of Operations at JUG Ru Group. Tends to\
+            \ trust facts and figures."}
+      - {language: ru, text: "Окончил матмех СПбГУ. Программист со школы, прагматик в жизни и совладелец бизнеса по органи\
+            зации конференций для айтишников. Несколько лет разрабатывал библиотеки JDK в Sun Microsystems и Oracle. Руков\
+            одил группой мобильной разработки в компании QuickOffice. Был руководителем распределенной группы нагрузочного\
+            \ тестирования в NetCracker. В настоящее время директор по производству в JUG Ru Group. Склонен доверять факта\
+            м и цифрам."}
     twitter: it_improve
     habr: real_ales
   - id: 1077
@@ -18911,18 +18910,14 @@ speakers:
             но. Иногда то, что не нужно."
   - id: 1362
     photoFileName: 1362.jpg
-    photoUpdatedAt: 2020-11-05T14:04:15.906Z[UTC]
+    photoUpdatedAt: 2021-11-22T07:01:04.195Z[UTC]
     name:
       - {language: en, text: "Alexander Gazarov"}
       - {language: ru, text: "Александр Газаров"}
     companyIds: [429]
     bio:
-      - {language: en, text: "There will be a small interview with Alexander Sosorev, Head of Mobile Development at Delivery\
-            \ Club. He will tell about writing a «good» legacy code, approaches that are used in working with technical debt,\
-            \ and how a product code can drive technical debt, and vice versa."}
-      - {language: ru, text: "Застал мобильную разработку ещё во времена обычных телефонов и Java ME. Освоил Android в 2010\
-            \ году и с тех пор поучаствовал во многих проектах. Сейчас эксперт по разработке в Райффайзен, всегда в поиске\
-            \ новых подходов для применения их на благо."}
+      - {language: en, text: "Lead developer, community leader."}
+      - {language: ru, text: "Ведущий разработчик, лидер сообщества."}
   - id: 1364
     photoFileName: 1364.jpg
     photoUpdatedAt: 2021-03-01T07:48:23.455Z[UTC]
@@ -18942,20 +18937,15 @@ speakers:
     habr: anioutka
   - id: 1365
     photoFileName: 1365.jpg
-    photoUpdatedAt: 2020-10-26T15:16:50.141Z[UTC]
+    photoUpdatedAt: 2021-11-22T06:59:24.515Z[UTC]
     name:
-      - {language: en, text: "Aleksandr Sychev"}
+      - {language: en, text: "Alexander Sychev"}
       - {language: ru, text: "Александр Сычев"}
     companyIds: [665]
     bio:
-      - {language: en, text: "Aleksandr has been engaged in mobile development for more than 9 years, 5 of them as a leader\
-            \ at RAMBLER & Co and Sber. Participated in the creation of Sberbank Online, Championship, Rambler/mail, Afisha\
-            \ applications, and others. Aleksandr's responsibility includes both development and people and team management.\
-            \ He is also a teacher at the Sberbank development school. He is studying under the MBA program."}
-      - {language: ru, text: "Занимается мобильной разработкой более 9 лет, из них 5 в качестве руководителя в компаниях RAMBLER&Co\
-            \ и Сбер. Участвовал в создании приложений «Сбербанк Онлайн», «Чемпионат», «Рамблер/почта», «Афиша» и других.\
-            \ В зону ответственности входят как разработка, так и управление людьми и командой. Является преподавателем шк\
-            олы разработки Сбера. Проходит обучение по программе MBA."}
+      - {language: en, text: "Head of Mobile Development."}
+      - {language: ru, text: "Руководитель мобильной разработки."}
+    gitHub: Brain89
     habr: Brain89
   - id: 1366
     photoFileName: 1366.jpg
@@ -22085,20 +22075,19 @@ speakers:
             \ source code."
   - id: 1580
     photoFileName: 1580.jpg
-    photoUpdatedAt: 2021-03-15T07:48:15.840Z[UTC]
+    photoUpdatedAt: 2021-11-19T09:06:43.812Z[UTC]
     name:
       - {language: en, text: "Yaroslav Magin"}
       - {language: ru, text: "Ярослав Магин"}
-    companyIds: [719]
+    companyIds: [136]
     bio:
-      - {language: en, text: "Mobile lead developer in the INOSTUDIO. Works in commercial development for nearly 6 years,\
-            \ 4 of them related to mobile development. Primarily focused on native iOS-development, but 1,5 years ago discovered\
-            \ Flutter, and then started using both technologies. Has experience with different projects — from small startups\
-            \ to large products (GIS, mobile banking)."}
-      - {language: ru, text: "Ведущий мобильный разработчик в компании INOSTUDIO. В коммерческой разработке уже около 6 ле\
-            т, из них 4 года занимается мобильными приложениями. Главное направление — нативная iOS-разработка, но полтора\
-            \ года назад открыл для себя Flutter, и с тех пор пытается усидеть на двух стульях сразу. Успел поработать как\
-            \ с небольшими стартапами, так и с крупными продуктами (геоинформационные системы, банковские приложения)."}
+      - {language: en, text: "iOS developer in Delivery Club. Works in commercial development more 6 years, 4 of them related\
+            \ to mobile development. Primarily focused on native iOS-development, but discovered Flutter. Has experience with\
+            \ different projects — from small startups to large products (GIS, mobile banking)."}
+      - {language: ru, text: "iOS-разработчик в компании Delivery Club. В коммерческой разработке уже более 6 лет, из них\
+            \ 4 года занимается мобильными приложениями. Главное направление — нативная iOS-разработка, но экспериментиров\
+            ал и с Flutter. Успел поработать как с небольшими стартапами, так и с крупными продуктами (геоинформационные с\
+            истемы, банковские приложения)."}
   - id: 1581
     photoFileName: 1581.jpg
     photoUpdatedAt: 2021-03-01T12:05:24.992Z[UTC]
@@ -26172,6 +26161,7 @@ speakers:
             \ Нравится решать сложные и нестандартные задачи, которые помогают улучшать процессы в команде. Периодически [п\
             ишет статьи](https://habr.com/ru/users/lounah/posts/)"}
     twitter: lounvhx
+    gitHub: Lounah
   - id: 1854
     photoFileName: 1854.jpg
     photoUpdatedAt: 2021-08-31T08:59:25.761Z[UTC]
@@ -26268,6 +26258,7 @@ speakers:
         text: "В Андроид-разработке уже 4 год. В основном разрабатывает проекты на Kotlin, но последнее время, с развитием\
             \ КММ, частенько посматривает в сторону кроссплатформы.\r\nВсегда ищет и пробует новые подходы в разработке и\
             \ зачастую предлагает внедрять их в рабочие проекты."
+    gitHub: muroming
   - id: 1860
     photoFileName: 1860.jpg
     photoUpdatedAt: 2021-10-18T10:52:22.827Z[UTC]
@@ -27042,10 +27033,11 @@ speakers:
       - {language: ru, text: "Иван Шафран"}
     companyIds: [620]
     bio:
-      - {language: en, text: "Works in the Android VK Calls team. Calls himself about a hundred times a day. Loves Kotlin.\
-            \ Spontaneously writes articles on Medium and open-source projects on Github. Teaches Android for beginners."}
+      - language: en
+        text: "He works in the VK Android call team. He calls himself about a hundred times a day.\nKotlin lover. Spontaneously\
+            \ writes articles on Medium and open source projects on Github. Teaches Android for beginners."
       - language: ru
-        text: "Работает в команде Android-звонков VK. Звонит сам себе около сотни раз в день.\r\nЛюбит Kotlin. Спонтанно п\
+        text: "Работает в команде Android звонков VK. Звонит сам себе около сотни раз в день.\r\nЛюбит Kotlin. Спонтанно п\
             ишет статьи на Medium и опенорс-проекты на Github. Преподает Android для начинающих."
     twitter: NotShafran
     gitHub: IvanShafran
@@ -27089,6 +27081,7 @@ speakers:
             тор курса Flutter mobile developer на платформе Otus.\r\n\r\nСейчас Flutter developer.\r\n\r\nВ альтернативном\
             \ будущем mobile native developer."
     twitter: dushesatwork
+    gitHub: guid-empty
   - id: 1921
     photoFileName: 1921.jpg
     photoUpdatedAt: 2021-10-21T11:14:44.946Z[UTC]
@@ -28670,3 +28663,13 @@ speakers:
       - {language: en, text: "Head of the Program Committee at TechLead Conf"}
       - {language: ru, text: "руководитель программного комитета TechLead Conf"}
     habr: Travieso
+  - id: 2026
+    photoFileName: 2026.jpg
+    photoUpdatedAt: 2021-11-22T06:57:44.011Z[UTC]
+    name:
+      - {language: en, text: "Vyacheslav Petrukhin"}
+      - {language: ru, text: "Вячеслав Петрухин"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "Head of iOS development (SberKidz)."}
+      - {language: ru, text: "Руководитель направления iOS-разработки (СберКидз)."}

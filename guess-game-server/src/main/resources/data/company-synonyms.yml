@@ -240,7 +240,9 @@ companySynonyms:
         СберТех,
         Sberbank-Technology,
         Сбербанк-Технологии,
-        SberX
+        SberX,
+        "SberBank Online",
+        "СберБанк Онлайн"
     ]
   - name: Sibur
     synonyms: [
