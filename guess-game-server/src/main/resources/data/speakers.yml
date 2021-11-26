@@ -15137,16 +15137,18 @@ speakers:
       - {language: ru, text: "Андрей Дмитриев"}
     companyIds: [291]
     bio:
-      - {language: en, text: "Graduated from the mathematics department of St. Petersburg State University. A programmer since\
-            \ school, a pragmatist in life and a co-owner of the business of organizing conferences for IT people. Developed\
-            \ JDK libraries at Sun Microsystems and Oracle for several years. Managed the mobile development team at QuickOffice.\
-            \ Led a distributed load testing team at NetCracker. Currently Director of Operations at JUG Ru Group. Tends to\
-            \ trust facts and figures."}
-      - {language: ru, text: "Окончил матмех СПбГУ. Программист со школы, прагматик в жизни и совладелец бизнеса по органи\
-            зации конференций для айтишников. Несколько лет разрабатывал библиотеки JDK в Sun Microsystems и Oracle. Руков\
-            одил группой мобильной разработки в компании QuickOffice. Был руководителем распределенной группы нагрузочного\
-            \ тестирования в NetCracker. В настоящее время директор по производству в JUG Ru Group. Склонен доверять факта\
-            м и цифрам."}
+      - language: en
+        text: "Graduated from the mathematics department of St. Petersburg State University. A programmer since school, a\
+            \ pragmatist in life and a co-owner of the business of organizing conferences for IT people.\nDeveloped JDK libraries\
+            \ at Sun Microsystems and Oracle for several years. \nManaged the mobile development team at QuickOffice. \nLed\
+            \ a distributed load testing team at NetCracker.\nCurrently Director of Operations at JUG Ru Group. Tends to trust\
+            \ facts and figures."
+      - language: ru
+        text: "Окончил матмех СПбГУ. Программист со школы, прагматик в жизни и совладелец бизнеса по организации конференц\
+            ий для айтишников.\nНесколько лет разрабатывал библиотеки JDK в Sun Microsystems и Oracle. \nРуководил группой\
+            \ мобильной разработки в компании QuickOffice. \nБыл руководителем распределенной группы нагрузочного тестиров\
+            ания в NetCracker.\nВ настоящее время директор по производству в JUG Ru Group. Склонен доверять фактам и цифра\
+            м."
     twitter: it_improve
     habr: real_ales
   - id: 1077
