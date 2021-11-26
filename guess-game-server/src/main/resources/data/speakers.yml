@@ -27700,7 +27700,7 @@ speakers:
     name:
       - {language: en, text: "Sergey Ivanov"}
       - {language: ru, text: "Сергей Иванов"}
-    companyIds: [872]
+    companyIds: []
     bio:
       - {language: en, text: "Frontend developer (JavaScript/TypeScript), mentor. Sergey is interested in software development\
             \ in general and also shows interest in functional programming. Writes articles. Has his own Telegram channel.\
@@ -28646,3 +28646,25 @@ speakers:
       - {language: ru, text: "У Антона более 15 лет опыта работы в IT, с WebRTC с 2013 года в облачном контакт-центре. Сна\
             чала в качестве разработчика, а затем — руководителя отдела разработки. В 2019 году перешел в Skyeng как менед\
             жер продукта. Сейчас возглавляет коммуникационную платформу в Skyeng."}
+  - id: 2024
+    photoFileName: 2024.jpg
+    photoUpdatedAt: 2021-11-23T09:55:06.116Z[UTC]
+    name:
+      - {language: en, text: "Maksim Kislov"}
+      - {language: ru, text: "Максим Кислов"}
+    companyIds: [65]
+    bio:
+      - {language: en, text: "Engineering Manager, Badoo"}
+    gitHub: kislovm
+    habr: kislovm
+  - id: 2025
+    photoFileName: 2025.jpg
+    photoUpdatedAt: 2021-11-23T09:59:58.881Z[UTC]
+    name:
+      - {language: en, text: "Anastasia Aseeva-Nguyen"}
+      - {language: ru, text: "Анастасия Асеева-Нгуен"}
+    companyIds: [322]
+    bio:
+      - {language: en, text: "Head of the Program Committee at TechLead Conf"}
+      - {language: ru, text: "руководитель программного комитета TechLead Conf"}
+    habr: Travieso
