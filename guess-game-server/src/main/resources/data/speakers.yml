@@ -505,19 +505,26 @@ speakers:
             дпочитает проводить в незнакомых городах и весях. Коллекционирует сов."
   - id: 28
     photoFileName: 0028.jpg
+    photoUpdatedAt: 2018-09-19T08:10:44.511Z[UTC]
     name:
       - {language: en, text: "Kirill Tolkachev"}
       - {language: ru, text: "Кирилл Толкачёв"}
     companyIds: [291]
     bio:
-      - {language: en, text: "Up until recently Kirill was a lead developer at Alfa-Lab. He was developing different banking\
-            \ APIs, forming principles and tools related to microservice architecture. He is a fan of Groovy, Gradle, Spring\
-            \ and Netflix technologies stack. Kirill is a resident of famous Russian IT-podcast \"Razbor Poletov\". He knows\
-            \ DevOps methodology like the palm of his hand and has four years' experience of its production usage."}
-      - {language: ru, text: "До недавнего времени Кирилл выступал как главный разработчик в Альфа-Лаборатории и разрабаты\
-            вал банковские API, формируя принципы и наборы инструментов для работы с микросервисной архитектурой. Большой\
-            \ поклонник Groovy, Gradle, Spring и стека технологий Netflix. Постоянный резидент подкаста «Разбор Полётов».\
-            \ Методологию DevOps знает не понаслышке и имеет четырехлетний опыт её применения."}
+      - language: en
+        text: "Develops video communications based on the WebRTC standard for putting people on the air in JRG conferences.\
+            \ He knows about creating \"naked\" P2P calls for hanging out with friends and about ready-to-use solutions for\
+            \ creating corporate video conferences. \nEarlier Kirill was a chief developer in Alfa-Lab and developed bank\
+            \ APIs, forming principles and toolkits for working with microservices architecture. Big fan of Groovy, Gradle,\
+            \ Spring, and the Netflix technology stack. Regular resident on the Parsing the Flights podcast. He knows DevOps\
+            \ methodology firsthand and has four years of experience using it."
+      - language: ru
+        text: "Занимается разработкой видеосвязи, основанной на стандарте WebRTC, для вывода людей в эфир конференций JRG.\
+            \ Знает и про создание «голых» P2P-звонков для посиделок с друзьями, и про готовые решения для создания корпор\
+            ативных видеоконференций. \nРанее Кирилл выступал как главный разработчик в Альфа-Лаборатории и разрабатывал б\
+            анковские API, формируя принципы и наборы инструментов для работы с микросервисной архитектурой. Большой покло\
+            нник Groovy, Gradle, Spring и стека технологий Netflix. Постоянный резидент подкаста «Разбор Полётов». Методол\
+            огию DevOps знает не понаслышке и имеет четырехлетний опыт её применения."
     twitter: tolkv
     gitHub: lavcraft
     habr: tolkkv
@@ -13765,28 +13772,31 @@ speakers:
             ом времени."}
   - id: 976
     photoFileName: 0976.jpg
+    photoUpdatedAt: 2021-10-04T09:23:35.039Z[UTC]
     name:
       - {language: en, text: "Sergey Fedorov"}
       - {language: ru, text: "Сергей Фёдоров"}
     companyIds: [358]
     bio:
       - language: en
-        text: "Early engineer of the Open Connect — team that has built a Netflix CDN that delivers 13% of the world Internet\
-            \ traffic. After spending years building monitoring and data analysis systems for video traffic, Sergey now focuses\
-            \ on improving all types of Netflix Internet communications to achieve better latency, reliability and control\
-            \ over client-server communications. Strong advocate of observability approach to engineering and making data-driven\
-            \ decisions. \n\nThe author and maintainer of FAST.com — one of the most popular Internet speed tests.\n\nFinding\
-            \ actionable signals in loosely controlled environments is what keeps Sergey awake, much better than caffeine.\
-            \ This might also explain why outside of work he can be seen playing ice hockey, brewing beer, or exploring exotic\
-            \ travel destinations."
+        text: "Sergey is a hands-on engineering leader working for the Content Delivery team at Netflix. An early member of\
+            \ the team that built an Open Connect CDN delivering 13% of the world Internet traffic, he built the CDN monitoring\
+            \ system and data analysis systems for Netflix video streaming. As part of that work, he released FAST.com — one\
+            \ of the most popular Internet speed tests.\n\nToday Sergey focuses on improving interactive requests from Netflix\
+            \ applications to achieve better latency, reliability, and control over client-server communications.\n\nSergey\
+            \ is a vocal advocate of an observability approach to engineering and making data-driven decisions. Finding actionable\
+            \ signals in loosely controlled environments is what keeps him awake, much better than caffeine. This might also\
+            \ explain why outside of work Sergey can be seen playing ice hockey, brewing beer, or exploring exotic travel\
+            \ destinations."
       - language: ru
-        text: "Один из первых разработчиков в Open Connect — Netflix CDN, которая доставляет около 13% мирового Интернет-т\
-            рафика. Имея 7 лет опыта в разработке инфраструктуры, систем мониторинга и анализа данных для Netflix-видео, С\
-            ергей сейчас работает над улучшением производительности всех видов Интернет-коммуникаций в Netflix. Активный п\
-            ропагандист observability культуры, прагматичного и data-driven подхода к разработке программных систем. \n\nА\
-            втор FAST.com — одного из самых популярных сервисов по оценке скорости интернет-соединения.\n\nСергей любит ре\
-            шать новые масштабные задачи в атмосфере неопределенности и отсутствия полного контроля. И не только в работе\
-            \ - вне офиса Сергей варит собственное пиво, играет в хоккей и любит экстремальный туризм."
+        text: "Сергей один из первых разработчиков в Open Connect — Netflix CDN, которая доставляет около 13% мирового инт\
+            ернет-трафика. Построил систему мониторинга Netflix CDN, работал над анализом данных для улучшения качества ст\
+            риминга, улучшением протоколов и запустил FAST.com — один из самых популярных сервисов по оценке скорости инте\
+            рнет-соединения.\n\nCейчас Сергей работает над балансировкой, ускорением и оптимизацией интерактивных запросов\
+            \ между Netflix устройствами и облаком.\n\nАктивный пропагандист observability культуры, прагматичного и data-driven\
+            \ подхода к разработке программных систем. Сергей любит решать новые масштабные задачи в атмосфере неопределен\
+            ности и отсутствия полного контроля. И не только в работе — вне офиса Сергей варит собственное пиво, играет в\
+            \ хоккей и любит экстремальный туризм."
     habr: sfedov
   - id: 977
     photoFileName: 0977.jpg
@@ -27033,11 +27043,10 @@ speakers:
       - {language: ru, text: "Иван Шафран"}
     companyIds: [620]
     bio:
-      - language: en
-        text: "He works in the VK Android call team. He calls himself about a hundred times a day.\nKotlin lover. Spontaneously\
-            \ writes articles on Medium and open source projects on Github. Teaches Android for beginners."
+      - {language: en, text: "Works in the Android VK Calls team. Calls himself about a hundred times a day. Loves Kotlin.\
+            \ Spontaneously writes articles on Medium and open-source projects on Github. Teaches Android for beginners."}
       - language: ru
-        text: "Работает в команде Android звонков VK. Звонит сам себе около сотни раз в день.\r\nЛюбит Kotlin. Спонтанно п\
+        text: "Работает в команде Android-звонков VK. Звонит сам себе около сотни раз в день.\r\nЛюбит Kotlin. Спонтанно п\
             ишет статьи на Medium и опенорс-проекты на Github. Преподает Android для начинающих."
     twitter: NotShafran
     gitHub: IvanShafran
@@ -28190,8 +28199,10 @@ speakers:
       - {language: ru, text: "Дмитрий Кравцов"}
     companyIds: [689]
     bio:
-      - {language: en, text: "Developer of the Yandex video platform."}
-      - {language: ru, text: "Разработчик видеоплатформы Яндекса."}
+      - {language: en, text: "Developer of video streaming in Yandex. He knows how to make a live streaming platform from\
+            \ scratch, understands video protocols, containers and codecs. Develops in Golang, Python, and C++."}
+      - {language: ru, text: "Разработчик видеостриминга в Яндексе. Знает, как сделать платформу live-трансляций с нуля, р\
+            азбирается в видеопротоколах, контейнерах и кодеках. Разрабатывет на Golang, Python и C++."}
   - id: 1996
     photoFileName: 1996.jpg
     photoUpdatedAt: 2021-09-30T17:01:14.178Z[UTC]
@@ -28673,3 +28684,27 @@ speakers:
     bio:
       - {language: en, text: "Head of iOS development (SberKidz)."}
       - {language: ru, text: "Руководитель направления iOS-разработки (СберКидз)."}
+  - id: 2027
+    photoFileName: 2027.jpg
+    photoUpdatedAt: 2021-09-28T12:57:02.431Z[UTC]
+    name:
+      - {language: en, text: "Ivan Karev"}
+      - {language: ru, text: "Иван Карев"}
+    companyIds: [689]
+    bio:
+      - {language: en, text: "For more than 10 years in Yandex, he has engaged in the development of the Main page, Ether,\
+            \ Zen. Не likes to understand what is happening on client devices using metrics. I manage several development\
+            \ teams. For the last few years, he has been studying the work of videos, from creation to playback."}
+      - {language: ru, text: "Больше 10 лет в Яндексе, занимался разработкой главной страницы, Эфира, Дзена. Любит понимат\
+            ь с помощью метрик, что происходит на клиентских устройствах. Руководит несколькими командами разработки. Посл\
+            едние несколько лет изучает работу видео — от создания до воспроизведения."}
+    gitHub: newbfg
+  - id: 2028
+    photoFileName: 2028.jpg
+    photoUpdatedAt: 2021-11-02T15:25:33.643Z[UTC]
+    name:
+      - {language: en, text: "Matvey Sopronenkov"}
+      - {language: ru, text: "Матвей Сопроненков"}
+    companyIds: [889]
+    bio:
+      - {language: en, text: "CEO at facecast.net."}

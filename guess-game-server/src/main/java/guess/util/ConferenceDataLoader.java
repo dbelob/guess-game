@@ -1796,6 +1796,10 @@ public class ConferenceDataLoader {
 //                        "Открытие 4 день", "Разговор в студии «Все оттенки удалёнки»", "Викторина Mobius Moscow 2021",
 //                        "«Своя игра»: Mobius edition", "Закрытие конференции Mobius 2021", "Mobius 2021 Virtual Afterparty")));
 //        loadTalksSpeakersEvent(Conference.VIDEO_TECH, LocalDate.of(2021, 12, 1), "2021videotech",
-//                LoadSettings.invalidTalksSet(Set.of("Открытие конференции VideoTech 2021", "Закрытие конференции VideoTech 2021")));
+//                LoadSettings.invalidTalksSet(Set.of("Открытие конференции VideoTech 2021", "Закрытие конференции VideoTech 2021",
+//                        "Разговор в студии: как поменялись сервисы видеозвонков за последние 1,5 года",
+//                        "Разговор в студии: что под капотом у видео в Яндексе?",
+//                        "Разговор в студии: CDN в пандемию — стриминг и сериалы, COVID и операторы связи",
+//                        "VideoTech 2021 Virtual Afterparty")));
     }
 }
