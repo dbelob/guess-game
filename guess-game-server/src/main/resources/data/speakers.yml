@@ -27700,7 +27700,7 @@ speakers:
     name:
       - {language: en, text: "Sergey Ivanov"}
       - {language: ru, text: "Сергей Иванов"}
-    companyIds: []
+    companyIds: [872]
     bio:
       - {language: en, text: "Frontend developer (JavaScript/TypeScript), mentor. Sergey is interested in software development\
             \ in general and also shows interest in functional programming. Writes articles. Has his own Telegram channel.\
