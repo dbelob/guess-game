@@ -2671,3 +2671,6 @@ companies:
   - id: 888
     name:
       - {language: en, text: VLC}
+  - id: 889
+    name:
+      - {language: en, text: Facecast}

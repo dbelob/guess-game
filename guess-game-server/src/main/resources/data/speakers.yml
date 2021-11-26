@@ -505,19 +505,26 @@ speakers:
             дпочитает проводить в незнакомых городах и весях. Коллекционирует сов."
   - id: 28
     photoFileName: 0028.jpg
+    photoUpdatedAt: 2018-09-19T08:10:44.511Z[UTC]
     name:
       - {language: en, text: "Kirill Tolkachev"}
       - {language: ru, text: "Кирилл Толкачёв"}
     companyIds: [291]
     bio:
-      - {language: en, text: "Up until recently Kirill was a lead developer at Alfa-Lab. He was developing different banking\
-            \ APIs, forming principles and tools related to microservice architecture. He is a fan of Groovy, Gradle, Spring\
-            \ and Netflix technologies stack. Kirill is a resident of famous Russian IT-podcast \"Razbor Poletov\". He knows\
-            \ DevOps methodology like the palm of his hand and has four years' experience of its production usage."}
-      - {language: ru, text: "До недавнего времени Кирилл выступал как главный разработчик в Альфа-Лаборатории и разрабаты\
-            вал банковские API, формируя принципы и наборы инструментов для работы с микросервисной архитектурой. Большой\
-            \ поклонник Groovy, Gradle, Spring и стека технологий Netflix. Постоянный резидент подкаста «Разбор Полётов».\
-            \ Методологию DevOps знает не понаслышке и имеет четырехлетний опыт её применения."}
+      - language: en
+        text: "Develops video communications based on the WebRTC standard for putting people on the air in JRG conferences.\
+            \ He knows about creating \"naked\" P2P calls for hanging out with friends and about ready-to-use solutions for\
+            \ creating corporate video conferences. \nEarlier Kirill was a chief developer in Alfa-Lab and developed bank\
+            \ APIs, forming principles and toolkits for working with microservices architecture. Big fan of Groovy, Gradle,\
+            \ Spring, and the Netflix technology stack. Regular resident on the Parsing the Flights podcast. He knows DevOps\
+            \ methodology firsthand and has four years of experience using it."
+      - language: ru
+        text: "Занимается разработкой видеосвязи, основанной на стандарте WebRTC, для вывода людей в эфир конференций JRG.\
+            \ Знает и про создание «голых» P2P-звонков для посиделок с друзьями, и про готовые решения для создания корпор\
+            ативных видеоконференций. \nРанее Кирилл выступал как главный разработчик в Альфа-Лаборатории и разрабатывал б\
+            анковские API, формируя принципы и наборы инструментов для работы с микросервисной архитектурой. Большой покло\
+            нник Groovy, Gradle, Spring и стека технологий Netflix. Постоянный резидент подкаста «Разбор Полётов». Методол\
+            огию DevOps знает не понаслышке и имеет четырехлетний опыт её применения."
     twitter: tolkv
     gitHub: lavcraft
     habr: tolkkv
@@ -1402,6 +1409,7 @@ speakers:
             \ Jigsaw, including Incubator Modules and Encapsulating JDK Internals. He has worked on Java platforms since 2000,\
             \ and currently leads the Networking group."}
     twitter: chegar999
+    gitHub: ChrisHegarty
   - id: 82
     photoFileName: 0082.jpg
     photoUpdatedAt: 2020-03-13T09:24:06.683Z[UTC]
@@ -5700,6 +5708,7 @@ speakers:
             \ for her generalizations of the widely used Paxos algorithm for solving consensus, including her work on Flexible\
             \ Paxos."}
     twitter: heidiann360
+    gitHub: heidihoward
   - id: 390
     photoFileName: 0390.jpg
     name:
@@ -5813,6 +5822,7 @@ speakers:
             \ of Computer Science at Ben-Gurion University of the Negev in 2006 and is currently an Associate Professor in\
             \ the department. Since 2014 he has served as the vice head of BGU's Cyber Security Research Center. His key research\
             \ interests are distributed and parallel computation, cyber security, and complex network analysis."}
+    twitter: DannyHendler
   - id: 399
     photoFileName: 0399.jpg
     name:
@@ -6561,6 +6571,7 @@ speakers:
             \ distributed systems on .NET. He is a Nancy committer, a Microsoft MVP, and author of the books \"Instant Nancy\
             \ Web Development\" and \"Microservices in .NET Core\"."}
     twitter: chr_horsdal
+    gitHub: horsdal
     mvp: true
   - id: 449
     photoFileName: 0449.jpg
@@ -6633,6 +6644,7 @@ speakers:
             \ value. For his work he has been awarded by Microsoft as a MVP in the Visual Studio and Development Technologies\
             \ category. His personal interests include analog electronics, security and discrete mathematics."}
     twitter: rlrhuisman
+    gitHub: RolfHuisman
     mvp: true
   - id: 454
     photoFileName: 0454.jpg
@@ -7110,6 +7122,7 @@ speakers:
             \ DotNetPortal (Czech website about .NET development), co-founder of DotNetCollege (a company which hosts developer\
             \ trainings and organizes various community events)."}
     twitter: hercegtomas
+    gitHub: tomasherceg
     mvp: true
   - id: 483
     photoFileName: 0483.jpg
@@ -7481,6 +7494,7 @@ speakers:
             \ 15 years. Currently at JetBrains leading the Developer Advocacy team. Spends as much time as he can writing\
             \ code."}
     twitter: hhariri
+    gitHub: hhariri
   - id: 509
     photoFileName: 0509.jpg
     name:
@@ -7703,6 +7717,7 @@ speakers:
             \ find Jim in the kitchen with a glass of wine, playing Xbox, hiking with his family, or banished to the garage\
             \ while trying to practice his guitar."
     twitter: aJimHolmes
+    gitHub: jimholmes
   - id: 534
     photoFileName: 0534.jpg
     name:
@@ -7756,6 +7771,7 @@ speakers:
             \ 2016, she wrote \"Python Projects for Kids\". She runs teachcode.org, working to bring coding education to underserved\
             \ communities."}
     twitter: jess_ingrass
+    gitHub: jessingrass
   - id: 537
     photoFileName: 0537.jpg
     name:
@@ -8080,6 +8096,7 @@ speakers:
             \ ideal world, the data could prove its own correctness, but in reality, we need to build trust in the systems\
             \ that we use.\r\n\r\nNisan has a B.Sc from the University of British Columbia."
     twitter: nisanharamati
+    gitHub: nisanharamati
   - id: 558
     photoFileName: 0558.jpg
     name:
@@ -8509,6 +8526,7 @@ speakers:
             Camel in Action\" books (1st and 2nd edition). \n\nClaus is very active in the open source communities, where\
             \ he helps \nothers, blogs, records videos, writes, and tweets as well."
     twitter: davsclaus
+    gitHub: davsclaus
   - id: 590
     photoFileName: 0590.jpg
     name:
@@ -10687,6 +10705,7 @@ speakers:
             \ science background and loves learning emerging web technologies. When she is not coding, chances are you’ll\
             \ find her reading a book! Claudia also loves travelling and discovering new cultures."}
     twitter: koste4
+    gitHub: claudiahdz
   - id: 742
     photoFileName: 0742.jpg
     name:
@@ -11495,6 +11514,7 @@ speakers:
             \ Hacking with macOS, Hacking with watchOS, Hacking with tvOS, Swift Coding Challenges, and more. Suffice it to\
             \ say, he quite likes Swift. And coffee. (But mostly Swift.) (And coffee.)"}
     twitter: twostraws
+    gitHub: twostraws
   - id: 802
     photoFileName: 0802.jpg
     name:
@@ -12379,11 +12399,12 @@ speakers:
       - {language: ru, text: "Дмитрий Куркин"}
     companyIds: [852]
     bio:
-      - {language: en, text: "Spent a lot of time for messengers in Mail.Ru, has taken part in Yandex.Navigator and Yandex.Auto.\
-            \ From time to time makes talks about developing for iOS."}
+      - {language: en, text: "Spent a lot of time on messengers in Mail.Ru, has taken part in Yandex.Navigator and Yandex.Auto.\
+            \ From time to time presents talks about development for iOS."}
       - {language: ru, text: "Много лет занимался мессенджерами в Mail.Ru, поучаствовал в Яндекс.Навигаторе и Яндекс.Авто\
             . Время от времени выступает с докладами про разработку под iOS."}
     twitter: sclown
+    gitHub: sclown
   - id: 863
     photoFileName: 0863.jpg
     name:
@@ -12595,6 +12616,8 @@ speakers:
             \ software better. He's also an active member of GDG Kraków where, together with his co-organisers, he ensures\
             \ the local community has direct access to the latest trends and knowledge of Google-related technology. Mateusz\
             \ is an avid Android speaker, and is particularly keen to get involved in events focusing on coding Android."}
+    twitter: mherych
+    gitHub: henieek
   - id: 878
     photoFileName: 0878.jpg
     name:
@@ -13449,6 +13472,7 @@ speakers:
             \ time and on budget. Mark is an open source contributor and author/curator of a <a href=\"https://thehecklers.com\"\
             \ target=\"_blank\">developer-focused blog</a> and an occasionally interesting Twitter account (@mkheck)."}
     twitter: MkHeck
+    gitHub: mkheck
     javaChampion: true
   - id: 955
     photoFileName: 0955.jpg
@@ -13463,6 +13487,7 @@ speakers:
             \ spent entirely too long staring at Java bytecode while maintaining the verifier and still enjoys an occasional\
             \ detour into Smalltalk development."}
     twitter: DanHeidinga
+    gitHub: DanHeidinga
   - id: 956
     photoFileName: 0956.jpg
     name:
@@ -13764,28 +13789,31 @@ speakers:
             ом времени."}
   - id: 976
     photoFileName: 0976.jpg
+    photoUpdatedAt: 2021-10-04T09:23:35.039Z[UTC]
     name:
       - {language: en, text: "Sergey Fedorov"}
       - {language: ru, text: "Сергей Фёдоров"}
     companyIds: [358]
     bio:
       - language: en
-        text: "Early engineer of the Open Connect — team that has built a Netflix CDN that delivers 13% of the world Internet\
-            \ traffic. After spending years building monitoring and data analysis systems for video traffic, Sergey now focuses\
-            \ on improving all types of Netflix Internet communications to achieve better latency, reliability and control\
-            \ over client-server communications. Strong advocate of observability approach to engineering and making data-driven\
-            \ decisions. \n\nThe author and maintainer of FAST.com — one of the most popular Internet speed tests.\n\nFinding\
-            \ actionable signals in loosely controlled environments is what keeps Sergey awake, much better than caffeine.\
-            \ This might also explain why outside of work he can be seen playing ice hockey, brewing beer, or exploring exotic\
-            \ travel destinations."
+        text: "Sergey is a hands-on engineering leader working for the Content Delivery team at Netflix. An early member of\
+            \ the team that built an Open Connect CDN delivering 13% of the world Internet traffic, he built the CDN monitoring\
+            \ system and data analysis systems for Netflix video streaming. As part of that work, he released FAST.com — one\
+            \ of the most popular Internet speed tests.\n\nToday Sergey focuses on improving interactive requests from Netflix\
+            \ applications to achieve better latency, reliability, and control over client-server communications.\n\nSergey\
+            \ is a vocal advocate of an observability approach to engineering and making data-driven decisions. Finding actionable\
+            \ signals in loosely controlled environments is what keeps him awake, much better than caffeine. This might also\
+            \ explain why outside of work Sergey can be seen playing ice hockey, brewing beer, or exploring exotic travel\
+            \ destinations."
       - language: ru
-        text: "Один из первых разработчиков в Open Connect — Netflix CDN, которая доставляет около 13% мирового Интернет-т\
-            рафика. Имея 7 лет опыта в разработке инфраструктуры, систем мониторинга и анализа данных для Netflix-видео, С\
-            ергей сейчас работает над улучшением производительности всех видов Интернет-коммуникаций в Netflix. Активный п\
-            ропагандист observability культуры, прагматичного и data-driven подхода к разработке программных систем. \n\nА\
-            втор FAST.com — одного из самых популярных сервисов по оценке скорости интернет-соединения.\n\nСергей любит ре\
-            шать новые масштабные задачи в атмосфере неопределенности и отсутствия полного контроля. И не только в работе\
-            \ - вне офиса Сергей варит собственное пиво, играет в хоккей и любит экстремальный туризм."
+        text: "Сергей один из первых разработчиков в Open Connect — Netflix CDN, которая доставляет около 13% мирового инт\
+            ернет-трафика. Построил систему мониторинга Netflix CDN, работал над анализом данных для улучшения качества ст\
+            риминга, улучшением протоколов и запустил FAST.com — один из самых популярных сервисов по оценке скорости инте\
+            рнет-соединения.\n\nCейчас Сергей работает над балансировкой, ускорением и оптимизацией интерактивных запросов\
+            \ между Netflix устройствами и облаком.\n\nАктивный пропагандист observability культуры, прагматичного и data-driven\
+            \ подхода к разработке программных систем. Сергей любит решать новые масштабные задачи в атмосфере неопределен\
+            ности и отсутствия полного контроля. И не только в работе — вне офиса Сергей варит собственное пиво, играет в\
+            \ хоккей и любит экстремальный туризм."
     habr: sfedov
   - id: 977
     photoFileName: 0977.jpg
@@ -14227,6 +14255,7 @@ speakers:
       - {language: en, text: "Elias is a core developer of the multipurpose toolkit <a href=\"https://vvvv.org/\" target=\"\
             _blank\">vvvv</a>. He's is mainly tasked with the design and specification of its new visual programming language\
             \ VL as well as building its real-time incremental compiler targeting C#."}
+    gitHub: azeno
   - id: 1008
     photoFileName: 1008.jpg
     name:
@@ -14461,6 +14490,7 @@ speakers:
             \ to PyMongo, MongoDB, bson-numpy, and a few other MongoDB Drivers but is working now on Compass, the GUI for\
             \ MongoDB. She enjoys hiking, biking, climbing, and is most happy when she can do her work outdoors."}
     twitter: annaisworking
+    gitHub: aherlihy
   - id: 1025
     photoFileName: 1025.jpg
     name:
@@ -14560,6 +14590,8 @@ speakers:
             \ Office 365, and specializes in cross platform automation. Previously he worked 11 years on the Opera browsers.\
             \ In his spare time, Mathieu creates tiny demos in JavaScript and Pico-8 and runs a Code Club with Elementary\
             \ school children."}
+    twitter: p01
+    gitHub: p01
   - id: 1032
     photoFileName: 1032.jpg
     name:
@@ -15417,6 +15449,7 @@ speakers:
             \ I/O, Java Network Programming, XML in a Nutshell, and Refactoring HTML. He's currently tech lead for Google’\
             s Cloud Tools for Eclipse."}
     twitter: elharo
+    gitHub: elharo
   - id: 1097
     photoFileName: 1097.jpg
     photoUpdatedAt: 2020-09-16T08:34:56.570Z[UTC]
@@ -15622,6 +15655,7 @@ speakers:
             \ JavaScript performance. When she's not working hard on making Node.js better on the Cloud Platform, she's probably\
             \ out riding horses."}
     twitter: fhinkel
+    gitHub: fhinkel
   - id: 1112
     photoFileName: 1112.jpg
     photoUpdatedAt: 2020-02-05T08:51:33.820Z[UTC]
@@ -15648,6 +15682,7 @@ speakers:
             \ in favour of simplicity and effectiveness.\n\nPhil is co-author of \"Modern Web Development on the JAMstack\"\
             \ (O’Reilly, 2019)."
     twitter: philhawksworth
+    gitHub: philhawksworth
   - id: 1114
     photoFileName: 1114.jpg
     photoUpdatedAt: 2020-01-15T13:28:35.320Z[UTC]
@@ -15757,6 +15792,7 @@ speakers:
             \ his mouth on Front End Happy Hour, travel all over the world, and play with his adorable dog. Brian is currently\
             \ a resident of Seattle, WA."}
     twitter: holtbt
+    gitHub: btholt
   - id: 1123
     photoFileName: 1123.jpg
     photoUpdatedAt: 2020-02-25T14:21:52.421Z[UTC]
@@ -16165,6 +16201,7 @@ speakers:
             \ and [for pop culture and tech media](http://ratchetandthegeek.com). He's written a number of books and spoken\
             \ in person to almost a half million developers worldwide."}
     twitter: shanselman
+    gitHub: shanselman
   - id: 1155
     photoFileName: 1155.jpg
     photoUpdatedAt: 2020-03-23T09:37:32.151Z[UTC]
@@ -16905,7 +16942,8 @@ speakers:
             \ are lured and then quietly strangled\"). He is co-author of two volumes in the Pattern-Oriented Software Architecture\
             \ series, editor of 97 Things Every Programmer Should Know and co-editor of 97 Things Every Java Programmer Should\
             \ Know."
-    twitter: kevlinhenney
+    twitter: KevlinHenney
+    gitHub: KevlinHenney
   - id: 1208
     photoFileName: 1208.jpg
     photoUpdatedAt: 2020-05-13T15:00:04.232Z[UTC]
@@ -17038,6 +17076,7 @@ speakers:
             \ never giving up on a problem until it's solved and enjoying this all the way, that's Jiri. Besides that, he\
             \ loves any sport and as a true Czech person, he never refuses a pleasant conversation over a pint of beer."}
     twitter: jholusa
+    gitHub: Holmistr
   - id: 1218
     photoFileName: 1218.jpg
     photoUpdatedAt: 2020-02-25T13:27:19.246Z[UTC]
@@ -17142,6 +17181,7 @@ speakers:
     companyIds: [400]
     bio:
       - {language: en, text: "Co-founder & CTO at PingCAP, a startup focus on distributed storage system and NewSQL database."}
+    twitter: dxhuang
   - id: 1225
     photoFileName: 1225.jpg
     photoUpdatedAt: 2020-05-18T08:25:27.586Z[UTC]
@@ -17288,6 +17328,7 @@ speakers:
             \ is .NET productivity and the testing experience in Visual Studio. You may recognize her from videos on .NET\
             \ Core, VS Code, and Docker. In addition to an unruly enthusiasm for technology, Kendra loves reading and camping."}
     twitter: gotheap
+    gitHub: kendrahavens
   - id: 1235
     photoFileName: 1235.jpg
     photoUpdatedAt: 2021-08-12T08:44:45.154Z[UTC]
@@ -17757,6 +17798,7 @@ speakers:
             \ Android Developer Relations Team, where he is a Developer Advocate. He works on animations, UI, performance,\
             \ ... and anything else that puts pixels on the screen. He's also been known to write and perform comedy."}
     twitter: chethaase
+    gitHub: chethaase
   - id: 1271
     photoFileName: 1271.jpg
     photoUpdatedAt: 2020-06-11T15:58:46.322Z[UTC]
@@ -18909,18 +18951,14 @@ speakers:
             но. Иногда то, что не нужно."
   - id: 1362
     photoFileName: 1362.jpg
-    photoUpdatedAt: 2020-11-05T14:04:15.906Z[UTC]
+    photoUpdatedAt: 2021-11-22T07:01:04.195Z[UTC]
     name:
       - {language: en, text: "Alexander Gazarov"}
       - {language: ru, text: "Александр Газаров"}
     companyIds: [429]
     bio:
-      - {language: en, text: "There will be a small interview with Alexander Sosorev, Head of Mobile Development at Delivery\
-            \ Club. He will tell about writing a «good» legacy code, approaches that are used in working with technical debt,\
-            \ and how a product code can drive technical debt, and vice versa."}
-      - {language: ru, text: "Застал мобильную разработку ещё во времена обычных телефонов и Java ME. Освоил Android в 2010\
-            \ году и с тех пор поучаствовал во многих проектах. Сейчас эксперт по разработке в Райффайзен, всегда в поиске\
-            \ новых подходов для применения их на благо."}
+      - {language: en, text: "Lead developer, community leader."}
+      - {language: ru, text: "Ведущий разработчик, лидер сообщества."}
   - id: 1364
     photoFileName: 1364.jpg
     photoUpdatedAt: 2021-03-01T07:48:23.455Z[UTC]
@@ -18940,20 +18978,15 @@ speakers:
     habr: anioutka
   - id: 1365
     photoFileName: 1365.jpg
-    photoUpdatedAt: 2020-10-26T15:16:50.141Z[UTC]
+    photoUpdatedAt: 2021-11-22T06:59:24.515Z[UTC]
     name:
-      - {language: en, text: "Aleksandr Sychev"}
+      - {language: en, text: "Alexander Sychev"}
       - {language: ru, text: "Александр Сычев"}
     companyIds: [665]
     bio:
-      - {language: en, text: "Aleksandr has been engaged in mobile development for more than 9 years, 5 of them as a leader\
-            \ at RAMBLER & Co and Sber. Participated in the creation of Sberbank Online, Championship, Rambler/mail, Afisha\
-            \ applications, and others. Aleksandr's responsibility includes both development and people and team management.\
-            \ He is also a teacher at the Sberbank development school. He is studying under the MBA program."}
-      - {language: ru, text: "Занимается мобильной разработкой более 9 лет, из них 5 в качестве руководителя в компаниях RAMBLER&Co\
-            \ и Сбер. Участвовал в создании приложений «Сбербанк Онлайн», «Чемпионат», «Рамблер/почта», «Афиша» и других.\
-            \ В зону ответственности входят как разработка, так и управление людьми и командой. Является преподавателем шк\
-            олы разработки Сбера. Проходит обучение по программе MBA."}
+      - {language: en, text: "Head of Mobile Development."}
+      - {language: ru, text: "Руководитель мобильной разработки."}
+    gitHub: Brain89
     habr: Brain89
   - id: 1366
     photoFileName: 1366.jpg
@@ -19432,6 +19465,7 @@ speakers:
       - {language: en, text: "Conor is a Senior Library Software Engineer at NVIDIA working on the RAPIDS team. He is extremely\
             \ passionate about programming languages, algorithms and beautiful code."}
     twitter: code_report
+    gitHub: codereport
   - id: 1398
     photoFileName: 1398.jpg
     photoUpdatedAt: 2020-09-03T10:19:17.763Z[UTC]
@@ -19993,6 +20027,7 @@ speakers:
             \ and performant processes enabling teams to keep up with the state of the art development. A vibrant member of\
             \ the tech community, he organizes multiple community events and workshops each year to give back."}
     twitter: Michael_Hladky
+    gitHub: BioPhoton
   - id: 1440
     photoFileName: 1440.jpg
     photoUpdatedAt: 2020-10-16T07:44:11.834Z[UTC]
@@ -20569,6 +20604,7 @@ speakers:
             \ and why SHOULDN'T programming be easier? He now gets to work on the AWS Cloud Development Kit to make it trivial\
             \ for thousands of developers across the world to deploy to AWS."}
     twitter: rix0rrr
+    gitHub: rix0rrr
   - id: 1480
     photoFileName: 1480.jpg
     photoUpdatedAt: 2020-09-28T09:26:04.526Z[UTC]
@@ -22083,20 +22119,19 @@ speakers:
             \ source code."
   - id: 1580
     photoFileName: 1580.jpg
-    photoUpdatedAt: 2021-03-15T07:48:15.840Z[UTC]
+    photoUpdatedAt: 2021-11-19T09:06:43.812Z[UTC]
     name:
       - {language: en, text: "Yaroslav Magin"}
       - {language: ru, text: "Ярослав Магин"}
-    companyIds: [719]
+    companyIds: [136]
     bio:
-      - {language: en, text: "Mobile lead developer in the INOSTUDIO. Works in commercial development for nearly 6 years,\
-            \ 4 of them related to mobile development. Primarily focused on native iOS-development, but 1,5 years ago discovered\
-            \ Flutter, and then started using both technologies. Has experience with different projects — from small startups\
-            \ to large products (GIS, mobile banking)."}
-      - {language: ru, text: "Ведущий мобильный разработчик в компании INOSTUDIO. В коммерческой разработке уже около 6 ле\
-            т, из них 4 года занимается мобильными приложениями. Главное направление — нативная iOS-разработка, но полтора\
-            \ года назад открыл для себя Flutter, и с тех пор пытается усидеть на двух стульях сразу. Успел поработать как\
-            \ с небольшими стартапами, так и с крупными продуктами (геоинформационные системы, банковские приложения)."}
+      - {language: en, text: "iOS developer in Delivery Club. Works in commercial development more 6 years, 4 of them related\
+            \ to mobile development. Primarily focused on native iOS-development, but discovered Flutter. Has experience with\
+            \ different projects — from small startups to large products (GIS, mobile banking)."}
+      - {language: ru, text: "iOS-разработчик в компании Delivery Club. В коммерческой разработке уже более 6 лет, из них\
+            \ 4 года занимается мобильными приложениями. Главное направление — нативная iOS-разработка, но экспериментиров\
+            ал и с Flutter. Успел поработать как с небольшими стартапами, так и с крупными продуктами (геоинформационные с\
+            истемы, банковские приложения)."}
   - id: 1581
     photoFileName: 1581.jpg
     photoUpdatedAt: 2021-03-01T12:05:24.992Z[UTC]
@@ -26170,6 +26205,7 @@ speakers:
             \ Нравится решать сложные и нестандартные задачи, которые помогают улучшать процессы в команде. Периодически [п\
             ишет статьи](https://habr.com/ru/users/lounah/posts/)"}
     twitter: lounvhx
+    gitHub: Lounah
   - id: 1854
     photoFileName: 1854.jpg
     photoUpdatedAt: 2021-08-31T08:59:25.761Z[UTC]
@@ -26266,6 +26302,7 @@ speakers:
         text: "В Андроид-разработке уже 4 год. В основном разрабатывает проекты на Kotlin, но последнее время, с развитием\
             \ КММ, частенько посматривает в сторону кроссплатформы.\r\nВсегда ищет и пробует новые подходы в разработке и\
             \ зачастую предлагает внедрять их в рабочие проекты."
+    gitHub: muroming
   - id: 1860
     photoFileName: 1860.jpg
     photoUpdatedAt: 2021-10-18T10:52:22.827Z[UTC]
@@ -27087,6 +27124,7 @@ speakers:
             тор курса Flutter mobile developer на платформе Otus.\r\n\r\nСейчас Flutter developer.\r\n\r\nВ альтернативном\
             \ будущем mobile native developer."
     twitter: dushesatwork
+    gitHub: guid-empty
   - id: 1921
     photoFileName: 1921.jpg
     photoUpdatedAt: 2021-10-21T11:14:44.946Z[UTC]
@@ -28195,8 +28233,10 @@ speakers:
       - {language: ru, text: "Дмитрий Кравцов"}
     companyIds: [689]
     bio:
-      - {language: en, text: "Developer of the Yandex video platform."}
-      - {language: ru, text: "Разработчик видеоплатформы Яндекса."}
+      - {language: en, text: "Developer of video streaming in Yandex. He knows how to make a live streaming platform from\
+            \ scratch, understands video protocols, containers and codecs. Develops in Golang, Python, and C++."}
+      - {language: ru, text: "Разработчик видеостриминга в Яндексе. Знает, как сделать платформу live-трансляций с нуля, р\
+            азбирается в видеопротоколах, контейнерах и кодеках. Разрабатывет на Golang, Python и C++."}
   - id: 1996
     photoFileName: 1996.jpg
     photoUpdatedAt: 2021-09-30T17:01:14.178Z[UTC]
@@ -28646,3 +28686,59 @@ speakers:
       - {language: ru, text: "У Антона более 15 лет опыта работы в IT, с WebRTC с 2013 года в облачном контакт-центре. Сна\
             чала в качестве разработчика, а затем — руководителя отдела разработки. В 2019 году перешел в Skyeng как менед\
             жер продукта. Сейчас возглавляет коммуникационную платформу в Skyeng."}
+  - id: 2024
+    photoFileName: 2024.jpg
+    photoUpdatedAt: 2021-11-23T09:55:06.116Z[UTC]
+    name:
+      - {language: en, text: "Maksim Kislov"}
+      - {language: ru, text: "Максим Кислов"}
+    companyIds: [65]
+    bio:
+      - {language: en, text: "Engineering Manager, Badoo"}
+    gitHub: kislovm
+    habr: kislovm
+  - id: 2025
+    photoFileName: 2025.jpg
+    photoUpdatedAt: 2021-11-23T09:59:58.881Z[UTC]
+    name:
+      - {language: en, text: "Anastasia Aseeva-Nguyen"}
+      - {language: ru, text: "Анастасия Асеева-Нгуен"}
+    companyIds: [322]
+    bio:
+      - {language: en, text: "Head of the Program Committee at TechLead Conf"}
+      - {language: ru, text: "руководитель программного комитета TechLead Conf"}
+    habr: Travieso
+  - id: 2026
+    photoFileName: 2026.jpg
+    photoUpdatedAt: 2021-11-22T06:57:44.011Z[UTC]
+    name:
+      - {language: en, text: "Vyacheslav Petrukhin"}
+      - {language: ru, text: "Вячеслав Петрухин"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "Head of iOS development (SberKidz)."}
+      - {language: ru, text: "Руководитель направления iOS-разработки (СберКидз)."}
+  - id: 2027
+    photoFileName: 2027.jpg
+    photoUpdatedAt: 2021-09-28T12:57:02.431Z[UTC]
+    name:
+      - {language: en, text: "Ivan Karev"}
+      - {language: ru, text: "Иван Карев"}
+    companyIds: [689]
+    bio:
+      - {language: en, text: "For more than 10 years in Yandex, he has engaged in the development of the Main page, Ether,\
+            \ Zen. Не likes to understand what is happening on client devices using metrics. I manage several development\
+            \ teams. For the last few years, he has been studying the work of videos, from creation to playback."}
+      - {language: ru, text: "Больше 10 лет в Яндексе, занимался разработкой главной страницы, Эфира, Дзена. Любит понимат\
+            ь с помощью метрик, что происходит на клиентских устройствах. Руководит несколькими командами разработки. Посл\
+            едние несколько лет изучает работу видео — от создания до воспроизведения."}
+    gitHub: newbfg
+  - id: 2028
+    photoFileName: 2028.jpg
+    photoUpdatedAt: 2021-11-02T15:25:33.643Z[UTC]
+    name:
+      - {language: en, text: "Matvey Sopronenkov"}
+      - {language: ru, text: "Матвей Сопроненков"}
+    companyIds: [889]
+    bio:
+      - {language: en, text: "CEO at facecast.net."}
