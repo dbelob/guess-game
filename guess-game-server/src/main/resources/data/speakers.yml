@@ -10265,16 +10265,14 @@ speakers:
             ентре."}
   - id: 710
     photoFileName: 0710.jpg
-    photoUpdatedAt: 2018-11-08T14:04:05.839Z[UTC]
+    photoUpdatedAt: 2021-10-25T15:36:24.474Z[UTC]
     name:
       - {language: en, text: "Dmitry Makhnev"}
       - {language: ru, text: "Дмитрий Махнёв"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Helps to do jetbrains.com. Teaches a little about how to make a frontend. Likes good talks,\
-            \ tests, and painting (impressionism ++)."}
-      - {language: ru, text: "Помогает делать jetbrains.com. Немножко учит делать frontend. Любит хорошие доклады, тесты и\
-            \ живопись (импрессионизм++)."}
+      - {language: en, text: "Helps to do jetbrains.com. Likes good talks, tests, and painting (impressionism ++)."}
+      - {language: ru, text: "Помогает делать jetbrains.com. Любит хорошие доклады, тесты и живопись (импрессионизм++)."}
     twitter: DmitryMakhnev
     gitHub: DmitryMakhnev
     habr: DmitryMakhnev
