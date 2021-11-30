@@ -28494,18 +28494,18 @@ speakers:
             дное время ходит в походы по всему миру."}
   - id: 2011
     photoFileName: 2011.jpg
-    photoUpdatedAt: 2021-11-17T11:56:07.167Z[UTC]
+    photoUpdatedAt: 2021-11-29T04:50:34.240Z[UTC]
     name:
       - {language: en, text: "Gleb Efimov"}
       - {language: ru, text: "Глеб Ефимов"}
     companyIds: [886]
     bio:
-      - {language: en, text: "He has been writing mobile applications for 8 years, mostly for iOS. During this time he has\
+      - {language: en, text: "Gleb has been writing mobile applications for 8 years, mostly for iOS. During this time he has\
             \ managed to take part in the development of cross-platform frameworks, bank applications and a fitness-on-demand\
             \ service. Now he coordinates cross-functional teams and continues to work on the iOS client."}
-      - {language: ru, text: "Пишет мобильные приложения уже 8 лет, главным образом под iOS. За это время успел принять уч\
-            астие в разработке кроссплатформенных фреймворков, банковских приложений и fitness-on-demand сервиса. Сейчас к\
-            оординирует кроссфункциональные команды и продолжает работать над iOS-клиентом."}
+      - {language: ru, text: "Глеб пишет мобильные приложения уже 8 лет, главным образом под iOS. За это время успел приня\
+            ть участие в разработке кроссплатформенных фреймворков, банковских приложений и сервиса fitness-on-demand. Сей\
+            час в Tango координирует кроссфункциональные команды и продолжает работать над iOS-клиентом."}
   - id: 2012
     photoFileName: 2012.jpg
     photoUpdatedAt: 2021-11-17T11:59:19.311Z[UTC]
@@ -28742,3 +28742,20 @@ speakers:
     companyIds: [889]
     bio:
       - {language: en, text: "CEO at facecast.net."}
+  - id: 2029
+    photoFileName: 2029.jpg
+    photoUpdatedAt: 2021-11-29T07:43:48.680Z[UTC]
+    name:
+      - {language: en, text: "Daniil Shvets"}
+      - {language: ru, text: "Даниил Швец"}
+    companyIds: [886]
+    bio:
+      - {language: en, text: "Daniil has been in IT for over five years, before that he worked in investment banking. Bachelor\
+            \ of Science in Business Administration and Management, Master of Science in Data Science and Business Analytics,\
+            \ winner of awards in business management, winner and awardee of Olympiads in Mathematics and Economics, and the\
+            \ coach of teams in Mathematics. In 2017, he fell in love with Data Science, now he leads the data scientist team\
+            \ at Tango and lives in Tel Aviv."}
+      - {language: ru, text: "Даниил в ИТ больше пяти лет, до этого работал в инвестиционном банкинге. Первое образование\
+            \ экономическое. Обладатель наград в бизнес-менеджменте, победитель и призер олимпиад по математике и экономик\
+            е, тренер команд по математике. В 2017 году влюбился в Data Science, теперь руководит командой дата-сайентисто\
+            в в Tango. Живет в Тель-Авиве."}
