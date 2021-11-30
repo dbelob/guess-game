@@ -4534,6 +4534,7 @@ speakers:
       - {language: en, text: "I’m a quality maniac with passion about Java, Groovy, JVM and fancy tools that help to test\
             \ code in smart, fluent and expressive way. I love bringing feedback loops to the micro-level. my main area of\
             \ interest is Agile Testing."}
+    twitter: michal_kordas
     gitHub: mkordas
   - id: 310
     photoFileName: 0310.jpg
@@ -4837,6 +4838,7 @@ speakers:
             \ is also an innovative presenter. \n\nHe is an active member of C++ standardization committee for almost 20 years\
             \ now."
     twitter: NicoJosuttis
+    gitHub: josuttis
   - id: 331
     photoFileName: 0331.jpg
     photoUpdatedAt: 2020-04-28T12:51:17.639Z[UTC]
@@ -4962,6 +4964,7 @@ speakers:
             \ modern tools like static analysis or instrumentation. Viktor is from Sofia, Bulgaria and his profession is his\
             \ hobby. Personal website: http://onqtam.com/"}
     twitter: KirilovVik
+    gitHub: onqtam
   - id: 339
     photoFileName: 0339.jpg
     name:
@@ -5694,6 +5697,7 @@ speakers:
             \ engineer and entrepreneur at Internet companies including LinkedIn and Rapportive, where he worked on large-scale\
             \ data infrastructure."}
     twitter: martinkl
+    gitHub: ept
   - id: 389
     photoFileName: 0389.jpg
     photoUpdatedAt: 2020-02-17T11:35:25.864Z[UTC]
@@ -5969,6 +5973,7 @@ speakers:
             \ for Visual Studio and Development Technologies 13 times. In his spare time, Alex likes to participate in all\
             \ kinds of sport and loves playing and programming new and retro video games."}
     twitter: alexthissen
+    gitHub: alexthissen
     mvp: true
   - id: 409
     photoFileName: 0409.jpg
@@ -5995,6 +6000,7 @@ speakers:
             \ in general. Much of his spare time in the last years was devoted to his very own open source projects. He is\
             \ working at JetBrains as developer advocate for the .NET department."}
     twitter: matkoch87
+    gitHub: matkoch
   - id: 411
     photoFileName: 0411.jpg
     photoUpdatedAt: 2019-03-14T08:21:27.594Z[UTC]
@@ -6086,6 +6092,7 @@ speakers:
             ик Microsoft Bug Bounty Programs, соорганизатор сообщества DotNet.ru, Microsoft MVP. Профессиональные интересы\
             : безопасность приложений, статический и динамический анализ кода, Information Flow Security."}
     twitter: yu5k3
+    gitHub: yuske
     habr: yu5k3
     mvp: true
   - id: 416
@@ -6103,6 +6110,7 @@ speakers:
             \ target=\"_blank\">https://dotnetos.org</a> initiative and [asyncexpert.com](https://asyncexpert.com/) course\
             \ co-author."}
     twitter: konradkokosa
+    gitHub: kkokosa
     mvp: true
   - id: 417
     photoFileName: 0417.jpg
@@ -6142,6 +6150,7 @@ speakers:
             \ up with the latest technologies. In 2011 Nico co-founded MADN, a user group focusing on modern application development\
             \ within the Microsoft stack."}
     twitter: nicovermeir
+    gitHub: NicoVermeir
     mvp: true
   - id: 420
     photoFileName: 0420.jpg
@@ -6227,6 +6236,7 @@ speakers:
             зовать F#-митап в Эйндховене и запустить конференцию ServerlessDays Amsterdam. \n\nDotNext — отличный повод ве\
             рнуться в Питер, поэтому Михаил ужасно рад!"
     twitter: MikhailShilkov
+    gitHub: mikhailshilkov
     mvp: true
   - id: 425
     photoFileName: 0425.jpg
@@ -6298,6 +6308,7 @@ speakers:
             \ synthesis, efficient usage of managed languages, documentation and code generation, language design, building\
             \ workflows."
     twitter: xoofx
+    gitHub: xoofx
     mvp: true
   - id: 430
     photoFileName: 0430.jpg
@@ -6313,6 +6324,7 @@ speakers:
             \ involves himself in speaking, providing training sessions and writing [blogs](https://blog.verslu.is) or articles\
             \ in his free time. Twitter: @jfversluis | Website: https://gerald.verslu.is"
     twitter: jfversluis
+    gitHub: jfversluis
     mvp: true
   - id: 431
     photoFileName: 0431.jpg
@@ -6424,6 +6436,7 @@ speakers:
             \ tools for developers. He develops frameworks and talks on software architectures, DDD, microservices, multi-tenancy\
             \ and modularity."}
     twitter: hibrahimkalkan
+    gitHub: hikalkan
   - id: 439
     photoFileName: 0439.jpg
     name:
@@ -6689,6 +6702,7 @@ speakers:
             \ He is a practiced tea drinker and snowboarder. He's often spotted coding in launderettes throughout Western\
             \ Europe."}
     twitter: adamralph
+    gitHub: adamralph
     mvp: true
   - id: 457
     photoFileName: 0457.jpg
@@ -6708,6 +6722,7 @@ speakers:
             \ he finds especially interesting. Furthermore, Eran is the founder of Azure Israel — the largest Azure related\
             \ Meetup in Israel."
     twitter: eranstiller
+    gitHub: estiller
     mvp: true
   - id: 458
     photoFileName: 0458.jpg
@@ -6721,6 +6736,7 @@ speakers:
       - {language: ru, text: "Solution architect в EPAM Systems, автор F# Weekly, Microsoft F# MVP, open source энтузиаст\
             \ — автор проектов Stanford.NLP.NET, OpenNLP.NET, SwaggerProvider и некоторых других fsprojects."}
     twitter: sergey_tihon
+    gitHub: sergey-tihon
     mvp: true
   - id: 459
     photoFileName: 0459.jpg
@@ -7054,6 +7070,7 @@ speakers:
             ет его и разворачивает приложения в Linux.\nMicrosoft MVP в области Visual Studio and Development Technologies.\
             \ Участвует в нескольких Open Source проектах и организует конференцию CodeFest в Новосибирске."
     twitter: denisivanov
+    gitHub: denisivan0v
     mvp: true
   - id: 479
     photoFileName: 0479.jpg
@@ -7135,6 +7152,7 @@ speakers:
             \ specializes in ASP.NET Web Stack, modern web technologies and is experienced in delivering robust web solutions.\
             \ He worked on projects in many corners of the world (Canada, Switzerland, Finland, Poland, Scotland)."}
     twitter: filip_woj
+    gitHub: filipw
     mvp: true
   - id: 484
     photoFileName: 0484.jpg
@@ -7286,6 +7304,7 @@ speakers:
             \ Software Architect for PBS and Vice President of Information Technology at Citibank, and he was on the teaching\
             \ staff at Brandeis University."}
     twitter: jesseliberty
+    gitHub: JesseLiberty
     mvp: true
   - id: 494
     photoFileName: 0494.jpg
@@ -8178,6 +8197,7 @@ speakers:
             \ he became immune to silver bullets and started valuing human interactions. Likes to learn new ways of thinking\
             \ through different languages, but prefers modern Java in professional software development."}
     twitter: pkubowicz
+    gitHub: pkubowicz
   - id: 564
     photoFileName: 0564.jpg
     photoUpdatedAt: 2021-03-04T13:57:25.005Z[UTC]
@@ -9049,6 +9069,7 @@ speakers:
             \ help other engineers by mentoring, motivating and inspiring them to think out of the box, learn, and apply more\
             \ efficient tools and solutions."
     twitter: TesterFromRiga
+    gitHub: andrejska
   - id: 624
     photoFileName: 0624.jpg
     name:
@@ -9828,6 +9849,7 @@ speakers:
             \ as a developer for 13 years, for companies such as Spotify, Absolute Vodka and Blackberry. His record for solving\
             \ the Rubik's Cube is 88 seconds but he has never been able to do a single correct time estimation in his life."}
     twitter: mpjme
+    gitHub: mpj
   - id: 679
     photoFileName: 0679.jpg
     name:
@@ -10265,16 +10287,14 @@ speakers:
             ентре."}
   - id: 710
     photoFileName: 0710.jpg
-    photoUpdatedAt: 2018-11-08T14:04:05.839Z[UTC]
+    photoUpdatedAt: 2021-10-25T15:36:24.474Z[UTC]
     name:
       - {language: en, text: "Dmitry Makhnev"}
       - {language: ru, text: "Дмитрий Махнёв"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Helps to do jetbrains.com. Teaches a little about how to make a frontend. Likes good talks,\
-            \ tests, and painting (impressionism ++)."}
-      - {language: ru, text: "Помогает делать jetbrains.com. Немножко учит делать frontend. Любит хорошие доклады, тесты и\
-            \ живопись (импрессионизм++)."}
+      - {language: en, text: "Helps to do jetbrains.com. Likes good talks, tests, and painting (impressionism ++)."}
+      - {language: ru, text: "Помогает делать jetbrains.com. Любит хорошие доклады, тесты и живопись (импрессионизм++)."}
     twitter: DmitryMakhnev
     gitHub: DmitryMakhnev
     habr: DmitryMakhnev
@@ -10939,6 +10959,7 @@ speakers:
             \ 140 bytes. As an active speaker at conferences all over the world, he loves to share his latest insights with\
             \ the community."}
     twitter: aemkei
+    gitHub: aemkei
   - id: 758
     photoFileName: 0758.jpg
     name:
@@ -11964,6 +11985,7 @@ speakers:
             \ AR development. Yuliya is actively involved at C4Q — non-profit organization, which fosters the tech community\
             \ in NY."}
     twitter: YuliyaKaleda
+    gitHub: Yuliya-Kaleda
   - id: 832
     photoFileName: 0832.jpg
     name:
@@ -12445,6 +12467,7 @@ speakers:
             \ in the spare time, he creates new projects and contributes himself back to OSS community. The author of Natalie,\
             \ CryptoSwift and ObjectivePGP. Trying to bring privacy to the masses with PrivacyApp.io. Infrequent blogger."}
     twitter: krzyzanowskim
+    gitHub: krzyzanowskim
   - id: 866
     photoFileName: 0866.jpg
     name:
@@ -13633,6 +13656,7 @@ speakers:
             \ He also tends to play with electronics and hardware. When sharing his knowledge, Jacek always keeps in mind\
             \ that a working example is worth a thousand words."}
     twitter: rucek
+    gitHub: rucek
   - id: 967
     photoFileName: 0967.jpg
     photoUpdatedAt: 2020-06-29T07:06:55.190Z[UTC]
@@ -14218,6 +14242,7 @@ speakers:
       - {language: en, text: "Joreg is co-founder of <a href=\"https://vvvv.org\" target=\"_blank\">vvvv</a> and core-developer\
             \ of the multipurpose toolkit vvvv. Besides he teaches, works for money and is mainly concerned with the integration\
             \ of sound, image and computer code."}
+    gitHub: joreg
   - id: 1005
     photoFileName: 1005.jpg
     photoUpdatedAt: 2020-01-15T14:24:19.083Z[UTC]
@@ -15217,6 +15242,7 @@ speakers:
             \ Bundler called Codex, Netflix's NodeJS PaaS called NodeQuark. \n\nHe also maintains and is a core contributor\
             \ to <a href=\"http://restify.com\" target=\"_blank\">Restify</a>."
     twitter: rajatkumar
+    gitHub: rajatkumar
   - id: 1080
     photoFileName: 1080.jpg
     photoUpdatedAt: 2020-02-03T07:54:26.183Z[UTC]
@@ -15830,6 +15856,7 @@ speakers:
             \ He is also a Puppeteer and Playwright contributor. Passionate about C#, the web, remote work, and the open source\
             \ community."}
     twitter: hardkoded
+    gitHub: kblok
   - id: 1126
     photoFileName: 1126.jpg
     name:
@@ -15904,6 +15931,8 @@ speakers:
             \ main priorities are performance and design issues in search engines, file systems, storage systems, data bases\
             \ with single or multiple nodes. Danila also has side projects in C++ library and compiler teams at Google helping\
             \ improving the performance of main libraries."}
+    twitter: Danlark1
+    gitHub: danlark1
   - id: 1131
     photoFileName: 1131.jpg
     photoUpdatedAt: 2021-11-08T08:23:40.037Z[UTC]
@@ -16892,6 +16921,7 @@ speakers:
             \ of Delaware, Jayanti discovered a different calling: computer science, with an emphasis in concurrent algorithms.\
             \ For over two decades, he has worked at the College, teaching nine different undergraduate courses. Currently\
             \ Jayanti is teaching Computer Science 1, \"Introduction to Programming and Computing.\""}
+    twitter: prasadjayanti1
   - id: 1204
     photoFileName: 1204.jpg
     photoUpdatedAt: 2020-01-27T13:11:19.611Z[UTC]
@@ -16902,6 +16932,8 @@ speakers:
       - {language: en, text: "Professor of electrical engineering and an author of more than 180 articles which gave her an\
             \ h-index of 38 and were cited more than 5,000 times. Some of them were published in such journals as Journal\
             \ of Parallel and Distributed Computing and SIAM Journal on Computing."}
+    twitter: IditKeidar
+    gitHub: iditkeidar
   - id: 1205
     photoFileName: 1205.jpg
     photoUpdatedAt: 2020-01-27T13:31:48.546Z[UTC]
@@ -17008,6 +17040,7 @@ speakers:
             \ Graeme is a member of the Java Champions and 2018 was awarded the Groundbreaker award by [Oracle](https://developer.oracle.com/groundbreakers/)\
             \ for his work on open source."}
     twitter: graemerocher
+    gitHub: graemerocher
     javaChampion: true
   - id: 1213
     photoFileName: 1213.jpg
@@ -18479,6 +18512,8 @@ speakers:
             ям, DevOps и профессиональной разработке программного обеспечения.\n\nЯнага считает себя мастером программного\
             \ обеспечения и убежден в том, что все мы можем создать лучший мир с лучшим ПО. Цель его жизни — помочь разраб\
             отчикам доставить лучшее ПО быстро и безопасно, и это даже можно назвать работой!"
+    twitter: yanaga
+    gitHub: yanaga
     javaChampion: true
   - id: 1330
     photoFileName: 1330.jpg
@@ -19635,6 +19670,7 @@ speakers:
             \ courses anywhere in the world, either in person or via remote teaching technologies. He is the author of many\
             \ courses, including Java Specialist Master, Design Patterns, and Concurrency Specialist Courses."
     twitter: heinzkabutz
+    gitHub: kabutz
     javaChampion: true
   - id: 1409
     photoFileName: 1409.jpg
@@ -19814,6 +19850,7 @@ speakers:
             \ performance, dependency-management, and the support for JVM languages. Jendrik is working for Gradle, which\
             \ has been a distributed company since ever, from his home in Hamburg, Germany."}
     twitter: jeoj
+    gitHub: jjohannes
   - id: 1422
     photoFileName: 1422.jpg
     photoUpdatedAt: 2020-11-20T15:16:51.472Z[UTC]
@@ -20320,6 +20357,7 @@ speakers:
             \ based solutions. He is an active contributor to Kubernetes-based open source projects such as Rancher, HobbyFarm,\
             \ and Submariner."}
     twitter: badcodeguy
+    gitHub: Oats87
   - id: 1459
     photoFileName: 1459.jpg
     photoUpdatedAt: 2020-10-29T14:04:08.971Z[UTC]
@@ -20454,6 +20492,8 @@ speakers:
             \ in Go,\" a book that examines the best patterns and practices for building microservices with the Go programming\
             \ language. When not working, you can find Nic contributing to the open source developer tool Shipyard and teaching\
             \ application development on YouTube."}
+    twitter: sheriffjackson
+    gitHub: nicholasjackson
   - id: 1469
     photoFileName: 1469.jpg
     photoUpdatedAt: 2020-10-07T09:22:50.631Z[UTC]
@@ -23044,9 +23084,9 @@ speakers:
             \ Company's ecosystem. Promotes and popularizes ideas of observability among product teams.\nCertified Product\
             \ Owner with over 10 years of experience in development."
       - language: ru
-        text: "Руководитель проектов в МТС. Занимается развитием технологической платформы, обеспечивающей наблюдаемость э\
-            косистемы компании. Продвигает идеи наблюдаемости среди продуктовых команд.\r\n\r\nСертифицированный владелец\
-            \ продукта с опытом в разработке более 10 лет."
+        text: "Руководитель проектов по разработке в МТС. Занимается развитием технологической платформы, обеспечивающей н\
+            аблюдаемость экосистемы Компании. Продвигает и популяризирует идеи наблюдаемости среди продуктовых команд. \nС\
+            ертифицированный владелец продукта с опытом в разработке более 10 лет."
     habr: bocharovf
   - id: 1642
     photoFileName: 1642.jpg
@@ -28494,18 +28534,18 @@ speakers:
             дное время ходит в походы по всему миру."}
   - id: 2011
     photoFileName: 2011.jpg
-    photoUpdatedAt: 2021-11-17T11:56:07.167Z[UTC]
+    photoUpdatedAt: 2021-11-29T04:50:34.240Z[UTC]
     name:
       - {language: en, text: "Gleb Efimov"}
       - {language: ru, text: "Глеб Ефимов"}
     companyIds: [886]
     bio:
-      - {language: en, text: "He has been writing mobile applications for 8 years, mostly for iOS. During this time he has\
+      - {language: en, text: "Gleb has been writing mobile applications for 8 years, mostly for iOS. During this time he has\
             \ managed to take part in the development of cross-platform frameworks, bank applications and a fitness-on-demand\
             \ service. Now he coordinates cross-functional teams and continues to work on the iOS client."}
-      - {language: ru, text: "Пишет мобильные приложения уже 8 лет, главным образом под iOS. За это время успел принять уч\
-            астие в разработке кроссплатформенных фреймворков, банковских приложений и fitness-on-demand сервиса. Сейчас к\
-            оординирует кроссфункциональные команды и продолжает работать над iOS-клиентом."}
+      - {language: ru, text: "Глеб пишет мобильные приложения уже 8 лет, главным образом под iOS. За это время успел приня\
+            ть участие в разработке кроссплатформенных фреймворков, банковских приложений и сервиса fitness-on-demand. Сей\
+            час в Tango координирует кроссфункциональные команды и продолжает работать над iOS-клиентом."}
   - id: 2012
     photoFileName: 2012.jpg
     photoUpdatedAt: 2021-11-17T11:59:19.311Z[UTC]
@@ -28742,3 +28782,20 @@ speakers:
     companyIds: [889]
     bio:
       - {language: en, text: "CEO at facecast.net."}
+  - id: 2029
+    photoFileName: 2029.jpg
+    photoUpdatedAt: 2021-11-29T07:43:48.680Z[UTC]
+    name:
+      - {language: en, text: "Daniil Shvets"}
+      - {language: ru, text: "Даниил Швец"}
+    companyIds: [886]
+    bio:
+      - {language: en, text: "Daniil has been in IT for over five years, before that he worked in investment banking. Bachelor\
+            \ of Science in Business Administration and Management, Master of Science in Data Science and Business Analytics,\
+            \ winner of awards in business management, winner and awardee of Olympiads in Mathematics and Economics, and the\
+            \ coach of teams in Mathematics. In 2017, he fell in love with Data Science, now he leads the data scientist team\
+            \ at Tango and lives in Tel Aviv."}
+      - {language: ru, text: "Даниил в ИТ больше пяти лет, до этого работал в инвестиционном банкинге. Первое образование\
+            \ экономическое. Обладатель наград в бизнес-менеджменте, победитель и призер олимпиад по математике и экономик\
+            е, тренер команд по математике. В 2017 году влюбился в Data Science, теперь руководит командой дата-сайентисто\
+            в в Tango. Живет в Тель-Авиве."}

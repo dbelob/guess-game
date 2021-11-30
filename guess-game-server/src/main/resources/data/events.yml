@@ -839,7 +839,7 @@ events:
     siteLink:
       - {language: en, text: "https://jpoint.ru/en/"}
       - {language: ru, text: "https://jpoint.ru/"}
-    youtubeLink: https://live.jugru.org/?p=sch100087
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b-weU5FB9NslU-dmOJnsLW2
     placeId: 24
     talkIds: [2987, 2988, 2989, 2990, 3101, 3023, 2991, 2992, 2993, 3102, 3103, 2995, 2996, 2997, 2998, 3024, 3025, 2999,
               3000, 3001, 3002, 3026, 3003, 3004, 3005, 3006, 3027, 3028, 3007, 3008, 3009, 3018, 3010, 3011, 3012, 3013, 3104,
@@ -1119,7 +1119,7 @@ events:
     siteLink:
       - {language: en, text: "https://mobius-piter.ru/en/"}
       - {language: ru, text: "https://mobius-piter.ru/"}
-    youtubeLink: https://live.jugru.org/?p=sch100086
+    youtubeLink: https://www.youtube.com/playlist?list=PLb1A91j1236pTGG5WIbozH3B3nyhYCyjN
     placeId: 24
     talkIds: [2956, 2957, 2958, 2959, 3094, 3095, 2960, 2961, 2962, 2963, 3097, 2964, 2965, 2966, 2967, 3096, 3098, 2968,
               2969, 2970, 2971, 2972, 2973, 2974, 2975, 3099, 3100, 2976, 2977, 2978, 2986, 2980, 2981, 2982, 2983, 3114, 2984,
@@ -2522,5 +2522,5 @@ events:
       - {language: en, text: "https://vtconf.com/"}
     youtubeLink: https://live.jugru.org/videotech
     placeId: 24
-    talkIds: [3543, 3562, 3581, 3619, 3588, 3582, 3564, 3584, 3611, 3585, 3561, 3586, 3545, 3587, 3612, 3613, 3620, 3614,
-              3583, 3548, 3549, 3589, 3550, 3621, 3590, 3546, 3591, 3552, 3615]
+    talkIds: [3543, 3562, 3581, 3619, 3588, 3582, 3564, 3584, 3611, 3585, 3561, 3586, 3545, 3622, 3614, 3612, 3587, 3620,
+              3613, 3583, 3548, 3549, 3589, 3550, 3621, 3623, 3590, 3546, 3591, 3552, 3615]
