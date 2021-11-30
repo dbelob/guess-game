@@ -104,7 +104,7 @@
       <label for="quantity" class="col-sm-2">{{'start.quantityLabel' | translate}}</label>
       <div class="col-sm-10">
         <p-dropdown id="quantity" [options]="quantitySelectItems" [(ngModel)]="selectedQuantity" name="quantity"
-                    styleClass="start-dropdown">
+                    styleClass="start-dropdown" [autoDisplayFirst]="false">
         </p-dropdown>
       </div>
     </div>
