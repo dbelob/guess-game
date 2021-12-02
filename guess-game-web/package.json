@@ -30,14 +30,14 @@
     "get-video-id": "^3.4.3",
     "ngx-markdown": "^13.0.0",
     "primeicons": "^5.0.0",
-    "primeng": "^13.0.0",
+    "primeng": "^13.0.1",
     "rxjs": "^7.4.0",
     "tslib": "^2.3.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.0.3",
-    "@angular/cli": "^13.0.3",
+    "@angular/cli": "^13.0.4",
     "@angular/compiler-cli": "^13.0.2",
     "@angular/language-service": "^13.0.2",
     "@types/jasmine": "^3.10.2",
