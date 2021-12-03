@@ -25,7 +25,7 @@ https://jugspeakers.info
 
 ### Offline
 
-1. Install [Java SE 11](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or higher (*JRE* or *JDK*)
+1. Install [Java SE 17](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or higher (*JRE* or *JDK*)
 
 1. Extract files from ZIP, for example:
 
@@ -54,9 +54,9 @@ https://jugspeakers.info
 
 ## Compilation
 
-1. Install [Java SE 11](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or higher (*JDK*)
+1. Install [Java SE 17](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or higher (*JDK*)
 
-1. Install [Apache Maven 3.5.0](https://maven.apache.org/download.cgi) or higher
+1. Install [Apache Maven 3.8.0](https://maven.apache.org/download.cgi) or higher
 
 1. From the command line with *Maven* (in the root directory):
 
