@@ -13,8 +13,8 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DisplayName("EventTypeDao interface tests")
-class EventTypeDaoTest {
+@DisplayName("EventTypeDaoImpl interface tests")
+class EventTypeDaoImplTest {
     private static Event event2;
     private static Event event3;
 
