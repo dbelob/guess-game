@@ -4,7 +4,6 @@ import guess.domain.Language;
 import guess.service.LocaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -12,7 +11,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Locale controller.
  */
-@Controller
+@RestController
 @RequestMapping("/api/locale")
 public class LocaleController {
     private final LocaleService localeService;
@@ -23,7 +22,6 @@ public class LocaleController {
     }
 
     @GetMapping("/language")
-    @ResponseBody
     public Language getLanguage(HttpSession httpSession) {
         return localeService.getLanguage(httpSession);
     }

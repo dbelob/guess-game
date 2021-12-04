@@ -7,7 +7,6 @@ import guess.service.CompanyService;
 import guess.service.LocaleService;
 import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -18,7 +17,7 @@ import java.util.stream.Collectors;
 /**
  * Company controller.
  */
-@Controller
+@RestController
 @RequestMapping("/api/company")
 public class CompanyController {
     private final CompanyService companyService;
@@ -31,7 +30,6 @@ public class CompanyController {
     }
 
     @GetMapping("/first-letters-companies")
-    @ResponseBody
     public List<CompanyDto> getCompaniesByFirstLetters(@RequestParam String firstLetters, HttpSession httpSession) {
         var language = localeService.getLanguage(httpSession);
         List<Company> companies = companyService.getCompaniesByFirstLetters(firstLetters, language);
@@ -42,7 +40,6 @@ public class CompanyController {
     }
 
     @PostMapping("/selected-companies")
-    @ResponseBody
     public List<CompanyDto> getSelectedCompanies(@RequestBody SelectedEntitiesDto selectedEntities, HttpSession httpSession) {
         var language = localeService.getLanguage(httpSession);
         List<Company> companies = companyService.getCompaniesByIds(selectedEntities.getIds());
@@ -53,7 +50,6 @@ public class CompanyController {
     }
 
     @GetMapping("/first-letters-company-names")
-    @ResponseBody
     public List<String> getCompanyNamesByFirstLetters(@RequestParam String firstLetters, HttpSession httpSession) {
         var language = localeService.getLanguage(httpSession);
         List<Company> companies = companyService.getCompaniesByFirstLetters(firstLetters, language);

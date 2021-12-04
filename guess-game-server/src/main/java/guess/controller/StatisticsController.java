@@ -8,7 +8,6 @@ import guess.service.LocaleService;
 import guess.service.OlapService;
 import guess.service.StatisticsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -19,7 +18,7 @@ import java.util.List;
 /**
  * Statistics controller.
  */
-@Controller
+@RestController
 @RequestMapping("/api/statistics")
 public class StatisticsController {
     private final StatisticsService statisticsService;
@@ -34,7 +33,6 @@ public class StatisticsController {
     }
 
     @GetMapping("/event-type-statistics")
-    @ResponseBody
     public EventTypeStatisticsDto getEventTypeStatistics(@RequestParam boolean conferences, @RequestParam boolean meetups,
                                                          @RequestParam(required = false) Long organizerId, HttpSession httpSession) {
         var eventTypeStatistics = statisticsService.getEventTypeStatistics(conferences, meetups, organizerId);
@@ -50,7 +48,6 @@ public class StatisticsController {
     }
 
     @GetMapping("/event-statistics")
-    @ResponseBody
     public EventStatisticsDto getEventStatistics(@RequestParam(required = false) Long organizerId,
                                                  @RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
         var eventStatistics = statisticsService.getEventStatistics(organizerId, eventTypeId);
@@ -63,7 +60,6 @@ public class StatisticsController {
     }
 
     @GetMapping("/speaker-statistics")
-    @ResponseBody
     public SpeakerStatisticsDto getSpeakerStatistics(@RequestParam boolean conferences, @RequestParam boolean meetups,
                                                      @RequestParam(required = false) Long organizerId,
                                                      @RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
@@ -80,7 +76,6 @@ public class StatisticsController {
     }
 
     @GetMapping("/company-statistics")
-    @ResponseBody
     public CompanyStatisticsDto getCompanyStatistics(@RequestParam boolean conferences, @RequestParam boolean meetups,
                                                      @RequestParam(required = false) Long organizerId,
                                                      @RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
@@ -97,13 +92,11 @@ public class StatisticsController {
     }
 
     @GetMapping("/cube-types")
-    @ResponseBody
     public List<CubeType> getCubeTypes() {
         return List.of(CubeType.values());
     }
 
     @GetMapping("/measure-types")
-    @ResponseBody
     public List<MeasureType> getMeasureTypes(@RequestParam String cubeType) {
         if (cubeType.isEmpty()) {
             return Collections.emptyList();
@@ -113,7 +106,6 @@ public class StatisticsController {
     }
 
     @PostMapping("/olap-statistics")
-    @ResponseBody
     public OlapStatisticsDto getOlapStatistics(@RequestBody OlapParametersDto olapParameters, HttpSession httpSession) {
         var olapStatistics = olapService.getOlapStatistics(olapParameters);
         var language = localeService.getLanguage(httpSession);
@@ -145,7 +137,6 @@ public class StatisticsController {
     }
 
     @PostMapping("/olap-event-type-statistics")
-    @ResponseBody
     public OlapEntityStatisticsDto<Integer, OlapEventTypeMetricsDto> getOlapEventTypeStatistics(
             @RequestBody OlapEventTypeParametersDto olapParameters, HttpSession httpSession) {
         var eventTypeStatistics = olapService.getOlapEventTypeStatistics(olapParameters);
@@ -162,7 +153,6 @@ public class StatisticsController {
     }
 
     @PostMapping("/olap-speaker-statistics")
-    @ResponseBody
     public OlapEntityStatisticsDto<Integer, OlapSpeakerMetricsDto> getOlapSpeakerStatistics(
             @RequestBody OlapSpeakerParametersDto olapParameters, HttpSession httpSession) {
         var speakerStatistics = olapService.getOlapSpeakerStatistics(olapParameters);
@@ -178,7 +168,6 @@ public class StatisticsController {
     }
 
     @PostMapping("/olap-city-statistics")
-    @ResponseBody
     public OlapEntityStatisticsDto<Integer, OlapCityMetricsDto> getOlapCityStatistics(
             @RequestBody OlapCityParametersDto olapParameters, HttpSession httpSession) {
         var cityStatistics = olapService.getOlapCityStatistics(olapParameters);

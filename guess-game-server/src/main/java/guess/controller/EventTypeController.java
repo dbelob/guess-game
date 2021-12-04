@@ -10,7 +10,6 @@ import guess.service.EventTypeService;
 import guess.service.LocaleService;
 import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -20,7 +19,7 @@ import java.util.List;
 /**
  * Event type controller.
  */
-@Controller
+@RestController
 @RequestMapping("/api/event-type")
 public class EventTypeController {
     private final EventTypeService eventTypeService;
@@ -33,7 +32,6 @@ public class EventTypeController {
     }
 
     @GetMapping("/event-types")
-    @ResponseBody
     public List<EventTypeBriefDto> getEventTypes(@RequestParam boolean conferences, @RequestParam boolean meetups,
                                                  @RequestParam(required = false) Long organizerId, HttpSession httpSession) {
         var language = localeService.getLanguage(httpSession);
@@ -43,7 +41,6 @@ public class EventTypeController {
     }
 
     @GetMapping("/filter-event-types")
-    @ResponseBody
     public List<EventTypeSuperBriefDto> getFilterEventTypes(@RequestParam boolean conferences, @RequestParam boolean meetups,
                                                             @RequestParam(required = false) Long organizerId, HttpSession httpSession) {
         var language = localeService.getLanguage(httpSession);
@@ -64,7 +61,6 @@ public class EventTypeController {
     }
 
     @GetMapping("/event-type/{id}")
-    @ResponseBody
     public EventTypeDetailsDto getEventType(@PathVariable long id, HttpSession httpSession) {
         var eventType = eventTypeService.getEventTypeById(id);
         var language = localeService.getLanguage(httpSession);

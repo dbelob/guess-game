@@ -6,10 +6,9 @@ import guess.service.EventService;
 import guess.service.LocaleService;
 import guess.service.OrganizerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
 import java.util.Comparator;
@@ -18,7 +17,7 @@ import java.util.List;
 /**
  * Organizer controller.
  */
-@Controller
+@RestController
 @RequestMapping("/api/organizer")
 public class OrganizerController {
     private final OrganizerService organizerService;
@@ -33,7 +32,6 @@ public class OrganizerController {
     }
 
     @GetMapping("/organizers")
-    @ResponseBody
     public List<OrganizerDto> getOrganizers(HttpSession httpSession) {
         var language = localeService.getLanguage(httpSession);
         List<Organizer> organizers = organizerService.getOrganizers();
@@ -45,7 +43,6 @@ public class OrganizerController {
     }
 
     @GetMapping("/default-event-organizer")
-    @ResponseBody
     public OrganizerDto getDefaultEventOrganizer(HttpSession httpSession) {
         var defaultEvent = eventService.getDefaultEvent(true, true);
 

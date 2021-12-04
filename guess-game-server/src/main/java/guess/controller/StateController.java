@@ -9,7 +9,6 @@ import guess.service.StateService;
 import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -18,7 +17,7 @@ import java.util.List;
 /**
  * State controller.
  */
-@Controller
+@RestController
 @RequestMapping("/api/state")
 public class StateController {
     private final StateService stateService;
@@ -45,7 +44,6 @@ public class StateController {
     }
 
     @GetMapping("/state")
-    @ResponseBody
     public GameState getState(HttpSession httpSession) {
         return stateService.getState(httpSession);
     }
@@ -84,61 +82,51 @@ public class StateController {
     }
 
     @GetMapping("/photo-names")
-    @ResponseBody
     public PhotoNamesDto getPhotoNames(HttpSession httpSession) {
         return getDto(httpSession, PhotoNamesDto::convertToDto);
     }
 
     @GetMapping("/name-photos")
-    @ResponseBody
     public NamePhotosDto getNamePhotos(HttpSession httpSession) {
         return getDto(httpSession, NamePhotosDto::convertToDto);
     }
 
     @GetMapping("/speaker-talks")
-    @ResponseBody
     public SpeakersTalksDto getSpeakerTalks(HttpSession httpSession) {
         return getDto(httpSession, SpeakersTalksDto::convertToDto);
     }
 
     @GetMapping("/talk-speakers")
-    @ResponseBody
     public TalkSpeakersDto getTalkSpeakers(HttpSession httpSession) {
         return getDto(httpSession, TalkSpeakersDto::convertToDto);
     }
 
     @GetMapping("/speaker-companies")
-    @ResponseBody
     public SpeakerCompaniesDto getSpeakerCompanies(HttpSession httpSession) {
         return getDto(httpSession, SpeakerCompaniesDto::convertToDto);
     }
 
     @GetMapping("/company-speakers")
-    @ResponseBody
     public CompanySpeakersDto getCompanySpeakers(HttpSession httpSession) {
         return getDto(httpSession, CompanySpeakersDto::convertToDto);
     }
 
     @GetMapping("/speaker-accounts")
-    @ResponseBody
     public SpeakerAccountsDto getSpeakerAccounts(HttpSession httpSession) {
         return getDto(httpSession, SpeakerAccountsDto::convertToDto);
     }
 
     @GetMapping("/account-speakers")
-    @ResponseBody
     public AccountSpeakersDto getAccountSpeakers(HttpSession httpSession) {
         return getDto(httpSession, AccountSpeakersDto::convertToDto);
     }
 
     @GetMapping("/speaker-tag-clouds")
-    @ResponseBody
     public SpeakerTagCloudsDto getSpeakerTagClouds(HttpSession httpSession) {
         return getDto(httpSession, SpeakerTagCloudsDto::convertToDto);
     }
 
     @GetMapping("/tag-cloud-speakers")
-    @ResponseBody
     public TagCloudSpeakersDto getTagCloudSpeakers(HttpSession httpSession) {
         return getDto(httpSession, TagCloudSpeakersDto::convertToDto);
     }
