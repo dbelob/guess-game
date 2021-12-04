@@ -12,7 +12,6 @@ import guess.dto.talk.TalkBriefDto;
 import guess.service.*;
 import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -25,7 +24,7 @@ import java.util.stream.Collectors;
 /**
  * Speaker controller.
  */
-@Controller
+@RestController
 @RequestMapping("/api/speaker")
 public class SpeakerController {
     private final SpeakerService speakerService;
@@ -45,7 +44,6 @@ public class SpeakerController {
     }
 
     @GetMapping("/first-letter-speakers")
-    @ResponseBody
     public List<SpeakerBriefDto> getSpeakersByFirstLetter(@RequestParam String firstLetter, HttpSession httpSession) {
         var language = localeService.getLanguage(httpSession);
         List<Speaker> speakers = speakerService.getSpeakersByFirstLetter(firstLetter, language);
@@ -54,7 +52,6 @@ public class SpeakerController {
     }
 
     @GetMapping("/first-letters-speakers")
-    @ResponseBody
     public List<SpeakerSuperBriefDto> getSpeakersByFirstLetters(@RequestParam String firstLetters, HttpSession httpSession) {
         var language = localeService.getLanguage(httpSession);
         List<Speaker> speakers = speakerService.getSpeakersByFirstLetters(firstLetters, language);
@@ -63,7 +60,6 @@ public class SpeakerController {
     }
 
     @PostMapping("/selected-speakers")
-    @ResponseBody
     public List<SpeakerSuperBriefDto> getSelectedSpeakers(@RequestBody SelectedEntitiesDto selectedEntities, HttpSession httpSession) {
         var language = localeService.getLanguage(httpSession);
         List<Speaker> speakers = speakerService.getSpeakerByIds(selectedEntities.getIds());
@@ -72,7 +68,6 @@ public class SpeakerController {
     }
 
     @GetMapping("/speakers")
-    @ResponseBody
     public List<SpeakerBriefDto> getSpeakers(@RequestParam(required = false) String name, @RequestParam(required = false) String company,
                                              @RequestParam(required = false) String twitter, @RequestParam(required = false) String gitHub,
                                              @RequestParam boolean javaChampion, @RequestParam boolean mvp,
@@ -84,7 +79,6 @@ public class SpeakerController {
     }
 
     @GetMapping("/speaker/{id}")
-    @ResponseBody
     public SpeakerDetailsDto getSpeaker(@PathVariable long id, HttpSession httpSession) {
         var speaker = speakerService.getSpeakerById(id);
         List<Talk> talks = talkService.getTalksBySpeaker(speaker);
@@ -122,6 +116,6 @@ public class SpeakerController {
 
         return speakerBriefDtoList.stream()
                 .map(s -> new SpeakerSuperBriefDto(s.getId(), s.getDisplayName()))
-                .collect(Collectors.toList());
+                .toList();
     }
 }

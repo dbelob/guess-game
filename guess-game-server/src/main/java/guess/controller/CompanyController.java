@@ -7,18 +7,16 @@ import guess.service.CompanyService;
 import guess.service.LocaleService;
 import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Company controller.
  */
-@Controller
+@RestController
 @RequestMapping("/api/company")
 public class CompanyController {
     private final CompanyService companyService;
@@ -31,29 +29,26 @@ public class CompanyController {
     }
 
     @GetMapping("/first-letters-companies")
-    @ResponseBody
     public List<CompanyDto> getCompaniesByFirstLetters(@RequestParam String firstLetters, HttpSession httpSession) {
         var language = localeService.getLanguage(httpSession);
         List<Company> companies = companyService.getCompaniesByFirstLetters(firstLetters, language);
 
         return CompanyDto.convertToDto(companies, language).stream()
                 .sorted(Comparator.comparing(CompanyDto::getName, String.CASE_INSENSITIVE_ORDER))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @PostMapping("/selected-companies")
-    @ResponseBody
     public List<CompanyDto> getSelectedCompanies(@RequestBody SelectedEntitiesDto selectedEntities, HttpSession httpSession) {
         var language = localeService.getLanguage(httpSession);
         List<Company> companies = companyService.getCompaniesByIds(selectedEntities.getIds());
 
         return CompanyDto.convertToDto(companies, language).stream()
                 .sorted(Comparator.comparing(CompanyDto::getName, String.CASE_INSENSITIVE_ORDER))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @GetMapping("/first-letters-company-names")
-    @ResponseBody
     public List<String> getCompanyNamesByFirstLetters(@RequestParam String firstLetters, HttpSession httpSession) {
         var language = localeService.getLanguage(httpSession);
         List<Company> companies = companyService.getCompaniesByFirstLetters(firstLetters, language);
@@ -61,6 +56,6 @@ public class CompanyController {
         return companies.stream()
                 .map(c -> LocalizationUtils.getString(c.getName(), language))
                 .sorted(String.CASE_INSENSITIVE_ORDER)
-                .collect(Collectors.toList());
+                .toList();
     }
 }

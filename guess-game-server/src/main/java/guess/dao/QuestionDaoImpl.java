@@ -76,11 +76,11 @@ public class QuestionDaoImpl implements QuestionDao {
 
             List<CompanyBySpeakerQuestion> companyBySpeakerQuestions = speakerSet.stream()
                     .map(s -> new CompanyBySpeakerQuestion(s.getCompanies(), s))
-                    .collect(Collectors.toList());
+                    .toList();
 
             List<SpeakerByCompanyQuestion> speakerByCompanyQuestions = companySpeakersMap.keySet().stream()
                     .map(c -> new SpeakerByCompanyQuestion(List.copyOf(companySpeakersMap.get(c)), c))
-                    .collect(Collectors.toList());
+                    .toList();
 
             List<TagCloudQuestion> tagCloudQuestions = speakerTalkTextMap.keySet().stream()
                     .map(s -> new TagCloudQuestion(
@@ -93,7 +93,7 @@ public class QuestionDaoImpl implements QuestionDao {
                                                     TagCloudUtils.getSpeakerStopWords(s))
                                     ))
                     ))
-                    .collect(Collectors.toList());
+                    .toList();
 
             localQuestionSets.add(new QuestionSet(
                     event,
@@ -161,10 +161,10 @@ public class QuestionDaoImpl implements QuestionDao {
         return EventTypeDao.getItemsByEventTypeIds(eventTypeIds,
                 eventTypeId -> questionSets.stream()
                         .filter(s -> ((s.getEvent().getEventType().getId() == eventTypeId) && eventIds.contains(s.getEvent().getId())))
-                        .collect(Collectors.toList()),
+                        .toList(),
                 v -> questionSets.stream()
                         .filter(s -> eventTypeIds.contains(s.getEvent().getEventType().getId()))
-                        .collect(Collectors.toList()),
+                        .toList(),
                 eventTypeDao);
     }
 
@@ -267,7 +267,7 @@ public class QuestionDaoImpl implements QuestionDao {
                         TagCloudUtils.mergeWordFrequenciesMaps(
                                 speakerQuestionsMap.get(s).stream()
                                         .map(TagCloudQuestion::getLanguageWordFrequenciesMap)
-                                        .collect(Collectors.toList())
+                                        .toList()
                         )
                 ))
                 .collect(Collectors.toList());

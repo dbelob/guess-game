@@ -11,11 +11,10 @@ import guess.service.LocaleService;
 import guess.service.QuestionService;
 import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
 import java.util.Comparator;
@@ -24,7 +23,7 @@ import java.util.List;
 /**
  * Question controller.
  */
-@Controller
+@RestController
 @RequestMapping("/api/question")
 public class QuestionController {
     private final QuestionService questionService;
@@ -39,7 +38,6 @@ public class QuestionController {
     }
 
     @GetMapping("/event-types")
-    @ResponseBody
     public List<EventTypeSuperBriefDto> getEventTypes(HttpSession httpSession) {
         List<EventType> eventTypes = eventTypeService.getEventTypes();
         var language = localeService.getLanguage(httpSession);
@@ -53,7 +51,6 @@ public class QuestionController {
     }
 
     @GetMapping("/events")
-    @ResponseBody
     public List<EventSuperBriefDto> getEvents(@RequestParam List<Long> eventTypeIds, HttpSession httpSession) {
         List<Event> events = questionService.getEvents(eventTypeIds);
         var language = localeService.getLanguage(httpSession);
@@ -64,7 +61,6 @@ public class QuestionController {
     }
 
     @GetMapping("/quantities")
-    @ResponseBody
     public List<Integer> getQuantities(@RequestParam List<Long> eventTypeIds, @RequestParam List<Long> eventIds,
                                        @RequestParam String guessMode) throws QuestionSetNotExistsException {
         return questionService.getQuantities(eventTypeIds, eventIds, GuessMode.valueOf(guessMode));
