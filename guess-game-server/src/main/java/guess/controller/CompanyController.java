@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Company controller.
@@ -36,7 +35,7 @@ public class CompanyController {
 
         return CompanyDto.convertToDto(companies, language).stream()
                 .sorted(Comparator.comparing(CompanyDto::getName, String.CASE_INSENSITIVE_ORDER))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @PostMapping("/selected-companies")
@@ -46,7 +45,7 @@ public class CompanyController {
 
         return CompanyDto.convertToDto(companies, language).stream()
                 .sorted(Comparator.comparing(CompanyDto::getName, String.CASE_INSENSITIVE_ORDER))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @GetMapping("/first-letters-company-names")
@@ -57,6 +56,6 @@ public class CompanyController {
         return companies.stream()
                 .map(c -> LocalizationUtils.getString(c.getName(), language))
                 .sorted(String.CASE_INSENSITIVE_ORDER)
-                .collect(Collectors.toList());
+                .toList();
     }
 }

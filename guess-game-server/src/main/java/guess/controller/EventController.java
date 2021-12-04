@@ -82,7 +82,7 @@ public class EventController {
         List<Speaker> speakers = talks.stream()
                 .flatMap(t -> t.getSpeakers().stream())
                 .distinct()
-                .collect(Collectors.toList());
+                .toList();
         var eventDetailsDto = EventDetailsDto.convertToDto(event, speakers, talks, eventService::getEventByTalk,
                 eventTypeService::getEventTypeByEvent, language);
 

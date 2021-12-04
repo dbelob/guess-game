@@ -116,6 +116,6 @@ public class SpeakerController {
 
         return speakerBriefDtoList.stream()
                 .map(s -> new SpeakerSuperBriefDto(s.getId(), s.getDisplayName()))
-                .collect(Collectors.toList());
+                .toList();
     }
 }
