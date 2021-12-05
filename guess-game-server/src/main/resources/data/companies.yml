@@ -109,7 +109,7 @@ companies:
       - {language: en, text: "Amixr Inc."}
   - id: 36
     name:
-      - {language: en, text: angular-academy.com}
+      - {language: en, text: "Dev Academy"}
   - id: 37
     name:
       - {language: en, text: AngularZone}
@@ -161,12 +161,6 @@ companies:
   - id: 54
     name:
       - {language: en, text: "Australia Post"}
-  - id: 55
-    name:
-      - {language: en, text: "Author of the \"Windows Internals\" book"}
-  - id: 56
-    name:
-      - {language: en, text: "Author of the book \"Domain Modeling Made Functional\""}
   - id: 57
     name:
       - {language: en, text: AVA}
@@ -314,9 +308,6 @@ companies:
   - id: 106
     name:
       - {language: en, text: Computas}
-  - id: 107
-    name:
-      - {language: en, text: "Computas AS"}
   - id: 108
     name:
       - {language: en, text: Confluent}
@@ -1231,7 +1222,7 @@ companies:
       - {language: en, text: "Prisma AI"}
   - id: 417
     name:
-      - {language: en, text: "Professor, Telecom Paris, Institut Polytechnique Paris"}
+      - {language: en, text: "Telecom Paris, Institut Polytechnique Paris"}
   - id: 418
     name:
       - {language: en, text: Progress}
@@ -1525,7 +1516,7 @@ companies:
       - {language: en, text: "The App Business"}
   - id: 519
     name:
-      - {language: en, text: "The Atlantic Systems Guild Inc., co-author of the \"Peopleware: Productive Projects and Teams\""}
+      - {language: en, text: "The Atlantic Systems Guild Inc."}
   - id: 520
     name:
       - {language: en, text: "The D Language Foundation"}
@@ -2367,7 +2358,7 @@ companies:
       - {language: en, text: "Cherry Labs"}
   - id: 790
     name:
-      - {language: en, text: EXASOL}
+      - {language: en, text: Exasol}
   - id: 791
     name:
       - {language: en, text: Treeverse}
