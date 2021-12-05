@@ -295,7 +295,7 @@ speakers:
     name:
       - {language: en, text: "Rustam Mehmandarov"}
       - {language: ru, text: "Рустам Мехмандаров"}
-    companyIds: [107]
+    companyIds: [106]
     bio:
       - language: en
         text: "Passionate computer scientist. Leader of JavaZone. During the past years, heavily involved in the Norwegian\
@@ -307,6 +307,7 @@ speakers:
             \ годы – в качестве лидера, правой руки и члена правления.\n\nОдин из основателей и организаторов Arctic IoT Challenge.\
             \ Главный инженер, competency network coordinator по IT-архитектуре и интеграции на работе.\n\nПродвигает сооб\
             щества, ведет курсы, выступает на конференциях. Java Champion."
+    twitter: RMehmandarov
     gitHub: mehmandarov
   - id: 16
     photoFileName: 0016.jpg
@@ -10083,7 +10084,8 @@ speakers:
             \ fascinating. He wants to share his knowledge via trainings and workshops as it gives him great dose of fulfillment.\
             \ He speaks at international conferences and gives workshops across Europe. He was teaching advanced front-end\
             \ technologies in Poland, Israel, Great Britain, Finland, Romania, Tunisia and Colombia."}
-    twitter: pietrucha
+    twitter: bartosz_io
+    gitHub: bartosz-io
   - id: 695
     photoFileName: 0695.jpg
     name:

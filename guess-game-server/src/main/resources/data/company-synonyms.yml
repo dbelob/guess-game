@@ -54,7 +54,8 @@ companySynonyms:
     ]
   - name: Computas
     synonyms: [
-        Сomputas
+        Сomputas,
+        "Computas AS"
     ]
   - name: Confluent
     synonyms: [
@@ -88,6 +89,10 @@ companySynonyms:
     synonyms: [
         "Deutsche Telekom IT Solutions",
         T-Systems
+    ]
+  - name: "Dev Academy"
+    synonyms: [
+        angular-academy.com
     ]
   - name: "EPAM Systems"
     synonyms: [
@@ -260,6 +265,14 @@ companySynonyms:
   - name: "Tune IT"
     synonyms: [
         Tune-IT
+    ]
+  - name: "Telecom Paris, Institut Polytechnique Paris"
+    synonyms: [
+        "Professor, Telecom Paris, Institut Polytechnique Paris"
+    ]
+  - name: "The Atlantic Systems Guild Inc."
+    synonyms: [
+        "The Atlantic Systems Guild Inc., co-author of the \"Peopleware: Productive Projects and Teams\""
     ]
   - name: "Uber Technologies"
     synonyms: [
