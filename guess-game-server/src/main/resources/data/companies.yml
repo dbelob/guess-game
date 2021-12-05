@@ -2358,7 +2358,7 @@ companies:
       - {language: en, text: "Cherry Labs"}
   - id: 790
     name:
-      - {language: en, text: EXASOL}
+      - {language: en, text: Exasol}
   - id: 791
     name:
       - {language: en, text: Treeverse}

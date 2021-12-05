@@ -1783,6 +1783,7 @@ speakers:
             \ JavaOne and QCon. He co-leads Shanghai Java User Group and co-chairs APMCon. He has authored over 10 technical\
             \ papers and a number of technical patents."
     twitter: sanhong_li
+    gitHub: alijvm
   - id: 106
     photoFileName: 0106.jpg
     photoUpdatedAt: 2019-06-19T09:29:55.174Z[UTC]
@@ -3586,6 +3587,7 @@ speakers:
             \ on the JVM and general runtime futurist.\n\nCo-author of the book “Oracle JRockit – the definitive guide“, which,\
             \ despite the product centric title, has been praised as the best book ever written on JVM internals."
     twitter: lagergren
+    gitHub: lagergren
   - id: 244
     photoFileName: 0244.jpg
     name:
@@ -5727,6 +5729,7 @@ speakers:
             \ hosted by Viktor Vafeiadis and Derek Dreyer.\r\n\r\nOri's main areas of research are programming languages and\
             \ verification, with a focus on concurrency and relaxed memory models. He's also interested in proof-theory and\
             \ semantics of (non-classical) logics and automated reasoning."
+    gitHub: orilahav
   - id: 391
     photoFileName: 0391.jpg
     name:
@@ -6575,6 +6578,7 @@ speakers:
             \ developer that spans two decades. In his free time Jeremy likes to jog, hike, and maintain a 100% plant-based\
             \ diet."}
     twitter: jeremylikness
+    gitHub: JeremyLikness
   - id: 448
     photoFileName: 0448.jpg
     name:
@@ -7802,6 +7806,7 @@ speakers:
             \ Ang spent a few years on Android OS development before moving to broader Google missions. His current infrastructure\
             \ project supports the testing of a wide range of Google products from mobile apps, to hardware platforms, to\
             \ cutting-edge applications like VR/AR and Loon."}
+    gitHub: xpconanfan
   - id: 538
     photoFileName: 0538.jpg
     name:
@@ -8243,6 +8248,7 @@ speakers:
             \ blockchain technology, cryptocurrency and cryptoassets, and writes about blockchain technology at https://medium.com/@rhian_is.\
             \ She is an instructor for the B9Lab Ethereum QA Engineer course."}
     twitter: rhian_is
+    gitHub: Rhian
   - id: 567
     photoFileName: 0567.jpg
     photoUpdatedAt: 2021-09-01T13:25:02.841Z[UTC]
@@ -8607,6 +8613,7 @@ speakers:
             \ like eBay and Twitter in a similar role. She’s passionate about code and product quality and gets involved in\
             \ efforts to improve the CI/CD pipeline."}
     twitter: RanjaniRambles
+    gitHub: niranjani23
   - id: 594
     photoFileName: 0594.jpg
     name:
@@ -8707,6 +8714,7 @@ speakers:
             \ and a frequent speaker at conferences like SpringOne 2GX, GR8Conf, Greach, Codemotion, GeeCon, Spring IO, RigaDevDays,\
             \ JavaCro, and so forth."
     twitter: ilopmar
+    gitHub: ilopmar
   - id: 601
     photoFileName: 0601.jpg
     name:
@@ -9574,6 +9582,7 @@ speakers:
       - {language: en, text: "Eduardo is a JavaScript enthusiast who focuses on UI and likes gamedev too. He's a member of\
             \ the Vue.js core team and he organizes the Paris Vue.js Meetup. He helps daily to improve the Vue ecosystem."}
     twitter: posva
+    gitHub: posva
   - id: 659
     photoFileName: 0659.jpg
     name:
@@ -9789,6 +9798,7 @@ speakers:
             \ working on the NativeScript Android Runtime which provides all the high-performant JS to Java communication\
             \ support."}
     twitter: VladimirMutafov
+    gitHub: vmutafov
   - id: 674
     photoFileName: 0674.jpg
     name:
@@ -9933,6 +9943,7 @@ speakers:
             \ Creator of NestJS, open source evangelist, currently working as a Full-Stack developer with variety of languages,\
             \ mainly focused on the web-related things."}
     twitter: kammysliwiec
+    gitHub: kamilmysliwiec
   - id: 685
     photoFileName: 0685.jpg
     name:
@@ -9981,6 +9992,7 @@ speakers:
             \ and educating the IT community. He holds a MSc degree in Computer Science and is pursuing his PhD in data visualization.\
             \ He sometimes writes fiction novels that probably will never get published as he spends too much time coding."
     twitter: NisamProgramer
+    gitHub: mletic
   - id: 688
     photoFileName: 0688.jpg
     name:
@@ -10504,6 +10516,7 @@ speakers:
             \ source and in the Dat project, http://dat-data.com trying to build open tools to help scientists share datasets.\
             \ Currently he maintains more than 400 modules on npm including a bunch of P2P and mad science stuff."}
     twitter: mafintosh
+    gitHub: mafintosh
   - id: 726
     photoFileName: 0726.jpg
     name:
@@ -10716,6 +10729,7 @@ speakers:
             \ as a digital nomad, inadvertently cheated at a marathon in North Korea and writes frequently on technology and\
             \ travel on his website."}
     twitter: georgemandis
+    gitHub: georgemandis
   - id: 741
     photoFileName: 0741.jpg
     name:
@@ -11160,6 +11174,7 @@ speakers:
       - {language: en, text: "Corey Latislaw is a technical leader at TAB (The App Business) in London and an avid sketchnoter.\
             \ She has led many teams over the years at companies such as Capital One, OffGrid Electric, and Pinterest."}
     twitter: corey_latislaw
+    gitHub: colabug
   - id: 776
     photoFileName: 0776.jpg
     name:
@@ -11605,6 +11620,7 @@ speakers:
       - {language: en, text: "9 years of Android @ Lyft, Google & Hulu. Pourover coffee, donuts, snowboarding, cooking, hiking,\
             \ and overall just a pretty cool hipster with long hair."}
     twitter: RJMarsan
+    gitHub: rjmarsan
   - id: 807
     photoFileName: 0807.jpg
     name:
@@ -12330,6 +12346,7 @@ speakers:
             \ GitHub user having various open source projects alongside heaps of stargazers, he is passionate about crafting\
             \ tools."}
     twitter: thyrlian
+    gitHub: thyrlian
   - id: 856
     photoFileName: 0856.jpg
     name:
@@ -12358,6 +12375,7 @@ speakers:
             \ literature and enjoys all kinds of arts. He likes to write about himself in third person. You can follow him\
             \ on Twitter (@eenriquelopez) to stay updated on his latest movements."
     twitter: eenriquelopez
+    gitHub: kikoso
   - id: 858
     photoFileName: 0858.jpg
     photoUpdatedAt: 2020-10-12T09:38:27.774Z[UTC]
@@ -13565,6 +13583,7 @@ speakers:
             \ Red Hat, Gunnar worked on a wide range of Java EE projects in the logistics and retail industries. He's based\
             \ in Hamburg, Germany."}
     twitter: gunnarmorling
+    gitHub: gunnarmorling
   - id: 960
     photoFileName: 0960.jpg
     name:
@@ -13672,6 +13691,7 @@ speakers:
             \ in Japan, Taiwan and Thailand, he builds various open-source software, such as a microservice framework Armeria\
             \ and a distributed configuration repository Central Dogma, to facilitate the adoption of microservice architecture."}
     twitter: trustin
+    gitHub: trustin
   - id: 968
     photoFileName: 0968.jpg
     name:
@@ -13979,6 +13999,7 @@ speakers:
             \ leads the CUDA C++ core libraries team. He is one of the initial developers of the HPX parallel runtime system.\
             \ He also helped start the LLVMLinux initiative and has occasionally contributed to the Boost C++ libraries."}
     twitter: blelbach
+    gitHub: brycelelbach
   - id: 986
     photoFileName: 0986.jpg
     name:
@@ -14817,6 +14838,7 @@ speakers:
             \ consistency bugs. She is now working on testing reliability of distributed storage systems and Persistent Memory\
             \ applications. Her research is supported by the Microsoft Research PhD fellowship."}
     twitter: jayashree2912
+    gitHub: jayashreemohan29
   - id: 1046
     photoFileName: 1046.jpg
     name:
@@ -14988,6 +15010,7 @@ speakers:
       - {language: en, text: "Senior Android engineer, freelancing in Berlin and remote. He wrote a couple of books and read\
             \ a few more. He shares his learnings at conferences and meetups."}
     twitter: hamen
+    gitHub: hamen
   - id: 1059
     photoFileName: 1059.jpg
     photoUpdatedAt: 2021-11-09T08:00:08.256Z[UTC]
@@ -15124,6 +15147,7 @@ speakers:
             \ an official JetBrains partner, author of the book \"Android Development with Kotlin\", active programming community\
             \ member."}
     twitter: marcinmoskala
+    gitHub: MarcinMoskala
   - id: 1070
     photoFileName: 1070.jpg
     name:
@@ -15339,6 +15363,7 @@ speakers:
             \ swims, bikes and runs and participates in a few local races each year. He enjoys British rock and Doctor Who.\
             \ He grew up in Canada and New Zealand."}
     twitter: runfaster2000
+    gitHub: richlander
   - id: 1087
     photoFileName: 1087.jpg
     name:
@@ -15354,6 +15379,7 @@ speakers:
             \ the creator of the acclaimed educational Clean Code video series at cleancoders.com.\n\nMr. Martin has authored\
             \ and edited many books."
     twitter: unclebobmartin
+    gitHub: unclebob
   - id: 1088
     photoFileName: 1088.jpg
     photoUpdatedAt: 2020-02-07T08:55:14.361Z[UTC]
@@ -15736,6 +15762,7 @@ speakers:
             \ the digital players aware of our realities. Chronic optimist, his favourite book will always remain \"Alice\
             \ in Wonderland\"."}
     twitter: m4d_z
+    gitHub: m4dz
   - id: 1116
     photoFileName: 1116.jpg
     photoUpdatedAt: 2020-02-21T08:21:09.672Z[UTC]
@@ -15847,6 +15874,7 @@ speakers:
             \ building tools to make life easier. He was born and raised in South Korea. He moved to Singapore in 2017 and\
             \ now lives in Paris since 2019. He is happily working in Algolia, surrounded by amazing colleagues."}
     twitter: eunjae_lee
+    gitHub: eunjae-lee
   - id: 1125
     photoFileName: 1125.jpg
     photoUpdatedAt: 2020-02-20T11:55:17.148Z[UTC]
@@ -16061,7 +16089,8 @@ speakers:
             \ the academic ladder while spending as much time as possible contributing to C++ standardization and development.\n\
             \nHe very much loves dogs and hopes to have his own in a year or so. He also likes Vulf's \"Tee Time\" from the\
             \ album Mr. Finish Line, as well as represents Shepherd's Oasis."
-    twitter: thephantomderp
+    twitter: __phantomderp
+    gitHub: ThePhD
   - id: 1140
     photoFileName: 1140.jpg
     photoUpdatedAt: 2020-02-20T07:37:29.032Z[UTC]
@@ -16097,6 +16126,8 @@ speakers:
       - {language: en, text: "John Lakos, author of Large-Scale C++ Software Design, serves at Bloomberg LP in New York City\
             \ as a senior architect and mentor for C++ Software Development world-wide. He is also an active voting member\
             \ of the C++ Standards Committee's Evolution Working Group."}
+    twitter: jslakos
+    gitHub: jslakos
   - id: 1143
     photoFileName: 1143.jpg
     name:
@@ -16710,6 +16741,7 @@ speakers:
             \ Support Engineer and as a Solutions Architect, having first-hand experience with AWS customers and their AWS\
             \ adventures, helping them learn the ways of the cloud!"
     twitter: darkosubotica
+    gitHub: darko-mesaros
   - id: 1186
     photoFileName: 1186.jpg
     photoUpdatedAt: 2020-03-04T08:10:21.999Z[UTC]
@@ -18159,6 +18191,7 @@ speakers:
             \ and the radio. In her spare time she dives deeper into learning more about iOT and robotics and contributes\
             \ to a codebase at a startup called SpookyRobotics as well as creates videos for her Youtube channels called HackQueen,\
             \ and Life With W and J. She also enjoys learning about other cultures/languages, travelling and watersports."
+    gitHub: wesniem
   - id: 1298
     photoFileName: 1298.jpg
     name:
@@ -20398,6 +20431,7 @@ speakers:
             \ and has spoken at: AWS re:Invent, KubeCon, DockerCon, DevOpDays, AllDayDevOps, Write/Speak/Code, and many others.\
             \ Catch her tweeting at @Ana_M_Medina about traveling, diversity in tech, and mental health."}
     twitter: Ana_M_Medina
+    gitHub: AnaMMedina21
   - id: 1462
     photoFileName: 1462.jpg
     photoUpdatedAt: 2020-08-20T12:41:48.255Z[UTC]
@@ -20594,6 +20628,7 @@ speakers:
             \ to open source software projects, helps to organize large hacker events, runs an autonomous system for fun,\
             \ and dreams of space travel. He works at Google Stadia as a Site Reliability Engineering Manager."}
     twitter: danrl_com
+    gitHub: danrl
   - id: 1476
     photoFileName: 1476.jpg
     photoUpdatedAt: 2020-10-27T13:35:12.969Z[UTC]
@@ -20604,6 +20639,7 @@ speakers:
       - {language: en, text: "Co-founder/CTO of Honeycomb, Ops engineer, formerly of Parse, Facebook, and Linden Lab. Co-author\
             \ of Database Reliability Engineering."}
     twitter: mipsytipsy
+    gitHub: charity
   - id: 1477
     photoFileName: 1477.jpg
     photoUpdatedAt: 2020-10-20T08:28:02.831Z[UTC]
@@ -21252,6 +21288,7 @@ speakers:
             \ Parquet, and now Apache Beam and Scio.\nBefore that he worked on search quality at Yahoo! and old school distributed\
             \ systems like MPI."
     twitter: sinisa_lyh
+    gitHub: nevillelyh
   - id: 1522
     photoFileName: 1522.jpg
     photoUpdatedAt: 2020-11-13T12:22:26.357Z[UTC]
