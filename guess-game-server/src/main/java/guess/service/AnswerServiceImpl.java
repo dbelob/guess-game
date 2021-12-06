@@ -119,7 +119,7 @@ public class AnswerServiceImpl implements AnswerService {
     public Result getResult(HttpSession httpSession) {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
         var startParameters = stateDao.getStartParameters(httpSession);
-        GuessMode guessMode = (startParameters != null) ? startParameters.getGuessMode() : GuessMode.GUESS_NAME_BY_PHOTO_MODE;
+        GuessMode guessMode = (startParameters != null) ? startParameters.guessMode() : GuessMode.GUESS_NAME_BY_PHOTO_MODE;
 
         long correctAnswers = answerSets.stream()
                 .filter(AnswerSet::isSuccess)

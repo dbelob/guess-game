@@ -80,28 +80,28 @@ public class EventServiceImpl implements EventService {
 
         // Find current and future event days, sort by minimal track date time and end day date time
         List<EventMinTrackTimeEndDayTime> eventMinTrackTimeEndDayTimeListFromDateOrdered = eventMinTrackTimeEndDayTimeList.stream()
-                .filter(edt -> dateTime.isBefore(edt.getEndDayDateTime()))
-                .sorted(Comparator.comparing(EventMinTrackTimeEndDayTime::getMinTrackDateTime).thenComparing(EventMinTrackTimeEndDayTime::getEndDayDateTime))
+                .filter(edt -> dateTime.isBefore(edt.endDayDateTime()))
+                .sorted(Comparator.comparing(EventMinTrackTimeEndDayTime::minTrackDateTime).thenComparing(EventMinTrackTimeEndDayTime::endDayDateTime))
                 .toList();
         if (eventMinTrackTimeEndDayTimeListFromDateOrdered.isEmpty()) {
             return null;
         }
 
         // Find first date
-        LocalDateTime firstDateTime = eventMinTrackTimeEndDayTimeListFromDateOrdered.get(0).getMinTrackDateTime();
+        LocalDateTime firstDateTime = eventMinTrackTimeEndDayTimeListFromDateOrdered.get(0).minTrackDateTime();
 
         if (dateTime.isBefore(firstDateTime)) {
             // No current day events, return nearest first event
-            return eventMinTrackTimeEndDayTimeListFromDateOrdered.get(0).getEvent();
+            return eventMinTrackTimeEndDayTimeListFromDateOrdered.get(0).event();
         } else {
             // Current day events exist, find happened time, sort by reversed minimal track date time
             List<EventMinTrackTimeEndDayTime> eventMinTrackTimeEndDayTimeListOnCurrentDate = eventMinTrackTimeEndDayTimeListFromDateOrdered.stream()
-                    .filter(edt -> !dateTime.isBefore(edt.getMinTrackDateTime()))
-                    .sorted(Comparator.comparing(EventMinTrackTimeEndDayTime::getMinTrackDateTime).reversed())
+                    .filter(edt -> !dateTime.isBefore(edt.minTrackDateTime()))
+                    .sorted(Comparator.comparing(EventMinTrackTimeEndDayTime::minTrackDateTime).reversed())
                     .collect(Collectors.toList());
 
             // Return nearest last event
-            return eventMinTrackTimeEndDayTimeListOnCurrentDate.get(0).getEvent();
+            return eventMinTrackTimeEndDayTimeListOnCurrentDate.get(0).event();
         }
     }
 
@@ -172,20 +172,20 @@ public class EventServiceImpl implements EventService {
         return eventDateMinTrackTimeList.stream()
                 .map(edt -> {
                     var minTrackDateTime = ZonedDateTime.of(
-                                    edt.getDate(),
-                                    edt.getMinTrackTime(),
-                                    edt.getEvent().getFinalTimeZoneId())
+                                    edt.date(),
+                                    edt.minTrackTime(),
+                                    edt.event().getFinalTimeZoneId())
                             .withZoneSameInstant(ZoneId.of("UTC"))
                             .toLocalDateTime();
                     var endDayDateTime = ZonedDateTime.of(
-                                    edt.getDate().plus(1, ChronoUnit.DAYS),
+                                    edt.date().plus(1, ChronoUnit.DAYS),
                                     LocalTime.of(0, 0, 0),
-                                    edt.getEvent().getFinalTimeZoneId())
+                                    edt.event().getFinalTimeZoneId())
                             .withZoneSameInstant(ZoneId.of("UTC"))
                             .toLocalDateTime();
 
                     return new EventMinTrackTimeEndDayTime(
-                            edt.getEvent(),
+                            edt.event(),
                             minTrackDateTime,
                             endDayDateTime
                     );

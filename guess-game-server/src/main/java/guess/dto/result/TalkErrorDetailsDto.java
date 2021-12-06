@@ -43,12 +43,12 @@ public class TalkErrorDetailsDto {
     private static TalkErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessMode guessMode, Language language) {
         if (GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
             List<Speaker> speakers = GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode) ?
-                    errorDetails.getAvailableAnswers().stream()
+                    errorDetails.availableAnswers().stream()
                             .map(a -> ((TalkAnswer) a).getTalk().getSpeakers())
                             .flatMap(Collection::stream)
                             .distinct()
                             .collect(Collectors.toList()) :
-                    errorDetails.getAvailableAnswers().stream()
+                    errorDetails.availableAnswers().stream()
                             .map(a -> ((SpeakerAnswer) a).getSpeaker())
                             .collect(Collectors.toList());
 
@@ -58,8 +58,8 @@ public class TalkErrorDetailsDto {
                     s -> true);
 
             List<Speaker> questionSpeakers = GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode) ?
-                    ((TalkQuestion) errorDetails.getQuestion()).getSpeakers() :
-                    errorDetails.getCorrectAnswers().stream()
+                    ((TalkQuestion) errorDetails.question()).getSpeakers() :
+                    errorDetails.correctAnswers().stream()
                             .map(a -> ((SpeakerAnswer) a).getSpeaker())
                             .collect(Collectors.toList());
 
@@ -69,7 +69,7 @@ public class TalkErrorDetailsDto {
                             s.getPhotoFileName()))
                     .collect(Collectors.toList());
 
-            List<SpeakerPairDto> yourAnswers = errorDetails.getYourAnswers().stream()
+            List<SpeakerPairDto> yourAnswers = errorDetails.yourAnswers().stream()
                     .map(a -> GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode) ?
                             new SpeakerPairDto(
                                     LocalizationUtils.getString(((TalkAnswer) a).getTalk().getName(), language),
@@ -81,7 +81,7 @@ public class TalkErrorDetailsDto {
 
             return new TalkErrorDetailsDto(
                     questionSpeakerPairs,
-                    LocalizationUtils.getString(((TalkQuestion) errorDetails.getQuestion()).getTalk().getName(), language),
+                    LocalizationUtils.getString(((TalkQuestion) errorDetails.question()).getTalk().getName(), language),
                     yourAnswers);
         } else {
             throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
