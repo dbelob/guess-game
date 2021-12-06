@@ -12,7 +12,6 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Source DAO implementation.
@@ -78,7 +77,7 @@ public class SourceDaoImpl implements SourceDao {
     public List<Event> getEventsByEventTypeId(long eventTypeId) {
         return sourceInformation.getEvents().stream()
                 .filter(e -> (e.getEventTypeId() == eventTypeId))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
@@ -96,7 +95,7 @@ public class SourceDaoImpl implements SourceDao {
 
                     return dateTime.isBefore(eventUtcEndLocalDateTime);
                 })
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
@@ -117,7 +116,7 @@ public class SourceDaoImpl implements SourceDao {
     public List<Company> getCompaniesByIds(List<Long> ids) {
         return sourceInformation.getCompanies().stream()
                 .filter(c -> (ids.contains(c.getId())))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
@@ -137,7 +136,7 @@ public class SourceDaoImpl implements SourceDao {
     public List<Speaker> getSpeakerByIds(List<Long> ids) {
         return sourceInformation.getSpeakers().stream()
                 .filter(s -> (ids.contains(s.getId())))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
@@ -158,6 +157,6 @@ public class SourceDaoImpl implements SourceDao {
         return sourceInformation.getTalks().stream()
                 .filter(t -> (t.getSpeakers().stream()
                         .anyMatch(s -> s.equals(speaker))))
-                .collect(Collectors.toList());
+                .toList();
     }
 }

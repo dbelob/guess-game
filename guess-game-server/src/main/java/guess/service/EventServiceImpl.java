@@ -82,7 +82,7 @@ public class EventServiceImpl implements EventService {
         List<EventMinTrackTimeEndDayTime> eventMinTrackTimeEndDayTimeListFromDateOrdered = eventMinTrackTimeEndDayTimeList.stream()
                 .filter(edt -> dateTime.isBefore(edt.getEndDayDateTime()))
                 .sorted(Comparator.comparing(EventMinTrackTimeEndDayTime::getMinTrackDateTime).thenComparing(EventMinTrackTimeEndDayTime::getEndDayDateTime))
-                .collect(Collectors.toList());
+                .toList();
         if (eventMinTrackTimeEndDayTimeListFromDateOrdered.isEmpty()) {
             return null;
         }

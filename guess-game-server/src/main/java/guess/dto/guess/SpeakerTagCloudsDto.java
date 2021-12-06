@@ -29,19 +29,19 @@ public class SpeakerTagCloudsDto extends QuestionAnswersDto {
     }
 
     public byte[] getImage0() {
-        return images.getFirst();
+        return images.first();
     }
 
     public byte[] getImage1() {
-        return images.getSecond();
+        return images.second();
     }
 
     public byte[] getImage2() {
-        return images.getThird();
+        return images.third();
     }
 
     public byte[] getImage3() {
-        return images.getFourth();
+        return images.fourth();
     }
 
     public static SpeakerTagCloudsDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,

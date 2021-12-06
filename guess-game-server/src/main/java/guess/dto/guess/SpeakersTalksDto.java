@@ -36,19 +36,19 @@ public class SpeakersTalksDto extends QuestionAnswersDto {
     }
 
     public String getTalkName0() {
-        return talkNames.getFirst();
+        return talkNames.first();
     }
 
     public String getTalkName1() {
-        return talkNames.getSecond();
+        return talkNames.second();
     }
 
     public String getTalkName2() {
-        return talkNames.getThird();
+        return talkNames.third();
     }
 
     public String getTalkName3() {
-        return talkNames.getFourth();
+        return talkNames.fourth();
     }
 
     public static SpeakersTalksDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,
@@ -59,10 +59,10 @@ public class SpeakersTalksDto extends QuestionAnswersDto {
                 );
 
         Set<Speaker> talkSpeakers = new HashSet<>();
-        talkSpeakers.addAll(talks.getFirst().getSpeakers());
-        talkSpeakers.addAll(talks.getSecond().getSpeakers());
-        talkSpeakers.addAll(talks.getThird().getSpeakers());
-        talkSpeakers.addAll(talks.getFourth().getSpeakers());
+        talkSpeakers.addAll(talks.first().getSpeakers());
+        talkSpeakers.addAll(talks.second().getSpeakers());
+        talkSpeakers.addAll(talks.third().getSpeakers());
+        talkSpeakers.addAll(talks.fourth().getSpeakers());
 
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 new ArrayList<>(talkSpeakers),

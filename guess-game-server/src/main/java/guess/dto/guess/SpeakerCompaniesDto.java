@@ -29,19 +29,19 @@ public class SpeakerCompaniesDto extends QuestionAnswersDto {
     }
 
     public String getCompanyName0() {
-        return companyNames.getFirst();
+        return companyNames.first();
     }
 
     public String getCompanyName1() {
-        return companyNames.getSecond();
+        return companyNames.second();
     }
 
     public String getCompanyName2() {
-        return companyNames.getThird();
+        return companyNames.third();
     }
 
     public String getCompanyName3() {
-        return companyNames.getFourth();
+        return companyNames.fourth();
     }
 
     public static SpeakerCompaniesDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,

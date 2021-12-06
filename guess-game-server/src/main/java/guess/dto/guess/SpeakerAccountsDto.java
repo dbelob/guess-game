@@ -31,35 +31,35 @@ public class SpeakerAccountsDto extends QuestionAnswersDto {
     }
 
     public String getTwitter0() {
-        return twitters.getFirst();
+        return twitters.first();
     }
 
     public String getGitHub0() {
-        return gitHubs.getFirst();
+        return gitHubs.first();
     }
 
     public String getTwitter1() {
-        return twitters.getSecond();
+        return twitters.second();
     }
 
     public String getGitHub1() {
-        return gitHubs.getSecond();
+        return gitHubs.second();
     }
 
     public String getTwitter2() {
-        return twitters.getThird();
+        return twitters.third();
     }
 
     public String getGitHub2() {
-        return gitHubs.getThird();
+        return gitHubs.third();
     }
 
     public String getTwitter3() {
-        return twitters.getFourth();
+        return twitters.fourth();
     }
 
     public String getGitHub3() {
-        return gitHubs.getFourth();
+        return gitHubs.fourth();
     }
 
     public static SpeakerAccountsDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,
