@@ -46,7 +46,7 @@ public class AccountErrorDetailsDto {
 
     private static AccountErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessMode guessMode, Language language) {
         if (GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(guessMode)) {
-            List<Speaker> speakers = errorDetails.getAvailableAnswers().stream()
+            List<Speaker> speakers = errorDetails.availableAnswers().stream()
                     .map(q -> ((SpeakerAnswer) q).getSpeaker())
                     .collect(Collectors.toList());
 
@@ -55,9 +55,9 @@ public class AccountErrorDetailsDto {
                     s -> LocalizationUtils.getString(s.getName(), language),
                     s -> true);
 
-            var questionSpeaker = ((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker();
+            var questionSpeaker = ((SpeakerQuestion) errorDetails.question()).getSpeaker();
 
-            List<AccountAnswerDto> yourAnswers = errorDetails.getYourAnswers().stream()
+            List<AccountAnswerDto> yourAnswers = errorDetails.yourAnswers().stream()
                     .map(a -> GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode) ?
                             new AccountAnswerDto(
                                     null,

@@ -49,7 +49,7 @@ public class StateServiceImpl implements StateService {
         stateDao.setGameState(
                 questionAnswersSet.getQuestionAnswersList().isEmpty() ?
                         GameState.RESULT_STATE :
-                        getStateByGuessMode(startParameters.getGuessMode()),
+                        getStateByGuessMode(startParameters.guessMode()),
                 httpSession);
     }
 
@@ -104,7 +104,7 @@ public class StateServiceImpl implements StateService {
 
     QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) {
         // Find unique questions by ids
-        List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getEventTypeIds(), startParameters.getEventIds(), startParameters.getGuessMode());
+        List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.eventTypeIds(), startParameters.eventIds(), startParameters.guessMode());
 
         // Fill question and answers list
         List<QuestionAnswers> questionAnswersList = new ArrayList<>();
@@ -116,13 +116,13 @@ public class StateServiceImpl implements StateService {
             // Select first "quantity" elements
             List<Question> selectedShuffledQuestions = shuffledQuestions.subList(
                     0,
-                    Math.min(startParameters.getQuantity(), shuffledQuestions.size()));
+                    Math.min(startParameters.quantity(), shuffledQuestions.size()));
 
             Map<Long, Answer> answerCache = new HashMap<>();
 
             // Create question/answers list
             for (Question question : selectedShuffledQuestions) {
-                List<Answer> correctAnswers = new ArrayList<>(getCorrectAnswers(question, startParameters.getGuessMode(), answerCache));
+                List<Answer> correctAnswers = new ArrayList<>(getCorrectAnswers(question, startParameters.guessMode(), answerCache));
                 Collections.shuffle(correctAnswers);
 
                 // Correct answers size must be < QUESTION_ANSWERS_LIST_SIZE
@@ -130,7 +130,7 @@ public class StateServiceImpl implements StateService {
                         0,
                         Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, correctAnswers.size()));
                 List<Answer> shuffledAllAvailableAnswersWithoutCorrectAnswers = new ArrayList<>(getAllAvailableAnswers(
-                        shuffledQuestions, question, correctAnswers, startParameters.getGuessMode(), answerCache));
+                        shuffledQuestions, question, correctAnswers, startParameters.guessMode(), answerCache));
 
                 shuffledAllAvailableAnswersWithoutCorrectAnswers.removeAll(correctAnswers);
                 Collections.shuffle(shuffledAllAvailableAnswersWithoutCorrectAnswers);
@@ -153,13 +153,13 @@ public class StateServiceImpl implements StateService {
         String logoFileName;
 
         // Set name and logo filename
-        if (startParameters.getEventTypeIds().size() == 1) {
-            var eventType = eventTypeDao.getEventTypeById(startParameters.getEventTypeIds().get(0));
+        if (startParameters.eventTypeIds().size() == 1) {
+            var eventType = eventTypeDao.getEventTypeById(startParameters.eventTypeIds().get(0));
             Event event;
 
             if (eventType.isEventTypeConference() &&
-                    (startParameters.getEventIds().size() == 1) &&
-                    ((event = eventDao.getEventById(startParameters.getEventIds().get(0))) != null)) {
+                    (startParameters.eventIds().size() == 1) &&
+                    ((event = eventDao.getEventById(startParameters.eventIds().get(0))) != null)) {
                 name = event.getName();
             } else {
                 name = eventType.getName();
@@ -172,10 +172,10 @@ public class StateServiceImpl implements StateService {
             name = Arrays.asList(
                     new LocaleItem(Language.ENGLISH.getCode(), String.format(
                             LocalizationUtils.getResourceString(SELECTED_EVENT_TYPES, Language.ENGLISH),
-                            startParameters.getEventTypeIds().size())),
+                            startParameters.eventTypeIds().size())),
                     new LocaleItem(Language.RUSSIAN.getCode(), String.format(
                             LocalizationUtils.getResourceString(SELECTED_EVENT_TYPES, Language.RUSSIAN),
-                            startParameters.getEventTypeIds().size())));
+                            startParameters.eventTypeIds().size())));
             logoFileName = null;
         }
 

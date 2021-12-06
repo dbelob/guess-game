@@ -29,19 +29,19 @@ public class PhotoNamesDto extends QuestionAnswersDto {
     }
 
     public String getName0() {
-        return names.getFirst();
+        return names.first();
     }
 
     public String getName1() {
-        return names.getSecond();
+        return names.second();
     }
 
     public String getName2() {
-        return names.getThird();
+        return names.third();
     }
 
     public String getName3() {
-        return names.getFourth();
+        return names.fourth();
     }
 
     public static PhotoNamesDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,

@@ -40,7 +40,7 @@ public class SpeakerErrorDetailsDto {
 
     private static SpeakerErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessMode guessMode, Language language) {
         if (GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode) || GuessMode.GUESS_PHOTO_BY_NAME_MODE.equals(guessMode)) {
-            List<Speaker> speakers = errorDetails.getAvailableAnswers().stream()
+            List<Speaker> speakers = errorDetails.availableAnswers().stream()
                     .map(q -> ((SpeakerAnswer) q).getSpeaker())
                     .collect(Collectors.toList());
 
@@ -49,9 +49,9 @@ public class SpeakerErrorDetailsDto {
                     s -> LocalizationUtils.getString(s.getName(), language),
                     s -> true);
 
-            var questionSpeaker = ((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker();
+            var questionSpeaker = ((SpeakerQuestion) errorDetails.question()).getSpeaker();
 
-            List<String> yourAnswers = errorDetails.getYourAnswers().stream()
+            List<String> yourAnswers = errorDetails.yourAnswers().stream()
                     .map(q -> GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode) ?
                             LocalizationUtils.getSpeakerName(((SpeakerAnswer) q).getSpeaker(), language, speakerDuplicates) :
                             ((SpeakerAnswer) q).getSpeaker().getPhotoFileName())

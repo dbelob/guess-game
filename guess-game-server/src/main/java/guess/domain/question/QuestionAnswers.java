@@ -35,9 +35,9 @@ public class QuestionAnswers implements Serializable {
 
     public List<Answer> getAvailableAnswersAsList() {
         return Arrays.asList(
-                availableAnswers.getFirst(),
-                availableAnswers.getSecond(),
-                availableAnswers.getThird(),
-                availableAnswers.getFourth());
+                availableAnswers.first(),
+                availableAnswers.second(),
+                availableAnswers.third(),
+                availableAnswers.fourth());
     }
 }

@@ -239,8 +239,8 @@ public class QuestionDaoImpl implements QuestionDao {
         }
 
         return companySpeakersMap.keySet().stream()
-                .map(c -> new SpeakerByCompanyQuestion(List.copyOf(companySpeakersMap.get(c)), c))
-                .collect(Collectors.toList());
+                .map(c -> (Question) new SpeakerByCompanyQuestion(List.copyOf(companySpeakersMap.get(c)), c))
+                .toList();
     }
 
     /**
@@ -262,7 +262,7 @@ public class QuestionDaoImpl implements QuestionDao {
         }
 
         return speakerQuestionsMap.keySet().stream()
-                .map(s -> new TagCloudQuestion(
+                .map(s -> (Question) new TagCloudQuestion(
                         s,
                         TagCloudUtils.mergeWordFrequenciesMaps(
                                 speakerQuestionsMap.get(s).stream()
@@ -270,6 +270,6 @@ public class QuestionDaoImpl implements QuestionDao {
                                         .toList()
                         )
                 ))
-                .collect(Collectors.toList());
+                .toList();
     }
 }

@@ -45,8 +45,8 @@ public class TagCloudErrorDetailsDto {
     private static TagCloudErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessMode guessMode, Language language) {
         if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
             List<Speaker> speakers = GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode) ?
-                    Collections.singletonList(((TagCloudQuestion) errorDetails.getQuestion()).getSpeaker()) :
-                    errorDetails.getAvailableAnswers().stream()
+                    Collections.singletonList(((TagCloudQuestion) errorDetails.question()).getSpeaker()) :
+                    errorDetails.availableAnswers().stream()
                             .map(a -> ((SpeakerAnswer) a).getSpeaker())
                             .collect(Collectors.toList());
 
@@ -55,9 +55,9 @@ public class TagCloudErrorDetailsDto {
                     s -> LocalizationUtils.getString(s.getName(), language),
                     s -> true);
 
-            TagCloudQuestion question = (TagCloudQuestion) errorDetails.getQuestion();
+            TagCloudQuestion question = (TagCloudQuestion) errorDetails.question();
 
-            List<TagCloudAnswerDto> yourAnswers = errorDetails.getYourAnswers().stream()
+            List<TagCloudAnswerDto> yourAnswers = errorDetails.yourAnswers().stream()
                     .map(a -> GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode) ?
                             new TagCloudAnswerDto(
                                     null,
@@ -70,7 +70,7 @@ public class TagCloudErrorDetailsDto {
                     .collect(Collectors.toList());
 
             Map<Language, byte[]> languageImageMap = GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode) ?
-                    ((TagCloudAnswer) errorDetails.getCorrectAnswers().get(0)).getLanguageImageMap() :
+                    ((TagCloudAnswer) errorDetails.correctAnswers().get(0)).getLanguageImageMap() :
                     question.getLanguageImageMap();
 
             return new TagCloudErrorDetailsDto(

@@ -52,50 +52,50 @@ public abstract class QuestionAnswersDto {
     }
 
     public long getId0() {
-        return ids.getFirst();
+        return ids.first();
     }
 
     public long getId1() {
-        return ids.getSecond();
+        return ids.second();
     }
 
     public long getId2() {
-        return ids.getThird();
+        return ids.third();
     }
 
     public long getId3() {
-        return ids.getFourth();
+        return ids.fourth();
     }
 
     public boolean isInvalid0() {
-        return invalid.getFirst();
+        return invalid.first();
     }
 
     public boolean isInvalid1() {
-        return invalid.getSecond();
+        return invalid.second();
     }
 
     public boolean isInvalid2() {
-        return invalid.getThird();
+        return invalid.third();
     }
 
     public boolean isInvalid3() {
-        return invalid.getFourth();
+        return invalid.fourth();
     }
 
     public boolean isValid0() {
-        return valid.getFirst();
+        return valid.first();
     }
 
     public boolean isValid1() {
-        return valid.getSecond();
+        return valid.second();
     }
 
     public boolean isValid2() {
-        return valid.getThird();
+        return valid.third();
     }
 
     public boolean isValid3() {
-        return valid.getFourth();
+        return valid.fourth();
     }
 }

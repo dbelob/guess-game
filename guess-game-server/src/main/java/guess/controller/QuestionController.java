@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -39,7 +40,7 @@ public class QuestionController {
 
     @GetMapping("/event-types")
     public List<EventTypeSuperBriefDto> getEventTypes(HttpSession httpSession) {
-        List<EventType> eventTypes = eventTypeService.getEventTypes();
+        List<EventType> eventTypes = new ArrayList<>(eventTypeService.getEventTypes());
         var language = localeService.getLanguage(httpSession);
         Comparator<EventType> comparatorByIsConference = Comparator.comparing(EventType::isEventTypeConference).reversed();
         Comparator<EventType> comparatorByInactive = Comparator.comparing(EventType::isInactive);
@@ -52,7 +53,7 @@ public class QuestionController {
 
     @GetMapping("/events")
     public List<EventSuperBriefDto> getEvents(@RequestParam List<Long> eventTypeIds, HttpSession httpSession) {
-        List<Event> events = questionService.getEvents(eventTypeIds);
+        List<Event> events = new ArrayList<>(questionService.getEvents(eventTypeIds));
         var language = localeService.getLanguage(httpSession);
 
         events.sort(Comparator.comparing(Event::getStartDate).reversed());
