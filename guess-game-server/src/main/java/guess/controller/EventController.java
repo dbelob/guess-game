@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -42,7 +43,7 @@ public class EventController {
     public List<EventBriefDto> getEvents(@RequestParam boolean conferences, @RequestParam boolean meetups,
                                          @RequestParam(required = false) Long organizerId,
                                          @RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
-        List<Event> events = eventService.getEvents(conferences, meetups, organizerId, eventTypeId);
+        List<Event> events = new ArrayList<>(eventService.getEvents(conferences, meetups, organizerId, eventTypeId));
         var language = localeService.getLanguage(httpSession);
 
         events.sort(Comparator.comparing(Event::getStartDate).reversed());

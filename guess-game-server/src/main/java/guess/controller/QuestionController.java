@@ -40,7 +40,7 @@ public class QuestionController {
 
     @GetMapping("/event-types")
     public List<EventTypeSuperBriefDto> getEventTypes(HttpSession httpSession) {
-        List<EventType> eventTypes = eventTypeService.getEventTypes();
+        List<EventType> eventTypes = new ArrayList<>(eventTypeService.getEventTypes());
         var language = localeService.getLanguage(httpSession);
         Comparator<EventType> comparatorByIsConference = Comparator.comparing(EventType::isEventTypeConference).reversed();
         Comparator<EventType> comparatorByInactive = Comparator.comparing(EventType::isInactive);

@@ -51,7 +51,7 @@ public class SpeakerServiceImpl implements SpeakerService {
 
                     return firstLetter.equalsIgnoreCase(nameFirstLetter);
                 })
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
@@ -60,7 +60,7 @@ public class SpeakerServiceImpl implements SpeakerService {
 
         return speakerDao.getSpeakers().stream()
                 .filter(s -> LocalizationUtils.getString(s.getNameWithLastNameFirst(), language).toLowerCase().indexOf(lowerCaseFirstLetters) == 0)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
@@ -84,7 +84,7 @@ public class SpeakerServiceImpl implements SpeakerService {
                             (!isGitHubSet || SearchUtils.isSubstringFound(trimmedLowerCasedGitHub, s.getGitHub())) &&
                             (!isJavaChampion || s.isJavaChampion()) &&
                             (!isMvp || s.isAnyMvp())))
-                    .collect(Collectors.toList());
+                    .toList();
         }
     }
 

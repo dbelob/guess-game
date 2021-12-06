@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -50,7 +51,7 @@ public class EventTypeController {
     }
 
     List<EventType> getEventTypesAndSort(boolean isConferences, boolean isMeetups, Long organizerId, Language language) {
-        List<EventType> eventTypes = eventTypeService.getEventTypes(isConferences, isMeetups, organizerId);
+        List<EventType> eventTypes = new ArrayList<>(eventTypeService.getEventTypes(isConferences, isMeetups, organizerId));
         Comparator<EventType> comparatorByIsConference = Comparator.comparing(EventType::isEventTypeConference).reversed();
         Comparator<EventType> comparatorByOrganizerName = Comparator.comparing(et -> LocalizationUtils.getString(et.getOrganizer().getName(), language), String.CASE_INSENSITIVE_ORDER);
         Comparator<EventType> comparatorByName = Comparator.comparing(et -> LocalizationUtils.getString(et.getName(), language), String.CASE_INSENSITIVE_ORDER);

@@ -40,7 +40,7 @@ public class EventServiceImpl implements EventService {
                         ((organizerId == null) || (et.getOrganizer().getId() == organizerId)) &&
                         ((eventTypeId == null) || (et.getId() == eventTypeId)))
                 .flatMap(et -> et.getEvents().stream())
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
