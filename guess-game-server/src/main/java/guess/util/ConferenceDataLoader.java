@@ -163,8 +163,8 @@ public class ConferenceDataLoader {
      * @throws NoSuchFieldException if field name is invalid
      */
     static void saveEventTypes(LoadResult<List<EventType>> loadResult) throws IOException, NoSuchFieldException {
-        List<EventType> eventTypesToAppend = loadResult.getItemToAppend();
-        List<EventType> eventTypesToUpdate = loadResult.getItemToUpdate();
+        List<EventType> eventTypesToAppend = loadResult.itemToAppend();
+        List<EventType> eventTypesToUpdate = loadResult.itemToUpdate();
 
         if (eventTypesToAppend.isEmpty() && eventTypesToUpdate.isEmpty()) {
             log.info("All event types are up-to-date");
@@ -969,23 +969,23 @@ public class ConferenceDataLoader {
      */
     static void saveFiles(LoadResult<List<Company>> companyLoadResult, SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
                           LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
-        List<Company> companiesToAppend = companyLoadResult.getItemToAppend();
+        List<Company> companiesToAppend = companyLoadResult.itemToAppend();
 
-        List<Speaker> speakersToAppend = speakerLoadResult.getSpeakers().getItemToAppend();
-        List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().getItemToUpdate();
+        List<Speaker> speakersToAppend = speakerLoadResult.getSpeakers().itemToAppend();
+        List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().itemToUpdate();
 
-        List<UrlFilename> urlFilenamesToAppend = speakerLoadResult.getUrlFilenames().getItemToAppend();
-        List<UrlFilename> urlFilenamesToUpdate = speakerLoadResult.getUrlFilenames().getItemToUpdate();
+        List<UrlFilename> urlFilenamesToAppend = speakerLoadResult.getUrlFilenames().itemToAppend();
+        List<UrlFilename> urlFilenamesToUpdate = speakerLoadResult.getUrlFilenames().itemToUpdate();
 
-        List<Talk> talksToDelete = talkLoadResult.getItemToDelete();
-        List<Talk> talksToAppend = talkLoadResult.getItemToAppend();
-        List<Talk> talksToUpdate = talkLoadResult.getItemToUpdate();
+        List<Talk> talksToDelete = talkLoadResult.itemToDelete();
+        List<Talk> talksToAppend = talkLoadResult.itemToAppend();
+        List<Talk> talksToUpdate = talkLoadResult.itemToUpdate();
 
-        var placeToAppend = placeLoadResult.getItemToAppend();
-        var placeToUpdate = placeLoadResult.getItemToUpdate();
+        var placeToAppend = placeLoadResult.itemToAppend();
+        var placeToUpdate = placeLoadResult.itemToUpdate();
 
-        var eventToAppend = eventLoadResult.getItemToAppend();
-        var eventToUpdate = eventLoadResult.getItemToUpdate();
+        var eventToAppend = eventLoadResult.itemToAppend();
+        var eventToUpdate = eventLoadResult.itemToUpdate();
 
         if (companiesToAppend.isEmpty() &&
                 urlFilenamesToAppend.isEmpty() && urlFilenamesToUpdate.isEmpty() &&
@@ -1014,7 +1014,7 @@ public class ConferenceDataLoader {
      * @throws NoSuchFieldException if field name is invalid
      */
     static void saveCompanies(LoadResult<List<Company>> companyLoadResult) throws IOException, NoSuchFieldException {
-        List<Company> companiesToAppend = companyLoadResult.getItemToAppend();
+        List<Company> companiesToAppend = companyLoadResult.itemToAppend();
 
         if (!companiesToAppend.isEmpty()) {
             logAndSaveCompanies(companiesToAppend, "Companies (to append resource file): {}", "companies-to-append.yml");
@@ -1028,8 +1028,8 @@ public class ConferenceDataLoader {
      * @throws IOException if file creation error occurs
      */
     static void saveImages(SpeakerLoadResult speakerLoadResult) throws IOException {
-        List<UrlFilename> urlFilenamesToAppend = speakerLoadResult.getUrlFilenames().getItemToAppend();
-        List<UrlFilename> urlFilenamesToUpdate = speakerLoadResult.getUrlFilenames().getItemToUpdate();
+        List<UrlFilename> urlFilenamesToAppend = speakerLoadResult.getUrlFilenames().itemToAppend();
+        List<UrlFilename> urlFilenamesToUpdate = speakerLoadResult.getUrlFilenames().itemToUpdate();
 
         if (!urlFilenamesToAppend.isEmpty()) {
             logAndCreateSpeakerImages(urlFilenamesToAppend, "Speaker images (to append): {}");
@@ -1048,8 +1048,8 @@ public class ConferenceDataLoader {
      * @throws NoSuchFieldException if field name is invalid
      */
     static void saveSpeakers(SpeakerLoadResult speakerLoadResult) throws IOException, NoSuchFieldException {
-        List<Speaker> speakersToAppend = speakerLoadResult.getSpeakers().getItemToAppend();
-        List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().getItemToUpdate();
+        List<Speaker> speakersToAppend = speakerLoadResult.getSpeakers().itemToAppend();
+        List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().itemToUpdate();
 
         if (!speakersToAppend.isEmpty()) {
             logAndSaveSpeakers(speakersToAppend, "Speakers (to append resource file): {}", "speakers-to-append.yml");
@@ -1071,9 +1071,9 @@ public class ConferenceDataLoader {
      * @throws NoSuchFieldException if field name is invalid
      */
     static void saveTalks(LoadResult<List<Talk>> talkLoadResult) throws IOException, NoSuchFieldException {
-        List<Talk> talksToDelete = talkLoadResult.getItemToDelete();
-        List<Talk> talksToAppend = talkLoadResult.getItemToAppend();
-        List<Talk> talksToUpdate = talkLoadResult.getItemToUpdate();
+        List<Talk> talksToDelete = talkLoadResult.itemToDelete();
+        List<Talk> talksToAppend = talkLoadResult.itemToAppend();
+        List<Talk> talksToUpdate = talkLoadResult.itemToUpdate();
 
         if (!talksToDelete.isEmpty()) {
             List<Talk> sortedTalksToDelete = talksToDelete.stream()
@@ -1102,8 +1102,8 @@ public class ConferenceDataLoader {
      * @throws NoSuchFieldException if field name is invalid
      */
     static void savePlaces(LoadResult<Place> placeLoadResult) throws IOException, NoSuchFieldException {
-        var placeToAppend = placeLoadResult.getItemToAppend();
-        var placeToUpdate = placeLoadResult.getItemToUpdate();
+        var placeToAppend = placeLoadResult.itemToAppend();
+        var placeToUpdate = placeLoadResult.itemToUpdate();
 
         if (placeToAppend != null) {
             savePlace(placeToAppend, "place-to-append.yml");
@@ -1122,8 +1122,8 @@ public class ConferenceDataLoader {
      * @throws NoSuchFieldException if field name is invalid
      */
     static void saveEvents(LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
-        var eventToAppend = eventLoadResult.getItemToAppend();
-        var eventToUpdate = eventLoadResult.getItemToUpdate();
+        var eventToAppend = eventLoadResult.itemToAppend();
+        var eventToUpdate = eventLoadResult.itemToUpdate();
 
         if (eventToAppend != null) {
             saveEvent(eventToAppend, "event-to-append.yml");
@@ -1187,7 +1187,7 @@ public class ConferenceDataLoader {
     static void logAndCreateSpeakerImages(List<UrlFilename> urlFilenames, String logMessage) throws IOException {
         log.info(logMessage, urlFilenames.size());
         for (UrlFilename urlFilename : urlFilenames) {
-            ImageUtils.create(urlFilename.getUrl(), urlFilename.getFilename());
+            ImageUtils.create(urlFilename.url(), urlFilename.filename());
         }
     }
 
@@ -1533,9 +1533,9 @@ public class ConferenceDataLoader {
      */
     static String getFixedVenueAddress(String city, String venueAddress, List<FixingVenueAddress> fixingVenueAddresses) {
         for (FixingVenueAddress fixingVenueAddress : fixingVenueAddresses) {
-            if (fixingVenueAddress.getCity().equals(city) &&
-                    fixingVenueAddress.getInvalidVenueAddress().equals(venueAddress)) {
-                return fixingVenueAddress.getValidVenueAddress();
+            if (fixingVenueAddress.city().equals(city) &&
+                    fixingVenueAddress.invalidVenueAddress().equals(venueAddress)) {
+                return fixingVenueAddress.validVenueAddress();
             }
         }
 

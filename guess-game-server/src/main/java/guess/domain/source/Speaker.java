@@ -7,7 +7,6 @@ import guess.util.LocalizationUtils;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Speaker.
@@ -82,7 +81,7 @@ public class Speaker extends Identifier {
         this.companies = companies;
         this.companyIds = companies.stream()
                 .map(Company::getId)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public String getPhotoFileName() {

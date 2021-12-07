@@ -47,8 +47,8 @@ public class SpeakerTagCloudsDto extends QuestionAnswersDto {
     public static SpeakerTagCloudsDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,
                                                    Language language) {
         Quadruple<TagCloudAnswer> answers =
-                questionAnswers.getAvailableAnswers().map(TagCloudAnswer.class::cast);
-        var questionSpeaker = ((TagCloudQuestion) questionAnswers.getQuestion()).getSpeaker();
+                questionAnswers.availableAnswers().map(TagCloudAnswer.class::cast);
+        var questionSpeaker = ((TagCloudQuestion) questionAnswers.question()).getSpeaker();
 
         return new SpeakerTagCloudsDto(
                 sourceDto,

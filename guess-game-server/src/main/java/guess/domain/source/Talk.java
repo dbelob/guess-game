@@ -3,7 +3,6 @@ package guess.domain.source;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Talk.
@@ -49,7 +48,7 @@ public class Talk extends Descriptionable {
         this.speakers = speakers;
         this.speakerIds = speakers.stream()
                 .map(Speaker::getId)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public Long getTalkDay() {

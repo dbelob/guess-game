@@ -65,10 +65,10 @@ public class SpeakerAccountsDto extends QuestionAnswersDto {
     public static SpeakerAccountsDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,
                                                   Language language) {
         Quadruple<Speaker> speakers =
-                questionAnswers.getAvailableAnswers().map(
+                questionAnswers.availableAnswers().map(
                         a -> ((SpeakerAnswer) a).getSpeaker()
                 );
-        var questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
+        var questionSpeaker = ((SpeakerQuestion) questionAnswers.question()).getSpeaker();
 
         return new SpeakerAccountsDto(
                 sourceDto,

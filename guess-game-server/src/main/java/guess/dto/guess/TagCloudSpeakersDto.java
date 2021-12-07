@@ -32,7 +32,7 @@ public class TagCloudSpeakersDto extends EntitySpeakersDto {
     public static TagCloudSpeakersDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,
                                                    Language language) {
         Quadruple<Speaker> speakers =
-                questionAnswers.getAvailableAnswers().map(
+                questionAnswers.availableAnswers().map(
                         a -> ((SpeakerAnswer) a).getSpeaker()
                 );
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
@@ -43,7 +43,7 @@ public class TagCloudSpeakersDto extends EntitySpeakersDto {
                 speakers.map(
                         s -> LocalizationUtils.getSpeakerName(s, language, speakerDuplicates)
                 );
-        TagCloudQuestion question = (TagCloudQuestion) questionAnswers.getQuestion();
+        TagCloudQuestion question = (TagCloudQuestion) questionAnswers.question();
 
         return new TagCloudSpeakersDto(
                 sourceDto,

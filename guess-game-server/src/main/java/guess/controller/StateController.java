@@ -60,14 +60,14 @@ public class StateController {
         List<Long> correctAnswerIds = answerService.getCorrectAnswerIds(currentQuestionIndex, httpSession);
         List<Long> yourAnswerIds = answerService.getYourAnswerIds(currentQuestionIndex, httpSession);
 
-        if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
-            var questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
+        if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.questionAnswersList().size())) {
+            var questionAnswers = questionAnswersSet.questionAnswersList().get(currentQuestionIndex);
             var language = localeService.getLanguage(httpSession);
             var sourceDto = new QuestionAnswersSourceDto(
-                    LocalizationUtils.getString(questionAnswersSet.getName(), language),
+                    LocalizationUtils.getString(questionAnswersSet.name(), language),
                     currentQuestionIndex,
-                    questionAnswersSet.getQuestionAnswersList().size(),
-                    questionAnswersSet.getLogoFileName(),
+                    questionAnswersSet.questionAnswersList().size(),
+                    questionAnswersSet.logoFileName(),
                     correctAnswerIds,
                     yourAnswerIds
             );

@@ -54,7 +54,7 @@ public class SpeakersTalksDto extends QuestionAnswersDto {
     public static SpeakersTalksDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,
                                                 Language language) {
         Quadruple<Talk> talks =
-                questionAnswers.getAvailableAnswers().map(
+                questionAnswers.availableAnswers().map(
                         a -> ((TalkAnswer) a).getTalk()
                 );
 
@@ -68,7 +68,7 @@ public class SpeakersTalksDto extends QuestionAnswersDto {
                 new ArrayList<>(talkSpeakers),
                 s -> LocalizationUtils.getString(s.getName(), language),
                 s -> true);
-        List<SpeakerPairDto> questionSpeakers = ((TalkQuestion) questionAnswers.getQuestion()).getSpeakers().stream()
+        List<SpeakerPairDto> questionSpeakers = ((TalkQuestion) questionAnswers.question()).getSpeakers().stream()
                 .map(s -> new SpeakerPairDto(
                         LocalizationUtils.getSpeakerName(s, language, speakerDuplicates),
                         s.getPhotoFileName()))

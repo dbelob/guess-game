@@ -7,28 +7,8 @@ import java.util.Objects;
  * Source information.
  */
 public class SourceInformation {
-    public static class SpeakerInformation {
-        private final List<Company> companies;
-        private final List<CompanySynonyms> companySynonyms;
-        private final List<Speaker> speakers;
-
-        public SpeakerInformation(List<Company> companies, List<CompanySynonyms> companySynonyms, List<Speaker> speakers) {
-            this.companies = companies;
-            this.companySynonyms = companySynonyms;
-            this.speakers = speakers;
-        }
-
-        public List<Company> getCompanies() {
-            return companies;
-        }
-
-        public List<CompanySynonyms> getCompanySynonyms() {
-            return companySynonyms;
-        }
-
-        public List<Speaker> getSpeakers() {
-            return speakers;
-        }
+    public record SpeakerInformation(List<Company> companies, List<CompanySynonyms> companySynonyms,
+                                     List<Speaker> speakers) {
     }
 
     private final List<Place> places;

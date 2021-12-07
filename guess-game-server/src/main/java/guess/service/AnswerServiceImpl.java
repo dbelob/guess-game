@@ -52,9 +52,9 @@ public class AnswerServiceImpl implements AnswerService {
             var questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
 
             if (questionAnswersSet != null) {
-                List<QuestionAnswers> questionAnswersList = questionAnswersSet.getQuestionAnswersList();
+                List<QuestionAnswers> questionAnswersList = questionAnswersSet.questionAnswersList();
                 var questionAnswers = questionAnswersList.get(questionIndex);
-                List<Long> correctAnswerIds = questionAnswers.getCorrectAnswers().stream()
+                List<Long> correctAnswerIds = questionAnswers.correctAnswers().stream()
                         .map(Identifiable::getId)
                         .collect(Collectors.toList());
                 List<Long> yourAnswerIds = new ArrayList<>(Collections.singletonList(answerId));
@@ -128,7 +128,7 @@ public class AnswerServiceImpl implements AnswerService {
                 .filter(a -> !a.isSuccess())
                 .count();
         var questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
-        long totalQuestions = (questionAnswersSet != null) ? questionAnswersSet.getQuestionAnswersList().size() : 0;
+        long totalQuestions = (questionAnswersSet != null) ? questionAnswersSet.questionAnswersList().size() : 0;
         long skippedAnswers = totalQuestions - (correctAnswers + wrongAnswers);
         float correctPercents = (totalQuestions != 0) ? (float) correctAnswers / totalQuestions : 0;
         float wrongPercents = (totalQuestions != 0) ? (float) wrongAnswers / totalQuestions : 0;
@@ -143,7 +143,7 @@ public class AnswerServiceImpl implements AnswerService {
     public List<ErrorDetails> getErrorDetailsList(HttpSession httpSession) {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
         var questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
-        List<QuestionAnswers> questionAnswersList = (questionAnswersSet != null) ? questionAnswersSet.getQuestionAnswersList() : Collections.emptyList();
+        List<QuestionAnswers> questionAnswersList = (questionAnswersSet != null) ? questionAnswersSet.questionAnswersList() : Collections.emptyList();
         List<ErrorDetails> errorDetailsList = new ArrayList<>();
 
         for (var i = 0; i < answerSets.size(); i++) {
@@ -163,8 +163,8 @@ public class AnswerServiceImpl implements AnswerService {
 
                 if (!yourAnswers.isEmpty()) {
                     errorDetailsList.add(new ErrorDetails(
-                            questionAnswersList.get(i).getQuestion(),
-                            questionAnswersList.get(i).getCorrectAnswers(),
+                            questionAnswersList.get(i).question(),
+                            questionAnswersList.get(i).correctAnswers(),
                             questionAnswersList.get(i).getAvailableAnswersAsList(),
                             yourAnswers));
                 }

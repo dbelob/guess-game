@@ -913,15 +913,15 @@ public class ContentfulUtils {
             return value;
         }
 
-        for (ExtractPair extractPair : extractSet.getPairs()) {
-            var pattern = Pattern.compile(extractPair.getPatternRegex());
+        for (ExtractPair extractPair : extractSet.pairs()) {
+            var pattern = Pattern.compile(extractPair.patternRegex());
             var matcher = pattern.matcher(value);
             if (matcher.matches()) {
-                return matcher.group(extractPair.getGroupIndex());
+                return matcher.group(extractPair.groupIndex());
             }
         }
 
-        throw new IllegalArgumentException(String.format(extractSet.getExceptionMessage(), value));
+        throw new IllegalArgumentException(String.format(extractSet.exceptionMessage(), value));
     }
 
     /**

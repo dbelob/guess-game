@@ -47,7 +47,7 @@ public class PhotoNamesDto extends QuestionAnswersDto {
     public static PhotoNamesDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,
                                              Language language) {
         Quadruple<Speaker> speakers =
-                questionAnswers.getAvailableAnswers().map(
+                questionAnswers.availableAnswers().map(
                         a -> ((SpeakerAnswer) a).getSpeaker()
                 );
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
@@ -62,7 +62,7 @@ public class PhotoNamesDto extends QuestionAnswersDto {
         return new PhotoNamesDto(
                 sourceDto,
                 speakers.map(Speaker::getId),
-                ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker().getPhotoFileName(),
+                ((SpeakerQuestion) questionAnswers.question()).getSpeaker().getPhotoFileName(),
                 names);
     }
 }

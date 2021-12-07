@@ -37,7 +37,7 @@ public class AccountSpeakersDto extends EntitySpeakersDto {
     public static AccountSpeakersDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,
                                                   Language language) {
         Quadruple<Speaker> speakers =
-                questionAnswers.getAvailableAnswers().map(
+                questionAnswers.availableAnswers().map(
                         a -> ((SpeakerAnswer) a).getSpeaker()
                 );
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
@@ -48,7 +48,7 @@ public class AccountSpeakersDto extends EntitySpeakersDto {
                 speakers.map(
                         s -> LocalizationUtils.getSpeakerName(s, language, speakerDuplicates)
                 );
-        var questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
+        var questionSpeaker = ((SpeakerQuestion) questionAnswers.question()).getSpeaker();
 
         return new AccountSpeakersDto(
                 sourceDto,

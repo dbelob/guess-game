@@ -31,7 +31,7 @@ public class TalkSpeakersDto extends EntitySpeakersDto {
     public static TalkSpeakersDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,
                                                Language language) {
         Quadruple<Speaker> speakers =
-                questionAnswers.getAvailableAnswers().map(
+                questionAnswers.availableAnswers().map(
                         a -> ((SpeakerAnswer) a).getSpeaker()
                 );
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
@@ -48,6 +48,6 @@ public class TalkSpeakersDto extends EntitySpeakersDto {
                 speakers.map(Speaker::getId),
                 speakers.map(Speaker::getPhotoFileName),
                 names,
-                LocalizationUtils.getString(((TalkQuestion) questionAnswers.getQuestion()).getTalk().getName(), language));
+                LocalizationUtils.getString(((TalkQuestion) questionAnswers.question()).getTalk().getName(), language));
     }
 }

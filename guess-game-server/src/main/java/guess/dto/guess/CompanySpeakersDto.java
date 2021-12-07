@@ -31,7 +31,7 @@ public class CompanySpeakersDto extends EntitySpeakersDto {
     public static CompanySpeakersDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,
                                                   Language language) {
         Quadruple<Speaker> speakers =
-                questionAnswers.getAvailableAnswers().map(
+                questionAnswers.availableAnswers().map(
                         a -> ((SpeakerAnswer) a).getSpeaker()
                 );
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
@@ -48,7 +48,7 @@ public class CompanySpeakersDto extends EntitySpeakersDto {
                 speakers.map(Speaker::getId),
                 speakers.map(Speaker::getPhotoFileName),
                 names,
-                LocalizationUtils.getString(((SpeakerByCompanyQuestion) questionAnswers.getQuestion()).getCompany().getName(), language)
+                LocalizationUtils.getString(((SpeakerByCompanyQuestion) questionAnswers.question()).getCompany().getName(), language)
         );
     }
 }

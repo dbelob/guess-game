@@ -99,9 +99,9 @@ public class YamlUtils {
     static SourceInformation getSourceInformation(List<Place> places, List<Organizer> organizers, List<EventType> eventTypes,
                                                   List<Event> events, SourceInformation.SpeakerInformation speakerInformation,
                                                   List<Talk> talks) throws SpeakerDuplicatedException {
-        List<Company> companies = speakerInformation.getCompanies();
-        List<CompanySynonyms> companySynonymsList = speakerInformation.getCompanySynonyms();
-        List<Speaker> speakers = speakerInformation.getSpeakers();
+        List<Company> companies = speakerInformation.companies();
+        List<CompanySynonyms> companySynonymsList = speakerInformation.companySynonyms();
+        List<Speaker> speakers = speakerInformation.speakers();
 
         Map<Long, Place> placeMap = listToMap(places, Place::getId);
         Map<Long, Organizer> organizerMap = listToMap(organizers, Organizer::getId);

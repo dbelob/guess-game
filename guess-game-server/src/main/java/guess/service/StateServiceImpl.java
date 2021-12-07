@@ -47,7 +47,7 @@ public class StateServiceImpl implements StateService {
 
         answerDao.clearAnswerSets(httpSession);
         stateDao.setGameState(
-                questionAnswersSet.getQuestionAnswersList().isEmpty() ?
+                questionAnswersSet.questionAnswersList().isEmpty() ?
                         GameState.RESULT_STATE :
                         getStateByGuessMode(startParameters.guessMode()),
                 httpSession);

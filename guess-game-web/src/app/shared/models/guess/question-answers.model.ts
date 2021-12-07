@@ -1,5 +1,5 @@
 export abstract class QuestionAnswers {
-  constructor(
+  protected constructor(
     public questionSetName?: string,
     public currentIndex?: number,
     public totalNumber?: number,

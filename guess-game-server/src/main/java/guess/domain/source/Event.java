@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Event.
@@ -69,7 +68,7 @@ public class Event extends Nameable {
         this.talks = talks;
         this.talkIds = talks.stream()
                 .map(Talk::getId)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public long getEventTypeId() {
