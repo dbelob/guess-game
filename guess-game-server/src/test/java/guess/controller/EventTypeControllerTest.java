@@ -60,14 +60,14 @@ class EventTypeControllerTest {
         eventType1.setId(1);
         eventType1.setOrganizer(organizer0);
 
-        given(eventTypeService.getEventTypes(true, true, null)).willReturn(new ArrayList<>(List.of(eventType0, eventType1)));
+        given(eventTypeService.getEventTypes(true, true, null)).willReturn(List.of(eventType0, eventType1));
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
         mvc.perform(get("/api/event-type/event-types")
-                .contentType(MediaType.APPLICATION_JSON)
-                .param("conferences", "true")
-                .param("meetups", "true")
-                .session(httpSession))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .param("conferences", "true")
+                        .param("meetups", "true")
+                        .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)));
         Mockito.verify(eventTypeService, VerificationModeFactory.times(1)).getEventTypes(true, true, null);
@@ -89,14 +89,14 @@ class EventTypeControllerTest {
         eventType1.setId(1);
         eventType1.setOrganizer(organizer0);
 
-        given(eventTypeService.getEventTypes(true, true, null)).willReturn(new ArrayList<>(List.of(eventType0, eventType1)));
+        given(eventTypeService.getEventTypes(true, true, null)).willReturn(List.of(eventType0, eventType1));
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
         mvc.perform(get("/api/event-type/filter-event-types")
-                .contentType(MediaType.APPLICATION_JSON)
-                .param("conferences", "true")
-                .param("meetups", "true")
-                .session(httpSession))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .param("conferences", "true")
+                        .param("meetups", "true")
+                        .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)));
         Mockito.verify(eventTypeService, VerificationModeFactory.times(1)).getEventTypes(true, true, null);
@@ -118,7 +118,7 @@ class EventTypeControllerTest {
         eventType1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
         eventType1.setOrganizer(organizer0);
 
-        given(eventTypeService.getEventTypes(true, true, null)).willReturn(new ArrayList<>(List.of(eventType1, eventType0)));
+        given(eventTypeService.getEventTypes(true, true, null)).willReturn(List.of(eventType1, eventType0));
 
         assertEquals(List.of(eventType0, eventType1), eventTypeController.getEventTypesAndSort(true, true, null, Language.ENGLISH));
         Mockito.verify(eventTypeService, VerificationModeFactory.times(1)).getEventTypes(true, true, null);
@@ -154,8 +154,8 @@ class EventTypeControllerTest {
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
         mvc.perform(get("/api/event-type/event-type/0")
-                .contentType(MediaType.APPLICATION_JSON)
-                .session(httpSession))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.eventType.id", is(0)))
                 .andExpect(jsonPath("$.eventType.name", is("Name")))

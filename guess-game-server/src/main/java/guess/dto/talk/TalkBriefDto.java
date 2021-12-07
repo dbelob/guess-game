@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 /**
  * Talk DTO (brief).
@@ -129,6 +128,6 @@ public class TalkBriefDto {
                                                        Language language) {
         return talks.stream()
                 .map(t -> convertToBriefDto(t, talkEventFunction, eventEventTypeFunction, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 }

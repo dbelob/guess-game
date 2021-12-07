@@ -86,9 +86,11 @@ public class SpeakerController {
         var speakerDetailsDto = SpeakerDetailsDto.convertToDto(speaker, talks, eventService::getEventByTalk,
                 eventTypeService::getEventTypeByEvent, language);
 
-        speakerDetailsDto.getTalks().sort(Comparator.comparing(TalkBriefDto::getTalkDate).reversed());
+        List<TalkBriefDto> sortedTalks = speakerDetailsDto.getTalks().stream()
+                .sorted(Comparator.comparing(TalkBriefDto::getTalkDate).reversed())
+                .toList();
 
-        return speakerDetailsDto;
+        return new SpeakerDetailsDto(speakerDetailsDto.getSpeaker(), sortedTalks);
     }
 
     List<SpeakerBriefDto> convertToBriefDtoAndSort(List<Speaker> speakers, Function<List<Speaker>, List<SpeakerBriefDto>> speakerFunction) {

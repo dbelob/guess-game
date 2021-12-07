@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -40,25 +39,29 @@ public class QuestionController {
 
     @GetMapping("/event-types")
     public List<EventTypeSuperBriefDto> getEventTypes(HttpSession httpSession) {
-        List<EventType> eventTypes = new ArrayList<>(eventTypeService.getEventTypes());
+        List<EventType> eventTypes = eventTypeService.getEventTypes();
         var language = localeService.getLanguage(httpSession);
         Comparator<EventType> comparatorByIsConference = Comparator.comparing(EventType::isEventTypeConference).reversed();
         Comparator<EventType> comparatorByInactive = Comparator.comparing(EventType::isInactive);
         Comparator<EventType> comparatorByName = Comparator.comparing(et -> LocalizationUtils.getString(et.getName(), language), String.CASE_INSENSITIVE_ORDER);
 
-        eventTypes.sort(comparatorByIsConference.thenComparing(comparatorByInactive).thenComparing(comparatorByName));
+        List<EventType> sortedEventTypes = eventTypes.stream()
+                .sorted(comparatorByIsConference.thenComparing(comparatorByInactive).thenComparing(comparatorByName))
+                .toList();
 
-        return EventTypeSuperBriefDto.convertToSuperBriefDto(eventTypes, language);
+        return EventTypeSuperBriefDto.convertToSuperBriefDto(sortedEventTypes, language);
     }
 
     @GetMapping("/events")
     public List<EventSuperBriefDto> getEvents(@RequestParam List<Long> eventTypeIds, HttpSession httpSession) {
-        List<Event> events = new ArrayList<>(questionService.getEvents(eventTypeIds));
+        List<Event> events = questionService.getEvents(eventTypeIds);
         var language = localeService.getLanguage(httpSession);
 
-        events.sort(Comparator.comparing(Event::getStartDate).reversed());
+        List<Event> sportedEvents = events.stream()
+                .sorted(Comparator.comparing(Event::getStartDate).reversed())
+                .toList();
 
-        return EventSuperBriefDto.convertToSuperBriefDto(events, language);
+        return EventSuperBriefDto.convertToSuperBriefDto(sportedEvents, language);
     }
 
     @GetMapping("/quantities")

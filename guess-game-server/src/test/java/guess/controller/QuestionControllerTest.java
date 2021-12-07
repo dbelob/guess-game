@@ -22,7 +22,6 @@ import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -65,12 +64,12 @@ class QuestionControllerTest {
         eventType2.setConference(Conference.JOKER);
         eventType0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name2")));
 
-        given(eventTypeService.getEventTypes()).willReturn(new ArrayList<>(List.of(eventType0, eventType1, eventType2)));
+        given(eventTypeService.getEventTypes()).willReturn(List.of(eventType0, eventType1, eventType2));
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
         mvc.perform(get("/api/question/event-types")
-                .contentType(MediaType.APPLICATION_JSON)
-                .session(httpSession))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(3)))
                 .andExpect(jsonPath("$[0].id", is(1)))
@@ -101,13 +100,13 @@ class QuestionControllerTest {
         event1.setStartDate(LocalDate.of(2020, 10, 30));
         event1.setEventType(eventType0);
 
-        given(questionService.getEvents(List.of(0L, 1L))).willReturn(new ArrayList<>(List.of(event0, event1)));
+        given(questionService.getEvents(List.of(0L, 1L))).willReturn(List.of(event0, event1));
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
         mvc.perform(get("/api/question/events")
-                .contentType(MediaType.APPLICATION_JSON)
-                .param("eventTypeIds", "0", "1")
-                .session(httpSession))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .param("eventTypeIds", "0", "1")
+                        .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
                 .andExpect(jsonPath("$[0].id", is(1)))
@@ -121,11 +120,11 @@ class QuestionControllerTest {
         MockHttpSession httpSession = new MockHttpSession();
 
         mvc.perform(get("/api/question/quantities")
-                .contentType(MediaType.APPLICATION_JSON)
-                .param("eventTypeIds", "0")
-                .param("eventIds", "0", "1")
-                .param("guessMode", "GUESS_NAME_BY_PHOTO_MODE")
-                .session(httpSession))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .param("eventTypeIds", "0")
+                        .param("eventIds", "0", "1")
+                        .param("guessMode", "GUESS_NAME_BY_PHOTO_MODE")
+                        .session(httpSession))
                 .andExpect(status().isOk());
         Mockito.verify(questionService, VerificationModeFactory.times(1)).getQuantities(List.of(0L), List.of(0L, 1L), GuessMode.GUESS_NAME_BY_PHOTO_MODE);
     }

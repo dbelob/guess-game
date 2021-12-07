@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -42,15 +41,15 @@ public class TalkController {
                                        HttpSession httpSession) {
         List<Talk> talks = talkService.getTalks(eventTypeId, eventId, talkName, speakerName);
         var language = localeService.getLanguage(httpSession);
-        List<TalkBriefDto> talkBriefDtoList = new ArrayList<>(TalkBriefDto.convertToBriefDto(talks, eventService::getEventByTalk,
-                eventTypeService::getEventTypeByEvent, language));
+        List<TalkBriefDto> talkBriefDtoList = TalkBriefDto.convertToBriefDto(talks, eventService::getEventByTalk,
+                eventTypeService::getEventTypeByEvent, language);
 
         Comparator<TalkBriefDto> comparatorByEventName = Comparator.comparing(t -> t.getEvent().getName());
         Comparator<TalkBriefDto> comparatorByName = Comparator.comparing(TalkBriefDto::getName);
 
-        talkBriefDtoList.sort(comparatorByEventName.thenComparing(comparatorByName));
-
-        return talkBriefDtoList;
+        return talkBriefDtoList.stream()
+                .sorted(comparatorByEventName.thenComparing(comparatorByName))
+                .toList();
     }
 
     @GetMapping("/talk/{id}")

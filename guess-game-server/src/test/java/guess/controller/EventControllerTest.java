@@ -22,7 +22,6 @@ import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -86,15 +85,15 @@ class EventControllerTest {
         event2.setEndDate(LocalDate.of(2020, 10, 31));
         event2.setEventType(eventType0);
 
-        given(eventService.getEvents(conferences, meetups, organizerId, eventTypeId)).willReturn(new ArrayList<>(List.of(event0, event1, event2)));
+        given(eventService.getEvents(conferences, meetups, organizerId, eventTypeId)).willReturn(List.of(event0, event1, event2));
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
         mvc.perform(get("/api/event/events")
-                .contentType(MediaType.APPLICATION_JSON)
-                .param("conferences", Boolean.toString(conferences))
-                .param("meetups", Boolean.toString(meetups))
-                .param("eventTypeId", "0")
-                .session(httpSession))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .param("conferences", Boolean.toString(conferences))
+                        .param("meetups", Boolean.toString(meetups))
+                        .param("eventTypeId", "0")
+                        .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(3)))
                 .andExpect(jsonPath("$[0].id", is(2)))
@@ -138,8 +137,8 @@ class EventControllerTest {
             given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
             mvc.perform(get("/api/event/default-event")
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .session(httpSession))
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .session(httpSession))
                     .andExpect(status().isOk());
             Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent(IS_CONFERENCES, IS_MEETUPS);
             Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
@@ -181,8 +180,8 @@ class EventControllerTest {
             given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
             mvc.perform(get("/api/event/default-event-home-info")
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .session(httpSession))
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .session(httpSession))
                     .andExpect(status().isOk());
             Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent(IS_CONFERENCES, IS_MEETUPS);
             Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
@@ -224,8 +223,8 @@ class EventControllerTest {
             given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
             mvc.perform(get("/api/event/default-conference")
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .session(httpSession))
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .session(httpSession))
                     .andExpect(status().isOk());
             Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent(IS_CONFERENCES, IS_MEETUPS);
             Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
@@ -289,8 +288,8 @@ class EventControllerTest {
         given(eventTypeService.getEventTypeByEvent(event0)).willReturn(eventType);
 
         mvc.perform(get("/api/event/event/0")
-                .contentType(MediaType.APPLICATION_JSON)
-                .session(httpSession))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.event.id", is(0)))
                 .andExpect(jsonPath("$.speakers", hasSize(3)))

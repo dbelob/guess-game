@@ -17,7 +17,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -43,12 +42,14 @@ public class EventController {
     public List<EventBriefDto> getEvents(@RequestParam boolean conferences, @RequestParam boolean meetups,
                                          @RequestParam(required = false) Long organizerId,
                                          @RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
-        List<Event> events = new ArrayList<>(eventService.getEvents(conferences, meetups, organizerId, eventTypeId));
+        List<Event> events = eventService.getEvents(conferences, meetups, organizerId, eventTypeId);
         var language = localeService.getLanguage(httpSession);
 
-        events.sort(Comparator.comparing(Event::getStartDate).reversed());
+        List<Event> sortedEvents = events.stream()
+                .sorted(Comparator.comparing(Event::getStartDate).reversed())
+                .toList();
 
-        return EventBriefDto.convertToBriefDto(events, language);
+        return EventBriefDto.convertToBriefDto(sortedEvents, language);
     }
 
     @GetMapping("/default-event")
@@ -92,7 +93,9 @@ public class EventController {
                 s -> s.getCompanies().stream()
                         .map(CompanyDto::getName)
                         .collect(Collectors.joining(", ")), String.CASE_INSENSITIVE_ORDER);
-        eventDetailsDto.getSpeakers().sort(comparatorByName.thenComparing(comparatorByCompany));
+        List<SpeakerBriefDto> sortedSpeakers = eventDetailsDto.getSpeakers().stream()
+                .sorted(comparatorByName.thenComparing(comparatorByCompany))
+                .toList();
 
         Comparator<TalkBriefDto> comparatorByTalkDate = Comparator.nullsLast(
                 Comparator.comparing(
@@ -106,8 +109,10 @@ public class EventController {
                 Comparator.comparing(
                         TalkBriefDto::getTrack,
                         Comparator.nullsLast(Comparator.naturalOrder())));
-        eventDetailsDto.getTalks().sort(comparatorByTalkDate.thenComparing(comparatorByTalkTime).thenComparing(comparatorByTrack));
+        List<TalkBriefDto> sortedTalks = eventDetailsDto.getTalks().stream()
+                .sorted(comparatorByTalkDate.thenComparing(comparatorByTalkTime).thenComparing(comparatorByTrack))
+                .toList();
 
-        return eventDetailsDto;
+        return new EventDetailsDto(eventDetailsDto.getEvent(), sortedSpeakers, sortedTalks);
     }
 }
