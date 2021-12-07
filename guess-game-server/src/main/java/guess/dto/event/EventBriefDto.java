@@ -6,7 +6,6 @@ import guess.util.LocalizationUtils;
 
 import java.time.temporal.ChronoUnit;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Event DTO (brief).
@@ -65,6 +64,6 @@ public class EventBriefDto extends EventSuperBriefDto {
     public static List<EventBriefDto> convertToBriefDto(List<Event> events, Language language) {
         return events.stream()
                 .map(e -> convertToBriefDto(e, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 }

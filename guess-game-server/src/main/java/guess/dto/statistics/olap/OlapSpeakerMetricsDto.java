@@ -8,7 +8,6 @@ import guess.util.LocalizationUtils;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * OLAP speaker metrics DTO.
@@ -41,7 +40,7 @@ public class OlapSpeakerMetricsDto extends OlapEntityMetricsDto {
     public static List<OlapSpeakerMetricsDto> convertToDto(List<OlapEntityMetrics<Speaker>> speakerMetricsList, Language language) {
         List<Speaker> speakers = speakerMetricsList.stream()
                 .map(OlapEntityMetrics::getEntity)
-                .collect(Collectors.toList());
+                .toList();
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 speakers,
                 s -> LocalizationUtils.getString(s.getName(), language),
@@ -49,7 +48,7 @@ public class OlapSpeakerMetricsDto extends OlapEntityMetricsDto {
 
         return speakerMetricsList.stream()
                 .map(sm -> convertToDto(sm, language, speakerDuplicates))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override

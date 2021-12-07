@@ -6,7 +6,6 @@ import guess.domain.statistics.olap.OlapEntityMetrics;
 import guess.util.LocalizationUtils;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * OLAP company metrics DTO.
@@ -30,7 +29,7 @@ public class OlapCompanyMetricsDto extends OlapEntityMetricsDto {
     public static List<OlapCompanyMetricsDto> convertToDto(List<OlapEntityMetrics<Company>> companyMetricsList, Language language) {
         return companyMetricsList.stream()
                 .map(cm -> convertToDto(cm, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override

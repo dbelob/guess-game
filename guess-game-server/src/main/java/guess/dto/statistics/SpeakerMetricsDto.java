@@ -9,7 +9,6 @@ import guess.util.LocalizationUtils;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Speaker metrics DTO.
@@ -92,7 +91,7 @@ public class SpeakerMetricsDto extends AbstractSpeakerCompanyMetrics {
     public static List<SpeakerMetricsDto> convertToDto(List<SpeakerMetrics> speakerMetricsList, Language language) {
         List<Speaker> speakers = speakerMetricsList.stream()
                 .map(SpeakerMetrics::getSpeaker)
-                .collect(Collectors.toList());
+                .toList();
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 speakers,
                 s -> LocalizationUtils.getString(s.getName(), language),
@@ -100,7 +99,7 @@ public class SpeakerMetricsDto extends AbstractSpeakerCompanyMetrics {
 
         return speakerMetricsList.stream()
                 .map(sm -> convertToDto(sm, language, speakerDuplicates))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override

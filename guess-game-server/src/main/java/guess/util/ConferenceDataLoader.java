@@ -176,8 +176,10 @@ public class ConferenceDataLoader {
             }
 
             if (!eventTypesToUpdate.isEmpty()) {
-                eventTypesToUpdate.sort(Comparator.comparing(EventType::getId));
-                logAndSaveEventTypes(eventTypesToUpdate, "Event types (to update resource file): {}", "event-types-to-update.yml");
+                List<EventType> sortedEventTypesToUpdate = eventTypesToUpdate.stream()
+                        .sorted(Comparator.comparing(EventType::getId))
+                        .toList();
+                logAndSaveEventTypes(sortedEventTypesToUpdate, "Event types (to update resource file): {}", "event-types-to-update.yml");
             }
         }
     }
@@ -1054,8 +1056,10 @@ public class ConferenceDataLoader {
         }
 
         if (!speakersToUpdate.isEmpty()) {
-            speakersToUpdate.sort(Comparator.comparing(Speaker::getId));
-            logAndSaveSpeakers(speakersToUpdate, "Speakers (to update resource file): {}", "speakers-to-update.yml");
+            List<Speaker> sortedSpeakersToUpdate = speakersToUpdate.stream()
+                    .sorted(Comparator.comparing(Speaker::getId))
+                    .toList();
+            logAndSaveSpeakers(sortedSpeakersToUpdate, "Speakers (to update resource file): {}", "speakers-to-update.yml");
         }
     }
 
@@ -1072,8 +1076,10 @@ public class ConferenceDataLoader {
         List<Talk> talksToUpdate = talkLoadResult.getItemToUpdate();
 
         if (!talksToDelete.isEmpty()) {
-            talksToDelete.sort(Comparator.comparing(Talk::getId));
-            logAndSaveTalks(talksToDelete, "Talks (to delete in resource file): {}", "talks-to-delete.yml");
+            List<Talk> sortedTalksToDelete = talksToDelete.stream()
+                    .sorted(Comparator.comparing(Talk::getId))
+                    .toList();
+            logAndSaveTalks(sortedTalksToDelete, "Talks (to delete in resource file): {}", "talks-to-delete.yml");
         }
 
         if (!talksToAppend.isEmpty()) {
@@ -1081,8 +1087,10 @@ public class ConferenceDataLoader {
         }
 
         if (!talksToUpdate.isEmpty()) {
-            talksToUpdate.sort(Comparator.comparing(Talk::getId));
-            logAndSaveTalks(talksToUpdate, "Talks (to update resource file): {}", "talks-to-update.yml");
+            List<Talk> sortedTalksToUpdate = talksToUpdate.stream()
+                    .sorted(Comparator.comparing(Talk::getId))
+                    .toList();
+            logAndSaveTalks(sortedTalksToUpdate, "Talks (to update resource file): {}", "talks-to-update.yml");
         }
     }
 

@@ -6,7 +6,6 @@ import guess.domain.statistics.olap.dimension.City;
 import guess.util.LocalizationUtils;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * OLAP city metrics DTO.
@@ -30,7 +29,7 @@ public class OlapCityMetricsDto extends OlapEntityMetricsDto {
     public static List<OlapCityMetricsDto> convertToDto(List<OlapEntityMetrics<City>> cityMetricsList, Language language) {
         return cityMetricsList.stream()
                 .map(cm -> convertToDto(cm, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override

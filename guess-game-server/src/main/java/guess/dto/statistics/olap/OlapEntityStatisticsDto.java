@@ -7,7 +7,7 @@ import java.util.List;
  */
 public abstract class OlapEntityStatisticsDto<T, S extends OlapEntityMetricsDto> {
     private final List<T> dimensionValues;
-    private final List<S> metricsList;
+    private List<S> metricsList;
     private final OlapEntityMetricsDto totals;
 
     protected OlapEntityStatisticsDto(List<T> dimensionValues, List<S> metricsList, OlapEntityMetricsDto totals) {
@@ -22,6 +22,10 @@ public abstract class OlapEntityStatisticsDto<T, S extends OlapEntityMetricsDto>
 
     public List<S> getMetricsList() {
         return metricsList;
+    }
+
+    public void setMetricsList(List<S> metricsList) {
+        this.metricsList = metricsList;
     }
 
     public OlapEntityMetricsDto getTotals() {

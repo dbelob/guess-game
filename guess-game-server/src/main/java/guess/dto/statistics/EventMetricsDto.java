@@ -7,7 +7,6 @@ import guess.util.LocalizationUtils;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
  * Event metrics DTO.
@@ -51,7 +50,7 @@ public class EventMetricsDto extends AbstractEventMetrics {
     public static List<EventMetricsDto> convertToDto(List<EventMetrics> eventMetricsList, Language language) {
         return eventMetricsList.stream()
                 .map(etm -> convertToDto(etm, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override

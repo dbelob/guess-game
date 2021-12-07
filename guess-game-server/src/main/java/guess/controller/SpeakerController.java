@@ -102,9 +102,9 @@ public class SpeakerController {
                         .map(CompanyDto::getName)
                         .collect(Collectors.joining(", ")), String.CASE_INSENSITIVE_ORDER);
 
-        speakerBriefDtoList.sort(comparatorByName.thenComparing(comparatorByCompany));
-
-        return speakerBriefDtoList;
+        return speakerBriefDtoList.stream()
+                .sorted(comparatorByName.thenComparing(comparatorByCompany))
+                .toList();
     }
 
     List<SpeakerSuperBriefDto> createDuplicatesAndConvertToDtoAndSort(List<Speaker> speakers, Language language) {

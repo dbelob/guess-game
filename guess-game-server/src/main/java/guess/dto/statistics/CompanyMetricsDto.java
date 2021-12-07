@@ -7,7 +7,6 @@ import guess.util.LocalizationUtils;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
  * Company metrics DTO.
@@ -51,7 +50,7 @@ public class CompanyMetricsDto extends AbstractSpeakerCompanyMetrics {
     public static List<CompanyMetricsDto> convertToDto(List<CompanyMetrics> companyMetricsList, Language language) {
         return companyMetricsList.stream()
                 .map(cm -> convertToDto(cm, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override

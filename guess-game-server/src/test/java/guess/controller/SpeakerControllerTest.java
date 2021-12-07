@@ -76,7 +76,7 @@ class SpeakerControllerTest {
         speaker1.setId(1);
 
         given(localeService.getLanguage(httpSession)).willReturn(LANGUAGE);
-        given(speakerService.getSpeakersByFirstLetter(FIRST_LETTER, LANGUAGE)).willReturn(new ArrayList<>(List.of(speaker0, speaker1)));
+        given(speakerService.getSpeakersByFirstLetter(FIRST_LETTER, LANGUAGE)).willReturn(List.of(speaker0, speaker1));
 
         mvc.perform(get("/api/speaker/first-letter-speakers")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -102,7 +102,7 @@ class SpeakerControllerTest {
         speaker1.setId(1);
 
         given(localeService.getLanguage(httpSession)).willReturn(LANGUAGE);
-        given(speakerService.getSpeakersByFirstLetters(FIRST_LETTERS, LANGUAGE)).willReturn(new ArrayList<>(List.of(speaker0, speaker1)));
+        given(speakerService.getSpeakersByFirstLetters(FIRST_LETTERS, LANGUAGE)).willReturn(List.of(speaker0, speaker1));
 
         mvc.perform(get("/api/speaker/first-letters-speakers")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -131,7 +131,7 @@ class SpeakerControllerTest {
         speaker1.setId(1);
 
         given(localeService.getLanguage(httpSession)).willReturn(LANGUAGE);
-        given(speakerService.getSpeakerByIds(IDS)).willReturn(new ArrayList<>(List.of(speaker0, speaker1)));
+        given(speakerService.getSpeakerByIds(IDS)).willReturn(List.of(speaker0, speaker1));
 
         mvc.perform(post("/api/speaker/selected-speakers")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -161,7 +161,7 @@ class SpeakerControllerTest {
         speaker1.setId(1);
 
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
-        given(speakerService.getSpeakers(NAME, COMPANY, TWITTER, GITHUB, JAVA_CHAMPION, MVP)).willReturn(new ArrayList<>(List.of(speaker0, speaker1)));
+        given(speakerService.getSpeakers(NAME, COMPANY, TWITTER, GITHUB, JAVA_CHAMPION, MVP)).willReturn(List.of(speaker0, speaker1));
 
         mvc.perform(get("/api/speaker/speakers")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -206,7 +206,7 @@ class SpeakerControllerTest {
         speaker.setId(0);
 
         given(speakerService.getSpeakerById(0)).willReturn(speaker);
-        given(talkService.getTalksBySpeaker(speaker)).willReturn(new ArrayList<>(List.of(talk0, talk1)));
+        given(talkService.getTalksBySpeaker(speaker)).willReturn(List.of(talk0, talk1));
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
         given(eventService.getEventByTalk(talk0)).willReturn(event);
         given(eventService.getEventByTalk(talk1)).willReturn(event);

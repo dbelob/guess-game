@@ -5,7 +5,6 @@ import guess.domain.source.Organizer;
 import guess.util.LocalizationUtils;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Organizer DTO.
@@ -38,6 +37,6 @@ public class OrganizerDto {
     public static List<OrganizerDto> convertToDto(List<Organizer> organizers, Language language) {
         return organizers.stream()
                 .map(o -> convertToDto(o, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 }

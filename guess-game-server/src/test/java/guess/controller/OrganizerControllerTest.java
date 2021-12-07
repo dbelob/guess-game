@@ -25,7 +25,6 @@ import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -69,12 +68,12 @@ class OrganizerControllerTest {
         Organizer organizer1 = new Organizer();
         organizer1.setId(1);
 
-        given(organizerService.getOrganizers()).willReturn(new ArrayList<>(List.of(organizer0, organizer1)));
+        given(organizerService.getOrganizers()).willReturn(List.of(organizer0, organizer1));
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
         mvc.perform(get("/api/organizer/organizers")
-                .contentType(MediaType.APPLICATION_JSON)
-                .session(httpSession))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)));
         Mockito.verify(organizerService, VerificationModeFactory.times(1)).getOrganizers();
@@ -117,8 +116,8 @@ class OrganizerControllerTest {
                 given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
                 MvcResult mvcResult = mvc.perform(get("/api/organizer/default-event-organizer")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .session(httpSession))
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .session(httpSession))
                         .andExpect(status().isOk())
                         .andReturn();
                 String body = mvcResult.getResponse().getContentAsString();
@@ -129,8 +128,8 @@ class OrganizerControllerTest {
                 Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
             } else {
                 MvcResult mvcResult = mvc.perform(get("/api/organizer/default-event-organizer")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .session(httpSession))
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .session(httpSession))
                         .andExpect(status().isOk())
                         .andReturn();
                 String body = mvcResult.getResponse().getContentAsString();

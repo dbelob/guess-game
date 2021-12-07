@@ -1,14 +1,13 @@
 package guess.dto.statistics;
 
 import guess.domain.Language;
+import guess.domain.statistics.Metrics;
 import guess.domain.statistics.eventtype.AbstractEventTypeMetrics;
 import guess.domain.statistics.eventtype.EventTypeMetrics;
-import guess.domain.statistics.Metrics;
 import guess.util.LocalizationUtils;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
  * Event type metrics DTO.
@@ -70,7 +69,7 @@ public class EventTypeMetricsDto extends AbstractEventTypeMetrics {
     public static List<EventTypeMetricsDto> convertToDto(List<EventTypeMetrics> eventTypeMetricsList, Language language) {
         return eventTypeMetricsList.stream()
                 .map(etm -> convertToDto(etm, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override

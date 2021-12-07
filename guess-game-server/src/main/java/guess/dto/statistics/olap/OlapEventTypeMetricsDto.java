@@ -7,7 +7,6 @@ import guess.util.LocalizationUtils;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
  * OLAP event type metrics DTO.
@@ -56,7 +55,7 @@ public class OlapEventTypeMetricsDto extends OlapEntityMetricsDto {
     public static List<OlapEventTypeMetricsDto> convertToDto(List<OlapEntityMetrics<EventType>> eventTypeMetricsList, Language language) {
         return eventTypeMetricsList.stream()
                 .map(etm -> convertToDto(etm, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override

@@ -37,9 +37,9 @@ public class OrganizerController {
         List<Organizer> organizers = organizerService.getOrganizers();
         List<OrganizerDto> organizerDtoList = OrganizerDto.convertToDto(organizers, language);
 
-        organizerDtoList.sort(Comparator.comparing(OrganizerDto::getName));
-
-        return organizerDtoList;
+        return organizerDtoList.stream()
+                .sorted(Comparator.comparing(OrganizerDto::getName))
+                .toList();
     }
 
     @GetMapping("/default-event-organizer")
