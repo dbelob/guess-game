@@ -35,9 +35,9 @@ public class OlapStatisticsDto {
     }
 
     public static OlapStatisticsDto convertToDto(OlapStatistics olapStatistics, Language language) {
-        OlapEntityStatistics<Integer, EventType> eventTypeStatistics = olapStatistics.getEventTypeStatistics();
-        OlapEntityStatistics<Integer, Speaker> speakerStatistics = olapStatistics.getSpeakerStatistics();
-        OlapEntityStatistics<Integer, Company> companyStatistics = olapStatistics.getCompanyStatistics();
+        OlapEntityStatistics<Integer, EventType> eventTypeStatistics = olapStatistics.eventTypeStatistics();
+        OlapEntityStatistics<Integer, Speaker> speakerStatistics = olapStatistics.speakerStatistics();
+        OlapEntityStatistics<Integer, Company> companyStatistics = olapStatistics.companyStatistics();
 
         return new OlapStatisticsDto(
                 (eventTypeStatistics != null) ? OlapEventTypeStatisticsDto.convertToDto(eventTypeStatistics, language) : null,

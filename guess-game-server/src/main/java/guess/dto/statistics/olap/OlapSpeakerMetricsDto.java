@@ -26,20 +26,20 @@ public class OlapSpeakerMetricsDto extends OlapEntityMetricsDto {
     }
 
     public static OlapSpeakerMetricsDto convertToDto(OlapEntityMetrics<Speaker> speakerMetrics, Language language, Set<Speaker> speakerDuplicates) {
-        var speaker = speakerMetrics.getEntity();
+        var speaker = speakerMetrics.entity();
         String name = LocalizationUtils.getSpeakerNameWithLastNameFirst(speaker, language, speakerDuplicates);
 
         return new OlapSpeakerMetricsDto(
                 speaker.getId(),
                 name,
                 speaker.getPhotoFileName(),
-                speakerMetrics.getMeasureValues(),
-                speakerMetrics.getTotal());
+                speakerMetrics.measureValues(),
+                speakerMetrics.total());
     }
 
     public static List<OlapSpeakerMetricsDto> convertToDto(List<OlapEntityMetrics<Speaker>> speakerMetricsList, Language language) {
         List<Speaker> speakers = speakerMetricsList.stream()
-                .map(OlapEntityMetrics::getEntity)
+                .map(OlapEntityMetrics::entity)
                 .toList();
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 speakers,

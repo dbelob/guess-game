@@ -66,10 +66,10 @@ public class EventTypeController {
         var language = localeService.getLanguage(httpSession);
         var eventTypeDetailsDto = EventTypeDetailsDto.convertToDto(eventType, eventType.getEvents(), language);
 
-        List<EventBriefDto> sortedEvents = eventTypeDetailsDto.getEvents().stream()
+        List<EventBriefDto> sortedEvents = eventTypeDetailsDto.events().stream()
                 .sorted(Comparator.comparing(EventBriefDto::getStartDate).reversed())
                 .toList();
 
-        return new EventTypeDetailsDto(eventTypeDetailsDto.getEventType(), sortedEvents);
+        return new EventTypeDetailsDto(eventTypeDetailsDto.eventType(), sortedEvents);
     }
 }

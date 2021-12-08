@@ -38,7 +38,7 @@ public class OrganizerController {
         List<OrganizerDto> organizerDtoList = OrganizerDto.convertToDto(organizers, language);
 
         return organizerDtoList.stream()
-                .sorted(Comparator.comparing(OrganizerDto::getName))
+                .sorted(Comparator.comparing(OrganizerDto::name))
                 .toList();
     }
 

@@ -28,7 +28,7 @@ public class SpeakerStatisticsDto {
 
     public static SpeakerStatisticsDto convertToDto(SpeakerStatistics speakerStatistics, Language language) {
         return new SpeakerStatisticsDto(
-                SpeakerMetricsDto.convertToDto(speakerStatistics.getSpeakerMetricsList(), language),
-                SpeakerMetricsDto.convertToDto(speakerStatistics.getTotals(), language, Collections.emptySet()));
+                SpeakerMetricsDto.convertToDto(speakerStatistics.speakerMetricsList(), language),
+                SpeakerMetricsDto.convertToDto(speakerStatistics.totals(), language, Collections.emptySet()));
     }
 }

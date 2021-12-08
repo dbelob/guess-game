@@ -18,13 +18,13 @@ public abstract class QuestionAnswersDto {
     private final Quadruple<Boolean> valid;
 
     protected QuestionAnswersDto(QuestionAnswersSourceDto sourceDto, Quadruple<Long> ids) {
-        this.questionSetName = sourceDto.getQuestionSetName();
-        this.currentIndex = sourceDto.getCurrentIndex();
-        this.totalNumber = sourceDto.getTotalNumber();
-        this.logoFileName = sourceDto.getLogoFileName();
+        this.questionSetName = sourceDto.questionSetName();
+        this.currentIndex = sourceDto.currentIndex();
+        this.totalNumber = sourceDto.totalNumber();
+        this.logoFileName = sourceDto.logoFileName();
         this.ids = ids;
-        this.invalid = ids.map(id -> isInvalid(sourceDto.getCorrectAnswerIds(), sourceDto.getYourAnswerIds(), id));
-        this.valid = ids.map(id -> isValid(sourceDto.getCorrectAnswerIds(), sourceDto.getYourAnswerIds(), id));
+        this.invalid = ids.map(id -> isInvalid(sourceDto.correctAnswerIds(), sourceDto.yourAnswerIds(), id));
+        this.valid = ids.map(id -> isValid(sourceDto.correctAnswerIds(), sourceDto.yourAnswerIds(), id));
     }
 
     private boolean isInvalid(List<Long> correctAnswerIds, List<Long> yourAnswerIds, long id) {

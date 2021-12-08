@@ -7,40 +7,17 @@ import guess.util.LocalizationUtils;
 
 import java.util.List;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 /**
  * Event DTO.
  */
 public class EventDto extends EventBriefDto {
-    public static class EventDtoSocialLinks {
-        private final String vkLink;
-        private final String twitterLink;
-        private final String facebookLink;
-        private final String telegramLink;
-        private final String habrLink;
-
-        public EventDtoSocialLinks(String vkLink, String twitterLink, String facebookLink, String telegramLink, String habrLink) {
-            this.vkLink = vkLink;
-            this.twitterLink = twitterLink;
-            this.facebookLink = facebookLink;
-            this.telegramLink = telegramLink;
-            this.habrLink = habrLink;
-        }
+    public record EventDtoSocialLinks(String vkLink, String twitterLink, String facebookLink, String telegramLink,
+                                      String habrLink) {
     }
 
-    public static class EventDtoLinks {
-        private final String siteLink;
-        private final String youtubeLink;
-        private final String speakerdeckLink;
-        private final EventDtoSocialLinks socialLinks;
-
-        public EventDtoLinks(String siteLink, String youtubeLink, String speakerdeckLink, EventDtoSocialLinks socialLinks) {
-            this.siteLink = siteLink;
-            this.youtubeLink = youtubeLink;
-            this.speakerdeckLink = speakerdeckLink;
-            this.socialLinks = socialLinks;
-        }
+    public record EventDtoLinks(String siteLink, String youtubeLink, String speakerdeckLink,
+                                EventDtoSocialLinks socialLinks) {
     }
 
     private final EventDtoLinks links;
@@ -137,6 +114,6 @@ public class EventDto extends EventBriefDto {
     public static List<EventDto> convertToDto(List<Event> events, Function<Event, EventType> eventEventTypeFunction, Language language) {
         return events.stream()
                 .map(e -> convertToDto(e, eventEventTypeFunction, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 }

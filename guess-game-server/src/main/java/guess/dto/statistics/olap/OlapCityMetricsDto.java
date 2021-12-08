@@ -16,14 +16,14 @@ public class OlapCityMetricsDto extends OlapEntityMetricsDto {
     }
 
     public static OlapCityMetricsDto convertToDto(OlapEntityMetrics<City> cityMetrics, Language language) {
-        var city = cityMetrics.getEntity();
+        var city = cityMetrics.entity();
         var name = LocalizationUtils.getString(city.getName(), language);
 
         return new OlapCityMetricsDto(
                 city.getId(),
                 name,
-                cityMetrics.getMeasureValues(),
-                cityMetrics.getTotal());
+                cityMetrics.measureValues(),
+                cityMetrics.total());
     }
 
     public static List<OlapCityMetricsDto> convertToDto(List<OlapEntityMetrics<City>> cityMetricsList, Language language) {

@@ -5,7 +5,6 @@ import guess.domain.source.EventType;
 import guess.util.LocalizationUtils;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Event type DTO (brief).
@@ -47,6 +46,6 @@ public class EventTypeBriefDto extends EventTypeSuperBriefDto {
     public static List<EventTypeBriefDto> convertToBriefDto(List<EventType> eventTypes, Language language) {
         return eventTypes.stream()
                 .map(et -> convertToBriefDto(et, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 }

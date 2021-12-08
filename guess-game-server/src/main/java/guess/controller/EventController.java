@@ -91,9 +91,9 @@ public class EventController {
         Comparator<SpeakerBriefDto> comparatorByName = Comparator.comparing(SpeakerBriefDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
         Comparator<SpeakerBriefDto> comparatorByCompany = Comparator.comparing(
                 s -> s.getCompanies().stream()
-                        .map(CompanyDto::getName)
+                        .map(CompanyDto::name)
                         .collect(Collectors.joining(", ")), String.CASE_INSENSITIVE_ORDER);
-        List<SpeakerBriefDto> sortedSpeakers = eventDetailsDto.getSpeakers().stream()
+        List<SpeakerBriefDto> sortedSpeakers = eventDetailsDto.speakers().stream()
                 .sorted(comparatorByName.thenComparing(comparatorByCompany))
                 .toList();
 
@@ -109,10 +109,10 @@ public class EventController {
                 Comparator.comparing(
                         TalkBriefDto::getTrack,
                         Comparator.nullsLast(Comparator.naturalOrder())));
-        List<TalkBriefDto> sortedTalks = eventDetailsDto.getTalks().stream()
+        List<TalkBriefDto> sortedTalks = eventDetailsDto.talks().stream()
                 .sorted(comparatorByTalkDate.thenComparing(comparatorByTalkTime).thenComparing(comparatorByTrack))
                 .toList();
 
-        return new EventDetailsDto(eventDetailsDto.getEvent(), sortedSpeakers, sortedTalks);
+        return new EventDetailsDto(eventDetailsDto.event(), sortedSpeakers, sortedTalks);
     }
 }

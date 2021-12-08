@@ -6,7 +6,6 @@ import guess.util.LocalizationUtils;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Event DTO (super brief).
@@ -65,6 +64,6 @@ public class EventSuperBriefDto {
     public static List<EventSuperBriefDto> convertToSuperBriefDto(List<Event> events, Language language) {
         return events.stream()
                 .map(e -> convertToSuperBriefDto(e, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 }

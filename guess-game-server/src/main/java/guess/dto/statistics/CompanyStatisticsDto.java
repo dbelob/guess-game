@@ -27,7 +27,7 @@ public class CompanyStatisticsDto {
 
     public static CompanyStatisticsDto convertToDto(CompanyStatistics companyStatistics, Language language) {
         return new CompanyStatisticsDto(
-                CompanyMetricsDto.convertToDto(companyStatistics.getCompanyMetricsList(), language),
-                CompanyMetricsDto.convertToDto(companyStatistics.getTotals(), language));
+                CompanyMetricsDto.convertToDto(companyStatistics.companyMetricsList(), language),
+                CompanyMetricsDto.convertToDto(companyStatistics.totals(), language));
     }
 }

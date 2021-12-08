@@ -34,7 +34,7 @@ public class CompanyController {
         List<Company> companies = companyService.getCompaniesByFirstLetters(firstLetters, language);
 
         return CompanyDto.convertToDto(companies, language).stream()
-                .sorted(Comparator.comparing(CompanyDto::getName, String.CASE_INSENSITIVE_ORDER))
+                .sorted(Comparator.comparing(CompanyDto::name, String.CASE_INSENSITIVE_ORDER))
                 .toList();
     }
 
@@ -44,7 +44,7 @@ public class CompanyController {
         List<Company> companies = companyService.getCompaniesByIds(selectedEntities.getIds());
 
         return CompanyDto.convertToDto(companies, language).stream()
-                .sorted(Comparator.comparing(CompanyDto::getName, String.CASE_INSENSITIVE_ORDER))
+                .sorted(Comparator.comparing(CompanyDto::name, String.CASE_INSENSITIVE_ORDER))
                 .toList();
     }
 
