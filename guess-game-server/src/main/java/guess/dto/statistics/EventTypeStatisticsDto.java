@@ -27,7 +27,7 @@ public class EventTypeStatisticsDto {
 
     public static EventTypeStatisticsDto convertToDto(EventTypeStatistics eventTypeStatistics, Language language) {
         return new EventTypeStatisticsDto(
-                EventTypeMetricsDto.convertToDto(eventTypeStatistics.getEventTypeMetricsList(), language),
-                EventTypeMetricsDto.convertToDto(eventTypeStatistics.getTotals(), language));
+                EventTypeMetricsDto.convertToDto(eventTypeStatistics.eventTypeMetricsList(), language),
+                EventTypeMetricsDto.convertToDto(eventTypeStatistics.totals(), language));
     }
 }

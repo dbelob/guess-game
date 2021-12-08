@@ -38,7 +38,7 @@ public class OlapEventTypeMetricsDto extends OlapEntityMetricsDto {
     }
 
     public static OlapEventTypeMetricsDto convertToDto(OlapEntityMetrics<EventType> eventTypeMetrics, Language language) {
-        var eventType = eventTypeMetrics.getEntity();
+        var eventType = eventTypeMetrics.entity();
         var name = LocalizationUtils.getString(eventType.getName(), language);
         String organizerName = (eventType.getOrganizer() != null) ? LocalizationUtils.getString(eventType.getOrganizer().getName(), language) : null;
 
@@ -48,8 +48,8 @@ public class OlapEventTypeMetricsDto extends OlapEntityMetricsDto {
                 eventType.isEventTypeConference(),
                 eventType.getLogoFileName(),
                 organizerName,
-                eventTypeMetrics.getMeasureValues(),
-                eventTypeMetrics.getTotal());
+                eventTypeMetrics.measureValues(),
+                eventTypeMetrics.total());
     }
 
     public static List<OlapEventTypeMetricsDto> convertToDto(List<OlapEntityMetrics<EventType>> eventTypeMetricsList, Language language) {

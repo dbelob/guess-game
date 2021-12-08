@@ -444,25 +444,25 @@ class OlapServiceImplTest {
         void getOlapStatistics(OlapParametersDto op, OlapStatistics expected) {
             OlapStatistics actual = olapService.getOlapStatistics(op);
 
-            if (actual.getEventTypeStatistics() != null) {
-                List<OlapEntityMetrics<EventType>> sortedMetricsList = actual.getEventTypeStatistics().getMetricsList().stream()
-                        .sorted(Comparator.comparing(m -> m.getEntity().getId()))
+            if (actual.eventTypeStatistics() != null) {
+                List<OlapEntityMetrics<EventType>> sortedMetricsList = actual.eventTypeStatistics().getMetricsList().stream()
+                        .sorted(Comparator.comparing(m -> m.entity().getId()))
                         .toList();
-                actual.getEventTypeStatistics().setMetricsList(sortedMetricsList);
+                actual.eventTypeStatistics().setMetricsList(sortedMetricsList);
             }
 
-            if (actual.getSpeakerStatistics() != null) {
-                List<OlapEntityMetrics<Speaker>> sortedMetricsList = actual.getSpeakerStatistics().getMetricsList().stream()
-                        .sorted(Comparator.comparing(m -> m.getEntity().getId()))
+            if (actual.speakerStatistics() != null) {
+                List<OlapEntityMetrics<Speaker>> sortedMetricsList = actual.speakerStatistics().getMetricsList().stream()
+                        .sorted(Comparator.comparing(m -> m.entity().getId()))
                         .toList();
-                actual.getSpeakerStatistics().setMetricsList(sortedMetricsList);
+                actual.speakerStatistics().setMetricsList(sortedMetricsList);
             }
 
-            if (actual.getCompanyStatistics() != null) {
-                List<OlapEntityMetrics<Company>> sortedMetricsList = actual.getCompanyStatistics().getMetricsList().stream()
-                        .sorted(Comparator.comparing(m -> m.getEntity().getId()))
+            if (actual.companyStatistics() != null) {
+                List<OlapEntityMetrics<Company>> sortedMetricsList = actual.companyStatistics().getMetricsList().stream()
+                        .sorted(Comparator.comparing(m -> m.entity().getId()))
                         .toList();
-                actual.getCompanyStatistics().setMetricsList(sortedMetricsList);
+                actual.companyStatistics().setMetricsList(sortedMetricsList);
             }
 
             assertEquals(expected, actual);
@@ -897,7 +897,7 @@ class OlapServiceImplTest {
                     DimensionType.EVENT_TYPE, eventTypePredicate);
 
             List<OlapEntityMetrics<EventType>> sortedMetricsList = actual.getMetricsList().stream()
-                    .sorted(Comparator.comparing(m -> m.getEntity().getId()))
+                    .sorted(Comparator.comparing(m -> m.entity().getId()))
                     .toList();
             actual.setMetricsList(sortedMetricsList);
 

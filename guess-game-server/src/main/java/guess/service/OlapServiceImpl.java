@@ -84,7 +84,7 @@ public class OlapServiceImpl implements OlapService {
                 throw new IllegalArgumentException(String.format("Invalid cube type %s", op.getCubeType()));
         }
 
-        olapEventTypeStatistics.getMetricsList().removeIf(m -> m.getTotal() == 0);
+        olapEventTypeStatistics.getMetricsList().removeIf(m -> m.total() == 0);
 
         return olapEventTypeStatistics;
     }
@@ -96,7 +96,7 @@ public class OlapServiceImpl implements OlapService {
         OlapEntityStatistics<Integer, Speaker> olapSpeakerStatistics = getOlapEntityStatistics(op.getCubeType(), op.getMeasureType(),
                 DimensionType.SPEAKER, speakerPredicate, DimensionType.EVENT_TYPE, eventTypePredicate);
 
-        olapSpeakerStatistics.getMetricsList().removeIf(m -> m.getTotal() == 0);
+        olapSpeakerStatistics.getMetricsList().removeIf(m -> m.total() == 0);
 
         return olapSpeakerStatistics;
     }
@@ -108,7 +108,7 @@ public class OlapServiceImpl implements OlapService {
         OlapEntityStatistics<Integer, City> olapCityStatistics = getOlapEntityStatistics(op.getCubeType(), op.getMeasureType(),
                 DimensionType.CITY, cityPredicate, DimensionType.EVENT_TYPE, eventTypePredicate);
 
-        olapCityStatistics.getMetricsList().removeIf(m -> m.getTotal() == 0);
+        olapCityStatistics.getMetricsList().removeIf(m -> m.total() == 0);
 
         return olapCityStatistics;
     }

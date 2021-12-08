@@ -99,7 +99,7 @@ public class SpeakerController {
         Comparator<SpeakerBriefDto> comparatorByName = Comparator.comparing(SpeakerBriefDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
         Comparator<SpeakerBriefDto> comparatorByCompany = Comparator.comparing(
                 s -> s.getCompanies().stream()
-                        .map(CompanyDto::getName)
+                        .map(CompanyDto::name)
                         .collect(Collectors.joining(", ")), String.CASE_INSENSITIVE_ORDER);
 
         return speakerBriefDtoList.stream()

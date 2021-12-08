@@ -13,41 +13,19 @@ import guess.util.LocalizationUtils;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Company error details DTO.
  */
-public class CompanyErrorDetailsDto {
-    private final List<SpeakerPairDto> speakers;
-    private final List<String> companyNames;
-    private final List<SpeakerPairDto> yourAnswers;
-
-    private CompanyErrorDetailsDto(List<SpeakerPairDto> speakers, List<String> companyNames, List<SpeakerPairDto> yourAnswers) {
-        this.speakers = speakers;
-        this.companyNames = companyNames;
-        this.yourAnswers = yourAnswers;
-    }
-
-    public List<SpeakerPairDto> getSpeakers() {
-        return speakers;
-    }
-
-    public List<String> getCompanyNames() {
-        return companyNames;
-    }
-
-    public List<SpeakerPairDto> getYourAnswers() {
-        return yourAnswers;
-    }
-
+public record CompanyErrorDetailsDto(List<SpeakerPairDto> speakers, List<String> companyNames,
+                                     List<SpeakerPairDto> yourAnswers) {
     private static CompanyErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessMode guessMode, Language language) {
         if (GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(guessMode)) {
             List<Speaker> speakers = GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE.equals(guessMode) ?
                     Collections.singletonList(((CompanyBySpeakerQuestion) errorDetails.question()).getSpeaker()) :
                     errorDetails.availableAnswers().stream()
                             .map(a -> ((SpeakerAnswer) a).getSpeaker())
-                            .collect(Collectors.toList());
+                            .toList();
 
             Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                     speakers,
@@ -58,18 +36,18 @@ public class CompanyErrorDetailsDto {
                     Collections.singletonList(((CompanyBySpeakerQuestion) errorDetails.question()).getSpeaker()) :
                     errorDetails.correctAnswers().stream()
                             .map(a -> ((SpeakerAnswer) a).getSpeaker())
-                            .collect(Collectors.toList());
+                            .toList();
 
             List<SpeakerPairDto> questionSpeakerPairs = questionSpeakers.stream()
                     .map(s -> new SpeakerPairDto(
                             LocalizationUtils.getSpeakerName(s, language, speakerDuplicates),
                             s.getPhotoFileName()))
-                    .collect(Collectors.toList());
+                    .toList();
 
             List<String> companyNames = GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE.equals(guessMode) ?
                     ((CompanyBySpeakerQuestion) errorDetails.question()).getCompanies().stream()
                             .map(c -> LocalizationUtils.getString(c.getName(), language))
-                            .collect(Collectors.toList()) :
+                            .toList() :
                     Collections.singletonList(LocalizationUtils.getString(((SpeakerByCompanyQuestion) errorDetails.question()).getCompany().getName(), language));
 
             List<SpeakerPairDto> yourAnswers = errorDetails.yourAnswers().stream()
@@ -80,7 +58,7 @@ public class CompanyErrorDetailsDto {
                             new SpeakerPairDto(
                                     LocalizationUtils.getSpeakerName(((SpeakerAnswer) a).getSpeaker(), language, speakerDuplicates),
                                     ((SpeakerAnswer) a).getSpeaker().getPhotoFileName()))
-                    .collect(Collectors.toList());
+                    .toList();
 
             return new CompanyErrorDetailsDto(
                     questionSpeakerPairs,
@@ -94,6 +72,6 @@ public class CompanyErrorDetailsDto {
     public static List<CompanyErrorDetailsDto> convertToDto(List<ErrorDetails> errorDetailsList, GuessMode guessMode, Language language) {
         return errorDetailsList.stream()
                 .map(e -> convertToDto(e, guessMode, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 }

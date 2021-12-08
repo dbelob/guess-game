@@ -9,23 +9,7 @@ import java.util.List;
 /**
  * Organizer DTO.
  */
-public class OrganizerDto {
-    private final long id;
-    private final String name;
-
-    public OrganizerDto(long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
+public record OrganizerDto(long id, String name) {
     public static OrganizerDto convertToDto(Organizer organizer, Language language) {
         var name = LocalizationUtils.getString(organizer.getName(), language);
 

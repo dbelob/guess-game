@@ -38,7 +38,7 @@ public class OlapEntityMetricsDto {
     }
 
     public static OlapEntityMetricsDto convertToDto(OlapEntityMetrics<?> entityMetrics) {
-        return new OlapEntityMetricsDto(0, null, entityMetrics.getMeasureValues(), entityMetrics.getTotal());
+        return new OlapEntityMetricsDto(0, null, entityMetrics.measureValues(), entityMetrics.total());
     }
 
     @Override

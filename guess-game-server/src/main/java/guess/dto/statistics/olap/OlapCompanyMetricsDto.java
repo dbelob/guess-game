@@ -16,14 +16,14 @@ public class OlapCompanyMetricsDto extends OlapEntityMetricsDto {
     }
 
     public static OlapCompanyMetricsDto convertToDto(OlapEntityMetrics<Company> companyMetrics, Language language) {
-        var company = companyMetrics.getEntity();
+        var company = companyMetrics.entity();
         var name = LocalizationUtils.getString(company.getName(), language);
 
         return new OlapCompanyMetricsDto(
                 company.getId(),
                 name,
-                companyMetrics.getMeasureValues(),
-                companyMetrics.getTotal());
+                companyMetrics.measureValues(),
+                companyMetrics.total());
     }
 
     public static List<OlapCompanyMetricsDto> convertToDto(List<OlapEntityMetrics<Company>> companyMetricsList, Language language) {

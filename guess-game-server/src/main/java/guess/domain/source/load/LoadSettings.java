@@ -9,29 +9,8 @@ import java.util.Set;
 /**
  * Load settings.
  */
-public class LoadSettings {
-    private final Map<NameCompany, Long> knownSpeakerIdsMap;
-    private final Set<String> invalidTalksSet;
-    private final boolean ignoreDemoStage;
-
-    public LoadSettings(Map<NameCompany, Long> knownSpeakerIdsMap, Set<String> invalidTalksSet, boolean ignoreDemoStage) {
-        this.knownSpeakerIdsMap = knownSpeakerIdsMap;
-        this.invalidTalksSet = invalidTalksSet;
-        this.ignoreDemoStage = ignoreDemoStage;
-    }
-
-    public Map<NameCompany, Long> getKnownSpeakerIdsMap() {
-        return knownSpeakerIdsMap;
-    }
-
-    public Set<String> getInvalidTalksSet() {
-        return invalidTalksSet;
-    }
-
-    public boolean isIgnoreDemoStage() {
-        return ignoreDemoStage;
-    }
-
+public record LoadSettings(Map<NameCompany, Long> knownSpeakerIdsMap, Set<String> invalidTalksSet,
+                           boolean ignoreDemoStage) {
     public static LoadSettings defaultSettings() {
         return new LoadSettings(
                 Collections.emptyMap(),

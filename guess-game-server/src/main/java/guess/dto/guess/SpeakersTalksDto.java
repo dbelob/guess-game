@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Speakers, talks DTO.
@@ -72,7 +71,7 @@ public class SpeakersTalksDto extends QuestionAnswersDto {
                 .map(s -> new SpeakerPairDto(
                         LocalizationUtils.getSpeakerName(s, language, speakerDuplicates),
                         s.getPhotoFileName()))
-                .collect(Collectors.toList());
+                .toList();
 
         return new SpeakersTalksDto(
                 sourceDto,

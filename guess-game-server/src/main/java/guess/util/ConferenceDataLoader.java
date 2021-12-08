@@ -232,7 +232,7 @@ public class ConferenceDataLoader {
                 contentfulEvent.getStartDate(), contentfulEvent.getEndDate());
 
         // Read talks from Contentful
-        List<Talk> contentfulTalks = ContentfulUtils.getTalks(conference, conferenceCode, loadSettings.isIgnoreDemoStage());
+        List<Talk> contentfulTalks = ContentfulUtils.getTalks(conference, conferenceCode, loadSettings.ignoreDemoStage());
         log.info("Talks (in Contentful): {}", contentfulTalks.size());
         contentfulTalks.forEach(
                 t -> log.trace("Talk: nameEn: '{}', name: '{}'",
@@ -241,7 +241,7 @@ public class ConferenceDataLoader {
         );
 
         // Delete invalid talks
-        contentfulTalks = deleteInvalidTalks(contentfulTalks, loadSettings.getInvalidTalksSet());
+        contentfulTalks = deleteInvalidTalks(contentfulTalks, loadSettings.invalidTalksSet());
 
         // Delete opening and closing talks
         contentfulTalks = deleteOpeningAndClosingTalks(contentfulTalks);
@@ -294,7 +294,7 @@ public class ConferenceDataLoader {
         var speakerLoadResult = getSpeakerLoadResult(
                 contentfulSpeakers,
                 new SpeakerLoadMaps(
-                        loadSettings.getKnownSpeakerIdsMap(),
+                        loadSettings.knownSpeakerIdsMap(),
                         resourceSpeakerIdsMap,
                         resourceNameCompanySpeakers,
                         resourceNameSpeakers),
@@ -971,11 +971,11 @@ public class ConferenceDataLoader {
                           LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
         List<Company> companiesToAppend = companyLoadResult.itemToAppend();
 
-        List<Speaker> speakersToAppend = speakerLoadResult.getSpeakers().itemToAppend();
-        List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().itemToUpdate();
+        List<Speaker> speakersToAppend = speakerLoadResult.speakers().itemToAppend();
+        List<Speaker> speakersToUpdate = speakerLoadResult.speakers().itemToUpdate();
 
-        List<UrlFilename> urlFilenamesToAppend = speakerLoadResult.getUrlFilenames().itemToAppend();
-        List<UrlFilename> urlFilenamesToUpdate = speakerLoadResult.getUrlFilenames().itemToUpdate();
+        List<UrlFilename> urlFilenamesToAppend = speakerLoadResult.urlFilenames().itemToAppend();
+        List<UrlFilename> urlFilenamesToUpdate = speakerLoadResult.urlFilenames().itemToUpdate();
 
         List<Talk> talksToDelete = talkLoadResult.itemToDelete();
         List<Talk> talksToAppend = talkLoadResult.itemToAppend();
@@ -1028,8 +1028,8 @@ public class ConferenceDataLoader {
      * @throws IOException if file creation error occurs
      */
     static void saveImages(SpeakerLoadResult speakerLoadResult) throws IOException {
-        List<UrlFilename> urlFilenamesToAppend = speakerLoadResult.getUrlFilenames().itemToAppend();
-        List<UrlFilename> urlFilenamesToUpdate = speakerLoadResult.getUrlFilenames().itemToUpdate();
+        List<UrlFilename> urlFilenamesToAppend = speakerLoadResult.urlFilenames().itemToAppend();
+        List<UrlFilename> urlFilenamesToUpdate = speakerLoadResult.urlFilenames().itemToUpdate();
 
         if (!urlFilenamesToAppend.isEmpty()) {
             logAndCreateSpeakerImages(urlFilenamesToAppend, "Speaker images (to append): {}");
@@ -1048,8 +1048,8 @@ public class ConferenceDataLoader {
      * @throws NoSuchFieldException if field name is invalid
      */
     static void saveSpeakers(SpeakerLoadResult speakerLoadResult) throws IOException, NoSuchFieldException {
-        List<Speaker> speakersToAppend = speakerLoadResult.getSpeakers().itemToAppend();
-        List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().itemToUpdate();
+        List<Speaker> speakersToAppend = speakerLoadResult.speakers().itemToAppend();
+        List<Speaker> speakersToUpdate = speakerLoadResult.speakers().itemToUpdate();
 
         if (!speakersToAppend.isEmpty()) {
             logAndSaveSpeakers(speakersToAppend, "Speakers (to append resource file): {}", "speakers-to-append.yml");
@@ -1286,7 +1286,7 @@ public class ConferenceDataLoader {
 
         if ((speaker.getCompanies() != null) && !speaker.getCompanies().isEmpty()) {
             for (Company company : speaker.getCompanies()) {
-                resourceSpeakerId = speakerLoadMaps.getKnownSpeakerIdsMap().get(
+                resourceSpeakerId = speakerLoadMaps.knownSpeakerIdsMap().get(
                         new NameCompany(
                                 LocalizationUtils.getString(speaker.getName(), Language.RUSSIAN),
                                 company));
@@ -1297,14 +1297,14 @@ public class ConferenceDataLoader {
                 }
             }
         } else {
-            resourceSpeakerId = speakerLoadMaps.getKnownSpeakerIdsMap().get(
+            resourceSpeakerId = speakerLoadMaps.knownSpeakerIdsMap().get(
                     new NameCompany(
                             LocalizationUtils.getString(speaker.getName(), Language.RUSSIAN),
                             null));
         }
 
         if (resourceSpeakerId != null) {
-            var resourceSpeaker = speakerLoadMaps.getResourceSpeakerIdsMap().get(resourceSpeakerId);
+            var resourceSpeaker = speakerLoadMaps.resourceSpeakerIdsMap().get(resourceSpeakerId);
 
             Long finalResourceSpeakerId = resourceSpeakerId;
             var finalSpeakerCompany = speakerCompany;
@@ -1317,13 +1317,13 @@ public class ConferenceDataLoader {
         }
 
         // Find in resource speakers by (name, company) pair
-        var resourceSpeaker = findResourceSpeakerByNameCompany(speaker, speakerLoadMaps.getResourceNameCompanySpeakers());
+        var resourceSpeaker = findResourceSpeakerByNameCompany(speaker, speakerLoadMaps.resourceNameCompanySpeakers());
         if (resourceSpeaker != null) {
             return resourceSpeaker;
         }
 
         // Find in resource speakers by name
-        return findResourceSpeakerByName(speaker, speakerLoadMaps.getResourceNameSpeakers());
+        return findResourceSpeakerByName(speaker, speakerLoadMaps.resourceNameSpeakers());
     }
 
     static Talk findResourceTalk(Talk talk,
