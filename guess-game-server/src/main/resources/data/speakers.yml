@@ -14013,6 +14013,7 @@ speakers:
             \ Boost Steering Committee. He's happiest when finding powerful, elegant, and efficient abstractions for complicated\
             \ code, and firmly believes code can and should be fast and beautiful."}
     twitter: ericniebler
+    gitHub: ericniebler
   - id: 987
     photoFileName: 0987.jpg
     name:
@@ -15174,6 +15175,7 @@ speakers:
     bio:
       - {language: en, text: "Cross platform, IOT, tinkering with gadgets."}
     twitter: jn1974
+    gitHub: Jiihaa
   - id: 1074
     photoFileName: 1074.jpg
     name:
@@ -15672,6 +15674,7 @@ speakers:
             \ techniques and tools to industrial software development. He is the lead developer of ClojureScript, a version\
             \ of Clojure that compiles to JavaScript."}
     twitter: swannodette
+    gitHub: swannodette
   - id: 1109
     photoFileName: 1109.jpg
     photoUpdatedAt: 2020-01-24T18:37:58.727Z[UTC]
@@ -15698,6 +15701,7 @@ speakers:
       - {language: en, text: "Margarita is a software engineer and international speaker on tools to improving software development\
             \ processes. She is a consultant software engineer, who loves to find different ways to optimize project work."}
     twitter: riittagirl
+    gitHub: marharyta
   - id: 1111
     photoFileName: 1111.jpg
     name:
@@ -17265,6 +17269,7 @@ speakers:
             \ of a Research Assistant Professor at Virginia Tech, Electrical, and Computer Engineering Department, where he\
             \ works at Systems Software Research Group (SSRG), led by Prof. Binoy Ravindran. He currently mentors four Ph.D.\
             \ students and works on different projects in systems and concurrency."
+    gitHub: rusnikola
   - id: 1226
     photoFileName: 1226.jpg
     photoUpdatedAt: 2020-02-13T13:46:22.359Z[UTC]
@@ -22432,6 +22437,8 @@ speakers:
             \ IBM Runtimes team for nearly 4 years. He is an active contributor primarily for the Eclipse OMR and Eclipse\
             \ OpenJ9 projects. He has worked most specifically on garbage collection development with a focus on application\
             \ throughput optimization."}
+    twitter: jonoommen
+    gitHub: jonoommen
   - id: 1597
     photoFileName: 1597.jpg
     photoUpdatedAt: 2021-03-26T13:03:21.007Z[UTC]
