@@ -628,7 +628,7 @@ public class ConferenceDataLoader {
         speakers.forEach(
                 s -> s.setCompanyIds(s.getCompanies().stream()
                         .map(Company::getId)
-                        .toList()
+                        .collect(Collectors.toCollection(ArrayList::new))
                 )
         );
     }
