@@ -10,15 +10,36 @@ import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 import guess.util.tagcloud.TagCloudUtils;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Tag cloud details DTO.
  */
 public record TagCloudErrorDetailsDto(SpeakerPairDto speaker, byte[] image, List<TagCloudAnswerDto> yourAnswers) {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TagCloudErrorDetailsDto)) return false;
+        TagCloudErrorDetailsDto that = (TagCloudErrorDetailsDto) o;
+        return Objects.equals(speaker, that.speaker) && Arrays.equals(image, that.image) && Objects.equals(yourAnswers, that.yourAnswers);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(speaker, yourAnswers);
+        result = 31 * result + Arrays.hashCode(image);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "TagCloudErrorDetailsDto{" +
+                "speaker=" + speaker +
+                ", image=" + Arrays.toString(image) +
+                ", yourAnswers=" + yourAnswers +
+                '}';
+    }
+
     private static TagCloudErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessMode guessMode, Language language) {
         if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
             List<Speaker> speakers = GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode) ?
