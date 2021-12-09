@@ -115,6 +115,7 @@ public final class CustomEmitter implements Emitable {
     private final char[] bestLineBreak;
     private final boolean splitLines;
     private final int maxSimpleKeyLength;
+    private final boolean emitComments;
 
     // Tag prefixes.
     private Map<String, String> tagPrefixes;
@@ -181,6 +182,7 @@ public final class CustomEmitter implements Emitable {
         this.bestLineBreak = opts.getLineBreak().getString().toCharArray();
         this.splitLines = opts.getSplitLines();
         this.maxSimpleKeyLength = opts.getMaxSimpleKeyLength();
+        this.emitComments = opts.isProcessComments();
 
         // Tag prefixes.
         this.tagPrefixes = new LinkedHashMap<String, String>();
@@ -638,7 +640,6 @@ public final class CustomEmitter implements Emitable {
                 state = states.pop();
             } else if( event instanceof CommentEvent) {
                 blockCommentsCollector.collectEvents(event);
-                writeBlockComment();
             } else {
                 writeIndent();
                 if (!indentWithIndicator || this.first) {
@@ -647,6 +648,17 @@ public final class CustomEmitter implements Emitable {
                 writeIndicator("-", true, false, true);
                 if (indentWithIndicator && this.first) {
                     indent += indicatorIndent;
+                }
+                if (!blockCommentsCollector.isEmpty()) {
+                    increaseIndent(false, false);
+                    writeBlockComment();
+                    if(event instanceof ScalarEvent) {
+                        analysis = analyzeScalar(((ScalarEvent)event).getValue());
+                        if (!analysis.isEmpty()) {
+                            writeIndent();
+                        }
+                    }
+                    indent = indents.pop();
                 }
                 states.push(new ExpectBlockSequenceItem(false));
                 expectNode(false, false, false);
@@ -1391,23 +1403,25 @@ public final class CustomEmitter implements Emitable {
     }
 
     private boolean writeCommentLines(List<CommentLine> commentLines) throws IOException {
-        int indentColumns = 0;
-        boolean firstComment = true;
         boolean wroteComment = false;
-        for(CommentLine commentLine : commentLines) {
-            if(commentLine.getCommentType() != CommentType.BLANK_LINE) {
-                if(firstComment) {
-                    firstComment = false;
-                    writeIndicator("#", commentLine.getCommentType() == CommentType.IN_LINE, false, false);
-                    indentColumns = this.column > 0 ? this.column - 1 : 0;
-                } else {
-                    writeWhitespace(indentColumns);
-                    writeIndicator("#", false, false, false);
+        if(emitComments) {
+            int indentColumns = 0;
+            boolean firstComment = true;
+            for (CommentLine commentLine : commentLines) {
+                if (commentLine.getCommentType() != CommentType.BLANK_LINE) {
+                    if (firstComment) {
+                        firstComment = false;
+                        writeIndicator("#", commentLine.getCommentType() == CommentType.IN_LINE, false, false);
+                        indentColumns = this.column > 0 ? this.column - 1 : 0;
+                    } else {
+                        writeWhitespace(indentColumns);
+                        writeIndicator("#", false, false, false);
+                    }
+                    stream.write(commentLine.getValue());
                 }
-                stream.write(commentLine.getValue());
+                writeLineBreak(null);
+                wroteComment = true;
             }
-            writeLineBreak(null);
-            wroteComment = true;
         }
         return wroteComment;
     }
@@ -1415,8 +1429,8 @@ public final class CustomEmitter implements Emitable {
     private void writeBlockComment() throws IOException {
         if(!blockCommentsCollector.isEmpty()) {
             writeIndent();
+            writeCommentLines(blockCommentsCollector.consume());
         }
-        writeCommentLines(blockCommentsCollector.consume());
     }
 
     private boolean writeInlineComments() throws IOException {
