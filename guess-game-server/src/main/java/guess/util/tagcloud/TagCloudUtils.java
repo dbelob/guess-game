@@ -231,7 +231,7 @@ public class TagCloudUtils {
         wordCloud.setBackground(new RectangleBackground(dimension));
         wordCloud.setColorPalette(new ColorPalette(new Color(0x4055F1), new Color(0x408DF1), new Color(0x40AAF1), new Color(0x40C5F1), new Color(0x40D3F1), new Color(0x000000)));
         wordCloud.setFontScalar(new LinearFontScalar(MIN_FONT, MAX_FONT));
-        wordCloud.build(castedWordFrequencies);
+        wordCloud.build(new ArrayList<>(castedWordFrequencies));
 
         // Change image type from TYPE_INT_ARGB to TYPE_INT_RGB
         var oldImage = wordCloud.getBufferedImage();
