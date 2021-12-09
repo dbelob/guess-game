@@ -23,7 +23,6 @@ import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Stream;
@@ -259,8 +258,8 @@ class SpeakerControllerTest {
             SpeakerBriefDto speakerBriefDto2 = SpeakerBriefDto.convertToBriefDto(speaker2, LANGUAGE);
 
             return Stream.of(
-                    arguments(new ArrayList<>(List.of(speaker1, speaker0)), speakerFunction, List.of(speakerBriefDto0, speakerBriefDto1)),
-                    arguments(new ArrayList<>(List.of(speaker2, speaker0)), speakerFunction, List.of(speakerBriefDto0, speakerBriefDto2))
+                    arguments(List.of(speaker1, speaker0), speakerFunction, List.of(speakerBriefDto0, speakerBriefDto1)),
+                    arguments(List.of(speaker2, speaker0), speakerFunction, List.of(speakerBriefDto0, speakerBriefDto2))
             );
         }
 
@@ -303,9 +302,9 @@ class SpeakerControllerTest {
             SpeakerSuperBriefDto speakerSuperBriefDto3 = new SpeakerSuperBriefDto(2L, "Name0 (Company1)");
 
             return Stream.of(
-                    arguments(new ArrayList<>(List.of(speaker1, speaker0)), LANGUAGE, List.of(speakerSuperBriefDto0, speakerSuperBriefDto1)),
-                    arguments(new ArrayList<>(List.of(speaker2, speaker0)), LANGUAGE, List.of(speakerSuperBriefDto2, speakerSuperBriefDto3)),
-                    arguments(new ArrayList<>(List.of(speaker2, speaker0, speaker1)), LANGUAGE, List.of(speakerSuperBriefDto2, speakerSuperBriefDto3, speakerSuperBriefDto1))
+                    arguments(List.of(speaker1, speaker0), LANGUAGE, List.of(speakerSuperBriefDto0, speakerSuperBriefDto1)),
+                    arguments(List.of(speaker2, speaker0), LANGUAGE, List.of(speakerSuperBriefDto2, speakerSuperBriefDto3)),
+                    arguments(List.of(speaker2, speaker0, speaker1), LANGUAGE, List.of(speakerSuperBriefDto2, speakerSuperBriefDto3, speakerSuperBriefDto1))
             );
         }
 

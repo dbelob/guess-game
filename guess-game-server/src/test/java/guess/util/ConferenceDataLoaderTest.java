@@ -30,7 +30,6 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -215,11 +214,11 @@ class ConferenceDataLoaderTest {
                     arguments(new LoadResult<>(
                             Collections.emptyList(),
                             Collections.emptyList(),
-                            new ArrayList<>(List.of(new EventType())))),
+                            List.of(new EventType()))),
                     arguments(new LoadResult<>(
                             Collections.emptyList(),
                             List.of(new EventType()),
-                            new ArrayList<>(List.of(new EventType()))))
+                            List.of(new EventType())))
             );
         }
 
@@ -634,12 +633,12 @@ class ConferenceDataLoaderTest {
         speaker3.setCompanyIds(new ArrayList<>(List.of(1L, 2L)));
         speaker3.setCompanies(new ArrayList<>(List.of(company1, company2)));
 
-        List<Speaker> speakers = new ArrayList<>(List.of(speaker0, speaker1, speaker2, speaker3));
+        List<Speaker> speakers = List.of(speaker0, speaker1, speaker2, speaker3);
 
         Predicate<Company> invalidCompanyPredicate = c -> (c.getName() == null) || c.getName().isEmpty();
         List<Company> oldCompanies = speakers.stream()
                 .flatMap(s -> s.getCompanies().stream())
-                .collect(Collectors.toList());
+                .toList();
         long oldTotalCompanyCount = oldCompanies.size();
         long oldInvalidCompanyCount = oldCompanies.stream()
                 .filter(invalidCompanyPredicate)
@@ -653,7 +652,7 @@ class ConferenceDataLoaderTest {
 
         List<Company> newCompanies = speakers.stream()
                 .flatMap(s -> s.getCompanies().stream())
-                .collect(Collectors.toList());
+                .toList();
         long newTotalCompanyCount = newCompanies.size();
         long newInvalidCompanyCount = newCompanies.stream()
                 .filter(invalidCompanyPredicate)
@@ -1922,8 +1921,8 @@ class ConferenceDataLoaderTest {
             SpeakerLoadResult speakerLoadResult1 = new SpeakerLoadResult(
                     new LoadResult<>(
                             Collections.emptyList(),
-                            new ArrayList<>(List.of(speaker0)),
-                            new ArrayList<>(List.of(speaker1))),
+                            List.of(speaker0),
+                            List.of(speaker1)),
                     new LoadResult<>(
                             Collections.emptyList(),
                             Collections.emptyList(),
@@ -1962,9 +1961,9 @@ class ConferenceDataLoaderTest {
                     Collections.emptyList());
 
             LoadResult<List<Talk>> talkLoadResult1 = new LoadResult<>(
-                    new ArrayList<>(List.of(talk0)),
-                    new ArrayList<>(List.of(talk1)),
-                    new ArrayList<>(List.of(talk2)));
+                    List.of(talk0),
+                    List.of(talk1),
+                    List.of(talk2));
 
             return Stream.of(
                     arguments(talkLoadResult0),
