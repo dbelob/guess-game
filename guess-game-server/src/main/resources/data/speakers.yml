@@ -4831,7 +4831,7 @@ speakers:
     photoFileName: 0330.jpg
     name:
       - {language: en, text: "Nicolai Josuttis"}
-    companyIds: [612]
+    companyIds: []
     bio:
       - language: en
         text: "Nicolai Josuttis is an independent systems architect, technical manager, author, and consultant. He designs\
