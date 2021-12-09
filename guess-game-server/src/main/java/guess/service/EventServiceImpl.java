@@ -55,7 +55,7 @@ public class EventServiceImpl implements EventService {
         // Select conferences only
         return eventsFromDate.stream()
                 .filter(e -> ((isConferences && e.getEventType().isEventTypeConference()) || (isMeetups && !e.getEventType().isEventTypeConference())))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     Event getDefaultEvent(boolean isConferences, boolean isMeetups, LocalDateTime dateTime) {
@@ -98,7 +98,7 @@ public class EventServiceImpl implements EventService {
             List<EventMinTrackTimeEndDayTime> eventMinTrackTimeEndDayTimeListOnCurrentDate = eventMinTrackTimeEndDayTimeListFromDateOrdered.stream()
                     .filter(edt -> !dateTime.isBefore(edt.minTrackDateTime()))
                     .sorted(Comparator.comparing(EventMinTrackTimeEndDayTime::minTrackDateTime).reversed())
-                    .collect(Collectors.toList());
+                    .toList();
 
             // Return nearest last event
             return eventMinTrackTimeEndDayTimeListOnCurrentDate.get(0).event();
@@ -190,7 +190,7 @@ public class EventServiceImpl implements EventService {
                             endDayDateTime
                     );
                 })
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override

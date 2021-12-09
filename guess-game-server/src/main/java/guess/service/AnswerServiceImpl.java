@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 /**
  * Answer service implementation.
@@ -56,7 +55,7 @@ public class AnswerServiceImpl implements AnswerService {
                 var questionAnswers = questionAnswersList.get(questionIndex);
                 List<Long> correctAnswerIds = questionAnswers.correctAnswers().stream()
                         .map(Identifiable::getId)
-                        .collect(Collectors.toList());
+                        .toList();
                 List<Long> yourAnswerIds = new ArrayList<>(Collections.singletonList(answerId));
                 boolean isSuccess = isSuccess(correctAnswerIds, yourAnswerIds);
 

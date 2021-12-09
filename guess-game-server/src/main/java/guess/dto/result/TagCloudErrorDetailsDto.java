@@ -14,41 +14,18 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Tag cloud details DTO.
  */
-public class TagCloudErrorDetailsDto {
-    private final SpeakerPairDto speaker;
-    private final byte[] image;
-    private final List<TagCloudAnswerDto> yourAnswers;
-
-    public TagCloudErrorDetailsDto(SpeakerPairDto speaker, byte[] image, List<TagCloudAnswerDto> yourAnswers) {
-        this.speaker = speaker;
-        this.image = image;
-        this.yourAnswers = yourAnswers;
-    }
-
-    public SpeakerPairDto getSpeaker() {
-        return speaker;
-    }
-
-    public byte[] getImage() {
-        return image;
-    }
-
-    public List<TagCloudAnswerDto> getYourAnswers() {
-        return yourAnswers;
-    }
-
+public record TagCloudErrorDetailsDto(SpeakerPairDto speaker, byte[] image, List<TagCloudAnswerDto> yourAnswers) {
     private static TagCloudErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessMode guessMode, Language language) {
         if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
             List<Speaker> speakers = GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode) ?
                     Collections.singletonList(((TagCloudQuestion) errorDetails.question()).getSpeaker()) :
                     errorDetails.availableAnswers().stream()
                             .map(a -> ((SpeakerAnswer) a).getSpeaker())
-                            .collect(Collectors.toList());
+                            .toList();
 
             Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                     speakers,
@@ -67,7 +44,7 @@ public class TagCloudErrorDetailsDto {
                                             LocalizationUtils.getSpeakerName(((SpeakerAnswer) a).getSpeaker(), language, speakerDuplicates),
                                             ((SpeakerAnswer) a).getSpeaker().getPhotoFileName()),
                                     null))
-                    .collect(Collectors.toList());
+                    .toList();
 
             Map<Language, byte[]> languageImageMap = GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode) ?
                     ((TagCloudAnswer) errorDetails.correctAnswers().get(0)).getLanguageImageMap() :
@@ -87,6 +64,6 @@ public class TagCloudErrorDetailsDto {
     public static List<TagCloudErrorDetailsDto> convertToDto(List<ErrorDetails> errorDetailsList, GuessMode guessMode, Language language) {
         return errorDetailsList.stream()
                 .map(e -> convertToDto(e, guessMode, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 }

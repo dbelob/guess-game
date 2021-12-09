@@ -7,7 +7,6 @@ import guess.dto.company.CompanyDto;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Speaker DTO (brief).
@@ -115,7 +114,7 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
     public static List<SpeakerBriefDto> convertToBriefDto(List<Speaker> speakers, Language language, Set<Speaker> speakerDuplicates) {
         return speakers.stream()
                 .map(s -> convertToBriefDto(s, language, speakerDuplicates))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public static List<SpeakerBriefDto> convertToBriefDto(List<Speaker> speakers, Language language) {

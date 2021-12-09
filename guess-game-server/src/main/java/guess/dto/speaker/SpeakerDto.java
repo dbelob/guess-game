@@ -5,7 +5,6 @@ import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Speaker DTO.
@@ -50,7 +49,7 @@ public class SpeakerDto extends SpeakerBriefDto {
     public static List<SpeakerDto> convertToDto(List<Speaker> speakers, Language language) {
         return speakers.stream()
                 .map(s -> convertToDto(s, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override

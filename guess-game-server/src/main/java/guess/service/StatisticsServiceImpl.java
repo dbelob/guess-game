@@ -20,7 +20,6 @@ import org.springframework.stereotype.Service;
 import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Statistics service implementation.
@@ -42,7 +41,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                 .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
                         ((organizerId == null) || (et.getOrganizer().getId() == organizerId)) &&
                         ((eventTypeId == null) || (et.getId() == eventTypeId)))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
@@ -160,7 +159,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                         (e.getEventType().isEventTypeConference() &&
                                 ((organizerId == null) || (e.getEventType().getOrganizer().getId() == organizerId)) &&
                                 ((eventTypeId == null) || (e.getEventType().getId() == eventTypeId))))
-                .collect(Collectors.toList());
+                .toList();
         List<EventMetrics> eventMetricsList = new ArrayList<>();
         LocalDate totalsStartDate = null;
         long totalsDuration = 0;

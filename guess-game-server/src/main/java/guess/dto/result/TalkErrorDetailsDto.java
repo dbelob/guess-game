@@ -12,34 +12,11 @@ import guess.util.LocalizationUtils;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Talk error details DTO.
  */
-public class TalkErrorDetailsDto {
-    private final List<SpeakerPairDto> speakers;
-    private final String talkName;
-    private final List<SpeakerPairDto> yourAnswers;
-
-    private TalkErrorDetailsDto(List<SpeakerPairDto> speakers, String talkName, List<SpeakerPairDto> yourAnswers) {
-        this.speakers = speakers;
-        this.talkName = talkName;
-        this.yourAnswers = yourAnswers;
-    }
-
-    public List<SpeakerPairDto> getSpeakers() {
-        return speakers;
-    }
-
-    public String getTalkName() {
-        return talkName;
-    }
-
-    public List<SpeakerPairDto> getYourAnswers() {
-        return yourAnswers;
-    }
-
+public record TalkErrorDetailsDto(List<SpeakerPairDto> speakers, String talkName, List<SpeakerPairDto> yourAnswers) {
     private static TalkErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessMode guessMode, Language language) {
         if (GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
             List<Speaker> speakers = GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode) ?
@@ -47,10 +24,10 @@ public class TalkErrorDetailsDto {
                             .map(a -> ((TalkAnswer) a).getTalk().getSpeakers())
                             .flatMap(Collection::stream)
                             .distinct()
-                            .collect(Collectors.toList()) :
+                            .toList() :
                     errorDetails.availableAnswers().stream()
                             .map(a -> ((SpeakerAnswer) a).getSpeaker())
-                            .collect(Collectors.toList());
+                            .toList();
 
             Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                     speakers,
@@ -61,13 +38,13 @@ public class TalkErrorDetailsDto {
                     ((TalkQuestion) errorDetails.question()).getSpeakers() :
                     errorDetails.correctAnswers().stream()
                             .map(a -> ((SpeakerAnswer) a).getSpeaker())
-                            .collect(Collectors.toList());
+                            .toList();
 
             List<SpeakerPairDto> questionSpeakerPairs = questionSpeakers.stream()
                     .map(s -> new SpeakerPairDto(
                             LocalizationUtils.getSpeakerName(s, language, speakerDuplicates),
                             s.getPhotoFileName()))
-                    .collect(Collectors.toList());
+                    .toList();
 
             List<SpeakerPairDto> yourAnswers = errorDetails.yourAnswers().stream()
                     .map(a -> GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode) ?
@@ -77,7 +54,7 @@ public class TalkErrorDetailsDto {
                             new SpeakerPairDto(
                                     LocalizationUtils.getSpeakerName(((SpeakerAnswer) a).getSpeaker(), language, speakerDuplicates),
                                     ((SpeakerAnswer) a).getSpeaker().getPhotoFileName()))
-                    .collect(Collectors.toList());
+                    .toList();
 
             return new TalkErrorDetailsDto(
                     questionSpeakerPairs,
@@ -91,6 +68,6 @@ public class TalkErrorDetailsDto {
     public static List<TalkErrorDetailsDto> convertToDto(List<ErrorDetails> errorDetailsList, GuessMode guessMode, Language language) {
         return errorDetailsList.stream()
                 .map(e -> convertToDto(e, guessMode, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 }

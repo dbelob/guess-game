@@ -8,7 +8,6 @@ import guess.util.LocalizationUtils;
 
 import java.util.List;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 /**
  * Talk DTO.
@@ -77,6 +76,6 @@ public class TalkDto extends TalkBriefDto {
                                              Function<Event, EventType> eventEventTypeFunction, Language language) {
         return talks.stream()
                 .map(t -> convertToDto(t, talkEventFunction, eventEventTypeFunction, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 }

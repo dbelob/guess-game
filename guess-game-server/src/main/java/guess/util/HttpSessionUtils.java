@@ -26,8 +26,8 @@ public class HttpSessionUtils {
     public static GameState getGameState(HttpSession httpSession) {
         var stateObject = httpSession.getAttribute(STATE_ATTRIBUTE_NAME);
 
-        if (stateObject instanceof GameState) {
-            return (GameState) stateObject;
+        if (stateObject instanceof GameState gameState) {
+            return gameState;
         } else {
             return GameState.START_STATE;
         }
@@ -40,8 +40,8 @@ public class HttpSessionUtils {
     public static StartParameters getStartParameters(HttpSession httpSession) {
         var startParametersObject = httpSession.getAttribute(START_PARAMETERS_ATTRIBUTE_NAME);
 
-        if (startParametersObject instanceof StartParameters) {
-            return (StartParameters) startParametersObject;
+        if (startParametersObject instanceof StartParameters startParameters) {
+            return startParameters;
         } else {
             return null;
         }
@@ -58,8 +58,8 @@ public class HttpSessionUtils {
     public static QuestionAnswersSet getQuestionAnswersSet(HttpSession httpSession) {
         var questionAnswersSetObject = httpSession.getAttribute(QUESTION_ANSWERS_SET_ATTRIBUTE_NAME);
 
-        if (questionAnswersSetObject instanceof QuestionAnswersSet) {
-            return (QuestionAnswersSet) questionAnswersSetObject;
+        if (questionAnswersSetObject instanceof QuestionAnswersSet questionAnswersSet) {
+            return questionAnswersSet;
         } else {
             return null;
         }
@@ -110,8 +110,8 @@ public class HttpSessionUtils {
     public static Language getLanguage(HttpSession httpSession) {
         var languageObject = httpSession.getAttribute(LANGUAGE_ATTRIBUTE_NAME);
 
-        if (languageObject instanceof Language) {
-            return (Language) languageObject;
+        if (languageObject instanceof Language language) {
+            return language;
         } else {
             return Language.ENGLISH;
         }

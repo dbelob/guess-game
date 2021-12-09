@@ -8,23 +8,7 @@ import java.util.List;
 /**
  * Company statistics DTO.
  */
-public class CompanyStatisticsDto {
-    private final List<CompanyMetricsDto> companyMetricsList;
-    private final CompanyMetricsDto totals;
-
-    public CompanyStatisticsDto(List<CompanyMetricsDto> companyMetricsList, CompanyMetricsDto totals) {
-        this.companyMetricsList = companyMetricsList;
-        this.totals = totals;
-    }
-
-    public List<CompanyMetricsDto> getCompanyMetricsList() {
-        return companyMetricsList;
-    }
-
-    public CompanyMetricsDto getTotals() {
-        return totals;
-    }
-
+public record CompanyStatisticsDto(List<CompanyMetricsDto> companyMetricsList, CompanyMetricsDto totals) {
     public static CompanyStatisticsDto convertToDto(CompanyStatistics companyStatistics, Language language) {
         return new CompanyStatisticsDto(
                 CompanyMetricsDto.convertToDto(companyStatistics.companyMetricsList(), language),

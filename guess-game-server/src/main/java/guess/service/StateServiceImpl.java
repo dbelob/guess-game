@@ -202,22 +202,22 @@ public class StateServiceImpl implements StateService {
             return Collections.singletonList(talkAnswer);
         } else if (GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
             return ((TalkQuestion) question).getSpeakers().stream()
-                    .map(s -> (SpeakerAnswer) answerCache.computeIfAbsent(
+                    .map(s -> answerCache.computeIfAbsent(
                             s.getId(),
                             k -> new SpeakerAnswer(s)))
-                    .collect(Collectors.toList());
+                    .toList();
         } else if (GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE.equals(guessMode)) {
             return ((CompanyBySpeakerQuestion) question).getCompanies().stream()
-                    .map(c -> (CompanyAnswer) answerCache.computeIfAbsent(
+                    .map(c -> answerCache.computeIfAbsent(
                             c.getId(),
                             k -> new CompanyAnswer(c)))
-                    .collect(Collectors.toList());
+                    .toList();
         } else if (GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(guessMode)) {
             return ((SpeakerByCompanyQuestion) question).getSpeakers().stream()
-                    .map(s -> (SpeakerAnswer) answerCache.computeIfAbsent(
+                    .map(s -> answerCache.computeIfAbsent(
                             s.getId(),
                             k -> new SpeakerAnswer(s)))
-                    .collect(Collectors.toList());
+                    .toList();
         } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode)) {
             var speaker = ((TagCloudQuestion) question).getSpeaker();
             var tagCloudAnswer = (TagCloudAnswer) answerCache.computeIfAbsent(
@@ -250,12 +250,12 @@ public class StateServiceImpl implements StateService {
                     .map(q -> {
                                 var speaker = ((SpeakerQuestion) q).getSpeaker();
 
-                                return (SpeakerAnswer) answerCache.computeIfAbsent(
+                                return answerCache.computeIfAbsent(
                                         speaker.getId(),
                                         k -> new SpeakerAnswer(speaker));
                             }
                     )
-                    .collect(Collectors.toList());
+                    .toList();
         } else if (GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode)) {
             List<Speaker> questionSpeakers = ((TalkQuestion) question).getSpeakers();
             var correctAnswerTalk = ((TalkAnswer) correctAnswers.get(0)).getTalk();
@@ -263,10 +263,10 @@ public class StateServiceImpl implements StateService {
             return questions.stream()
                     .map(q -> ((TalkQuestion) q).getTalk())
                     .filter(t -> (t.getId() == correctAnswerTalk.getId()) || !t.getSpeakers().containsAll(questionSpeakers))
-                    .map(t -> (TalkAnswer) answerCache.computeIfAbsent(
+                    .map(t -> answerCache.computeIfAbsent(
                             t.getId(),
                             k -> new TalkAnswer(t)))
-                    .collect(Collectors.toList());
+                    .toList();
         } else if (GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
             Set<Speaker> questionSpeakers = new HashSet<>(((TalkQuestion) question).getSpeakers());
             Set<Speaker> correctAnswerSpeakers = correctAnswers.stream()
@@ -278,10 +278,10 @@ public class StateServiceImpl implements StateService {
                     .flatMap(Collection::stream)
                     .distinct()
                     .filter(s -> (correctAnswerSpeakers.contains(s) || !questionSpeakers.contains(s)))
-                    .map(s -> (SpeakerAnswer) answerCache.computeIfAbsent(
+                    .map(s -> answerCache.computeIfAbsent(
                             s.getId(),
                             k -> new SpeakerAnswer(s)))
-                    .collect(Collectors.toList());
+                    .toList();
         } else if (GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE.equals(guessMode)) {
             Set<Company> questionCompanies = new HashSet<>(((CompanyBySpeakerQuestion) question).getCompanies());
             Set<Company> correctAnswerCompanies = correctAnswers.stream()
@@ -293,10 +293,10 @@ public class StateServiceImpl implements StateService {
                     .flatMap(Collection::stream)
                     .distinct()
                     .filter(c -> (correctAnswerCompanies.contains(c) || !questionCompanies.contains(c)))
-                    .map(c -> (CompanyAnswer) answerCache.computeIfAbsent(
+                    .map(c -> answerCache.computeIfAbsent(
                             c.getId(),
                             k -> new CompanyAnswer(c)))
-                    .collect(Collectors.toList());
+                    .toList();
         } else if (GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(guessMode)) {
             var company = ((SpeakerByCompanyQuestion) question).getCompany();
             Set<Speaker> correctAnswerSpeakers = correctAnswers.stream()
@@ -308,33 +308,33 @@ public class StateServiceImpl implements StateService {
                     .flatMap(Collection::stream)
                     .distinct()
                     .filter(s -> (correctAnswerSpeakers.contains(s) || !s.getCompanies().contains(company)))
-                    .map(s -> (SpeakerAnswer) answerCache.computeIfAbsent(
+                    .map(s -> answerCache.computeIfAbsent(
                             s.getId(),
                             k -> new SpeakerAnswer(s)))
-                    .collect(Collectors.toList());
+                    .toList();
         } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode)) {
             return questions.stream()
                     .map(q -> {
                         var speaker = ((TagCloudQuestion) q).getSpeaker();
 
-                        return (TagCloudAnswer) answerCache.computeIfAbsent(
+                        return answerCache.computeIfAbsent(
                                 speaker.getId(),
                                 k -> new TagCloudAnswer(
                                         speaker,
                                         ((TagCloudQuestion) q).getLanguageWordFrequenciesMap())
                         );
                     })
-                    .collect(Collectors.toList());
+                    .toList();
         } else if (GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
             return questions.stream()
                     .map(q -> {
                         var speaker = ((TagCloudQuestion) q).getSpeaker();
 
-                        return (SpeakerAnswer) answerCache.computeIfAbsent(
+                        return answerCache.computeIfAbsent(
                                 speaker.getId(),
                                 k -> new SpeakerAnswer(speaker));
                     })
-                    .collect(Collectors.toList());
+                    .toList();
         } else {
             throw new IllegalArgumentException(String.format(UNKNOWN_GUESS_MODE_TEXT, guessMode));
         }

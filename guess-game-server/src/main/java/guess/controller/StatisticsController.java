@@ -42,11 +42,11 @@ public class StatisticsController {
         Comparator<EventTypeMetricsDto> comparatorByOrganizerName = Comparator.comparing(EventTypeMetricsDto::getOrganizerName, String.CASE_INSENSITIVE_ORDER);
         Comparator<EventTypeMetricsDto> comparatorByName = Comparator.comparing(EventTypeMetricsDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
 
-        List<EventTypeMetricsDto> sortedEventTypeMetricsList = eventTypeStatisticsDto.getEventTypeMetricsList().stream()
+        List<EventTypeMetricsDto> sortedEventTypeMetricsList = eventTypeStatisticsDto.eventTypeMetricsList().stream()
                 .sorted(comparatorByIsConference.thenComparing(comparatorByOrganizerName).thenComparing(comparatorByName))
                 .toList();
 
-        return new EventTypeStatisticsDto(sortedEventTypeMetricsList, eventTypeStatisticsDto.getTotals());
+        return new EventTypeStatisticsDto(sortedEventTypeMetricsList, eventTypeStatisticsDto.totals());
     }
 
     @GetMapping("/event-statistics")
@@ -56,11 +56,11 @@ public class StatisticsController {
         var language = localeService.getLanguage(httpSession);
         var eventStatisticsDto = EventStatisticsDto.convertToDto(eventStatistics, language);
 
-        List<EventMetricsDto> sortedEventMetricsList = eventStatisticsDto.getEventMetricsList().stream()
+        List<EventMetricsDto> sortedEventMetricsList = eventStatisticsDto.eventMetricsList().stream()
                 .sorted(Comparator.comparing(EventMetricsDto::getName, String.CASE_INSENSITIVE_ORDER))
                 .toList();
 
-        return new EventStatisticsDto(sortedEventMetricsList, eventStatisticsDto.getTotals());
+        return new EventStatisticsDto(sortedEventMetricsList, eventStatisticsDto.totals());
     }
 
     @GetMapping("/speaker-statistics")
@@ -74,11 +74,11 @@ public class StatisticsController {
         Comparator<SpeakerMetricsDto> comparatorByEventsQuantity = Comparator.comparing(SpeakerMetricsDto::getEventsQuantity).reversed();
         Comparator<SpeakerMetricsDto> comparatorByEventTypesQuantity = Comparator.comparing(SpeakerMetricsDto::getEventTypesQuantity).reversed();
 
-        List<SpeakerMetricsDto> sortedSpeakerMetricsList = speakerStatisticsDto.getSpeakerMetricsList().stream()
+        List<SpeakerMetricsDto> sortedSpeakerMetricsList = speakerStatisticsDto.speakerMetricsList().stream()
                 .sorted(comparatorByTalksQuantity.thenComparing(comparatorByEventsQuantity).thenComparing(comparatorByEventTypesQuantity))
                 .toList();
 
-        return new SpeakerStatisticsDto(sortedSpeakerMetricsList, speakerStatisticsDto.getTotals());
+        return new SpeakerStatisticsDto(sortedSpeakerMetricsList, speakerStatisticsDto.totals());
     }
 
     @GetMapping("/company-statistics")
@@ -92,11 +92,11 @@ public class StatisticsController {
         Comparator<CompanyMetricsDto> comparatorByEventsQuantity = Comparator.comparing(CompanyMetricsDto::getEventsQuantity).reversed();
         Comparator<CompanyMetricsDto> comparatorByEventTypesQuantity = Comparator.comparing(CompanyMetricsDto::getEventTypesQuantity).reversed();
 
-        List<CompanyMetricsDto> sortedCompanyMetricsList = companyStatisticsDto.getCompanyMetricsList().stream()
+        List<CompanyMetricsDto> sortedCompanyMetricsList = companyStatisticsDto.companyMetricsList().stream()
                 .sorted(comparatorByTalksQuantity.thenComparing(comparatorByEventsQuantity).thenComparing(comparatorByEventTypesQuantity))
                 .toList();
 
-        return new CompanyStatisticsDto(sortedCompanyMetricsList, companyStatisticsDto.getTotals());
+        return new CompanyStatisticsDto(sortedCompanyMetricsList, companyStatisticsDto.totals());
     }
 
     @GetMapping("/cube-types")
@@ -119,38 +119,38 @@ public class StatisticsController {
         var language = localeService.getLanguage(httpSession);
         var olapStatisticsDto = OlapStatisticsDto.convertToDto(olapStatistics, language);
 
-        if (olapStatisticsDto.getEventTypeStatistics() != null) {
+        if (olapStatisticsDto.eventTypeStatistics() != null) {
             Comparator<OlapEventTypeMetricsDto> comparatorByIsConference = Comparator.comparing(OlapEventTypeMetricsDto::isConference).reversed();
             Comparator<OlapEventTypeMetricsDto> comparatorByOrganizerName = Comparator.comparing(OlapEventTypeMetricsDto::getOrganizerName, String.CASE_INSENSITIVE_ORDER);
             Comparator<OlapEventTypeMetricsDto> comparatorByName = Comparator.comparing(OlapEventTypeMetricsDto::getName, String.CASE_INSENSITIVE_ORDER);
 
-            List<OlapEventTypeMetricsDto> sortedMetricsList = olapStatisticsDto.getEventTypeStatistics().getMetricsList().stream()
+            List<OlapEventTypeMetricsDto> sortedMetricsList = olapStatisticsDto.eventTypeStatistics().getMetricsList().stream()
                     .sorted(comparatorByIsConference.thenComparing(comparatorByOrganizerName).thenComparing(comparatorByName))
                     .toList();
 
-            olapStatisticsDto.getEventTypeStatistics().setMetricsList(sortedMetricsList);
+            olapStatisticsDto.eventTypeStatistics().setMetricsList(sortedMetricsList);
         }
 
-        if (olapStatisticsDto.getSpeakerStatistics() != null) {
+        if (olapStatisticsDto.speakerStatistics() != null) {
             Comparator<OlapSpeakerMetricsDto> comparatorByTotal = Comparator.comparing(OlapSpeakerMetricsDto::getTotal).reversed();
             Comparator<OlapSpeakerMetricsDto> comparatorByName = Comparator.comparing(OlapSpeakerMetricsDto::getName, String.CASE_INSENSITIVE_ORDER);
 
-            List<OlapSpeakerMetricsDto> sortedMetricsList = olapStatisticsDto.getSpeakerStatistics().getMetricsList().stream()
+            List<OlapSpeakerMetricsDto> sortedMetricsList = olapStatisticsDto.speakerStatistics().getMetricsList().stream()
                     .sorted(comparatorByTotal.thenComparing(comparatorByName))
                     .toList();
 
-            olapStatisticsDto.getSpeakerStatistics().setMetricsList(sortedMetricsList);
+            olapStatisticsDto.speakerStatistics().setMetricsList(sortedMetricsList);
         }
 
-        if (olapStatisticsDto.getCompanyStatistics() != null) {
+        if (olapStatisticsDto.companyStatistics() != null) {
             Comparator<OlapCompanyMetricsDto> comparatorByTotal = Comparator.comparing(OlapCompanyMetricsDto::getTotal).reversed();
             Comparator<OlapCompanyMetricsDto> comparatorByName = Comparator.comparing(OlapCompanyMetricsDto::getName, String.CASE_INSENSITIVE_ORDER);
 
-            List<OlapCompanyMetricsDto> sortedMetricsList = olapStatisticsDto.getCompanyStatistics().getMetricsList().stream()
+            List<OlapCompanyMetricsDto> sortedMetricsList = olapStatisticsDto.companyStatistics().getMetricsList().stream()
                     .sorted(comparatorByTotal.thenComparing(comparatorByName))
                     .toList();
 
-            olapStatisticsDto.getCompanyStatistics().setMetricsList(sortedMetricsList);
+            olapStatisticsDto.companyStatistics().setMetricsList(sortedMetricsList);
         }
 
         return olapStatisticsDto;
