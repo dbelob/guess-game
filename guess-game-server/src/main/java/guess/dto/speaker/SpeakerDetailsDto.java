@@ -13,23 +13,7 @@ import java.util.function.Function;
 /**
  * Speaker details DTO.
  */
-public class SpeakerDetailsDto {
-    private final SpeakerDto speaker;
-    private final List<TalkBriefDto> talks;
-
-    public SpeakerDetailsDto(SpeakerDto speaker, List<TalkBriefDto> talks) {
-        this.speaker = speaker;
-        this.talks = talks;
-    }
-
-    public SpeakerDto getSpeaker() {
-        return speaker;
-    }
-
-    public List<TalkBriefDto> getTalks() {
-        return talks;
-    }
-
+public record SpeakerDetailsDto(SpeakerDto speaker, List<TalkBriefDto> talks) {
     public static SpeakerDetailsDto convertToDto(Speaker speaker, List<Talk> talks, Function<Talk, Event> talkEventFunction,
                                                  Function<Event, EventType> eventEventTypeFunction, Language language) {
         return new SpeakerDetailsDto(

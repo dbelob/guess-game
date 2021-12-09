@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -61,7 +60,7 @@ public class TalkServiceImpl implements TalkService {
                     .filter(t -> ((!isTalkNameSet || SearchUtils.isSubstringFound(trimmedLowerCasedTalkName, t.getName())) &&
                             (!isSpeakerNameSet || t.getSpeakers().stream()
                                     .anyMatch(s -> SearchUtils.isSubstringFound(trimmedLowerCasedSpeakerName, s.getName())))))
-                    .collect(Collectors.toList());
+                    .toList();
         }
     }
 

@@ -269,7 +269,7 @@ class StateServiceImplTest {
                                 startParameters,
                                 List.of(question0, question1, question2, question3),
                                 List.of(answer0),
-                                new ArrayList<>(List.of(answer0, answer1, answer2, answer3)),
+                                List.of(answer0, answer1, answer2, answer3),
                                 eventType,
                                 event
                         ));

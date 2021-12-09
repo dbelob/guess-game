@@ -8,7 +8,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Speaker DTO (super brief).
@@ -43,7 +42,7 @@ public class SpeakerSuperBriefDto {
     public static List<SpeakerSuperBriefDto> convertToSuperBriefDto(List<Speaker> speakers, Language language, Set<Speaker> speakerDuplicates) {
         return speakers.stream()
                 .map(s -> convertToSuperBriefDto(s, language, speakerDuplicates))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public static List<SpeakerSuperBriefDto> convertToSuperBriefDto(List<Speaker> speakers, Language language) {

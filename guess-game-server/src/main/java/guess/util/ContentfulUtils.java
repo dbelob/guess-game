@@ -206,7 +206,7 @@ public class ContentfulUtils {
                             t.getFields().getConferences().stream())
                     .distinct()
                     .sorted()
-                    .collect(Collectors.toList());
+                    .toList();
 
             spaceTagsMap.put(conferenceSpaceInfo, tags);
         }
@@ -233,7 +233,7 @@ public class ContentfulUtils {
         return Objects.requireNonNull(response)
                 .getItems().stream()
                 .map(ContentfulLocale::getCode)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     /**
@@ -262,7 +262,7 @@ public class ContentfulUtils {
         return Objects.requireNonNull(response)
                 .getItems().stream()
                 .map(et -> createEventType(et, id))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     static EventType createEventType(ContentfulEventType et, AtomicLong id) {
@@ -356,7 +356,7 @@ public class ContentfulUtils {
 
         return response.getItems().stream()
                 .map(e -> createEvent(e, cityMap, entryErrorSet))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     /**
@@ -506,7 +506,7 @@ public class ContentfulUtils {
         return Objects.requireNonNull(response)
                 .getItems().stream()
                 .map(s -> createSpeaker(s, assetMap, assetErrorSet, speakerId, companyId, true))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     /**
@@ -692,7 +692,7 @@ public class ContentfulUtils {
                 .getItems().stream()
                 .filter(t -> isValidTalk(t, ignoreDemoStage))
                 .map(t -> createTalk(t, assetMap, entryErrorSet, assetErrorSet, speakerMap, talkId))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     /**
@@ -741,7 +741,7 @@ public class ContentfulUtils {
                     return Objects.requireNonNull(speaker,
                             () -> String.format("Speaker id %s not found for '%s' talk", speakerId, contentfulTalk.getFields().getNameEn()));
                 })
-                .collect(Collectors.toList());
+                .toList();
 
         return new Talk(
                 new Descriptionable(
@@ -958,7 +958,7 @@ public class ContentfulUtils {
 
         return contentfulLinks.stream()
                 .distinct()
-                .collect(Collectors.toList());
+                .toList();
     }
 
     /**
@@ -993,7 +993,7 @@ public class ContentfulUtils {
                                     () -> String.format("Asset (presentation link) id %s not found for '%s' talk", assetId, talkNameEn))
                             .getFields().getFile().getUrl());
                 })
-                .collect(Collectors.toList());
+                .toList();
     }
 
     /**
@@ -1269,13 +1269,15 @@ public class ContentfulUtils {
                                                 "Pivotal",
                                                 null))),
                                 extractLocaleItems(
-                                        "Sergei works at Pivotal on Project Reactor in Berlin, Germany.\n" +
-                                                "\n" +
-                                                "He is an active member of the open source community, member of the Apache Foundation, co-maintainer of the Testcontainers project, and a contributor to various OSS projects (Apache Groovy, Testcontainers, JBoss Modules, Spring Boot, to name a few), likes to share the knowledge and was presenting at different conferences and meetups in Russia, Germany, Ukraine, Norway, Denmark, Spain, and Estonia.\n" +
-                                                "\n" +
-                                                "He is passionate about DevOps topics, clouds, and infrastructure.\n" +
-                                                "\n" +
-                                                "Before Pivotal, he was working at Vivy, N26, Zalando, ZeroTurnaround, TransferWise, and other startups.\n",
+                                        """
+                                                Sergei works at Pivotal on Project Reactor in Berlin, Germany.
+
+                                                He is an active member of the open source community, member of the Apache Foundation, co-maintainer of the Testcontainers project, and a contributor to various OSS projects (Apache Groovy, Testcontainers, JBoss Modules, Spring Boot, to name a few), likes to share the knowledge and was presenting at different conferences and meetups in Russia, Germany, Ukraine, Norway, Denmark, Spain, and Estonia.
+
+                                                He is passionate about DevOps topics, clouds, and infrastructure.
+
+                                                Before Pivotal, he was working at Vivy, N26, Zalando, ZeroTurnaround, TransferWise, and other startups.
+                                                """,
                                         "Сергей работает в компании Pivotal в команде Project Reactor. Он является активным участником open source-сообщества, членом Apache Software Foundation, одним из главных разработчиков проекта Testcontainers и контрибьютором в разного рода проектах (Apache Groovy, Testcontainers, Spring Boot, JBoss Modules и не только)."),
                                 new Speaker.SpeakerSocials(
                                         "bsideup",

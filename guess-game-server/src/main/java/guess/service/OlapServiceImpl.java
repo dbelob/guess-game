@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 /**
  * OLAP service implementation.
@@ -123,15 +122,15 @@ public class OlapServiceImpl implements OlapService {
         List<S> firstDimensionValues = cube.getDimensionValues(firstDimensionType).stream()
                 .map(v -> (S) v)
                 .filter(firstDimensionPredicate)
-                .collect(Collectors.toList());
+                .toList();
         List<T> secondDimensionValues = cube.getDimensionValues(DimensionType.YEAR).stream()
                 .map(v -> (T) v)
                 .sorted()
-                .collect(Collectors.toList());
+                .toList();
         List<U> filterDimensionValues = cube.getDimensionValues(filterDimensionType).stream()
                 .map(v -> (U) v)
                 .filter(filterDimensionPredicate)
-                .collect(Collectors.toList());
+                .toList();
 
         return cube.getMeasureValueEntities(
                 new DimensionTypeValues<>(firstDimensionType, firstDimensionValues),

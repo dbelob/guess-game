@@ -10,36 +10,34 @@ import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 import guess.util.tagcloud.TagCloudUtils;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.*;
 
 /**
  * Tag cloud details DTO.
  */
-public class TagCloudErrorDetailsDto {
-    private final SpeakerPairDto speaker;
-    private final byte[] image;
-    private final List<TagCloudAnswerDto> yourAnswers;
-
-    public TagCloudErrorDetailsDto(SpeakerPairDto speaker, byte[] image, List<TagCloudAnswerDto> yourAnswers) {
-        this.speaker = speaker;
-        this.image = image;
-        this.yourAnswers = yourAnswers;
+public record TagCloudErrorDetailsDto(SpeakerPairDto speaker, byte[] image, List<TagCloudAnswerDto> yourAnswers) {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof TagCloudErrorDetailsDto)) return false;
+        TagCloudErrorDetailsDto that = (TagCloudErrorDetailsDto) o;
+        return Objects.equals(speaker, that.speaker) && Arrays.equals(image, that.image) && Objects.equals(yourAnswers, that.yourAnswers);
     }
 
-    public SpeakerPairDto getSpeaker() {
-        return speaker;
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(speaker, yourAnswers);
+        result = 31 * result + Arrays.hashCode(image);
+        return result;
     }
 
-    public byte[] getImage() {
-        return image;
-    }
-
-    public List<TagCloudAnswerDto> getYourAnswers() {
-        return yourAnswers;
+    @Override
+    public String toString() {
+        return "TagCloudErrorDetailsDto{" +
+                "speaker=" + speaker +
+                ", image=" + Arrays.toString(image) +
+                ", yourAnswers=" + yourAnswers +
+                '}';
     }
 
     private static TagCloudErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessMode guessMode, Language language) {
@@ -48,7 +46,7 @@ public class TagCloudErrorDetailsDto {
                     Collections.singletonList(((TagCloudQuestion) errorDetails.question()).getSpeaker()) :
                     errorDetails.availableAnswers().stream()
                             .map(a -> ((SpeakerAnswer) a).getSpeaker())
-                            .collect(Collectors.toList());
+                            .toList();
 
             Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                     speakers,
@@ -67,7 +65,7 @@ public class TagCloudErrorDetailsDto {
                                             LocalizationUtils.getSpeakerName(((SpeakerAnswer) a).getSpeaker(), language, speakerDuplicates),
                                             ((SpeakerAnswer) a).getSpeaker().getPhotoFileName()),
                                     null))
-                    .collect(Collectors.toList());
+                    .toList();
 
             Map<Language, byte[]> languageImageMap = GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode) ?
                     ((TagCloudAnswer) errorDetails.correctAnswers().get(0)).getLanguageImageMap() :
@@ -87,6 +85,6 @@ public class TagCloudErrorDetailsDto {
     public static List<TagCloudErrorDetailsDto> convertToDto(List<ErrorDetails> errorDetailsList, GuessMode guessMode, Language language) {
         return errorDetailsList.stream()
                 .map(e -> convertToDto(e, guessMode, language))
-                .collect(Collectors.toList());
+                .toList();
     }
 }

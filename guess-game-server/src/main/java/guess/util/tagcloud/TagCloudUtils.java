@@ -121,7 +121,7 @@ public class TagCloudUtils {
                 .map(Arrays::asList)
                 .flatMap(Collection::stream)
                 .filter(s -> !s.isEmpty())
-                .collect(Collectors.toList());
+                .toList();
     }
 
     /**
@@ -166,7 +166,7 @@ public class TagCloudUtils {
 
         return frequencyAnalyzer.load(lines).stream()
                 .map(wf -> new SerializedWordFrequency(wf.getWord(), wf.getFrequency(), wf.getFont()))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     /**
@@ -186,7 +186,7 @@ public class TagCloudUtils {
                 .map(e -> new SerializedWordFrequency(e.getKey(), e.getValue()))
                 .sorted(Comparator.comparing(SerializedWordFrequency::getFrequency).reversed())
                 .limit(DEFAULT_MERGE_TALK_WORD_FREQUENCIES_TO_RETURN)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     /**
@@ -223,7 +223,7 @@ public class TagCloudUtils {
         final var wordCloud = new WordCloud(dimension, CollisionMode.RECTANGLE);
         final List<WordFrequency> castedWordFrequencies = wordFrequencies.stream()
                 .map(WordFrequency.class::cast)
-                .collect(Collectors.toList());
+                .toList();
 
         // Create tag cloud
         wordCloud.setBackgroundColor(new Color(0xFFFFFF, false));
@@ -231,7 +231,7 @@ public class TagCloudUtils {
         wordCloud.setBackground(new RectangleBackground(dimension));
         wordCloud.setColorPalette(new ColorPalette(new Color(0x4055F1), new Color(0x408DF1), new Color(0x40AAF1), new Color(0x40C5F1), new Color(0x40D3F1), new Color(0x000000)));
         wordCloud.setFontScalar(new LinearFontScalar(MIN_FONT, MAX_FONT));
-        wordCloud.build(castedWordFrequencies);
+        wordCloud.build(new ArrayList<>(castedWordFrequencies));
 
         // Change image type from TYPE_INT_ARGB to TYPE_INT_RGB
         var oldImage = wordCloud.getBufferedImage();

@@ -80,7 +80,7 @@ public class ConferenceDataLoader {
     static List<EventType> getConferences(List<EventType> eventTypes) {
         return eventTypes.stream()
                 .filter(et -> et.getConference() != null)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     /**
@@ -339,7 +339,7 @@ public class ConferenceDataLoader {
         contentfulEvent.setTalks(contentfulTalks);
         contentfulEvent.setTalkIds(contentfulTalks.stream()
                 .map(Talk::getId)
-                .collect(Collectors.toList()));
+                .toList());
 
         LoadResult<Event> eventLoadResult = getEventLoadResult(contentfulEvent, resourceEvent);
 
@@ -375,7 +375,7 @@ public class ConferenceDataLoader {
         } else {
             List<Talk> fixedTalks = talks.stream()
                     .filter(t -> !invalidTalksSet.contains(LocalizationUtils.getString(t.getName(), Language.RUSSIAN)))
-                    .collect(Collectors.toList());
+                    .toList();
 
             log.info("Fixed talks (in Contentful): {}", fixedTalks.size());
             fixedTalks.forEach(
@@ -412,7 +412,7 @@ public class ConferenceDataLoader {
                         return true;
                     }
                 })
-                .collect(Collectors.toList());
+                .toList();
     }
 
     /**
@@ -451,7 +451,7 @@ public class ConferenceDataLoader {
 
         return talks.stream()
                 .filter(t -> t.equals(ruNameMap.get(LocalizationUtils.getString(t.getName(), Language.RUSSIAN))))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     /**
@@ -483,7 +483,7 @@ public class ConferenceDataLoader {
         return talks.stream()
                 .flatMap(t -> t.getSpeakers().stream())
                 .distinct()
-                .collect(Collectors.toList());
+                .toList();
     }
 
     /**
@@ -496,7 +496,7 @@ public class ConferenceDataLoader {
         return speakers.stream()
                 .flatMap(s -> s.getCompanies().stream())
                 .distinct()
-                .collect(Collectors.toList());
+                .toList();
     }
 
     /**
@@ -600,7 +600,7 @@ public class ConferenceDataLoader {
         speakers.forEach(
                 s -> s.setCompanyIds(s.getCompanies().stream()
                         .map(Company::getId)
-                        .collect(Collectors.toList())
+                        .toList()
                 )
         );
     }
@@ -788,7 +788,7 @@ public class ConferenceDataLoader {
         talks.forEach(
                 t -> t.setSpeakerIds(t.getSpeakers().stream()
                         .map(Speaker::getId)
-                        .collect(Collectors.toList())
+                        .toList()
                 )
         );
     }
@@ -849,7 +849,7 @@ public class ConferenceDataLoader {
 
             talksToDelete = resourceEvent.getTalks().stream()
                     .filter(dt -> needDeleteTalk(talks, dt, resourceEvents, resourceEvent))
-                    .collect(Collectors.toList());
+                    .toList();
         }
 
         return new LoadResult<>(
@@ -1548,7 +1548,7 @@ public class ConferenceDataLoader {
         List<Event> events = resourceSourceInformation.getEvents().stream()
                 .filter(e -> e.getEventType().isEventTypeConference())
                 .sorted(Comparator.comparing(Event::getStartDate))
-                .collect(Collectors.toList());
+                .toList();
 
         events.forEach(event -> {
             int all = event.getTalks().size();
