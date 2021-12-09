@@ -1794,10 +1794,6 @@ companies:
     name:
       - {language: en, text: Avito}
       - {language: ru, text: Авито}
-  - id: 612
-    name:
-      - {language: en, text: "Author of \"The C++ Standard Library\" and \"C++ Templates\""}
-      - {language: ru, text: "Автор книг «The C++ Standard Library» и «C++ Templates»"}
   - id: 613
     name:
       - {language: en, text: Alfa-Bank}

@@ -600,11 +600,61 @@ class ConferenceDataLoaderTest {
         }
     }
 
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getInvalidCompanyNames method tests")
+    class GetInvalidCompanyNamesTest {
+        private Stream<Arguments> data() {
+            final String COMPANY_NAME0 = "EPAM Systems";
+            final String COMPANY_NAME1 = "CROC";
+
+            final String SYNONYM0 = "EPAM";
+            final String SYNONYM1 = "KROK";
+            final String SYNONYM2 = "INVALID0";
+            final String SYNONYM3 = "INVALID1";
+            final String SYNONYM4 = "INVALID3";
+
+            CompanySynonyms companySynonyms0 = new CompanySynonyms();
+            companySynonyms0.setName(COMPANY_NAME0);
+            companySynonyms0.setSynonyms(List.of(SYNONYM0));
+
+            CompanySynonyms companySynonyms1 = new CompanySynonyms();
+            companySynonyms1.setName(COMPANY_NAME1);
+            companySynonyms1.setSynonyms(List.of(SYNONYM1));
+
+            CompanySynonyms companySynonyms2 = new CompanySynonyms();
+            companySynonyms2.setName(null);
+            companySynonyms2.setSynonyms(List.of(SYNONYM2, SYNONYM3));
+
+            CompanySynonyms companySynonyms3 = new CompanySynonyms();
+            companySynonyms3.setName("");
+            companySynonyms3.setSynonyms(List.of(SYNONYM4));
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), Collections.emptySet()),
+                    arguments(List.of(companySynonyms0, companySynonyms1), Collections.emptySet()),
+                    arguments(List.of(companySynonyms2), Set.of(SYNONYM2, SYNONYM3)),
+                    arguments(List.of(companySynonyms3), Set.of(SYNONYM4)),
+                    arguments(List.of(companySynonyms2, companySynonyms3), Set.of(SYNONYM2, SYNONYM3, SYNONYM4)),
+                    arguments(List.of(companySynonyms0, companySynonyms1, companySynonyms2, companySynonyms3), Set.of(SYNONYM2, SYNONYM3, SYNONYM4))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getInvalidCompanyNames(List<CompanySynonyms> companySynonymsList, Set<String> expected) {
+            assertEquals(expected, ConferenceDataLoader.getInvalidCompanyNames(companySynonymsList));
+        }
+    }
+
     @Test
     void deleteInvalidSpeakerCompanies() {
+        final String NAME0 = "Name0";
+        final String NAME1 = "Invalid";
+
         Company company0 = new Company();
         company0.setId(0L);
-        company0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+        company0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), NAME0)));
 
         Company company1 = new Company();
         company1.setId(1L);
@@ -612,6 +662,10 @@ class ConferenceDataLoaderTest {
 
         Company company2 = new Company();
         company2.setId(2L);
+
+        Company company3 = new Company();
+        company3.setId(3L);
+        company3.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), NAME1)));
 
         Speaker speaker0 = new Speaker();
         speaker0.setId(0L);
@@ -633,9 +687,24 @@ class ConferenceDataLoaderTest {
         speaker3.setCompanyIds(new ArrayList<>(List.of(1L, 2L)));
         speaker3.setCompanies(new ArrayList<>(List.of(company1, company2)));
 
-        List<Speaker> speakers = List.of(speaker0, speaker1, speaker2, speaker3);
+        Speaker speaker4 = new Speaker();
+        speaker4.setId(4L);
+        speaker4.setCompanyIds(new ArrayList<>(List.of(3L)));
+        speaker4.setCompanies(new ArrayList<>(List.of(company3)));
 
-        Predicate<Company> invalidCompanyPredicate = c -> (c.getName() == null) || c.getName().isEmpty();
+        List<Speaker> speakers = List.of(speaker0, speaker1, speaker2, speaker3, speaker4);
+
+        Set<String> invalidCompanyNames = Set.of(NAME1);
+
+        Predicate<Company> invalidCompanyPredicate = c -> {
+            if ((c.getName() == null) || c.getName().isEmpty()) {
+                return true;
+            } else {
+                return c.getName().stream()
+                        .map(LocaleItem::getText)
+                        .anyMatch(invalidCompanyNames::contains);
+            }
+        };
         List<Company> oldCompanies = speakers.stream()
                 .flatMap(s -> s.getCompanies().stream())
                 .toList();
@@ -648,7 +717,7 @@ class ConferenceDataLoaderTest {
         assertTrue(oldTotalCompanyCount > 0);
         assertTrue(oldInvalidCompanyCount > 0);
 
-        ConferenceDataLoader.deleteInvalidSpeakerCompanies(speakers);
+        ConferenceDataLoader.deleteInvalidSpeakerCompanies(speakers, invalidCompanyNames);
 
         List<Company> newCompanies = speakers.stream()
                 .flatMap(s -> s.getCompanies().stream())
@@ -787,6 +856,14 @@ class ConferenceDataLoaderTest {
             companySynonyms2.setName(COMPANY_NAME1);
             companySynonyms2.setSynonyms(List.of(COMPANY_NAME1));
 
+            CompanySynonyms companySynonyms3 = new CompanySynonyms();
+            companySynonyms3.setName(null);
+            companySynonyms3.setSynonyms(List.of(SYNONYM1));
+
+            CompanySynonyms companySynonyms4 = new CompanySynonyms();
+            companySynonyms4.setName("");
+            companySynonyms4.setSynonyms(List.of(SYNONYM1));
+
             Map<String, Company> companyMap0 = new HashMap<>();
             companyMap0.put(COMPANY_NAME0.toLowerCase(), company0);
             companyMap0.put(COMPANY_NAME1.toLowerCase(), company1);
@@ -807,7 +884,19 @@ class ConferenceDataLoaderTest {
                             SYNONYM1.toLowerCase(), company1,
                             SYNONYM0.toLowerCase(), company0)),
                     arguments(List.of(companySynonyms0), Collections.emptyMap(), NullPointerException.class, null),
-                    arguments(List.of(companySynonyms2), new HashMap<>(companyMap0), IllegalArgumentException.class, null)
+                    arguments(List.of(companySynonyms2), new HashMap<>(companyMap0), IllegalArgumentException.class, null),
+                    arguments(List.of(companySynonyms0, companySynonyms3), new HashMap<>(companyMap0), null, Map.of(
+                            COMPANY_NAME0.toLowerCase(), company0,
+                            COMPANY_NAME1.toLowerCase(), company1,
+                            SYNONYM0.toLowerCase(), company0)),
+                    arguments(List.of(companySynonyms0, companySynonyms4), new HashMap<>(companyMap0), null, Map.of(
+                            COMPANY_NAME0.toLowerCase(), company0,
+                            COMPANY_NAME1.toLowerCase(), company1,
+                            SYNONYM0.toLowerCase(), company0)),
+                    arguments(List.of(companySynonyms0, companySynonyms3, companySynonyms4), new HashMap<>(companyMap0), null, Map.of(
+                            COMPANY_NAME0.toLowerCase(), company0,
+                            COMPANY_NAME1.toLowerCase(), company1,
+                            SYNONYM0.toLowerCase(), company0))
             );
         }
 

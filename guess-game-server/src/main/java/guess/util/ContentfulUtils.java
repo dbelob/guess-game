@@ -993,7 +993,7 @@ public class ContentfulUtils {
                                     () -> String.format("Asset (presentation link) id %s not found for '%s' talk", assetId, talkNameEn))
                             .getFields().getFile().getUrl());
                 })
-                .toList();
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
     /**

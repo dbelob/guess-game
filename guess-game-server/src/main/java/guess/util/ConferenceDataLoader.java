@@ -259,7 +259,8 @@ public class ConferenceDataLoader {
         );
 
         // Delete invalid speaker companies
-        deleteInvalidSpeakerCompanies(contentfulSpeakers);
+        Set<String> invalidCompanyNames = getInvalidCompanyNames(resourceSourceInformation.getCompanySynonyms());
+        deleteInvalidSpeakerCompanies(contentfulSpeakers, invalidCompanyNames);
 
         // Order company with talk order
         List<Company> contentfulCompanies = getSpeakerCompanies(contentfulSpeakers);
@@ -455,14 +456,37 @@ public class ConferenceDataLoader {
     }
 
     /**
+     * Gets invalid company names.
+     *
+     * @param companySynonymsList company synonyms
+     * @return names of invalid company synonyms
+     */
+    static Set<String> getInvalidCompanyNames(List<CompanySynonyms> companySynonymsList) {
+        return companySynonymsList.stream()
+                .filter(cs -> (cs.getName() == null) || cs.getName().isEmpty())
+                .map(CompanySynonyms::getSynonyms)
+                .flatMap(Collection::stream)
+                .collect(Collectors.toSet());
+    }
+
+    /**
      * Deletes invalid companies from speaker.
      *
-     * @param speakers speakers
+     * @param speakers            speakers
+     * @param invalidCompanyNames invalid company names
      */
-    static void deleteInvalidSpeakerCompanies(List<Speaker> speakers) {
+    static void deleteInvalidSpeakerCompanies(List<Speaker> speakers, Set<String> invalidCompanyNames) {
         for (Speaker speaker : speakers) {
             Set<Long> ids = speaker.getCompanies().stream()
-                    .filter(c -> (c.getName() == null) || c.getName().isEmpty())
+                    .filter(c -> {
+                        if ((c.getName() == null) || c.getName().isEmpty()) {
+                            return true;
+                        } else {
+                            return c.getName().stream()
+                                    .map(LocaleItem::getText)
+                                    .anyMatch(invalidCompanyNames::contains);
+                        }
+                    })
                     .map(Company::getId)
                     .collect(Collectors.toSet());
 
@@ -524,7 +548,11 @@ public class ConferenceDataLoader {
      * @param companyMap          company map
      */
     static void addLowerSynonymsToCompanyMap(List<CompanySynonyms> companySynonymsList, Map<String, Company> companyMap) {
-        for (CompanySynonyms companySynonyms : companySynonymsList) {
+        List<CompanySynonyms> validCompanySynonymsList = companySynonymsList.stream()
+                .filter(cs -> (cs.getName() != null) && !cs.getName().isEmpty())
+                .toList();
+
+        for (CompanySynonyms companySynonyms : validCompanySynonymsList) {
             String lowerName = companySynonyms.getName().toLowerCase();
             var company = companyMap.get(lowerName);
 
@@ -600,7 +628,7 @@ public class ConferenceDataLoader {
         speakers.forEach(
                 s -> s.setCompanyIds(s.getCompanies().stream()
                         .map(Company::getId)
-                        .toList()
+                        .collect(Collectors.toCollection(ArrayList::new))
                 )
         );
     }
