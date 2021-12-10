@@ -15650,7 +15650,7 @@ speakers:
     name:
       - {language: en, text: "Alexander Rudenko"}
       - {language: ru, text: "Александр Руденко"}
-    companyIds: [8]
+    companyIds: []
     bio:
       - {language: en, text: "Alexey worked in companies such as Rambler Group, Raiffeisen Bank, Waves as a Senior Engineer/Team\
             \ Lead. He's a Ph.D. and Community Leader of Facebook Developer Circle: Moscow. Alexey is fond of the development\

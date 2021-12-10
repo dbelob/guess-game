@@ -34,9 +34,6 @@ companies:
     name:
       - {language: en, text: "ABL - The Problem Solver"}
     siteLink: http://www.theproblemsolver.nl
-  - id: 8
-    name:
-      - {language: en, text: "Acme Corp"}
   - id: 9
     name:
       - {language: en, text: Acumatica}

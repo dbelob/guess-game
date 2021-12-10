@@ -330,5 +330,6 @@ companySynonyms:
   - name: ""
     synonyms: [
         "Author of \"The C++ Standard Library\" and \"C++ Templates\"",
-        "Автор книг «The C++ Standard Library» и «C++ Templates»"
+        "Автор книг «The C++ Standard Library» и «C++ Templates»",
+        "Acme Corp"
     ]
