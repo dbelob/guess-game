@@ -9,24 +9,10 @@ import java.util.List;
  * Event.
  */
 public class Event extends Nameable {
-    public static class EventDates {
-        private final LocalDate startDate;
-        private final LocalDate endDate;
-
-        public EventDates(LocalDate startDate, LocalDate endDate) {
-            this.startDate = startDate;
-            this.endDate = endDate;
-        }
+    public record EventDates(LocalDate startDate, LocalDate endDate) {
     }
 
-    public static class EventLinks {
-        private final List<LocaleItem> siteLink;
-        private final String youtubeLink;
-
-        public EventLinks(List<LocaleItem> siteLink, String youtubeLink) {
-            this.siteLink = siteLink;
-            this.youtubeLink = youtubeLink;
-        }
+    public record EventLinks(List<LocaleItem> siteLink, String youtubeLink) {
     }
 
     private long eventTypeId;
