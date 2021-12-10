@@ -19,8 +19,8 @@
       <div class="row align-items-center">
         <span class="col-auto h3">{{speakerDetails.speaker?.name}}</span>
         <span class="col-auto font-italic" *ngIf="speakerDetails.speaker?.companies">
-          <span *ngFor="let company of speakerDetails.speaker.companies; let i = index">
-            <span *ngIf="i > 0">, </span>{{company.name}}
+          <span *ngFor="let company of speakerDetails.speaker.companies; last as isLast">
+            {{company.name}}<span *ngIf="!isLast">, </span>
           </span>
         </span>
       </div>

@@ -104,8 +104,8 @@
               </a>
             </td>
             <td>
-              <span *ngFor="let company of speaker.companies; let i = index">
-                <span *ngIf="i > 0">, </span>{{company.name}}
+              <span *ngFor="let company of speaker.companies; last as isLast">
+                {{company.name}}<span *ngIf="!isLast">, </span>
               </span>
             </td>
             <td>
