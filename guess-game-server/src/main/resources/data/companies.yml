@@ -1006,7 +1006,7 @@ companies:
       - {language: en, text: Mozilla}
   - id: 344
     name:
-      - {language: en, text: "MPI-SWS, JetBrains Research, NRU HSE"}
+      - {language: en, text: MPI-SWS}
   - id: 345
     name:
       - {language: en, text: "msu solutions GmbH"}
@@ -1928,8 +1928,8 @@ companies:
       - {language: ru, text: МТС}
   - id: 650
     name:
-      - {language: en, text: "National Research University Higher School of Economics"}
-      - {language: ru, text: "Национальный исследовательский университет «Высшая школа экономики»"}
+      - {language: en, text: "NRU HSE"}
+      - {language: ru, text: "НИУ ВШЭ"}
   - id: 651
     name:
       - {language: en, text: "Independent contractor"}

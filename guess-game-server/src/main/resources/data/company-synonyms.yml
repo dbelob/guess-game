@@ -158,14 +158,20 @@ companySynonyms:
     synonyms: [
         Kaspersky
     ]
+  - name: MPI-SWS
+    synonyms: [
+        "Max Planck Institute for Software Systems"
+    ]
   - name: MTS
     synonyms: [
         "MTS IT",
         "МТС ИТ",
         "MTS DIGITAL"
     ]
-  - name: "National Research University Higher School of Economics"
+  - name: "NRU HSE"
     synonyms: [
+        "National Research University Higher School of Economics",
+        "Национальный исследовательский университет «Высшая школа экономики»",
         "HSE University — Saint Petersburg",
         "НИУ ВШЭ — Санкт-Петербург"
     ]
