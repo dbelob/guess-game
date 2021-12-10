@@ -158,6 +158,10 @@ companySynonyms:
     synonyms: [
         Kaspersky
     ]
+  - name: "Last Week in AWS"
+    synonyms: [
+        "Editor, lastweekinaws.com"
+    ]
   - name: MPI-SWS
     synonyms: [
         "Max Planck Institute for Software Systems"

@@ -262,7 +262,7 @@ class ConferenceDataLoaderTest {
             Talk talk0 = new Talk();
             talk0.setId(0);
 
-            Company company0 = new Company(0, "Company0");
+            Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
 
             Speaker speaker0 = new Speaker();
             speaker0.setId(0);

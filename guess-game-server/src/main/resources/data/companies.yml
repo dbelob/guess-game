@@ -2,69 +2,89 @@ companies:
   - id: 0
     name:
       - {language: en, text: "10up Inc"}
+    siteLink: https://10up.com
   - id: 1
     name:
       - {language: en, text: 1C-Bitrix}
       - {language: ru, text: 1С-Битрикс}
+    siteLink: https://www.1c-bitrix.ru
   - id: 2
     name:
       - {language: en, text: "1C Rarus"}
       - {language: ru, text: 1С-Рарус}
+    siteLink: https://rarus.ru
   - id: 3
     name:
       - {language: en, text: 2GIS}
       - {language: ru, text: 2ГИС}
+    siteLink: https://2gis.ru
   - id: 4
     name:
       - {language: en, text: "47 Degrees"}
+    siteLink: https://www.47deg.com
   - id: 5
     name:
       - {language: en, text: 65apps}
+    siteLink: https://65apps.com
   - id: 6
     name:
       - {language: en, text: ABBYY}
+    siteLink: https://www.abbyy.com
   - id: 7
     name:
       - {language: en, text: "ABL - The Problem Solver"}
+    siteLink: http://www.theproblemsolver.nl
   - id: 8
     name:
       - {language: en, text: "Acme Corp"}
   - id: 9
     name:
       - {language: en, text: Acumatica}
+    siteLink: https://www.acumatica.com
   - id: 10
     name:
       - {language: en, text: Adevinta}
+    siteLink: https://www.adevinta.com
   - id: 11
     name:
       - {language: en, text: Adform}
+    siteLink: http://www.adform.com
   - id: 12
     name:
       - {language: en, text: Adobe}
+    siteLink: https://www.adobe.com
   - id: 13
     name:
       - {language: en, text: Advantum}
+    siteLink: https://advantum.ru
   - id: 14
     name:
       - {language: en, text: Adviqo}
+    siteLink: https://www.adviqo.com
   - id: 15
     name:
       - {language: en, text: Aerokube}
+    siteLink: https://aerokube.com
   - id: 16
     name:
       - {language: en, text: "Agile Developer, Inc."}
+    siteLink: https://agiledeveloper.com
   - id: 17
     name:
       - {language: en, text: AGIMA}
+    siteLink: https://www.agima.ru
   - id: 18
     name:
       - {language: en, text: Airbus}
+    siteLink: https://www.airbus.com
   - id: 19
     name:
       - {language: en, text: airhacks.live}
+    siteLink: https://airhacks.live
   - id: 20
     name:
       - {language: en, text: Akelius}
+    siteLink: https://akelius.com
   - id: 21
     name:
       - {language: en, text: AKQA}
@@ -493,7 +513,8 @@ companies:
       - {language: en, text: Ecmanauten}
   - id: 173
     name:
-      - {language: en, text: "Editor, lastweekinaws.com"}
+      - {language: en, text: "Last Week in AWS"}
+    siteLink: https://www.lastweekinaws.com
   - id: 174
     name:
       - {language: en, text: Effective}
