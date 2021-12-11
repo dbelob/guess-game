@@ -67,9 +67,8 @@ class YamlUtilsTest {
                                     ),
                                     Collections.emptyList()
                             )),
-                    arguments(places, organizers, eventTypes, events, companies, companySynonymsList, speakers1, talks,
-                            SpeakerDuplicatedException.class,
-                            null)
+                    arguments(places, organizers, eventTypes, events, companies, companyGroupList, companySynonymsList,
+                            speakers1, talks, SpeakerDuplicatedException.class, null)
             );
         }
 
