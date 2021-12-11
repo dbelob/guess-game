@@ -7,8 +7,8 @@ import java.util.Objects;
  * Source information.
  */
 public class SourceInformation {
-    public record SpeakerInformation(List<Company> companies, List<CompanySynonyms> companySynonyms,
-                                     List<Speaker> speakers) {
+    public record SpeakerInformation(List<Company> companies, List<CompanyGroup> companyGroups,
+                                     List<CompanySynonyms> companySynonyms, List<Speaker> speakers) {
     }
 
     private final List<Place> places;
@@ -16,6 +16,7 @@ public class SourceInformation {
     private final List<EventType> eventTypes;
     private final List<Event> events;
     private final List<Company> companies;
+    private final List<CompanyGroup> companyGroups;
     private final List<CompanySynonyms> companySynonyms;
     private final List<Speaker> speakers;
     private final List<Talk> talks;
@@ -27,6 +28,7 @@ public class SourceInformation {
         this.organizers = organizers;
         this.events = events;
         this.companies = speakerInformation.companies;
+        this.companyGroups = speakerInformation.companyGroups;
         this.companySynonyms = speakerInformation.companySynonyms;
         this.speakers = speakerInformation.speakers;
         this.talks = talks;
@@ -52,6 +54,10 @@ public class SourceInformation {
         return companies;
     }
 
+    public List<CompanyGroup> getCompanyGroups() {
+        return companyGroups;
+    }
+
     public List<CompanySynonyms> getCompanySynonyms() {
         return companySynonyms;
     }
@@ -74,6 +80,7 @@ public class SourceInformation {
                 Objects.equals(eventTypes, that.eventTypes) &&
                 Objects.equals(events, that.events) &&
                 Objects.equals(companies, that.companies) &&
+                Objects.equals(companyGroups, that.companyGroups) &&
                 Objects.equals(companySynonyms, that.companySynonyms) &&
                 Objects.equals(speakers, that.speakers) &&
                 Objects.equals(talks, that.talks);
@@ -81,7 +88,7 @@ public class SourceInformation {
 
     @Override
     public int hashCode() {
-        return Objects.hash(places, organizers, eventTypes, events, companies, companySynonyms, speakers, talks);
+        return Objects.hash(places, organizers, eventTypes, events, companies, companyGroups, companySynonyms, speakers, talks);
     }
 
     @Override
@@ -92,6 +99,7 @@ public class SourceInformation {
                 ", eventTypes=" + eventTypes +
                 ", events=" + events +
                 ", companies=" + companies +
+                ", companyGroups=" + companyGroups +
                 ", companySynonyms=" + companySynonyms +
                 ", speakers=" + speakers +
                 ", talks=" + talks +

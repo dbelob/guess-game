@@ -184,6 +184,7 @@ class SourceDaoImplTest {
                 new SourceInformation.SpeakerInformation(
                         List.of(company0, company1, company2),
                         Collections.emptyList(),
+                        Collections.emptyList(),
                         List.of(speaker0, speaker1, speaker2, speaker3)
                 ),
                 List.of(talk0, talk1, talk2));

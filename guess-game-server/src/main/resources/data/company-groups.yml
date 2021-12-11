@@ -1,0 +1,7 @@
+companyGroups:
+  - name: "MPI-SWS, JetBrains Research, NRU HSE"
+    items: [
+        MPI-SWS,
+        "JetBrains Research",
+        "NRU HSE"
+    ]

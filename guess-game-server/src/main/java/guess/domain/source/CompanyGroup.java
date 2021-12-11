@@ -4,11 +4,11 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Company synonyms.
+ * Company group.
  */
-public class CompanySynonyms {
+public class CompanyGroup {
     private String name;
-    private List<String> synonyms;
+    private List<String> items;
 
     public String getName() {
         return name;
@@ -18,32 +18,32 @@ public class CompanySynonyms {
         this.name = name;
     }
 
-    public List<String> getSynonyms() {
-        return synonyms;
+    public List<String> getItems() {
+        return items;
     }
 
-    public void setSynonyms(List<String> synonyms) {
-        this.synonyms = synonyms;
+    public void setItems(List<String> items) {
+        this.items = items;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof CompanySynonyms)) return false;
-        CompanySynonyms that = (CompanySynonyms) o;
-        return Objects.equals(name, that.name);
+        if (!(o instanceof CompanyGroup)) return false;
+        CompanyGroup that = (CompanyGroup) o;
+        return Objects.equals(getName(), that.getName());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(getName());
     }
 
     @Override
     public String toString() {
-        return "CompanySynonyms{" +
+        return "CompanyGroup{" +
                 "name='" + name + '\'' +
-                ", synonyms=" + synonyms +
+                ", items=" + items +
                 '}';
     }
 }

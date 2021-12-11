@@ -48,6 +48,7 @@ public class YamlUtils {
         var eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", DATA_DIRECTORY_NAME));
         var eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", DATA_DIRECTORY_NAME));
         var companiesResource = resolver.getResource(String.format("classpath:%s/companies.yml", DATA_DIRECTORY_NAME));
+        var companyGroupsResource = resolver.getResource(String.format("classpath:%s/company-groups.yml", DATA_DIRECTORY_NAME));
         var companySynonymsResource = resolver.getResource(String.format("classpath:%s/company-synonyms.yml", DATA_DIRECTORY_NAME));
         var speakersResource = resolver.getResource(String.format("classpath:%s/speakers.yml", DATA_DIRECTORY_NAME));
         var talksResource = resolver.getResource(String.format("classpath:%s/talks.yml", DATA_DIRECTORY_NAME));
@@ -56,8 +57,9 @@ public class YamlUtils {
         var organizerYaml = new Yaml(new Constructor(OrganizerList.class));
         var eventTypesYaml = new Yaml(new Constructor(EventTypeList.class));
         var eventsYaml = new Yaml(new DateTimeYamlConstructor(EventList.class));
-        var companiesYaml = new Yaml(new DateTimeYamlConstructor(CompanyList.class));
-        var companySynonymsYaml = new Yaml(new DateTimeYamlConstructor(CompanySynonymsList.class));
+        var companiesYaml = new Yaml(new Constructor(CompanyList.class));
+        var companyGroupsYaml = new Yaml(new Constructor(CompanyGroupList.class));
+        var companySynonymsYaml = new Yaml(new Constructor(CompanySynonymsList.class));
         var speakersYaml = new Yaml(new DateTimeYamlConstructor(SpeakerList.class));
         var talksYaml = new Yaml(new DateTimeYamlConstructor(TalkList.class));
 
@@ -67,6 +69,7 @@ public class YamlUtils {
         var eventTypeList = (EventTypeList) eventTypesYaml.load(eventTypesResource.getInputStream());
         var eventList = (EventList) eventsYaml.load(eventsResource.getInputStream());
         var companyList = (CompanyList) companiesYaml.load(companiesResource.getInputStream());
+        var companyGroupList = (CompanyGroupList) companyGroupsYaml.load(companyGroupsResource.getInputStream());
         var companySynonymsList = (CompanySynonymsList) companySynonymsYaml.load(companySynonymsResource.getInputStream());
         var speakerList = (SpeakerList) speakersYaml.load(speakersResource.getInputStream());
         var talkList = (TalkList) talksYaml.load(talksResource.getInputStream());
@@ -78,6 +81,7 @@ public class YamlUtils {
                 eventList.getEvents(),
                 new SourceInformation.SpeakerInformation(
                         companyList.getCompanies(),
+                        companyGroupList.getCompanyGroups(),
                         companySynonymsList.getCompanySynonyms(),
                         speakerList.getSpeakers()
                 ),
@@ -100,6 +104,7 @@ public class YamlUtils {
                                                   List<Event> events, SourceInformation.SpeakerInformation speakerInformation,
                                                   List<Talk> talks) throws SpeakerDuplicatedException {
         List<Company> companies = speakerInformation.companies();
+        List<CompanyGroup> companyGroupList = speakerInformation.companyGroups();
         List<CompanySynonyms> companySynonymsList = speakerInformation.companySynonyms();
         List<Speaker> speakers = speakerInformation.speakers();
 
@@ -135,6 +140,7 @@ public class YamlUtils {
                 events,
                 new SourceInformation.SpeakerInformation(
                         companies,
+                        companyGroupList,
                         companySynonymsList,
                         speakers
                 ),

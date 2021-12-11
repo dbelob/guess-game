@@ -64,6 +64,7 @@ class ConferenceDataLoaderTest {
                             new SourceInformation.SpeakerInformation(
                                     Collections.emptyList(),
                                     Collections.emptyList(),
+                                    Collections.emptyList(),
                                     Collections.emptyList()
                             ),
                             Collections.emptyList()
@@ -279,6 +280,7 @@ class ConferenceDataLoaderTest {
                                     new SourceInformation.SpeakerInformation(
                                             Collections.emptyList(),
                                             Collections.emptyList(),
+                                            Collections.emptyList(),
                                             List.of(speaker0)
                                     ),
                                     Collections.emptyList()),
@@ -294,6 +296,7 @@ class ConferenceDataLoaderTest {
                                     List.of(eventType0),
                                     Collections.emptyList(),
                                     new SourceInformation.SpeakerInformation(
+                                            Collections.emptyList(),
                                             Collections.emptyList(),
                                             Collections.emptyList(),
                                             List.of(speaker0)
@@ -2812,6 +2815,7 @@ class ConferenceDataLoaderTest {
                     .thenReturn(new SourceInformation(Collections.emptyList(), Collections.emptyList(), Collections.emptyList(),
                             List.of(event0, event1, event2, event3, event4, event5, event6),
                             new SourceInformation.SpeakerInformation(
+                                    Collections.emptyList(),
                                     Collections.emptyList(),
                                     Collections.emptyList(),
                                     Collections.emptyList()

@@ -104,6 +104,7 @@ class TagCloudExporterTest {
                 new SourceInformation.SpeakerInformation(
                         Collections.emptyList(),
                         Collections.emptyList(),
+                        Collections.emptyList(),
                         Collections.emptyList()
                 ),
                 List.of(talk0, talk1));
@@ -127,6 +128,7 @@ class TagCloudExporterTest {
                 List.of(eventType0),
                 Collections.emptyList(),
                 new SourceInformation.SpeakerInformation(
+                        Collections.emptyList(),
                         Collections.emptyList(),
                         Collections.emptyList(),
                         Collections.emptyList()
