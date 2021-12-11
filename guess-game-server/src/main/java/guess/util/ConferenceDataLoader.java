@@ -110,6 +110,19 @@ public class ConferenceDataLoader {
     }
 
     /**
+     * Gets first identifier.
+     *
+     * @param entities entities
+     * @return identifier
+     */
+    static <T extends Identifier> long getFirstId(List<T> entities) {
+        return entities.stream()
+                .map(Identifier::getId)
+                .min(Long::compare)
+                .orElse(0L);
+    }
+
+    /**
      * Gets load result for event types.
      *
      * @param eventTypes      event types
@@ -262,8 +275,13 @@ public class ConferenceDataLoader {
         Set<String> invalidCompanyNames = getInvalidCompanyNames(resourceSourceInformation.getCompanySynonyms());
         deleteInvalidSpeakerCompanies(contentfulSpeakers, invalidCompanyNames);
 
-        // Order company with talk order
+        // Split company group names
         List<Company> contentfulCompanies = getSpeakerCompanies(contentfulSpeakers);
+        var firstCompanyId = new AtomicLong(getFirstId(contentfulCompanies));
+        splitCompanyGroupNames(contentfulSpeakers, resourceSourceInformation.getCompanyGroups(), firstCompanyId);
+
+        // Order company with talk order
+        contentfulCompanies = getSpeakerCompanies(contentfulSpeakers);
         log.info("Companies (in Contentful): {}", contentfulCompanies.size());
         contentfulCompanies.forEach(
                 c -> log.trace("Company: nameEn: '{}', name: '{}'",
@@ -493,6 +511,35 @@ public class ConferenceDataLoader {
             if (!ids.isEmpty()) {
                 speaker.getCompanyIds().removeIf(ids::contains);
                 speaker.getCompanies().removeIf(c -> ids.contains(c.getId()));
+            }
+        }
+    }
+
+    /**
+     * Splits company group names.
+     *
+     * @param speakers       speakers
+     * @param companyGroups  company groups
+     * @param firstCompanyId identifier of first company
+     */
+    static void splitCompanyGroupNames(List<Speaker> speakers, List<CompanyGroup> companyGroups, AtomicLong firstCompanyId) {
+        Map<String, List<String>> companyGroupsMap = companyGroups.stream()
+                .collect(Collectors.toMap(CompanyGroup::getName, CompanyGroup::getItems));
+
+        for (Speaker speaker : speakers) {
+            Optional<List<String>> items = speaker.getCompanies().stream()
+                    .flatMap(c -> c.getName().stream())
+                    .map(localItem -> companyGroupsMap.get(localItem.getText()))
+                    .filter(Objects::nonNull)
+                    .findFirst();
+
+            if (items.isPresent()) {
+                List<Company> companies = items.get().stream()
+                        .map(s -> new Company(
+                                firstCompanyId.decrementAndGet(),
+                                List.of(new LocaleItem(Language.ENGLISH.getCode(), s))))
+                        .toList();
+                speaker.setCompanies(companies);
             }
         }
     }

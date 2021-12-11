@@ -43,6 +43,7 @@ class YamlUtilsTest {
             List<EventType> eventTypes = Collections.emptyList();
             List<Event> events = Collections.emptyList();
             List<Company> companies = Collections.emptyList();
+            List<CompanyGroup> companyGroupList = Collections.emptyList();
             List<CompanySynonyms> companySynonymsList = Collections.emptyList();
 
             List<Speaker> speakers0 = List.of(speaker0);
@@ -51,8 +52,8 @@ class YamlUtilsTest {
             List<Talk> talks = Collections.emptyList();
 
             return Stream.of(
-                    arguments(places, organizers, eventTypes, events, companies, companySynonymsList, speakers0, talks,
-                            null,
+                    arguments(places, organizers, eventTypes, events, companies, companyGroupList, companySynonymsList,
+                            speakers0, talks, null,
                             new SourceInformation(
                                     Collections.emptyList(),
                                     Collections.emptyList(),
@@ -61,21 +62,22 @@ class YamlUtilsTest {
                                     new SourceInformation.SpeakerInformation(
                                             Collections.emptyList(),
                                             Collections.emptyList(),
+                                            Collections.emptyList(),
                                             List.of(speaker0)
                                     ),
                                     Collections.emptyList()
                             )),
-                    arguments(places, organizers, eventTypes, events, companies, companySynonymsList, speakers1, talks,
-                            SpeakerDuplicatedException.class,
-                            null)
+                    arguments(places, organizers, eventTypes, events, companies, companyGroupList, companySynonymsList,
+                            speakers1, talks, SpeakerDuplicatedException.class, null)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
         void getSourceInformation(List<Place> places, List<Organizer> organizers, List<EventType> eventTypes, List<Event> events,
-                                  List<Company> companies, List<CompanySynonyms> companySynonymsList, List<Speaker> speakers,
-                                  List<Talk> talks, Class<? extends Exception> expectedException, SourceInformation expectedResult) throws SpeakerDuplicatedException {
+                                  List<Company> companies, List<CompanyGroup> companyGroupList, List<CompanySynonyms> companySynonymsList,
+                                  List<Speaker> speakers, List<Talk> talks, Class<? extends Exception> expectedException,
+                                  SourceInformation expectedResult) throws SpeakerDuplicatedException {
             if (expectedException == null) {
                 assertEquals(expectedResult, YamlUtils.getSourceInformation(
                         places,
@@ -84,6 +86,7 @@ class YamlUtilsTest {
                         events,
                         new SourceInformation.SpeakerInformation(
                                 companies,
+                                companyGroupList,
                                 companySynonymsList,
                                 speakers
                         ),
@@ -96,6 +99,7 @@ class YamlUtilsTest {
                         events,
                         new SourceInformation.SpeakerInformation(
                                 companies,
+                                companyGroupList,
                                 companySynonymsList,
                                 speakers
                         ),

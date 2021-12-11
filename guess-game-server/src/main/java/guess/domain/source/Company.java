@@ -1,5 +1,7 @@
 package guess.domain.source;
 
+import guess.domain.Language;
+
 import java.util.List;
 
 /**
@@ -19,6 +21,10 @@ public class Company extends Nameable {
 
     public Company(long id, List<LocaleItem> name) {
         this(id, name, null);
+    }
+
+    public Company(long id, String enName) {
+        this(id, List.of(new LocaleItem(Language.ENGLISH.getCode(), enName)));
     }
 
     public String getSiteLink() {

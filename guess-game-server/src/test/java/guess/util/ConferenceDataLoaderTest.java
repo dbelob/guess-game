@@ -64,6 +64,7 @@ class ConferenceDataLoaderTest {
                             new SourceInformation.SpeakerInformation(
                                     Collections.emptyList(),
                                     Collections.emptyList(),
+                                    Collections.emptyList(),
                                     Collections.emptyList()
                             ),
                             Collections.emptyList()
@@ -150,6 +151,40 @@ class ConferenceDataLoaderTest {
         @MethodSource("data")
         void getLastId(List<EventType> entities, long expected) {
             assertEquals(expected, ConferenceDataLoader.getLastId(entities));
+        }
+    }
+
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getFirstId method tests")
+    class GetFirstIdTest {
+        private Stream<Arguments> data() {
+            EventType eventType0 = new EventType();
+            eventType0.setId(42);
+
+            EventType eventType1 = new EventType();
+            eventType1.setId(43);
+
+            EventType eventType2 = new EventType();
+            eventType2.setId(44);
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), 0),
+                    arguments(List.of(eventType0), 42),
+                    arguments(List.of(eventType0, eventType1), 42),
+                    arguments(List.of(eventType0, eventType1, eventType2), 42),
+                    arguments(List.of(eventType1, eventType0), 42),
+                    arguments(List.of(eventType1, eventType0, eventType2), 42),
+                    arguments(List.of(eventType2), 44),
+                    arguments(List.of(eventType1, eventType2), 43)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getFirstId(List<EventType> entities, long expected) {
+            assertEquals(expected, ConferenceDataLoader.getFirstId(entities));
         }
     }
 
@@ -279,6 +314,7 @@ class ConferenceDataLoaderTest {
                                     new SourceInformation.SpeakerInformation(
                                             Collections.emptyList(),
                                             Collections.emptyList(),
+                                            Collections.emptyList(),
                                             List.of(speaker0)
                                     ),
                                     Collections.emptyList()),
@@ -294,6 +330,7 @@ class ConferenceDataLoaderTest {
                                     List.of(eventType0),
                                     Collections.emptyList(),
                                     new SourceInformation.SpeakerInformation(
+                                            Collections.emptyList(),
                                             Collections.emptyList(),
                                             Collections.emptyList(),
                                             List.of(speaker0)
@@ -731,6 +768,59 @@ class ConferenceDataLoaderTest {
         assertTrue(newTotalCompanyCount > 0);
         assertEquals(0, newInvalidCompanyCount);
         assertEquals(oldValidCompanyCount, newValidCompanyCount);
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("splitCompanyGroupNames method tests")
+    class SplitCompanyGroupNamesTest {
+        private Stream<Arguments> data() {
+            final String NAME0 = "Name0";
+            final String NAME1 = "Name1";
+            final String NAME2 = "Name0, Name1";
+
+            Company company0 = new Company();
+            company0.setId(0);
+            company0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), NAME0)));
+
+            Company company1 = new Company();
+            company1.setId(1);
+            company1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), NAME1)));
+
+            Company company2 = new Company();
+            company2.setId(2);
+            company2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), NAME2)));
+
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+            speaker0.setCompanies(List.of(company0));
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+            speaker1.setCompanies(List.of(company1));
+
+            Speaker speaker2 = new Speaker();
+            speaker2.setId(2);
+            speaker2.setCompanies(List.of(company2));
+
+            CompanyGroup companyGroup0 = new CompanyGroup();
+            companyGroup0.setName(NAME2);
+            companyGroup0.setItems(List.of(NAME0, NAME1));
+
+            List<CompanyGroup> companyGroups0 = Collections.emptyList();
+            List<CompanyGroup> companyGroups1 = List.of(companyGroup0);
+
+            return Stream.of(
+                    arguments(List.of(speaker0, speaker1, speaker2), companyGroups0, new AtomicLong(0)),
+                    arguments(List.of(speaker0, speaker1, speaker2), companyGroups1, new AtomicLong(0))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void splitCompanyGroupNames(List<Speaker> speakers, List<CompanyGroup> companyGroups, AtomicLong firstCompanyId) {
+            assertDoesNotThrow(() -> ConferenceDataLoader.splitCompanyGroupNames(speakers, companyGroups, firstCompanyId));
+        }
     }
 
     @Nested
@@ -2812,6 +2902,7 @@ class ConferenceDataLoaderTest {
                     .thenReturn(new SourceInformation(Collections.emptyList(), Collections.emptyList(), Collections.emptyList(),
                             List.of(event0, event1, event2, event3, event4, event5, event6),
                             new SourceInformation.SpeakerInformation(
+                                    Collections.emptyList(),
                                     Collections.emptyList(),
                                     Collections.emptyList(),
                                     Collections.emptyList()
