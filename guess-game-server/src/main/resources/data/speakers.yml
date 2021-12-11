@@ -5009,6 +5009,7 @@ speakers:
             \ featuring modern C++ tutorials.\n\nWhen he's not writing code, Vittorio enjoys weightlifting and fitness-related\
             \ activities, competitive computer gaming and sci-fi movies/TV series."
     twitter: supahvee1234
+    gitHub: vittorioromeo
   - id: 342
     photoFileName: 0342.jpg
     name:
@@ -5255,6 +5256,7 @@ speakers:
             \ security specialists Aqua Security. She's also co-chairing the KubeCon / CloudNativeCon 2018 events in Copenhagen,\
             \ Shanghai and Seattle."}
     twitter: lizrice
+    gitHub: lizrice
   - id: 360
     photoFileName: 0360.jpg
     name:
@@ -5746,6 +5748,7 @@ speakers:
             \nWhen he's not into research or coding he likes to go surfing, snowboarding or practice other balance-related\
             \ activities."
     twitter: rystsov
+    gitHub: rystsov
   - id: 392
     photoFileName: 0392.jpg
     name:
@@ -6287,7 +6290,8 @@ speakers:
       - {language: en, text: "Jeffrey Richter is an Azure Software Architect and author of several best-selling Windows and\
             \ .NET programming books as well as many MSDN magazine feature articles and columns. He is also a co-founder of\
             \ Wintellect, a software consulting and training company where he has authored many videos available on WintellectNOW."}
-    twitter: jeffrichter
+    twitter: JeffRichter
+    gitHub: JeffreyRichter
   - id: 428
     photoFileName: 0428.jpg
     name:
@@ -8386,6 +8390,7 @@ speakers:
             \ iOS and Android games. Amber lives in Seattle, WA, where you can find her cheering on the Seattle Sounders with\
             \ her family or belting out Guns and Roses at her local karaoke bar."}
     twitter: ambertests
+    gitHub: ambertests
   - id: 577
     photoFileName: 0577.jpg
     name:
@@ -10112,6 +10117,7 @@ speakers:
       - {language: en, text: "American expat settled in Spain, JavaScript aficionado, passionate about forms for some reason.\
             \ Most GitHub stars in all of Spain, because that matters."}
     twitter: erikras
+    gitHub: erikras
   - id: 696
     photoFileName: 0696.jpg
     name:
@@ -10921,6 +10927,7 @@ speakers:
       - {language: en, text: "Axel Rauschmayer is a blogger (2ality.com), book author („Speaking JavaScript“, „Exploring ES6“\
             , etc.), and trainer. He has been programming since 1985 and developing web applications since 1995."}
     twitter: rauschma
+    gitHub: rauschma
   - id: 754
     photoFileName: 0754.jpg
     name:
@@ -14463,6 +14470,7 @@ speakers:
             \ a former mentor of an Open Source Engineering class organized and pioneered by Stanford, with students from\
             \ Harvard, MIT, Carnegie Mellon, UPenn, Columbia, and others."}
     twitter: rauchg
+    gitHub: rauchg
   - id: 1018
     photoFileName: 1018.jpg
     photoUpdatedAt: 2020-12-03T13:58:23.066Z[UTC]
@@ -14522,6 +14530,7 @@ speakers:
         text: "Nicolò has been a core Babel developer since 2017, and he has helped with the development of different ECMAScript\
             \ proposal.\n\nWhen offline, he is a mathematics student in Turin, Italy."
     twitter: NicoloRibaudo
+    gitHub: nicolo-ribaudo
   - id: 1022
     photoFileName: 1022.jpg
     name:
@@ -14796,6 +14805,7 @@ speakers:
       - {language: en, text: "Senior software engineer @EpicGames. International conference speaker. Web and Mobile development.\
             \ Javascript, Typescript. UI engineering and Reactivity."}
     twitter: farzad_yz
+    gitHub: farskid
   - id: 1042
     photoFileName: 1042.jpg
     name:
@@ -15335,6 +15345,7 @@ speakers:
       - {language: en, text: "Microsoft software engineer working on .NET data access and perf, member of the Entity Framework\
             \ team. Lead dev of Npgsql, the PostgreSQL provider."}
     twitter: shayrojansky
+    gitHub: roji
   - id: 1084
     photoFileName: 1084.jpg
     photoUpdatedAt: 2020-02-07T09:10:09.053Z[UTC]
@@ -15704,16 +15715,6 @@ speakers:
     twitter: smelukov
     gitHub: smelukov
     habr: smelukov
-  - id: 1110
-    photoFileName: 1110.jpg
-    name:
-      - {language: en, text: "Margarita Obraztsova"}
-    companyIds: [364]
-    bio:
-      - {language: en, text: "Margarita is a software engineer and international speaker on tools to improving software development\
-            \ processes. She is a consultant software engineer, who loves to find different ways to optimize project work."}
-    twitter: riittagirl
-    gitHub: marharyta
   - id: 1111
     photoFileName: 1111.jpg
     name:
@@ -16629,6 +16630,7 @@ speakers:
             \nPassionate tech event speaker, seasoned trainer, and strong relationship builder with a talent for quickly learning\
             \ new information, procedures, and technologies."
     twitter: ValarieRegas
+    gitHub: ValarieR
   - id: 1178
     photoFileName: 1178.jpg
     photoUpdatedAt: 2020-02-03T12:48:27.461Z[UTC]
@@ -16827,6 +16829,7 @@ speakers:
             \ so many processes that he got a PhD for that. Most of the time he is now migrating containers but occasionally\
             \ he still migrates single processes."}
     twitter: adrian__reber
+    gitHub: adrianreber
   - id: 1191
     photoFileName: 1191.jpg
     name:
@@ -17353,6 +17356,7 @@ speakers:
             \ He is now a Co-Founder & the CTO at YugaByte, the company behind the open source YugaByte DB project that is\
             \ bringing together NoSQL and SQL in a single globally distributed database."}
     twitter: karthikr
+    gitHub: rkarthik007
   - id: 1231
     photoFileName: 1231.jpg
     photoUpdatedAt: 2020-01-27T14:08:33.471Z[UTC]
@@ -17522,6 +17526,7 @@ speakers:
       - {language: en, text: "Margarita is a software engineer and international speaker on tools to improving software development\
             \ processes. She is a consultant software engineer, who loves to find different ways to optimize project work."}
     twitter: riittagirl
+    gitHub: marharyta
   - id: 1242
     photoFileName: 1242.jpg
     photoUpdatedAt: 2020-02-10T09:25:25.503Z[UTC]
@@ -19893,6 +19898,7 @@ speakers:
       - {language: en, text: "John Roesler is an Apache Kafka committer and PMC member and a software engineer at Confluent.\
             \ He focuses on Kafka Streams. Before that, he spent eight years at Bazaarvoice, building their massive-scale,\
             \ high-throughput stream processing platform."}
+    gitHub: vvcephei
   - id: 1421
     photoFileName: 1421.jpg
     photoUpdatedAt: 2020-10-14T11:19:49.680Z[UTC]
