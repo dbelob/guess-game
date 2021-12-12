@@ -2900,6 +2900,7 @@ speakers:
             \ was the co-founder and CTO of LMAX. He blogs at <a href=\"http://mechanical-sympathy.blogspot.com\" target=\"\
             _blank\">mechanical-sympathy.blogspot.com</a>, and can be found giving training courses on performance and concurrency\
             \ when he is not cutting code to make systems better."
+    twitter: mjpt777
     gitHub: mjpt777
   - id: 181
     photoFileName: 0181.jpg
@@ -3629,6 +3630,8 @@ speakers:
     name:
       - {language: en, text: "Georges Saab"}
     companyIds: [383]
+    twitter: gsaab
+    gitHub: gsaab
   - id: 249
     photoFileName: 0249.jpg
     name:
@@ -5206,6 +5209,7 @@ speakers:
             \ performance/power modeling. He specializes in CPU memory hierarchy (caching, prefetching, and memory ordering).\n\
             \nAlexander is passionate about new computation paradigms, high performance hardware, well-written code, modern\
             \ C++, and teaching."
+    gitHub: alexander-titov
   - id: 357
     photoFileName: 0357.jpg
     photoUpdatedAt: 2019-04-05T08:31:46.811Z[UTC]
@@ -5244,6 +5248,7 @@ speakers:
             \ for the enterprise. Willis has authored six IBM Redbooks on enterprise systems management and was the founder\
             \ and chief architect at Chain Bridge Systems."}
     twitter: botchagalupe
+    gitHub: botchagalupe
   - id: 359
     photoFileName: 0359.jpg
     name:
@@ -5315,6 +5320,7 @@ speakers:
             \ delivering software is more important as its development. Paul’s passions are the DevOps and Continuous Delivery\
             \ movements and how they help the entire business and its customers."}
     twitter: stack72
+    gitHub: stack72
   - id: 364
     photoFileName: 0364.jpg
     name:
@@ -5534,6 +5540,8 @@ speakers:
             \ during his time at Red Hat while contributing to open source projects, such as Infinispan. Aside from technology,\
             \ Ray enjoys traveling and adventures."}
     twitter: saturnism
+    gitHub: saturnism
+    javaChampion: true
   - id: 378
     photoFileName: 0378.jpg
     name:
@@ -5806,6 +5814,7 @@ speakers:
             \ parallel garbage collector. Dmitry is an expert in multithreading, concurrency and synchronization, author of\
             \ a dozen of novel lock-free algorithms, holds Intel BlackBelt title."}
     twitter: dvyukov
+    gitHub: dvyukov
   - id: 397
     photoFileName: 0397.jpg
     name:
@@ -6902,6 +6911,7 @@ speakers:
             \ He spends most of his time at his job as a community manager of CoreFX repo and as a manager of a few CoreFX\
             \ areas like Networking, Crypto, Collections, Process, etc."}
     twitter: ziki_cz
+    gitHub: karelz
   - id: 469
     photoFileName: 0469.jpg
     name:
@@ -6913,6 +6923,7 @@ speakers:
             \ in general. Apart from writing a book about Dependency Injection he has also spoken at dozens of international\
             \ conferences, and written numerous articles and blog posts about programming."}
     twitter: ploeh
+    gitHub: ploeh
   - id: 470
     photoFileName: 0470.jpg
     name:
@@ -7139,6 +7150,7 @@ speakers:
             \ Google, London. He's the top contributor on Stack Overflow, the main contributor on the Noda Time library, and\
             \ the author of C# in Depth."}
     twitter: jonskeet
+    gitHub: jskeet
   - id: 482
     photoFileName: 0482.jpg
     name:
@@ -7195,6 +7207,7 @@ speakers:
             \ an open source contributor to BenchmarkDotNet and corefxlab. He is also an ex-MMA practitioner, AFOL, rabbit\
             \ owner and a huge Star Wars fan."}
     twitter: SitnikAdam
+    gitHub: adamsitnik
   - id: 486
     photoFileName: 0486.jpg
     photoUpdatedAt: 2021-10-06T12:52:22.138Z[UTC]
@@ -8464,6 +8477,7 @@ speakers:
             \ around the world on mobile performance.\r\n\r\nHe is currently freelancing, and traveling with his family of\
             \ 6 (plus the dog!) as a digital nomad in Europe."
     twitter: dougsillars
+    gitHub: dougsillars
   - id: 582
     photoFileName: 0582.jpg
     name:
@@ -8501,6 +8515,7 @@ speakers:
             \ of Kiwi TCMS — an open source test case management system with long and vibrant history, the current maintainer\
             \ of pylint-django and a contributor to pylint. He loves everything open source, cooking and fast motorcycles!"
     twitter: atodorov_
+    gitHub: atodorov
   - id: 585
     photoFileName: 0585.jpg
     name:
@@ -9035,6 +9050,7 @@ speakers:
             \ open source testing tools \"parallel_calabash\" and \"nakal\" (RubyGems) for mobile apps testing. He has contributed\
             \ to a few open-source tools Calabash and Appium"}
     twitter: varmarajdeep
+    gitHub: rajdeepv
   - id: 621
     photoFileName: 0621.jpg
     name:
@@ -9477,6 +9493,7 @@ speakers:
             \ Angular and performance optimizations. Lately, she's been working on providing an official way for sharing code\
             \ between web and mobile Angular via NativeScript schematics and webpack."}
     twitter: StanimiraVlaeva
+    gitHub: sis0k0
   - id: 651
     photoFileName: 0651.jpg
     name:
@@ -9739,6 +9756,7 @@ speakers:
         text: "Microsoft MVP and a key member of the TypeScript community.\n\nFront-end Practice Lead. Open source advocate,\
             \ book author, youtuber, screencaster, developer empathiser. Top contributor for TypeScript on stackoverflow."
     twitter: basarat
+    gitHub: basarat
   - id: 669
     photoFileName: 0669.jpg
     name:
@@ -9943,6 +9961,7 @@ speakers:
             \ has published hundreds of Node modules and mad science projects, he is a Node.js Core member, and a part of\
             \ the Node.js Diagnostics Working Group at the Node.js Foundation."}
     twitter: wa7son
+    gitHub: watson
   - id: 684
     photoFileName: 0684.jpg
     name:
@@ -10016,6 +10035,7 @@ speakers:
             \ time she thinks about how she can make the world a better place while playing with her dogs and practicing slalom\
             \ skating."}
     twitter: silveira_bells
+    gitHub: bella-silveira
   - id: 689
     photoFileName: 0689.jpg
     photoUpdatedAt: 2018-10-15T14:48:03.205Z[UTC]
@@ -10094,6 +10114,7 @@ speakers:
             \nHe recently started researching A11Y and he realized he could combine IoT and JavaScript to help visually impaired\
             \ people.\n\nHe loves FOSS, coffee, drones, woodworking and DIYing all the things."
     twitter: vorillaz
+    gitHub: vorillaz
   - id: 694
     photoFileName: 0694.jpg
     name:
@@ -10540,6 +10561,7 @@ speakers:
             \ years. He has a lot of experience with JavaScript and loves to play with offline webapps, chatbots, serverless\
             \ architectures and new things available in both browser and NodeJS. Also loves Open Source."}
     twitter: slobodan_
+    gitHub: stojanovic
   - id: 727
     photoFileName: 0727.jpg
     name:
@@ -10728,6 +10750,7 @@ speakers:
             \ coding and make tech more diverse and accessible. Talk to her about functional programming, language design,\
             \ and speech technology; ask her about Mozilla, Outreachy, and the Recurse Center!"}
     twitter: AnjanaVakil
+    gitHub: vakila
   - id: 740
     photoFileName: 0740.jpg
     name:
@@ -10998,6 +11021,7 @@ speakers:
             \ He’s also the creator of react-boilerplate, the co-creator of Carte Blanche and he co-organises the React.js\
             \ Vienna Meetup. He loves to travel, brews rad coffee, skies beautiful mountains and skates through the city."}
     twitter: mxstbr
+    gitHub: mxstbr
   - id: 759
     photoFileName: 0759.jpg
     name:
@@ -11040,7 +11064,8 @@ speakers:
             \ which come with developing in JavaScript had her looking for alternatives, especially within functional languages.\
             \ This is where Tereza learned of Elm and since then she has been dedicated to its technical development as well\
             \ as expanding its community."}
-    twitter: terexka
+    twitter: tereza_sokol
+    gitHub: terezka
   - id: 762
     photoFileName: 0762.jpg
     name:
@@ -11524,6 +11549,7 @@ speakers:
     bio:
       - {language: en, text: "Libranner is a Software Engineer that has been working with iOS for the past 6-7 years."}
     twitter: libranner
+    gitHub: Libranner
   - id: 799
     photoFileName: 0799.jpg
     photoUpdatedAt: 2020-06-10T09:50:19.517Z[UTC]
@@ -11624,6 +11650,7 @@ speakers:
             \ co-organizing TOAST, one of the biggest meetups series for Android developers in Wrocław, engaged into GDG &\
             \ WTM Wrocław community and blogging in her free time. Her passion is traveling around the world."}
     twitter: p_szklarska
+    gitHub: pszklarska
   - id: 806
     photoFileName: 0806.jpg
     name:
@@ -11660,6 +11687,7 @@ speakers:
             \ on Android.\r\n\r\nWhile working at his past company (Silverpush), he developed the company's patented UAB (Unique\
             \ Audio Beacon) Technology."
     twitter: nisrulz
+    gitHub: nisrulz
   - id: 809
     photoFileName: 0809.jpg
     name:
@@ -12372,6 +12400,7 @@ speakers:
             \ Relations team on Android, Google Glass, and Android Wear, and at Genius, a Brooklyn-based startup, where she\
             \ built their Android app from scratch. She currently lives in Seattle."}
     twitter: lisawrayz
+    gitHub: lisawray
   - id: 857
     photoFileName: 0857.jpg
     name:
@@ -13556,6 +13585,7 @@ speakers:
             \ cloud migrations. Dalia has worked on WebSphere for 5 years starting her career with the EJB team and transitioning\
             \ to the JPA team where she contributed to the open-source projects: EclipseLink and OpenJPA."}
     twitter: DaliaShea
+    gitHub: daliasheasha
   - id: 957
     photoFileName: 0957.jpg
     name:
@@ -13570,6 +13600,7 @@ speakers:
             \ who use it. Areas of expertise include Cloud, Docker, Kubernetes, OpenShift, Java EE, SOA, Business Rules, BPM,\
             \ PaaS, Mobile, and IoT."
     twitter: burrsutter
+    gitHub: burrsutter
   - id: 958
     photoFileName: 0958.jpg
     name:
@@ -13958,6 +13989,7 @@ speakers:
             \ a hands-on learning platform. When he is not doing something with computers, you can find him in the kitchen\
             \ or renovating his house."}
     twitter: erikveld
+    gitHub: eveld
   - id: 982
     photoFileName: 0982.jpg
     name:
@@ -14239,7 +14271,8 @@ speakers:
             \ and a computer vision, image processing, and machine learning expert targeting real-time applications. He specializes\
             \ in building cross-platform, high-performance software combined with high production quality and maintainable\
             \ codebases."}
-    twitter: adishavit
+    twitter: AdiShavit
+    gitHub: adishavit
   - id: 1002
     photoFileName: 1002.jpg
     name:
@@ -14331,6 +14364,7 @@ speakers:
             \ around GraphQL and helping large companies transform their service layers with scalable GraphQL infrastructure.\
             \ Apart from his work at ChilliCream, Michael works as a trainer, consultant and speaker in the Microsoft environment."}
     twitter: michael_staib
+    gitHub: michaelstaib
   - id: 1009
     photoFileName: 1009.jpg
     name:
@@ -14393,6 +14427,7 @@ speakers:
             \ at conferences and meetups. Thanks to that, he has been awarded as a Microsoft MVP for the last 11 years in\
             \ a row."
     twitter: crad77
+    gitHub: cradle77
   - id: 1013
     photoFileName: 1013.jpg
     name:
@@ -14452,6 +14487,7 @@ speakers:
         text: "CTO of Eagle Labs.\n\nLong time *nix systems and low-level programmer with a passion for performance and writing\
             \ fast and efficient code."
     twitter: damageboy
+    gitHub: damageboy
   - id: 1017
     photoFileName: 1017.jpg
     name:
@@ -14497,6 +14533,7 @@ speakers:
       - {language: en, text: "Yulia Startsev is a programmer at Mozilla, recently working on SpiderMonkey. She is also one\
             \ of three co-chairs of Ecma's TC39, the standardizing body for JavaScript."}
     twitter: ioctaptceb
+    gitHub: codehag
   - id: 1020
     photoFileName: 1020.jpg
     name:
@@ -14569,6 +14606,7 @@ speakers:
       - {language: en, text: "Michael Saboff is a Software Engineer working on the JavaScriptCore virtual machine for the\
             \ past 9 years. He is a member of the JS standards committee, TC-39."}
     twitter: msaboff
+    gitHub: msaboff
   - id: 1026
     photoFileName: 1026.jpg
     photoUpdatedAt: 2021-10-18T13:17:27.517Z[UTC]
@@ -15013,6 +15051,7 @@ speakers:
       - {language: en, text: "Ben Sandofsky is co-founder of Halide and Spectre. In the past, he's advised startups, lead\
             \ Twitter for iPhone, and was a technical consultant for HBO's Silicon Valley."}
     twitter: sandofsky
+    gitHub: sandofsky
   - id: 1057
     photoFileName: 1057.jpg
     name:
@@ -15360,6 +15399,7 @@ speakers:
             \ as Project Lead for the browser team. They built the original versions of the browser you now know as \"Internet\
             \ Explorer\"."
     twitter: eric_sink
+    gitHub: ericsink
   - id: 1085
     photoFileName: 1085.jpg
     photoUpdatedAt: 2020-02-07T14:11:42.895Z[UTC]
@@ -15457,6 +15497,7 @@ speakers:
             \ Empear where he designs tools for software analysis. Adam is the author of \"Software Design X-Rays\", the best-selling\
             \ \"Your Code as a Crime Scene,\" \"Lisp for the Web\" and \"Patterns in C.\""}
     twitter: AdamTornhill
+    gitHub: adamtornhill
   - id: 1092
     photoFileName: 1092.jpg
     photoUpdatedAt: 2020-02-10T08:41:33.701Z[UTC]
@@ -15628,6 +15669,7 @@ speakers:
             \ so helps run AgileCrete.org and JCrete.org, along with other meet-ups on the (paradise) island of Crete. His\
             \ day job finds him automating stuff, at Red Hat, the world's open source leader."}
     twitter: gsaslis
+    gitHub: gsaslis
   - id: 1104
     photoFileName: 1104.jpg
     photoUpdatedAt: 2020-01-15T11:35:25.333Z[UTC]
@@ -15738,6 +15780,7 @@ speakers:
             \ web applications. Passionate about mobile, automated testing, and enabling teams to build great things through\
             \ great tools."}
     twitter: phenomnominal
+    gitHub: phenomnomnominal
   - id: 1113
     photoFileName: 1113.jpg
     photoUpdatedAt: 2020-02-05T11:54:02.964Z[UTC]
@@ -15806,6 +15849,7 @@ speakers:
             \ Slick Carousel and Webpack Dashboard. \nIn his free time, he cracks jokes on the Undefined podcast with one\
             \ of his all-time best buddies, Jared Palmer, takes care of his kids, and writes awesome music."
     twitter: ken_wheeler
+    gitHub: kenwheeler
   - id: 1118
     photoFileName: 1118.jpg
     name:
@@ -15915,6 +15959,7 @@ speakers:
             \ speaker and author of articles on different topics related to Vue.js . Thanks to these activities Natalia has\
             \ got a title of Google Developer Expert in Web Technologies."
     twitter: N_Tepluhina
+    gitHub: NataliaTepluhina
   - id: 1127
     photoFileName: 1127.jpg
     name:
@@ -16182,6 +16227,7 @@ speakers:
             \ joining Facebook in 2016, he worked for several years on modeling systems for mathematical optimization. He\
             \ is an active contributor to open-source projects, an author of the {fmt} library and the C++20 formatting library."}
     twitter: vzverovich
+    gitHub: vitaut
   - id: 1146
     photoFileName: 1146.jpg
     name:
@@ -16233,6 +16279,7 @@ speakers:
             \ frontend side of the Hasura Console. In love with building modern, scalable applications with exceptional user\
             \ experience."}
     twitter: aleksandrasays
+    gitHub: beerose
   - id: 1151
     photoFileName: 1151.jpg
     photoUpdatedAt: 2020-03-17T12:31:01.827Z[UTC]
@@ -16609,6 +16656,8 @@ speakers:
             \ techniques, software development tools, and programming languages. He is actively involved in the ISO standardization\
             \ of C++. He holds a masters in Mathematics from Aarhus University, where he is an honorary professor, and a PhD\
             \ in Computer Science from Cambridge University, where he is an honorary fellow of Churchill College."}
+    twitter: stroustrup
+    gitHub: BjarneStroustrup
   - id: 1176
     photoFileName: 1176.jpg
     photoUpdatedAt: 2020-05-04T08:08:03.705Z[UTC]
@@ -16618,6 +16667,8 @@ speakers:
     bio:
       - {language: en, text: "Herb Sutter is an author, chair of the C++ standards committee, and a programming language architect\
             \ at Microsoft."}
+    twitter: herbsutter
+    gitHub: hsutter
   - id: 1177
     photoFileName: 1177.jpg
     photoUpdatedAt: 2020-03-17T11:26:21.935Z[UTC]
@@ -16683,6 +16734,7 @@ speakers:
             \ across multiple data centers and providers. Now he's spending his time exploring and learning about the fundamentals\
             \ of computing that we all take for granted."}
     twitter: flyinprogrammer
+    gitHub: flyinprogrammer
   - id: 1181
     photoFileName: 1181.jpg
     name:
@@ -16693,6 +16745,7 @@ speakers:
             \ to build and architect their cloud platforms. She creates online content for the developer community, some of\
             \ her shows including \"Get Cooking in Cloud\" and \"Deconstructing Chatbots\" can be found on youtube."}
     twitter: pvergadia
+    gitHub: priyankavergadia
   - id: 1182
     photoFileName: 1182.jpg
     name:
@@ -16745,6 +16798,7 @@ speakers:
             \ group and is the author of the widely read documents \"HTTP2 explained\" and \"HTTP/3 explained\". Employed\
             \ by wolfSSL."}
     twitter: bagder
+    gitHub: bagder
   - id: 1185
     photoFileName: 1185.jpg
     photoUpdatedAt: 2020-02-28T08:17:43.473Z[UTC]
@@ -17299,6 +17353,7 @@ speakers:
             \ the author of a book on Distributed Systems Observability (2018) and an upcoming book on distributed systems\
             \ in the cloud (2022). She maintains a blog where she writes about building and maintaining reliable systems."}
     twitter: copyconstruct
+    gitHub: copyconstruct
   - id: 1227
     photoFileName: 1227.jpg
     photoUpdatedAt: 2020-04-27T11:59:07.698Z[UTC]
@@ -17343,6 +17398,7 @@ speakers:
             \ He has a special interest in cryptography. In the past, Alberto worked on numerical calculations and simulations\
             \ for physics-related problems (plasma physics, category theory, symmetry groups)."}
     twitter: alberto_sonnino
+    gitHub: asonnino
   - id: 1230
     photoFileName: 1230.jpg
     photoUpdatedAt: 2020-05-29T07:14:27.343Z[UTC]
@@ -17450,6 +17506,7 @@ speakers:
             \ responsible for the launch of VBA in Excel 5.0. He has also written four books, do a lot of Arduino stuff, and\
             \ talk too much about Barry’s Bootcamp and Burning Man."
     twitter: spolsky
+    gitHub: jspolsky
   - id: 1237
     photoFileName: 1237.jpg
     photoUpdatedAt: 2020-05-28T14:20:53.221Z[UTC]
@@ -17502,6 +17559,7 @@ speakers:
             \ and the AR library SLARToolKit.\nHe was honored several times for his dev community work with the Microsoft\
             \ MVP award and recognized as Microsoft Regional Director."
     twitter: rschu
+    gitHub: reneschulte
   - id: 1240
     photoFileName: 1240.jpg
     photoUpdatedAt: 2020-01-27T08:33:24.814Z[UTC]
@@ -17879,6 +17937,7 @@ speakers:
             \ for the new app model.\nMuch of his time is spent navigating app modularization and dynamic features and structuring\
             \ background work.\nNext to that he coordinates the Android GDE program."
     twitter: keyboardsurfer
+    gitHub: keyboardsurfer
   - id: 1270
     photoFileName: 1270.jpg
     photoUpdatedAt: 2020-06-11T16:50:53.465Z[UTC]
@@ -18240,6 +18299,7 @@ speakers:
       - {language: en, text: "Dmitry is sure that well-coordinated work is better than individual goals."}
       - {language: ru, text: "Занимается продуктовой разработкой и уверен, что слаженная работа в команде важнее индивидуа\
             льного результата."}
+    twitter: vdovin_d_s
     habr: vdovin_ds
   - id: 1300
     photoFileName: 1300.jpg
@@ -18647,6 +18707,8 @@ speakers:
       - {language: en, text: "Hillel is a software consultant in Chicago who specializes in formal methods. He is the author\
             \ of Learn TLA+ (learntla.com) and Practical TLA+ (Apress, est Dec 2018), is on the Alloy board, and teaches workshops\
             \ on both of these languages. In his free time, he juggles and makes candy."}
+    twitter: hillelogram
+    gitHub: hwayne
   - id: 1336
     photoFileName: 1336.jpg
     photoUpdatedAt: 2020-07-05T15:14:01.861Z[UTC]
@@ -18862,6 +18924,7 @@ speakers:
             \ a creative and passionate leader and sought after speaker and author. Of his five books, two have been Jolt\
             \ Award finalists."
     twitter: docjamesw
+    gitHub: docjamesw
   - id: 1350
     photoFileName: 1350.jpg
     photoUpdatedAt: 2020-10-06T13:18:19.335Z[UTC]
@@ -19784,6 +19847,7 @@ speakers:
             \ to Kotlin as his primary language of choice in the past years. He's the co-author of http4k: a lightweight HTTP\
             \ library for Kotlin."}
     twitter: s4nchez
+    gitHub: s4nchez
   - id: 1413
     photoFileName: 1413.jpg
     photoUpdatedAt: 2020-10-16T07:59:37.650Z[UTC]
@@ -19935,6 +19999,8 @@ speakers:
       - {language: en, text: "Edoardo Vacchi, during his Ph.D., researched language design and implementation at the University\
             \ of Milan. After three years at UniCredit Bank's R&D department, he joined Red Hat working on the Drools rule\
             \ engine, the jBPM platform, and the Kogito project."}
+    twitter: evacchi
+    gitHub: evacchi
   - id: 1424
     photoFileName: 1424.jpg
     photoUpdatedAt: 2020-10-06T12:13:19.145Z[UTC]
@@ -19974,6 +20040,7 @@ speakers:
             \ and making Concurnas the best programming language it can be. When not building Concurnas he enjoys spending\
             \ time with his family. He's also a Senior Software Engineer at AWS."}
     twitter: concurnas
+    gitHub: jasontatton
   - id: 1428
     photoFileName: 1428.jpg
     photoUpdatedAt: 2021-08-27T07:30:27.760Z[UTC]
@@ -20062,6 +20129,7 @@ speakers:
             \ in humanitarian technology, and she's delighted to be working on a platform that champions open access to information\
             \ and utility for all."}
     twitter: egsweeny
+    gitHub: egsweeny
   - id: 1435
     photoFileName: 1435.jpg
     photoUpdatedAt: 2020-11-23T14:11:58.625Z[UTC]
@@ -20166,6 +20234,7 @@ speakers:
       - {language: en, text: "A self-taught programmer has been writing code since he was a teenager. Lately, Gusztáv has\
             \ been focusing on the Mint programming language outside of work."}
     twitter: gdotdesign
+    gitHub: gdotdesign
   - id: 1443
     photoFileName: 1443.jpg
     photoUpdatedAt: 2020-10-16T10:07:52.290Z[UTC]
@@ -20756,6 +20825,7 @@ speakers:
       - {language: en, text: "Founder and CEO of Petabridge, a company dedicated to helping .NET developers build high-performance,\
             \ large-scale, and real-time software systems. Founder and maintainer of the Akka.NET project."}
     twitter: Aaronontheweb
+    gitHub: Aaronontheweb
   - id: 1484
     photoFileName: 1484.jpg
     photoUpdatedAt: 2020-09-28T07:22:19.058Z[UTC]
@@ -20790,6 +20860,7 @@ speakers:
       - {language: en, text: "Maoni Stephens is the architect and main developer for the .NET GC in Microsoft. Maoni loves\
             \ working on #dotnet #dotnetcore GC and other perf stuff"}
     twitter: maoni0
+    gitHub: Maoni0
   - id: 1487
     photoFileName: 1487.jpg
     photoUpdatedAt: 2020-09-29T12:19:33.191Z[UTC]
@@ -20852,6 +20923,7 @@ speakers:
     bio:
       - {language: en, text: "Mads is the lead designer of the C# programming language and a program manager at Microsoft."}
     twitter: MadsTorgersen
+    gitHub: MadsTorgersen
   - id: 1492
     photoFileName: 1492.jpg
     photoUpdatedAt: 2020-10-14T07:57:37.930Z[UTC]
@@ -21028,6 +21100,7 @@ speakers:
             \ several times at big data conferences like Hadoop summit, Strata + Hadoop World. Now he works in Alibaba Group\
             \ as a staff engineer. Before that, he worked in Hortonworks where he had developed these popular big data tools."}
     twitter: zjffdu
+    gitHub: zjffdu
   - id: 1503
     photoFileName: 1503.jpg
     photoUpdatedAt: 2020-11-05T11:14:46.487Z[UTC]
@@ -22222,6 +22295,8 @@ speakers:
         text: "Software engineer at Facebook by day, rugby player by night — Timur is building custom dev tools to make people\
             \ around me productive. \nMoving fast, sometimes breaking things and occasionally contributing to Flipper's open\
             \ source code."
+    twitter: ruggerprogrammr
+    gitHub: timur-valiev
   - id: 1580
     photoFileName: 1580.jpg
     photoUpdatedAt: 2021-11-19T09:06:43.812Z[UTC]
@@ -25032,6 +25107,7 @@ speakers:
             \ policy consultant, a penetration tester, a reverse engineer, and an entrepreneur who founded and ran his security\
             \ consulting company. He is currently porting Sysinternals Sysmon from Windows to Linux.\n\nHe has a Masters degree,\
             \ is a Chartered Engineer and, in the past, has been a CHECK Team Leader, a CISSP and held CLAS."
+    twitter: kevsecurity
     gitHub: kesheldr
   - id: 1769
     photoFileName: 1769.jpg
@@ -25513,6 +25589,7 @@ speakers:
             \ npm (2014). Laurie likes making websites and making the web bigger and better. In his opinion, one of the best\
             \ ways to do that is to encourage more people to do web development, by teaching them existing techniques and\
             \ by building tools and services that make web development easier, so they don't have to learn so much."}
+    twitter: seldo
     gitHub: seldo
   - id: 1802
     photoFileName: 1802.jpg
