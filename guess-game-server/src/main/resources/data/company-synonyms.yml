@@ -30,6 +30,10 @@ companySynonyms:
     synonyms: [
         "Arrival Ltd"
     ]
+  - name: "Avast Software"
+    synonyms: [
+        AVAST
+    ]
   - name: "Azul Systems"
     synonyms: [
         Azul

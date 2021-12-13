@@ -85,138 +85,181 @@ companies:
   - id: 21
     name:
       - {language: en, text: AKQA}
+    siteLink: https://www.akqa.com
   - id: 22
     name:
       - {language: en, text: Akvelon}
+    siteLink: https://akvelon.com
   - id: 23
     name:
       - {language: en, text: Algolia}
+    siteLink: https://www.algolia.com
   - id: 24
     name:
       - {language: en, text: Algorand}
+    siteLink: https://www.algorand.com
   - id: 26
     name:
       - {language: en, text: "Alibaba Group"}
+    siteLink: https://www.alibabagroup.com
   - id: 27
     name:
       - {language: en, text: "Align Technology"}
+    siteLink: https://www.aligntech.com
   - id: 28
     name:
       - {language: en, text: "Aligned Research Group"}
+    siteLink: https://www.alignedresearch.com
   - id: 29
     name:
       - {language: en, text: Allegro}
+    siteLink: https://allegro.pl
   - id: 30
     name:
       - {language: en, text: "ALM Works"}
+    siteLink: https://almworks.com
   - id: 31
     name:
       - {language: en, text: alwaysdata}
+    siteLink: https://www.alwaysdata.com
   - id: 32
     name:
       - {language: en, text: Amazon}
+    siteLink: https://www.amazon.com
   - id: 33
     name:
       - {language: en, text: "Amazon Robotics"}
+    siteLink: https://www.amazonrobotics.com
   - id: 34
     name:
       - {language: en, text: "Amazon Web Services"}
+    siteLink: https://aws.amazon.com
   - id: 35
     name:
       - {language: en, text: "Amixr Inc."}
+    siteLink: https://amixr.io
   - id: 36
     name:
       - {language: en, text: "Dev Academy"}
+    siteLink: https://dev-academy.com
   - id: 37
     name:
       - {language: en, text: AngularZone}
+    siteLink: https://www.meetup.com/AngularZone
   - id: 38
     name:
       - {language: en, text: "Apache Ignite Committer"}
   - id: 39
     name:
       - {language: en, text: "App in the Air"}
+    siteLink: https://www.appintheair.mobi
   - id: 40
     name:
       - {language: en, text: Appium}
+    siteLink: https://appium.io
   - id: 41
     name:
       - {language: en, text: Applause}
+    siteLink: https://www.applause.com
   - id: 42
     name:
       - {language: en, text: Apple}
+    siteLink: https://www.apple.com
   - id: 43
     name:
       - {language: en, text: Applitools}
+    siteLink: https://applitools.com
   - id: 44
     name:
       - {language: en, text: "Aqua Security"}
+    siteLink: https://www.aquasec.com
   - id: 45
     name:
       - {language: en, text: "Aquatic Capital Management"}
+    siteLink: https://aquatic.com
   - id: 46
     name:
       - {language: en, text: Arcadia}
+    siteLink: https://softwarecountry.com
   - id: 47
     name:
       - {language: en, text: "Arello Mobile"}
+    siteLink: http://www.arello-mobile.com
   - id: 48
     name:
       - {language: en, text: Arenadata}
+    siteLink: https://arenadata.tech
   - id: 50
     name:
       - {language: en, text: "Arrival Robotics"}
+    siteLink: https://arrival.com
   - id: 51
     name:
       - {language: en, text: "Artec 3D"}
+    siteLink: https://www.artec3d.com
   - id: 52
     name:
       - {language: en, text: Artsy}
+    siteLink: https://www.artsy.net
   - id: 53
     name:
       - {language: en, text: audio++}
   - id: 54
     name:
       - {language: en, text: "Australia Post"}
+    siteLink: https://auspost.com.au
   - id: 57
     name:
       - {language: en, text: AVA}
+    siteLink: https://ava.info
   - id: 58
     name:
       - {language: en, text: "Avalonia OÜ"}
+    siteLink: https://avaloniaui.net
   - id: 59
     name:
-      - {language: en, text: AVAST}
+      - {language: en, text: "Avast Software"}
+    siteLink: https://www.avast.com
   - id: 60
     name:
       - {language: en, text: "Axelerant Technologies Pvt. Ltd."}
+    siteLink: https://www.axelerant.com
   - id: 61
     name:
       - {language: en, text: Axmor}
+    siteLink: https://axmor.ru
   - id: 62
     name:
       - {language: en, text: AxonIQ}
+    siteLink: https://axoniq.io
   - id: 63
     name:
       - {language: en, text: "Azul Systems"}
+    siteLink: https://www.azul.com
   - id: 64
     name:
       - {language: en, text: Babel}
+    siteLink: https://babeljs.io
   - id: 65
     name:
       - {language: en, text: Badoo}
+    siteLink: https://badoo.com
   - id: 66
     name:
       - {language: en, text: BANKEX}
+    siteLink: https://bankex.com
   - id: 67
     name:
       - {language: en, text: BaxEnergy}
+    siteLink: https://www.baxenergy.com
   - id: 68
     name:
       - {language: en, text: BellSoft}
+    siteLink: https://bell-sw.com
   - id: 69
     name:
       - {language: en, text: "Ben-Gurion University of the Negev"}
+    siteLink: https://in.bgu.ac.il
   - id: 70
     name:
       - {language: en, text: Betajob}
