@@ -263,93 +263,118 @@ companies:
   - id: 70
     name:
       - {language: en, text: Betajob}
+    siteLink: https://www.betajob.com
   - id: 71
     name:
       - {language: en, text: "Big Fish Games"}
+    siteLink: https://www.bigfishgames.com
   - id: 72
     name:
       - {language: en, text: Bitfury}
+    siteLink: https://bitfury.com
   - id: 73
     name:
       - {language: en, text: BlackBuck}
+    siteLink: https://www.blackbuck.com
   - id: 74
     name:
       - {language: en, text: blog.ploeh.dk}
+    siteLink: https://blog.ploeh.dk
   - id: 75
     name:
       - {language: en, text: Bloomberg}
+    siteLink: https://www.bloomberg.com
   - id: 76
     name:
       - {language: en, text: Bolt}
+    siteLink: https://bolt.eu
   - id: 77
     name:
       - {language: en, text: Bouvet}
+    siteLink: https://www.bouvet.no
   - id: 78
     name:
       - {language: en, text: "Boxfuse GmbH"}
+    siteLink: https://boxfuse.com
   - id: 79
     name:
       - {language: en, text: BrainGarden}
+    siteLink: https://braingarden.ai
   - id: 80
     name:
       - {language: en, text: Broadridge}
+    siteLink: https://www.broadridge.com
   - id: 81
     name:
       - {language: en, text: "Brown University"}
+    siteLink: https://www.brown.edu
   - id: 82
     name:
       - {language: en, text: "C++ Alliance"}
+    siteLink: https://cppalliance.org
   - id: 83
     name:
       - {language: en, text: "C++ Russia"}
-  - id: 84
-    name:
-      - {language: en, text: "CaixaBank \"Silk\""}
+    siteLink: https://cppconf.ru
   - id: 85
     name:
       - {language: en, text: Camunda}
+    siteLink: https://camunda.com
   - id: 86
     name:
       - {language: en, text: "Canoo Engineering AG"}
+    siteLink: https://www.canoo.com
   - id: 87
     name:
       - {language: en, text: ChilliCream}
+    siteLink: https://chillicream.com
   - id: 88
     name:
       - {language: en, text: "Chronicle Software"}
+    siteLink: https://chronicle.software
   - id: 90
     name:
       - {language: en, text: "Cirrus Labs"}
+    siteLink: https://www.cirruslabs.io
   - id: 91
     name:
       - {language: en, text: "Cisco Systems"}
+    siteLink: https://www.cisco.com
   - id: 92
     name:
       - {language: en, text: "Citadel Securities"}
+    siteLink: https://www.citadelsecurities.com
   - id: 93
     name:
       - {language: en, text: "Clean Code Craftsman"}
+    siteLink: https://www.cleancodeacademy.com
   - id: 94
     name:
       - {language: en, text: Cleverics}
+    siteLink: https://cleverics.com
   - id: 95
     name:
       - {language: en, text: "Cloud Consult London Ltd"}
   - id: 96
     name:
       - {language: en, text: "Cloud Horizon"}
+    siteLink: https://cloudhorizon.com
   - id: 97
     name:
       - {language: en, text: CloudBees}
+    siteLink: https://www.cloudbees.com
   - id: 98
     name:
       - {language: en, text: Cloudflare}
+    siteLink: https://www.cloudflare.com
   - id: 99
     name:
       - {language: en, text: "Code Hipsters"}
+    siteLink: https://codehipsters.com
   - id: 100
     name:
       - {language: en, text: Codeborne}
+    siteLink: https://codeborne.com
   - id: 101
     name:
       - {language: en, text: "codecentric AG"}

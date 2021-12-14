@@ -14428,6 +14428,7 @@ speakers:
             \ a row."
     twitter: crad77
     gitHub: cradle77
+    mvp: true
   - id: 1013
     photoFileName: 1013.jpg
     name:
