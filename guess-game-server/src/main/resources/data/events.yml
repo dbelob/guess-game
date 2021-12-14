@@ -59,7 +59,7 @@ events:
     siteLink:
       - {language: en, text: "https://cppconf.ru/en/"}
       - {language: ru, text: "https://cppconf.ru/"}
-    youtubeLink: https://live.jugru.org/cpp
+    youtubeLink: https://www.youtube.com/playlist?list=PLZN9ZGiWZoZq6RXvLRlA8kQpU45RxSVtX
     placeId: 24
     talkIds: [3389, 3565, 3392, 3391, 3403, 3566, 3393, 3390, 3395, 3396, 3398, 3397, 3567, 3568, 3399, 3400, 3401, 3570,
               3394, 3402, 3404, 3405, 3406, 3407, 3571, 3572, 3408, 3409, 3410, 3573, 3574, 3592, 3411, 3412, 3413, 3575, 3576,
