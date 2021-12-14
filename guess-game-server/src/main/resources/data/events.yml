@@ -2520,7 +2520,7 @@ events:
     endDate: "2021-12-03"
     siteLink:
       - {language: en, text: "https://vtconf.com/"}
-    youtubeLink: https://live.jugru.org/videotech
+    youtubeLink: https://www.youtube.com/playlist?list=PL0TQFzykgJj97EwKkUop3krdQoZQ90-ps
     placeId: 24
     talkIds: [3543, 3562, 3581, 3619, 3588, 3582, 3564, 3584, 3611, 3585, 3561, 3586, 3545, 3622, 3614, 3612, 3587, 3620,
               3613, 3583, 3548, 3549, 3589, 3550, 3621, 3623, 3590, 3546, 3591, 3552, 3615]
