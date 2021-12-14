@@ -10020,7 +10020,7 @@ speakers:
             \ application. \n\nMarko is a long time member of DAFED, a non-profit organization that is working on networking\
             \ and educating the IT community. He holds a MSc degree in Computer Science and is pursuing his PhD in data visualization.\
             \ He sometimes writes fiction novels that probably will never get published as he spends too much time coding."
-    twitter: NisamProgramer
+    twitter: CodeDrafter
     gitHub: mletic
   - id: 688
     photoFileName: 0688.jpg
@@ -14428,6 +14428,7 @@ speakers:
             \ a row."
     twitter: crad77
     gitHub: cradle77
+    mvp: true
   - id: 1013
     photoFileName: 1013.jpg
     name:
@@ -17645,7 +17646,7 @@ speakers:
     gitHub: bahmutov
   - id: 1246
     photoFileName: 1246.jpg
-    photoUpdatedAt: 2020-07-07T11:03:14.650Z[UTC]
+    photoUpdatedAt: 2021-12-13T15:52:01.452Z[UTC]
     name:
       - {language: en, text: "Ruslan Akhmetzianov"}
       - {language: ru, text: "Руслан Ахметзянов"}
