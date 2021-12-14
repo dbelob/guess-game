@@ -1133,7 +1133,7 @@ events:
     siteLink:
       - {language: en, text: "https://mobius-moscow.ru/en/"}
       - {language: ru, text: "https://mobius-moscow.ru/"}
-    youtubeLink: https://live.jugru.org/mobius
+    youtubeLink: https://www.youtube.com/playlist?list=PLb1A91j1236oZ4du7eVrwtzUiJ4kfc3TZ
     placeId: 24
     talkIds: [3417, 3537, 3419, 3538, 3593, 3594, 3483, 3484, 3425, 3539, 3595, 3616, 3596, 3422, 3485, 3579, 3423, 3597,
               3617, 3598, 3421, 3428, 3424, 3599, 3600, 3601, 3486, 3540, 3488, 3489, 3490, 3508, 3602, 3496, 3492, 3509, 3603,
