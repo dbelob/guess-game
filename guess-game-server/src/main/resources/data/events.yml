@@ -351,7 +351,7 @@ events:
     siteLink:
       - {language: en, text: "https://dotnext-moscow.ru/en/"}
       - {language: ru, text: "https://dotnext-moscow.ru/"}
-    youtubeLink: https://live.jugru.org/dotnext
+    youtubeLink: https://www.youtube.com/playlist?list=PLtWrKx3nUGBdGcaQkj8edhvH7MHbS_iM-
     placeId: 24
     talkIds: [3433, 3334, 3267, 3268, 3434, 3269, 3270, 3271, 3435, 3330, 3331, 3272, 3273, 3274, 3436, 3437, 3281, 3276,
               3277, 3438, 3439, 3279, 3278, 3280, 3440, 3441, 3275, 3282, 3283, 3442, 3284, 3286, 3285, 3443, 3332, 3333, 3287,
