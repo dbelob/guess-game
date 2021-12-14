@@ -688,7 +688,7 @@ events:
     endDate: "2021-06-18"
     siteLink:
       - {language: en, text: "https://hydraconf.com/"}
-    youtubeLink: https://live.jugru.org/events/hydra/?p=sch100096
+    youtubeLink: https://www.youtube.com/playlist?list=PLC5OGTO4dWxbxpZWsvWWeBxUQWVqGXeBB
     placeId: 24
     talkIds: [3124, 3125, 3132, 3154, 3141, 3149, 3133, 3129, 3134, 3143, 3127, 3135, 3150, 3130, 3136, 3151, 3152, 3137,
               3153, 3138, 3148, 3140, 3131]
