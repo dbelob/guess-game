@@ -26,7 +26,7 @@
     "@ngx-translate/http-loader": "^7.0.0",
     "bootstrap": "^4.6.0",
     "chart.js": "^3.6.2",
-    "core-js": "^3.19.3",
+    "core-js": "^3.20.0",
     "get-video-id": "^3.4.3",
     "ngx-markdown": "^13.0.0",
     "primeicons": "^5.0.0",
