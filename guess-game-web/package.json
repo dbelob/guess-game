@@ -24,7 +24,7 @@
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
-    "bootstrap": "^4.6.0",
+    "bootstrap": "^4.6.1",
     "chart.js": "^3.6.2",
     "core-js": "^3.20.0",
     "get-video-id": "^3.4.3",

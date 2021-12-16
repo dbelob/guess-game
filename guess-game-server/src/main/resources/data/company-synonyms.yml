@@ -191,6 +191,10 @@ companySynonyms:
     synonyms: [
         "Netifi, Inc"
     ]
+  - name: nipafx
+    synonyms: [
+        CodeFX
+    ]
   - name: "Object Computing"
     synonyms: [
         "Object Computing, Inc."
