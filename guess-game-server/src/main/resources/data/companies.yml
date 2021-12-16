@@ -378,24 +378,31 @@ companies:
   - id: 101
     name:
       - {language: en, text: "codecentric AG"}
+    siteLink: https://www.codecentric.de
   - id: 102
     name:
-      - {language: en, text: CodeFX}
+      - {language: en, text: nipafx}
+    siteLink: https://nipafx.dev
   - id: 103
     name:
       - {language: en, text: CodeValue}
+    siteLink: https://codevalue.com
   - id: 104
     name:
       - {language: en, text: CommodiTrader}
+    siteLink: https://commoditrader.com
   - id: 105
     name:
       - {language: en, text: Component-Driven}
+    siteLink: https://www.component-driven.dev
   - id: 106
     name:
       - {language: en, text: Computas}
+    siteLink: https://computas.com
   - id: 108
     name:
       - {language: en, text: Confluent}
+    siteLink: https://www.confluent.io
   - id: 109
     name:
       - {language: en, text: Consultant}
@@ -405,108 +412,139 @@ companies:
   - id: 111
     name:
       - {language: en, text: Contino}
+    siteLink: https://www.contino.io
   - id: 112
     name:
       - {language: en, text: Converge}
-  - id: 113
-    name:
-      - {language: en, text: Corvalius}
+    siteLink: https://convergetp.com
   - id: 114
     name:
       - {language: en, text: Couchbase}
+    siteLink: https://www.couchbase.com
   - id: 115
     name:
       - {language: en, text: "Count-Zero Ltd"}
+    siteLink: http://www.count-zero.ltd.uk
   - id: 116
     name:
       - {language: en, text: CountMyCrypto}
+    siteLink: https://www.countmycrypto.com
   - id: 117
     name:
       - {language: en, text: Coursedog}
+    siteLink: https://www.coursedog.com
   - id: 118
     name:
       - {language: en, text: CRATUS}
+    siteLink: https://www.cratustech.com
   - id: 119
     name:
       - {language: en, text: "Crazy Panda"}
+    siteLink: https://crazypanda.ru
   - id: 120
     name:
       - {language: en, text: "Creative Assembly"}
+    siteLink: https://www.creative-assembly.com
   - id: 121
     name:
       - {language: en, text: Criteo}
+    siteLink: https://www.criteo.com
   - id: 122
     name:
       - {language: en, text: "Crossover (GFI)"}
+    siteLink: https://www.crossover.com
   - id: 123
     name:
       - {language: en, text: CSSSR}
+    siteLink: https://csssr.com
   - id: 124
     name:
       - {language: en, text: Curbralan}
+    siteLink: http://curbralan.com
   - id: 125
     name:
       - {language: en, text: CUSTIS}
+    siteLink: https://custis.ru
   - id: 126
     name:
       - {language: en, text: Cypress.io}
+    siteLink: https://www.cypress.io
   - id: 127
     name:
       - {language: en, text: Dailymotion}
+    siteLink: https://www.dailymotion.com
   - id: 128
     name:
       - {language: en, text: Dartmouth}
+    siteLink: https://home.dartmouth.edu
   - id: 129
     name:
-      - {language: en, text: Dat}
+      - {language: en, text: Hyperdivision}
+    siteLink: https://hyperdivision.dk
   - id: 130
     name:
       - {language: en, text: DataArt}
+    siteLink: https://dataart.team
   - id: 131
     name:
       - {language: en, text: DataStax}
+    siteLink: https://www.datastax.com
   - id: 132
     name:
-      - {language: en, text: dbeaver}
+      - {language: en, text: DBeaver}
+    siteLink: https://dbeaver.com
   - id: 133
     name:
       - {language: en, text: "DefinedCrowd Corp."}
+    siteLink: https://www.defined.ai
   - id: 134
     name:
       - {language: en, text: "Dejavoo Systems"}
+    siteLink: https://www.dejavoosystems.com
   - id: 135
     name:
       - {language: en, text: Delightex}
+    siteLink: https://www.delightex.com
   - id: 136
     name:
       - {language: en, text: "Delivery Club"}
+    siteLink: https://www.delivery-club.ru
   - id: 139
     name:
       - {language: en, text: "Dell Technologies"}
+    siteLink: https://www.delltechnologies.com
   - id: 140
     name:
       - {language: en, text: Derivco}
+    siteLink: https://derivco.com
   - id: 141
     name:
       - {language: en, text: "Deutsche Bank"}
+    siteLink: https://www.db.com
   - id: 143
     name:
       - {language: en, text: "Deutsche Telekom"}
+    siteLink: https://www.telekom.com
   - id: 145
     name:
       - {language: en, text: Devbridge}
+    siteLink: https://www.devbridge.com
   - id: 146
     name:
       - {language: en, text: DevelopSense}
+    siteLink: https://www.developsense.com
   - id: 147
     name:
       - {language: en, text: Devexperts}
+    siteLink: https://devexperts.com
   - id: 148
     name:
       - {language: en, text: DevExpress}
+    siteLink: https://www.devexpress.com
   - id: 149
     name:
       - {language: en, text: Devim}
+    siteLink: https://www.devim.com
   - id: 150
     name:
       - {language: en, text: "diconium digital solutions"}
