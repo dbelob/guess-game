@@ -98,6 +98,14 @@ companySynonyms:
     synonyms: [
         angular-academy.com
     ]
+  - name: dotdigital
+    synonyms: [
+        dotmailer
+    ]
+  - name: "DPI.Solutions"
+    synonyms: [
+        "DPI Solutions"
+    ]
   - name: "EPAM Systems"
     synonyms: [
         EPAM
@@ -194,6 +202,10 @@ companySynonyms:
   - name: nipafx
     synonyms: [
         CodeFX
+    ]
+  - name: Novi
+    synonyms: [
+        "Facebook Calibra"
     ]
   - name: "Object Computing"
     synonyms: [

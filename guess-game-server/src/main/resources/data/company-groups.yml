@@ -5,3 +5,14 @@ companyGroups:
         "JetBrains Research",
         "NRU HSE"
     ]
+  - name: "DM Labs, Arktur, Open Data Science"
+    items: [
+        "DM Labs",
+        "Arktur",
+        "Open Data Science"
+    ]
+  - name: "DPI.Solutions, EPAM"
+    items: [
+        "DPI.Solutions",
+        "EPAM"
+    ]

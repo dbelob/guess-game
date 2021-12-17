@@ -548,72 +548,90 @@ companies:
   - id: 150
     name:
       - {language: en, text: "diconium digital solutions"}
+    siteLink: https://diconium.com
   - id: 151
     name:
       - {language: en, text: "Digital Natives"}
+    siteLink: https://www.digitalnatives.hu
   - id: 152
     name:
       - {language: en, text: "Digital Nomad & Freelancer"}
   - id: 153
     name:
       - {language: en, text: "Digital Security"}
+    siteLink: https://dsec.ru
   - id: 154
     name:
       - {language: en, text: "Digital Zone"}
+    siteLink: https://dz.ru
   - id: 155
     name:
       - {language: en, text: "DINO Systems"}
+    siteLink: https://dins.ru
   - id: 156
     name:
       - {language: en, text: DINS}
+    siteLink: https://dins.ru
   - id: 157
     name:
       - {language: en, text: Directual}
+    siteLink: https://www.directual.com
   - id: 158
     name:
       - {language: en, text: Ditto}
-  - id: 159
-    name:
-      - {language: en, text: DM}
+    siteLink: https://ditto.com
   - id: 160
     name:
-      - {language: en, text: "DM Labs, Arktur, Open Data Science"}
+      - {language: en, text: "DM Labs"}
+    siteLink: http://dmlabs.tech
   - id: 161
     name:
       - {language: en, text: "Dodo Engineering"}
+    siteLink: https://dodo.dev
   - id: 162
     name:
       - {language: en, text: Dostavista}
+    siteLink: https://dostavista.ru
   - id: 163
     name:
       - {language: en, text: DotControl}
+    siteLink: https://dotcontrol.com
   - id: 164
     name:
-      - {language: en, text: dotmailer}
+      - {language: en, text: dotdigital}
+    siteLink: https://dotdigital.com
   - id: 165
     name:
       - {language: en, text: DotNetRu}
+    siteLink: https://dotnet.ru
   - id: 166
     name:
-      - {language: en, text: "DPI.Solutions, EPAM"}
+      - {language: en, text: "DPI.Solutions"}
+    siteLink: https://dpi.solutions
   - id: 167
     name:
       - {language: en, text: "Droids On Roids"}
+    siteLink: https://www.thedroidsonroids.com
   - id: 168
     name:
       - {language: en, text: "DZ Systems"}
+    siteLink: https://dzsystems.com
   - id: 169
     name:
       - {language: en, text: e-square.io}
+    siteLink: https://e-square.io
   - id: 170
     name:
       - {language: en, text: "Eagle Labs"}
+    siteLink: https://labs.uk.barclays
   - id: 171
     name:
       - {language: en, text: eBay}
+    siteLink: https://www.ebay.com/
   - id: 172
     name:
       - {language: en, text: Ecmanauten}
+    siteLink: http://ecmanauten.de
   - id: 173
     name:
       - {language: en, text: "Last Week in AWS"}
@@ -621,81 +639,107 @@ companies:
   - id: 174
     name:
       - {language: en, text: Effective}
+    siteLink: https://effective.band
   - id: 175
     name:
       - {language: en, text: Elastic}
+    siteLink: https://www.elastic.co
   - id: 176
     name:
       - {language: en, text: "Element34 Solutions GmbH"}
+    siteLink: https://element34.com
   - id: 177
     name:
       - {language: en, text: Embox}
+    siteLink: http://www.embox.rocks
   - id: 178
     name:
       - {language: en, text: EmDev}
+    siteLink: https://www.emdev.ru
   - id: 179
     name:
       - {language: en, text: "Emirates Airline"}
+    siteLink: https://www.emirates.com
   - id: 180
     name:
       - {language: en, text: Empear}
+    siteLink: https://empear.com
   - id: 181
     name:
       - {language: en, text: EngineerSpock}
+    siteLink: https://www.engineerspock.com
   - id: 182
     name:
       - {language: en, text: "Enterprise Craftsmanship LLC"}
+    siteLink: https://enterprisecraftsmanship.com
   - id: 183
     name:
       - {language: en, text: "EPAM Systems"}
+    siteLink: https://www.epam.com
   - id: 184
     name:
       - {language: en, text: "ePayments Technologies"}
+    siteLink: https://www.epayments.com
   - id: 185
     name:
       - {language: en, text: EPFL}
+    siteLink: https://www.epfl.ch
   - id: 186
     name:
       - {language: en, text: "Epic Games"}
+    siteLink: https://www.epicgames.com
   - id: 187
     name:
       - {language: en, text: "Evil Martians"}
+    siteLink: https://evilmartians.com
   - id: 188
     name:
       - {language: en, text: "Evolution Engineering"}
+    siteLink: https://evolutioneng.com
   - id: 189
     name:
       - {language: en, text: "Evolution Gaming"}
+    siteLink: https://www.evolution.com
   - id: 190
     name:
       - {language: en, text: Exadel}
+    siteLink: https://exadel.com
   - id: 191
     name:
       - {language: en, text: Exness}
+    siteLink: https://www.exness.com
   - id: 192
     name:
       - {language: en, text: "Exonum, the Bitfury Group"}
+    siteLink: https://exonum.com
   - id: 193
     name:
       - {language: en, text: Expload}
+    siteLink: https://expload.com
   - id: 194
     name:
       - {language: en, text: Facebook}
+    siteLink: https://www.facebook.com
   - id: 195
     name:
-      - {language: en, text: "Facebook Calibra"}
+      - {language: en, text: Novi}
+    siteLink: https://www.novi.com
   - id: 196
     name:
       - {language: en, text: Faithlife}
+    siteLink: https://faithlife.com
   - id: 197
     name:
       - {language: en, text: Fandom}
+    siteLink: https://www.fandom.com
   - id: 198
     name:
       - {language: en, text: Findify}
+    siteLink: https://www.findify.io
   - id: 199
     name:
       - {language: en, text: "Five Agency"}
+    siteLink: https://five.agency
   - id: 200
     name:
       - {language: en, text: FivexL}
@@ -2785,3 +2829,10 @@ companies:
   - id: 889
     name:
       - {language: en, text: Facecast}
+  - id: 890
+    name:
+      - {language: en, text: "Arktur"}
+  - id: 891
+    name:
+      - {language: en, text: "Open Data Science"}
+    siteLink: https://ods.ai
