@@ -3564,7 +3564,7 @@ speakers:
     photoFileName: 0242.jpg
     name:
       - {language: en, text: "Nicolas Fränkel"}
-    companyIds: [245]
+    companyIds: [233]
     bio:
       - language: en
         text: "Software Architect with 12+ years experience consulting for many different customers, in a wide range of contexts\
@@ -6118,7 +6118,7 @@ speakers:
     photoUpdatedAt: 2020-01-30T18:13:18.580Z[UTC]
     name:
       - {language: en, text: "Konrad Kokosa"}
-    companyIds: [225]
+    companyIds: [225, 892]
     bio:
       - {language: en, text: "Author of the Pro .NET Memory Management book. Programming for over a dozen years, solving performance\
             \ problems and architectural puzzles in the .NET world, speeding up web applications. Independent consultant,\

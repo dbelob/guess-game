@@ -743,12 +743,15 @@ companies:
   - id: 200
     name:
       - {language: en, text: FivexL}
+    siteLink: https://fivexl.io
   - id: 201
     name:
       - {language: en, text: "Focus Reactive"}
+    siteLink: https://focusreactive.com
   - id: 202
     name:
       - {language: en, text: ForgeRock}
+    siteLink: https://www.forgerock.com
   - id: 203
     name:
       - {language: en, text: Freelance}
@@ -761,135 +764,174 @@ companies:
   - id: 206
     name:
       - {language: en, text: Freeletics}
+    siteLink: https://www.freeletics.com
   - id: 207
     name:
       - {language: en, text: FunCorp}
+    siteLink: https://fun.co
   - id: 208
     name:
       - {language: en, text: Futurice}
+    siteLink: https://futurice.com
   - id: 209
     name:
       - {language: en, text: gapfruit}
+    siteLink: https://www.gapfruit.com
   - id: 210
     name:
       - {language: en, text: "GDG Riga"}
+    siteLink: https://gdgriga.lv
   - id: 211
     name:
       - {language: en, text: Genestack}
+    siteLink: https://genestack.com
   - id: 212
     name:
       - {language: en, text: GetIntent}
+    siteLink: https://getintent.com
   - id: 213
     name:
       - {language: en, text: GitHub}
+    siteLink: https://github.com
   - id: 214
     name:
       - {language: en, text: GitLab}
+    siteLink: https://gitlab.com
   - id: 215
     name:
       - {language: en, text: "Go SPb"}
+    siteLink: https://www.meetup.com/ru-RU/Golang-Peter
   - id: 216
     name:
       - {language: en, text: "Godel Technologies"}
+    siteLink: https://www.godeltech.com
   - id: 217
     name:
       - {language: en, text: Google}
+    siteLink: https://www.google.com
   - id: 218
     name:
-      - {language: en, text: "Google Developer Expert for Android / Egeniq"}
+      - {language: en, text: Egeniq}
+    siteLink: https://www.egeniq.com
   - id: 219
     name:
       - {language: en, text: "GP Solutions"}
+    siteLink: https://gpsolutions.com
   - id: 220
     name:
       - {language: en, text: Grab}
+    siteLink: https://www.grab.com
   - id: 221
     name:
       - {language: en, text: "Gradle Inc."}
+    siteLink: https://gradle.com
   - id: 222
     name:
       - {language: en, text: Gremlin}
+    siteLink: https://www.gremlin.com
   - id: 223
     name:
       - {language: en, text: "Grid Dynamics"}
+    siteLink: https://www.griddynamics.com
   - id: 224
     name:
       - {language: en, text: "GridGain Systems"}
+    siteLink: https://www.gridgain.com
   - id: 225
     name:
-      - {language: en, text: Gritstep/Dotnetos}
+      - {language: en, text: Gritstep}
+    siteLink: http://gritstep.com
   - id: 226
     name:
       - {language: en, text: Groupon}
+    siteLink: https://www.groupon.com
   - id: 227
     name:
       - {language: en, text: "Guidepost Systems"}
+    siteLink: http://guidepostsystems.com
   - id: 228
     name:
       - {language: en, text: "Hacking with Swift"}
+    siteLink: https://www.hackingwithswift.com
   - id: 229
     name:
       - {language: en, text: Halide}
+    siteLink: https://halide.cam
   - id: 230
     name:
       - {language: en, text: HashiCorp}
+    siteLink: https://www.hashicorp.com
   - id: 231
     name:
       - {language: en, text: Hasura}
+    siteLink: https://hasura.io
   - id: 232
     name:
       - {language: en, text: Haulmont}
+    siteLink: https://www.haulmont.com
   - id: 233
     name:
       - {language: en, text: Hazelcast}
+    siteLink: https://hazelcast.com
   - id: 234
     name:
       - {language: en, text: HeadHunter}
+    siteLink: https://hh.ru
   - id: 235
     name:
       - {language: en, text: "Health Samurai"}
+    siteLink: https://www.health-samurai.io
   - id: 236
     name:
       - {language: en, text: "Hladky IT"}
   - id: 237
     name:
       - {language: en, text: Honeycomb}
+    siteLink: https://www.honeycomb.io
   - id: 238
     name:
       - {language: en, text: "Horsdal Consult"}
+    siteLink: https://www.horsdal-consult.dk
   - id: 239
     name:
       - {language: en, text: "House of Test GmbH"}
+    siteLink: https://www.houseoftest.rocks
   - id: 240
     name:
       - {language: en, text: HpyDev}
+    siteLink: https://hpy.dev
   - id: 241
     name:
       - {language: en, text: "HTML Academy"}
+    siteLink: https://htmlacademy.ru
   - id: 242
     name:
       - {language: en, text: Huawei}
+    siteLink: https://www.huawei.com
   - id: 243
     name:
       - {language: en, text: Huddle}
+    siteLink: https://www.huddle.com
   - id: 244
     name:
       - {language: en, text: HUMANS}
-  - id: 245
-    name:
-      - {language: en, text: hybris}
+    siteLink: https://humans.uz
   - id: 246
     name:
       - {language: en, text: HyOO}
+    siteLink: https://hyoo.ru
   - id: 247
     name:
       - {language: en, text: Hyper}
+    siteLink: https://www.hyper.no
   - id: 248
     name:
       - {language: en, text: HyperIntegrate}
+    siteLink: https://www.hyperintegrate.com
   - id: 249
     name:
-      - {language: en, text: hypothes.is}
+      - {language: en, text: Hypothesis}
+    siteLink: https://hypothes.is
   - id: 250
     name:
       - {language: en, text: IBM}
@@ -2836,3 +2878,7 @@ companies:
     name:
       - {language: en, text: "Open Data Science"}
     siteLink: https://ods.ai
+  - id: 892
+    name:
+      - {language: en, text: Dotnetos}
+    siteLink: https://dotnetos.org
