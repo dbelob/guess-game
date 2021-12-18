@@ -1,4 +1,20 @@
 companyGroups:
+  - name: "DM Labs, Arktur, Open Data Science"
+    items: [
+        "DM Labs",
+        "Arktur",
+        "Open Data Science"
+    ]
+  - name: "DPI.Solutions, EPAM"
+    items: [
+        "DPI.Solutions",
+        "EPAM"
+    ]
+  - name: Gritstep/Dotnetos
+    items: [
+        Gritstep,
+        Dotnetos
+    ]
   - name: "MPI-SWS, JetBrains Research, NRU HSE"
     items: [
         MPI-SWS,

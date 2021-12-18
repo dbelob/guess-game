@@ -3564,7 +3564,7 @@ speakers:
     photoFileName: 0242.jpg
     name:
       - {language: en, text: "Nicolas Fränkel"}
-    companyIds: [245]
+    companyIds: [233]
     bio:
       - language: en
         text: "Software Architect with 12+ years experience consulting for many different customers, in a wide range of contexts\
@@ -4092,7 +4092,7 @@ speakers:
     name:
       - {language: en, text: "Anton Semenchenko"}
       - {language: ru, text: "Антон Семенченко"}
-    companyIds: [166]
+    companyIds: [166, 183]
     bio:
       - {language: ru, text: "Активист сообщества специалистов в области автоматизации тестирования COMAQA.by, активист со\
             общества суровых разработчиков на С/С++ и ниже COREHard.by, сообщества IT-специалистов, переехавших в Беларусь\
@@ -4808,7 +4808,7 @@ speakers:
     name:
       - {language: en, text: "Alexey Natekin"}
       - {language: ru, text: "Алексей Натёкин"}
-    companyIds: [160]
+    companyIds: [160, 890, 891]
     bio:
       - {language: en, text: "Founder of a couple of projects with machine learning and data analysis. Dictator and coordinator\
             \ at Open Data Science — the largest Data Scientists online community in Eastern Europe."}
@@ -6118,7 +6118,7 @@ speakers:
     photoUpdatedAt: 2020-01-30T18:13:18.580Z[UTC]
     name:
       - {language: en, text: "Konrad Kokosa"}
-    companyIds: [225]
+    companyIds: [225, 892]
     bio:
       - {language: en, text: "Author of the Pro .NET Memory Management book. Programming for over a dozen years, solving performance\
             \ problems and architectural puzzles in the .NET world, speeding up web applications. Independent consultant,\
@@ -8538,7 +8538,7 @@ speakers:
     name:
       - {language: en, text: "Vasiliy Vanchuk"}
       - {language: ru, text: "Василий Ванчук"}
-    companyIds: [159]
+    companyIds: [76]
     bio:
       - {language: en, text: "Passionate developer and troubleshooter. Works with great and productive teams and technologies.\
             \ Has fun both with coding and communications."}
@@ -8546,6 +8546,7 @@ speakers:
             . Обращает внимание на саморазвитие, много читает и помогает развиваться другим. Преподает на курсах и являетс\
             я активным участником сообщества Web Not Bombs."}
     twitter: vvscode
+    gitHub: vvscode
   - id: 587
     photoFileName: 0587.jpg
     photoUpdatedAt: 2021-03-16T11:53:30.759Z[UTC]

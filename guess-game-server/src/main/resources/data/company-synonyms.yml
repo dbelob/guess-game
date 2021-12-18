@@ -98,9 +98,21 @@ companySynonyms:
     synonyms: [
         angular-academy.com
     ]
+  - name: dotdigital
+    synonyms: [
+        dotmailer
+    ]
+  - name: "DPI.Solutions"
+    synonyms: [
+        "DPI Solutions"
+    ]
   - name: "EPAM Systems"
     synonyms: [
         EPAM
+    ]
+  - name: Egeniq
+    synonyms: [
+        "Google Developer Expert for Android / Egeniq"
     ]
   - name: GitLab
     synonyms: [
@@ -121,6 +133,10 @@ companySynonyms:
   - name: "Hibernating Rhinos"
     synonyms: [
         "Hibernating Rhinos LTD"
+    ]
+  - name: Hypothesis
+    synonyms: [
+        hypothes.is
     ]
   - name: IBM
     synonyms: [
@@ -195,6 +211,10 @@ companySynonyms:
     synonyms: [
         CodeFX
     ]
+  - name: Novi
+    synonyms: [
+        "Facebook Calibra"
+    ]
   - name: "Object Computing"
     synonyms: [
         "Object Computing, Inc."
@@ -244,6 +264,10 @@ companySynonyms:
         Райффайзен,
         RaiffeisenBank,
         Райффайзенбанк
+    ]
+  - name: SAP
+    synonyms: [
+        hybris
     ]
   - name: S7
     synonyms: [
