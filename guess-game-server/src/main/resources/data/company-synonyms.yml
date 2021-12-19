@@ -142,17 +142,29 @@ companySynonyms:
     synonyms: [
         "IBM Canada"
     ]
-  - name: "IT Territory/My.Games"
+  - name: Infopulse
     synonyms: [
-        "IT Territory/MyGames"
+        "Infopulse Ukraine"
     ]
   - name: Intel
     synonyms: [
         "Intel Corporation"
     ]
+  - name: "IT Territory/My.Games"
+    synonyms: [
+        "IT Territory/MyGames"
+    ]
+  - name: JavaSpecialists
+    synonyms: [
+        JavaSpecialists.eu
+    ]
   - name: JetBrains
     synonyms: [
         "JetBrains Research"
+    ]
+  - name: JFrog
+    synonyms: [
+        JFrog/Conan
     ]
   - name: "JUG Ru Group"
     synonyms: [

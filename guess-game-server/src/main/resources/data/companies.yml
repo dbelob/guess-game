@@ -935,21 +935,27 @@ companies:
   - id: 250
     name:
       - {language: en, text: IBM}
+    siteLink: https://www.ibm.com
   - id: 251
     name:
       - {language: en, text: IG}
+    siteLink: https://www.ig.com
   - id: 252
     name:
       - {language: en, text: Igalia}
+    siteLink: https://www.igalia.com
   - id: 253
     name:
       - {language: en, text: iHeartRadio}
+    siteLink: https://www.iheart.com
   - id: 254
     name:
       - {language: en, text: "IHS Markit"}
+    siteLink: https://ihsmarkit.com
   - id: 255
     name:
       - {language: en, text: IMDEA}
+    siteLink: https://www.imdea.org
   - id: 256
     name:
       - {language: en, text: Independent}
@@ -968,120 +974,151 @@ companies:
   - id: 261
     name:
       - {language: en, text: "Info Support"}
+    siteLink: https://www.infosupport.com
   - id: 262
     name:
       - {language: en, text: Infobip}
+    siteLink: https://www.infobip.com
   - id: 263
     name:
-      - {language: en, text: "Infopulse Ukraine"}
+      - {language: en, text: Infopulse}
+    siteLink: https://www.infopulse.com
   - id: 264
     name:
       - {language: en, text: Infotecs}
+    siteLink: http://infotecs.ru
   - id: 265
     name:
       - {language: en, text: ING}
+    siteLink: https://www.ing.com
   - id: 266
     name:
       - {language: en, text: Insolar}
+    siteLink: https://insolar.io
   - id: 267
     name:
       - {language: en, text: Intel}
+    siteLink: https://www.intel.com
   - id: 268
     name:
       - {language: en, text: Intermedia}
+    siteLink: https://www.intermedia.com
   - id: 269
     name:
       - {language: en, text: Inuits}
+    siteLink: https://inuits.eu
   - id: 270
     name:
       - {language: en, text: Invitae}
-  - id: 271
-    name:
-      - {language: en, text: Involved}
+    siteLink: https://www.invitae.com
   - id: 272
     name:
       - {language: en, text: IPONWEB}
+    siteLink: https://www.iponweb.com
   - id: 273
     name:
       - {language: en, text: Isovalent}
+    siteLink: https://isovalent.com
   - id: 274
     name:
       - {language: en, text: iSpring}
+    siteLink: https://www.ispring.ru
   - id: 275
     name:
-      - {language: en, text: IST}
+      - {language: en, text: Instituto Superior Técnico}
+    siteLink: https://tecnico.ulisboa.pt
   - id: 276
     name:
       - {language: en, text: "IST Austria"}
+    siteLink: https://ist.ac.at
   - id: 277
     name:
       - {language: en, text: "IT HR"}
+    siteLink: https://vk.com/ithrmeetup
   - id: 278
     name:
       - {language: en, text: "IT Territory/My.Games"}
+    siteLink: https://www.it-territory.ru
   - id: 279
     name:
       - {language: en, text: "ITMO University"}
+      - {language: ru, text: "Университет ИТМО"}
+    siteLink: https://itmo.ru
   - id: 280
     name:
       - {language: en, text: ivi}
+    siteLink: https://www.ivi.ru
   - id: 281
     name:
       - {language: en, text: Ixtens}
+    siteLink: https://www.alekta.ru
   - id: 282
     name:
-      - {language: en, text: JavaSpecialists.eu}
+      - {language: en, text: JavaSpecialists}
+    siteLink: https://www.javaspecialists.eu
   - id: 283
     name:
       - {language: en, text: "JDI Team"}
+    siteLink: https://github.com/jdi-testing
   - id: 284
     name:
       - {language: en, text: Jelastic}
+    siteLink: https://jelastic.com
   - id: 285
     name:
       - {language: en, text: Jet.com}
+    siteLink: https://jet.com
   - id: 286
     name:
       - {language: en, text: JetBrains}
+    siteLink: https://www.jetbrains.com
   - id: 287
     name:
       - {language: en, text: JFrog}
-  - id: 288
-    name:
-      - {language: en, text: JFrog/Conan}
+    siteLink: https://jfrog.com
   - id: 289
     name:
       - {language: en, text: Jinnius}
   - id: 290
     name:
       - {language: en, text: "JP Morgan Chase"}
+    siteLink: https://www.jpmorganchase.com
   - id: 291
     name:
       - {language: en, text: "JUG Ru Group"}
+    siteLink: https://jugru.org
   - id: 292
     name:
       - {language: en, text: Juno}
+    siteLink: https://gojuno.com
   - id: 293
     name:
       - {language: en, text: "Karakun AG"}
+    siteLink: https://karakun.com
   - id: 294
     name:
       - {language: en, text: KDE}
+    siteLink: https://kde.org
   - id: 295
     name:
       - {language: en, text: KeepSolid}
+    siteLink: https://www.keepsolid.com
   - id: 296
     name:
       - {language: en, text: King}
+    siteLink: https://www.king.com
   - id: 297
     name:
       - {language: en, text: "Kitab Sawti"}
+    siteLink: https://kitabsawti.com
   - id: 298
     name:
       - {language: en, text: Klarna}
+    siteLink: https://www.klarna.com
   - id: 299
     name:
       - {language: en, text: "Kodewerk Ltd."}
+    siteLink: http://www.kodewerk.com
   - id: 300
     name:
       - {language: en, text: Kt.Academy}
@@ -2882,3 +2919,7 @@ companies:
     name:
       - {language: en, text: Dotnetos}
     siteLink: https://dotnetos.org
+  - id: 893
+    name:
+      - {language: en, text: INESC-ID}
+    siteLink: https://www.inesc-id.pt

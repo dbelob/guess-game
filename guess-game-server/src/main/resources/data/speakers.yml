@@ -5191,7 +5191,7 @@ speakers:
     photoFileName: 0355.jpg
     name:
       - {language: en, text: "Javier García Sogo"}
-    companyIds: [288]
+    companyIds: [287]
     bio:
       - {language: en, text: "After more than 10 years of programming in C++, Javier decided to tackle the hardest problem\
             \ he had encountered: dependency management. He joined JFrog to develop Conan, the C/C++ package manager, with\
@@ -17051,7 +17051,7 @@ speakers:
     photoUpdatedAt: 2020-01-27T13:31:48.546Z[UTC]
     name:
       - {language: en, text: "Rodrigo Miragaia Rodrigues"}
-    companyIds: [275]
+    companyIds: [275, 893]
     bio:
       - language: en
         text: "A full professor (\"professor catedrático\") at IST, and a member of the INESC-ID research laboratory.\n\n\
