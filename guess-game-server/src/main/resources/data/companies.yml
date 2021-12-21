@@ -1025,7 +1025,7 @@ companies:
     siteLink: https://www.ispring.ru
   - id: 275
     name:
-      - {language: en, text: Instituto Superior Técnico}
+      - {language: en, text: "Instituto Superior Técnico"}
     siteLink: https://tecnico.ulisboa.pt
   - id: 276
     name:
@@ -1121,154 +1121,188 @@ companies:
     siteLink: http://www.kodewerk.com
   - id: 300
     name:
-      - {language: en, text: Kt.Academy}
+      - {language: en, text: "Kt. Academy"}
+    siteLink: https://kt.academy
   - id: 301
     name:
       - {language: en, text: "KTH Royal Institute of Technology"}
+    siteLink: https://www.kth.se
   - id: 302
     name:
       - {language: en, text: Lamoda}
+    siteLink: https://www.lamoda.ru
   - id: 303
     name:
       - {language: en, text: LaunchDarkly}
+    siteLink: https://launchdarkly.com
   - id: 304
     name:
       - {language: en, text: "LEDGR Inc"}
+    siteLink: https://ledgrinc.com
   - id: 305
     name:
       - {language: en, text: lessmess.agency}
+    siteLink: https://lessmess.agency
   - id: 306
     name:
-      - {language: en, text: "LG Russia R&D Lab"}
+      - {language: en, text: "LG Electronics"}
+    siteLink: https://www.lg.com
   - id: 307
     name:
       - {language: en, text: "Liberty Associates"}
+    siteLink: https://www.libertyassociates.com
   - id: 308
     name:
       - {language: en, text: "Licel Corporation"}
+    siteLink: https://licelus.com
   - id: 309
     name:
       - {language: en, text: Liferay}
+    siteLink: https://www.liferay.com
   - id: 310
     name:
       - {language: en, text: Lightbend}
+    siteLink: https://www.lightbend.com
   - id: 311
     name:
       - {language: en, text: "LINE+ Corporation"}
+    siteLink: https://linecorp.com
   - id: 312
     name:
       - {language: en, text: LINKIT}
+    siteLink: https://linkit.com
   - id: 313
     name:
       - {language: en, text: linkmeup}
+    siteLink: https://linkmeup.ru
   - id: 314
     name:
       - {language: en, text: LogMeIn}
-  - id: 315
-    name:
-      - {language: en, text: LOWL}
+    siteLink: https://www.logmein.com
   - id: 316
     name:
       - {language: en, text: "Luminis Technologies"}
+    siteLink: https://www.luminis.eu
   - id: 317
     name:
       - {language: en, text: "Lux Optics"}
+    siteLink: https://lux.camera
   - id: 318
     name:
       - {language: en, text: Luxoft}
+    siteLink: https://www.luxoft.com
   - id: 319
     name:
       - {language: en, text: Lyft}
+    siteLink: https://www.lyft.com
   - id: 320
     name:
       - {language: en, text: Macroscop}
+    siteLink: https://macroscop.com
   - id: 321
     name:
       - {language: en, text: "Mail.Ru Group"}
+    siteLink: https://mail.ru
   - id: 322
     name:
       - {language: en, text: ManyChat}
+    siteLink: https://manychat.com
   - id: 323
     name:
       - {language: en, text: Meetup}
+    siteLink: https://www.meetup.com
   - id: 324
     name:
       - {language: en, text: MEKOS}
-  - id: 325
-    name:
-      - {language: en, text: MERA}
-  - id: 326
-    name:
-      - {language: en, text: michel.codes}
+    siteLink: https://mekos.de
   - id: 327
     name:
       - {language: en, text: Micromata}
+    siteLink: https://www.micromata.de
   - id: 328
     name:
       - {language: en, text: Microsoft}
+    siteLink: https://www.microsoft.com
   - id: 329
     name:
       - {language: en, text: Midrive}
+    siteLink: https://www.midrive.com
   - id: 330
     name:
       - {language: en, text: Miles}
+    siteLink: https://www.miles.no
   - id: 331
     name:
       - {language: en, text: Miro}
+    siteLink: https://miro.com
   - id: 332
     name:
       - {language: en, text: MIT}
+    siteLink: https://www.mit.edu
   - id: 333
     name:
       - {language: en, text: mnogosdelal.ru}
-  - id: 334
-    name:
-      - {language: en, text: "Mobile People Talks"}
+    siteLink: https://mnogosdelal.ru
   - id: 335
     name:
       - {language: en, text: "Modelus LLC"}
+    siteLink: http://www.modelus.com
   - id: 336
     name:
       - {language: en, text: "Modernes C++"}
+    siteLink: https://www.modernescpp.com
   - id: 337
     name:
       - {language: en, text: Monday.com}
+    siteLink: https://monday.com
   - id: 338
     name:
       - {language: en, text: MongoDB}
+    siteLink: https://www.mongodb.com
   - id: 339
     name:
       - {language: en, text: Moovit}
+    siteLink: https://moovit.com
   - id: 340
     name:
       - {language: en, text: "Morgan Stanley"}
+    siteLink: https://www.morganstanley.com
   - id: 341
     name:
       - {language: en, text: "Morningside Light Ltd."}
+    siteLink: http://www.morninglight.co.uk
   - id: 342
     name:
       - {language: en, text: Motify}
+    siteLink: https://motify.com
   - id: 343
     name:
       - {language: en, text: Mozilla}
+    siteLink: https://www.mozilla.org
   - id: 344
     name:
       - {language: en, text: MPI-SWS}
+    siteLink: https://www.mpi-sws.org
   - id: 345
     name:
       - {language: en, text: "msu solutions GmbH"}
+    siteLink: https://msu-solutions.de
   - id: 346
     name:
       - {language: en, text: "mtrail GmbH"}
+    siteLink: https://www.mtrail.ch
   - id: 347
     name:
       - {language: en, text: Multitracks.com}
+    siteLink: https://www.multitracks.com
   - id: 348
     name:
       - {language: en, text: "Murano Software"}
+    siteLink: https://muranosoft.ru
   - id: 349
     name:
       - {language: en, text: Mustlab}
+    siteLink: http://mustlab.ru
   - id: 350
     name:
       - {language: en, text: mytaxi}
@@ -2919,7 +2953,3 @@ companies:
     name:
       - {language: en, text: Dotnetos}
     siteLink: https://dotnetos.org
-  - id: 893
-    name:
-      - {language: en, text: INESC-ID}
-    siteLink: https://www.inesc-id.pt

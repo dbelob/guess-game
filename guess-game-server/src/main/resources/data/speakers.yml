@@ -17051,7 +17051,7 @@ speakers:
     photoUpdatedAt: 2020-01-27T13:31:48.546Z[UTC]
     name:
       - {language: en, text: "Rodrigo Miragaia Rodrigues"}
-    companyIds: [275, 893]
+    companyIds: [275]
     bio:
       - language: en
         text: "A full professor (\"professor catedrático\") at IST, and a member of the INESC-ID research laboratory.\n\n\

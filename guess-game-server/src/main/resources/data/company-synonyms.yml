@@ -150,6 +150,10 @@ companySynonyms:
     synonyms: [
         "Intel Corporation"
     ]
+  - name: "Instituto Superior Técnico"
+    synonyms: [
+        IST
+    ]
   - name: "IT Territory/My.Games"
     synonyms: [
         "IT Territory/MyGames"
@@ -190,9 +194,18 @@ companySynonyms:
     synonyms: [
         Kaspersky
     ]
+  - name: "Kt. Academy"
+    synonyms: [
+        Kt.Academy
+    ]
   - name: "Last Week in AWS"
     synonyms: [
         "Editor, lastweekinaws.com"
+    ]
+  - name: "LG Electronics"
+    synonyms: [
+        LG,
+        "LG Russia R&D Lab"
     ]
   - name: MPI-SWS
     synonyms: [
