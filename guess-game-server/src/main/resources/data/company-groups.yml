@@ -21,3 +21,13 @@ companyGroups:
         "JetBrains Research",
         "NRU HSE"
     ]
+  - name: "OTS Lab / odgAssist"
+    items: [
+        "OTS Lab",
+        odgAssist
+    ]
+  - name: "Red Hat / Kiwi TCMS"
+    items: [
+        "Red Hat",
+        "Kiwi TCMS"
+    ]

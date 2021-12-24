@@ -1306,297 +1306,375 @@ companies:
   - id: 350
     name:
       - {language: en, text: mytaxi}
+    siteLink: https://www.mytaxi.com
   - id: 351
     name:
       - {language: en, text: "NEO Saint Petersburg Competence Center"}
+    siteLink: https://nspcc.ru
   - id: 352
     name:
       - {language: en, text: NestJS}
+    siteLink: https://nestjs.com
   - id: 353
     name:
       - {language: en, text: "Net Insight"}
+    siteLink: https://netinsight.net
   - id: 354
     name:
       - {language: en, text: Net2Phone}
+    siteLink: https://www.net2phone.com
   - id: 355
     name:
       - {language: en, text: Netcentric}
+    siteLink: https://www.netcentric.biz
   - id: 356
     name:
       - {language: en, text: Netcetera}
+    siteLink: https://www.netcetera.com
   - id: 357
     name:
       - {language: en, text: Netcracker}
+    siteLink: https://www.netcracker.com
   - id: 358
     name:
       - {language: en, text: Netflix}
+    siteLink: https://www.netflix.com
   - id: 359
     name:
       - {language: en, text: Netifi}
+    siteLink: https://www.netifi.com
   - id: 360
     name:
       - {language: en, text: Netlify}
+    siteLink: https://www.netlify.com
   - id: 361
     name:
       - {language: en, text: Neurosity}
+    siteLink: https://neurosity.co
   - id: 362
     name:
       - {language: en, text: "New York Times"}
+    siteLink: https://www.nytimes.com
   - id: 363
     name:
       - {language: en, text: "Neward & Associates, LLC"}
+    siteLink: https://www.newardassociates.com
   - id: 364
     name:
       - {language: en, text: Nitor}
+    siteLink: https://nitor.com
   - id: 365
     name:
       - {language: en, text: Nix}
+    siteLink: https://www.nixsolutions.com
   - id: 366
     name:
       - {language: en, text: "Node University"}
+    siteLink: https://node.university
   - id: 367
     name:
       - {language: en, text: Nokia}
+    siteLink: https://www.nokia.com
   - id: 368
     name:
       - {language: en, text: NowSecure}
+    siteLink: https://www.nowsecure.com
   - id: 369
     name:
       - {language: en, text: NRK}
+    siteLink: https://www.nrk.no
   - id: 370
     name:
       - {language: en, text: NVIDIA}
+    siteLink: https://www.nvidia.com
   - id: 371
     name:
       - {language: en, text: "NWTN Berlin"}
+    siteLink: http://www.nwtn-berlin.com
   - id: 372
     name:
       - {language: en, text: Oath}
+    siteLink: https://www.oath.com
   - id: 373
     name:
       - {language: en, text: "Object Computing"}
+    siteLink: https://objectcomputing.com
   - id: 374
     name:
       - {language: en, text: "ObjectStyle LLC"}
+    siteLink: https://www.objectstyle.com
   - id: 375
     name:
       - {language: en, text: "Ocado Technology"}
+    siteLink: https://www.ocadogroup.com
   - id: 376
     name:
       - {language: en, text: OCS.LAB}
+    siteLink: https://ocs.ru
   - id: 377
     name:
       - {language: en, text: Okko}
+    siteLink: https://okko.tv
   - id: 378
     name:
       - {language: en, text: "One Systems"}
+    siteLink: https://www.onesystems.com
   - id: 379
     name:
       - {language: en, text: onqtam.com}
+    siteLink: https://onqtam.com
   - id: 380
     name:
-      - {language: en, text: "OOO ИТИС"}
+      - {language: en, text: "OOO ITIS"}
+      - {language: ru, text: "OOO ИТИС"}
+    siteLink: http://itisinfo.ru
   - id: 381
     name:
       - {language: en, text: Opbeat}
+    siteLink: https://opbeat.com
   - id: 382
     name:
       - {language: en, text: Oper.ru}
+    siteLink: https://oper.ru
   - id: 383
     name:
       - {language: en, text: Oracle}
+    siteLink: https://www.oracle.com
   - id: 385
     name:
       - {language: en, text: ORION}
+    siteLink: https://orion.sh
   - id: 386
     name:
       - {language: en, text: "Orion Innovation"}
+    siteLink: https://www.orioninc.com
   - id: 387
     name:
       - {language: en, text: "Otomato Software"}
+    siteLink: https://otomato.io
   - id: 388
     name:
-      - {language: en, text: "OTS Lab / odgAssist"}
+      - {language: en, text: "OTS Lab"}
+    siteLink: https://www.otslab.ru
   - id: 389
     name:
-      - {language: en, text: Otus}
+      - {language: en, text: OTUS}
+    siteLink: https://otus.ru
   - id: 390
     name:
       - {language: en, text: OZON}
+    siteLink: https://www.ozon.ru
   - id: 391
     name:
       - {language: en, text: "Paladyne Systems"}
+    siteLink: https://www.paladynesys.com
   - id: 392
     name:
       - {language: en, text: "Particular Software"}
+    siteLink: https://particular.net
   - id: 393
     name:
       - {language: en, text: Paysystem.tech}
+    siteLink: https://paysystem.tech
   - id: 394
     name:
       - {language: en, text: "Peculiar Ventures"}
+    siteLink: https://peculiarventures.com
   - id: 395
     name:
       - {language: en, text: Percona}
+    siteLink: https://www.percona.com
   - id: 396
     name:
-      - {language: en, text: performance-lab.ru}
+      - {language: en, text: "Performance Lab"}
+    siteLink: https://www.performance-lab.ru
   - id: 397
     name:
       - {language: en, text: PerfPerfPerf}
+    siteLink: https://3perf.com
   - id: 398
     name:
       - {language: en, text: Petabridge}
+    siteLink: https://petabridge.com
   - id: 399
     name:
       - {language: en, text: Pinect}
+    siteLink: https://www.pinect.ru
   - id: 400
     name:
       - {language: en, text: PingCAP}
+    siteLink: https://pingcap.com
   - id: 401
     name:
       - {language: en, text: Pinterest}
+    siteLink: https://www.pinterest.com
   - id: 402
     name:
       - {language: en, text: PiterJS}
+    siteLink: https://piterjs.org
   - id: 403
     name:
       - {language: en, text: Pivotal}
+    siteLink: https://pivotal.io
   - id: 404
     name:
       - {language: en, text: Pixplicity}
+    siteLink: https://pixplicity.com
   - id: 405
     name:
       - {language: en, text: Plarium}
+    siteLink: https://plarium.com
   - id: 406
     name:
-      - {language: en, text: Platform.sh/SouJava}
+      - {language: en, text: Platform.sh}
+    siteLink: https://platform.sh
   - id: 407
     name:
       - {language: en, text: Plesk}
+    siteLink: https://www.plesk.com
   - id: 408
     name:
       - {language: en, text: Plumbr}
+    siteLink: https://plumbr.io
   - id: 409
     name:
       - {language: en, text: "Point API"}
+    siteLink: https://pointapi.com
   - id: 410
     name:
       - {language: en, text: "Positive Technologies"}
+    siteLink: https://www.ptsecurity.com
   - id: 411
     name:
       - {language: en, text: "PostgreSQL Russia"}
   - id: 412
     name:
       - {language: en, text: Postmates}
+    siteLink: https://postmates.com
   - id: 413
     name:
       - {language: en, text: "PostSharp Technologies"}
+    siteLink: https://www.postsharp.net
   - id: 414
     name:
       - {language: en, text: Pragmatists}
+    siteLink: https://pragmatists.com
   - id: 415
     name:
       - {language: en, text: Pressjitsu}
+    siteLink: https://pressjitsu.com
   - id: 416
     name:
       - {language: en, text: "Prisma AI"}
+    siteLink: https://prisma-ai.com
   - id: 417
     name:
       - {language: en, text: "Telecom Paris, Institut Polytechnique Paris"}
-  - id: 418
-    name:
-      - {language: en, text: Progress}
+    siteLink: https://www.telecom-paris.fr
   - id: 419
     name:
       - {language: en, text: "Progress Software"}
+    siteLink: https://www.progress.com
   - id: 420
     name:
       - {language: en, text: PropellerAds}
+    siteLink: https://propellerads.com
   - id: 421
     name:
       - {language: en, text: PS.kz}
+    siteLink: https://www.ps.kz
   - id: 422
     name:
       - {language: en, text: "PSPDFKit GmbH"}
+    siteLink: https://pspdfkit.com
   - id: 423
     name:
       - {language: en, text: Pulumi}
+    siteLink: https://www.pulumi.com
   - id: 424
     name:
       - {language: en, text: PVS-Studio}
+    siteLink: https://pvs-studio.com
   - id: 425
     name:
       - {language: en, text: "Qameta Software"}
+    siteLink: https://qameta.io
   - id: 426
     name:
-      - {language: en, text: qiwi.ru}
+      - {language: en, text: QIWI}
+    siteLink: https://qiwi.com
   - id: 427
     name:
       - {language: en, text: Quantori}
-  - id: 428
-    name:
-      - {language: en, text: "R.M.G. Holding B.V."}
+    siteLink: https://www.quantori.com
   - id: 429
     name:
       - {language: en, text: "Raiffeisen Bank International"}
+    siteLink: https://www.rbinternational.com
   - id: 431
     name:
       - {language: en, text: "Rambler Group"}
+    siteLink: https://rambler-co.ru
   - id: 432
     name:
       - {language: en, text: "Rancher Labs"}
+    siteLink: https://rancher.com
   - id: 433
     name:
       - {language: en, text: "Ray Wenderlich"}
+    siteLink: https://www.raywenderlich.com
   - id: 434
     name:
       - {language: en, text: RBCS}
-  - id: 435
-    name:
-      - {language: en, text: RealAdvisor}
+    siteLink: https://www.rbcs-us.com
   - id: 436
     name:
       - {language: en, text: Realdolmen}
+    siteLink: https://www.realdolmen.com
   - id: 437
     name:
       - {language: en, text: "Reality Games"}
+    siteLink: https://reality.co
   - id: 438
     name:
       - {language: en, text: "Red Hat"}
+    siteLink: https://www.redhat.com
   - id: 439
     name:
-      - {language: en, text: "Red Hat / Kiwi TCMS"}
+      - {language: en, text: "Kiwi TCMS"}
+    siteLink: https://kiwitcms.org
   - id: 440
     name:
       - {language: en, text: Redmadrobot}
+    siteLink: https://www.redmadrobot.com
   - id: 441
     name:
       - {language: en, text: Reindex}
+    siteLink: https://www.reindex.io
   - id: 442
     name:
       - {language: en, text: "Relex Oy"}
-  - id: 443
-    name:
-      - {language: en, text: Replika.ai}
+    siteLink: https://www.relexsolutions.com
   - id: 444
     name:
       - {language: en, text: "Resolve Systems"}
-  - id: 445
-    name:
-      - {language: en, text: "Resume.io / Code Hipsters"}
+    siteLink: https://resolve.io
   - id: 446
     name:
       - {language: en, text: Retable}
+    siteLink: https://www.retable.ai
   - id: 447
     name:
       - {language: en, text: Revolut}
+    siteLink: https://www.revolut.com
   - id: 448
     name:
       - {language: en, text: "Riga Dev Days"}
+    siteLink: https://rigadevdays.lv
   - id: 449
     name:
       - {language: en, text: RIGANTI}
+    siteLink: https://www.riganti.cz
   - id: 450
     name:
       - {language: en, text: RoboQA}
@@ -2902,7 +2980,8 @@ companies:
       - {language: en, text: Squire}
   - id: 877
     name:
-      - {language: en, text: "Orion Innovations"}
+      - {language: en, text: MERA}
+    siteLink: http://www.meranetworks.com
   - id: 878
     name:
       - {language: en, text: TangoMe}
@@ -2953,3 +3032,11 @@ companies:
     name:
       - {language: en, text: Dotnetos}
     siteLink: https://dotnetos.org
+  - id: 893
+    name:
+      - {language: en, text: odgAssist}
+    siteLink: https://odgassist.ru
+  - id: 894
+    name:
+      - {language: en, text: SouJava}
+    siteLink: https://soujava.org.br

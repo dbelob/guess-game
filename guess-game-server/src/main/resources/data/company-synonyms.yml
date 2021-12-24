@@ -260,9 +260,22 @@ companySynonyms:
     synonyms: [
         "Particular Software Ltd"
     ]
+  - name: "Performance Lab"
+    synonyms: [
+        performance-lab.ru
+    ]
+  - name: Platform.sh/SouJava
+    synonyms: [
+        Platform.sh,
+        SouJava
+    ]
   - name: "Postgres Professional"
     synonyms: [
         PostgresPro
+    ]
+  - name: "Progress Software"
+    synonyms: [
+        Progress
     ]
   - name: PromSvyasBank
     synonyms: [
@@ -272,6 +285,10 @@ companySynonyms:
   - name: PVS-Studio
     synonyms: [
         "PVS Studio"
+    ]
+  - name: QIWI
+    synonyms: [
+        qiwi.ru
     ]
   - name: "Rambler Group"
     synonyms: [

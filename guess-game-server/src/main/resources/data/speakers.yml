@@ -927,7 +927,7 @@ speakers:
     name:
       - {language: en, text: "Jaroslav Smirnov"}
       - {language: ru, text: "Ярослав Смирнов"}
-    companyIds: [388]
+    companyIds: [388, 893]
     bio:
       - {language: en, text: "The science and innovation chief in the optimal transport system laboratory in ITMO University.\
             \ Co-founder of odgAssist (LIMS & eQMS software). Jaroslav and his team have designed and created transport macro\
@@ -7000,6 +7000,7 @@ speakers:
             \ его версий. Занимается проектированием и построением бизнес-приложений, распределённых и отказоустойчивых си\
             стем. Отдыхает с ES, CQRS и DDD."}
     twitter: kulakovt
+    gitHub: kulakovt
   - id: 474
     photoFileName: 0474.jpg
     photoUpdatedAt: 2021-03-12T09:02:19.618Z[UTC]
@@ -8507,7 +8508,7 @@ speakers:
     photoFileName: 0584.jpg
     name:
       - {language: en, text: "Alexander Todorov"}
-    companyIds: [439]
+    companyIds: [438, 439]
     bio:
       - language: en
         text: "Alex is a Senior QA engineer and Python developer with more than 10 years of experience. He's been responsible\
@@ -9354,7 +9355,7 @@ speakers:
     photoFileName: 0642.jpg
     name:
       - {language: en, text: "Anton Angelov"}
-    companyIds: [418]
+    companyIds: [419]
     bio:
       - {language: en, text: "Anton is a Quality Assurance Architect at Progress. He is passionate about automation testing\
             \ and designing test harness and tools, having the best industry development practices in mind. Furthermore, he\
@@ -19661,7 +19662,7 @@ speakers:
     photoUpdatedAt: 2020-10-16T08:12:06.774Z[UTC]
     name:
       - {language: en, text: "Otavio Santana"}
-    companyIds: [406]
+    companyIds: [406, 894]
     bio:
       - language: en
         text: "Empowering developers worldwide to deliver better software faster, scalable in the Cloud. Otavio is a passionate\
