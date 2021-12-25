@@ -322,6 +322,10 @@ companySynonyms:
         "Samsung NEXT/GDE",
         "Samsung R&D Russia"
     ]
+  - name: SAP
+    synonyms: [
+        SAP/Gigya
+    ]
   - name: Sber
     synonyms: [
         Sberbank,

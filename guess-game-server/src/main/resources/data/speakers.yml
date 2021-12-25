@@ -7369,7 +7369,7 @@ speakers:
     name:
       - {language: en, text: "Mikhail Yarichuk"}
       - {language: ru, text: "Михаил Ярийчук"}
-    companyIds: [463]
+    companyIds: [462]
     bio:
       - {language: en, text: "Michael is an experienced full-stack developer with a background in the development of applications\
             \ and distributed systems. By day, he works at Gigya-SAP on a large scale distributed system. By night he becomes\

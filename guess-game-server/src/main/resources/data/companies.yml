@@ -1678,144 +1678,182 @@ companies:
   - id: 450
     name:
       - {language: en, text: RoboQA}
+    siteLink: https://www.roboqa.com
   - id: 451
     name:
       - {language: en, text: Robotise}
+    siteLink: https://robotise.eu
   - id: 452
     name:
       - {language: en, text: "Romero Games"}
+    siteLink: https://romerogames.com
   - id: 453
     name:
       - {language: en, text: "Roox Solutions"}
+    siteLink: https://roox.ru
   - id: 454
     name:
       - {language: en, text: "S7"}
+    siteLink: https://www.s7.ru
   - id: 456
     name:
       - {language: en, text: Salesforce}
+    siteLink: https://www.salesforce.com
   - id: 457
     name:
       - {language: en, text: Samsung}
+    siteLink: https://www.samsung.com
   - id: 460
     name:
       - {language: en, text: "San José State University"}
+    siteLink: https://www.sjsu.edu
   - id: 461
     name:
       - {language: en, text: "Sanctuary Computer"}
+    siteLink: https://www.sanctuary.computer
   - id: 462
     name:
       - {language: en, text: SAP}
-  - id: 463
-    name:
-      - {language: en, text: SAP/Gigya}
+    siteLink: https://www.sap.com
   - id: 464
     name:
       - {language: en, text: SauceLabs}
+    siteLink: https://saucelabs.com
   - id: 465
     name:
       - {language: en, text: SberDevices}
+    siteLink: https://sberdevices.ru
   - id: 466
     name:
       - {language: en, text: "Scienta AS"}
+    siteLink: https://scienta.no
   - id: 467
     name:
       - {language: en, text: Scrapinghub}
+    siteLink: https://scrapinghub.com
   - id: 468
     name:
       - {language: en, text: ScrumTrek}
+    siteLink: https://scrumtrek.ru
   - id: 469
     name:
       - {language: en, text: "SDI Media"}
+    siteLink: https://www.sdimedia.com
   - id: 470
     name:
       - {language: en, text: "Sela Group"}
+    siteLink: http://www.selagroup.com
   - id: 471
     name:
       - {language: en, text: SEMrush}
+    siteLink: https://www.semrush.com
   - id: 472
     name:
       - {language: en, text: Serverless}
+    siteLink: https://www.serverless.com
   - id: 473
     name:
       - {language: en, text: ServiceTalk}
+    siteLink: https://servicetalk.io
   - id: 474
     name:
       - {language: en, text: "Shepherd's Oasis"}
+    siteLink: https://soasis.org
   - id: 475
     name:
       - {language: en, text: Sidenis}
+    siteLink: https://syncretis.com
   - id: 476
     name:
       - {language: en, text: "Sigma Software"}
+    siteLink: https://sigma.software
   - id: 477
     name:
       - {language: en, text: Signavio}
+    siteLink: https://www.signavio.com
   - id: 478
     name:
       - {language: en, text: Simudyne}
+    siteLink: https://www.simudyne.com
   - id: 479
     name:
       - {language: en, text: SinnerSchrader}
+    siteLink: https://sinnerschrader.com
   - id: 480
     name:
       - {language: en, text: Smalley.IT}
+    siteLink: http://smalley.it
   - id: 481
     name:
       - {language: en, text: smartHelios}
   - id: 482
     name:
       - {language: en, text: "Smashing Magazine"}
+    siteLink: https://www.smashingmagazine.com
   - id: 483
     name:
       - {language: en, text: Snaptortoise}
+    siteLink: https://snaptortoise.com
   - id: 484
     name:
       - {language: en, text: "Snyk Ltd."}
+    siteLink: https://snyk.io
   - id: 485
     name:
       - {language: en, text: Software-Testing.Ru}
+    siteLink: https://software-testing.ru
   - id: 486
     name:
       - {language: en, text: SoftwareMill}
+    siteLink: https://softwaremill.com
   - id: 487
     name:
       - {language: en, text: Solanteq}
+    siteLink: https://solanteq.com
   - id: 488
     name:
       - {language: en, text: "SolarWinds MSP"}
+    siteLink: https://www.solarwindsmsp.com
   - id: 489
     name:
       - {language: en, text: SonarSource}
+    siteLink: https://www.sonarsource.com
   - id: 490
     name:
       - {language: en, text: Sonova}
+    siteLink: https://www.sonova.com
   - id: 491
     name:
       - {language: en, text: Soundbrenner}
+    siteLink: https://www.soundbrenner.com
   - id: 492
     name:
       - {language: en, text: SourceGear}
+    siteLink: https://sourcegear.com
   - id: 493
     name:
       - {language: en, text: Sourcegrounds}
+    siteLink: https://sourcegrounds.com
   - id: 494
     name:
       - {language: en, text: "Sowatec AG"}
+    siteLink: https://www.sowatec.com
   - id: 495
     name:
       - {language: en, text: Space307}
+    siteLink: https://space307.com
   - id: 496
     name:
       - {language: en, text: "Spiral Code Studio"}
+    siteLink: https://spiralcodestudio.com
   - id: 497
     name:
       - {language: en, text: Splunk}
-  - id: 498
-    name:
-      - {language: en, text: "Sportmaster Lab"}
+    siteLink: https://www.splunk.com
   - id: 499
     name:
       - {language: en, text: sporttotal.tv}
+    siteLink: https://sporttotal.tv
   - id: 500
     name:
       - {language: en, text: Spotify}
@@ -3015,12 +3053,15 @@ companies:
   - id: 887
     name:
       - {language: en, text: Reddit}
+    siteLink: https://www.reddit.com
   - id: 888
     name:
       - {language: en, text: VLC}
+    siteLink: https://www.videolan.org
   - id: 889
     name:
       - {language: en, text: Facecast}
+    siteLink: https://facecast.net
   - id: 890
     name:
       - {language: en, text: "Arktur"}
