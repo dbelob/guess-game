@@ -1425,8 +1425,8 @@ companies:
     siteLink: https://onqtam.com
   - id: 380
     name:
-      - {language: en, text: "OOO ITIS"}
-      - {language: ru, text: "OOO ИТИС"}
+      - {language: en, text: "ITIS"}
+      - {language: ru, text: "ИТИС"}
     siteLink: http://itisinfo.ru
   - id: 381
     name:
@@ -1857,153 +1857,198 @@ companies:
   - id: 500
     name:
       - {language: en, text: Spotify}
+    siteLink: https://www.spotify.com
   - id: 501
     name:
       - {language: en, text: Square}
+    siteLink: https://squareup.com
   - id: 502
     name:
       - {language: en, text: Squerist}
+    siteLink: https://www.squerist.nl
   - id: 503
     name:
       - {language: en, text: "Stack Overflow"}
+    siteLink: https://stackoverflow.com
   - id: 504
     name:
       - {language: en, text: "Staroid, Inc."}
+    siteLink: https://staroid.com
   - id: 505
     name:
       - {language: en, text: "Styra, Inc."}
+    siteLink: https://www.styra.com
   - id: 506
     name:
       - {language: en, text: Surf}
+    siteLink: https://surf.ru
   - id: 507
     name:
       - {language: en, text: Sweatcoin}
+    siteLink: https://sweatco.in
   - id: 508
     name:
       - {language: en, text: Symentis}
+    siteLink: https://www.symentis.com
   - id: 509
     name:
       - {language: en, text: TabMo}
+    siteLink: https://hawk-tech.io
   - id: 510
     name:
       - {language: en, text: Talkdesk}
+    siteLink: https://www.talkdesk.com
   - id: 511
     name:
       - {language: en, text: Tarantool}
+    siteLink: https://www.tarantool.io
   - id: 512
     name:
       - {language: en, text: Targetprocess}
+    siteLink: https://targetprocess.com
   - id: 513
     name:
       - {language: en, text: Tazeros}
+    siteLink: https://tazeros.com
   - id: 514
     name:
       - {language: en, text: teachcode.org}
+    siteLink: https://www.teachcode.org
   - id: 515
     name:
       - {language: en, text: Technion}
+    siteLink: https://www.technion.ac.il
   - id: 516
     name:
       - {language: en, text: "Tel Aviv University"}
+    siteLink: https://www.tau.ac.il
   - id: 517
     name:
       - {language: en, text: "Temporal Technologies"}
+    siteLink: https://temporal.io
   - id: 518
     name:
       - {language: en, text: "The App Business"}
+    siteLink: https://www.theappbusiness.com
   - id: 519
     name:
       - {language: en, text: "The Atlantic Systems Guild Inc."}
+    siteLink: https://systemsguild.eu
   - id: 520
     name:
       - {language: en, text: "The D Language Foundation"}
+    siteLink: https://dlang.org
   - id: 521
     name:
       - {language: en, text: "The Selenium Project"}
+    siteLink: https://www.selenium.dev
   - id: 522
     name:
       - {language: en, text: "The University of Manchester"}
+    siteLink: https://www.manchester.ac.uk
   - id: 523
     name:
       - {language: en, text: TheWhite}
+    siteLink: https://thewhite.ru
   - id: 524
     name:
       - {language: en, text: think-cell}
+    siteLink: https://www.think-cell.com
   - id: 525
     name:
       - {language: en, text: Thinkmill}
+    siteLink: https://www.thinkmill.com.au
   - id: 526
     name:
       - {language: en, text: ThoughtWorks}
+    siteLink: https://www.thoughtworks.com
   - id: 527
     name:
       - {language: en, text: TIBCO}
+    siteLink: https://www.tibco.com
   - id: 528
     name:
       - {language: en, text: "Tieto Austria GmbH"}
-  - id: 529
-    name:
-      - {language: en, text: Tinkoff.ru}
+    siteLink: https://www.tietoevry.com
   - id: 530
     name:
       - {language: en, text: Toothpic}
+    siteLink: https://www.toothpic.com
   - id: 531
     name:
       - {language: en, text: Toptal}
+    siteLink: https://www.toptal.com
   - id: 532
     name:
       - {language: en, text: ToroDB}
+    siteLink: https://www.torodb.com
   - id: 533
     name:
       - {language: en, text: "Toughbyte Ltd"}
+    siteLink: https://www.toughbyte.com
   - id: 534
     name:
       - {language: en, text: TradingView}
+    siteLink: https://www.tradingview.com
   - id: 535
     name:
       - {language: en, text: TransCrypt}
+    siteLink: https://transcrypt.eu
   - id: 536
     name:
       - {language: en, text: TransferWise}
+    siteLink: https://transferwise.com
   - id: 537
     name:
       - {language: en, text: "Trinity Digital"}
+    siteLink: https://trinitydigital.ru
   - id: 538
     name:
       - {language: en, text: "True Engineering"}
+    siteLink: https://trueengineering.ru
   - id: 539
     name:
       - {language: en, text: "TTNR Labs"}
   - id: 540
     name:
       - {language: en, text: "Tune IT"}
+    siteLink: https://www.tune-it.ru
   - id: 541
     name:
       - {language: en, text: TurtleSec}
+    siteLink: https://turtlesec.no
   - id: 542
     name:
       - {language: en, text: Tver.IO}
+    siteLink: https://tver.io
   - id: 543
     name:
       - {language: en, text: Twitter}
+    siteLink: https://twitter.com
   - id: 544
     name:
       - {language: en, text: TYME}
+    siteLink: https://www.tyme.com
   - id: 545
     name:
       - {language: en, text: "Uber Technologies"}
+    siteLink: https://www.uber.com
   - id: 546
     name:
       - {language: en, text: "Uberchord GmbH"}
+    siteLink: https://www.uberchord.com
   - id: 547
     name:
       - {language: en, text: Ubilabs}
+    siteLink: https://ubilabs.com
   - id: 548
     name:
       - {language: en, text: "Ubiquitous AS"}
+    siteLink: https://ubiquitous.no
   - id: 549
     name:
-      - {language: en, text: "UCB BioPharma"}
+      - {language: en, text: UCB}
+    siteLink: https://www.ucb.com
   - id: 550
     name:
       - {language: en, text: UCLA}
@@ -2407,6 +2452,7 @@ companies:
     name:
       - {language: en, text: Tinkoff}
       - {language: ru, text: Тинькофф}
+    siteLink: https://www.tinkoff.ru
   - id: 675
     name:
       - {language: en, text: "TCS Bank"}

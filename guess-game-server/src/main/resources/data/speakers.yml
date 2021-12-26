@@ -986,7 +986,7 @@ speakers:
     name:
       - {language: en, text: "Pavel Kondratyuk"}
       - {language: ru, text: "Павел Кондратюк"}
-    companyIds: [529]
+    companyIds: [674]
     bio:
       - {language: en, text: "Pavel is a Scala developer at Tinkoff.ru, building highload, asynchronous applications. He has\
             \ experience in Information Security and IT infrastructure administration. Interested in functional programming\
@@ -5344,7 +5344,7 @@ speakers:
     name:
       - {language: en, text: "Andrey Ermakov"}
       - {language: ru, text: "Андрей Ермаков"}
-    companyIds: [529]
+    companyIds: [674]
     bio:
       - {language: en, text: "Lead developer at Tinkoff.ru on projects for small and medium enterprise. Develops practices\
             \ of continuous delivery, creates services in Kotlin and Typescript."}
@@ -8210,6 +8210,7 @@ speakers:
             \ href=\"http://antkorwin.com/\" target=\"_blank\">блог про Java-разработку</a>. В свободное время активно ком\
             митит в open source-проекты и выступает на Java-митапах."}
     twitter: antkorwin
+    gitHub: antkorwin
     habr: antkorwin
   - id: 563
     photoFileName: 0563.jpg
@@ -10284,6 +10285,8 @@ speakers:
             \ выступает на конференциях, в свободное время занимается опенсорсом. Автор библиотеки https://github.com/tonsky/datascript\
             \ и шрифта Fira Code."}
     twitter: nikitonsky
+    gitHub: tonsky
+    habr: tonsky
   - id: 706
     photoFileName: 0706.jpg
     name:
@@ -10937,7 +10940,7 @@ speakers:
     name:
       - {language: en, text: "Aleksey Nosov"}
       - {language: ru, text: "Алексей Носов"}
-    companyIds: [529]
+    companyIds: [674]
     bio:
       - {language: en, text: "Web developer for about 5 years, developed UI for secure document flow, video streaming, and\
             \ internet banking projects."}
@@ -11747,7 +11750,7 @@ speakers:
     name:
       - {language: en, text: "Alexandr Guzenko"}
       - {language: ru, text: "Александр Гузенко"}
-    companyIds: [529]
+    companyIds: [674]
     bio:
       - {language: en, text: "Was in love with computers since childhood, literally grew up with the indusrty and was there\
             \ at the very dawn of it. Since 2015 has been writing Android apps. Worked at QIWI, Russian payment service provider,\
@@ -19341,6 +19344,8 @@ speakers:
             астью в Square, помогая в свободные минуты сделать жизнь всех Android-разработчиков компании чуть легче. Успел\
             \ увидеть тысячи модулей в монорепозиториях Uber и Square и научиться с этим жить."}
     twitter: 0leGG
+    gitHub: 0legg
+    habr: 0leGG
   - id: 1379
     photoFileName: 1379.jpg
     photoUpdatedAt: 2020-10-05T09:37:43.965Z[UTC]

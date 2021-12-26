@@ -158,6 +158,11 @@ companySynonyms:
     synonyms: [
         "IT Territory/MyGames"
     ]
+  - name: ITIS
+    synonyms: [
+        "OOO ИТИС",
+        "ООО ИТИС"
+    ]
   - name: JavaSpecialists
     synonyms: [
         JavaSpecialists.eu
@@ -350,6 +355,10 @@ companySynonyms:
     synonyms: [
         "Sportmaster Lab"
     ]
+  - name: Tinkoff
+    synonyms: [
+        Tinkoff.ru
+    ]
   - name: "Tune IT"
     synonyms: [
         Tune-IT
@@ -365,6 +374,10 @@ companySynonyms:
   - name: "Uber Technologies"
     synonyms: [
         Uber
+    ]
+  - name: UCB
+    synonyms: [
+        "UCB BioPharma"
     ]
   - name: VK
     synonyms: [
