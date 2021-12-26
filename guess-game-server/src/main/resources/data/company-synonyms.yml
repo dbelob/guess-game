@@ -212,6 +212,10 @@ companySynonyms:
         LG,
         "LG Russia R&D Lab"
     ]
+  - name: LooC
+    synonyms: [
+        www.looc.io"
+    ]
   - name: MPI-SWS
     synonyms: [
         "Max Planck Institute for Software Systems"
@@ -378,6 +382,10 @@ companySynonyms:
   - name: UCB
     synonyms: [
         "UCB BioPharma"
+    ]
+  - name: "Unity Technologies"
+    synonyms: [
+        Unity
     ]
   - name: VK
     synonyms: [

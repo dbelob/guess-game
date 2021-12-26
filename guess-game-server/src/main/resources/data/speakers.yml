@@ -8302,6 +8302,8 @@ speakers:
             \ в персональных сервисах Яндекса. Начинал как автоматизатор тестирования, да так и не заканчивал. \n\nОдин из\
             \ мейнтейнеров проектов Aerokube, в частности Selenoid. Активный участник опенсорс-сообщества."
     twitter: delnariel
+    gitHub: lanwen
+    habr: Lanwen
   - id: 569
     photoFileName: 0569.jpg
     name:
@@ -8966,7 +8968,7 @@ speakers:
     photoFileName: 0615.jpg
     name:
       - {language: en, text: "Alan Page"}
-    companyIds: [555]
+    companyIds: [556]
     bio:
       - language: en
         text: "Alan Page has been a software tester for nearly 25 years. He was the lead author of the book \"How We Test\

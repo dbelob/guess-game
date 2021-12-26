@@ -2052,153 +2052,186 @@ companies:
   - id: 550
     name:
       - {language: en, text: UCLA}
+    siteLink: https://www.ucla.edu
   - id: 551
     name:
       - {language: en, text: UiPath}
+    siteLink: https://www.uipath.com
   - id: 552
     name:
       - {language: en, text: "uKit Group"}
-  - id: 553
-    name:
-      - {language: en, text: Ullink}
+    siteLink: https://ukit.com
   - id: 554
     name:
       - {language: en, text: "Uncle Bob Consulting LLC"}
-  - id: 555
-    name:
-      - {language: en, text: Unity}
+    siteLink: http://cleancoder.com
   - id: 556
     name:
       - {language: en, text: "Unity Technologies"}
+    siteLink: https://unity.com
   - id: 557
     name:
       - {language: en, text: "University of Bern"}
+    siteLink: https://www.unibe.ch
   - id: 558
     name:
       - {language: en, text: "University of Cambridge"}
+    siteLink: https://www.cam.ac.uk
   - id: 559
     name:
       - {language: en, text: "University of Nantes"}
+    siteLink: https://english.univ-nantes.fr
   - id: 560
     name:
       - {language: en, text: "University of Rochester"}
+    siteLink: https://www.rochester.edu
   - id: 561
     name:
       - {language: en, text: "University of Texas at Austin"}
+    siteLink: https://www.utexas.edu
   - id: 562
     name:
       - {language: en, text: "University of Waterloo"}
+    siteLink: https://uwaterloo.ca
   - id: 563
     name:
       - {language: en, text: "University of Wisconsin - Madison"}
+    siteLink: https://www.wisc.edu
   - id: 564
     name:
       - {language: en, text: "University Paris East Marne la Vallee"}
+    siteLink: http://www.u-pem.fr
   - id: 565
     name:
       - {language: en, text: UNUM}
+    siteLink: https://www.unum.la
   - id: 566
     name:
       - {language: en, text: "Ursatile Ltd"}
+    siteLink: https://ursatile.com
   - id: 567
     name:
       - {language: en, text: Usetech}
+    siteLink: https://usetech.ru
   - id: 568
     name:
       - {language: en, text: "Vaadin Ltd."}
+    siteLink: https://vaadin.com
   - id: 569
     name:
       - {language: en, text: "Valorem Reply"}
+    siteLink: https://www.valoremreply.com
   - id: 570
     name:
       - {language: en, text: Variti}
+    siteLink: https://www.variti.io
   - id: 571
     name:
       - {language: en, text: "VAS Experts"}
+    siteLink: https://vasexperts.ru
   - id: 572
     name:
       - {language: en, text: "Vevy Europe S.p.A."}
+    siteLink: https://www.vevy.com
   - id: 573
     name:
       - {language: en, text: "Vinogradov IT-Beratung"}
+    siteLink: http://pro-tester.de
   - id: 574
     name:
       - {language: en, text: "Virginia Tech"}
+    siteLink: https://vt.edu
   - id: 575
     name:
       - {language: en, text: VirtualHealth}
+    siteLink: https://www.virtualhealth.com
   - id: 576
     name:
       - {language: en, text: Vivy}
+    siteLink: https://www.vivy.com
   - id: 577
     name:
       - {language: en, text: VMware}
+    siteLink: https://www.vmware.com
   - id: 578
     name:
       - {language: en, text: "Volosoft Computer and Technology"}
+    siteLink: https://volosoft.com
   - id: 579
     name:
       - {language: en, text: vvvv}
-  - id: 580
-    name:
-      - {language: en, text: Vyng}
+    siteLink: https://vvvv.org
   - id: 581
     name:
       - {language: en, text: "Wallaroo Labs"}
+    siteLink: https://www.wallaroo.ai
   - id: 582
     name:
       - {language: en, text: Wargaming}
+    siteLink: https://wargaming.com
   - id: 583
     name:
       - {language: en, text: WaveRoll.io}
+    siteLink: http://waveroll.io
   - id: 584
     name:
       - {language: en, text: Waves}
+    siteLink: https://www.waves.com
   - id: 585
     name:
       - {language: en, text: Webtide}
+    siteLink: https://webtide.com
   - id: 586
     name:
       - {language: en, text: wemake.services}
+    siteLink: https://wemake.services
   - id: 587
     name:
       - {language: en, text: willhaben}
+    siteLink: https://www.willhaben.at
   - id: 588
     name:
       - {language: en, text: "Windy Coast Consulting"}
   - id: 589
     name:
       - {language: en, text: Wintellect}
+    siteLink: https://www.wintellect.com
   - id: 590
     name:
       - {language: en, text: WiseBits}
+    siteLink: https://wisebits.com
   - id: 591
     name:
       - {language: en, text: Wix}
-  - id: 592
-    name:
-      - {language: en, text: "Wix Engineering"}
+    siteLink: https://www.wix.com
   - id: 593
     name:
       - {language: en, text: wolfSSL}
+    siteLink: https://www.wolfssl.com
   - id: 594
     name:
       - {language: en, text: Work&Co}
+    siteLink: https://work.co
   - id: 595
     name:
       - {language: en, text: Workable}
+    siteLink: https://www.workable.com
   - id: 596
     name:
       - {language: en, text: Wrike}
+    siteLink: https://www.wrike.com
   - id: 597
     name:
-      - {language: en, text: www.looc.io}
+      - {language: en, text: LooC}
+    siteLink: https://www.looc.io
   - id: 598
     name:
       - {language: en, text: "XB Software"}
+    siteLink: https://xbsoftware.com
   - id: 599
     name:
       - {language: en, text: xHUB}
+    siteLink: https://www.x-hub.io
   - id: 600
     name:
       - {language: en, text: "XP Injection"}
