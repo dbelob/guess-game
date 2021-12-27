@@ -316,6 +316,11 @@ companySynonyms:
         RaiffeisenBank,
         Райффайзенбанк
     ]
+  - name: RTSoft
+    synonyms: [
+        "CPR RTSoft",
+        "ЦПР РТСофт"
+    ]
   - name: SAP
     synonyms: [
         hybris
@@ -361,7 +366,9 @@ companySynonyms:
     ]
   - name: Tinkoff
     synonyms: [
-        Tinkoff.ru
+        Tinkoff.ru,
+        "TCS Bank",
+        "ТКС Банк"
     ]
   - name: "Tune IT"
     synonyms: [
@@ -398,6 +405,10 @@ companySynonyms:
   - name: VMware
     synonyms: [
         "VMware Tanzu"
+    ]
+  - name: "Yahoo!"
+    synonyms: [
+        "Yahoo! Research"
     ]
   - name: Yandex
     synonyms: [

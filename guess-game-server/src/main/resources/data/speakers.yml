@@ -13025,13 +13025,13 @@ speakers:
     name:
       - {language: en, text: "Kirill Bessonov"}
       - {language: ru, text: "Кирилл Бессонов"}
-    companyIds: [675]
+    companyIds: [674]
   - id: 905
     photoFileName: 0905.jpg
     name:
       - {language: en, text: "Artem Kiselev"}
       - {language: ru, text: "Артём Киселев"}
-    companyIds: [675]
+    companyIds: [674]
   - id: 906
     photoFileName: 0906.jpg
     name:
@@ -13466,6 +13466,8 @@ speakers:
             \ products."}
       - {language: ru, text: "12 лет в разработке программного обеспечения для проведения автоматизированного тестирования\
             \ аппаратуры изделий космической техники."}
+    gitHub: Alexey-Tkachenko
+    habr: a-tk
   - id: 944
     photoFileName: 0944.jpg
     name:
@@ -13886,6 +13888,8 @@ speakers:
       - {language: ru, text: "В IT c 2013 года. В разработке — с 2015. Трудился над порталом госуслуг Московской области,\
             \ медицинской видеосистемой для всей России. Сейчас участвует в разработке системы мониторинга данных в реальн\
             ом времени."}
+    gitHub: dmeatriy
+    habr: dmeatriy
   - id: 976
     photoFileName: 0976.jpg
     photoUpdatedAt: 2021-10-04T09:23:35.039Z[UTC]
@@ -17107,6 +17111,7 @@ speakers:
       - {language: ru, text: "iOS-разработчик в компании «Квадратный метр». До этого участвовал в разработке фичей и ускор\
             ения процессов разработки приложения Сбербанк-Онлайн."}
     twitter: phoe3nixx
+    gitHub: phoe3nix
   - id: 1209
     photoFileName: 1209.jpg
     photoUpdatedAt: 2020-05-12T12:06:28.869Z[UTC]
@@ -19430,6 +19435,7 @@ speakers:
       - {language: ru, text: "Долгое время работал бэкенд-разработчиком (.NET), после перекатился на кроссплатформенную мо\
             бильную разработку на Xamarin, а когда наелся ей сполна, ушел в iOS, где занимается созданием крутейших и поле\
             знейших приложений последние лет 5."}
+    gitHub: svedm
   - id: 1385
     photoFileName: 1385.jpg
     photoUpdatedAt: 2020-11-06T13:39:46.988Z[UTC]

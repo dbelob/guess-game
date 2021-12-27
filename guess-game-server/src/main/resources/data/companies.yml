@@ -800,7 +800,7 @@ companies:
   - id: 215
     name:
       - {language: en, text: "Go SPb"}
-    siteLink: https://www.meetup.com/ru-RU/Golang-Peter
+    siteLink: https://www.meetup.com/Golang-Peter
   - id: 216
     name:
       - {language: en, text: "Godel Technologies"}
@@ -2235,176 +2235,222 @@ companies:
   - id: 600
     name:
       - {language: en, text: "XP Injection"}
+    siteLink: https://xpinjection.com
   - id: 601
     name:
       - {language: en, text: Xpirit}
+    siteLink: https://xpirit.com
   - id: 602
     name:
-      - {language: en, text: "Yahoo! Research"}
+      - {language: en, text: "Yahoo!"}
+    siteLink: https://www.yahoo.com
   - id: 603
     name:
       - {language: en, text: Yota}
+    siteLink: https://www.yota.ru
   - id: 604
     name:
       - {language: en, text: Yugabyte}
+    siteLink: https://www.yugabyte.com
   - id: 605
     name:
       - {language: en, text: Zalando}
+    siteLink: https://www.zalando.com
   - id: 606
     name:
       - {language: en, text: "ZEDEDA Inc."}
+    siteLink: https://zededa.com
   - id: 607
     name:
       - {language: en, text: ZEIT}
+    siteLink: https://www.zeit.de
   - id: 608
     name:
       - {language: en, text: "ZeptoLab LLC"}
+    siteLink: https://www.zeptolab.com
   - id: 609
     name:
       - {language: en, text: Zerocracy}
+    siteLink: https://www.zerocracy.com
   - id: 610
     name:
       - {language: en, text: ÜberResearch}
+    siteLink: https://uberresearch.com
   - id: 611
     name:
       - {language: en, text: Avito}
       - {language: ru, text: Авито}
+    siteLink: https://www.avito.ru
   - id: 613
     name:
       - {language: en, text: Alfa-Bank}
       - {language: ru, text: Альфа-Банк}
+    siteLink: https://alfabank.ru
   - id: 615
     name:
       - {language: en, text: Amperka}
       - {language: ru, text: Амперка}
+    siteLink: https://amperka.ru
   - id: 616
     name:
       - {language: en, text: Bazis-Center}
       - {language: ru, text: Базис-Центр}
+    siteLink: https://www.bazissoft.ru
   - id: 617
     name:
       - {language: en, text: "BARS Group"}
       - {language: ru, text: "БАРС Груп"}
+    siteLink: https://bars.group
   - id: 618
     name:
       - {language: en, text: Beeline}
       - {language: ru, text: Билайн}
+    siteLink: https://www.beeline.ru
   - id: 619
     name:
       - {language: en, text: BKS-Technologies}
       - {language: ru, text: БКС-Технологии}
+    siteLink: https://www.bkstechnology.com
   - id: 620
     name:
       - {language: en, text: VK}
       - {language: ru, text: ВКонтакте}
+    siteLink: https://vk.com
   - id: 621
     name:
       - {language: en, text: VTB}
       - {language: ru, text: ВТБ}
+    siteLink: https://www.vtb.ru
   - id: 622
     name:
       - {language: en, text: "Dodo Pizza"}
       - {language: ru, text: "Додо Пицца"}
+    siteLink: https://dodopizza.ru
   - id: 623
     name:
       - {language: en, text: DonRiver}
       - {language: ru, text: ДонРивер}
+    siteLink: https://www.donriver.com
   - id: 624
     name:
       - {language: en, text: "Zolotaya Korona"}
       - {language: ru, text: "Золотая Корона"}
+    siteLink: https://koronapay.com
   - id: 625
     name:
       - {language: en, text: Inetra}
       - {language: ru, text: Инетра}
+    siteLink: https://inetra.ru
   - id: 626
     name:
       - {language: en, text: Intelkon}
       - {language: ru, text: ИнтелКон}
+    siteLink: https://intelkon.com
   - id: 627
     name:
       - {language: en, text: "ISP RAS"}
       - {language: ru, text: "ИСП РАН"}
+    siteLink: https://www.ispras.ru
   - id: 628
     name:
       - {language: en, text: ITMO}
       - {language: ru, text: ИТМО}
+    siteLink: https://itmo.ru
   - id: 629
     name:
       - {language: en, text: "Kaluga Astral"}
       - {language: ru, text: "Калуга Астрал"}
+    siteLink: https://astral.ru
   - id: 630
     name:
       - {language: en, text: Kontur}
       - {language: ru, text: Контур}
+    siteLink: https://kontur.ru
   - id: 631
     name:
       - {language: en, text: CardsMobile}
       - {language: ru, text: Кошелёк}
+    siteLink: https://cardsmobile.ru
   - id: 632
     name:
       - {language: en, text: "Redis creative agency"}
       - {language: ru, text: "Креативное агентство Redis"}
+    siteLink: https://redis.agency
   - id: 633
     name:
       - {language: en, text: CROC}
       - {language: ru, text: КРОК}
+    siteLink: https://www.croc.ru
   - id: 634
     name:
       - {language: en, text: KURS}
       - {language: ru, text: КУРС}
+    siteLink: https://corchestra.ru
   - id: 635
     name:
       - {language: en, text: "Kaspersky Lab"}
       - {language: ru, text: "Лаборатория Касперского"}
+    siteLink: https://www.kaspersky.com
   - id: 636
     name:
       - {language: en, text: Lanit-Tercom}
       - {language: ru, text: Ланит-Терком}
+    siteLink: https://www.lanit-tercom.ru
   - id: 637
     name:
       - {language: en, text: Levi9}
       - {language: ru, text: Леви9}
+    siteLink: https://www.levi9.com
   - id: 638
     name:
       - {language: en, text: Liptsoft}
       - {language: ru, text: Липтсофт}
+    siteLink: https://www.lipt-soft.ru
   - id: 639
     name:
       - {language: en, text: M.Video}
       - {language: ru, text: М.Видео}
+    siteLink: https://www.mvideo.ru
   - id: 640
     name:
       - {language: en, text: Mamba}
       - {language: ru, text: Мамба}
+    siteLink: https://www.mamba.ru
   - id: 641
     name:
       - {language: en, text: MegaFon}
       - {language: ru, text: МегаФон}
+    siteLink: https://www.megafon.ru
   - id: 642
     name:
       - {language: en, text: "Square meter"}
       - {language: ru, text: "Метр квадратный"}
+    siteLink: https://m2.ru
   - id: 643
     name:
       - {language: en, text: "Mir Plat.Form"}
       - {language: ru, text: "Мир Plat.Form"}
+    siteLink: https://mir-platform.ru
   - id: 646
     name:
       - {language: en, text: MyOffice}
       - {language: ru, text: МойОфис}
+    siteLink: https://myoffice.ru
   - id: 647
     name:
       - {language: en, text: Mosigra}
       - {language: ru, text: Мосигра}
+    siteLink: https://www.mosigra.ru
   - id: 648
     name:
       - {language: en, text: MTS}
       - {language: ru, text: МТС}
+    siteLink: ttps://mts.ru
   - id: 650
     name:
       - {language: en, text: "NRU HSE"}
       - {language: ru, text: "НИУ ВШЭ"}
+    siteLink: https://www.hse.ru
   - id: 651
     name:
       - {language: en, text: "Independent contractor"}
@@ -2413,26 +2459,32 @@ companies:
     name:
       - {language: en, text: Notissimus}
       - {language: ru, text: Нотиссимус}
+    siteLink: https://notissimus.com
   - id: 653
     name:
       - {language: en, text: OK.RU}
       - {language: ru, text: Одноклассники}
+    siteLink: https://ok.ru
   - id: 654
     name:
       - {language: en, text: Ontiko}
       - {language: ru, text: Онтико}
+    siteLink: https://ontico.ru
   - id: 655
     name:
       - {language: en, text: "OTP Bank Russia"}
       - {language: ru, text: "ОТП Банк"}
+    siteLink: https://www.otpbank.ru
   - id: 656
     name:
       - {language: en, text: Peleng}
       - {language: ru, text: Пеленг}
+    siteLink: https://peleng.by
   - id: 657
     name:
       - {language: en, text: "PDMI RAS"}
       - {language: ru, text: "ПОМИ РАН"}
+    siteLink: https://www.pdmi.ras.ru
   - id: 658
     name:
       - {language: en, text: "Space popularizer, Zelenyikot blogger"}
@@ -2441,34 +2493,42 @@ companies:
     name:
       - {language: en, text: "Postgres Professional"}
       - {language: ru, text: "Постгрес Профессиональный"}
+    siteLink: https://postgrespro.com
   - id: 660
     name:
       - {language: en, text: Prosoft-Systems}
       - {language: ru, text: Прософт-Системы}
+    siteLink: https://prosoftsystems.ru
   - id: 663
     name:
       - {language: en, text: Rosatom}
       - {language: ru, text: Росатом}
+    siteLink: https://rosatom.ru
   - id: 664
     name:
       - {language: en, text: "RT Labs"}
       - {language: ru, text: "РТ Лабс"}
+    siteLink: https://rtlabs.ru
   - id: 665
     name:
       - {language: en, text: Sber}
       - {language: ru, text: Сбер}
+    siteLink: https://www.sberbank.ru
   - id: 667
     name:
       - {language: en, text: SibGUTI}
       - {language: ru, text: СибГУТИ}
+    siteLink: https://sibsutis.ru
   - id: 668
     name:
       - {language: en, text: "Computer Vision Systems"}
       - {language: ru, text: "Системы компьютерного зрения"}
+    siteLink: https://comvisionsys.ru
   - id: 669
     name:
       - {language: en, text: "SKB Contur"}
       - {language: ru, text: "СКБ Контур"}
+    siteLink: https://kontur.ru
   - id: 670
     name:
       - {language: en, text: Startup}
@@ -2481,80 +2541,94 @@ companies:
     name:
       - {language: en, text: Tensor}
       - {language: ru, text: Тензор}
+    siteLink: https://tensor.ru
   - id: 674
     name:
       - {language: en, text: Tinkoff}
       - {language: ru, text: Тинькофф}
     siteLink: https://www.tinkoff.ru
-  - id: 675
-    name:
-      - {language: en, text: "TCS Bank"}
-      - {language: ru, text: "ТКС Банк"}
   - id: 676
     name:
       - {language: en, text: Tutu.ru}
       - {language: ru, text: Туту.ру}
+    siteLink: https://www.tutu.ru
   - id: 677
     name:
       - {language: en, text: "University Of Dmitry Pozharsky"}
       - {language: ru, text: "Университет Дмитрия Пожарского"}
+    siteLink: http://usdp.ru
   - id: 678
     name:
       - {language: en, text: "Innopolis University"}
       - {language: ru, text: "Университет Иннополис"}
+    siteLink: https://innopolis.university
   - id: 679
     name:
       - {language: en, text: Unipro}
       - {language: ru, text: Унипро}
+    siteLink: https://unipro.ru
   - id: 680
     name:
       - {language: en, text: "Fast Reports"}
       - {language: ru, text: "Фаст Репортс"}
+    siteLink: https://www.fastreport.ru
   - id: 681
     name:
       - {language: en, text: Flant}
       - {language: ru, text: Флант}
+    siteLink: https://flant.ru
   - id: 682
     name:
       - {language: en, text: "HighTech Group"}
       - {language: ru, text: "Хайтек Груп"}
+    siteLink: https://hightech.group
   - id: 683
     name:
       - {language: en, text: CIAN}
       - {language: ru, text: ЦИАН}
+    siteLink: https://www.cian.ru
   - id: 684
     name:
-      - {language: en, text: "CPR RTSoft"}
-      - {language: ru, text: "ЦПР РТСофт"}
+      - {language: en, text: RTSoft}
+      - {language: ru, text: РТСофт}
+    siteLink: https://www.rtsoft.ru
   - id: 685
     name:
       - {language: en, text: STC}
       - {language: ru, text: ЦРТ}
+    siteLink: https://www.speechpro.ru
   - id: 686
     name:
       - {language: en, text: CFT}
       - {language: ru, text: ЦФТ}
+    siteLink: https://www.cft.ru
   - id: 687
     name:
       - {language: en, text: "Express 42"}
       - {language: ru, text: "Экспресс 42"}
+    siteLink: https://express42.com
   - id: 688
     name:
       - {language: en, text: Youla}
       - {language: ru, text: Юла}
+    siteLink: https://youla.ru
   - id: 689
     name:
       - {language: en, text: Yandex}
       - {language: ru, text: Яндекс}
+    siteLink: https://yandex.ru
   - id: 697
     name:
       - {language: en, text: "Russian Microsoft MVP Community"}
+    siteLink: https://www.meetup.com/Russian-MVP-Community
   - id: 698
     name:
       - {language: en, text: Datadog}
+    siteLink: https://www.datadoghq.com
   - id: 699
     name:
       - {language: en, text: "Fontem Ventures"}
+    siteLink: https://www.fontemventures.com
   - id: 700
     name:
       - {language: en, text: "Virtual machinist"}
