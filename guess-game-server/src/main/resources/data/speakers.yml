@@ -7441,6 +7441,7 @@ speakers:
             \ at Udemy."
       - {language: ru, text: "Более 10 лет разрабатывает кровавый Enterprise на C# и .NET. Текущая область интересов — арх\
             итектура и паттерны проектирования. Считает, что лучшая метафора для архитектуры ПО, это не луковица, а баян."}
+    gitHub: denis-tsv
   - id: 501
     photoFileName: 0501.jpg
     photoUpdatedAt: 2021-04-13T18:05:51.392Z[UTC]
@@ -8695,6 +8696,7 @@ speakers:
             \ Лаборатории Касперского, многопользовательскую игру в Mail.ru и сервис расчёта валютных цен в Deutsche Bank.\
             \ Интересуется тестированием крупномасштабных backend и распределённых систем."}
     twitter: asatarin
+    gitHub: asatarin
   - id: 598
     photoFileName: 0598.jpg
     name:

@@ -2129,10 +2129,6 @@ companies:
     name:
       - {language: en, text: "VAS Experts"}
     siteLink: https://vasexperts.ru
-  - id: 572
-    name:
-      - {language: en, text: "Vevy Europe S.p.A."}
-    siteLink: https://www.vevy.com
   - id: 573
     name:
       - {language: en, text: "Vinogradov IT-Beratung"}
@@ -2636,299 +2632,383 @@ companies:
   - id: 701
     name:
       - {language: en, text: Canva}
+    siteLink: https://www.canva.com
   - id: 702
     name:
       - {language: en, text: Synthesized}
+    siteLink: https://www.synthesized.io
   - id: 703
     name:
       - {language: en, text: Matemarketing}
       - {language: ru, text: Матемаркетинг}
+    siteLink: https://matemarketing.ru
   - id: 704
     name:
       - {language: en, text: "Test IT"}
+    siteLink: https://testit.software
   - id: 705
     name:
-      - {language: en, text: KEENTOOLS}
+      - {language: en, text: KeenTools}
+    siteLink: https://keentools.io
   - id: 706
     name:
       - {language: en, text: "Flow Health"}
+    siteLink: https://www.flowhealth.com
   - id: 707
     name:
       - {language: en, text: "PrecisionLender, a Q2 Company"}
+    siteLink: https://precisionlender.com
   - id: 708
     name:
       - {language: en, text: "ETH Zurich"}
+    siteLink: https://ethz.ch
   - id: 709
     name:
       - {language: en, text: TestinGil}
+    siteLink: http://www.testingil.com
   - id: 710
     name:
       - {language: en, text: Fleetcor}
+    siteLink: https://www.fleetcor.com
   - id: 711
     name:
       - {language: en, text: "Zyfra Group"}
       - {language: ru, text: "ГК Цифра"}
+    siteLink: https://www.zyfra.com
   - id: 712
     name:
       - {language: en, text: Technokratos}
       - {language: ru, text: Технократия}
+    siteLink: https://technokratos.com
   - id: 713
     name:
       - {language: en, text: "Savage Software Group"}
+    siteLink: https://savage.si
   - id: 714
     name:
       - {language: en, text: Distillery}
+    siteLink: https://distillery.com
   - id: 715
     name:
       - {language: en, text: DomClick}
       - {language: ru, text: ДомКлик}
+    siteLink: https://domclick.ru
   - id: 716
     name:
       - {language: en, text: "Vivid Money"}
+    siteLink: https://vivid.money
   - id: 717
     name:
       - {language: en, text: Auto.ru}
       - {language: ru, text: Авто.ру}
+    siteLink: https://auto.ru
   - id: 719
     name:
       - {language: en, text: INOSTUDIO}
+    siteLink: https://inostudio.com
   - id: 720
     name:
       - {language: en, text: RBC}
       - {language: ru, text: РБК}
+    siteLink: https://www.rbc.ru
   - id: 721
     name:
       - {language: en, text: "Doctor Evidence"}
+    siteLink: https://www.drevidence.com
   - id: 722
     name:
       - {language: en, text: Vsegda.Da}
       - {language: ru, text: Всегда.Да}
+    siteLink: https://vsegda-da.com
   - id: 723
     name:
       - {language: en, text: "Eclipse Foundation"}
+    siteLink: https://www.eclipse.org
   - id: 724
     name:
       - {language: en, text: "New Relic"}
+    siteLink: https://newrelic.com
   - id: 725
     name:
       - {language: en, text: SoftwareGarden.dev}
+    siteLink: https://softwaregarden.dev
   - id: 726
     name:
       - {language: en, text: Arenum}
+    siteLink: https://arenum.games
   - id: 727
     name:
       - {language: en, text: "OnTarget Group, Inc."}
+    siteLink: https://ontarget-group.com
   - id: 728
     name:
       - {language: en, text: Accenture}
+    siteLink: https://www.accenture.com
   - id: 729
     name:
       - {language: en, text: Sportmaster}
       - {language: ru, text: Спортмастер}
+    siteLink: https://sportmaster.com
   - id: 730
     name:
       - {language: en, text: Arrival}
+    siteLink: https://arrival.com
   - id: 731
     name:
       - {language: en, text: Lineate}
+    siteLink: https://lineate.ru
   - id: 732
     name:
       - {language: en, text: Werkspot}
+    siteLink: https://www.werkspot.nl
   - id: 733
     name:
       - {language: en, text: "MetaCall OÜ"}
+    siteLink: https://metacall.io
   - id: 734
     name:
       - {language: en, text: ClauseMatch}
+    siteLink: https://www.clausematch.com
   - id: 735
     name:
-      - {language: en, text: resume.io}
+      - {language: en, text: Resume.io}
+    siteLink: https://resume.io
   - id: 736
     name:
       - {language: en, text: Deltatre}
+    siteLink: https://www.deltatre.com
   - id: 737
     name:
       - {language: en, text: "OpenSoft Inc"}
+    siteLink: http://www.opensoftinc.net
   - id: 738
     name:
       - {language: en, text: SpurIT}
+    siteLink: https://spur-i-t.com
   - id: 739
     name:
       - {language: en, text: "ECOMMPAY IT"}
+    siteLink: https://ecommpay.com
   - id: 740
     name:
       - {language: en, text: UBS}
+    siteLink: https://www.ubs.com
   - id: 741
     name:
       - {language: en, text: "Involved NV"}
+    siteLink: https://www.involved-it.be
   - id: 742
     name:
       - {language: en, text: "Hibernating Rhinos"}
+    siteLink: https://hibernatingrhinos.com
   - id: 743
     name:
       - {language: en, text: SoftPro}
+    siteLink: https://softpro.com
   - id: 744
     name:
       - {language: en, text: "Vevy Europe"}
+    siteLink: https://www.vevy.com
   - id: 745
     name:
       - {language: en, text: "Active Solution"}
+    siteLink: https://www.activesolution.se
   - id: 746
     name:
       - {language: en, text: "Uno Platform"}
+    siteLink: https://platform.uno
   - id: 747
     name:
       - {language: en, text: "ServiceTitan, Inc."}
-  - id: 748
-    name:
-      - {language: en, text: Invent}
+    siteLink: https://www.servicetitan.com
   - id: 749
     name:
       - {language: en, text: Monopoly}
       - {language: ru, text: "ГК Монополия"}
+    siteLink: https://monopoly.ru
   - id: 750
     name:
       - {language: en, text: "Orbital Express"}
+    siteLink: https://orbital.express
   - id: 751
     name:
       - {language: en, text: Mindbox}
+    siteLink: https://mindbox.ru
   - id: 752
     name:
       - {language: en, text: Selectel}
+    siteLink: https://selectel.ru
   - id: 753
     name:
       - {language: en, text: Oncoshot}
+    siteLink: https://www.oncoshot.com
   - id: 754
     name:
       - {language: en, text: Karuna}
+    siteLink: https://karuna.group
   - id: 755
     name:
       - {language: en, text: SolidBridge}
+    siteLink: https://solid-bridge.pt
   - id: 756
     name:
       - {language: en, text: "Carnegie Mellon University"}
+    siteLink: https://www.cmu.edu
   - id: 757
     name:
       - {language: en, text: DianemoDB}
+    siteLink: http://dianemodb.com
   - id: 758
     name:
       - {language: en, text: "Sii Poland"}
+    siteLink: https://sii.pl
   - id: 759
     name:
       - {language: en, text: "Cockroach Labs"}
+    siteLink: https://www.cockroachlabs.com
   - id: 760
     name:
       - {language: en, text: Vectorized}
+    siteLink: https://vectorized.io
   - id: 761
     name:
       - {language: en, text: "Android Broadcast"}
+    siteLink: https://androidbroadcast.dev
   - id: 762
     name:
       - {language: en, text: PulsePoint}
+    siteLink: https://pulsepoint.com
   - id: 763
     name:
       - {language: en, text: "ANNA Money"}
+    siteLink: https://anna.money
   - id: 764
     name:
       - {language: en, text: ExoAtlet}
       - {language: ru, text: ЭкзоАтлет}
+    siteLink: https://exoatlet.ru
   - id: 766
     name:
       - {language: en, text: "Filina Consulting"}
+    siteLink: https://afilina.com
   - id: 767
     name:
       - {language: en, text: Automician}
+    siteLink: http://automician.com
   - id: 768
     name:
       - {language: en, text: GustoHQ}
+    siteLink: https://gusto.com
   - id: 770
     name:
       - {language: en, text: Citymobil}
       - {language: ru, text: Ситимобил}
+    siteLink: https://city-mobil.ru
   - id: 771
     name:
       - {language: en, text: "Inspired Testing"}
+    siteLink: https://www.inspiredtesting.com
   - id: 773
     name:
       - {language: en, text: YADRO}
+    siteLink: https://yadro.com
   - id: 774
     name:
       - {language: en, text: Wolt}
+    siteLink: https://wolt.com
   - id: 775
     name:
       - {language: en, text: PromSvyasBank}
       - {language: ru, text: Промсвязьбанк}
+    siteLink: https://www.psbank.ru
   - id: 776
     name:
       - {language: en, text: Samokat}
       - {language: ru, text: Самокат}
+    siteLink: https://samokat.ru
   - id: 777
     name:
-      - {language: en, text: skyhive.ai}
-  - id: 778
-    name:
-      - {language: en, text: "Ozon Fintech"}
+      - {language: en, text: SkyHive}
+    siteLink: https://www.skyhive.ai
   - id: 779
     name:
-      - {language: en, text: Astronomer.io}
+      - {language: en, text: Astronomer}
+    siteLink: https://www.astronomer.io
   - id: 780
     name:
       - {language: en, text: Infoculture}
       - {language: ru, text: Инфокультура}
+    siteLink: https://www.infoculture.ru
   - id: 781
     name:
       - {language: en, text: "Databricks Inc"}
+    siteLink: https://databricks.com
   - id: 782
     name:
       - {language: en, text: "Querify Labs"}
+    siteLink: https://www.querifylabs.com
   - id: 783
     name:
       - {language: en, text: Tele2}
+    siteLink: https://www.tele2.com
   - id: 784
     name:
       - {language: en, text: Profitero}
+    siteLink: https://www.profitero.com
   - id: 785
     name:
       - {language: en, text: Vertica}
+    siteLink: https://www.vertica.com
   - id: 786
     name:
-      - {language: en, text: eyeota.com}
+      - {language: en, text: Eyeota}
+    siteLink: https://www.eyeota.com
   - id: 787
     name:
       - {language: en, text: "Leroy Merlin"}
+    siteLink: https://www.leroymerlin.com
   - id: 788
     name:
       - {language: en, text: Dremio}
+    siteLink: https://www.dremio.com
   - id: 789
     name:
       - {language: en, text: "Cherry Labs"}
+    siteLink: https://www.cherrylabs.ai
   - id: 790
     name:
       - {language: en, text: Exasol}
+    siteLink: https://www.exasol.com
   - id: 791
     name:
       - {language: en, text: Treeverse}
+    siteLink: https://www.treeverse.net
   - id: 792
     name:
       - {language: en, text: "Valiotti Analytics"}
+    siteLink: https://valiotti.com
   - id: 793
     name:
       - {language: en, text: Evolution}
   - id: 794
     name:
       - {language: en, text: Iyuno-SDI}
+    siteLink: https://iyuno-sdi.com
   - id: 795
     name:
       - {language: en, text: "The Data Farm"}
+    siteLink: https://thedatafarm.com
   - id: 796
     name:
       - {language: en, text: DevBrothers}
   - id: 798
     name:
       - {language: en, text: "The Secret Circle Solutions"}
+    siteLink: https://secretcircle.solutions
   - id: 799
     name:
       - {language: en, text: Witailer}
+    siteLink: https://www.witailer.com
   - id: 800
     name:
       - {language: en, text: "72 Services LLC"}

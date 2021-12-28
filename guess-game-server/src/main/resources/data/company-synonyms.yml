@@ -30,6 +30,10 @@ companySynonyms:
     synonyms: [
         "Arrival Ltd"
     ]
+  - name: Astronomer
+    synonyms: [
+        Astronomer.io
+    ]
   - name: "Avast Software"
     synonyms: [
         AVAST
@@ -113,6 +117,10 @@ companySynonyms:
   - name: Egeniq
     synonyms: [
         "Google Developer Expert for Android / Egeniq"
+    ]
+  - name: Eyeota
+    synonyms: [
+        eyeota.com
     ]
   - name: GitLab
     synonyms: [
@@ -360,6 +368,10 @@ companySynonyms:
     synonyms: [
         Skeyng
     ]
+  - name: SkyHive
+    synonyms: [
+        skyhive.ai
+    ]
   - name: Sportmaster
     synonyms: [
         "Sportmaster Lab"
@@ -393,6 +405,10 @@ companySynonyms:
   - name: "Unity Technologies"
     synonyms: [
         Unity
+    ]
+  - name: "Vevy Europe"
+    synonyms: [
+        "Vevy Europe S.p.A."
     ]
   - name: VK
     synonyms: [
