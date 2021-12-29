@@ -28,7 +28,8 @@ companySynonyms:
     ]
   - name: Arrival
     synonyms: [
-        "Arrival Ltd"
+        "Arrival Ltd",
+        "Arrival Robotics"
     ]
   - name: Astronomer
     synonyms: [
@@ -101,6 +102,10 @@ companySynonyms:
   - name: "Dev Academy"
     synonyms: [
         angular-academy.com
+    ]
+  - name: DINS
+    synonyms: [
+        "DINO Systems"
     ]
   - name: dotdigital
     synonyms: [
@@ -186,6 +191,11 @@ companySynonyms:
   - name: "JUG Ru Group"
     synonyms: [
         "JUG.ru Group"
+    ]
+  - name: Kontur
+    synonyms: [
+        "SKB Contur",
+        "СКБ Контур"
     ]
   - name: LightSource
     synonyms: [
@@ -337,6 +347,10 @@ companySynonyms:
     synonyms: [
         hybris
     ]
+  - name: "Self Employed"
+    synonyms: [
+        Self-employed
+    ]
   - name: S7
     synonyms: [
         "S7 IT",
@@ -469,5 +483,7 @@ companySynonyms:
     synonyms: [
         "Author of \"The C++ Standard Library\" and \"C++ Templates\"",
         "Автор книг «The C++ Standard Library» и «C++ Templates»",
-        "Acme Corp"
+        "Acme Corp",
+        Startup,
+        Стартап
     ]

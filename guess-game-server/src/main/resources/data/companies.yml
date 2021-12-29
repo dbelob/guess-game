@@ -146,9 +146,6 @@ companies:
     name:
       - {language: en, text: AngularZone}
     siteLink: https://www.meetup.com/AngularZone
-  - id: 38
-    name:
-      - {language: en, text: "Apache Ignite Committer"}
   - id: 39
     name:
       - {language: en, text: "App in the Air"}
@@ -189,10 +186,6 @@ companies:
     name:
       - {language: en, text: Arenadata}
     siteLink: https://arenadata.tech
-  - id: 50
-    name:
-      - {language: en, text: "Arrival Robotics"}
-    siteLink: https://arrival.com
   - id: 51
     name:
       - {language: en, text: "Artec 3D"}
@@ -564,10 +557,6 @@ companies:
     name:
       - {language: en, text: "Digital Zone"}
     siteLink: https://dz.ru
-  - id: 155
-    name:
-      - {language: en, text: "DINO Systems"}
-    siteLink: https://dins.ru
   - id: 156
     name:
       - {language: en, text: DINS}
@@ -1786,6 +1775,7 @@ companies:
   - id: 481
     name:
       - {language: en, text: smartHelios}
+    siteLink: https://smarthelios.de
   - id: 482
     name:
       - {language: en, text: "Smashing Magazine"}
@@ -2347,11 +2337,6 @@ companies:
       - {language: en, text: "ISP RAS"}
       - {language: ru, text: "ИСП РАН"}
     siteLink: https://www.ispras.ru
-  - id: 628
-    name:
-      - {language: en, text: ITMO}
-      - {language: ru, text: ИТМО}
-    siteLink: https://itmo.ru
   - id: 629
     name:
       - {language: en, text: "Kaluga Astral"}
@@ -2481,10 +2466,6 @@ companies:
       - {language: en, text: "PDMI RAS"}
       - {language: ru, text: "ПОМИ РАН"}
     siteLink: https://www.pdmi.ras.ru
-  - id: 658
-    name:
-      - {language: en, text: "Space popularizer, Zelenyikot blogger"}
-      - {language: ru, text: "Популяризатор космонавтики, блогер Zelenyikot"}
   - id: 659
     name:
       - {language: en, text: "Postgres Professional"}
@@ -2520,19 +2501,11 @@ companies:
       - {language: en, text: "Computer Vision Systems"}
       - {language: ru, text: "Системы компьютерного зрения"}
     siteLink: https://comvisionsys.ru
-  - id: 669
-    name:
-      - {language: en, text: "SKB Contur"}
-      - {language: ru, text: "СКБ Контур"}
-    siteLink: https://kontur.ru
-  - id: 670
-    name:
-      - {language: en, text: Startup}
-      - {language: ru, text: Стартап}
   - id: 671
     name:
-      - {language: en, text: Tamtek}
-      - {language: ru, text: Тамтек}
+      - {language: en, text: "Thumbtack Technology"}
+      - {language: ru, text: Тамтэк}
+    siteLink: https://www.thumbtack.ru
   - id: 672
     name:
       - {language: en, text: Tensor}
@@ -3182,9 +3155,6 @@ companies:
     name:
       - {language: en, text: luna}
     siteLink: https://www.missionluna.ru
-  - id: 843
-    name:
-      - {language: en, text: Self-employed}
   - id: 844
     name:
       - {language: en, text: Gazprombank}

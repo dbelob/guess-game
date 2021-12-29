@@ -576,7 +576,7 @@ speakers:
     name:
       - {language: en, text: "Alexey Zinoviev"}
       - {language: ru, text: "Алексей Зиновьев"}
-    companyIds: [38]
+    companyIds: [286]
     bio:
       - {language: en, text: "Just as Charon from the Greek myths, Alexey helps people to get from one side to the other,\
             \ the sides being Java and Big Data in his case. Or, in more simple words, he is a trainer at EPAM Systems. He\
@@ -1281,7 +1281,7 @@ speakers:
     photoUpdatedAt: 2019-07-30T08:02:32.434Z[UTC]
     name:
       - {language: en, text: "Sebastian Daschner"}
-    companyIds: [843]
+    companyIds: [885]
     bio:
       - {language: en, text: "Sebastian Daschner is a self-employed Java consultant, author and trainer and is enthusiastic\
             \ about programming and Java. He is the author of the book \"Architecting Modern Java EE Applications\". Sebastian\
@@ -1712,7 +1712,7 @@ speakers:
     name:
       - {language: en, text: "Ivan Osipov"}
       - {language: ru, text: "Иван Осипов"}
-    companyIds: [50]
+    companyIds: [730]
     bio:
       - language: ru
         text: "Всю свою карьеру Иван разрабатывает и развивает бекенды веб приложений. Разработка серверсайда начала прино\
@@ -1721,6 +1721,7 @@ speakers:
             й стороны объединяет дизайнеров электротранспорта, а с другой гибкую роботическую фабрику. В перерывах между г\
             енерацией spring boot приложений Иван пишет телеграм-блог <a href=\"https://t.me/from_junior_to_senior\" target=\"\
             _blank\">@from_junior_to_senior</a>."
+    twitter: _osipov_
     gitHub: ivan-osipov
     habr: i_osipov
   - id: 102
@@ -4621,7 +4622,7 @@ speakers:
     name:
       - {language: en, text: "Alexey Potapov"}
       - {language: ru, text: "Алексей Потапов"}
-    companyIds: [628]
+    companyIds: [279]
     bio:
       - {language: en, text: "Doctor of Science. Professor at the Department of Computer Photonics and Videomatics of ITMO\
             \ University. 20 years of experience in R&D and academic research projects in the fields of computer vision, pattern\
@@ -7300,7 +7301,7 @@ speakers:
     name:
       - {language: en, text: "Igor Chevdar"}
       - {language: ru, text: "Игорь Чевдарь"}
-    companyIds: [669]
+    companyIds: [630]
     bio:
       - {language: en, text: "Member of two finals ACM ICPC 2007–2009. .NET Developer since 2007. He is fond of the low-level\
             \ optimizations and machine learning."}
@@ -9434,7 +9435,7 @@ speakers:
     name:
       - {language: en, text: "Dmitry Krasilnikov"}
       - {language: ru, text: "Дмитрий Красильников"}
-    companyIds: [155]
+    companyIds: [156]
     bio:
       - {language: en, text: "A good tester and a bad man. Yesterday fully racked applications for Smart TV, and now keeps\
             \ in suspense development department at DINO Systems."}
@@ -9458,7 +9459,7 @@ speakers:
     name:
       - {language: en, text: "Andrey Smirnov"}
       - {language: ru, text: "Андрей Смирнов"}
-    companyIds: [155]
+    companyIds: [156]
     bio:
       - {language: en, text: "Made equipment for satellite monitoring, then it was tested. A couple of years got into the\
             \ company-developer of software for the London Insurance Exchange. Currently, Andrey is testing backend telecommunications\
@@ -10191,7 +10192,7 @@ speakers:
     name:
       - {language: en, text: "Vsevolod Rodionov"}
       - {language: ru, text: "Всеволод Родионов"}
-    companyIds: [670]
+    companyIds: []
     bio:
       - {language: en, text: "Lead software engineer."}
     twitter: jabher
@@ -21537,7 +21538,7 @@ speakers:
     name:
       - {language: en, text: "Konstantin Volivach"}
       - {language: ru, text: "Константин Воливач"}
-    companyIds: [669]
+    companyIds: [630]
     bio:
       - language: en
         text: "Konstantin Volivach is Teamlead at SKB Kontur, for some time worked at Eltex, periodically contributes to\
