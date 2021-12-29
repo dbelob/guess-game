@@ -19,6 +19,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZonedDateTime;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -1617,6 +1618,12 @@ public class ConferenceDataLoader {
         return venueAddress;
     }
 
+    /**
+     * Checks number of links on video for events.
+     *
+     * @throws SpeakerDuplicatedException if speaker duplicated
+     * @throws IOException                if resource files could not be opened
+     */
     static void checkVideoLinks() throws SpeakerDuplicatedException, IOException {
         // Read event types, places, events, companies, speakers, talks from resource files
         var resourceSourceInformation = YamlUtils.readSourceInformation();
@@ -1649,6 +1656,37 @@ public class ConferenceDataLoader {
         });
     }
 
+    /**
+     * Checks companies site links.
+     *
+     * @throws SpeakerDuplicatedException if speaker duplicated
+     * @throws IOException                if resource files could not be opened
+     */
+    static void checkCompanies() throws SpeakerDuplicatedException, IOException {
+        var resourceSourceInformation = YamlUtils.readSourceInformation();
+        var companies = resourceSourceInformation.getCompanies();
+        var number = new AtomicInteger();
+
+        log.info("Companies without site link:");
+        companies.stream()
+                .filter(c -> (c.getSiteLink() == null) || c.getSiteLink().trim().isEmpty())
+                .map(c -> LocalizationUtils.getString(c.getName(), Language.ENGLISH))
+                .sorted()
+                .forEach(e -> log.info("{}: {}", number.incrementAndGet(), e));
+
+        number.set(0);
+        log.info("");
+        log.info("Companies with duplicate site links:");
+        companies.stream()
+                .filter(c -> (c.getSiteLink() != null) && !c.getSiteLink().trim().isEmpty())
+                .collect(Collectors.groupingBy(Company::getSiteLink))
+                .entrySet().stream()
+                .filter(e -> e.getValue().size() > 1)
+                .map(Map.Entry::getKey)
+                .sorted()
+                .forEach(e -> log.info("{}: {}", number.incrementAndGet(), e));
+    }
+
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         // Uncomment one of lines and run
 
@@ -1661,6 +1699,9 @@ public class ConferenceDataLoader {
 
         // Check video links
 //        checkVideoLinks();
+
+        // Check companies
+//        checkCompanies();
 
         // Load talks, speaker and event
         // 2016

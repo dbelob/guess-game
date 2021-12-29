@@ -576,7 +576,7 @@ speakers:
     name:
       - {language: en, text: "Alexey Zinoviev"}
       - {language: ru, text: "Алексей Зиновьев"}
-    companyIds: [38]
+    companyIds: [286]
     bio:
       - {language: en, text: "Just as Charon from the Greek myths, Alexey helps people to get from one side to the other,\
             \ the sides being Java and Big Data in his case. Or, in more simple words, he is a trainer at EPAM Systems. He\
@@ -986,7 +986,7 @@ speakers:
     name:
       - {language: en, text: "Pavel Kondratyuk"}
       - {language: ru, text: "Павел Кондратюк"}
-    companyIds: [529]
+    companyIds: [674]
     bio:
       - {language: en, text: "Pavel is a Scala developer at Tinkoff.ru, building highload, asynchronous applications. He has\
             \ experience in Information Security and IT infrastructure administration. Interested in functional programming\
@@ -1281,7 +1281,7 @@ speakers:
     photoUpdatedAt: 2019-07-30T08:02:32.434Z[UTC]
     name:
       - {language: en, text: "Sebastian Daschner"}
-    companyIds: [843]
+    companyIds: [885]
     bio:
       - {language: en, text: "Sebastian Daschner is a self-employed Java consultant, author and trainer and is enthusiastic\
             \ about programming and Java. He is the author of the book \"Architecting Modern Java EE Applications\". Sebastian\
@@ -1712,7 +1712,7 @@ speakers:
     name:
       - {language: en, text: "Ivan Osipov"}
       - {language: ru, text: "Иван Осипов"}
-    companyIds: [50]
+    companyIds: [730]
     bio:
       - language: ru
         text: "Всю свою карьеру Иван разрабатывает и развивает бекенды веб приложений. Разработка серверсайда начала прино\
@@ -1721,6 +1721,7 @@ speakers:
             й стороны объединяет дизайнеров электротранспорта, а с другой гибкую роботическую фабрику. В перерывах между г\
             енерацией spring boot приложений Иван пишет телеграм-блог <a href=\"https://t.me/from_junior_to_senior\" target=\"\
             _blank\">@from_junior_to_senior</a>."
+    twitter: _osipov_
     gitHub: ivan-osipov
     habr: i_osipov
   - id: 102
@@ -4621,7 +4622,7 @@ speakers:
     name:
       - {language: en, text: "Alexey Potapov"}
       - {language: ru, text: "Алексей Потапов"}
-    companyIds: [628]
+    companyIds: [279]
     bio:
       - {language: en, text: "Doctor of Science. Professor at the Department of Computer Photonics and Videomatics of ITMO\
             \ University. 20 years of experience in R&D and academic research projects in the fields of computer vision, pattern\
@@ -5344,7 +5345,7 @@ speakers:
     name:
       - {language: en, text: "Andrey Ermakov"}
       - {language: ru, text: "Андрей Ермаков"}
-    companyIds: [529]
+    companyIds: [674]
     bio:
       - {language: en, text: "Lead developer at Tinkoff.ru on projects for small and medium enterprise. Develops practices\
             \ of continuous delivery, creates services in Kotlin and Typescript."}
@@ -7300,7 +7301,7 @@ speakers:
     name:
       - {language: en, text: "Igor Chevdar"}
       - {language: ru, text: "Игорь Чевдарь"}
-    companyIds: [669]
+    companyIds: [630]
     bio:
       - {language: en, text: "Member of two finals ACM ICPC 2007–2009. .NET Developer since 2007. He is fond of the low-level\
             \ optimizations and machine learning."}
@@ -7369,7 +7370,7 @@ speakers:
     name:
       - {language: en, text: "Mikhail Yarichuk"}
       - {language: ru, text: "Михаил Ярийчук"}
-    companyIds: [463]
+    companyIds: [462]
     bio:
       - {language: en, text: "Michael is an experienced full-stack developer with a background in the development of applications\
             \ and distributed systems. By day, he works at Gigya-SAP on a large scale distributed system. By night he becomes\
@@ -7441,6 +7442,7 @@ speakers:
             \ at Udemy."
       - {language: ru, text: "Более 10 лет разрабатывает кровавый Enterprise на C# и .NET. Текущая область интересов — арх\
             итектура и паттерны проектирования. Считает, что лучшая метафора для архитектуры ПО, это не луковица, а баян."}
+    gitHub: denis-tsv
   - id: 501
     photoFileName: 0501.jpg
     photoUpdatedAt: 2021-04-13T18:05:51.392Z[UTC]
@@ -8210,6 +8212,7 @@ speakers:
             \ href=\"http://antkorwin.com/\" target=\"_blank\">блог про Java-разработку</a>. В свободное время активно ком\
             митит в open source-проекты и выступает на Java-митапах."}
     twitter: antkorwin
+    gitHub: antkorwin
     habr: antkorwin
   - id: 563
     photoFileName: 0563.jpg
@@ -8301,6 +8304,8 @@ speakers:
             \ в персональных сервисах Яндекса. Начинал как автоматизатор тестирования, да так и не заканчивал. \n\nОдин из\
             \ мейнтейнеров проектов Aerokube, в частности Selenoid. Активный участник опенсорс-сообщества."
     twitter: delnariel
+    gitHub: lanwen
+    habr: Lanwen
   - id: 569
     photoFileName: 0569.jpg
     name:
@@ -8692,6 +8697,7 @@ speakers:
             \ Лаборатории Касперского, многопользовательскую игру в Mail.ru и сервис расчёта валютных цен в Deutsche Bank.\
             \ Интересуется тестированием крупномасштабных backend и распределённых систем."}
     twitter: asatarin
+    gitHub: asatarin
   - id: 598
     photoFileName: 0598.jpg
     name:
@@ -8965,7 +8971,7 @@ speakers:
     photoFileName: 0615.jpg
     name:
       - {language: en, text: "Alan Page"}
-    companyIds: [555]
+    companyIds: [556]
     bio:
       - language: en
         text: "Alan Page has been a software tester for nearly 25 years. He was the lead author of the book \"How We Test\
@@ -9073,7 +9079,7 @@ speakers:
     name:
       - {language: en, text: "Sergey Egorov"}
       - {language: ru, text: "Сергей Егоров"}
-    companyIds: [403]
+    companyIds: [860]
     bio:
       - language: en
         text: "Sergei works at Pivotal on Project Reactor in Berlin, Germany.\n\nHe is an active member of the open source\
@@ -9429,7 +9435,7 @@ speakers:
     name:
       - {language: en, text: "Dmitry Krasilnikov"}
       - {language: ru, text: "Дмитрий Красильников"}
-    companyIds: [155]
+    companyIds: [156]
     bio:
       - {language: en, text: "A good tester and a bad man. Yesterday fully racked applications for Smart TV, and now keeps\
             \ in suspense development department at DINO Systems."}
@@ -9453,7 +9459,7 @@ speakers:
     name:
       - {language: en, text: "Andrey Smirnov"}
       - {language: ru, text: "Андрей Смирнов"}
-    companyIds: [155]
+    companyIds: [156]
     bio:
       - {language: en, text: "Made equipment for satellite monitoring, then it was tested. A couple of years got into the\
             \ company-developer of software for the London Insurance Exchange. Currently, Andrey is testing backend telecommunications\
@@ -10186,7 +10192,7 @@ speakers:
     name:
       - {language: en, text: "Vsevolod Rodionov"}
       - {language: ru, text: "Всеволод Родионов"}
-    companyIds: [670]
+    companyIds: []
     bio:
       - {language: en, text: "Lead software engineer."}
     twitter: jabher
@@ -10284,6 +10290,8 @@ speakers:
             \ выступает на конференциях, в свободное время занимается опенсорсом. Автор библиотеки https://github.com/tonsky/datascript\
             \ и шрифта Fira Code."}
     twitter: nikitonsky
+    gitHub: tonsky
+    habr: tonsky
   - id: 706
     photoFileName: 0706.jpg
     name:
@@ -10937,7 +10945,7 @@ speakers:
     name:
       - {language: en, text: "Aleksey Nosov"}
       - {language: ru, text: "Алексей Носов"}
-    companyIds: [529]
+    companyIds: [674]
     bio:
       - {language: en, text: "Web developer for about 5 years, developed UI for secure document flow, video streaming, and\
             \ internet banking projects."}
@@ -11747,7 +11755,7 @@ speakers:
     name:
       - {language: en, text: "Alexandr Guzenko"}
       - {language: ru, text: "Александр Гузенко"}
-    companyIds: [529]
+    companyIds: [674]
     bio:
       - {language: en, text: "Was in love with computers since childhood, literally grew up with the indusrty and was there\
             \ at the very dawn of it. Since 2015 has been writing Android apps. Worked at QIWI, Russian payment service provider,\
@@ -13020,13 +13028,13 @@ speakers:
     name:
       - {language: en, text: "Kirill Bessonov"}
       - {language: ru, text: "Кирилл Бессонов"}
-    companyIds: [675]
+    companyIds: [674]
   - id: 905
     photoFileName: 0905.jpg
     name:
       - {language: en, text: "Artem Kiselev"}
       - {language: ru, text: "Артём Киселев"}
-    companyIds: [675]
+    companyIds: [674]
   - id: 906
     photoFileName: 0906.jpg
     name:
@@ -13461,6 +13469,8 @@ speakers:
             \ products."}
       - {language: ru, text: "12 лет в разработке программного обеспечения для проведения автоматизированного тестирования\
             \ аппаратуры изделий космической техники."}
+    gitHub: Alexey-Tkachenko
+    habr: a-tk
   - id: 944
     photoFileName: 0944.jpg
     name:
@@ -13881,6 +13891,8 @@ speakers:
       - {language: ru, text: "В IT c 2013 года. В разработке — с 2015. Трудился над порталом госуслуг Московской области,\
             \ медицинской видеосистемой для всей России. Сейчас участвует в разработке системы мониторинга данных в реальн\
             ом времени."}
+    gitHub: dmeatriy
+    habr: dmeatriy
   - id: 976
     photoFileName: 0976.jpg
     photoUpdatedAt: 2021-10-04T09:23:35.039Z[UTC]
@@ -14639,7 +14651,7 @@ speakers:
     name:
       - {language: en, text: "Sergey Rubanov"}
       - {language: ru, text: "Сергей Рубанов"}
-    companyIds: [867]
+    companyIds: [867, 895]
     bio:
       - {language: en, text: "BeerJS Moscow, BeerJS Summit, MoscowJS and WebAssembly Moscow meetup organizer, digital nomad,\
             \ TC39 invited expert, WebAssembly Community Group participant, certified beer sommelier and community guy whose\
@@ -17102,6 +17114,7 @@ speakers:
       - {language: ru, text: "iOS-разработчик в компании «Квадратный метр». До этого участвовал в разработке фичей и ускор\
             ения процессов разработки приложения Сбербанк-Онлайн."}
     twitter: phoe3nixx
+    gitHub: phoe3nix
   - id: 1209
     photoFileName: 1209.jpg
     photoUpdatedAt: 2020-05-12T12:06:28.869Z[UTC]
@@ -19341,6 +19354,8 @@ speakers:
             астью в Square, помогая в свободные минуты сделать жизнь всех Android-разработчиков компании чуть легче. Успел\
             \ увидеть тысячи модулей в монорепозиториях Uber и Square и научиться с этим жить."}
     twitter: 0leGG
+    gitHub: 0legg
+    habr: 0leGG
   - id: 1379
     photoFileName: 1379.jpg
     photoUpdatedAt: 2020-10-05T09:37:43.965Z[UTC]
@@ -19423,6 +19438,7 @@ speakers:
       - {language: ru, text: "Долгое время работал бэкенд-разработчиком (.NET), после перекатился на кроссплатформенную мо\
             бильную разработку на Xamarin, а когда наелся ей сполна, ушел в iOS, где занимается созданием крутейших и поле\
             знейших приложений последние лет 5."}
+    gitHub: svedm
   - id: 1385
     photoFileName: 1385.jpg
     photoUpdatedAt: 2020-11-06T13:39:46.988Z[UTC]
@@ -21522,7 +21538,7 @@ speakers:
     name:
       - {language: en, text: "Konstantin Volivach"}
       - {language: ru, text: "Константин Воливач"}
-    companyIds: [669]
+    companyIds: [630]
     bio:
       - language: en
         text: "Konstantin Volivach is Teamlead at SKB Kontur, for some time worked at Eltex, periodically contributes to\

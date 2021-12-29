@@ -28,7 +28,12 @@ companySynonyms:
     ]
   - name: Arrival
     synonyms: [
-        "Arrival Ltd"
+        "Arrival Ltd",
+        "Arrival Robotics"
+    ]
+  - name: Astronomer
+    synonyms: [
+        Astronomer.io
     ]
   - name: "Avast Software"
     synonyms: [
@@ -98,6 +103,10 @@ companySynonyms:
     synonyms: [
         angular-academy.com
     ]
+  - name: DINS
+    synonyms: [
+        "DINO Systems"
+    ]
   - name: dotdigital
     synonyms: [
         dotmailer
@@ -113,6 +122,10 @@ companySynonyms:
   - name: Egeniq
     synonyms: [
         "Google Developer Expert for Android / Egeniq"
+    ]
+  - name: Eyeota
+    synonyms: [
+        eyeota.com
     ]
   - name: GitLab
     synonyms: [
@@ -158,6 +171,11 @@ companySynonyms:
     synonyms: [
         "IT Territory/MyGames"
     ]
+  - name: ITIS
+    synonyms: [
+        "OOO ИТИС",
+        "ООО ИТИС"
+    ]
   - name: JavaSpecialists
     synonyms: [
         JavaSpecialists.eu
@@ -173,6 +191,15 @@ companySynonyms:
   - name: "JUG Ru Group"
     synonyms: [
         "JUG.ru Group"
+    ]
+  - name: Kontur
+    synonyms: [
+        "SKB Contur",
+        "СКБ Контур"
+    ]
+  - name: LightSource
+    synonyms: [
+        Lightsource.ai
     ]
   - name: "Mail.ru Group"
     synonyms: [
@@ -206,6 +233,10 @@ companySynonyms:
     synonyms: [
         LG,
         "LG Russia R&D Lab"
+    ]
+  - name: LooC
+    synonyms: [
+        www.looc.io"
     ]
   - name: MPI-SWS
     synonyms: [
@@ -307,9 +338,18 @@ companySynonyms:
         RaiffeisenBank,
         Райффайзенбанк
     ]
+  - name: RTSoft
+    synonyms: [
+        "CPR RTSoft",
+        "ЦПР РТСофт"
+    ]
   - name: SAP
     synonyms: [
         hybris
+    ]
+  - name: "Self Employed"
+    synonyms: [
+        Self-employed
     ]
   - name: S7
     synonyms: [
@@ -321,6 +361,10 @@ companySynonyms:
     synonyms: [
         "Samsung NEXT/GDE",
         "Samsung R&D Russia"
+    ]
+  - name: SAP
+    synonyms: [
+        SAP/Gigya
     ]
   - name: Sber
     synonyms: [
@@ -342,9 +386,23 @@ companySynonyms:
     synonyms: [
         Skeyng
     ]
+  - name: SkyHive
+    synonyms: [
+        skyhive.ai
+    ]
+  - name: Sovcombank
+    synonyms: [
+        SovcomTech
+    ]
   - name: Sportmaster
     synonyms: [
         "Sportmaster Lab"
+    ]
+  - name: Tinkoff
+    synonyms: [
+        Tinkoff.ru,
+        "TCS Bank",
+        "ТКС Банк"
     ]
   - name: "Tune IT"
     synonyms: [
@@ -362,6 +420,18 @@ companySynonyms:
     synonyms: [
         Uber
     ]
+  - name: UCB
+    synonyms: [
+        "UCB BioPharma"
+    ]
+  - name: "Unity Technologies"
+    synonyms: [
+        Unity
+    ]
+  - name: "Vevy Europe"
+    synonyms: [
+        "Vevy Europe S.p.A."
+    ]
   - name: VK
     synonyms: [
         VKontakte,
@@ -373,6 +443,10 @@ companySynonyms:
   - name: VMware
     synonyms: [
         "VMware Tanzu"
+    ]
+  - name: "Yahoo!"
+    synonyms: [
+        "Yahoo! Research"
     ]
   - name: Yandex
     synonyms: [
@@ -401,9 +475,15 @@ companySynonyms:
     synonyms: [
         Zeptolab
     ]
+  - name: YooMoney
+    synonyms: [
+        ЮМани
+    ]
   - name: ""
     synonyms: [
         "Author of \"The C++ Standard Library\" and \"C++ Templates\"",
         "Автор книг «The C++ Standard Library» и «C++ Templates»",
-        "Acme Corp"
+        "Acme Corp",
+        Startup,
+        Стартап
     ]

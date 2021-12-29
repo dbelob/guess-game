@@ -2915,6 +2915,32 @@ class ConferenceDataLoaderTest {
     }
 
     @Test
+    void checkCompanies() {
+        try (MockedStatic<YamlUtils> mockedStatic = Mockito.mockStatic(YamlUtils.class)) {
+            Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+            Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")), "");
+            Company company2 = new Company(2, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name2")), " ");
+            Company company3 = new Company(3, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name3")), "https://site1.com");
+            Company company4 = new Company(4, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name4")), "https://site2.com");
+            Company company5 = new Company(5, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name5")), "https://site2.com");
+
+            mockedStatic.when(YamlUtils::readSourceInformation)
+                    .thenReturn(new SourceInformation(Collections.emptyList(), Collections.emptyList(),
+                            Collections.emptyList(), Collections.emptyList(),
+                            new SourceInformation.SpeakerInformation(
+                                    List.of(company0, company1, company2, company3, company4, company5),
+                                    Collections.emptyList(),
+                                    Collections.emptyList(),
+                                    Collections.emptyList()
+                            ),
+                            Collections.emptyList()
+                    ));
+
+            assertDoesNotThrow(ConferenceDataLoader::checkCompanies);
+        }
+    }
+
+    @Test
     void main() {
         assertDoesNotThrow(() -> ConferenceDataLoader.main(new String[]{}));
     }

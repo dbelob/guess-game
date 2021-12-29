@@ -1,4 +1,9 @@
 companyGroups:
+  - name: "BeerJS / TC39"
+    items: [
+        BeerJS,
+        TC39
+    ]
   - name: "DM Labs, Arktur, Open Data Science"
     items: [
         "DM Labs",
