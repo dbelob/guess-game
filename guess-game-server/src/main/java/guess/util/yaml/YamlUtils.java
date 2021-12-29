@@ -38,8 +38,8 @@ public class YamlUtils {
      * Reads source information from resource files.
      *
      * @return source information
-     * @throws IOException                if resource files could not be opened
      * @throws SpeakerDuplicatedException if speaker duplicated
+     * @throws IOException                if resource files could not be opened
      */
     public static SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
         var resolver = new PathMatchingResourcePatternResolver();
