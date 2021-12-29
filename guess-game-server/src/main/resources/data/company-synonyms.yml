@@ -187,6 +187,10 @@ companySynonyms:
     synonyms: [
         "JUG.ru Group"
     ]
+  - name: LightSource
+    synonyms: [
+        Lightsource.ai
+    ]
   - name: "Mail.ru Group"
     synonyms: [
         "Mail.ru",
@@ -372,6 +376,10 @@ companySynonyms:
     synonyms: [
         skyhive.ai
     ]
+  - name: Sovcombank
+    synonyms: [
+        SovcomTech
+    ]
   - name: Sportmaster
     synonyms: [
         "Sportmaster Lab"
@@ -452,6 +460,10 @@ companySynonyms:
   - name: "ZeptoLab LLC"
     synonyms: [
         Zeptolab
+    ]
+  - name: YooMoney
+    synonyms: [
+        ЮМани
     ]
   - name: ""
     synonyms: [

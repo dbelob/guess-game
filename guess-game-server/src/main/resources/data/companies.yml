@@ -3012,59 +3012,77 @@ companies:
   - id: 800
     name:
       - {language: en, text: "72 Services LLC"}
+    siteLink: https://72.services
   - id: 801
     name:
       - {language: en, text: "National Technical University of Ukraine"}
+    siteLink: https://kpi.ua
   - id: 802
     name:
       - {language: en, text: Sonatype}
+    siteLink: https://www.sonatype.com
   - id: 803
     name:
       - {language: en, text: FlowTraders}
+    siteLink: https://www.flowtraders.com
   - id: 804
     name:
       - {language: en, text: "BeZero Carbon"}
+    siteLink: https://bezerocarbon.com
   - id: 805
     name:
       - {language: en, text: Okta}
+    siteLink: https://www.okta.com
   - id: 806
     name:
       - {language: en, text: Altenar}
+    siteLink: https://altenar.com
   - id: 807
     name:
       - {language: en, text: CircleCI}
+    siteLink: https://circleci.com
   - id: 808
     name:
       - {language: en, text: APC}
+    siteLink: https://www.apc.com
   - id: 809
     name:
       - {language: en, text: Disco}
+    siteLink: https://www.getdisco.com
   - id: 810
     name:
       - {language: en, text: Skyeng}
+    siteLink: https://skyeng.ru
   - id: 811
     name:
       - {language: en, text: Metarhia}
+    siteLink: https://metarhia.com
   - id: 812
     name:
       - {language: en, text: MoleculerJS}
+    siteLink: https://moleculer.services
   - id: 813
     name:
       - {language: en, text: Aviasales}
       - {language: ru, text: Авиасейлс}
+    siteLink: https://www.aviasales.ru
   - id: 814
     name:
       - {language: en, text: "Pochta tech"}
       - {language: ru, text: Почтатех}
+    siteLink: https://pochta.tech
   - id: 815
     name:
       - {language: en, text: "Joyn GmbH"}
+    siteLink: https://www.joyn.de
   - id: 816
     name:
-      - {language: en, text: Lightsource.ai}
+      - {language: en, text: LightSource}
+    siteLink: https://lightsource.ai
   - id: 817
     name:
       - {language: en, text: "1inch Network"}
+    siteLink: https://1inch.io
   - id: 818
     name:
       - {language: en, text: "Independent expert"}
@@ -3072,75 +3090,98 @@ companies:
   - id: 819
     name:
       - {language: en, text: Bling}
+    siteLink: https://www.bling.eu
   - id: 820
     name:
       - {language: en, text: "Simplinic GmbH"}
+    siteLink: https://www.simplinic.de
   - id: 821
     name:
       - {language: en, text: Elastisys}
+    siteLink: https://elastisys.com
   - id: 822
     name:
       - {language: en, text: Cloudthread}
+    siteLink: https://www.cloudthread.io
   - id: 823
     name:
       - {language: en, text: "TLA Tech"}
   - id: 824
     name:
       - {language: en, text: "Grafana Labs"}
+    siteLink: https://grafana.com
   - id: 825
     name:
       - {language: en, text: "Sudo Ltd"}
       - {language: ru, text: "ООО «Судо»"}
+    siteLink: https://sudo.team
   - id: 826
     name:
       - {language: en, text: MIPT}
       - {language: ru, text: МФТИ}
+    siteLink: https://mipt.ru
   - id: 827
     name:
       - {language: en, text: "Unique Code GmbH"}
+    siteLink: https://andreasfertig.info
   - id: 828
     name:
       - {language: en, text: "Mad Devs"}
+    siteLink: https://maddevs.io
   - id: 829
     name:
       - {language: en, text: ScyllaDB}
+    siteLink: https://www.scylladb.com
   - id: 830
     name:
       - {language: en, text: Zivid}
+    siteLink: https://www.zivid.com
   - id: 831
     name:
       - {language: en, text: ClickHouse}
+    siteLink: https://clickhouse.com
   - id: 832
     name:
       - {language: en, text: "Woven Planet"}
+    siteLink: https://www.woven-planet.global
   - id: 833
     name:
       - {language: en, text: Undo}
+    siteLink: https://undo.io
   - id: 835
     name:
       - {language: en, text: Stream}
+    siteLink: https://getstream.io
   - id: 836
     name:
       - {language: en, text: Apalon}
+    siteLink: https://www.apalon.com
   - id: 837
     name:
       - {language: en, text: Maxima}
+    siteLink: https://maxima.life
   - id: 838
     name:
       - {language: en, text: "Ak Bars"}
       - {language: ru, text: "Ак Барс Цифровые Технологии"}
+    siteLink: https://akbars.digital
   - id: 839
     name:
       - {language: en, text: SmartCAT}
+    siteLink: https://www.smartcat.com
   - id: 840
     name:
       - {language: en, text: Belkasoft}
+    siteLink: https://belkasoft.com
   - id: 841
     name:
-      - {language: en, text: SovcomTech}
+      - {language: en, text: Sovcombank}
+      - {language: ru, text: Совкомбанк}
+    siteLink: https://sovcombank.ru
   - id: 842
     name:
       - {language: en, text: luna}
+    siteLink: https://www.missionluna.ru
   - id: 843
     name:
       - {language: en, text: Self-employed}
@@ -3148,107 +3189,133 @@ companies:
     name:
       - {language: en, text: Gazprombank}
       - {language: ru, text: Газпромбанк}
+    siteLink: https://www.gazprombank.ru
   - id: 845
     name:
       - {language: en, text: Sibur}
       - {language: ru, text: Сибур}
+    siteLink: https://www.sibur.ru
   - id: 846
     name:
       - {language: en, text: "Banks Soft Systems"}
+    siteLink: https://bssys.com
   - id: 847
     name:
       - {language: en, text: OCS}
+    siteLink: https://www.ocs.ru
   - id: 848
     name:
       - {language: en, text: "Freight One"}
       - {language: ru, text: "Первая Грузовая Компания"}
+    siteLink: https://pgk.ru
   - id: 849
     name:
       - {language: en, text: "Unicon Business Solutions"}
-  - id: 850
-    name:
-      - {language: en, text: "DevOps Research"}
+    siteLink: https://www.unicon.ru
   - id: 851
     name:
       - {language: en, text: Kong}
+    siteLink: https://konghq.com
   - id: 852
     name:
       - {language: en, text: "Spark Networks"}
+    siteLink: https://www.spark.net
   - id: 853
     name:
       - {language: en, text: "Capital One"}
+    siteLink: https://www.capitalone.com
   - id: 854
     name:
       - {language: en, text: fin_hood}
+    siteLink: https://finhood.team
   - id: 855
     name:
       - {language: en, text: ‹div›RIOTS}
+    siteLink: https://divriots.com
   - id: 856
     name:
       - {language: en, text: AvitoTech}
       - {language: ru, text: АвитоТех}
+    siteLink: https://avito.tech
   - id: 857
     name:
       - {language: en, text: Buffer}
+    siteLink: https://buffer.com
   - id: 858
     name:
       - {language: en, text: FreeNow}
+    siteLink: https://free-now.com
   - id: 859
     name:
       - {language: en, text: VSU}
       - {language: ru, text: "Воронежский государственный университет"}
+    siteLink: http://www.vsu.ru
   - id: 860
     name:
       - {language: en, text: AtomicJar}
+    siteLink: https://www.atomicjar.com
   - id: 861
     name:
       - {language: en, text: "Zinc Prod Podcast"}
       - {language: ru, text: "Цинковый прод"}
+    siteLink: https://znprod.io
   - id: 862
     name:
       - {language: en, text: LuckyGroup}
-  - id: 863
-    name:
-      - {language: en, text: "Hell Yeah, JavaScript.Ninja"}
+    siteLink: https://lucky-group.com
   - id: 864
     name:
-      - {language: en, text: ЮMoney}
+      - {language: en, text: YooMoney}
+      - {language: ru, text: ЮMoney}
+    siteLink: https://yoomoney.ru
   - id: 865
     name:
       - {language: en, text: "Cube Dev"}
+    siteLink: https://cube.dev
   - id: 866
     name:
       - {language: en, text: Defront}
+    siteLink: https://defront.ru
   - id: 867
     name:
-      - {language: en, text: "BeerJS / TC39"}
+      - {language: en, text: BeerJS}
+    siteLink: https://beerjs.moscow
   - id: 868
     name:
       - {language: en, text: Osome}
+    siteLink: https://osome.com
   - id: 869
     name:
       - {language: en, text: ArangoDB}
+    siteLink: https://www.arangodb.com
   - id: 870
     name:
       - {language: en, text: V-Nova}
+    siteLink: https://www.v-nova.com
   - id: 871
     name:
       - {language: en, text: "Stanford University"}
+    siteLink: https://www.stanford.edu
   - id: 872
     name:
       - {language: en, text: "UfoStation Podcast"}
+    siteLink: https://podcast.ru/1572186425
   - id: 873
     name:
       - {language: en, text: Dynatrace}
+    siteLink: https://www.dynatrace.com
   - id: 874
     name:
       - {language: en, text: Enabling.team}
+    siteLink: https://enabling.team
   - id: 875
     name:
       - {language: en, text: "G-Core Labs"}
+    siteLink: https://gcorelabs.com
   - id: 876
     name:
       - {language: en, text: Squire}
+    siteLink: https://www.squire.com
   - id: 877
     name:
       - {language: en, text: MERA}
@@ -3257,32 +3324,40 @@ companies:
     name:
       - {language: en, text: TangoMe}
       - {language: ru, text: "ТангоМи СТП"}
+    siteLink: https://www.tango.me
   - id: 879
     name:
       - {language: en, text: "IVA Technologies"}
+    siteLink: https://iva-tech.ru
   - id: 880
     name:
       - {language: en, text: MSU}
       - {language: ru, text: МГУ}
+    siteLink: https://www.msu.ru
   - id: 881
     name:
       - {language: en, text: Erlyvideo}
       - {language: ru, text: Эрливидео}
+    siteLink: https://flussonic.com
   - id: 882
     name:
       - {language: en, text: "Millicast, Inc."}
+    siteLink: https://www.millicast.com
   - id: 883
     name:
       - {language: en, text: Voximplant}
+    siteLink: https://voximplant.com
   - id: 884
     name:
       - {language: en, text: "Itseez3D Inc."}
+    siteLink: https://itseez3d.com
   - id: 885
     name:
       - {language: en, text: "Self Employed"}
   - id: 886
     name:
       - {language: en, text: Tango}
+    siteLink: https://tango.tech
   - id: 887
     name:
       - {language: en, text: Reddit}
@@ -3314,3 +3389,7 @@ companies:
     name:
       - {language: en, text: SouJava}
     siteLink: https://soujava.org.br
+  - id: 895
+    name:
+      - {language: en, text: TC39}
+    siteLink: https://tc39.es

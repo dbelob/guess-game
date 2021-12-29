@@ -9078,7 +9078,7 @@ speakers:
     name:
       - {language: en, text: "Sergey Egorov"}
       - {language: ru, text: "Сергей Егоров"}
-    companyIds: [403]
+    companyIds: [860]
     bio:
       - language: en
         text: "Sergei works at Pivotal on Project Reactor in Berlin, Germany.\n\nHe is an active member of the open source\
@@ -14650,7 +14650,7 @@ speakers:
     name:
       - {language: en, text: "Sergey Rubanov"}
       - {language: ru, text: "Сергей Рубанов"}
-    companyIds: [867]
+    companyIds: [867, 895]
     bio:
       - {language: en, text: "BeerJS Moscow, BeerJS Summit, MoscowJS and WebAssembly Moscow meetup organizer, digital nomad,\
             \ TC39 invited expert, WebAssembly Community Group participant, certified beer sommelier and community guy whose\
