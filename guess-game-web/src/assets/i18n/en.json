@@ -178,6 +178,22 @@
       "mvpLabel": "Most Valuable Professional"
     }
   },
+  "company": {
+    "title": "Company"
+  },
+  "companies": {
+    "title": "Companies",
+    "noCompaniesFoundText": "No companies found",
+    "table": {
+      "title": "Companies"
+    },
+    "list": {
+      "title": "List"
+    },
+    "search": {
+      "title": "Search"
+    }
+  },
   "statistics": {
     "title": "Statistics",
     "eventTypes": {

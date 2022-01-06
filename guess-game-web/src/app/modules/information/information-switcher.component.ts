@@ -29,6 +29,10 @@ export class InformationSwitcherComponent implements OnInit {
     return ('speakers' === this.type);
   }
 
+  isCompanies(): boolean {
+    return ('companies' === this.type);
+  }
+
   isStatistics(): boolean {
     return ('statistics' === this.type);
   }

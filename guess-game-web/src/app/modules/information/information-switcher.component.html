@@ -15,6 +15,10 @@
           [class.text-dark]="isSpeakers()" [class.font-weight-bold]="isSpeakers()" [disabled]="isSpeakers()">
     {{'speakers.title' | translate}}
   </button>
+  <button class="btn btn-link" routerLink="/information/companies"
+          [class.text-dark]="isCompanies()" [class.font-weight-bold]="isCompanies()" [disabled]="isCompanies()">
+    {{'companies.title' | translate}}
+  </button>
   <button class="btn btn-link" routerLink="/information/statistics"
           [class.text-dark]="isStatistics()" [class.font-weight-bold]="isStatistics()" [disabled]="isStatistics()">
     {{'statistics.title' | translate}}

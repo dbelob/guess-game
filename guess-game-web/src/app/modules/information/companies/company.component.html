@@ -1,0 +1,20 @@
+<div class="container-information p-2">
+  <h3 class="bg-secondary p-1 text-white text-center rounded">{{'company.title' | translate}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
+    </div>
+    <app-language-switcher (reload)="onLanguageChange()" class="col-auto"></app-language-switcher>
+  </div>
+
+  <app-information-switcher [type]="'companies'"></app-information-switcher>
+
+  <app-companies-switcher [type]="'company'"></app-companies-switcher>
+
+  <div class="m-1">
+    44
+  </div>
+</div>
