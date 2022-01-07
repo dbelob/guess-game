@@ -2,7 +2,7 @@ package guess.dto.speaker;
 
 import guess.domain.Language;
 import guess.domain.source.Speaker;
-import guess.dto.company.CompanyDto;
+import guess.dto.company.CompanyBriefDto;
 
 import java.util.Collections;
 import java.util.List;
@@ -12,22 +12,11 @@ import java.util.Set;
  * Speaker DTO (brief).
  */
 public class SpeakerBriefDto extends SpeakerSuperBriefDto {
-    public static class SpeakerBriefDtoDegrees {
-        private final boolean javaChampion;
-        private final boolean mvp;
-        private final boolean mvpReconnect;
-        private final boolean anyMvp;
-
-        public SpeakerBriefDtoDegrees(boolean javaChampion, boolean mvp, boolean mvpReconnect, boolean anyMvp) {
-            this.javaChampion = javaChampion;
-            this.mvp = mvp;
-            this.mvpReconnect = mvpReconnect;
-            this.anyMvp = anyMvp;
-        }
+    public record SpeakerBriefDtoDegrees(boolean javaChampion, boolean mvp, boolean mvpReconnect, boolean anyMvp) {
     }
 
     private final String photoFileName;
-    private final List<CompanyDto> companies;
+    private final List<CompanyBriefDto> companies;
     private final String twitter;
     private final String gitHub;
     private final String habr;
@@ -36,7 +25,7 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
     private final boolean mvpReconnect;
     private final boolean anyMvp;
 
-    public SpeakerBriefDto(SpeakerSuperBriefDto speakerSuperBriefDto, String photoFileName, List<CompanyDto> companies,
+    public SpeakerBriefDto(SpeakerSuperBriefDto speakerSuperBriefDto, String photoFileName, List<CompanyBriefDto> companies,
                            String twitter, String gitHub, String habr, SpeakerBriefDtoDegrees degrees) {
         super(speakerSuperBriefDto.getId(), speakerSuperBriefDto.getDisplayName());
 
@@ -55,7 +44,7 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
         return photoFileName;
     }
 
-    public List<CompanyDto> getCompanies() {
+    public List<CompanyBriefDto> getCompanies() {
         return companies;
     }
 
@@ -91,7 +80,7 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
         return new SpeakerBriefDto(
                 speakerSuperBriefDto,
                 speaker.getPhotoFileName(),
-                CompanyDto.convertToDto(speaker.getCompanies(), language),
+                CompanyBriefDto.convertToBriefDto(speaker.getCompanies(), language),
                 speaker.getTwitter(),
                 speaker.getGitHub(),
                 speaker.getHabr(),

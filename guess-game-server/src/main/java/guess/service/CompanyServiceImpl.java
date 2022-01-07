@@ -27,6 +27,11 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
+    public Company getCompanyById(long id) {
+        return companyDao.getCompanyById(id);
+    }
+
+    @Override
     public List<Company> getCompaniesByIds(List<Long> ids) {
         return companyDao.getCompaniesByIds(ids);
     }

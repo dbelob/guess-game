@@ -113,6 +113,14 @@ public class SourceDaoImpl implements SourceDao {
     }
 
     @Override
+    public Company getCompanyById(long id) {
+        return sourceInformation.getCompanies().stream()
+                .filter(c -> (c.getId() == id))
+                .findFirst()
+                .orElseThrow();
+    }
+
+    @Override
     public List<Company> getCompaniesByIds(List<Long> ids) {
         return sourceInformation.getCompanies().stream()
                 .filter(c -> (ids.contains(c.getId())))

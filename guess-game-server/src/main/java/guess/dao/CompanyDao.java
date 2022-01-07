@@ -10,5 +10,7 @@ import java.util.List;
 public interface CompanyDao {
     List<Company> getCompanies();
 
+    Company getCompanyById(long id);
+
     List<Company> getCompaniesByIds(List<Long> ids);
 }

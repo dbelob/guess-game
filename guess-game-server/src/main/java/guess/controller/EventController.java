@@ -3,7 +3,7 @@ package guess.controller;
 import guess.domain.source.Event;
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
-import guess.dto.company.CompanyDto;
+import guess.dto.company.CompanyBriefDto;
 import guess.dto.event.EventBriefDto;
 import guess.dto.event.EventDetailsDto;
 import guess.dto.event.EventHomeInfoDto;
@@ -91,7 +91,7 @@ public class EventController {
         Comparator<SpeakerBriefDto> comparatorByName = Comparator.comparing(SpeakerBriefDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
         Comparator<SpeakerBriefDto> comparatorByCompany = Comparator.comparing(
                 s -> s.getCompanies().stream()
-                        .map(CompanyDto::name)
+                        .map(CompanyBriefDto::getName)
                         .collect(Collectors.joining(", ")), String.CASE_INSENSITIVE_ORDER);
         List<SpeakerBriefDto> sortedSpeakers = eventDetailsDto.speakers().stream()
                 .sorted(comparatorByName.thenComparing(comparatorByCompany))

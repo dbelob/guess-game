@@ -11,6 +11,8 @@ import java.util.List;
 public interface CompanyService {
     List<Company> getCompanies();
 
+    Company getCompanyById(long id);
+
     List<Company> getCompaniesByIds(List<Long> ids);
 
     List<Company> getCompaniesByFirstLetters(String firstLetters, Language language);
