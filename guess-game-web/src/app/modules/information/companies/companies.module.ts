@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { TableModule } from 'primeng/table';
 import { GeneralModule } from '../../general/general.module';
 import { InformationModule } from '../information.module';
 import { MessageModule } from '../../message/message.module';
@@ -22,6 +23,7 @@ import { CompaniesSwitcherComponent } from './companies-switcher.component';
     CommonModule,
     FormsModule,
     RouterModule,
+    TableModule,
     GeneralModule,
     InformationModule,
     MessageModule,

@@ -43,11 +43,11 @@ export class SpeakerComponent implements OnInit {
   loadSpeaker(id: number) {
     this.speakerService.getSpeaker(id)
       .subscribe(data => {
-        this.speakerDetails = this.getSpeakerDetailsWithTalksWithFilledAttributes(data);
+        this.speakerDetails = this.getSpeakerDetailsWithFilledAttributes(data);
       });
   }
 
-  getSpeakerDetailsWithTalksWithFilledAttributes(speakerDetails: SpeakerDetails): SpeakerDetails {
+  getSpeakerDetailsWithFilledAttributes(speakerDetails: SpeakerDetails): SpeakerDetails {
     if (speakerDetails?.talks) {
       speakerDetails.talks = getTalksWithSpeakersString(speakerDetails.talks);
     }

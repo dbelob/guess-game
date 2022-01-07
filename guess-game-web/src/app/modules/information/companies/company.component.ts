@@ -1,15 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { ActivatedRoute } from "@angular/router";
+import { CompanyDetails } from '../../../shared/models/company/company-details.model';
+import { CompanyService } from '../../../shared/services/company.service';
+import { getSpeakersWithCompaniesString } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-company',
   templateUrl: './company.component.html'
 })
 export class CompanyComponent implements OnInit {
-  private id: number;
+  private imageDirectory = 'assets/images';
+  public degreesImageDirectory = `${this.imageDirectory}/degrees`;
+  public speakersImageDirectory = `${this.imageDirectory}/speakers`;
+  public twitterUrlPrefix = 'https://twitter.com';
+  public gitHubUrlPrefix = 'https://github.com';
+  public habrUrlPrefix = 'https://habr.com/users';
 
-  constructor(public translateService: TranslateService, private activatedRoute: ActivatedRoute) {
+  private id: number;
+  public companyDetails: CompanyDetails = new CompanyDetails();
+  public multiSortMeta: any[] = [];
+
+  constructor(public companyService: CompanyService, public translateService: TranslateService,
+              private activatedRoute: ActivatedRoute) {
+    this.multiSortMeta.push({field: 'displayName', order: 1});
+    this.multiSortMeta.push({field: 'companiesString', order: 1});
   }
 
   ngOnInit(): void {
@@ -25,11 +40,29 @@ export class CompanyComponent implements OnInit {
   }
 
   loadCompany(id: number) {
-    // TODO: implement
-    console.log('Company id: ' + id);
+    this.companyService.getCompany(id)
+      .subscribe(data => {
+        this.companyDetails = this.getCompanyDetailsWithFilledAttributes(data);
+      });
+  }
+
+  getCompanyDetailsWithFilledAttributes(companyDetails: CompanyDetails): CompanyDetails {
+    if (companyDetails?.speakers) {
+      companyDetails.speakers = getSpeakersWithCompaniesString(companyDetails.speakers);
+    }
+
+    return companyDetails;
   }
 
   onLanguageChange() {
-    // TODO: implement
+    this.loadCompany(this.id);
+  }
+
+  isCompanyLinksVisible() {
+    return this.companyDetails.company?.siteLink;
+  }
+
+  isSpeakersListVisible() {
+    return ((this.companyDetails.speakers) && (this.companyDetails.speakers.length > 0));
   }
 }
