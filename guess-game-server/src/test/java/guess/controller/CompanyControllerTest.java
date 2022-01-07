@@ -6,6 +6,7 @@ import guess.domain.source.LocaleItem;
 import guess.dto.common.SelectedEntitiesDto;
 import guess.service.CompanyService;
 import guess.service.LocaleService;
+import guess.service.SpeakerService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -35,6 +36,9 @@ class CompanyControllerTest {
 
     @MockBean
     private CompanyService companyService;
+
+    @MockBean
+    private SpeakerService speakerService;
 
     @MockBean
     private LocaleService localeService;
