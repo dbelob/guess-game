@@ -191,7 +191,8 @@
       "title": "Список"
     },
     "search": {
-      "title": "Поиск"
+      "title": "Поиск",
+      "nameLabel": "Наименование:"
     }
   },
   "statistics": {

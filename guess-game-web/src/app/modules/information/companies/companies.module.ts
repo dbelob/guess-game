@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { TableModule } from 'primeng/table';
@@ -22,6 +23,7 @@ import { CompaniesSwitcherComponent } from './companies-switcher.component';
   imports: [
     CommonModule,
     FormsModule,
+    InputTextModule,
     RouterModule,
     TableModule,
     GeneralModule,

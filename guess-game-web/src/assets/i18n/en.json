@@ -191,7 +191,8 @@
       "title": "List"
     },
     "search": {
-      "title": "Search"
+      "title": "Search",
+      "nameLabel": "Name:"
     }
   },
   "statistics": {

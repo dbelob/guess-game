@@ -15,6 +15,29 @@
   <app-companies-switcher [type]="'search'"></app-companies-switcher>
 
   <div class="m-1">
-    43
+    <form role="form" class="m-2">
+      <div class="form-group row justify-content-center align-items-center">
+        <label for="name" class="col-sm-2">{{'companies.search.nameLabel' | translate}}</label>
+        <div class="col-sm-10">
+          <input type="text" id="name" pInputText class="form-control" [(ngModel)]="name" name="name" (ngModelChange)="onFilterChange($event)"/>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary m-1" (click)="search()" [class.btn-secondary]="isSearchDisabled()" [disabled]="isSearchDisabled()">
+          {{'common.searchButtonText' | translate}}
+        </button>
+        <button class="btn btn-primary m-1" (click)="clear()">
+          {{'common.clearButtonText' | translate}}
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="isNoCompaniesFoundVisible()" class="alert text-center m-2">
+    {{'companies.noCompaniesFoundText' | translate}}
+  </div>
+
+  <div *ngIf="isCompaniesListVisible()" class="ml-2 mr-2 mb-2 mt-3">
+    table
   </div>
 </div>
