@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Speaker } from '../../../shared/models/speaker/speaker.model';
 import { SpeakerService } from '../../../shared/services/speaker.service';
@@ -9,7 +9,7 @@ import { getSpeakersWithCompaniesString, isStringEmpty } from '../../general/uti
   selector: 'app-speakers-search',
   templateUrl: './speakers-search.component.html'
 })
-export class SpeakersSearchComponent implements OnInit {
+export class SpeakersSearchComponent {
   private imageDirectory = 'assets/images';
   public degreesImageDirectory = `${this.imageDirectory}/degrees`;
   public speakersImageDirectory = `${this.imageDirectory}/speakers`;
@@ -34,9 +34,6 @@ export class SpeakersSearchComponent implements OnInit {
   constructor(private speakerService: SpeakerService, public translateService: TranslateService, private companyService: CompanyService) {
     this.multiSortMeta.push({field: 'displayName', order: 1});
     this.multiSortMeta.push({field: 'companiesString', order: 1});
-  }
-
-  ngOnInit(): void {
   }
 
   loadSpeakers(name: string, company: string, twitter: string, gitHub: string, isJavaChampion: boolean, isMvp: boolean) {
