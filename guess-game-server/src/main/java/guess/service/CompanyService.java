@@ -11,6 +11,8 @@ import java.util.List;
 public interface CompanyService {
     List<Company> getCompanies();
 
+    List<Company> getCompanies(String name);
+
     Company getCompanyById(long id);
 
     List<Company> getCompaniesByIds(List<Long> ids);

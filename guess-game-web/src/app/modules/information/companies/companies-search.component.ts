@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Company } from '../../../shared/models/company/company.model';
+import { CompanySearchResult } from '../../../shared/models/company/company-search-result.model';
 import { CompanyService } from '../../../shared/services/company.service';
-import { isStringEmpty } from "../../general/utility-functions";
+import { isStringEmpty } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-companies-search',
@@ -11,7 +11,7 @@ import { isStringEmpty } from "../../general/utility-functions";
 export class CompaniesSearchComponent {
   public name: string;
 
-  public companies: Company[] = [];
+  public companies: CompanySearchResult[] = [];
 
   private searched = false;
   public multiSortMeta: any[] = [];
@@ -21,8 +21,11 @@ export class CompaniesSearchComponent {
   }
 
   loadCompanies(name: string) {
-    // TODO: implement
-    console.log('name: ' + name);
+    this.companyService.getCompanies(name)
+      .subscribe(data => {
+        this.companies = data;
+        this.searched = true;
+      });
   }
 
   onLanguageChange() {

@@ -70,7 +70,7 @@
                currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
                sortMode="multiple" [multiSortMeta]="multiSortMeta" styleClass="p-datatable-striped"
                responsiveLayout="scroll">
-        <ng-template pTemplate="header" let-columns>
+        <ng-template pTemplate="header">
           <tr>
             <th class="text-center" pResizableColumn>#</th>
             <th class="text-center" [pSortableColumn]="'displayName'" pResizableColumn>

@@ -185,7 +185,11 @@
     "title": "Companies",
     "noCompaniesFoundText": "No companies found",
     "table": {
-      "title": "Companies"
+      "title": "Companies",
+      "nameColumn": "Name",
+      "speakersColumn": "Speakers",
+      "javaChampionsColumn": "Java Champions",
+      "mvpsColumn": "MVPs"
     },
     "list": {
       "title": "List"

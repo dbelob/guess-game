@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Company } from '../models/company/company.model';
 import { CompanyDetails } from '../models/company/company-details.model';
+import { CompanySearchResult } from '../models/company/company-search-result.model';
 import { SelectedEntities } from '../models/common/selected-entities.model';
 import { MessageService } from '../../modules/message/message.service';
 
@@ -44,6 +45,21 @@ export class CompanyService {
       .set('firstLetters', firstLetters);
 
     return this.http.get<string[]>(`${this.baseUrl}/first-letters-company-names`, {params: params})
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getCompanies(name: string): Observable<CompanySearchResult[]> {
+    let params = new HttpParams();
+    if (name) {
+      params = params.set('name', name.toString());
+    }
+
+    return this.http.get<CompanySearchResult[]>(`${this.baseUrl}/companies`, {params: params})
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

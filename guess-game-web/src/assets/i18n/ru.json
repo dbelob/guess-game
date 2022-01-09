@@ -185,7 +185,11 @@
     "title": "Компании",
     "noCompaniesFoundText": "Компании не найдены",
     "table": {
-      "title": "Компании"
+      "title": "Компании",
+      "nameColumn": "Наименование",
+      "speakersColumn": "Спикеров",
+      "javaChampionsColumn": "Java Champions",
+      "mvpsColumn": "MVPs"
     },
     "list": {
       "title": "Список"

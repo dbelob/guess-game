@@ -4,9 +4,11 @@ import guess.dao.CompanyDao;
 import guess.domain.Language;
 import guess.domain.source.Company;
 import guess.util.LocalizationUtils;
+import guess.util.SearchUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -24,6 +26,20 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public List<Company> getCompanies() {
         return companyDao.getCompanies();
+    }
+
+    @Override
+    public List<Company> getCompanies(String name) {
+        String trimmedLowerCasedName = SearchUtils.trimAndLowerCase(name);
+        boolean isNameSet = SearchUtils.isStringSet(trimmedLowerCasedName);
+
+        if (!isNameSet) {
+            return Collections.emptyList();
+        } else {
+            return companyDao.getCompanies().stream()
+                    .filter(c -> SearchUtils.isSubstringFound(trimmedLowerCasedName, c.getName()))
+                    .toList();
+        }
     }
 
     @Override
