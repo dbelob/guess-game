@@ -16,13 +16,13 @@
 
   <div class="m-1">
     <div>
-      <button class="btn btn-link btn-sm-condensed font-weight-bold" *ngFor="let enLetter of enLetters"
+      <button class="btn btn-link btn-sm-condensed font-weight-bold remove-focus" *ngFor="let enLetter of enLetters"
               (click)="changeLetter(enLetter)"
               [class.text-dark]="isCurrentLetter(enLetter)" [class.font-weight-bold]="isCurrentLetter(enLetter)"
               [disabled]="isCurrentLetter(enLetter)">
         {{enLetter}}
       </button>
-      <button class="btn btn-link btn-sm-condensed font-weight-bold"
+      <button class="btn btn-link btn-sm-condensed font-weight-bold remove-focus"
               (click)="changeDigit()"
               [class.text-dark]="isDigit" [class.font-weight-bold]="isDigit"
               [disabled]="isDigit">
@@ -30,7 +30,7 @@
       </button>
     </div>
     <div *ngIf="isRuLettersVisible()">
-      <button class="btn btn-link btn-sm-condensed font-weight-bold" *ngFor="let ruLetter of ruLetters"
+      <button class="btn btn-link btn-sm-condensed font-weight-bold remove-focus" *ngFor="let ruLetter of ruLetters"
               (click)="changeLetter(ruLetter)"
               [class.text-dark]="isCurrentLetter(ruLetter)" [class.font-weight-bold]="isCurrentLetter(ruLetter)"
               [disabled]="isCurrentLetter(ruLetter)">
