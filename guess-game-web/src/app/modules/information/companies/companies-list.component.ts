@@ -25,26 +25,31 @@ export class CompaniesListComponent extends EntitiesListComponent implements OnI
   }
 
   loadCompanies(isDigit: boolean, letter: string) {
-    // TODO: implement
-    console.log('isDigit: ' + ', letter: ' + letter);
+    this.companyService.getCompaniesByFirstLetter(isDigit, letter)
+      .subscribe(data => {
+        this.companies = data;
+      });
   }
 
   isCurrentLetter(letter: string) {
     return !this.isDigit && (this.selectedLetter === letter);
   }
 
-  changeLetter(letter: string) {
-    this.isDigit = false;
+  changeDigitAndLetter(isDigit: boolean, letter: string) {
+    this.isDigit = isDigit;
     this.selectedLetter = letter;
 
     this.paginatorFirst = 0;
 
-    this.loadCompanies(this.isDigit, letter);
+    this.loadCompanies(isDigit, letter);
+  }
+
+  changeLetter(letter: string) {
+    this.changeDigitAndLetter(false, letter);
   }
 
   changeDigit() {
-    this.isDigit = true;
-    this.selectedLetter = null;
+    this.changeDigitAndLetter(true, null);
   }
 
   isCompaniesListVisible() {

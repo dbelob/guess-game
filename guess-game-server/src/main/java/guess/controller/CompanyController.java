@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -35,6 +36,14 @@ public class CompanyController {
         this.companyService = companyService;
         this.speakerService = speakerService;
         this.localeService = localeService;
+    }
+
+    @GetMapping("/first-letter-companies")
+    public List<CompanySearchResultDto> getCompaniesByFirstLetter(@RequestParam boolean digit,
+                                                                  @RequestParam(required = false) String firstLetter,
+                                                                  HttpSession httpSession) {
+        //TODO: implement
+        return Collections.emptyList();
     }
 
     @GetMapping("/first-letters-companies")

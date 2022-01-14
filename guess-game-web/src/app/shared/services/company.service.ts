@@ -17,6 +17,22 @@ export class CompanyService {
   constructor(private http: HttpClient, private messageService: MessageService) {
   }
 
+  getCompaniesByFirstLetter(digit: boolean, firstLetter: string): Observable<CompanySearchResult[]> {
+    let params = new HttpParams()
+      .set('digit', digit.toString());
+    if (firstLetter) {
+      params = params.set('firstLetter', firstLetter);
+    }
+
+    return this.http.get<CompanySearchResult[]>(`${this.baseUrl}/first-letter-companies`, {params: params})
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
   getCompaniesByFirstLetters(firstLetters: string): Observable<Company[]> {
     const params = new HttpParams()
       .set('firstLetters', firstLetters);

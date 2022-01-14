@@ -38,7 +38,7 @@
       </button>
     </div>
 
-    <div *ngIf="isCompaniesListVisible()" class="alert text-center m-2">
+    <div *ngIf="!isCompaniesListVisible()" class="alert text-center m-2">
       {{'companies.noCompaniesFoundText' | translate}}
     </div>
 
