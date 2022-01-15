@@ -28,7 +28,7 @@ public final class CustomEmitter implements Emitable {
     private static final char[] SPACE = {' '};
 
     private static final Pattern SPACES_PATTERN = Pattern.compile("\\s");
-    private static final Set<Character> INVALID_ANCHOR = new HashSet();
+    private static final Set<Character> INVALID_ANCHOR = new HashSet<>();
     static {
         INVALID_ANCHOR.add('[');
         INVALID_ANCHOR.add(']');
