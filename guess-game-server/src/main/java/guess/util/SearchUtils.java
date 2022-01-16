@@ -9,7 +9,8 @@ import java.util.regex.Pattern;
  * Search methods.
  */
 public class SearchUtils {
-    private static final Pattern ALPHA_NUMERIC_PATTERN = Pattern.compile("^[^a-zA-Z0-9]*([a-zA-Z0-9]{1}.*)$");
+    private static final String ALPHA_NUMERIC_CHARACTERS = "\\p{L}0-9";
+    private static final Pattern ALPHA_NUMERIC_PATTERN = Pattern.compile(String.format("^[^%s]*([%s]{1}.*)$", ALPHA_NUMERIC_CHARACTERS, ALPHA_NUMERIC_CHARACTERS));
 
     private SearchUtils() {
     }

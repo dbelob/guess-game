@@ -163,7 +163,8 @@ public class SearchUtilsTest {
                     arguments("‹div›RIOTS", "div›RIOTS"),
                     arguments("1С-Битрикс", "1С-Битрикс"),
                     arguments("Яндекс", "Яндекс"),
-//                    arguments("‹Яндекс", "Яндекс"),
+                    arguments("‹Яндекс", "Яндекс"),
+                    arguments("‹Яндекс›", "Яндекс›"),
                     arguments("@#$", "@#$")
             );
         }
