@@ -53,6 +53,31 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
+    public List<Company> getCompaniesByFirstLetter(boolean isDigit, String firstLetter, Language language) {
+        return companyDao.getCompanies().stream()
+                .filter(c -> {
+                    var name = LocalizationUtils.getString(c.getName(), language);
+                    String nameFirstLetter;
+
+                    if (name != null) {
+                        String trimmedName = name.trim();
+                        String nameWithFirstAlphaNumeric = SearchUtils.getSubStringWithFirstAlphaNumeric(trimmedName);
+
+                        nameFirstLetter = (nameWithFirstAlphaNumeric.length() > 0) ? nameWithFirstAlphaNumeric.substring(0, 1) : null;
+                    } else {
+                        nameFirstLetter = null;
+                    }
+
+                    if (isDigit) {
+                        return (nameFirstLetter != null) && Character.isDigit(nameFirstLetter.charAt(0));
+                    } else {
+                        return firstLetter.equalsIgnoreCase(nameFirstLetter);
+                    }
+                })
+                .toList();
+    }
+
+    @Override
     public List<Company> getCompaniesByFirstLetters(String firstLetters, Language language) {
         String lowerCaseFirstLetters = (firstLetters != null) ? firstLetters.toLowerCase() : "";
 

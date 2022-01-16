@@ -11,12 +11,12 @@ import guess.service.CompanyService;
 import guess.service.LocaleService;
 import guess.service.SpeakerService;
 import guess.util.LocalizationUtils;
+import guess.util.SearchUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -92,8 +92,35 @@ public class CompanyController {
     public List<CompanySearchResultDto> getCompaniesByFirstLetter(@RequestParam boolean digit,
                                                                   @RequestParam(required = false) String firstLetter,
                                                                   HttpSession httpSession) {
-        //TODO: implement
-        return Collections.emptyList();
+        var language = localeService.getLanguage(httpSession);
+        List<Company> companies = companyService.getCompaniesByFirstLetter(digit, firstLetter, language);
+        List<CompanySearchResultDto> companySearchResults = new ArrayList<>();
+
+        //TODO: change
+        for (Company company : companies) {
+            List<Speaker> speakers = speakerService.getSpeakersByCompanyId(company.getId());
+            long javaChampionsQuantity = speakers.stream()
+                    .filter(Speaker::isJavaChampion)
+                    .count();
+            long mvpsQuantity = speakers.stream()
+                    .filter(Speaker::isAnyMvp)
+                    .count();
+
+            companySearchResults.add(CompanySearchResultDto.convertToDto(
+                    company,
+                    speakers.size(),
+                    javaChampionsQuantity,
+                    mvpsQuantity,
+                    language
+            ));
+        }
+
+        Comparator<CompanySearchResultDto> comparatorByNameWithFirstAlphaNumeric = Comparator.comparing(
+                c -> SearchUtils.getSubStringWithFirstAlphaNumeric(c.name()), String.CASE_INSENSITIVE_ORDER);
+
+        return companySearchResults.stream()
+                .sorted(comparatorByNameWithFirstAlphaNumeric)
+                .toList();
     }
 
     @GetMapping("/companies")

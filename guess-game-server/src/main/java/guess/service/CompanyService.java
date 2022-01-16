@@ -17,5 +17,7 @@ public interface CompanyService {
 
     List<Company> getCompaniesByIds(List<Long> ids);
 
+    List<Company> getCompaniesByFirstLetter(boolean isDigit, String firstLetter, Language language);
+
     List<Company> getCompaniesByFirstLetters(String firstLetters, Language language);
 }
