@@ -1,6 +1,7 @@
 package guess.service;
 
 import guess.dao.CompanyDao;
+import guess.dao.SpeakerDao;
 import guess.domain.Language;
 import guess.domain.source.Company;
 import guess.util.LocalizationUtils;
@@ -47,15 +48,13 @@ class CompanyServiceImplTest {
         }
 
         @Bean
-        SpeakerService speakerService() {
-            SpeakerService speakerService = Mockito.mock(SpeakerService.class);
-
-            return speakerService;
+        SpeakerDao speakerDao() {
+            return Mockito.mock(SpeakerDao.class);
         }
 
         @Bean
         CompanyService companyService() {
-            return new CompanyServiceImpl(companyDao(), speakerService());
+            return new CompanyServiceImpl(companyDao(), speakerDao());
         }
     }
 
@@ -109,9 +108,9 @@ class CompanyServiceImplTest {
                 CompanyDao companyDaoMock = Mockito.mock(CompanyDao.class);
                 Mockito.when(companyDaoMock.getCompanies()).thenReturn(companies);
 
-                SpeakerService speakerService = Mockito.mock(SpeakerService.class);
+                SpeakerDao speakerDao = Mockito.mock(SpeakerDao.class);
 
-                CompanyService companyService = new CompanyServiceImpl(companyDaoMock, speakerService);
+                CompanyService companyService = new CompanyServiceImpl(companyDaoMock, speakerDao);
 
                 assertEquals(expected, companyService.getCompaniesByFirstLetters(firstLetters, language));
             }

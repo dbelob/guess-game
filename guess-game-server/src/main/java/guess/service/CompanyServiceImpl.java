@@ -1,6 +1,7 @@
 package guess.service;
 
 import guess.dao.CompanyDao;
+import guess.dao.SpeakerDao;
 import guess.domain.Language;
 import guess.domain.source.Company;
 import guess.domain.source.Speaker;
@@ -10,9 +11,7 @@ import guess.util.SearchUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * Company service implementation.
@@ -20,12 +19,12 @@ import java.util.List;
 @Service
 public class CompanyServiceImpl implements CompanyService {
     private final CompanyDao companyDao;
-    private final SpeakerService speakerService;
+    private final SpeakerDao speakerDao;
 
     @Autowired
-    public CompanyServiceImpl(CompanyDao companyDao, SpeakerService speakerService) {
+    public CompanyServiceImpl(CompanyDao companyDao, SpeakerDao speakerDao) {
         this.companyDao = companyDao;
-        this.speakerService = speakerService;
+        this.speakerDao = speakerDao;
     }
 
     @Override
@@ -93,26 +92,35 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public List<CompanySearchResult> getCompanySearchResults(List<Company> companies) {
-        List<CompanySearchResult> companySearchResults = new ArrayList<>();
+        Map<Company, List<Speaker>> companySpeakersMap = new HashMap<>();
 
-        //TODO: change
-        for (Company company : companies) {
-            List<Speaker> speakers = speakerService.getSpeakersByCompanyId(company.getId());
-            long javaChampionsQuantity = speakers.stream()
-                    .filter(Speaker::isJavaChampion)
-                    .count();
-            long mvpsQuantity = speakers.stream()
-                    .filter(Speaker::isAnyMvp)
-                    .count();
-
-            companySearchResults.add(new CompanySearchResult(
-                    company,
-                    speakers.size(),
-                    javaChampionsQuantity,
-                    mvpsQuantity
-            ));
+        for (Speaker speaker : speakerDao.getSpeakers()) {
+            for (Company company : speaker.getCompanies()) {
+                if (companies.contains(company)) {
+                    companySpeakersMap
+                            .computeIfAbsent(company, c -> new ArrayList<>())
+                            .add(speaker);
+                }
+            }
         }
 
-        return companySearchResults;
+        return companies.parallelStream()
+                .map(c -> {
+                    List<Speaker> speakers = companySpeakersMap.getOrDefault(c, Collections.emptyList());
+                    long javaChampionsQuantity = speakers.stream()
+                            .filter(Speaker::isJavaChampion)
+                            .count();
+                    long mvpsQuantity = speakers.stream()
+                            .filter(Speaker::isAnyMvp)
+                            .count();
+
+                    return new CompanySearchResult(
+                            c,
+                            speakers.size(),
+                            javaChampionsQuantity,
+                            mvpsQuantity
+                    );
+                })
+                .toList();
     }
 }
