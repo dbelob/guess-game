@@ -4,7 +4,7 @@
 
     <groupId>guess-game</groupId>
     <artifactId>guess-game-parent</artifactId>
-    <version>2.4.135-SNAPSHOT</version>
+    <version>2.4.141-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>GuessGame Parent</name>
 
@@ -34,7 +34,7 @@
         <mockito.version>4.2.0</mockito.version>
         <sl4j.version>1.7.33</sl4j.version>
         <snakeyaml.version>1.30</snakeyaml.version>
-        <spring-boot.version>2.6.2</spring-boot.version>
+        <spring-boot.version>2.6.3</spring-boot.version>
 
         <ng.build.arguments>-- --prod=true</ng.build.arguments>
 
