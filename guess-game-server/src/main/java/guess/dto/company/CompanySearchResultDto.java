@@ -1,7 +1,7 @@
 package guess.dto.company;
 
 import guess.domain.Language;
-import guess.domain.source.Company;
+import guess.domain.statistics.company.CompanySearchResult;
 import guess.util.LocalizationUtils;
 
 /**
@@ -9,12 +9,13 @@ import guess.util.LocalizationUtils;
  */
 public record CompanySearchResultDto(long id, String name, long speakersQuantity, long javaChampionsQuantity,
                                      long mvpsQuantity) {
-    public static CompanySearchResultDto convertToDto(Company company, long speakersQuantity, long javaChampionsQuantity,
-                                                      long mvpsQuantity, Language language) {
+    public static CompanySearchResultDto convertToDto(CompanySearchResult companySearchResult, Language language) {
         return new CompanySearchResultDto(
-                company.getId(),
-                LocalizationUtils.getString(company.getName(), language),
-                speakersQuantity, javaChampionsQuantity, mvpsQuantity
+                companySearchResult.company().getId(),
+                LocalizationUtils.getString(companySearchResult.company().getName(), language),
+                companySearchResult.speakersQuantity(),
+                companySearchResult.javaChampionsQuantity(),
+                companySearchResult.mvpsQuantity()
         );
     }
 }

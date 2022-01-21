@@ -2,6 +2,7 @@ package guess.service;
 
 import guess.domain.Language;
 import guess.domain.source.Company;
+import guess.domain.statistics.company.CompanySearchResult;
 
 import java.util.List;
 
@@ -20,4 +21,6 @@ public interface CompanyService {
     List<Company> getCompaniesByFirstLetter(boolean isDigit, String firstLetter, Language language);
 
     List<Company> getCompaniesByFirstLetters(String firstLetters, Language language);
+
+    List<CompanySearchResult> getCompanySearchResults(List<Company> companies);
 }

@@ -3,11 +3,14 @@ package guess.service;
 import guess.dao.CompanyDao;
 import guess.domain.Language;
 import guess.domain.source.Company;
+import guess.domain.source.Speaker;
+import guess.domain.statistics.company.CompanySearchResult;
 import guess.util.LocalizationUtils;
 import guess.util.SearchUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -17,10 +20,12 @@ import java.util.List;
 @Service
 public class CompanyServiceImpl implements CompanyService {
     private final CompanyDao companyDao;
+    private final SpeakerService speakerService;
 
     @Autowired
-    public CompanyServiceImpl(CompanyDao companyDao) {
+    public CompanyServiceImpl(CompanyDao companyDao, SpeakerService speakerService) {
         this.companyDao = companyDao;
+        this.speakerService = speakerService;
     }
 
     @Override
@@ -84,5 +89,30 @@ public class CompanyServiceImpl implements CompanyService {
         return companyDao.getCompanies().stream()
                 .filter(c -> LocalizationUtils.getString(c.getName(), language).toLowerCase().indexOf(lowerCaseFirstLetters) == 0)
                 .toList();
+    }
+
+    @Override
+    public List<CompanySearchResult> getCompanySearchResults(List<Company> companies) {
+        List<CompanySearchResult> companySearchResults = new ArrayList<>();
+
+        //TODO: change
+        for (Company company : companies) {
+            List<Speaker> speakers = speakerService.getSpeakersByCompanyId(company.getId());
+            long javaChampionsQuantity = speakers.stream()
+                    .filter(Speaker::isJavaChampion)
+                    .count();
+            long mvpsQuantity = speakers.stream()
+                    .filter(Speaker::isAnyMvp)
+                    .count();
+
+            companySearchResults.add(new CompanySearchResult(
+                    company,
+                    speakers.size(),
+                    javaChampionsQuantity,
+                    mvpsQuantity
+            ));
+        }
+
+        return companySearchResults;
     }
 }

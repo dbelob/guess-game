@@ -47,8 +47,15 @@ class CompanyServiceImplTest {
         }
 
         @Bean
+        SpeakerService speakerService() {
+            SpeakerService speakerService = Mockito.mock(SpeakerService.class);
+
+            return speakerService;
+        }
+
+        @Bean
         CompanyService companyService() {
-            return new CompanyServiceImpl(companyDao());
+            return new CompanyServiceImpl(companyDao(), speakerService());
         }
     }
 
@@ -102,7 +109,9 @@ class CompanyServiceImplTest {
                 CompanyDao companyDaoMock = Mockito.mock(CompanyDao.class);
                 Mockito.when(companyDaoMock.getCompanies()).thenReturn(companies);
 
-                CompanyService companyService = new CompanyServiceImpl(companyDaoMock);
+                SpeakerService speakerService = Mockito.mock(SpeakerService.class);
+
+                CompanyService companyService = new CompanyServiceImpl(companyDaoMock, speakerService);
 
                 assertEquals(expected, companyService.getCompaniesByFirstLetters(firstLetters, language));
             }
