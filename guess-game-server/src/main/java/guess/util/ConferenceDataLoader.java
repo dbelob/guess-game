@@ -1663,6 +1663,7 @@ public class ConferenceDataLoader {
      * @throws IOException                if resource files could not be opened
      */
     static void checkCompanies() throws SpeakerDuplicatedException, IOException {
+        final String LOG_FORMAT = "{}: {}";
         var resourceSourceInformation = YamlUtils.readSourceInformation();
         var companies = resourceSourceInformation.getCompanies();
         var number = new AtomicInteger();
@@ -1672,7 +1673,7 @@ public class ConferenceDataLoader {
                 .filter(c -> (c.getSiteLink() == null) || c.getSiteLink().trim().isEmpty())
                 .map(c -> LocalizationUtils.getString(c.getName(), Language.ENGLISH))
                 .sorted()
-                .forEach(e -> log.info("{}: {}", number.incrementAndGet(), e));
+                .forEach(e -> log.info(LOG_FORMAT, number.incrementAndGet(), e));
 
         number.set(0);
         log.info("");
@@ -1684,7 +1685,7 @@ public class ConferenceDataLoader {
                 .filter(e -> e.getValue().size() > 1)
                 .map(Map.Entry::getKey)
                 .sorted()
-                .forEach(e -> log.info("{}: {}", number.incrementAndGet(), e));
+                .forEach(e -> log.info(LOG_FORMAT, number.incrementAndGet(), e));
 
         number.set(0);
         log.info("");
@@ -1697,7 +1698,7 @@ public class ConferenceDataLoader {
                 .filter(c -> !speakerCompanies.contains(c))
                 .map(c -> LocalizationUtils.getString(c.getName(), Language.ENGLISH))
                 .sorted()
-                .forEach(e -> log.info("{}: {}", number.incrementAndGet(), e));
+                .forEach(e -> log.info(LOG_FORMAT, number.incrementAndGet(), e));
     }
 
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
