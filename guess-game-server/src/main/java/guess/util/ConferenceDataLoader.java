@@ -1685,6 +1685,19 @@ public class ConferenceDataLoader {
                 .map(Map.Entry::getKey)
                 .sorted()
                 .forEach(e -> log.info("{}: {}", number.incrementAndGet(), e));
+
+        number.set(0);
+        log.info("");
+        log.info("Companies without speakers:");
+        Set<Company> speakerCompanies = resourceSourceInformation.getSpeakers().stream()
+                .filter(s -> !s.getCompanies().isEmpty())
+                .flatMap(s -> s.getCompanies().stream())
+                .collect(Collectors.toSet());
+        companies.stream()
+                .filter(c -> !speakerCompanies.contains(c))
+                .map(c -> LocalizationUtils.getString(c.getName(), Language.ENGLISH))
+                .sorted()
+                .forEach(e -> log.info("{}: {}", number.incrementAndGet(), e));
     }
 
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
