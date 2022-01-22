@@ -54,10 +54,6 @@ companies:
     name:
       - {language: en, text: Advantum}
     siteLink: https://advantum.ru
-  - id: 14
-    name:
-      - {language: en, text: Adviqo}
-    siteLink: https://www.adviqo.com
   - id: 15
     name:
       - {language: en, text: Aerokube}
@@ -313,10 +309,6 @@ companies:
     name:
       - {language: en, text: Camunda}
     siteLink: https://camunda.com
-  - id: 86
-    name:
-      - {language: en, text: "Canoo Engineering AG"}
-    siteLink: https://www.canoo.com
   - id: 87
     name:
       - {language: en, text: ChilliCream}
@@ -399,9 +391,6 @@ companies:
   - id: 109
     name:
       - {language: en, text: Consultant}
-  - id: 110
-    name:
-      - {language: en, text: "Consultant / Author / Solution Architect"}
   - id: 111
     name:
       - {language: en, text: Contino}
@@ -565,10 +554,6 @@ companies:
     name:
       - {language: en, text: Directual}
     siteLink: https://www.directual.com
-  - id: 158
-    name:
-      - {language: en, text: Ditto}
-    siteLink: https://ditto.com
   - id: 160
     name:
       - {language: en, text: "DM Labs"}
@@ -701,10 +686,6 @@ companies:
     name:
       - {language: en, text: "Exonum, the Bitfury Group"}
     siteLink: https://exonum.com
-  - id: 193
-    name:
-      - {language: en, text: Expload}
-    siteLink: https://expload.com
   - id: 194
     name:
       - {language: en, text: Facebook}
@@ -725,10 +706,6 @@ companies:
     name:
       - {language: en, text: Findify}
     siteLink: https://www.findify.io
-  - id: 199
-    name:
-      - {language: en, text: "Five Agency"}
-    siteLink: https://five.agency
   - id: 200
     name:
       - {language: en, text: FivexL}
@@ -778,10 +755,6 @@ companies:
     name:
       - {language: en, text: GetIntent}
     siteLink: https://getintent.com
-  - id: 213
-    name:
-      - {language: en, text: GitHub}
-    siteLink: https://github.com
   - id: 214
     name:
       - {language: en, text: GitLab}
@@ -913,10 +886,6 @@ companies:
     name:
       - {language: en, text: Hyper}
     siteLink: https://www.hyper.no
-  - id: 248
-    name:
-      - {language: en, text: HyperIntegrate}
-    siteLink: https://www.hyperintegrate.com
   - id: 249
     name:
       - {language: en, text: Hypothesis}
@@ -968,10 +937,6 @@ companies:
     name:
       - {language: en, text: Infobip}
     siteLink: https://www.infobip.com
-  - id: 263
-    name:
-      - {language: en, text: Infopulse}
-    siteLink: https://www.infopulse.com
   - id: 264
     name:
       - {language: en, text: Infotecs}
@@ -988,10 +953,6 @@ companies:
     name:
       - {language: en, text: Intel}
     siteLink: https://www.intel.com
-  - id: 268
-    name:
-      - {language: en, text: Intermedia}
-    siteLink: https://www.intermedia.com
   - id: 269
     name:
       - {language: en, text: Inuits}
@@ -1316,10 +1277,6 @@ companies:
     name:
       - {language: en, text: Netcentric}
     siteLink: https://www.netcentric.biz
-  - id: 356
-    name:
-      - {language: en, text: Netcetera}
-    siteLink: https://www.netcetera.com
   - id: 357
     name:
       - {language: en, text: Netcracker}
@@ -1328,10 +1285,6 @@ companies:
     name:
       - {language: en, text: Netflix}
     siteLink: https://www.netflix.com
-  - id: 359
-    name:
-      - {language: en, text: Netifi}
-    siteLink: https://www.netifi.com
   - id: 360
     name:
       - {language: en, text: Netlify}
@@ -1404,10 +1357,6 @@ companies:
     name:
       - {language: en, text: Okko}
     siteLink: https://okko.tv
-  - id: 378
-    name:
-      - {language: en, text: "One Systems"}
-    siteLink: https://www.onesystems.com
   - id: 379
     name:
       - {language: en, text: onqtam.com}
@@ -1724,10 +1673,6 @@ companies:
     name:
       - {language: en, text: ScrumTrek}
     siteLink: https://scrumtrek.ru
-  - id: 469
-    name:
-      - {language: en, text: "SDI Media"}
-    siteLink: https://www.sdimedia.com
   - id: 470
     name:
       - {language: en, text: "Sela Group"}
@@ -1924,10 +1869,6 @@ companies:
     name:
       - {language: en, text: "The Atlantic Systems Guild Inc."}
     siteLink: https://systemsguild.eu
-  - id: 520
-    name:
-      - {language: en, text: "The D Language Foundation"}
-    siteLink: https://dlang.org
   - id: 521
     name:
       - {language: en, text: "The Selenium Project"}
@@ -2047,10 +1988,6 @@ companies:
     name:
       - {language: en, text: UiPath}
     siteLink: https://www.uipath.com
-  - id: 552
-    name:
-      - {language: en, text: "uKit Group"}
-    siteLink: https://ukit.com
   - id: 554
     name:
       - {language: en, text: "Uncle Bob Consulting LLC"}
@@ -2432,10 +2369,6 @@ companies:
       - {language: en, text: "NRU HSE"}
       - {language: ru, text: "НИУ ВШЭ"}
     siteLink: https://www.hse.ru
-  - id: 651
-    name:
-      - {language: en, text: "Independent contractor"}
-      - {language: ru, text: "Независимый консультант"}
   - id: 652
     name:
       - {language: en, text: Notissimus}
@@ -2623,10 +2556,6 @@ companies:
     name:
       - {language: en, text: KeenTools}
     siteLink: https://keentools.io
-  - id: 706
-    name:
-      - {language: en, text: "Flow Health"}
-    siteLink: https://www.flowhealth.com
   - id: 707
     name:
       - {language: en, text: "PrecisionLender, a Q2 Company"}
@@ -2675,10 +2604,6 @@ companies:
       - {language: en, text: Auto.ru}
       - {language: ru, text: Авто.ру}
     siteLink: https://auto.ru
-  - id: 719
-    name:
-      - {language: en, text: INOSTUDIO}
-    siteLink: https://inostudio.com
   - id: 720
     name:
       - {language: en, text: RBC}
@@ -2746,10 +2671,6 @@ companies:
     name:
       - {language: en, text: Resume.io}
     siteLink: https://resume.io
-  - id: 736
-    name:
-      - {language: en, text: Deltatre}
-    siteLink: https://www.deltatre.com
   - id: 737
     name:
       - {language: en, text: "OpenSoft Inc"}
@@ -2843,10 +2764,6 @@ companies:
     name:
       - {language: en, text: Vectorized}
     siteLink: https://vectorized.io
-  - id: 761
-    name:
-      - {language: en, text: "Android Broadcast"}
-    siteLink: https://androidbroadcast.dev
   - id: 762
     name:
       - {language: en, text: PulsePoint}
@@ -3056,10 +2973,6 @@ companies:
     name:
       - {language: en, text: "1inch Network"}
     siteLink: https://1inch.io
-  - id: 818
-    name:
-      - {language: en, text: "Independent expert"}
-      - {language: ru, text: "Независимый эксперт"}
   - id: 819
     name:
       - {language: en, text: Bling}
@@ -3202,11 +3115,6 @@ companies:
     name:
       - {language: en, text: ‹div›RIOTS}
     siteLink: https://divriots.com
-  - id: 856
-    name:
-      - {language: en, text: AvitoTech}
-      - {language: ru, text: АвитоТех}
-    siteLink: https://avito.tech
   - id: 857
     name:
       - {language: en, text: Buffer}
@@ -3290,11 +3198,6 @@ companies:
     name:
       - {language: en, text: MERA}
     siteLink: http://www.meranetworks.com
-  - id: 878
-    name:
-      - {language: en, text: TangoMe}
-      - {language: ru, text: "ТангоМи СТП"}
-    siteLink: https://www.tango.me
   - id: 879
     name:
       - {language: en, text: "IVA Technologies"}

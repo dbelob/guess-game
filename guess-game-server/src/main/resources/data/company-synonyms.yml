@@ -155,10 +155,6 @@ companySynonyms:
     synonyms: [
         "IBM Canada"
     ]
-  - name: Infopulse
-    synonyms: [
-        "Infopulse Ukraine"
-    ]
   - name: Intel
     synonyms: [
         "Intel Corporation"
@@ -258,10 +254,6 @@ companySynonyms:
   - name: Netflix
     synonyms: [
         "Netflix Inc."
-    ]
-  - name: Netifi
-    synonyms: [
-        "Netifi, Inc"
     ]
   - name: nipafx
     synonyms: [
