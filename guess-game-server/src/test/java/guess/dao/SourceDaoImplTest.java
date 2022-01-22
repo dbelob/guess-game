@@ -268,6 +268,15 @@ class SourceDaoImplTest {
     }
 
     @Test
+    void getCompanyById() {
+        assertEquals(company0, sourceDao.getCompanyById(0));
+        assertEquals(company1, sourceDao.getCompanyById(1));
+        assertEquals(company2, sourceDao.getCompanyById(2));
+        assertThrows(NoSuchElementException.class, () -> sourceDao.getCompanyById(3));
+        assertThrows(NoSuchElementException.class, () -> sourceDao.getCompanyById(4));
+    }
+
+    @Test
     void getCompaniesByIds() {
         assertEquals(Collections.emptyList(), sourceDao.getCompaniesByIds(Collections.emptyList()));
         assertEquals(List.of(company0), sourceDao.getCompaniesByIds(List.of(0L)));

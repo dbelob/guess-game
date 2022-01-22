@@ -42,6 +42,7 @@ class SpeakerServiceImplTest {
         speaker0.setId(0);
         speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
         speaker0.setCompanies(List.of(company0));
+        speaker0.setCompanyIds(List.of(0L));
         speaker0.setTwitter("twitter0");
         speaker0.setGitHub("github0");
 
@@ -49,6 +50,7 @@ class SpeakerServiceImplTest {
         speaker1.setId(1);
         speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
         speaker1.setCompanies(List.of(company1));
+        speaker1.setCompanyIds(List.of(1L));
         speaker1.setTwitter("twitter1");
         speaker1.setGitHub("github1");
         speaker1.setJavaChampion(true);
@@ -57,6 +59,7 @@ class SpeakerServiceImplTest {
         speaker2.setId(2);
         speaker2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name2")));
         speaker2.setCompanies(List.of(company2));
+        speaker2.setCompanyIds(List.of(2L));
         speaker2.setTwitter("twitter2");
         speaker2.setGitHub("github2");
         speaker2.setMvp(true);
@@ -65,6 +68,7 @@ class SpeakerServiceImplTest {
         speaker3.setId(3);
         speaker3.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "First3 Last3")));
         speaker3.setCompanies(List.of(company2));
+        speaker3.setCompanyIds(List.of(2L));
         speaker3.setTwitter("twitter3");
         speaker3.setGitHub("github3");
     }
@@ -225,6 +229,32 @@ class SpeakerServiceImplTest {
             Mockito.when(speakerDao.getSpeakers()).thenReturn(speakers);
 
             assertEquals(expected, speakerService.getSpeakers(name, company, twitter, gitHub, isJavaChampion, isMvp));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getSpeakersByCompanyId method tests")
+    class GetSpeakersByCompanyIdTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(0L, Collections.emptyList(), Collections.emptyList()),
+                    arguments(0L, List.of(speaker0, speaker1, speaker2, speaker3), List.of(speaker0)),
+                    arguments(1L, List.of(speaker0, speaker1, speaker2, speaker3), List.of(speaker1)),
+                    arguments(2L, List.of(speaker0, speaker1, speaker2, speaker3), List.of(speaker2, speaker3)),
+                    arguments(3L, List.of(speaker0, speaker1, speaker2, speaker3), Collections.emptyList())
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getSpeakersByCompanyId(long companyId, List<Speaker> speakers, List<Speaker> expected) {
+            SpeakerDao speakerDao = Mockito.mock(SpeakerDao.class);
+            SpeakerService speakerService = new SpeakerServiceImpl(speakerDao);
+
+            Mockito.when(speakerDao.getSpeakers()).thenReturn(speakers);
+
+            assertEquals(expected, speakerService.getSpeakersByCompanyId(companyId));
         }
     }
 
