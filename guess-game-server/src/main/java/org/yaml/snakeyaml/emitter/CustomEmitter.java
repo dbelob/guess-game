@@ -28,7 +28,7 @@ public final class CustomEmitter implements Emitable {
     private static final char[] SPACE = {' '};
 
     private static final Pattern SPACES_PATTERN = Pattern.compile("\\s");
-    private static final Set<Character> INVALID_ANCHOR = new HashSet<>();
+    private static final Set<Character> INVALID_ANCHOR = new HashSet();
     static {
         INVALID_ANCHOR.add('[');
         INVALID_ANCHOR.add(']');
@@ -217,13 +217,16 @@ public final class CustomEmitter implements Emitable {
         if (events.isEmpty()) {
             return true;
         }
+
         Iterator<Event> iter = events.iterator();
-        Event event = null;
-        while(iter.hasNext()) {
-            event = iter.next();
-            if (event instanceof CommentEvent) {
-                continue;
+        Event event = iter.next(); // FIXME why without check ???
+        while(event instanceof CommentEvent) {
+            if (!iter.hasNext()) {
+                return true;
             }
+            event = iter.next();
+            }
+
             if (event instanceof DocumentStartEvent) {
                 return needEvents(iter, 1);
             } else if (event instanceof SequenceStartEvent) {
@@ -234,12 +237,10 @@ public final class CustomEmitter implements Emitable {
                 return needEvents(iter, 2);
             } else if (event instanceof StreamEndEvent) {
                 return false;
-            } else {
-                // To collect any comment events
+        } else if (emitComments) {
                 return needEvents(iter, 1);
             }
-        }
-        return true;
+        return false;
     }
 
     private boolean needEvents(Iterator<Event> iter, int count) {
@@ -257,7 +258,6 @@ public final class CustomEmitter implements Emitable {
                 level--;
             } else if (event instanceof StreamEndEvent) {
                 level = -1;
-            } else if (event instanceof CommentEvent) {
             }
             if (level < 0) {
                 return false;
@@ -350,11 +350,6 @@ public final class CustomEmitter implements Emitable {
                 }
                 state = new ExpectDocumentRoot();
             } else if (event instanceof StreamEndEvent) {
-                // TODO fix 313 PyYAML changeset
-                // if (openEnded) {
-                // writeIndicator("...", true, false, false);
-                // writeIndent();
-                // }
                 writeStreamEnd();
                 state = new ExpectNothing();
             } else if (event instanceof CommentEvent) {
@@ -492,6 +487,8 @@ public final class CustomEmitter implements Emitable {
                 if (canonical) {
                     writeIndicator(",", false, false, false);
                     writeIndent();
+                } else if (prettyFlow) {
+                    writeIndent();
                 }
                 writeIndicator("]", false, false, false);
                 inlineCommentsCollector.collectEvents();
@@ -501,16 +498,16 @@ public final class CustomEmitter implements Emitable {
                 }
                 state = states.pop();
             } else if (event instanceof CommentEvent) {
-                blockCommentsCollector.collectEvents(event);
-                writeBlockComment();
+                event = blockCommentsCollector.collectEvents(event);
             } else {
                 writeIndicator(",", false, false, false);
+                writeBlockComment();
                 if (canonical || (column > bestWidth && splitLines) || prettyFlow) {
                     writeIndent();
                 }
                 states.push(new ExpectFlowSequenceItem());
                 expectNode(false, false, false);
-                inlineCommentsCollector.collectEvents(event);
+                event = inlineCommentsCollector.collectEvents(event);
                 writeInlineComments();
             }
         }
@@ -530,6 +527,8 @@ public final class CustomEmitter implements Emitable {
 
     private class ExpectFirstFlowMappingKey implements EmitterState {
         public void expect() throws IOException {
+            event = blockCommentsCollector.collectEventsAndPoll(event);
+            writeBlockComment();
             if (event instanceof MappingEndEvent) {
                 indent = indents.pop();
                 flowLevel--;
@@ -571,6 +570,8 @@ public final class CustomEmitter implements Emitable {
                 state = states.pop();
             } else {
                 writeIndicator(",", false, false, false);
+                event = blockCommentsCollector.collectEventsAndPoll(event);
+                writeBlockComment();
                 if (canonical || (column > bestWidth && splitLines) || prettyFlow) {
                     writeIndent();
                 }
@@ -1418,8 +1419,11 @@ public final class CustomEmitter implements Emitable {
                         writeIndicator("#", false, false, false);
                     }
                     stream.write(commentLine.getValue());
-                }
                 writeLineBreak(null);
+                } else {
+                    writeLineBreak(null);
+                    writeIndent();
+                }
                 wroteComment = true;
             }
         }
