@@ -161,20 +161,26 @@ class CompanyControllerTest {
         Speaker speaker1 = new Speaker();
         speaker1.setId(1);
         speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
-        speaker1.setCompanies(List.of(company0, company1));
+        speaker1.setCompanies(List.of(company0));
+
+        Speaker speaker2 = new Speaker();
+        speaker2.setId(2);
+        speaker2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+        speaker2.setCompanies(List.of(company0, company1));
 
         given(companyService.getCompanyById(0)).willReturn(company0);
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
-        given(speakerService.getSpeakersByCompanyId(0)).willReturn(List.of(speaker1, speaker0));
+        given(speakerService.getSpeakersByCompanyId(0)).willReturn(List.of(speaker1, speaker0, speaker2));
 
         mvc.perform(get("/api/company/company/0")
                         .contentType(MediaType.APPLICATION_JSON)
                         .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.company.id", is(0)))
-                .andExpect(jsonPath("$.speakers", hasSize(2)))
+                .andExpect(jsonPath("$.speakers", hasSize(3)))
                 .andExpect(jsonPath("$.speakers[0].id", is(0)))
-                .andExpect(jsonPath("$.speakers[1].id", is(1)));
+                .andExpect(jsonPath("$.speakers[1].id", is(2)))
+                .andExpect(jsonPath("$.speakers[2].id", is(1)));
         Mockito.verify(companyService, VerificationModeFactory.times(1)).getCompanyById(0);
         Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
         Mockito.verify(speakerService, VerificationModeFactory.times(1)).getSpeakersByCompanyId(0);
