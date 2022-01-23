@@ -13,8 +13,8 @@
 }
 .container-dialog, .container-information {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 15px !important;
+  padding-left: 15px !important;
   margin-right: auto;
   margin-left: auto;
 }
@@ -197,10 +197,6 @@
     margin-left: auto !important;
     order: 6 !important;
   }
-}
-
-.p-datatable-resizable .p-resizable-column {
-  position: static !important;
 }
 
 .p-datatable .p-datatable-thead > tr > th {

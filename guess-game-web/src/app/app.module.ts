@@ -10,6 +10,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { MarkdownModule } from 'ngx-markdown';
 
 import { AppComponent } from './app.component';
+import { CompaniesModule } from './modules/information/companies/companies.module';
 import { EventTypesModule } from './modules/information/event-types/event-types.module';
 import { EventsModule } from './modules/information/events/events.module';
 import { HomeModule } from './modules/home/home.module';
@@ -46,6 +47,9 @@ import { TalksSearchComponent } from './modules/information/talks/talks-search.c
 import { SpeakerComponent } from './modules/information/speakers/speaker.component';
 import { SpeakersListComponent } from './modules/information/speakers/speakers-list.component';
 import { SpeakersSearchComponent } from './modules/information/speakers/speakers-search.component';
+import { CompanyComponent } from './modules/information/companies/company.component';
+import { CompaniesListComponent } from './modules/information/companies/companies-list.component';
+import { CompaniesSearchComponent } from './modules/information/companies/companies-search.component';
 import { EventTypeStatisticsComponent } from './modules/information/statistics/event-type-statistics.component';
 import { EventStatisticsComponent } from './modules/information/statistics/event-statistics.component';
 import { SpeakerStatisticsComponent } from './modules/information/statistics/speaker-statistics.component';
@@ -85,6 +89,9 @@ const routes: Routes = [
   {path: 'information/speaker/:id', component: SpeakerComponent},
   {path: 'information/speakers/list', component: SpeakersListComponent},
   {path: 'information/speakers/search', component: SpeakersSearchComponent},
+  {path: 'information/company/:id', component: CompanyComponent},
+  {path: 'information/companies/list', component: CompaniesListComponent},
+  {path: 'information/companies/search', component: CompaniesSearchComponent},
   {path: 'information/statistics/event-types', component: EventTypeStatisticsComponent},
   {path: 'information/statistics/events', component: EventStatisticsComponent},
   {path: 'information/statistics/speakers', component: SpeakerStatisticsComponent},
@@ -94,6 +101,7 @@ const routes: Routes = [
   {path: 'information/events', redirectTo: 'information/events/search'},
   {path: 'information/talks', redirectTo: 'information/talks/search'},
   {path: 'information/speakers', redirectTo: 'information/speakers/list'},
+  {path: 'information/companies', redirectTo: 'information/companies/list'},
   {path: 'information/statistics', redirectTo: 'information/statistics/event-types'},
   {path: 'game', redirectTo: 'game/start'},
   {path: 'information', redirectTo: 'information/event-types/search'},
@@ -127,6 +135,7 @@ registerLocaleData(localeRu, 'ru');
         deps: [HttpClient]
       }
     }),
+    CompaniesModule,
     EventsModule,
     EventTypesModule,
     HomeModule,

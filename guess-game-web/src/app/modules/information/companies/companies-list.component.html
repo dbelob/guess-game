@@ -1,0 +1,82 @@
+<div class="container-information p-2">
+  <h3 class="bg-secondary p-1 text-white text-center rounded">{{'companies.title' | translate}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
+    </div>
+    <app-language-switcher (reload)="onLanguageChange()" class="col-auto"></app-language-switcher>
+  </div>
+
+  <app-information-switcher [type]="'companies'"></app-information-switcher>
+
+  <app-companies-switcher [type]="'list'"></app-companies-switcher>
+
+  <div class="m-1">
+    <div>
+      <button class="btn btn-link btn-sm-condensed font-weight-bold remove-focus" *ngFor="let enLetter of enLetters"
+              (click)="changeLetter(enLetter)"
+              [class.text-dark]="isCurrentLetter(enLetter)" [class.font-weight-bold]="isCurrentLetter(enLetter)"
+              [disabled]="isCurrentLetter(enLetter)">
+        {{enLetter}}
+      </button>
+      <button class="btn btn-link btn-sm-condensed font-weight-bold remove-focus"
+              (click)="changeDigit()"
+              [class.text-dark]="isDigit" [class.font-weight-bold]="isDigit"
+              [disabled]="isDigit">
+        {{DIGIT_BUTTON_TEXT}}
+      </button>
+    </div>
+    <div *ngIf="isRuLettersVisible()">
+      <button class="btn btn-link btn-sm-condensed font-weight-bold remove-focus" *ngFor="let ruLetter of ruLetters"
+              (click)="changeLetter(ruLetter)"
+              [class.text-dark]="isCurrentLetter(ruLetter)" [class.font-weight-bold]="isCurrentLetter(ruLetter)"
+              [disabled]="isCurrentLetter(ruLetter)">
+        {{ruLetter}}
+      </button>
+    </div>
+
+    <div *ngIf="!isCompaniesListVisible()" class="alert text-center m-2">
+      {{'companies.noCompaniesFoundText' | translate}}
+    </div>
+
+    <div *ngIf="isCompaniesListVisible()" class="ml-2 mr-2 mb-2 mt-3">
+      <p-table [value]="companies" [resizableColumns]="true" [autoLayout]="true"
+               [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
+               [showCurrentPageReport]="true" [alwaysShowPaginator]="false" [(first)]="paginatorFirst"
+               currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
+               styleClass="p-datatable-striped" responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" pResizableColumn>
+              {{'companies.table.nameColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'companies.table.speakersColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'companies.table.javaChampionsColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'companies.table.mvpsColumn' | translate}}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-company let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>
+              <a [routerLink]="['/information', 'company', company.id]" class="text-dark">{{company.name}}</a>
+            </td>
+            <td class="text-center">{{company.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
+            <td class="text-center">{{company.javaChampionsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+            <td class="text-center">{{company.mvpsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

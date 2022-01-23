@@ -4,7 +4,7 @@ import guess.domain.Language;
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
 import guess.dto.common.SelectedEntitiesDto;
-import guess.dto.company.CompanyDto;
+import guess.dto.company.CompanyBriefDto;
 import guess.dto.speaker.SpeakerBriefDto;
 import guess.dto.speaker.SpeakerDetailsDto;
 import guess.dto.speaker.SpeakerSuperBriefDto;
@@ -99,7 +99,7 @@ public class SpeakerController {
         Comparator<SpeakerBriefDto> comparatorByName = Comparator.comparing(SpeakerBriefDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
         Comparator<SpeakerBriefDto> comparatorByCompany = Comparator.comparing(
                 s -> s.getCompanies().stream()
-                        .map(CompanyDto::name)
+                        .map(CompanyBriefDto::getName)
                         .collect(Collectors.joining(", ")), String.CASE_INSENSITIVE_ORDER);
 
         return speakerBriefDtoList.stream()

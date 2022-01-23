@@ -69,7 +69,7 @@ public class SearchUtilsTest {
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("isSubstringFound method tests (String)")
-    class IsSubstringFoundString {
+    class IsSubstringFoundStringTest {
         private Stream<Arguments> data() {
             return Stream.of(
                     arguments(null, null, false),
@@ -106,7 +106,7 @@ public class SearchUtilsTest {
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("isSubstringFound method tests (List<LocaleItem>)")
-    class IsSubstringFoundList {
+    class IsSubstringFoundListTest {
         private Stream<Arguments> data() {
             return Stream.of(
                     arguments(null, null, false),
@@ -146,6 +146,33 @@ public class SearchUtilsTest {
         @MethodSource("data")
         void isSubstringFound(String trimmedLowerCasedSubstring, List<LocaleItem> localeItems, boolean expected) {
             assertEquals(expected, SearchUtils.isSubstringFound(trimmedLowerCasedSubstring, localeItems));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getSubStringWithFirstAlphaNumeric method tests")
+    class GetSubStringWithFirstAlphaNumericTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, null),
+                    arguments("Google", "Google"),
+                    arguments("10up Inc", "10up Inc"),
+                    arguments("1C-Bitrix", "1C-Bitrix"),
+                    arguments("2GIS", "2GIS"),
+                    arguments("‹div›RIOTS", "div›RIOTS"),
+                    arguments("1С-Битрикс", "1С-Битрикс"),
+                    arguments("Яндекс", "Яндекс"),
+                    arguments("‹Яндекс", "Яндекс"),
+                    arguments("‹Яндекс›", "Яндекс›"),
+                    arguments("@#$", "@#$")
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getSubStringWithFirstAlphaNumeric(String value, String expected) {
+            assertEquals(expected, SearchUtils.getSubStringWithFirstAlphaNumeric(value));
         }
     }
 }

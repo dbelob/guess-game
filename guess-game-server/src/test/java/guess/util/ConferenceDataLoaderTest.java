@@ -2924,6 +2924,16 @@ class ConferenceDataLoaderTest {
             Company company4 = new Company(4, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name4")), "https://site2.com");
             Company company5 = new Company(5, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name5")), "https://site2.com");
 
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+            speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+            speaker0.setCompanies(List.of(company0));
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+            speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+            speaker1.setCompanies(Collections.emptyList());
+
             mockedStatic.when(YamlUtils::readSourceInformation)
                     .thenReturn(new SourceInformation(Collections.emptyList(), Collections.emptyList(),
                             Collections.emptyList(), Collections.emptyList(),
@@ -2931,7 +2941,7 @@ class ConferenceDataLoaderTest {
                                     List.of(company0, company1, company2, company3, company4, company5),
                                     Collections.emptyList(),
                                     Collections.emptyList(),
-                                    Collections.emptyList()
+                                    List.of(speaker0, speaker1)
                             ),
                             Collections.emptyList()
                     ));

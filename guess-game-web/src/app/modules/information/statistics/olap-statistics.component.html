@@ -368,7 +368,9 @@
               <button type="button" pButton pRipple [pRowToggler]="companyMetrics" class="p-button-text p-button-rounded p-button-plain remove-focus" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
             </td>
             <td class="text-center">{{i + 1}}</td>
-            <td>{{companyMetrics.name}}</td>
+            <td>
+              <a [routerLink]="['/information', 'company', companyMetrics.id]" class="text-dark">{{companyMetrics.name}}</a>
+            </td>
             <td *ngFor="let measureValue of companyMetrics.measureValues" class="text-center">
               {{measureValue | number:'1.0-0':translateService.currentLang}}
             </td>

@@ -100,7 +100,9 @@
         <ng-template pTemplate="body" let-companyMetrics let-i = "rowIndex">
           <tr>
             <td class="text-center">{{i + 1}}</td>
-            <td>{{companyMetrics.name}}</td>
+            <td>
+              <a [routerLink]="['/information', 'company', companyMetrics.id]" class="text-dark">{{companyMetrics.name}}</a>
+            </td>
             <td class="text-center">{{companyMetrics.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
             <td class="text-center">{{companyMetrics.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
             <td class="text-center">{{companyMetrics.eventsQuantity | number:'1.0-0':translateService.currentLang}}</td>

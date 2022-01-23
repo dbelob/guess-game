@@ -178,6 +178,27 @@
       "mvpLabel": "Most Valuable Professional"
     }
   },
+  "company": {
+    "title": "Компания"
+  },
+  "companies": {
+    "title": "Компании",
+    "noCompaniesFoundText": "Компании не найдены",
+    "table": {
+      "title": "Компании",
+      "nameColumn": "Наименование",
+      "speakersColumn": "Спикеров",
+      "javaChampionsColumn": "Java Champions",
+      "mvpsColumn": "MVPs"
+    },
+    "list": {
+      "title": "Список"
+    },
+    "search": {
+      "title": "Поиск",
+      "nameLabel": "Наименование:"
+    }
+  },
   "statistics": {
     "title": "Статистика",
     "eventTypes": {

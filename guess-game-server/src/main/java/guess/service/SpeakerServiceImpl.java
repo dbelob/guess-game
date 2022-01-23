@@ -87,6 +87,13 @@ public class SpeakerServiceImpl implements SpeakerService {
         }
     }
 
+    @Override
+    public List<Speaker> getSpeakersByCompanyId(long companyId) {
+        return speakerDao.getSpeakers().stream()
+                .filter(s -> s.getCompanyIds().contains(companyId))
+                .toList();
+    }
+
     static boolean isSpeakerCompanyFound(Speaker speaker, String trimmedLowerCasedCompany) {
         return speaker.getCompanies().stream()
                 .anyMatch(c -> SearchUtils.isSubstringFound(trimmedLowerCasedCompany, c.getName()));

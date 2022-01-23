@@ -1,0 +1,81 @@
+<div class="container-information p-2">
+  <h3 class="bg-secondary p-1 text-white text-center rounded">{{'companies.title' | translate}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
+    </div>
+    <app-language-switcher (reload)="onLanguageChange()" class="col-auto"></app-language-switcher>
+  </div>
+
+  <app-information-switcher [type]="'companies'"></app-information-switcher>
+
+  <app-companies-switcher [type]="'search'"></app-companies-switcher>
+
+  <div class="m-1">
+    <form role="form" class="m-2">
+      <div class="form-group row justify-content-center align-items-center">
+        <label for="name" class="col-sm-2">{{'companies.search.nameLabel' | translate}}</label>
+        <div class="col-sm-10">
+          <input type="text" id="name" pInputText class="form-control" [(ngModel)]="name" name="name" (ngModelChange)="onFilterChange($event)"/>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary m-1" (click)="search()" [class.btn-secondary]="isSearchDisabled()" [disabled]="isSearchDisabled()">
+          {{'common.searchButtonText' | translate}}
+        </button>
+        <button class="btn btn-primary m-1" (click)="clear()">
+          {{'common.clearButtonText' | translate}}
+        </button>
+      </div>
+    </form>
+
+    <div *ngIf="isNoCompaniesFoundVisible()" class="alert text-center m-2">
+      {{'companies.noCompaniesFoundText' | translate}}
+    </div>
+
+    <div *ngIf="isCompaniesListVisible()" class="ml-2 mr-2 mb-2 mt-3">
+      <p-table [value]="companies" [resizableColumns]="true" [autoLayout]="true"
+               [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
+               [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
+               currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
+               sortMode="multiple" [multiSortMeta]="multiSortMeta" styleClass="p-datatable-striped"
+              responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" [pSortableColumn]="'name'" pResizableColumn>
+              {{'companies.table.nameColumn' | translate}}
+              <p-sortIcon [field]="'name'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'speakersQuantity'" pResizableColumn>
+              {{'companies.table.speakersColumn' | translate}}
+              <p-sortIcon [field]="'speakersQuantity'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'javaChampionsQuantity'" pResizableColumn>
+              {{'companies.table.javaChampionsColumn' | translate}}
+              <p-sortIcon [field]="'javaChampionsQuantity'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'mvpsQuantity'" pResizableColumn>
+              {{'companies.table.mvpsColumn' | translate}}
+              <p-sortIcon [field]="'mvpsQuantity'"></p-sortIcon>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-company let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>
+              <a [routerLink]="['/information', 'company', company.id]" class="text-dark">{{company.name}}</a>
+            </td>
+            <td class="text-center">{{company.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
+            <td class="text-center">{{company.javaChampionsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+            <td class="text-center">{{company.mvpsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

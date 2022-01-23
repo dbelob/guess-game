@@ -178,6 +178,27 @@
       "mvpLabel": "Most Valuable Professional"
     }
   },
+  "company": {
+    "title": "Company"
+  },
+  "companies": {
+    "title": "Companies",
+    "noCompaniesFoundText": "No companies found",
+    "table": {
+      "title": "Companies",
+      "nameColumn": "Name",
+      "speakersColumn": "Speakers",
+      "javaChampionsColumn": "Java Champions",
+      "mvpsColumn": "MVPs"
+    },
+    "list": {
+      "title": "List"
+    },
+    "search": {
+      "title": "Search",
+      "nameLabel": "Name:"
+    }
+  },
   "statistics": {
     "title": "Statistics",
     "eventTypes": {

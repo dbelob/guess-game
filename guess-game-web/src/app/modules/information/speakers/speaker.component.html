@@ -20,7 +20,8 @@
         <span class="col-auto h3">{{speakerDetails.speaker?.name}}</span>
         <span class="col-auto font-italic" *ngIf="speakerDetails.speaker?.companies">
           <span *ngFor="let company of speakerDetails.speaker.companies; last as isLast">
-            {{company.name}}<span *ngIf="!isLast">, </span>
+            <a [routerLink]="['/information', 'company', company.id]" class="text-dark">{{company.name}}</a>
+            <span *ngIf="!isLast">, </span>
           </span>
         </span>
       </div>
@@ -35,8 +36,7 @@
         </div>
       </div>
 
-      <div *ngIf="isSocialsVisible()"
-           class="row align-items-center mt-1">
+      <div *ngIf="isSocialsVisible()" class="row align-items-center mt-1">
         <div *ngIf="speakerDetails.speaker?.javaChampion" class="col-auto">
           <img src="{{degreesImageDirectory}}/java-champion.png" class="img-speaker-degree" alt="java-champion"/>
         </div>

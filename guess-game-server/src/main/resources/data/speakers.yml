@@ -799,7 +799,8 @@ speakers:
             анию BellSoft, которая выпускает и поддерживает собственный Java-дистрибутив Liberica JDK для Linux x86, Linux\
             \ ARM, Windows, Mac и других, а также разрабатывает решения для анализа больших данных и IoT. Алексей получил\
             \ ученую степень кандидата физико-математических наук в Санкт-Петербургском государственном университете."}
-    gitHub: avoitylov
+    twitter: avoitylov
+    gitHub: voitylov
   - id: 44
     photoFileName: 0044.jpg
     name:
