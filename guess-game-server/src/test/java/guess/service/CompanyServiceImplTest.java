@@ -4,7 +4,9 @@ import guess.dao.CompanyDao;
 import guess.dao.SpeakerDao;
 import guess.domain.Language;
 import guess.domain.source.Company;
+import guess.util.ConferenceDataLoader;
 import guess.util.LocalizationUtils;
+import guess.util.SearchUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -42,6 +44,7 @@ class CompanyServiceImplTest {
             CompanyDao companyDao = Mockito.mock(CompanyDao.class);
 
             Mockito.when(companyDao.getCompanies()).thenReturn(List.of(company0, company1, company2));
+            Mockito.when(companyDao.getCompanyById(Mockito.anyLong())).thenReturn(company0);
             Mockito.when(companyDao.getCompaniesByIds(Mockito.anyList())).thenReturn(List.of(company0, company1, company2));
 
             return companyDao;
@@ -68,6 +71,50 @@ class CompanyServiceImplTest {
     void getCompanies() {
         companyService.getCompanies();
         Mockito.verify(companyDao, VerificationModeFactory.times(1)).getCompanies();
+        Mockito.verifyNoMoreInteractions(companyDao);
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getCompanies method tests")
+    class GetCompaniesTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, Collections.emptyList(), false, Collections.emptyList()),
+                    arguments("name", List.of(company0, company1), false, Collections.emptyList()),
+                    arguments("name", List.of(company0, company1), true, List.of(company0, company1))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getCompanies(String name, List<Company> companies, boolean isSubstringFound, List<Company> expected) {
+            try (MockedStatic<SearchUtils> mockedStatic = Mockito.mockStatic(SearchUtils.class)) {
+                mockedStatic.when(() -> SearchUtils.trimAndLowerCase(Mockito.anyString()))
+                        .thenCallRealMethod();
+                mockedStatic.when(() -> SearchUtils.isStringSet(Mockito.anyString()))
+                        .thenCallRealMethod();
+                mockedStatic.when(() -> SearchUtils.isSubstringFound(Mockito.anyString(), Mockito.anyList()))
+                        .thenReturn(isSubstringFound);
+
+                CompanyDao companyDaoMock = Mockito.mock(CompanyDao.class);
+                Mockito.when(companyDaoMock.getCompanies()).thenReturn(companies);
+
+                SpeakerDao speakerDao = Mockito.mock(SpeakerDao.class);
+
+                CompanyService companyService = new CompanyServiceImpl(companyDaoMock, speakerDao);
+
+                assertEquals(expected, companyService.getCompanies(name));
+            }
+        }
+    }
+
+    @Test
+    void getCompanyById() {
+        final long ID = 0;
+
+        companyService.getCompanyById(ID);
+        Mockito.verify(companyDao, VerificationModeFactory.times(1)).getCompanyById(ID);
         Mockito.verifyNoMoreInteractions(companyDao);
     }
 
