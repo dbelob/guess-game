@@ -4,7 +4,6 @@ import guess.dao.CompanyDao;
 import guess.dao.SpeakerDao;
 import guess.domain.Language;
 import guess.domain.source.Company;
-import guess.util.ConferenceDataLoader;
 import guess.util.LocalizationUtils;
 import guess.util.SearchUtils;
 import org.junit.jupiter.api.DisplayName;
@@ -18,6 +17,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.mockito.internal.verification.VerificationModeFactory;
+import org.mockito.stubbing.Answer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -125,6 +125,48 @@ class CompanyServiceImplTest {
         companyService.getCompaniesByIds(IDS);
         Mockito.verify(companyDao, VerificationModeFactory.times(1)).getCompaniesByIds(IDS);
         Mockito.verifyNoMoreInteractions(companyDao);
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getCompaniesByFirstLetter method tests")
+    class GetCompaniesByFirstLetterTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(false, null, null, Collections.emptyList(), null, Collections.emptyList()),
+                    arguments(false, "n", Language.ENGLISH, List.of(company0), "", Collections.emptyList()),
+                    arguments(false, "n", Language.RUSSIAN, List.of(company0), "", Collections.emptyList()),
+                    arguments(false, "n", Language.ENGLISH, List.of(company0), " ", Collections.emptyList()),
+                    arguments(false, "n", Language.ENGLISH, List.of(company0), "N", List.of(company0)),
+                    arguments(true, null, Language.ENGLISH, List.of(company0), "N", Collections.emptyList()),
+                    arguments(true, null, Language.ENGLISH, List.of(company0), "0", List.of(company0))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getCompaniesByFirstLetter(boolean isDigit, String firstLetter, Language language, List<Company> companies,
+                                       String localizationString, List<Company> expected) {
+            try (MockedStatic<LocalizationUtils> mockedStatic = Mockito.mockStatic(LocalizationUtils.class)) {
+                mockedStatic.when(() -> LocalizationUtils.getString(Mockito.anyList(), Mockito.any(Language.class)))
+                        .thenAnswer(
+                                (Answer<String>) invocation -> {
+                                    Object[] args = invocation.getArguments();
+
+                                    return Language.ENGLISH.equals(args[1]) ? localizationString : null;
+                                }
+                        );
+
+                CompanyDao companyDaoMock = Mockito.mock(CompanyDao.class);
+                Mockito.when(companyDaoMock.getCompanies()).thenReturn(companies);
+
+                SpeakerDao speakerDao = Mockito.mock(SpeakerDao.class);
+
+                CompanyService companyService = new CompanyServiceImpl(companyDaoMock, speakerDao);
+
+                assertEquals(expected, companyService.getCompaniesByFirstLetter(isDigit, firstLetter, language));
+            }
+        }
     }
 
     @Nested
