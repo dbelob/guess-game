@@ -4,6 +4,8 @@ import guess.dao.CompanyDao;
 import guess.dao.SpeakerDao;
 import guess.domain.Language;
 import guess.domain.source.Company;
+import guess.domain.source.Speaker;
+import guess.domain.statistics.company.CompanySearchResult;
 import guess.util.LocalizationUtils;
 import guess.util.SearchUtils;
 import org.junit.jupiter.api.DisplayName;
@@ -37,6 +39,13 @@ class CompanyServiceImplTest {
     private static final Company company1 = new Company(1, Collections.emptyList());
     private static final Company company2 = new Company(2, Collections.emptyList());
 
+    private static final Speaker speaker0 = new Speaker(0, new Speaker.SpeakerPhoto(null, null),
+            Collections.emptyList(), List.of(company0), null, new Speaker.SpeakerSocials(null, null, null),
+            new Speaker.SpeakerDegrees(true, false, false));
+    private static final Speaker speaker1 = new Speaker(1, new Speaker.SpeakerPhoto(null, null),
+            Collections.emptyList(), List.of(company1), null, new Speaker.SpeakerSocials(null, null, null),
+            new Speaker.SpeakerDegrees(false, true, false));
+
     @TestConfiguration
     static class TestContextConfiguration {
         @Bean
@@ -52,7 +61,11 @@ class CompanyServiceImplTest {
 
         @Bean
         SpeakerDao speakerDao() {
-            return Mockito.mock(SpeakerDao.class);
+            SpeakerDao speakerDao = Mockito.mock(SpeakerDao.class);
+
+            Mockito.when(speakerDao.getSpeakers()).thenReturn(List.of(speaker0, speaker1));
+
+            return speakerDao;
         }
 
         @Bean
@@ -138,6 +151,7 @@ class CompanyServiceImplTest {
                     arguments(false, "n", Language.RUSSIAN, List.of(company0), "", Collections.emptyList()),
                     arguments(false, "n", Language.ENGLISH, List.of(company0), " ", Collections.emptyList()),
                     arguments(false, "n", Language.ENGLISH, List.of(company0), "N", List.of(company0)),
+                    arguments(true, null, Language.ENGLISH, List.of(company0), null, Collections.emptyList()),
                     arguments(true, null, Language.ENGLISH, List.of(company0), "N", Collections.emptyList()),
                     arguments(true, null, Language.ENGLISH, List.of(company0), "0", List.of(company0))
             );
@@ -203,6 +217,40 @@ class CompanyServiceImplTest {
 
                 assertEquals(expected, companyService.getCompaniesByFirstLetters(firstLetters, language));
             }
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getCompanySearchResults method tests")
+    class GetCompanySearchResultsTest {
+        private Stream<Arguments> data() {
+            CompanySearchResult companySearchResult0 = new CompanySearchResult(company0, 1, 1, 0);
+            CompanySearchResult companySearchResult1 = new CompanySearchResult(company1, 1, 0, 1);
+            CompanySearchResult companySearchResult2 = new CompanySearchResult(company2, 0, 0, 0);
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), Collections.emptyList(), Collections.emptyList()),
+                    arguments(Collections.emptyList(), List.of(speaker0, speaker1), Collections.emptyList()),
+                    arguments(List.of(company0), List.of(speaker0, speaker1), List.of(companySearchResult0)),
+                    arguments(List.of(company1), List.of(speaker0, speaker1), List.of(companySearchResult1)),
+                    arguments(List.of(company2), List.of(speaker0, speaker1), List.of(companySearchResult2)),
+                    arguments(List.of(company0, company1, company2), List.of(speaker0, speaker1),
+                            List.of(companySearchResult0, companySearchResult1, companySearchResult2))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getCompanySearchResults(List<Company> companies, List<Speaker> speakers, List<CompanySearchResult> expected) {
+            CompanyDao companyDaoMock = Mockito.mock(CompanyDao.class);
+
+            SpeakerDao speakerDao = Mockito.mock(SpeakerDao.class);
+            Mockito.when(speakerDao.getSpeakers()).thenReturn(speakers);
+
+            CompanyService companyService = new CompanyServiceImpl(companyDaoMock, speakerDao);
+
+            assertEquals(expected, companyService.getCompanySearchResults(companies));
         }
     }
 }
