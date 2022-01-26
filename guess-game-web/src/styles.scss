@@ -5,6 +5,9 @@
 @import '~primeng/resources/primeng.min.css';
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
+html {
+  font-size: 14px;
+}
 .container-home {
   width: 100%;
   margin-right: auto;
@@ -23,7 +26,7 @@
   height: auto;
 }
 .img-event-type-logo {
-  height: 72px;
+  height: 48px;
 }
 .img-event-type-logo-talk {
   height: 30px;
@@ -58,8 +61,14 @@
 }
 
 @media (min-width: 576px) {
+  html {
+    font-size: 15px;
+  }
   .container-dialog {
     max-width: 540px;
+  }
+  .img-event-type-logo {
+    height: 60px;
   }
   .img-guess-logo {
     width: 48px;
@@ -81,8 +90,14 @@
 }
 
 @media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
   .container-dialog {
     max-width: 720px;
+  }
+  .img-event-type-logo {
+    height: 72px;
   }
   .img-guess-logo {
     width: 64px;
