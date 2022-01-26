@@ -21,7 +21,7 @@
         <div class="col-sm-4">
           <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="eventType"
                       placeholder="{{'common.list.eventTypePlaceholder' | translate}}" [showClear]="true"
-                      (onChange)="onEventTypeChange($event.value)" name="eventType" styleClass="search-dropdown">
+                      (onChange)="onEventTypeChange($event.value)" name="eventType" styleClass="w-100">
             <ng-template let-eventType pTemplate="item">
               <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
               <span class="ml-2">{{eventType.value.name}}</span>
@@ -32,7 +32,7 @@
         <div class="col-sm-4">
           <p-dropdown [options]="eventSelectItems" [(ngModel)]="selectedEvent" id="event"
                       placeholder="{{'common.list.eventPlaceholder' | translate}}" [showClear]="true"
-                      (onChange)="onEventChange($event.value)" name="event" styleClass="search-dropdown">
+                      (onChange)="onEventChange($event.value)" name="event" styleClass="w-100">
             <ng-template let-event pTemplate="selectedItem">
               {{event.value.name}}
             </ng-template>

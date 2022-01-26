@@ -21,7 +21,7 @@
         <div class="col-sm-3">
           <p-dropdown [options]="cubeTypeSelectItems" [(ngModel)]="selectedCubeType" id="cubeType"
                       placeholder="{{'statistics.olap.cubePlaceholder' | translate}}"
-                      (onChange)="onCubeTypeChange()" name="cubeType" styleClass="olap-dropdown">
+                      (onChange)="onCubeTypeChange()" name="cubeType" styleClass="w-100">
             <ng-template let-cubeType pTemplate="selectedItem">
               {{ cubeType.label | translate }}
             </ng-template>
@@ -34,7 +34,7 @@
         <div class="col-sm-5">
           <p-dropdown [options]="measureTypeSelectItems" [(ngModel)]="selectedMeasureType" id="measureType"
                       placeholder="{{'statistics.olap.measurePlaceholder' | translate}}"
-                      (onChange)="onMeasureTypeChange()" name="measureType" styleClass="olap-dropdown">
+                      (onChange)="onMeasureTypeChange()" name="measureType" styleClass="w-100">
             <ng-template let-measureType pTemplate="selectedItem">
               {{ measureType.label | translate }}
             </ng-template>
@@ -61,7 +61,7 @@
         <div class="col-sm-3">
           <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
                       placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"
-                      (onChange)="onOrganizerChange()" name="organizer" styleClass="olap-dropdown">
+                      (onChange)="onOrganizerChange()" name="organizer" styleClass="w-100">
             <ng-template let-organizer pTemplate="item">
               {{organizer.value.name}}
             </ng-template>
@@ -71,7 +71,7 @@
         <div class="col-sm-5">
           <p-multiSelect [options]="eventTypeSelectItems" [(ngModel)]="selectedEventTypes" id="conference"
                       placeholder="{{'common.list.eventTypePlaceholder' | translate}}"
-                      (onChange)="onEventTypeChange()" name="conference" styleClass="olap-multiselect">
+                      (onChange)="onEventTypeChange()" name="conference" styleClass="w-100">
             <ng-template let-eventType pTemplate="item">
               <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
               <span class="ml-2">{{eventType.value.name}}</span>

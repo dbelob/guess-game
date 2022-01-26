@@ -16,7 +16,7 @@
         <div class="col-sm-10">
           <p-listbox [multiple]="true" id="eventType" [options]="eventTypeSelectItems" [(ngModel)]="selectedEventTypes"
                      (onChange)="onEventTypeChange($event.value)" name="eventType"
-                     styleClass="start-listbox" [listStyle]="{'height':'270px'}">
+                     styleClass="w-100" [listStyle]="{'height':'270px'}">
             <ng-template let-eventType pTemplate="item">
               <div #eventTypeRow [attr.id]="eventType.value.id">
                 <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" height="40" alt="logo"/>
@@ -31,7 +31,7 @@
       <div class="col-sm-10">
         <p-listbox [multiple]="true" id="event" [options]="events" [(ngModel)]="selectedEvents"
                    optionLabel="displayName" (onChange)="onEventChange($event.value)" name="event"
-                   styleClass="start-listbox" [listStyle]="{'height':'114px'}"
+                   styleClass="w-100" [listStyle]="{'height':'114px'}"
                    [disabled]="isEventsDisabled()" emptyMessage="{{'common.list.emptyMessage' | translate}}"></p-listbox>
       </div>
     </div>
@@ -104,7 +104,7 @@
       <label for="quantity" class="col-sm-2">{{'start.quantityLabel' | translate}}</label>
       <div class="col-sm-10">
         <p-dropdown id="quantity" [options]="quantitySelectItems" [(ngModel)]="selectedQuantity" name="quantity"
-                    styleClass="start-dropdown" [autoDisplayFirst]="false">
+                    styleClass="w-100" [autoDisplayFirst]="false">
         </p-dropdown>
       </div>
     </div>

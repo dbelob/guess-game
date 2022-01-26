@@ -155,17 +155,18 @@
   }
 }
 
-.start-listbox.p-listbox, .start-dropdown.p-dropdown, .search-dropdown.p-dropdown, .olap-dropdown.p-dropdown,
+// Style for autocompletes
 .search-autocomplete.p-autocomplete, .search-autocomplete .p-inputtext,
-.olap-autocomplete.p-autocomplete, .olap-autocomplete .p-inputtext,
-.olap-multiselect.p-multiselect {
+.olap-autocomplete.p-autocomplete, .olap-autocomplete .p-inputtext {
   width: 100%;
 }
 
+// Style for dropdowns
 .organizer-dropdown.p-dropdown, .event-type-dropdown.p-dropdown {
   min-width: 175px;
 }
 
+// Styles for table paginator
 .p-paginator {
   .p-dropdown {
     order: 0 !important;
@@ -199,32 +200,38 @@
   }
 }
 
+// Styles for table header
 .p-datatable .p-datatable-thead > tr > th {
   white-space: normal !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
 }
 
+// Styles for table body
 .p-datatable .p-datatable-tbody > tr > td {
   white-space: nowrap !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
 }
 
+// Checkbox style
 .p-checkbox-label, .p-radiobutton-label {
   margin-bottom: 0;
 }
 
+// Link styles on list pages
 .btn-sm-condensed {
   padding: .25rem .2rem .25rem .5rem;
   font-size: .875rem;
   line-height: 1.5;
   border-radius: .2rem}
 
+// Habr color
 .text-habr {
   color: #548eaa;
 }
 
+// Total column styles on OLAP page
 .p-datatable .p-datatable-tbody > tr > td.total-column {
   font-weight: 700;
   background: #f4f4f4;
