@@ -32,7 +32,7 @@
         <kumo.version>1.28</kumo.version>
         <logback.version>1.2.10</logback.version>
         <mockito.version>4.3.0</mockito.version>
-        <sl4j.version>1.7.33</sl4j.version>
+        <sl4j.version>1.7.35</sl4j.version>
         <snakeyaml.version>1.30</snakeyaml.version>
         <spring-boot.version>2.6.3</spring-boot.version>
 
