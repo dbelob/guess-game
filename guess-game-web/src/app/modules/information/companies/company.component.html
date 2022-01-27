@@ -23,7 +23,7 @@
       <div *ngIf="isCompanyLinksVisible()" class="row mt-1">
         <div *ngIf="companyDetails.company?.siteLink" class="col-auto">
           <a href="{{companyDetails.company.siteLink}}" class="text-dark">
-            <i class="fas fa-globe"></i><span> {{'common.siteLinkText' | translate}}</span>
+            <i class="fas fa-globe"></i><span class="d-none d-sm-inline"> {{'common.siteLinkText' | translate}}</span>
           </a>
         </div>
       </div>

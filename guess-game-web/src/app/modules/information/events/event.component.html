@@ -32,42 +32,42 @@
       <div *ngIf="isEventLinksVisible()" class="row mt-2">
         <div *ngIf="eventDetails.event?.siteLink" class="col-auto">
           <a href="{{eventDetails.event.siteLink}}" class="text-dark">
-            <i class="fas fa-globe"></i><span> {{'common.siteLinkText' | translate}}</span>
+            <i class="fas fa-globe"></i><span class="d-none d-sm-inline"> {{'common.siteLinkText' | translate}}</span>
           </a>
         </div>
         <div *ngIf="eventDetails.event?.facebookLink" class="col-auto">
           <a href="{{eventDetails.event.facebookLink}}" class="text-dark">
-            <i class="fab fa-facebook-f"></i><span> Facebook</span>
+            <i class="fab fa-facebook-f"></i><span class="d-none d-sm-inline"> Facebook</span>
           </a>
         </div>
         <div *ngIf="eventDetails.event?.vkLink" class="col-auto">
           <a href="{{eventDetails.event.vkLink}}" class="text-dark">
-            <i class="fab fa-vk"></i><span> {{'common.vkLinkText' | translate}}</span>
+            <i class="fab fa-vk"></i><span class="d-none d-sm-inline"> {{'common.vkLinkText' | translate}}</span>
           </a>
         </div>
         <div *ngIf="eventDetails.event?.twitterLink" class="col-auto">
           <a href="{{eventDetails.event.twitterLink}}" class="text-dark">
-            <i class="fab fa-twitter"></i><span> Twitter</span>
+            <i class="fab fa-twitter"></i><span class="d-none d-sm-inline"> Twitter</span>
           </a>
         </div>
         <div *ngIf="eventDetails.event?.youtubeLink" class="col-auto">
           <a href="{{eventDetails.event.youtubeLink}}" class="text-dark">
-            <i class="fab fa-youtube"></i><span> YouTube</span>
+            <i class="fab fa-youtube"></i><span class="d-none d-sm-inline"> YouTube</span>
           </a>
         </div>
         <div *ngIf="eventDetails.event?.telegramLink" class="col-auto">
           <a href="{{eventDetails.event.telegramLink}}" class="text-dark">
-            <i class="fab fa-telegram-plane"></i><span> Telegram</span>
+            <i class="fab fa-telegram-plane"></i><span class="d-none d-sm-inline"> Telegram</span>
           </a>
         </div>
         <div *ngIf="eventDetails.event?.speakerdeckLink" class="col-auto">
           <a href="{{eventDetails.event.speakerdeckLink}}" class="text-dark">
-            <i class="fab fa-speaker-deck"></i><span> SpeakerDeck</span>
+            <i class="fab fa-speaker-deck"></i><span class="d-none d-sm-inline"> SpeakerDeck</span>
           </a>
         </div>
         <div *ngIf="eventDetails.event?.habrLink" class="col-auto">
           <a href="{{eventDetails.event.habrLink}}" class="text-dark">
-            <i class="fas fa-h-square"></i><span> {{'common.habrLinkText' | translate}}</span>
+            <i class="fas fa-h-square"></i><span class="d-none d-sm-inline"> {{'common.habrLinkText' | translate}}</span>
           </a>
         </div>
       </div>
