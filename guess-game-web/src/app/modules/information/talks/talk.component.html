@@ -16,7 +16,7 @@
 
   <div class="m-1">
     <div class="m-2">
-      <h3>{{talkDetails.talk?.name}}</h3>
+      <h4>{{talkDetails.talk?.name}}</h4>
 
       <div class="mt-1">
         <a [routerLink]="['/information', 'event', talkDetails.talk?.event?.id]" class="text-dark">
@@ -55,7 +55,7 @@
     </div>
 
     <div *ngIf="isSpeakersListVisible()" class="m-2">
-      <h4>{{'speakers.table.title' | translate}}</h4>
+      <h5>{{'speakers.table.title' | translate}}</h5>
       <p-table [value]="talkDetails.speakers" [resizableColumns]="true" [autoLayout]="true"
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"

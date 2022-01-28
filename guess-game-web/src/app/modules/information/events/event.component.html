@@ -20,7 +20,7 @@
         <img *ngIf="eventDetails.event?.eventTypeLogoFileName" class="align-middle img-event-type-logo"
              src="{{eventsImageDirectory}}/{{eventDetails.event.eventTypeLogoFileName}}" alt="logo"/>
       </a>
-      <span class="h3 ml-2 align-middle">{{eventDetails.event?.displayName}}</span>
+      <span class="h4 ml-2 align-middle">{{eventDetails.event?.displayName}}</span>
 
       <div *ngIf="isDisplayPlaceVisible()" class="mt-1">
         <a *ngIf="eventDetails.event?.mapCoordinates" href="{{googleMapsUrlPrefix}}/{{eventDetails.event.mapCoordinates}}" class="text-dark">
@@ -78,7 +78,7 @@
     </div>
 
     <div *ngIf="isSpeakersListVisible()" class="m-2">
-      <h4>{{'speakers.table.title' | translate}}</h4>
+      <h5>{{'speakers.table.title' | translate}}</h5>
       <p-table [value]="eventDetails.speakers" [resizableColumns]="true" [autoLayout]="true"
                [rows]="10" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
@@ -161,7 +161,7 @@
     </div>
 
     <div *ngIf="isTalksListVisible()" class="m-2">
-      <h4>{{'talks.table.title' | translate}}</h4>
+      <h5>{{'talks.table.title' | translate}}</h5>
       <p-table [value]="eventDetails.talks" [resizableColumns]="true" [autoLayout]="true"
                [rows]="10" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"

@@ -17,7 +17,7 @@
   <div class="m-1">
     <div class="m-2">
       <div class="row align-items-center">
-        <span class="col-auto h3">{{speakerDetails.speaker?.name}}</span>
+        <span class="col-auto h4">{{speakerDetails.speaker?.name}}</span>
         <span class="col-auto font-italic" *ngIf="speakerDetails.speaker?.companies">
           <span *ngFor="let company of speakerDetails.speaker.companies; last as isLast">
             <a [routerLink]="['/information', 'company', company.id]" class="text-dark">{{company.name}}</a>
@@ -63,7 +63,7 @@
     </div>
 
     <div *ngIf="isTalksListVisible()" class="m-2">
-      <h4>{{'talks.table.title' | translate}}</h4>
+      <h5>{{'talks.table.title' | translate}}</h5>
       <p-table [value]="speakerDetails.talks" [resizableColumns]="true" [autoLayout]="true"
                [rows]="10" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"

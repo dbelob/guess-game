@@ -18,7 +18,7 @@
     <div class="m-2">
       <img *ngIf="eventTypeDetails.eventType?.logoFileName" class="align-middle img-event-type-logo"
            src="{{eventsImageDirectory}}/{{eventTypeDetails.eventType.logoFileName}}" alt="logo"/>
-      <span class="h3 ml-2 align-middle">{{eventTypeDetails.eventType?.name}}</span>
+      <span class="h4 ml-2 align-middle">{{eventTypeDetails.eventType?.name}}</span>
 
       <div *ngIf="isEventTypeLinksVisible()" class="row mt-2">
         <div *ngIf="eventTypeDetails.eventType?.siteLink" class="col-auto">
@@ -69,7 +69,7 @@
     </div>
 
     <div *ngIf="isEventsListVisible()" class="m-2">
-      <h4>{{'events.table.title' | translate}}</h4>
+      <h5>{{'events.table.title' | translate}}</h5>
       <p-table [value]="eventTypeDetails.events" [resizableColumns]="true" [autoLayout]="true"
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"

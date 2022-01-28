@@ -17,7 +17,7 @@
   <div class="m-1">
     <div class="m-2">
       <div class="row">
-        <span class="col-auto h3">{{companyDetails.company?.name}}</span>
+        <span class="col-auto h4">{{companyDetails.company?.name}}</span>
       </div>
 
       <div *ngIf="isCompanyLinksVisible()" class="row mt-1">
@@ -30,7 +30,7 @@
     </div>
 
     <div *ngIf="isSpeakersListVisible()" class="m-2">
-      <h4>{{'speakers.table.title' | translate}}</h4>
+      <h5>{{'speakers.table.title' | translate}}</h5>
       <p-table [value]="companyDetails.speakers" [resizableColumns]="true" [autoLayout]="true"
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
