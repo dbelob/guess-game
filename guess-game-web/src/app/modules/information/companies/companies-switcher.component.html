@@ -3,11 +3,11 @@
           [class.text-dark]="isList()" [class.font-weight-bold]="isList()" [disabled]="isList()">
     {{'companies.list.title' | translate}}
   </button>
-  <button class="btn btn-link" routerLink="/information/companies/search"
+  <button class="btn btn-link ml-2" routerLink="/information/companies/search"
           [class.text-dark]="isSearch()" [class.font-weight-bold]="isSearch()" [disabled]="isSearch()">
     {{'companies.search.title' | translate}}
   </button>
-  <button *ngIf="isCompany()" class="btn btn-link text-dark font-weight-bold" routerLink="/information/companies"
+  <button *ngIf="isCompany()" class="btn btn-link text-dark font-weight-bold ml-2" routerLink="/information/companies"
           [disabled]="true">
     {{'company.title' | translate}}
   </button>

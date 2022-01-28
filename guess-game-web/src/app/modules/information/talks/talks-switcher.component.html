@@ -2,7 +2,7 @@
         [class.text-dark]="isSearch()" [class.font-weight-bold]="isSearch()" [disabled]="isSearch()">
   {{'talks.search.title' | translate}}
 </button>
-<button *ngIf="isTalk()" class="btn btn-link text-dark font-weight-bold" routerLink="/information/talks"
+<button *ngIf="isTalk()" class="btn btn-link text-dark font-weight-bold ml-2" routerLink="/information/talks"
         [disabled]="true">
   {{'talk.title' | translate}}
 </button>

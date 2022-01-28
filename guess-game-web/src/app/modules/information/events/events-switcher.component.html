@@ -2,7 +2,7 @@
         [class.text-dark]="isSearch()" [class.font-weight-bold]="isSearch()" [disabled]="isSearch()">
   {{'events.search.title' | translate}}
 </button>
-<button *ngIf="isEvent()" class="btn btn-link text-dark font-weight-bold" routerLink="/information/events"
+<button *ngIf="isEvent()" class="btn btn-link text-dark font-weight-bold ml-2" routerLink="/information/events"
         [disabled]="true">
   {{'event.title' | translate}}
 </button>
