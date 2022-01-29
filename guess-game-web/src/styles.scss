@@ -313,3 +313,10 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+// Fix active and checked colors (for example, for language switcher)
+.btn-check:active + .btn-light, .btn-check:checked + .btn-light, .btn-light.active, .btn-light:active, .show > .btn-light.dropdown-toggle {
+  color: #000;
+  background-color: #dae0e5;
+  border-color: #dae0e5;
+}
