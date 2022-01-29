@@ -8,12 +8,14 @@
 html {
   font-size: 13px;
 }
+
 .container-home {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
   max-width: 400px;
 }
+
 .container-dialog, .container-information {
   width: 100%;
   padding-right: 12px !important;
@@ -21,43 +23,54 @@ html {
   margin-right: auto;
   margin-left: auto;
 }
+
 .img-home-logo {
   width: 100%;
   height: auto;
 }
+
 .img-event-type-logo {
   height: 32px;
 }
+
 .img-event-type-logo-talk {
   height: 30px;
 }
+
 .img-speaker-photo {
   max-width: 400px;
   width: 100%;
   height: auto;
 }
+
 .img-event-type-logo-list, .img-event-type-logo-table, .img-speaker-photo-table, .img-speaker-degree-table {
   height: 24px;
 }
+
 .img-speaker-degree {
   height: 30px;
 }
+
 .img-event-type-logo-start {
   height: 32px;
 }
+
 .img-guess-logo {
   width: 48px;
   height: auto;
 }
+
 .img-guess-name-by-photo, .img-guess-talk-by-speaker-single, .img-guess-account-by-speaker {
   width: 192px;
   height: auto;
 }
+
 .img-guess-photo-by-name, .img-guess-talk-by-speaker-some, .img-guess-speaker-by-talk, .img-guess-speaker-by-account,
 .img-guess-tag-cloud-by-speaker, .img-guess-speaker-by-tag-cloud {
   width: 120px;
   height: auto;
 }
+
 .img-guess-result {
   width: 96px;
   height: auto;
@@ -67,28 +80,35 @@ html {
   html {
     font-size: 15px;
   }
+
   .container-dialog {
     max-width: 540px;
   }
+
   .img-event-type-logo {
     height: 60px;
   }
+
   .img-event-type-logo-start {
     height: 40px;
   }
+
   .img-guess-logo {
     width: 48px;
     height: auto;
   }
+
   .img-guess-name-by-photo, .img-guess-talk-by-speaker-single, .img-guess-account-by-speaker {
     width: 192px;
     height: auto;
   }
+
   .img-guess-photo-by-name, .img-guess-talk-by-speaker-some, .img-guess-speaker-by-talk, .img-guess-speaker-by-account,
   .img-guess-tag-cloud-by-speaker, .img-guess-speaker-by-tag-cloud {
     width: 120px;
     height: auto;
   }
+
   .img-guess-result {
     width: 96px;
     height: auto;
@@ -99,22 +119,27 @@ html {
   html {
     font-size: 16px;
   }
+
   .container-dialog {
     max-width: 720px;
   }
+
   .img-guess-logo {
     width: 64px;
     height: auto;
   }
+
   .img-guess-name-by-photo, .img-guess-talk-by-speaker-single, .img-guess-account-by-speaker {
     width: 256px;
     height: auto;
   }
+
   .img-guess-photo-by-name, .img-guess-talk-by-speaker-some, .img-guess-speaker-by-talk, .img-guess-speaker-by-account,
   .img-guess-tag-cloud-by-speaker, .img-guess-speaker-by-tag-cloud {
     width: 160px;
     height: auto;
   }
+
   .img-guess-result {
     width: 128px;
     height: auto;
@@ -125,19 +150,23 @@ html {
   .container-dialog {
     max-width: 720px;
   }
+
   .img-guess-logo {
     width: 82px;
     height: auto;
   }
+
   .img-guess-name-by-photo, .img-guess-talk-by-speaker-single, .img-guess-account-by-speaker {
     width: 330px;
     height: auto;
   }
+
   .img-guess-photo-by-name, .img-guess-talk-by-speaker-some, .img-guess-speaker-by-talk, .img-guess-speaker-by-account,
   .img-guess-tag-cloud-by-speaker, .img-guess-speaker-by-tag-cloud {
     width: 206px;
     height: auto;
   }
+
   .img-guess-result {
     width: 165px;
     height: auto;
@@ -148,19 +177,23 @@ html {
   .container-dialog {
     max-width: 720px;
   }
+
   .img-guess-logo {
     width: 100px;
     height: auto;
   }
+
   .img-guess-name-by-photo, .img-guess-talk-by-speaker-single, .img-guess-account-by-speaker {
     width: 400px;
     height: auto;
   }
+
   .img-guess-photo-by-name, .img-guess-talk-by-speaker-some, .img-guess-speaker-by-talk, .img-guess-speaker-by-account,
   .img-guess-tag-cloud-by-speaker, .img-guess-speaker-by-tag-cloud {
     width: 250px;
     height: auto;
   }
+
   .img-guess-result {
     width: 200px;
     height: auto;
@@ -242,7 +275,8 @@ html {
   padding: .25rem .2rem .25rem .5rem;
   font-size: .875rem;
   line-height: 1.5;
-  border-radius: .2rem}
+  border-radius: .2rem
+}
 
 // Habr color
 .text-habr {
@@ -253,4 +287,29 @@ html {
 .p-datatable .p-datatable-tbody > tr > td.total-column {
   font-weight: 700;
   background: #f4f4f4;
+}
+
+// Fix text decoration
+.btn-link {
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+
+.btn-link.focus, .btn-link:focus {
+  text-decoration: underline;
+}
+
+.btn-link.disabled, .btn-link:disabled {
+  pointer-events: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
