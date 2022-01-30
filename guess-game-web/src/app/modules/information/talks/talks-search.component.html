@@ -16,8 +16,8 @@
 
   <div class="ml-1 mr-1 mb-1 mt-3">
     <form role="form" class="m-2">
-      <div class="form-group row justify-content-center align-items-center">
-        <label for="eventType" class="col-sm-2">{{'common.list.eventTypeLabel' | translate}}</label>
+      <div class="mb-3 row justify-content-center align-items-center">
+        <label for="eventType" class="form-label col-sm-2">{{'common.list.eventTypeLabel' | translate}}</label>
         <div class="col-sm-4">
           <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="eventType"
                       placeholder="{{'common.list.eventTypePlaceholder' | translate}}" [showClear]="true"
@@ -28,7 +28,7 @@
             </ng-template>
           </p-dropdown>
         </div>
-        <label for="event" class="col-sm-2">{{'common.list.eventLabel' | translate}}</label>
+        <label for="event" class="form-label col-sm-2">{{'common.list.eventLabel' | translate}}</label>
         <div class="col-sm-4">
           <p-dropdown [options]="eventSelectItems" [(ngModel)]="selectedEvent" id="event"
                       placeholder="{{'common.list.eventPlaceholder' | translate}}" [showClear]="true"
@@ -42,12 +42,12 @@
           </p-dropdown>
         </div>
       </div>
-      <div class="form-group row justify-content-center align-items-center">
-        <label for="talkName" class="col-sm-2">{{'talks.search.nameLabel' | translate}}</label>
+      <div class="mb-3 row justify-content-center align-items-center">
+        <label for="talkName" class="form-label col-sm-2">{{'talks.search.nameLabel' | translate}}</label>
         <div class="col-sm-4">
           <input type="text" id="talkName" pInputText class="form-control" [(ngModel)]="talkName" name="talkName" (ngModelChange)="onFilterChange($event)"/>
         </div>
-        <label for="speakerName" class="col-sm-2">{{'common.list.speakerLabel' | translate}}</label>
+        <label for="speakerName" class="form-label col-sm-2">{{'common.list.speakerLabel' | translate}}</label>
         <div class="col-sm-4">
           <input type="text" id="speakerName" pInputText class="form-control" [(ngModel)]="speakerName" name="speakerName" (ngModelChange)="onFilterChange($event)"/>
         </div>

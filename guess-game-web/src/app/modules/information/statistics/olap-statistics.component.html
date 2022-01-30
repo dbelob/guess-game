@@ -16,8 +16,8 @@
 
   <div class="m-1">
     <form role="form" class="m-2">
-      <div class="form-group row justify-content-center align-items-center">
-        <label for="cubeType" class="col-sm-2">{{'statistics.olap.cubeLabel' | translate}}</label>
+      <div class="mb-3 row justify-content-center align-items-center">
+        <label for="cubeType" class="form-label col-sm-2">{{'statistics.olap.cubeLabel' | translate}}</label>
         <div class="col-sm-3">
           <p-dropdown [options]="cubeTypeSelectItems" [(ngModel)]="selectedCubeType" id="cubeType"
                       placeholder="{{'statistics.olap.cubePlaceholder' | translate}}"
@@ -30,7 +30,7 @@
             </ng-template>
           </p-dropdown>
         </div>
-        <label for="measureType" class="col-sm-2">{{'statistics.olap.measureLabel' | translate}}</label>
+        <label for="measureType" class="form-label col-sm-2">{{'statistics.olap.measureLabel' | translate}}</label>
         <div class="col-sm-5">
           <p-dropdown [options]="measureTypeSelectItems" [(ngModel)]="selectedMeasureType" id="measureType"
                       placeholder="{{'statistics.olap.measurePlaceholder' | translate}}"
@@ -44,7 +44,7 @@
           </p-dropdown>
         </div>
       </div>
-      <div class="form-group row justify-content-center">
+      <div class="mb-3 row justify-content-center">
         <div class="col-auto">
           <p-checkbox name="group1" value="conferences" label="{{'common.checkbox.conferencesLabel' | translate}}"
                       [(ngModel)]="isConferences" binary="true"
@@ -56,8 +56,8 @@
                       (onChange)="onEventTypeKindChange()"></p-checkbox>
         </div>
       </div>
-      <div class="form-group row justify-content-center align-items-center">
-        <label for="organizer" class="col-sm-2">{{'common.list.organizerLabel' | translate}}</label>
+      <div class="mb-3 row justify-content-center align-items-center">
+        <label for="organizer" class="form-label col-sm-2">{{'common.list.organizerLabel' | translate}}</label>
         <div class="col-sm-3">
           <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
                       placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"
@@ -67,7 +67,7 @@
             </ng-template>
           </p-dropdown>
         </div>
-        <label for="conference" class="col-sm-2">{{'common.list.eventTypesLabel' | translate}}</label>
+        <label for="conference" class="form-label col-sm-2">{{'common.list.eventTypesLabel' | translate}}</label>
         <div class="col-sm-5">
           <p-multiSelect [options]="eventTypeSelectItems" [(ngModel)]="selectedEventTypes" id="conference"
                       placeholder="{{'common.list.eventTypePlaceholder' | translate}}"
@@ -79,8 +79,8 @@
           </p-multiSelect>
         </div>
       </div>
-      <div *ngIf="isSpeakersVisible()" class="form-group row justify-content-center align-items-center">
-        <label for="speaker" class="col-sm-2">{{'statistics.olap.speakersLabel' | translate}}</label>
+      <div *ngIf="isSpeakersVisible()" class="mb-3 row justify-content-center align-items-center">
+        <label for="speaker" class="form-label col-sm-2">{{'statistics.olap.speakersLabel' | translate}}</label>
         <div class="col-sm-10">
           <p-autoComplete id="speaker" [(ngModel)]="selectedSpeakers" [suggestions]="speakerSuggestions" (completeMethod)="speakerSearch($event)"
                           (onSelect)="selectSpeaker($event)" (onUnselect)="unselectSpeaker($event)"
@@ -88,8 +88,8 @@
                           field="displayName" name="speaker" [multiple]="true" styleClass="olap-autocomplete"></p-autoComplete>
         </div>
       </div>
-      <div *ngIf="isCompaniesVisible()" class="form-group row justify-content-center align-items-center">
-        <label for="company" class="col-sm-2">{{'statistics.olap.companiesLabel' | translate}}</label>
+      <div *ngIf="isCompaniesVisible()" class="mb-3 row justify-content-center align-items-center">
+        <label for="company" class="form-label col-sm-2">{{'statistics.olap.companiesLabel' | translate}}</label>
         <div class="col-sm-10">
           <p-autoComplete id="company" [(ngModel)]="selectedCompanies" [suggestions]="companySuggestions" (completeMethod)="companySearch($event)"
                           (onSelect)="selectCompany($event)" (onUnselect)="unselectCompany($event)"

@@ -16,7 +16,7 @@
 
   <div class="ml-1 mr-1 mb-1 mt-2">
     <form role="form" class="m-2">
-      <div class="form-group row justify-content-center">
+      <div class="mb-3 row justify-content-center">
         <div class="col-auto">
           <p-checkbox name="group1" value="conferences" label="{{'common.checkbox.conferencesLabel' | translate}}"
                       [(ngModel)]="isConferences" binary="true"
@@ -28,8 +28,8 @@
                       (onChange)="onEventTypeKindChange()"></p-checkbox>
         </div>
       </div>
-      <div class="form-group row justify-content-center align-items-center">
-        <label for="organizer" class="col-auto text-end">{{'common.list.organizerLabel' | translate}}</label>
+      <div class="mb-3 row justify-content-center align-items-center">
+        <label for="organizer" class="form-label col-auto text-end">{{'common.list.organizerLabel' | translate}}</label>
         <div class="col-auto">
           <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
                       placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"

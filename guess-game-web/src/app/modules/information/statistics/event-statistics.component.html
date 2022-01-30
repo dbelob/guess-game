@@ -16,8 +16,8 @@
 
   <div class="m-1">
     <form role="form" class="m-2">
-      <div class="form-group row justify-content-center align-items-center">
-        <label for="organizer" class="col-auto text-end">{{'common.list.organizerLabel' | translate}}</label>
+      <div class="mb-3 row justify-content-center align-items-center">
+        <label for="organizer" class="form-label col-auto text-end">{{'common.list.organizerLabel' | translate}}</label>
         <div class="col-auto">
           <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
                       placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"
@@ -27,7 +27,7 @@
             </ng-template>
           </p-dropdown>
         </div>
-        <label for="conference" class="col-auto text-end">{{'statistics.events.conferenceLabel' | translate}}</label>
+        <label for="conference" class="form-label col-auto text-end">{{'statistics.events.conferenceLabel' | translate}}</label>
         <div class="col-auto">
           <p-dropdown [options]="conferenceSelectItems" [(ngModel)]="selectedConference" id="conference"
                       placeholder="{{'statistics.events.conferencePlaceholder' | translate}}" [showClear]="true"

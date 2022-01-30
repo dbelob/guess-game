@@ -16,8 +16,8 @@
 
   <div class="m-1">
     <form role="form" class="m-2">
-      <div class="form-group row justify-content-center align-items-center">
-        <label for="name" class="col-sm-2">{{'companies.search.nameLabel' | translate}}</label>
+      <div class="mb-3 row justify-content-center align-items-center">
+        <label for="name" class="form-label col-sm-2">{{'companies.search.nameLabel' | translate}}</label>
         <div class="col-sm-10">
           <input type="text" id="name" pInputText class="form-control" [(ngModel)]="name" name="name" (ngModelChange)="onFilterChange($event)"/>
         </div>

@@ -16,28 +16,28 @@
 
   <div class="m-1">
     <form role="form" class="m-2">
-      <div class="form-group row justify-content-center align-items-center">
-        <label for="name" class="col-sm-2">{{'speakers.search.nameLabel' | translate}}</label>
+      <div class="mb-3 row justify-content-center align-items-center">
+        <label for="name" class="form-label col-sm-2">{{'speakers.search.nameLabel' | translate}}</label>
         <div class="col-sm-4">
           <input type="text" id="name" pInputText class="form-control" [(ngModel)]="name" name="name" (ngModelChange)="onFilterChange($event)"/>
         </div>
-        <label for="company" class="col-sm-2">{{'common.list.companyLabel' | translate}}</label>
+        <label for="company" class="form-label col-sm-2">{{'common.list.companyLabel' | translate}}</label>
         <div class="col-sm-4">
           <p-autoComplete id="company" [(ngModel)]="company" [suggestions]="companySuggestions" (completeMethod)="companySearch($event)"
                           name="company" styleClass="search-autocomplete"></p-autoComplete>
         </div>
       </div>
-      <div class="form-group row justify-content-center align-items-center">
-        <label for="twitter" class="col-sm-2">{{'speakers.search.twitterLabel' | translate}}</label>
+      <div class="mb-3 row justify-content-center align-items-center">
+        <label for="twitter" class="form-label col-sm-2">{{'speakers.search.twitterLabel' | translate}}</label>
         <div class="col-sm-4">
           <input type="text" id="twitter" pInputText class="form-control" [(ngModel)]="twitter" name="twitter" (ngModelChange)="onFilterChange($event)"/>
         </div>
-        <label for="gitHub" class="col-sm-2">{{'speakers.search.gitHubLabel' | translate}}</label>
+        <label for="gitHub" class="form-label col-sm-2">{{'speakers.search.gitHubLabel' | translate}}</label>
         <div class="col-sm-4">
           <input type="text" id="gitHub" pInputText class="form-control" [(ngModel)]="gitHub" name="gitHub" (ngModelChange)="onFilterChange($event)"/>
         </div>
       </div>
-      <div class="form-group row justify-content-center">
+      <div class="mb-3 row justify-content-center">
         <div class="col-auto">
           <p-checkbox name="group1" value="conferences" label="{{'speakers.search.javaChampionLabel' | translate}}"
                       [(ngModel)]="isJavaChampion" binary="true"
