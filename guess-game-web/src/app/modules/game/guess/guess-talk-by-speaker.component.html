@@ -18,14 +18,14 @@
       <figcaption class="figure-caption text-center">{{speaker.name}}</figcaption>
     </figure>
   </div>
-  <div class="text-center">
-    <button type="submit" class="btn btn-primary btn-block remove-focus" [class.btn-danger]="speakersTalks.invalid0" [disabled]="speakersTalks.invalid0"
+  <div class="d-grid gap-2">
+    <button type="submit" class="btn btn-primary remove-focus" [class.btn-danger]="speakersTalks.invalid0" [disabled]="speakersTalks.invalid0"
             (click)="answer(speakersTalks.id0)">{{speakersTalks.talkName0}}</button>
-    <button type="submit" class="btn btn-primary btn-block remove-focus" [class.btn-danger]="speakersTalks.invalid1" [disabled]="speakersTalks.invalid1"
+    <button type="submit" class="btn btn-primary remove-focus" [class.btn-danger]="speakersTalks.invalid1" [disabled]="speakersTalks.invalid1"
             (click)="answer(speakersTalks.id1)">{{speakersTalks.talkName1}}</button>
-    <button type="submit" class="btn btn-primary btn-block remove-focus" [class.btn-danger]="speakersTalks.invalid2" [disabled]="speakersTalks.invalid2"
+    <button type="submit" class="btn btn-primary remove-focus" [class.btn-danger]="speakersTalks.invalid2" [disabled]="speakersTalks.invalid2"
             (click)="answer(speakersTalks.id2)">{{speakersTalks.talkName2}}</button>
-    <button type="submit" class="btn btn-primary btn-block remove-focus" [class.btn-danger]="speakersTalks.invalid3" [disabled]="speakersTalks.invalid3"
+    <button type="submit" class="btn btn-primary remove-focus" [class.btn-danger]="speakersTalks.invalid3" [disabled]="speakersTalks.invalid3"
             (click)="answer(speakersTalks.id3)">{{speakersTalks.talkName3}}</button>
   </div>
   <div class="text-end mt-1">
