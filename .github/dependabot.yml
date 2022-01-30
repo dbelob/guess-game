@@ -8,8 +8,6 @@ updates:
     directory: "/guess-game-web"
     schedule:
       interval: "daily"
-    ignore:
-      - dependency-name: "bootstrap"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
