@@ -46,7 +46,7 @@
                       (onChange)="onEventTypeChange()" name="conference" styleClass="event-type-dropdown">
             <ng-template let-eventType pTemplate="item">
               <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
-              <span class="ml-2">{{eventType.value.name}}</span>
+              <span class="ms-2">{{eventType.value.name}}</span>
             </ng-template>
           </p-dropdown>
         </div>
@@ -99,7 +99,7 @@
             <td>
               <a [routerLink]="['/information', 'speaker', speakerMetrics.id]" class="text-dark">
                 <img src="{{speakersImageDirectory}}/{{speakerMetrics.photoFileName}}" class="img-speaker-photo-table" alt="photo"/>
-                <span class="ml-2">{{speakerMetrics.name}}</span>
+                <span class="ms-2">{{speakerMetrics.name}}</span>
               </a>
             </td>
             <td class="text-center">{{speakerMetrics.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>

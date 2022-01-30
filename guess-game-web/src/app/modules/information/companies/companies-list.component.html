@@ -42,7 +42,7 @@
       {{'companies.noCompaniesFoundText' | translate}}
     </div>
 
-    <div *ngIf="isCompaniesListVisible()" class="ml-2 mr-2 mb-2 mt-3">
+    <div *ngIf="isCompaniesListVisible()" class="ms-2 mr-2 mb-2 mt-3">
       <p-table [value]="companies" [resizableColumns]="true" [autoLayout]="true"
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false" [(first)]="paginatorFirst"

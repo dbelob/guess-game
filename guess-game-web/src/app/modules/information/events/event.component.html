@@ -20,7 +20,7 @@
         <img *ngIf="eventDetails.event?.eventTypeLogoFileName" class="align-middle img-event-type-logo"
              src="{{eventsImageDirectory}}/{{eventDetails.event.eventTypeLogoFileName}}" alt="logo"/>
       </a>
-      <span class="h4 ml-2 align-middle">{{eventDetails.event?.displayName}}</span>
+      <span class="h4 ms-2 align-middle">{{eventDetails.event?.displayName}}</span>
 
       <div *ngIf="isDisplayPlaceVisible()" class="mt-1">
         <a *ngIf="eventDetails.event?.mapCoordinates" href="{{googleMapsUrlPrefix}}/{{eventDetails.event.mapCoordinates}}" class="text-dark">
@@ -124,7 +124,7 @@
             <td>
               <a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">
                 <img src="{{speakersImageDirectory}}/{{speaker.photoFileName}}" class="img-speaker-photo-table" alt="photo"/>
-                <span class="ml-2">{{speaker.displayName}}</span>
+                <span class="ms-2">{{speaker.displayName}}</span>
               </a>
             </td>
             <td>

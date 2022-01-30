@@ -11,7 +11,7 @@
   </div>
 
   <div class="text-center mb-1">
-    <figure class="figure ml-1 mr-1" *ngFor="let speaker of speakersTalks.speakers">
+    <figure class="figure ms-1 mr-1" *ngFor="let speaker of speakersTalks.speakers">
       <img src="{{speakersImageDirectory}}/{{speaker.photoFileName}}" alt="photo" class="figure-img img-thumbnail"
            [class.img-guess-talk-by-speaker-single]="speakersTalks.speakers.length == 1"
            [class.img-guess-talk-by-speaker-some]="speakersTalks.speakers.length > 1"/>

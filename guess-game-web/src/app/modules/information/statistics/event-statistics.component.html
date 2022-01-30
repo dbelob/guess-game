@@ -35,7 +35,7 @@
                       emptyMessage="{{'common.list.emptyMessage' | translate}}">
             <ng-template let-eventType pTemplate="item">
               <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
-              <span class="ml-2">{{eventType.value.name}}</span>
+              <span class="ms-2">{{eventType.value.name}}</span>
             </ng-template>
           </p-dropdown>
         </div>
@@ -91,7 +91,7 @@
             <td>
               <a [routerLink]="['/information', 'event', eventMetrics.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{eventMetrics.eventTypeLogoFileName}}" class="img-event-type-logo-table" alt="logo"/>
-                <span class="ml-2">{{eventMetrics.name}}</span>
+                <span class="ms-2">{{eventMetrics.name}}</span>
               </a>
             </td>
             <td class="text-center">{{eventMetrics.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>

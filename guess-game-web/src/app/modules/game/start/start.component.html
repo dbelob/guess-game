@@ -20,7 +20,7 @@
             <ng-template let-eventType pTemplate="item">
               <div #eventTypeRow [attr.id]="eventType.value.id">
                 <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-start" alt="logo"/>
-                <span class="ml-2" [class.text-muted]="isEventTypeInactiveNotSelected(eventType.value)">{{eventType.value.displayName}}</span>
+                <span class="ms-2" [class.text-muted]="isEventTypeInactiveNotSelected(eventType.value)">{{eventType.value.displayName}}</span>
               </div>
             </ng-template>
           </p-listbox>

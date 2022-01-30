@@ -111,7 +111,7 @@
             <td>
               <a [routerLink]="['/information', 'event-type', eventTypeMetrics.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{eventTypeMetrics.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>
-                <span class="ml-2">{{eventTypeMetrics.displayName}}</span>
+                <span class="ms-2">{{eventTypeMetrics.displayName}}</span>
               </a>
             </td>
             <td class="text-center">{{eventTypeMetrics.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>
