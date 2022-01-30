@@ -14,7 +14,7 @@
 
 <!--  <app-talks-switcher [type]="'search'"></app-talks-switcher>-->
 
-  <div class="ms-1 mr-1 mb-1 mt-3">
+  <div class="ms-1 me-1 mb-1 mt-3">
     <form role="form" class="m-2">
       <div class="mb-3 row justify-content-center align-items-center">
         <label for="eventType" class="form-label col-sm-2">{{'common.list.eventTypeLabel' | translate}}</label>
@@ -66,7 +66,7 @@
       {{'talks.noTalksFoundText' | translate}}
     </div>
 
-    <div *ngIf="isTalksListVisible()" class="ms-2 mr-2 mb-2 mt-3">
+    <div *ngIf="isTalksListVisible()" class="ms-2 me-2 mb-2 mt-3">
       <p-table [value]="talks" [resizableColumns]="true" [autoLayout]="true"
                [rows]="10" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"

@@ -63,7 +63,7 @@
       {{'speakers.noSpeakersFoundText' | translate}}
     </div>
 
-    <div *ngIf="isSpeakersListVisible()" class="ms-2 mr-2 mb-2 mt-3">
+    <div *ngIf="isSpeakersListVisible()" class="ms-2 me-2 mb-2 mt-3">
       <p-table [value]="speakers" [resizableColumns]="true" [autoLayout]="true"
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"

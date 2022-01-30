@@ -99,14 +99,14 @@
       </div>
     </form>
 
-    <div *ngIf="selectedCubeType && selectedMeasureType" class="text-center h5 mt-3 ms-2 mr-2 mb-1">
+    <div *ngIf="selectedCubeType && selectedMeasureType" class="text-center h5 mt-3 ms-2 me-2 mb-1">
       {{getCubeTypeMessageKeyByCube(selectedCubeType) | translate}} – {{getMeasureTypeMessageKeyByCube(selectedMeasureType) | translate}}
     </div>
 
     <div *ngIf="isChartsVisible()">
       <app-chart-type-switcher [type]="getChartType()" (detailsClick)="detailsChart()" (totalClick)="totalChart()"></app-chart-type-switcher>
 
-      <div class="ms-1 mr-1 mb-2">
+      <div class="ms-1 me-1 mb-2">
         <p-chart *ngIf="isDetailsChartVisible()" type="line" [data]="allLineData" [options]="allLineOptions"></p-chart>
         <p-chart *ngIf="isTotalChartVisible()" type="line" [data]="totalLineData" [options]="totalLineOptions"></p-chart>
       </div>
