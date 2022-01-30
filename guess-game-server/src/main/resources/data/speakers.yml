@@ -2614,6 +2614,7 @@ speakers:
             пает на таких отраслевых конференциях, как JPoint, Joker, JBreak и PGDay. Сейчас он бэкенд-разработчик в JUG Ru\
             \ Group."}
     twitter: dyer_the
+    gitHub: bob-the-dyer
   - id: 159
     photoFileName: 0159.jpg
     photoUpdatedAt: 2016-09-13T13:34:48.544Z[UTC]
@@ -8470,6 +8471,7 @@ speakers:
             анималась проектированием и разработкой интернет-банка, формированием набора инструментов и подходов для работ\
             ы с микросервисной архитектурой на фронтенде. Уделяла большое внимание созданию инструментов для автоматизации\
             \ внутренних процессов разработки. Более 6 лет много работает с TypeScript, экосистемой React, Node.js."}
+    gitHub: esharova
   - id: 581
     photoFileName: 0581.jpg
     name:
@@ -13497,6 +13499,9 @@ speakers:
       - {language: ru, text: "Руководитель разработки JUG Ru Group. Ранее работал в Альфа-Банке и телекоммуникационной ком\
             пании LaNetroZed. Фуллстэк-разработчик на платформах .NET и JavaScript. Ментейнер проекта Flurl. Придерживаетс\
             я принципов разработки TDD и BDD."}
+    twitter: nikolay_kroniak
+    gitHub: kroniak
+    habr: kroniak
   - id: 947
     photoFileName: 0947.jpg
     name:
@@ -19941,6 +19946,7 @@ speakers:
       - {language: ru, text: "Всю жизнь пишет тексты про IT, делая вид, что в этом что-то понимает. Пробовал Kotlin на Android\
             \ до того, как это стало модным. Обладатель значка «Легенда» на Хабре (как будто это что-то значит). Всерьёз п\
             ользуется ChromeOS. Удалёнщик по убеждениям."}
+    twitter: phillennium
     habr: phillennium
   - id: 1418
     photoFileName: 1418.jpg
