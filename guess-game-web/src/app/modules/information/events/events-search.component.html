@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="form-group row justify-content-center align-items-center">
-        <label for="organizer" class="col-auto text-right">{{'common.list.organizerLabel' | translate}}</label>
+        <label for="organizer" class="col-auto text-end">{{'common.list.organizerLabel' | translate}}</label>
         <div class="col-auto">
           <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
                       placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"
@@ -39,7 +39,7 @@
             </ng-template>
           </p-dropdown>
         </div>
-        <label for="conference" class="col-auto text-right">{{'common.list.eventTypeLabel' | translate}}</label>
+        <label for="conference" class="col-auto text-end">{{'common.list.eventTypeLabel' | translate}}</label>
         <div class="col-auto">
           <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="conference"
                       placeholder="{{'common.list.eventTypePlaceholder' | translate}}" [showClear]="true"
