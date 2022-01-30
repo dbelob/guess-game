@@ -12,11 +12,11 @@
 
   <app-information-switcher [type]="'events'"></app-information-switcher>
 
-  <app-events-switcher [type]="'search'"></app-events-switcher>
+<!--  <app-events-switcher [type]="'search'"></app-events-switcher>-->
 
-  <div class="m-1">
+  <div class="ms-1 me-1 mb-1 mt-2">
     <form role="form" class="m-2">
-      <div class="form-group row justify-content-center">
+      <div class="mb-3 row justify-content-center">
         <div class="col-auto">
           <p-checkbox name="group1" value="conferences" label="{{'common.checkbox.conferencesLabel' | translate}}"
                       [(ngModel)]="isConferences" binary="true"
@@ -28,8 +28,8 @@
                       (onChange)="onEventTypeKindChange()"></p-checkbox>
         </div>
       </div>
-      <div class="form-group row justify-content-center align-items-center">
-        <label for="organizer" class="col-auto text-right">{{'common.list.organizerLabel' | translate}}</label>
+      <div class="mb-3 row justify-content-center align-items-center">
+        <label for="organizer" class="form-label col-auto text-end">{{'common.list.organizerLabel' | translate}}</label>
         <div class="col-auto">
           <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
                       placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"
@@ -39,14 +39,14 @@
             </ng-template>
           </p-dropdown>
         </div>
-        <label for="conference" class="col-auto text-right">{{'common.list.eventTypeLabel' | translate}}</label>
+        <label for="conference" class="form-label col-auto text-end">{{'common.list.eventTypeLabel' | translate}}</label>
         <div class="col-auto">
           <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="conference"
                       placeholder="{{'common.list.eventTypePlaceholder' | translate}}" [showClear]="true"
                       (onChange)="onEventTypeChange()" name="conference" styleClass="event-type-dropdown">
             <ng-template let-eventType pTemplate="item">
               <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
-              <span class="ml-2">{{eventType.value.name}}</span>
+              <span class="ms-2">{{eventType.value.name}}</span>
             </ng-template>
           </p-dropdown>
         </div>
@@ -99,7 +99,7 @@
             <td>
               <a [routerLink]="['/information', 'event', event.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{event.eventTypeLogoFileName}}" class="img-event-type-logo-table" alt="logo"/>
-                <span class="ml-2">{{event.name}}</span>
+                <span class="ms-2">{{event.name}}</span>
               </a>
             </td>
             <td class="text-center">{{event.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>

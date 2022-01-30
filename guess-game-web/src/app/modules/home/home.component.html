@@ -3,7 +3,7 @@
 
   <div *ngIf="isLoading()" class="h5 text-center">
     <i class="fas fa-spinner fa-spin"></i>
-    <span class="ml-2">{{'home.loadingText' | translate}}</span>
+    <span class="ms-2">{{'home.loadingText' | translate}}</span>
   </div>
 
   <div *ngIf="!isLoading()">
@@ -31,9 +31,9 @@
       <app-language-switcher class="col"></app-language-switcher>
     </div>
 
-    <div class="text-center mt-2">
-      <button class="btn btn-primary btn-block btn-lg" routerLink="/information">{{'home.informationButtonText' | translate}}</button>
-      <button class="btn btn-primary btn-block btn-lg" routerLink="/game">{{'home.gameButtonText' | translate}}</button>
+    <div class="d-grid gap-2 mt-2">
+      <button class="btn btn-primary btn-lg" routerLink="/information">{{'home.informationButtonText' | translate}}</button>
+      <button class="btn btn-primary btn-lg" routerLink="/game">{{'home.gameButtonText' | translate}}</button>
     </div>
   </div>
 </div>

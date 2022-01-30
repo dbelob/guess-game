@@ -16,17 +16,17 @@
 
   <div class="m-1">
     <div>
-      <button class="btn btn-link btn-sm-condensed font-weight-bold remove-focus" *ngFor="let enLetter of enLetters"
+      <button class="btn btn-link btn-sm-condensed remove-focus" *ngFor="let enLetter of enLetters"
               (click)="changeLetter(enLetter)"
-              [class.text-dark]="isCurrentLetter(enLetter)" [class.font-weight-bold]="isCurrentLetter(enLetter)"
+              [class.text-dark]="isCurrentLetter(enLetter)" [class.fw-bold]="isCurrentLetter(enLetter)"
               [disabled]="isCurrentLetter(enLetter)">
         {{enLetter}}
       </button>
     </div>
     <div *ngIf="isRuLettersVisible()">
-      <button class="btn btn-link btn-sm-condensed font-weight-bold remove-focus" *ngFor="let ruLetter of ruLetters"
+      <button class="btn btn-link btn-sm-condensed remove-focus" *ngFor="let ruLetter of ruLetters"
               (click)="changeLetter(ruLetter)"
-              [class.text-dark]="isCurrentLetter(ruLetter)" [class.font-weight-bold]="isCurrentLetter(ruLetter)"
+              [class.text-dark]="isCurrentLetter(ruLetter)" [class.fw-bold]="isCurrentLetter(ruLetter)"
               [disabled]="isCurrentLetter(ruLetter)">
         {{ruLetter}}
       </button>
@@ -74,7 +74,7 @@
             <td>
               <a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">
                 <img src="{{speakersImageDirectory}}/{{speaker.photoFileName}}" class="img-speaker-photo-table" alt="photo"/>
-                <span class="ml-2">{{speaker.displayName}}</span>
+                <span class="ms-2">{{speaker.displayName}}</span>
               </a>
             </td>
             <td>

@@ -12,27 +12,27 @@
 
   <app-information-switcher [type]="'talks'"></app-information-switcher>
 
-  <app-talks-switcher [type]="'search'"></app-talks-switcher>
+<!--  <app-talks-switcher [type]="'search'"></app-talks-switcher>-->
 
-  <div class="m-1">
+  <div class="ms-1 me-1 mb-1 mt-3">
     <form role="form" class="m-2">
-      <div class="form-group row justify-content-center align-items-center">
-        <label for="eventType" class="col-sm-2">{{'common.list.eventTypeLabel' | translate}}</label>
+      <div class="mb-3 row justify-content-center align-items-center">
+        <label for="eventType" class="form-label col-sm-2">{{'common.list.eventTypeLabel' | translate}}</label>
         <div class="col-sm-4">
           <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="eventType"
                       placeholder="{{'common.list.eventTypePlaceholder' | translate}}" [showClear]="true"
-                      (onChange)="onEventTypeChange($event.value)" name="eventType" styleClass="search-dropdown">
+                      (onChange)="onEventTypeChange($event.value)" name="eventType" styleClass="w-100">
             <ng-template let-eventType pTemplate="item">
               <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
-              <span class="ml-2">{{eventType.value.name}}</span>
+              <span class="ms-2">{{eventType.value.name}}</span>
             </ng-template>
           </p-dropdown>
         </div>
-        <label for="event" class="col-sm-2">{{'common.list.eventLabel' | translate}}</label>
+        <label for="event" class="form-label col-sm-2">{{'common.list.eventLabel' | translate}}</label>
         <div class="col-sm-4">
           <p-dropdown [options]="eventSelectItems" [(ngModel)]="selectedEvent" id="event"
                       placeholder="{{'common.list.eventPlaceholder' | translate}}" [showClear]="true"
-                      (onChange)="onEventChange($event.value)" name="event" styleClass="search-dropdown">
+                      (onChange)="onEventChange($event.value)" name="event" styleClass="w-100">
             <ng-template let-event pTemplate="selectedItem">
               {{event.value.name}}
             </ng-template>
@@ -42,12 +42,12 @@
           </p-dropdown>
         </div>
       </div>
-      <div class="form-group row justify-content-center align-items-center">
-        <label for="talkName" class="col-sm-2">{{'talks.search.nameLabel' | translate}}</label>
+      <div class="mb-3 row justify-content-center align-items-center">
+        <label for="talkName" class="form-label col-sm-2">{{'talks.search.nameLabel' | translate}}</label>
         <div class="col-sm-4">
           <input type="text" id="talkName" pInputText class="form-control" [(ngModel)]="talkName" name="talkName" (ngModelChange)="onFilterChange($event)"/>
         </div>
-        <label for="speakerName" class="col-sm-2">{{'common.list.speakerLabel' | translate}}</label>
+        <label for="speakerName" class="form-label col-sm-2">{{'common.list.speakerLabel' | translate}}</label>
         <div class="col-sm-4">
           <input type="text" id="speakerName" pInputText class="form-control" [(ngModel)]="speakerName" name="speakerName" (ngModelChange)="onFilterChange($event)"/>
         </div>
@@ -66,7 +66,7 @@
       {{'talks.noTalksFoundText' | translate}}
     </div>
 
-    <div *ngIf="isTalksListVisible()" class="ml-2 mr-2 mb-2 mt-3">
+    <div *ngIf="isTalksListVisible()" class="ms-2 me-2 mb-2 mt-3">
       <p-table [value]="talks" [resizableColumns]="true" [autoLayout]="true"
                [rows]="10" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
@@ -100,7 +100,7 @@
             <td>
               <a [routerLink]="['/information', 'event', talk.event?.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{talk.eventTypeLogoFileName}}" class="img-event-type-logo-table" alt="logo"/>
-                <span class="ml-2">{{talk.event?.name}}</span>
+                <span class="ms-2">{{talk.event?.name}}</span>
               </a>
             </td>
             <td class="text-center">{{talk.talkDate | date:"shortDate":undefined:translateService.currentLang}}</td>

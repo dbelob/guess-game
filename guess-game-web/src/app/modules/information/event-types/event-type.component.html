@@ -18,47 +18,47 @@
     <div class="m-2">
       <img *ngIf="eventTypeDetails.eventType?.logoFileName" class="align-middle img-event-type-logo"
            src="{{eventsImageDirectory}}/{{eventTypeDetails.eventType.logoFileName}}" alt="logo"/>
-      <span class="h3 ml-2 align-middle">{{eventTypeDetails.eventType?.name}}</span>
+      <span class="h4 ms-2 align-middle">{{eventTypeDetails.eventType?.name}}</span>
 
       <div *ngIf="isEventTypeLinksVisible()" class="row mt-2">
         <div *ngIf="eventTypeDetails.eventType?.siteLink" class="col-auto">
           <a href="{{eventTypeDetails.eventType.siteLink}}" class="text-dark">
-            <i class="fas fa-globe"></i><span> {{'common.siteLinkText' | translate}}</span>
+            <i class="fas fa-globe"></i><span class="d-none d-sm-inline"> {{'common.siteLinkText' | translate}}</span>
           </a>
         </div>
         <div *ngIf="eventTypeDetails.eventType?.facebookLink" class="col-auto">
           <a href="{{eventTypeDetails.eventType.facebookLink}}" class="text-dark">
-            <i class="fab fa-facebook-f"></i><span> Facebook</span>
+            <i class="fab fa-facebook-f"></i><span class="d-none d-sm-inline"> Facebook</span>
           </a>
         </div>
         <div *ngIf="eventTypeDetails.eventType?.vkLink" class="col-auto">
           <a href="{{eventTypeDetails.eventType.vkLink}}" class="text-dark">
-            <i class="fab fa-vk"></i><span> {{'common.vkLinkText' | translate}}</span>
+            <i class="fab fa-vk"></i><span class="d-none d-sm-inline"> {{'common.vkLinkText' | translate}}</span>
           </a>
         </div>
         <div *ngIf="eventTypeDetails.eventType?.twitterLink" class="col-auto">
           <a href="{{eventTypeDetails.eventType.twitterLink}}" class="text-dark">
-            <i class="fab fa-twitter"></i><span> Twitter</span>
+            <i class="fab fa-twitter"></i><span class="d-none d-sm-inline"> Twitter</span>
           </a>
         </div>
         <div *ngIf="eventTypeDetails.eventType?.youtubeLink" class="col-auto">
           <a href="{{eventTypeDetails.eventType.youtubeLink}}" class="text-dark">
-            <i class="fab fa-youtube"></i><span> YouTube</span>
+            <i class="fab fa-youtube"></i><span class="d-none d-sm-inline"> YouTube</span>
           </a>
         </div>
         <div *ngIf="eventTypeDetails.eventType?.telegramLink" class="col-auto">
           <a href="{{eventTypeDetails.eventType.telegramLink}}" class="text-dark">
-            <i class="fab fa-telegram-plane"></i><span> Telegram</span>
+            <i class="fab fa-telegram-plane"></i><span class="d-none d-sm-inline"> Telegram</span>
           </a>
         </div>
         <div *ngIf="eventTypeDetails.eventType?.speakerdeckLink" class="col-auto">
           <a href="{{eventTypeDetails.eventType.speakerdeckLink}}" class="text-dark">
-            <i class="fab fa-speaker-deck"></i><span> SpeakerDeck</span>
+            <i class="fab fa-speaker-deck"></i><span class="d-none d-sm-inline"> SpeakerDeck</span>
           </a>
         </div>
         <div *ngIf="eventTypeDetails.eventType?.habrLink" class="col-auto">
           <a href="{{eventTypeDetails.eventType.habrLink}}" class="text-dark">
-            <i class="fas fa-h-square"></i><span> {{'common.habrLinkText' | translate}}</span>
+            <i class="fas fa-h-square"></i><span class="d-none d-sm-inline"> {{'common.habrLinkText' | translate}}</span>
           </a>
         </div>
       </div>
@@ -69,7 +69,7 @@
     </div>
 
     <div *ngIf="isEventsListVisible()" class="m-2">
-      <h4>{{'events.table.title' | translate}}</h4>
+      <h5>{{'events.table.title' | translate}}</h5>
       <p-table [value]="eventTypeDetails.events" [resizableColumns]="true" [autoLayout]="true"
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
@@ -111,7 +111,7 @@
             <td>
               <a [routerLink]="['/information', 'event', event.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{event.eventTypeLogoFileName}}" class="img-event-type-logo-table" alt="logo"/>
-                <span class="ml-2">{{event.name}}</span>
+                <span class="ms-2">{{event.name}}</span>
               </a>
             </td>
             <td class="text-center">{{event.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>

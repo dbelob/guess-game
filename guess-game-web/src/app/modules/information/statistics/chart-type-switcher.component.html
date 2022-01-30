@@ -1,10 +1,10 @@
 <div>
   <button class="btn btn-link remove-focus" (click)="detailsClick.emit()"
-          [class.text-dark]="isDetails()" [class.font-weight-bold]="isDetails()" [disabled]="isDetails()">
+          [class.text-dark]="isDetails()" [class.fw-bold]="isDetails()" [disabled]="isDetails()">
     {{'statistics.olap.chart.detailsLabel' | translate}}
   </button>
   <button class="btn btn-link remove-focus" (click)="totalClick.emit()"
-          [class.text-dark]="isTotal()" [class.font-weight-bold]="isTotal()" [disabled]="isTotal()">
+          [class.text-dark]="isTotal()" [class.fw-bold]="isTotal()" [disabled]="isTotal()">
     {{'statistics.olap.chart.totalLabel' | translate}}
   </button>
 </div>

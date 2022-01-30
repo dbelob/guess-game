@@ -11,7 +11,7 @@
   </div>
 
   <div class="text-center mb-1">
-    <figure class="figure ml-1 mr-1">
+    <figure class="figure ms-1 me-1">
       <img src="{{speakersImageDirectory}}/{{speakerAccounts.speaker?.photoFileName}}" alt="photo"
            class="figure-img img-thumbnail img-guess-account-by-speaker"/>
       <figcaption class="figure-caption text-center">{{speakerAccounts.speaker?.name}}</figcaption>
@@ -21,25 +21,25 @@
     <button type="submit" class="btn btn-primary m-1 remove-focus" [class.btn-danger]="speakerAccounts.invalid0" [disabled]="speakerAccounts.invalid0"
             (click)="answer(speakerAccounts.id0)">
       <span *ngIf="speakerAccounts.twitter0"><i class="fab fa-twitter"></i>{{speakerAccounts.twitter0}}</span>
-      <span *ngIf="speakerAccounts.gitHub0" [class.pl-2]="speakerAccounts.twitter0"><i class="fab fa-github"></i>{{speakerAccounts.gitHub0}}</span>
+      <span *ngIf="speakerAccounts.gitHub0" [class.ps-2]="speakerAccounts.twitter0"><i class="fab fa-github"></i>{{speakerAccounts.gitHub0}}</span>
     </button>
     <button type="submit" class="btn btn-primary m-1 remove-focus" [class.btn-danger]="speakerAccounts.invalid1" [disabled]="speakerAccounts.invalid1"
             (click)="answer(speakerAccounts.id1)">
       <span *ngIf="speakerAccounts.twitter1"><i class="fab fa-twitter"></i>{{speakerAccounts.twitter1}}</span>
-      <span *ngIf="speakerAccounts.gitHub1" [class.pl-2]="speakerAccounts.twitter1"><i class="fab fa-github"></i>{{speakerAccounts.gitHub1}}</span>
+      <span *ngIf="speakerAccounts.gitHub1" [class.ps-2]="speakerAccounts.twitter1"><i class="fab fa-github"></i>{{speakerAccounts.gitHub1}}</span>
     </button>
     <button type="submit" class="btn btn-primary m-1 remove-focus" [class.btn-danger]="speakerAccounts.invalid2" [disabled]="speakerAccounts.invalid2"
             (click)="answer(speakerAccounts.id2)">
       <span *ngIf="speakerAccounts.twitter2"><i class="fab fa-twitter"></i>{{speakerAccounts.twitter2}}</span>
-      <span *ngIf="speakerAccounts.gitHub2" [class.pl-2]="speakerAccounts.twitter2"><i class="fab fa-github"></i>{{speakerAccounts.gitHub2}}</span>
+      <span *ngIf="speakerAccounts.gitHub2" [class.ps-2]="speakerAccounts.twitter2"><i class="fab fa-github"></i>{{speakerAccounts.gitHub2}}</span>
     </button>
     <button type="submit" class="btn btn-primary m-1 remove-focus" [class.btn-danger]="speakerAccounts.invalid3" [disabled]="speakerAccounts.invalid3"
             (click)="answer(speakerAccounts.id3)">
       <span *ngIf="speakerAccounts.twitter3"><i class="fab fa-twitter"></i>{{speakerAccounts.twitter3}}</span>
-      <span *ngIf="speakerAccounts.gitHub3" [class.pl-2]="speakerAccounts.twitter3"><i class="fab fa-github"></i>{{speakerAccounts.gitHub3}}</span>
+      <span *ngIf="speakerAccounts.gitHub3" [class.ps-2]="speakerAccounts.twitter3"><i class="fab fa-github"></i>{{speakerAccounts.gitHub3}}</span>
     </button>
   </div>
-  <div class="text-right mt-1">
+  <div class="text-end mt-1">
     <button class="btn btn-link text-muted" (click)="cancel()"><small>{{'common.cancelLinkText' | translate}}</small></button>
   </div>
 </div>

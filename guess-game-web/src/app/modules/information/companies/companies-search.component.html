@@ -16,8 +16,8 @@
 
   <div class="m-1">
     <form role="form" class="m-2">
-      <div class="form-group row justify-content-center align-items-center">
-        <label for="name" class="col-sm-2">{{'companies.search.nameLabel' | translate}}</label>
+      <div class="mb-3 row justify-content-center align-items-center">
+        <label for="name" class="form-label col-sm-2">{{'companies.search.nameLabel' | translate}}</label>
         <div class="col-sm-10">
           <input type="text" id="name" pInputText class="form-control" [(ngModel)]="name" name="name" (ngModelChange)="onFilterChange($event)"/>
         </div>
@@ -36,7 +36,7 @@
       {{'companies.noCompaniesFoundText' | translate}}
     </div>
 
-    <div *ngIf="isCompaniesListVisible()" class="ml-2 mr-2 mb-2 mt-3">
+    <div *ngIf="isCompaniesListVisible()" class="ms-2 me-2 mb-2 mt-3">
       <p-table [value]="companies" [resizableColumns]="true" [autoLayout]="true"
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"

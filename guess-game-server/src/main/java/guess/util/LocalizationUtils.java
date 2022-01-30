@@ -14,8 +14,8 @@ import java.util.stream.Collectors;
  */
 public class LocalizationUtils {
     private static final String BUNDLE_NAME = "LocaleStrings";
-    public static final String CONFERENCES_EVENT_TYPE_TEXT = "conferencesEventTypeText";
-    public static final String MEETUPS_EVENT_TYPE_TEXT = "meetupsEventTypeText";
+    public static final String CONFERENCE_EVENT_TYPE_TEXT = "conferenceEventTypeText";
+    public static final String MEETUP_EVENT_TYPE_TEXT = "meetupEventTypeText";
 
     private LocalizationUtils() {
     }

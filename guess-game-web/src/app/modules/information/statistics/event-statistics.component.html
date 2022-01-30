@@ -16,8 +16,8 @@
 
   <div class="m-1">
     <form role="form" class="m-2">
-      <div class="form-group row justify-content-center align-items-center">
-        <label for="organizer" class="col-auto text-right">{{'common.list.organizerLabel' | translate}}</label>
+      <div class="mb-3 row justify-content-center align-items-center">
+        <label for="organizer" class="form-label col-auto text-end">{{'common.list.organizerLabel' | translate}}</label>
         <div class="col-auto">
           <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
                       placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"
@@ -27,7 +27,7 @@
             </ng-template>
           </p-dropdown>
         </div>
-        <label for="conference" class="col-auto text-right">{{'statistics.events.conferenceLabel' | translate}}</label>
+        <label for="conference" class="form-label col-auto text-end">{{'statistics.events.conferenceLabel' | translate}}</label>
         <div class="col-auto">
           <p-dropdown [options]="conferenceSelectItems" [(ngModel)]="selectedConference" id="conference"
                       placeholder="{{'statistics.events.conferencePlaceholder' | translate}}" [showClear]="true"
@@ -35,7 +35,7 @@
                       emptyMessage="{{'common.list.emptyMessage' | translate}}">
             <ng-template let-eventType pTemplate="item">
               <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
-              <span class="ml-2">{{eventType.value.name}}</span>
+              <span class="ms-2">{{eventType.value.name}}</span>
             </ng-template>
           </p-dropdown>
         </div>
@@ -91,7 +91,7 @@
             <td>
               <a [routerLink]="['/information', 'event', eventMetrics.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{eventMetrics.eventTypeLogoFileName}}" class="img-event-type-logo-table" alt="logo"/>
-                <span class="ml-2">{{eventMetrics.name}}</span>
+                <span class="ms-2">{{eventMetrics.name}}</span>
               </a>
             </td>
             <td class="text-center">{{eventMetrics.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>

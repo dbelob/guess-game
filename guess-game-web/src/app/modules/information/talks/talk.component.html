@@ -16,13 +16,13 @@
 
   <div class="m-1">
     <div class="m-2">
-      <h3>{{talkDetails.talk?.name}}</h3>
+      <h4>{{talkDetails.talk?.name}}</h4>
 
       <div class="mt-1">
         <a [routerLink]="['/information', 'event', talkDetails.talk?.event?.id]" class="text-dark">
           <img *ngIf="talkDetails.talk?.eventTypeLogoFileName" class="img-event-type-logo-talk"
                src="{{eventsImageDirectory}}/{{talkDetails.talk.eventTypeLogoFileName}}" alt="logo"/>
-          <span class="ml-2">{{talkDetails.talk?.event?.displayName}}</span>
+          <span class="ms-2">{{talkDetails.talk?.event?.displayName}}</span>
         </a>
         <span *ngIf="talkDetails.talk?.talkDay"> / <i class="far fa-calendar"></i> {{'talk.dayLabel' | translate}} {{talkDetails.talk.talkDay}}</span>
         <span *ngIf="talkDetails.talk?.talkTime"> / <i class="fas fa-clock"></i> {{talkDetails.talk.talkTime | date:"HH:mm":undefined:translateService.currentLang}}</span>
@@ -55,7 +55,7 @@
     </div>
 
     <div *ngIf="isSpeakersListVisible()" class="m-2">
-      <h4>{{'speakers.table.title' | translate}}</h4>
+      <h5>{{'speakers.table.title' | translate}}</h5>
       <p-table [value]="talkDetails.speakers" [resizableColumns]="true" [autoLayout]="true"
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
@@ -100,7 +100,7 @@
             <td>
               <a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">
                 <img src="{{speakersImageDirectory}}/{{speaker.photoFileName}}" class="img-speaker-photo-table" alt="photo"/>
-                <span class="ml-2">{{speaker.displayName}}</span>
+                <span class="ms-2">{{speaker.displayName}}</span>
               </a>
             </td>
             <td>

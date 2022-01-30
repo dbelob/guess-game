@@ -17,20 +17,20 @@
   <div class="m-1">
     <div class="m-2">
       <div class="row">
-        <span class="col-auto h3">{{companyDetails.company?.name}}</span>
+        <span class="col-auto h4">{{companyDetails.company?.name}}</span>
       </div>
 
       <div *ngIf="isCompanyLinksVisible()" class="row mt-1">
         <div *ngIf="companyDetails.company?.siteLink" class="col-auto">
           <a href="{{companyDetails.company.siteLink}}" class="text-dark">
-            <i class="fas fa-globe"></i><span> {{'common.siteLinkText' | translate}}</span>
+            <i class="fas fa-globe"></i><span class="d-none d-sm-inline"> {{'common.siteLinkText' | translate}}</span>
           </a>
         </div>
       </div>
     </div>
 
     <div *ngIf="isSpeakersListVisible()" class="m-2">
-      <h4>{{'speakers.table.title' | translate}}</h4>
+      <h5>{{'speakers.table.title' | translate}}</h5>
       <p-table [value]="companyDetails.speakers" [resizableColumns]="true" [autoLayout]="true"
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
@@ -76,7 +76,7 @@
             <td>
               <a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">
                 <img src="{{speakersImageDirectory}}/{{speaker.photoFileName}}" class="img-speaker-photo-table" alt="photo"/>
-                <span class="ml-2">{{speaker.displayName}}</span>
+                <span class="ms-2">{{speaker.displayName}}</span>
               </a>
             </td>
             <td>

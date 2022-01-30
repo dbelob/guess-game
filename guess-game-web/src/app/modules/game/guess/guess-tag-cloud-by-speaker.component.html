@@ -11,7 +11,7 @@
   </div>
 
   <div class="text-center mb-1">
-    <figure class="figure ml-1 mr-1">
+    <figure class="figure ms-1 me-1">
       <img src="{{speakersImageDirectory}}/{{speakerTagClouds.speaker?.photoFileName}}" alt="photo"
            class="figure-img img-thumbnail img-guess-tag-cloud-by-speaker"/>
       <figcaption class="figure-caption text-center">{{speakerTagClouds.speaker?.name}}</figcaption>
@@ -31,7 +31,7 @@
            [class.btn-danger]="speakerTagClouds.invalid3" [disabled]="speakerTagClouds.invalid3"
            (click)="answer(speakerTagClouds.id3)" src="{{imageSource3}}"/>
   </div>
-  <div class="text-right mt-1">
+  <div class="text-end mt-1">
     <button class="btn btn-link text-muted" (click)="cancel()"><small>{{'common.cancelLinkText' | translate}}</small></button>
   </div>
 </div>

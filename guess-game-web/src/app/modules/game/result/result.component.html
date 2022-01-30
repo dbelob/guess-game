@@ -11,36 +11,36 @@
   </div>
 
   <div class="mt-2 mb-4">
-    <div class="form-row h6">
-      <div class="col-4 text-right">
+    <div class="row h6">
+      <div class="col-4 text-end">
         <label class="col-form-label">{{'result.correctAnswersLabel' | translate}}</label>
       </div>
       <div class="col-4 text-center">
         <label class="col-form-label">{{result.correctAnswers | number:'1.0-0':translateService.currentLang}}</label>
       </div>
-      <div class="col-2 text-right">
+      <div class="col-2 text-end">
         <label class="col-form-label">{{result.correctPercents | percent:'1.2-2':translateService.currentLang}}</label>
       </div>
     </div>
-    <div class="form-row h6">
-      <div class="col-4 text-right">
+    <div class="row h6">
+      <div class="col-4 text-end">
         <label class="col-form-label">{{'result.wrongAnswersLabel' | translate}}</label>
       </div>
       <div class="col-4 text-center">
         <label class="col-form-label">{{result.wrongAnswers | number:'1.0-0':translateService.currentLang}}</label>
       </div>
-      <div class="col-2 text-right">
+      <div class="col-2 text-end">
         <label class="col-form-label">{{result.wrongPercents| percent:'1.2-2':translateService.currentLang}}</label>
       </div>
     </div>
-    <div *ngIf="isSkippedVisible()" class="form-row h6">
-      <div class="col-4 text-right">
+    <div *ngIf="isSkippedVisible()" class="row h6">
+      <div class="col-4 text-end">
         <label class="col-form-label">{{'result.skippedAnswersLabel' | translate}}</label>
       </div>
       <div class="col-4 text-center">
         <label class="col-form-label">{{result.skippedAnswers | number:'1.0-0':translateService.currentLang}}</label>
       </div>
-      <div class="col-2 text-right">
+      <div class="col-2 text-end">
         <label class="col-form-label">{{result.skippedPercents| percent:'1.2-2':translateService.currentLang}}</label>
       </div>
     </div>

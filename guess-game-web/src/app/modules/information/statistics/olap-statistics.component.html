@@ -16,12 +16,12 @@
 
   <div class="m-1">
     <form role="form" class="m-2">
-      <div class="form-group row justify-content-center align-items-center">
-        <label for="cubeType" class="col-sm-2">{{'statistics.olap.cubeLabel' | translate}}</label>
+      <div class="mb-3 row justify-content-center align-items-center">
+        <label for="cubeType" class="form-label col-sm-2">{{'statistics.olap.cubeLabel' | translate}}</label>
         <div class="col-sm-3">
           <p-dropdown [options]="cubeTypeSelectItems" [(ngModel)]="selectedCubeType" id="cubeType"
                       placeholder="{{'statistics.olap.cubePlaceholder' | translate}}"
-                      (onChange)="onCubeTypeChange()" name="cubeType" styleClass="olap-dropdown">
+                      (onChange)="onCubeTypeChange()" name="cubeType" styleClass="w-100">
             <ng-template let-cubeType pTemplate="selectedItem">
               {{ cubeType.label | translate }}
             </ng-template>
@@ -30,11 +30,11 @@
             </ng-template>
           </p-dropdown>
         </div>
-        <label for="measureType" class="col-sm-2">{{'statistics.olap.measureLabel' | translate}}</label>
+        <label for="measureType" class="form-label col-sm-2">{{'statistics.olap.measureLabel' | translate}}</label>
         <div class="col-sm-5">
           <p-dropdown [options]="measureTypeSelectItems" [(ngModel)]="selectedMeasureType" id="measureType"
                       placeholder="{{'statistics.olap.measurePlaceholder' | translate}}"
-                      (onChange)="onMeasureTypeChange()" name="measureType" styleClass="olap-dropdown">
+                      (onChange)="onMeasureTypeChange()" name="measureType" styleClass="w-100">
             <ng-template let-measureType pTemplate="selectedItem">
               {{ measureType.label | translate }}
             </ng-template>
@@ -44,7 +44,7 @@
           </p-dropdown>
         </div>
       </div>
-      <div class="form-group row justify-content-center">
+      <div class="mb-3 row justify-content-center">
         <div class="col-auto">
           <p-checkbox name="group1" value="conferences" label="{{'common.checkbox.conferencesLabel' | translate}}"
                       [(ngModel)]="isConferences" binary="true"
@@ -56,31 +56,31 @@
                       (onChange)="onEventTypeKindChange()"></p-checkbox>
         </div>
       </div>
-      <div class="form-group row justify-content-center align-items-center">
-        <label for="organizer" class="col-sm-2">{{'common.list.organizerLabel' | translate}}</label>
+      <div class="mb-3 row justify-content-center align-items-center">
+        <label for="organizer" class="form-label col-sm-2">{{'common.list.organizerLabel' | translate}}</label>
         <div class="col-sm-3">
           <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
                       placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"
-                      (onChange)="onOrganizerChange()" name="organizer" styleClass="olap-dropdown">
+                      (onChange)="onOrganizerChange()" name="organizer" styleClass="w-100">
             <ng-template let-organizer pTemplate="item">
               {{organizer.value.name}}
             </ng-template>
           </p-dropdown>
         </div>
-        <label for="conference" class="col-sm-2">{{'common.list.eventTypesLabel' | translate}}</label>
+        <label for="conference" class="form-label col-sm-2">{{'common.list.eventTypesLabel' | translate}}</label>
         <div class="col-sm-5">
           <p-multiSelect [options]="eventTypeSelectItems" [(ngModel)]="selectedEventTypes" id="conference"
                       placeholder="{{'common.list.eventTypePlaceholder' | translate}}"
-                      (onChange)="onEventTypeChange()" name="conference" styleClass="olap-multiselect">
+                      (onChange)="onEventTypeChange()" name="conference" styleClass="w-100">
             <ng-template let-eventType pTemplate="item">
               <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
-              <span class="ml-2">{{eventType.value.name}}</span>
+              <span class="ms-2">{{eventType.value.name}}</span>
             </ng-template>
           </p-multiSelect>
         </div>
       </div>
-      <div *ngIf="isSpeakersVisible()" class="form-group row justify-content-center align-items-center">
-        <label for="speaker" class="col-sm-2">{{'statistics.olap.speakersLabel' | translate}}</label>
+      <div *ngIf="isSpeakersVisible()" class="mb-3 row justify-content-center align-items-center">
+        <label for="speaker" class="form-label col-sm-2">{{'statistics.olap.speakersLabel' | translate}}</label>
         <div class="col-sm-10">
           <p-autoComplete id="speaker" [(ngModel)]="selectedSpeakers" [suggestions]="speakerSuggestions" (completeMethod)="speakerSearch($event)"
                           (onSelect)="selectSpeaker($event)" (onUnselect)="unselectSpeaker($event)"
@@ -88,8 +88,8 @@
                           field="displayName" name="speaker" [multiple]="true" styleClass="olap-autocomplete"></p-autoComplete>
         </div>
       </div>
-      <div *ngIf="isCompaniesVisible()" class="form-group row justify-content-center align-items-center">
-        <label for="company" class="col-sm-2">{{'statistics.olap.companiesLabel' | translate}}</label>
+      <div *ngIf="isCompaniesVisible()" class="mb-3 row justify-content-center align-items-center">
+        <label for="company" class="form-label col-sm-2">{{'statistics.olap.companiesLabel' | translate}}</label>
         <div class="col-sm-10">
           <p-autoComplete id="company" [(ngModel)]="selectedCompanies" [suggestions]="companySuggestions" (completeMethod)="companySearch($event)"
                           (onSelect)="selectCompany($event)" (onUnselect)="unselectCompany($event)"
@@ -99,14 +99,14 @@
       </div>
     </form>
 
-    <div *ngIf="selectedCubeType && selectedMeasureType" class="text-center h5 mt-3 ml-2 mr-2 mb-1">
+    <div *ngIf="selectedCubeType && selectedMeasureType" class="text-center h5 mt-3 ms-2 me-2 mb-1">
       {{getCubeTypeMessageKeyByCube(selectedCubeType) | translate}} – {{getMeasureTypeMessageKeyByCube(selectedMeasureType) | translate}}
     </div>
 
     <div *ngIf="isChartsVisible()">
       <app-chart-type-switcher [type]="getChartType()" (detailsClick)="detailsChart()" (totalClick)="totalChart()"></app-chart-type-switcher>
 
-      <div class="ml-1 mr-1 mb-2">
+      <div class="ms-1 me-1 mb-2">
         <p-chart *ngIf="isDetailsChartVisible()" type="line" [data]="allLineData" [options]="allLineOptions"></p-chart>
         <p-chart *ngIf="isTotalChartVisible()" type="line" [data]="totalLineData" [options]="totalLineOptions"></p-chart>
       </div>
@@ -172,7 +172,7 @@
             <td>
               <a [routerLink]="['/information', 'event-type', eventTypeMetrics.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{eventTypeMetrics.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>
-                <span class="ml-2">{{eventTypeMetrics.name}}</span>
+                <span class="ms-2">{{eventTypeMetrics.name}}</span>
               </a>
             </td>
             <td *ngFor="let measureValue of eventTypeMetrics.measureValues" class="text-center">
@@ -269,7 +269,7 @@
             <td>
               <a [routerLink]="['/information', 'speaker', speakerMetrics.id]" class="text-dark">
                 <img src="{{speakersImageDirectory}}/{{speakerMetrics.photoFileName}}" class="img-speaker-photo-table" alt="photo"/>
-                <span class="ml-2">{{speakerMetrics.name}}</span>
+                <span class="ms-2">{{speakerMetrics.name}}</span>
               </a>
             </td>
             <td *ngFor="let measureValue of speakerMetrics.measureValues" class="text-center">
@@ -309,7 +309,7 @@
                       <td>
                         <a [routerLink]="['/information', 'event-type', eventTypeMetrics.id]" class="text-dark">
                           <img src="{{eventsImageDirectory}}/{{eventTypeMetrics.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>
-                          <span class="ml-2">{{eventTypeMetrics.name}}</span>
+                          <span class="ms-2">{{eventTypeMetrics.name}}</span>
                         </a>
                       </td>
                       <td *ngFor="let measureValue of eventTypeMetrics.measureValues" class="text-center">
@@ -412,7 +412,7 @@
                       <td>
                         <a [routerLink]="['/information', 'event-type', eventTypeMetrics.id]" class="text-dark">
                           <img src="{{eventsImageDirectory}}/{{eventTypeMetrics.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>
-                          <span class="ml-2">{{eventTypeMetrics.name}}</span>
+                          <span class="ms-2">{{eventTypeMetrics.name}}</span>
                         </a>
                       </td>
                       <td *ngFor="let measureValue of eventTypeMetrics.measureValues" class="text-center">
@@ -452,7 +452,7 @@
                                 <td>
                                   <a [routerLink]="['/information', 'speaker', speakerMetrics.id]" class="text-dark">
                                     <img src="{{speakersImageDirectory}}/{{speakerMetrics.photoFileName}}" class="img-speaker-photo-table" alt="photo"/>
-                                    <span class="ml-2">{{speakerMetrics.name}}</span>
+                                    <span class="ms-2">{{speakerMetrics.name}}</span>
                                   </a>
                                 </td>
                                 <td *ngFor="let measureValue of speakerMetrics.measureValues" class="text-center">
