@@ -11,7 +11,7 @@
   </div>
 
   <div class="mt-2 mb-4">
-    <div class="form-row h6">
+    <div class="row h6">
       <div class="col-4 text-end">
         <label class="col-form-label">{{'result.correctAnswersLabel' | translate}}</label>
       </div>
@@ -22,7 +22,7 @@
         <label class="col-form-label">{{result.correctPercents | percent:'1.2-2':translateService.currentLang}}</label>
       </div>
     </div>
-    <div class="form-row h6">
+    <div class="row h6">
       <div class="col-4 text-end">
         <label class="col-form-label">{{'result.wrongAnswersLabel' | translate}}</label>
       </div>
@@ -33,7 +33,7 @@
         <label class="col-form-label">{{result.wrongPercents| percent:'1.2-2':translateService.currentLang}}</label>
       </div>
     </div>
-    <div *ngIf="isSkippedVisible()" class="form-row h6">
+    <div *ngIf="isSkippedVisible()" class="row h6">
       <div class="col-4 text-end">
         <label class="col-form-label">{{'result.skippedAnswersLabel' | translate}}</label>
       </div>
