@@ -40,7 +40,7 @@
           </p-dropdown>
         </div>
         <label for="eventType" class="form-label col-12 col-sm-3 col-md-auto text-md-end mt-3 mt-md-0">{{'common.list.eventTypeLabel' | translate}}</label>
-        <div class="col-12 col-sm-9 col-md-auto mt-sm-3  mt-md-0">
+        <div class="col-12 col-sm-9 col-md-auto mt-sm-3 mt-md-0">
           <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="eventType"
                       placeholder="{{'common.list.eventTypePlaceholder' | translate}}" [showClear]="true"
                       (onChange)="onEventTypeChange()" name="eventType" styleClass="event-type-dropdown w-100">
