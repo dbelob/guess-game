@@ -1,8 +1,10 @@
-<button class="btn btn-link" routerLink="/information/events/search"
-        [class.text-dark]="isSearch()" [class.fw-bold]="isSearch()" [disabled]="isSearch()">
-  {{'events.search.title' | translate}}
-</button>
-<button *ngIf="isEvent()" class="btn btn-link text-dark fw-bold ms-2" routerLink="/information/events"
-        [disabled]="true">
-  {{'event.title' | translate}}
-</button>
+<div class="overflow-menu">
+  <button class="btn btn-link" routerLink="/information/events/search"
+          [class.text-dark]="isSearch()" [class.fw-bold]="isSearch()" [disabled]="isSearch()">
+    {{'events.search.title' | translate}}
+  </button>
+  <button *ngIf="isEvent()" class="btn btn-link text-dark fw-bold" routerLink="/information/events"
+          [disabled]="true">
+    {{'event.title' | translate}}
+  </button>
+</div>
