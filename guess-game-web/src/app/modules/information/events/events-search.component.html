@@ -29,8 +29,8 @@
         </div>
       </div>
       <div class="mb-3 row justify-content-center align-items-center">
-        <label for="organizer" class="form-label col-12 col-sm-auto text-sm-end">{{'common.list.organizerLabel' | translate}}</label>
-        <div class="col-12 col-sm-auto">
+        <label for="organizer" class="form-label col-12 col-sm-3 col-md-auto text-md-end">{{'common.list.organizerLabel' | translate}}</label>
+        <div class="col-12 col-sm-9 col-md-auto">
           <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
                       placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"
                       (onChange)="onOrganizerChange()" name="organizer" styleClass="organizer-dropdown w-100">
@@ -39,8 +39,8 @@
             </ng-template>
           </p-dropdown>
         </div>
-        <label for="eventType" class="form-label col-12 col-sm-auto text-sm-end mt-3 mt-sm-0">{{'common.list.eventTypeLabel' | translate}}</label>
-        <div class="col-12 col-sm-auto">
+        <label for="eventType" class="form-label col-12 col-sm-3 col-md-auto text-md-end mt-3 mt-md-0">{{'common.list.eventTypeLabel' | translate}}</label>
+        <div class="col-12 col-sm-9 col-md-auto mt-sm-3  mt-md-0">
           <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="eventType"
                       placeholder="{{'common.list.eventTypePlaceholder' | translate}}" [showClear]="true"
                       (onChange)="onEventTypeChange()" name="eventType" styleClass="event-type-dropdown w-100">
