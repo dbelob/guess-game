@@ -320,3 +320,8 @@ a:hover {
   background-color: #dae0e5;
   border-color: #dae0e5;
 }
+
+// Margin for wrapping menu items
+div.overflow-menu > button:not(:first-child) {
+  margin-left: 0.5rem !important;
+}
