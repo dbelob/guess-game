@@ -84,6 +84,16 @@ html {
   border-radius: 0.2rem;
 }
 
+// Style for event type listbox on start page
+.event-type-listbox-start {
+  height: 216px;
+}
+
+// Style for event listbox on start page
+.event-listbox-start {
+  height: 92px;
+}
+
 @media (min-width: 576px) {
   html {
     font-size: 15px;
@@ -124,6 +134,14 @@ html {
 
   .btn-sm-condensed {
     font-size: 0.875rem;
+  }
+
+  .event-type-listbox-start {
+    height: 270px;
+  }
+
+  .event-listbox-start {
+    height: 114px;
   }
 }
 

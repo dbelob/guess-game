@@ -47,9 +47,9 @@
         </span>
       </div>
 
-      <div *ngIf="isVideoLinksVideoIdsListVisible()">
+      <div *ngIf="isVideoLinksVideoIdsListVisible()" #youtubePlayerDiv>
         <div *ngFor="let videoId of talkDetails.talk.videoLinksVideoIds" class="mt-3">
-          <youtube-player videoId="{{videoId}}"></youtube-player>
+          <youtube-player #youtubePlayer videoId="{{videoId}}" (ready)="onResize()"></youtube-player>
         </div>
       </div>
     </div>

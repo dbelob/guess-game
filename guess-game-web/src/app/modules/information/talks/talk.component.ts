@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { YouTubePlayer } from '@angular/youtube-player/youtube-player';
 import { TranslateService } from '@ngx-translate/core';
 import { TalkDetails } from '../../../shared/models/talk/talk-details.model';
 import { TalkService } from '../../../shared/services/talk.service';
@@ -10,7 +11,7 @@ import getVideoId from 'get-video-id';
   selector: 'app-talk',
   templateUrl: './talk.component.html'
 })
-export class TalkComponent implements OnInit {
+export class TalkComponent implements AfterViewInit, OnInit, OnDestroy {
   private imageDirectory = 'assets/images';
   public degreesImageDirectory = `${this.imageDirectory}/degrees`;
   public eventsImageDirectory = `${this.imageDirectory}/events`;
@@ -21,6 +22,11 @@ export class TalkComponent implements OnInit {
 
   private id: number;
   public talkDetails: TalkDetails = new TalkDetails();
+
+  @ViewChild('youtubePlayerDiv') youtubePlayerDiv: ElementRef<HTMLDivElement>;
+  @ViewChild('youtubePlayer') youtubePlayer: YouTubePlayer;
+  private originalVideoWidth: number;
+  private originalVideoHeight: number;
 
   constructor(private talkService: TalkService, public translateService: TranslateService,
               private activatedRoute: ActivatedRoute) {
@@ -39,6 +45,15 @@ export class TalkComponent implements OnInit {
           .subscribe(() => this.loadTalk(this.id));
       }
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.onResize();
+    window.addEventListener('resize', this.onResize);
+  }
+
+  ngOnDestroy(): void {
+    window.removeEventListener('resize', this.onResize);
   }
 
   loadTalk(id: number) {
@@ -90,6 +105,27 @@ export class TalkComponent implements OnInit {
 
     tag.src = 'https://www.youtube.com/iframe_api';
     document.body.appendChild(tag);
+  }
+
+  onResize = (): void => {
+    if (this.youtubePlayer) {
+      if (!this.originalVideoWidth) {
+        this.originalVideoWidth = this.youtubePlayer.width;
+      }
+
+      if (!this.originalVideoHeight) {
+        this.originalVideoHeight = this.youtubePlayer.height;
+      }
+
+      const videoWidth = Math.min(this.youtubePlayerDiv.nativeElement.clientWidth, this.originalVideoWidth);
+
+      if (videoWidth != this.youtubePlayer.width) {
+        const videoHeight = videoWidth * this.originalVideoHeight / this.originalVideoWidth;
+
+        this.youtubePlayer.width = videoWidth;
+        this.youtubePlayer.height = videoHeight;
+      }
+    }
   }
 
   isPresentationLinksListVisible() {
