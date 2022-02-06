@@ -86,7 +86,11 @@
                 <span class="ms-2">{{eventType.name}}</span>
               </a>
             </td>
-            <td>{{eventType.shortDescription}}</td>
+            <td>
+              <a [routerLink]="['/information', 'event-type', eventType.id]" class="text-dark">
+                {{eventType.shortDescription}}
+              </a>
+            </td>
           </tr>
         </ng-template>
       </p-table>
