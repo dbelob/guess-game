@@ -1,9 +1,19 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  QueryList,
+  ViewChild,
+  ViewChildren
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { YouTubePlayer } from '@angular/youtube-player/youtube-player';
 import { TranslateService } from '@ngx-translate/core';
 import { TalkDetails } from '../../../shared/models/talk/talk-details.model';
 import { TalkService } from '../../../shared/services/talk.service';
+import { VideoSize } from "../../../shared/models/talk/video-size.model";
 import { getEventDisplayName, getSpeakersWithCompaniesString } from '../../general/utility-functions';
 import getVideoId from 'get-video-id';
 
@@ -24,9 +34,8 @@ export class TalkComponent implements AfterViewInit, OnInit, OnDestroy {
   public talkDetails: TalkDetails = new TalkDetails();
 
   @ViewChild('youtubePlayerDiv') youtubePlayerDiv: ElementRef<HTMLDivElement>;
-  @ViewChild('youtubePlayer') youtubePlayer: YouTubePlayer;
-  private originalVideoWidth: number;
-  private originalVideoHeight: number;
+  @ViewChildren('youtubePlayer') youtubePlayers: QueryList<YouTubePlayer>;
+  private videoSizes: Map<string, VideoSize> = new Map<string, VideoSize>();
 
   constructor(private talkService: TalkService, public translateService: TranslateService,
               private activatedRoute: ActivatedRoute) {
@@ -107,24 +116,28 @@ export class TalkComponent implements AfterViewInit, OnInit, OnDestroy {
     document.body.appendChild(tag);
   }
 
+  onReady = (event): void => {
+    this.videoSizes.set(event.target.videoId, event.target.getSize());
+
+    this.onResize();
+  }
+
   onResize = (): void => {
-    if (this.youtubePlayer) {
-      if (!this.originalVideoWidth) {
-        this.originalVideoWidth = this.youtubePlayer.width;
-      }
+    if (this.youtubePlayers) {
+      this.youtubePlayers.forEach((yp) => {
+        const videoSize = this.videoSizes.get(yp.videoId);
 
-      if (!this.originalVideoHeight) {
-        this.originalVideoHeight = this.youtubePlayer.height;
-      }
+        if (videoSize) {
+          const videoWidth = Math.min(this.youtubePlayerDiv.nativeElement.clientWidth, videoSize.width);
 
-      const videoWidth = Math.min(this.youtubePlayerDiv.nativeElement.clientWidth, this.originalVideoWidth);
+          if (videoWidth != yp.width) {
+            const videoHeight = videoWidth * videoSize.height / videoSize.width;
 
-      if (videoWidth != this.youtubePlayer.width) {
-        const videoHeight = videoWidth * this.originalVideoHeight / this.originalVideoWidth;
-
-        this.youtubePlayer.width = videoWidth;
-        this.youtubePlayer.height = videoHeight;
-      }
+            yp.width = videoWidth;
+            yp.height = videoHeight;
+          }
+        }
+      });
     }
   }
 
