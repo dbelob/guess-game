@@ -2351,6 +2351,14 @@ events:
     endDate: "2022-01-27"
     placeId: 24
     talkIds: [3625]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru Meetup #93"}
+      - {language: ru, text: "Митап #93 JUG.ru"}
+    startDate: "2022-02-15"
+    endDate: "2022-02-15"
+    placeId: 24
+    talkIds: [3626]
   # JUGNsk
   - eventTypeId: 15
     name:
