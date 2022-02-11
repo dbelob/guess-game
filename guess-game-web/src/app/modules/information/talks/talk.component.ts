@@ -117,9 +117,16 @@ export class TalkComponent implements AfterViewInit, OnInit, OnDestroy {
   }
 
   onReady = (event): void => {
-    this.videoSizes.set(event.target.videoId, event.target.getSize());
+    if (event?.target) {
+      const videoId: string = event.target.videoId;
+      const videoSize: VideoSize = event.target.getSize();
 
-    this.onResize();
+      if (videoId && !isNaN(videoSize?.width) && !isNaN(videoSize?.height)) {
+        this.videoSizes.set(videoId, videoSize);
+
+        this.onResize();
+      }
+    }
   }
 
   onResize = (): void => {
