@@ -27,7 +27,7 @@
         <war.plugin.version>3.3.2</war.plugin.version>
 
         <allure-junit5.version>2.17.2</allure-junit5.version>
-        <aspectj.version>1.9.7</aspectj.version>
+        <aspectj.version>1.9.8</aspectj.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <kumo.version>1.28</kumo.version>
         <logback.version>1.2.10</logback.version>
