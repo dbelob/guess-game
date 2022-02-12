@@ -57,7 +57,6 @@ export class TalkComponent implements AfterViewInit, OnInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this.onResize();
     window.addEventListener('resize', this.onResize);
   }
 
@@ -130,7 +129,7 @@ export class TalkComponent implements AfterViewInit, OnInit, OnDestroy {
   }
 
   onResize = (): void => {
-    if (this.youtubePlayers) {
+    if (this.youtubePlayerDiv && this.youtubePlayers) {
       this.youtubePlayers.forEach((yp) => {
         const videoSize = this.videoSizes.get(yp.videoId);
 

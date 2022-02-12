@@ -103,7 +103,7 @@
       {{getCubeTypeMessageKeyByCube(selectedCubeType) | translate}} – {{getMeasureTypeMessageKeyByCube(selectedMeasureType) | translate}}
     </div>
 
-    <div *ngIf="isChartsVisible()">
+    <div *ngIf="isChartsVisible()" #chartDiv>
       <app-chart-type-switcher [type]="getChartType()" (detailsClick)="detailsChart()" (totalClick)="totalChart()"></app-chart-type-switcher>
 
       <div class="ms-1 me-1 mb-2">
