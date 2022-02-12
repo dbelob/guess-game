@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { SelectItem } from 'primeng/api';
 import { TranslateService } from '@ngx-translate/core';
 import { Company } from '../../../shared/models/company/company.model';
@@ -59,6 +59,13 @@ export class OlapStatisticsComponent implements OnInit {
   private readonly SPEAKER_CHART_DATASET_QUANTITY = 5;
   private readonly COMPANY_CHART_DATASET_QUANTITY = 5;
 
+  private readonly SMALL_WIDTH = 576;
+  private readonly MEDIUM_WIDTH = 768;
+
+  private readonly EXTRA_SMALL_ASPECT_RATIO = 1.5;
+  private readonly SMALL_ASPECT_RATIO = 2.25;
+  private readonly MEDIUM_ASPECT_RATIO = 3;
+
   private imageDirectory = 'assets/images';
   public eventsImageDirectory = `${this.imageDirectory}/events`;
   public speakersImageDirectory = `${this.imageDirectory}/speakers`;
@@ -104,6 +111,9 @@ export class OlapStatisticsComponent implements OnInit {
   public totalLineData: any = {};
   private chartType = ChartType.Details;
 
+  @ViewChildren('chartDiv') chartDivs: QueryList<ElementRef<HTMLDivElement>>;
+  private chartDiv: ElementRef<HTMLDivElement>;
+
   constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
               private eventService: EventService, private organizerService: OrganizerService,
               public translateService: TranslateService, private speakerService: SpeakerService,
@@ -120,10 +130,20 @@ export class OlapStatisticsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.allLineOptions = this.createLineOptions();
-    this.totalLineOptions = this.createLineOptions();
-
     this.loadCubeTypes();
+  }
+
+  ngAfterViewInit(): void {
+    window.addEventListener('resize', this.onResize);
+
+    this.chartDivs.changes.subscribe((divs) => {
+      this.chartDiv = divs.first;
+      this.onResize();
+    });
+  }
+
+  ngOnDestroy(): void {
+    window.removeEventListener('resize', this.onResize);
   }
 
   getCubeTypeMessageKeyByCube(cubeType: CubeType): string {
@@ -558,10 +578,10 @@ export class OlapStatisticsComponent implements OnInit {
     }
   }
 
-  createLineOptions(): any {
+  createLineOptions(aspectRatio: number): any {
     return {
       animation: false,
-      aspectRatio: 3
+      aspectRatio: aspectRatio
     };
   }
 
@@ -616,6 +636,17 @@ export class OlapStatisticsComponent implements OnInit {
         return 'total';
       default:
         return null;
+    }
+  }
+
+  onResize = (): void => {
+    if (this.chartDiv) {
+      const clientWidth = this.chartDiv.nativeElement.clientWidth;
+      const aspectRatio = (clientWidth < this.SMALL_WIDTH) ? this.EXTRA_SMALL_ASPECT_RATIO :
+        ((clientWidth < this.MEDIUM_WIDTH) ? this.SMALL_ASPECT_RATIO : this.MEDIUM_ASPECT_RATIO);
+
+      this.allLineOptions = this.createLineOptions(aspectRatio);
+      this.totalLineOptions = this.createLineOptions(aspectRatio);
     }
   }
 
