@@ -13,15 +13,16 @@ import { InformationModule } from '../information.module';
 import { MessageModule } from '../../message/message.module';
 import { SpeakerComponent } from './speaker.component';
 import { SpeakersListComponent } from './speakers-list.component';
+import { SpeakersMenubarComponent } from './speakers-menubar.component';
 import { SpeakersSearchComponent } from './speakers-search.component';
-import { SpeakersSwitcherComponent } from './speakers-switcher.component';
 
 @NgModule({
   declarations: [
     SpeakerComponent,
     SpeakersListComponent,
-    SpeakersSearchComponent,
-    SpeakersSwitcherComponent],
+    SpeakersMenubarComponent,
+    SpeakersSearchComponent
+  ],
   imports: [
     AutoCompleteModule,
     CommonModule,
