@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { InformationSwitcherComponent } from './information-switcher.component';
+import { InformationMenubarComponent } from './information-menubar.component';
 
 @NgModule({
   declarations: [
-    InformationSwitcherComponent
+    InformationMenubarComponent
   ],
   imports: [
     CommonModule,
@@ -14,7 +14,7 @@ import { InformationSwitcherComponent } from './information-switcher.component';
     TranslateModule
   ],
   exports: [
-    InformationSwitcherComponent
+    InformationMenubarComponent
   ]
 })
 export class InformationModule {

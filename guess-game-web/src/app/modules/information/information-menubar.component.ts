@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-information-switcher',
-  templateUrl: './information-switcher.component.html'
+  selector: 'app-information-menubar',
+  templateUrl: './information-menubar.component.html'
 })
-export class InformationSwitcherComponent implements OnInit {
+export class InformationMenubarComponent implements OnInit {
   @Input() private type: string;
 
   constructor() {
