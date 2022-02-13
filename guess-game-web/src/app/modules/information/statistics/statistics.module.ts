@@ -15,13 +15,13 @@ import { TranslateModule } from '@ngx-translate/core';
 import { GeneralModule } from '../../general/general.module';
 import { InformationModule } from '../information.module';
 import { MessageModule } from '../../message/message.module';
+import { ChartTypeSwitcherComponent } from './chart-type-switcher.component';
 import { EventTypeStatisticsComponent } from './event-type-statistics.component';
 import { EventStatisticsComponent } from './event-statistics.component';
 import { SpeakerStatisticsComponent } from './speaker-statistics.component';
 import { CompanyStatisticsComponent } from './company-statistics.component';
 import { OlapStatisticsComponent } from './olap-statistics.component';
-import { StatisticsSwitcherComponent } from './statistics-switcher.component';
-import { ChartTypeSwitcherComponent } from './chart-type-switcher.component';
+import { StatisticsMenubarComponent } from './statistics-menubar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { ChartTypeSwitcherComponent } from './chart-type-switcher.component';
     SpeakerStatisticsComponent,
     CompanyStatisticsComponent,
     OlapStatisticsComponent,
-    StatisticsSwitcherComponent
+    StatisticsMenubarComponent
   ],
   imports: [
     AutoCompleteModule,
