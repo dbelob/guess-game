@@ -11,13 +11,13 @@ import { InformationModule } from '../information.module';
 import { MessageModule } from '../../message/message.module';
 import { EventComponent } from './event.component';
 import { EventsSearchComponent } from './events-search.component';
-import { EventsSwitcherComponent } from './events-switcher.component';
+import { EventsMenubarComponent } from './events-menubar.component';
 
 @NgModule({
   declarations: [
     EventComponent,
     EventsSearchComponent,
-    EventsSwitcherComponent
+    EventsMenubarComponent
   ],
   imports: [
     CommonModule,

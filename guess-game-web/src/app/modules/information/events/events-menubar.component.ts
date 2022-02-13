@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-events-switcher',
-  templateUrl: './events-switcher.component.html'
+  selector: 'app-events-menubar',
+  templateUrl: './events-menubar.component.html'
 })
-export class EventsSwitcherComponent implements OnInit {
+export class EventsMenubarComponent implements OnInit {
   @Input() private type: string;
 
   constructor() {
