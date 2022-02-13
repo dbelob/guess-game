@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-events-switcher',
-  templateUrl: './events-switcher.component.html'
+  selector: 'app-event-types-menubar',
+  templateUrl: './event-types-menubar.component.html'
 })
-export class EventsSwitcherComponent implements OnInit {
+export class EventTypesMenubarComponent implements OnInit {
   @Input() private type: string;
 
   constructor() {
@@ -17,7 +17,7 @@ export class EventsSwitcherComponent implements OnInit {
     return ('search' === this.type);
   }
 
-  isEvent(): boolean {
-    return ('event' === this.type);
+  isEventType(): boolean {
+    return ('eventType' === this.type);
   }
 }

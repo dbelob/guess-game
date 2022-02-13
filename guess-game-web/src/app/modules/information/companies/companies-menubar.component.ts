@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-speakers-switcher',
-  templateUrl: './speakers-switcher.component.html'
+  selector: 'app-companies-menubar',
+  templateUrl: './companies-menubar.component.html'
 })
-export class SpeakersSwitcherComponent implements OnInit {
+export class CompaniesMenubarComponent implements OnInit {
   @Input() private type: string;
 
   constructor() {
@@ -21,7 +21,7 @@ export class SpeakersSwitcherComponent implements OnInit {
     return ('search' === this.type);
   }
 
-  isSpeaker(): boolean {
-    return ('speaker' === this.type);
+  isCompany(): boolean {
+    return ('company' === this.type);
   }
 }

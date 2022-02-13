@@ -59,8 +59,9 @@ export class OlapStatisticsComponent implements OnInit {
   private readonly SPEAKER_CHART_DATASET_QUANTITY = 5;
   private readonly COMPANY_CHART_DATASET_QUANTITY = 5;
 
-  private readonly SMALL_WIDTH = 576;
-  private readonly MEDIUM_WIDTH = 768;
+  private readonly MARGIN_WIDTH = 30;
+  private readonly SMALL_WIDTH = 576 - this.MARGIN_WIDTH;
+  private readonly MEDIUM_WIDTH = 768 - this.MARGIN_WIDTH;
 
   private readonly EXTRA_SMALL_ASPECT_RATIO = 1.5;
   private readonly SMALL_ASPECT_RATIO = 2.25;

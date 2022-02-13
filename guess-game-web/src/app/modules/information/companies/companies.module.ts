@@ -10,15 +10,15 @@ import { InformationModule } from '../information.module';
 import { MessageModule } from '../../message/message.module';
 import { CompanyComponent } from './company.component';
 import { CompaniesListComponent } from './companies-list.component';
+import { CompaniesMenubarComponent } from './companies-menubar.component';
 import { CompaniesSearchComponent } from './companies-search.component';
-import { CompaniesSwitcherComponent } from './companies-switcher.component';
 
 @NgModule({
   declarations: [
     CompanyComponent,
     CompaniesListComponent,
-    CompaniesSearchComponent,
-    CompaniesSwitcherComponent
+    CompaniesMenubarComponent,
+    CompaniesSearchComponent
   ],
   imports: [
     CommonModule,

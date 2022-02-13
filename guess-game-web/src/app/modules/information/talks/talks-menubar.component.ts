@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-talks-switcher',
-  templateUrl: './talks-switcher.component.html'
+  selector: 'app-talks-menubar',
+  templateUrl: './talks-menubar.component.html'
 })
-export class TalksSwitcherComponent implements OnInit {
+export class TalksMenubarComponent implements OnInit {
   @Input() private type: string;
 
   constructor() {

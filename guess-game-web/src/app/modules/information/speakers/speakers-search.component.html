@@ -10,9 +10,8 @@
     <app-language-switcher (reload)="onLanguageChange()" class="col-auto"></app-language-switcher>
   </div>
 
-  <app-information-switcher [type]="'speakers'"></app-information-switcher>
-
-  <app-speakers-switcher [type]="'search'"></app-speakers-switcher>
+  <app-information-menubar [type]="'speakers'"></app-information-menubar>
+  <app-speakers-menubar [type]="'search'"></app-speakers-menubar>
 
   <div class="m-1">
     <form role="form" class="m-2">
