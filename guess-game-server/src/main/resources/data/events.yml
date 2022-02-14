@@ -602,7 +602,7 @@ events:
     youtubeLink: https://www.youtube.com/playlist?list=PL8sJahqnzh8KXjvw3i0bY-fCn1abQMbv8
     placeId: 7
     talkIds: [170, 171, 172, 1345, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190,
-              191, 192, 193, 194, 195, 1346, 196, 197, 198]
+              191, 192, 193, 194, 195, 1346, 196, 197, 198, 3627, 3628]
   - eventTypeId: 4
     name:
       - {language: en, text: "HolyJS 2020 SPb"}
