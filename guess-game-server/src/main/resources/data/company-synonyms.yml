@@ -287,10 +287,10 @@ companySynonyms:
     synonyms: [
         performance-lab.ru
     ]
-  - name: Platform.sh/SouJava
+  - name: SouJava
     synonyms: [
         Platform.sh,
-        SouJava
+        Platform.sh/SouJava
     ]
   - name: "Postgres Professional"
     synonyms: [
