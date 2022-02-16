@@ -1707,6 +1707,7 @@ public class ConferenceDataLoader {
         // Load space tags
 //        loadSpaceTags("2020");
 //        loadSpaceTags("2021");
+//        loadSpaceTags("2022");
 
         // Load event types
 //        loadEventTypes();
