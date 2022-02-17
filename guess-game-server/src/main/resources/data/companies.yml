@@ -2314,11 +2314,6 @@ companies:
       - {language: en, text: Lanit-Tercom}
       - {language: ru, text: Ланит-Терком}
     siteLink: https://www.lanit-tercom.ru
-  - id: 637
-    name:
-      - {language: en, text: Levi9}
-      - {language: ru, text: Леви9}
-    siteLink: https://www.levi9.com
   - id: 638
     name:
       - {language: en, text: Liptsoft}
@@ -3266,3 +3261,11 @@ companies:
     name:
       - {language: en, text: TC39}
     siteLink: https://tc39.es
+  - id: 896
+    name:
+      - {language: en, text: MindView}
+    siteLink: https://www.mindviewllc.com
+  - id: 897
+    name:
+      - {language: en, text: AllStarsIT}
+    siteLink: https://www.allstarsit.com

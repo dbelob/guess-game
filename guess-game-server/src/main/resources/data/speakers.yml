@@ -1603,12 +1603,12 @@ speakers:
     name:
       - {language: en, text: "Sergey Tsypanov"}
       - {language: ru, text: "Сергей Цыпанов"}
-    companyIds: [637]
+    companyIds: [897]
     bio:
-      - {language: en, text: "Sergey is a Java developer in Levi9. The main direction of professional development is the solving\
+      - {language: en, text: "Sergey is a Java developer in AllStarsIT. The main direction of professional development is the solving\
             \ of performance-related issues."}
       - language: ru
-        text: "Работает в небольшой компании «Леви9» Java-разработчиком.\nОсновное направление профессионального развития\
+        text: "Работает в небольшой компании AllStarsIT Java-разработчиком.\nОсновное направление профессионального развития\
             \ — решение задач, связанных с производительностью."
     gitHub: stsypanov
     habr: tsypanov
@@ -28971,3 +28971,29 @@ speakers:
             \ экономическое. Обладатель наград в бизнес-менеджменте, победитель и призер олимпиад по математике и экономик\
             е, тренер команд по математике. В 2017 году влюбился в Data Science, теперь руководит командой дата-сайентисто\
             в в Tango. Живет в Тель-Авиве."}
+  - id: 2030
+    photoFileName: 2030.jpg
+    name:
+      - {language: en, text: "Bruce Eckel"}
+    companyIds: [896]
+    bio:
+      - {language: en, text: "Bruce Eckel (www.MindViewLLC.com) has published 10 books, numerous blog posts, over 150\
+            \ articles, and has given hundreds of presentations throughout the world. He was a founding member of the\
+            \ ANSI/ISO C++ committee and was for many years the chair of both the C++ and Java tracks at the Software\
+            \ Development Conference. With James Ward, he creates the Happy Path Programming podcast. He cofounded the\
+            \ JavaPosse Roundup Conference (now the Winter Tech Forum) and created Evolve Coworking in Crested Butte,\
+            \ CO. He periodically holds Developer Retreats and provides public and private training and consulting in\
+            \ programming languages and software system design. His latest books are Atomic Kotlin and On Java 8."}
+    twitter: BruceEckel
+    gitHub: BruceEckel
+    javaChampion: true
+  - id: 2031
+    photoFileName: 2031.jpg
+    name:
+      - {language: en, text: "Artem Bilan"}
+      - {language: ru, text: "Артём Билан"}
+    companyIds: [577]
+    bio:
+      - {language: ru, text: "Ведущий разработчик проекта Spring Integration."}
+    twitter: artem_bilan
+    gitHub: artembilan
