@@ -2548,30 +2548,30 @@ events:
     youtubeLink: https://www.youtube.com/c/JUGNsk
     placeId: 24
     talkIds: [3629, 3630, 3631, 3632, 3633, 3634, 3635, 3636, 3637, 3638]
-  - eventTypeId: 16
-    name:
-      - {language: en, text: "SnowOne 2022 Student Day"}
-      - {language: ru, text: "SnowOne 2022 Студенческий день"}
-    startDate: "2022-04-07"
-    endDate: "2022-04-07"
-    siteLink:
-      - {language: en, text: "https://snowone.ru/en"}
-      - {language: ru, text: "https://snowone.ru"}
-    youtubeLink: https://www.youtube.com/c/JUGNsk
-    placeId: 13
-    talkIds: []
-  - eventTypeId: 16
-    name:
-      - {language: en, text: "SnowOne 2022 Offline"}
-      - {language: ru, text: "SnowOne 2022 Офлайн"}
-    startDate: "2022-04-08"
-    endDate: "2022-04-09"
-    siteLink:
-      - {language: en, text: "https://snowone.ru/en"}
-      - {language: ru, text: "https://snowone.ru"}
-    youtubeLink: https://www.youtube.com/c/JUGNsk
-    placeId: 13
-    talkIds: []
+#  - eventTypeId: 16
+#    name:
+#      - {language: en, text: "SnowOne 2022 Student Day"}
+#      - {language: ru, text: "SnowOne 2022 Студенческий день"}
+#    startDate: "2022-04-07"
+#    endDate: "2022-04-07"
+#    siteLink:
+#      - {language: en, text: "https://snowone.ru/en"}
+#      - {language: ru, text: "https://snowone.ru"}
+#    youtubeLink: https://www.youtube.com/c/JUGNsk
+#    placeId: 13
+#    talkIds: []
+#  - eventTypeId: 16
+#    name:
+#      - {language: en, text: "SnowOne 2022 Offline"}
+#      - {language: ru, text: "SnowOne 2022 Офлайн"}
+#    startDate: "2022-04-08"
+#    endDate: "2022-04-09"
+#    siteLink:
+#      - {language: en, text: "https://snowone.ru/en"}
+#      - {language: ru, text: "https://snowone.ru"}
+#    youtubeLink: https://www.youtube.com/c/JUGNsk
+#    placeId: 13
+#    talkIds: []
   # VideoTech
   - eventTypeId: 17
     name:
