@@ -245,7 +245,7 @@
         <td rowspan="2"></td>
         <td rowspan="2">2020</td>
         <td rowspan="2">2020</td>
-        <td rowspan="2">2020</td>
+        <td rowspan="2"></td>
         <td rowspan="2">2020</td>
     </tr>
     <tr>
@@ -275,7 +275,7 @@
         <td rowspan="2">2021<br>(2021videotech)</td>
         <td rowspan="2">2021</td>
         <td rowspan="2">2021</td>
-        <td rowspan="2">2021</td>
+        <td rowspan="2"></td>
         <td rowspan="2">2021</td>
     </tr>
     <tr>
@@ -303,8 +303,8 @@
         <td rowspan="3">2022</td>
         <td>2022 Online</td>
         <td rowspan="3">2022</td>
-        <td rowspan="3">2022</td>
-        <td rowspan="3">2022</td>
+        <td rowspan="3"></td>
+        <td rowspan="3"></td>
     </tr>
     <tr>
         <td rowspan="2">2022 Autumn</td>
