@@ -53,7 +53,8 @@ events:
               2676, 2677, 2678, 2679, 2680, 2681, 2682]
   - eventTypeId: 0
     name:
-      - {language: en, text: "C++ Russia 2021"}
+      - {language: en, text: "C++ Russia 2021 SPb"}
+      - {language: ru, text: "C++ Russia 2021 СПб"}
     startDate: "2021-11-15"
     endDate: "2021-11-18"
     siteLink:
@@ -2545,7 +2546,6 @@ events:
     siteLink:
       - {language: en, text: "https://snowone.ru/en"}
       - {language: ru, text: "https://snowone.ru"}
-    youtubeLink: https://www.youtube.com/c/JUGNsk
     placeId: 24
     talkIds: [3629, 3630, 3631, 3632, 3633, 3634, 3635, 3636, 3637, 3638]
 #  - eventTypeId: 16
@@ -2557,7 +2557,6 @@ events:
 #    siteLink:
 #      - {language: en, text: "https://snowone.ru/en"}
 #      - {language: ru, text: "https://snowone.ru"}
-#    youtubeLink: https://www.youtube.com/c/JUGNsk
 #    placeId: 13
 #    talkIds: []
 #  - eventTypeId: 16
@@ -2569,7 +2568,6 @@ events:
 #    siteLink:
 #      - {language: en, text: "https://snowone.ru/en"}
 #      - {language: ru, text: "https://snowone.ru"}
-#    youtubeLink: https://www.youtube.com/c/JUGNsk
 #    placeId: 13
 #    talkIds: []
   # VideoTech
