@@ -90,8 +90,7 @@ events:
     talkIds: [983, 984, 985, 986, 987, 988, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999]
   - eventTypeId: 1
     name:
-      - {language: en, text: "DevOops 2019 SPb"}
-      - {language: ru, text: "DevOops 2019 СПб"}
+      - {language: en, text: "DevOops 2019"}
     startDate: "2019-10-29"
     endDate: "2019-10-30"
     siteLink:

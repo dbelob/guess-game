@@ -148,7 +148,7 @@
     <tr>
         <th rowspan="2">2017</th>
         <td rowspan="2"></td>
-        <td rowspan="2">2017&nbsp;Spb<br>(2017DevOops)</td>
+        <td rowspan="2">2017<br>(2017DevOops)</td>
         <td>2017&nbsp;Spb<br>(2017spb)</td>
         <td>2017&nbsp;Spb<br>(2017spb)</td>
         <td>2017&nbsp;Spb<br>(2017spb)</td>
@@ -175,7 +175,7 @@
     <tr>
         <th rowspan="2">2018</th>
         <td rowspan="2"></td>
-        <td rowspan="2">2018&nbsp;Spb<br>(2018DevOops)</td>
+        <td rowspan="2">2018<br>(2018DevOops)</td>
         <td>2018&nbsp;Spb<br>(2018spb)</td>
         <td>2018&nbsp;Spb<br>(2018spb)</td>
         <td>2018&nbsp;Spb<br>(2018spb)</td>
@@ -202,7 +202,7 @@
     <tr>
         <th rowspan="2">2019</th>
         <td>2019&nbsp;Msk<br>(2019cpp)</td>
-        <td rowspan="2">2019&nbsp;Spb<br>(2019devoops)</td>
+        <td rowspan="2">2019<br>(2019devoops)</td>
         <td>2019&nbsp;Spb<br>(2019spb)</td>
         <td>2019&nbsp;Spb<br>(2019spb)</td>
         <td>2019&nbsp;Spb<br>(2019spb)</td>
