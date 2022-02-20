@@ -89,8 +89,7 @@ events:
     talkIds: [983, 984, 985, 986, 987, 988, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999]
   - eventTypeId: 1
     name:
-      - {language: en, text: "DevOops 2019 SPb"}
-      - {language: ru, text: "DevOops 2019 СПб"}
+      - {language: en, text: "DevOops 2019"}
     startDate: "2019-10-29"
     endDate: "2019-10-30"
     siteLink:
@@ -135,7 +134,7 @@ events:
     siteLink:
       - {language: en, text: "https://devoops.ru/en/"}
       - {language: ru, text: "https://devoops.ru/"}
-    youtubeLink: https://live.jugru.org/devoops
+    youtubeLink: https://www.youtube.com/playlist?list=PL-ety8gh7rTphdgZQwQ7v5zTmMnNj93dJ
     placeId: 24
     talkIds: [3367, 3476, 3368, 3526, 3553, 3384, 3477, 3370, 3373, 3374, 3372, 3527, 3554, 3376, 3375, 3478, 3503, 3555,
               3479, 3379, 3380, 3556, 3381, 3382, 3377, 3504, 3557, 3536, 3558, 3505, 3385, 3383, 3366, 3528, 3559, 3387, 3480,
@@ -2545,7 +2544,6 @@ events:
     siteLink:
       - {language: en, text: "https://snowone.ru/en"}
       - {language: ru, text: "https://snowone.ru"}
-    youtubeLink: https://www.youtube.com/c/JUGNsk
     placeId: 24
     talkIds: [3629, 3630, 3631, 3632, 3633, 3634, 3635, 3636, 3637, 3638]
 #  - eventTypeId: 16
@@ -2557,7 +2555,6 @@ events:
 #    siteLink:
 #      - {language: en, text: "https://snowone.ru/en"}
 #      - {language: ru, text: "https://snowone.ru"}
-#    youtubeLink: https://www.youtube.com/c/JUGNsk
 #    placeId: 13
 #    talkIds: []
 #  - eventTypeId: 16
@@ -2569,7 +2566,6 @@ events:
 #    siteLink:
 #      - {language: en, text: "https://snowone.ru/en"}
 #      - {language: ru, text: "https://snowone.ru"}
-#    youtubeLink: https://www.youtube.com/c/JUGNsk
 #    placeId: 13
 #    talkIds: []
   # VideoTech

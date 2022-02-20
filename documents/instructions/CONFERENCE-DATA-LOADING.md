@@ -148,7 +148,7 @@
     <tr>
         <th rowspan="2">2017</th>
         <td rowspan="2"></td>
-        <td rowspan="2">2017&nbsp;Spb<br>(2017DevOops)</td>
+        <td rowspan="2">2017<br>(2017DevOops)</td>
         <td>2017&nbsp;Spb<br>(2017spb)</td>
         <td>2017&nbsp;Spb<br>(2017spb)</td>
         <td>2017&nbsp;Spb<br>(2017spb)</td>
@@ -175,7 +175,7 @@
     <tr>
         <th rowspan="2">2018</th>
         <td rowspan="2"></td>
-        <td rowspan="2">2018&nbsp;Spb<br>(2018DevOops)</td>
+        <td rowspan="2">2018<br>(2018DevOops)</td>
         <td>2018&nbsp;Spb<br>(2018spb)</td>
         <td>2018&nbsp;Spb<br>(2018spb)</td>
         <td>2018&nbsp;Spb<br>(2018spb)</td>
@@ -202,7 +202,7 @@
     <tr>
         <th rowspan="2">2019</th>
         <td>2019&nbsp;Msk<br>(2019cpp)</td>
-        <td rowspan="2">2019&nbsp;Spb<br>(2019devoops)</td>
+        <td rowspan="2">2019<br>(2019devoops)</td>
         <td>2019&nbsp;Spb<br>(2019spb)</td>
         <td>2019&nbsp;Spb<br>(2019spb)</td>
         <td>2019&nbsp;Spb<br>(2019spb)</td>
@@ -245,7 +245,7 @@
         <td rowspan="2"></td>
         <td rowspan="2">2020</td>
         <td rowspan="2">2020</td>
-        <td rowspan="2">2020</td>
+        <td rowspan="2"></td>
         <td rowspan="2">2020</td>
     </tr>
     <tr>
@@ -259,8 +259,8 @@
     </tr>
     <tr>
         <th rowspan="2">2021</th>
-        <td rowspan="2">2021 Spb<br>(2021spbcpp)</td>
-        <td rowspan="2">2021 Spb<br>(2021spbdevoops)</td>
+        <td rowspan="2">2021<br>(2021spbcpp)</td>
+        <td rowspan="2">2021<br>(2021spbdevoops)</td>
         <td>2021 Spb<br>(2021spb)</td>
         <td>2021 Spb<br>(2021spb)</td>
         <td>2021 Spb<br>(2021spb)</td>
@@ -275,7 +275,7 @@
         <td rowspan="2">2021<br>(2021videotech)</td>
         <td rowspan="2">2021</td>
         <td rowspan="2">2021</td>
-        <td rowspan="2">2021</td>
+        <td rowspan="2"></td>
         <td rowspan="2">2021</td>
     </tr>
     <tr>
@@ -303,8 +303,8 @@
         <td rowspan="3">2022</td>
         <td>2022 Online</td>
         <td rowspan="3">2022</td>
-        <td rowspan="3">2022</td>
-        <td rowspan="3">2022</td>
+        <td rowspan="3"></td>
+        <td rowspan="3"></td>
     </tr>
     <tr>
         <td rowspan="2">2022 Autumn</td>

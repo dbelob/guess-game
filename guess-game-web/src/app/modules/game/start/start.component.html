@@ -104,7 +104,7 @@
       <label for="quantity" class="form-label col-12 col-sm-2">{{'start.quantityLabel' | translate}}</label>
       <div class="col-12 col-sm-10">
         <p-dropdown id="quantity" [options]="quantitySelectItems" [(ngModel)]="selectedQuantity" name="quantity"
-                    styleClass="w-100" [autoDisplayFirst]="false">
+                    styleClass="w-100" [autoDisplayFirst]="false" emptyMessage="{{'common.list.emptyMessage' | translate}}">
         </p-dropdown>
       </div>
     </div>
