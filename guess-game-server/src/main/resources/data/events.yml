@@ -134,7 +134,7 @@ events:
     siteLink:
       - {language: en, text: "https://devoops.ru/en/"}
       - {language: ru, text: "https://devoops.ru/"}
-    youtubeLink: https://live.jugru.org/devoops
+    youtubeLink: https://www.youtube.com/playlist?list=PL-ety8gh7rTphdgZQwQ7v5zTmMnNj93dJ
     placeId: 24
     talkIds: [3367, 3476, 3368, 3526, 3553, 3384, 3477, 3370, 3373, 3374, 3372, 3527, 3554, 3376, 3375, 3478, 3503, 3555,
               3479, 3379, 3380, 3556, 3381, 3382, 3377, 3504, 3557, 3536, 3558, 3505, 3385, 3383, 3366, 3528, 3559, 3387, 3480,
