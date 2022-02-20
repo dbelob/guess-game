@@ -1940,5 +1940,13 @@ public class ConferenceDataLoader {
 //                        "Разговор в студии: что под капотом у видео в Яндексе?",
 //                        "Разговор в студии: CDN в пандемию — стриминг и сериалы, COVID и операторы связи",
 //                        "VideoTech 2021 Virtual Afterparty")));
+
+        // 2022
+//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2022, 4, 7), "2022spring");
+//        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2022, 4, 12), "2022spring");
+//        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2022, 4, 18), "2022spring");
+//        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2022, 4, 25), "2022jpoint");
+//        loadTalksSpeakersEvent(Conference.HYDRA, LocalDate.of(2022, 6, 1), "2022hydra");
+//        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2022, 6, 6), "2022springcpp");
     }
 }
