@@ -259,8 +259,8 @@
     </tr>
     <tr>
         <th rowspan="2">2021</th>
-        <td rowspan="2">2021 Spb<br>(2021spbcpp)</td>
-        <td rowspan="2">2021 Spb<br>(2021spbdevoops)</td>
+        <td rowspan="2">2021<br>(2021spbcpp)</td>
+        <td rowspan="2">2021<br>(2021spbdevoops)</td>
         <td>2021 Spb<br>(2021spb)</td>
         <td>2021 Spb<br>(2021spb)</td>
         <td>2021 Spb<br>(2021spb)</td>
