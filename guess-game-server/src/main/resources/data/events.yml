@@ -2539,8 +2539,8 @@ events:
     name:
       - {language: en, text: "SnowOne 2022 Online"}
       - {language: ru, text: "SnowOne 2022 Онлайн"}
-    startDate: "2022-02-25"
-    endDate: "2022-02-26"
+    startDate: "2022-04-08"
+    endDate: "2022-04-09"
     siteLink:
       - {language: en, text: "https://snowone.ru/en"}
       - {language: ru, text: "https://snowone.ru"}
