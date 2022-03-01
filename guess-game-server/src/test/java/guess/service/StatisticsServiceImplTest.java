@@ -97,7 +97,7 @@ class StatisticsServiceImplTest {
         EVENT_START_DATE4 = EVENT_START_DATE2.plus(1, ChronoUnit.DAYS);
         EVENT_END_DATE4 = EVENT_START_DATE4;
 
-        EVENT_START_DATE5 = NOW_DATE.minus(2, ChronoUnit.YEARS);
+        EVENT_START_DATE5 = NOW_DATE.minus(4, ChronoUnit.YEARS);
         EVENT_END_DATE5 = EVENT_START_DATE5;
     }
 
