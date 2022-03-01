@@ -42,4 +42,13 @@ public class Metrics {
     public int hashCode() {
         return Objects.hash(talksQuantity, javaChampionsQuantity, mvpsQuantity);
     }
+
+    @Override
+    public String toString() {
+        return "Metrics{" +
+                "talksQuantity=" + talksQuantity +
+                ", javaChampionsQuantity=" + javaChampionsQuantity +
+                ", mvpsQuantity=" + mvpsQuantity +
+                '}';
+    }
 }

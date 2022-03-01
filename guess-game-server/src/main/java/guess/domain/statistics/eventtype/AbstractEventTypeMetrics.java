@@ -72,6 +72,9 @@ public abstract class AbstractEventTypeMetrics extends Metrics {
                 ", duration=" + duration +
                 ", eventsQuantity=" + eventsQuantity +
                 ", speakersQuantity=" + speakersQuantity +
+                ", talksQuantity=" + getTalksQuantity() +
+                ", javaChampionsQuantity=" + getJavaChampionsQuantity() +
+                ", mvpsQuantity=" + getMvpsQuantity() +
                 '}';
     }
 }
