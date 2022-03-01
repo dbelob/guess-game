@@ -41,6 +41,14 @@ public class EventTypeMetrics extends AbstractEventTypeMetrics {
     public String toString() {
         return "EventTypeMetrics{" +
                 "eventType=" + eventType +
+                ", startDate=" + getStartDate() +
+                ", age=" + getAge() +
+                ", duration=" + getDuration() +
+                ", eventsQuantity=" + getEventsQuantity() +
+                ", speakersQuantity=" + getSpeakersQuantity() +
+                ", talksQuantity=" + getTalksQuantity() +
+                ", javaChampionsQuantity=" + getJavaChampionsQuantity() +
+                ", mvpsQuantity=" + getMvpsQuantity() +
                 '}';
     }
 }
