@@ -3269,3 +3269,8 @@ companies:
     name:
       - {language: en, text: AllStarsIT}
     siteLink: https://www.allstarsit.com
+  - id: 898
+    name:
+      - {language: en, text: Innotechnum}
+      - {language: ru, text: Иннотехнум}
+    siteLink: https://inno.tech
