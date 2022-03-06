@@ -6653,6 +6653,8 @@ speakers:
             ешений). Область интересов — планирование маршрутов и многоагентные системы, компиляция, LLVM, Clang, низкоуро\
             вневая отладка приложений."}
     twitter: marmothetka
+    gitHub: marmothetka
+    habr: marmothetka
   - id: 452
     photoFileName: 0452.jpg
     name:
@@ -28997,3 +28999,26 @@ speakers:
       - {language: ru, text: "Ведущий разработчик проекта Spring Integration."}
     twitter: artem_bilan
     gitHub: artembilan
+  - id: 2032
+    photoFileName: 2032.jpg
+    name:
+      - {language: en, text: "Ural Nurgalin"}
+      - {language: ru, text: "Урал Нургалин"}
+    companyIds: [898]
+    bio:
+      - {language: en, text: "Ural has been in stress testing since 2012. He believes that only systematic and properly\
+            \ organized load testing can ensure the stability of applications in production. Now he's working at\
+            \ Innotechnum (ex Technoserv), he's also the team lead of stress testing team of VTB microservice platform."}
+      - {language: ru, text: "В нагрузочном тестировании с 2012 года. Считает, что только систематическое и правильно\
+            \ организованное нагрузочное тестирование способно обеспечить стабильность приложений в продакшн. Сейчас\
+            \ работает в компании Иннотехнум (ex Техносерв), является тимлидом команды нагрузочного тестирования\
+            \ микросервисной платформы банка ВТБ."}
+  - id: 2033
+    photoFileName: 2033.jpg
+    name:
+      - {language: en, text: "Anatoly Karpov"}
+      - {language: ru, text: "Анатолий Карпов"}
+    companyIds: [321]
+    bio:
+      - {language: en, text: "KarpovCourses CEO. Mail.ru lead analyst."}
+      - {language: ru, text: "CEO KarpovCourses. Ведущий аналитик в Mail.ru."}
