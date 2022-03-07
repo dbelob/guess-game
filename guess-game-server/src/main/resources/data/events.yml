@@ -511,7 +511,7 @@ events:
     youtubeLink: https://www.youtube.com/playlist?list=PL8sJahqnzh8JST_ZwTcGG1FHGgKBMcpn6
     placeId: 4
     talkIds: [1869, 1870, 1871, 1872, 1873, 1874, 1875, 1876, 1877, 1878, 1879, 1880, 1881, 1882, 1883, 1884, 1885, 1886,
-              1887, 1888, 1889]
+              1887, 1888, 1889, 3640, 3641]
   - eventTypeId: 4
     name:
       - {language: en, text: "HolyJS 2016 Msc"}

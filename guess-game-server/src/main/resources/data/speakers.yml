@@ -10727,7 +10727,9 @@ speakers:
             \ all conferences."}
       - {language: ru, text: "Автор дизайн-паттерна MALEVICH и peg-парсера SimplePEG. Мейнтейнер CSSComb. Выступает на все\
             х конференциях."}
-    twitter: Ai_boy
+    twitter: obenjiro
+    gitHub: obenjiro
+    habr: obenjiro
   - id: 737
     photoFileName: 0737.jpg
     name:
@@ -11188,7 +11190,12 @@ speakers:
     name:
       - {language: en, text: "Vasilika Klimova"}
       - {language: ru, text: "Василика Климова"}
-    companyIds: []
+    companyIds: [51]
+    bio:
+      - {language: ru, text: "Начинала свой путь с верстки, систем управления контентом и языка PHP. На данный момент\
+            \ занимаюсь только фронтендом в компании Artec Group. Увлекаюсь 3D, компьютерными играми и путешествиями."}
+    twitter: Lik04ka
+    gitHub: Likita
   - id: 772
     photoFileName: 0772.jpg
     name:
