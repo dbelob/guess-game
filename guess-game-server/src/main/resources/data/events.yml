@@ -562,7 +562,7 @@ events:
     youtubeLink: https://www.youtube.com/playlist?list=PL8sJahqnzh8Jy7ZwExrn1bayUuy5xB3uJ
     placeId: 4
     talkIds: [908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929,
-              930, 931, 932, 933, 934, 935, 936]
+              930, 931, 932, 933, 934, 935, 936, 3642]
   - eventTypeId: 4
     name:
       - {language: en, text: "HolyJS 2018 Msc"}
