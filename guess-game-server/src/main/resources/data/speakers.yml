@@ -9668,6 +9668,8 @@ speakers:
             нтенду. ИТ-евангелист и организатор сообщества фреймворка SvelteJS в СНГ. Предпочитает работать над интересным\
             и проектами в качестве технического лидера и решать сложные задачи, используя различные технологии и подходы."}
     twitter: PaulMaly
+    gitHub: PaulMaly
+    habr: PaulMaly
   - id: 662
     photoFileName: 0662.jpg
     name:
@@ -9681,6 +9683,9 @@ speakers:
       - {language: ru, text: "Последние годы занимается разработкой инструментов для фронтенда. Больше всего у Стаса опыта\
             \ с webpack, для которого он сделал лоадер и плагин для работы с SVG, генератор документации и даже баннерокру\
             тилку. Стас много знает о внутреннем устройстве этого сложного и мощного инструмента."}
+    twitter: electrokisenka
+    gitHub: kisenka
+    habr: qtuz
   - id: 663
     photoFileName: 0663.jpg
     name:
@@ -10727,7 +10732,9 @@ speakers:
             \ all conferences."}
       - {language: ru, text: "Автор дизайн-паттерна MALEVICH и peg-парсера SimplePEG. Мейнтейнер CSSComb. Выступает на все\
             х конференциях."}
-    twitter: Ai_boy
+    twitter: obenjiro
+    gitHub: obenjiro
+    habr: obenjiro
   - id: 737
     photoFileName: 0737.jpg
     name:
@@ -11188,7 +11195,12 @@ speakers:
     name:
       - {language: en, text: "Vasilika Klimova"}
       - {language: ru, text: "Василика Климова"}
-    companyIds: []
+    companyIds: [51]
+    bio:
+      - {language: ru, text: "Начинала свой путь с верстки, систем управления контентом и языка PHP. На данный момент\
+            \ занимаюсь только фронтендом в компании Artec Group. Увлекаюсь 3D, компьютерными играми и путешествиями."}
+    twitter: Lik04ka
+    gitHub: Likita
   - id: 772
     photoFileName: 0772.jpg
     name:
