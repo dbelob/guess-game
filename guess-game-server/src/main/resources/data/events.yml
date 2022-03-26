@@ -1191,7 +1191,7 @@ events:
     siteLink:
       - {language: en, text: "https://smartdataconf.ru/en/"}
       - {language: ru, text: "https://smartdataconf.ru/"}
-    youtubeLink: https://live.jugru.org/smartdata
+    youtubeLink: https://www.youtube.com/playlist?list=PLeN_80lmoMY37-33D7Jbq09x9wt5BcdBb
     placeId: 24
     talkIds: [3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230, 3231, 3232, 3233, 3234, 3235, 3236, 3237, 3238, 3239,
               3240, 3241, 3242, 3243, 3244, 3245, 3246, 3247, 3248, 3249, 3250, 3251, 3252, 3253, 3254, 3255, 3256, 3257, 3258,
