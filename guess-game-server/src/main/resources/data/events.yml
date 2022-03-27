@@ -1259,7 +1259,7 @@ events:
     endDate: "2021-09-18"
     siteLink:
       - {language: en, text: "https://techtrain.ru/"}
-    youtubeLink: https://live.jugru.org/techtrain
+    youtubeLink: https://www.youtube.com/playlist?list=PLmJD_ICvgPy2B-NAFiwN0WuzIPgH-KPwg
     placeId: 24
     talkIds: [3159, 3160, 3161, 3162, 3163, 3164, 3165, 3166]
   # JUG.MSK
