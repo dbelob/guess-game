@@ -1094,7 +1094,7 @@ events:
     youtubeLink: https://www.youtube.com/playlist?list=PLb1A91j1236pxEWPQUlg98OYU2O1WRw1e
     placeId: 24
     talkIds: [2393, 2489, 1965, 1972, 2490, 2491, 2437, 2492, 2104, 2109, 2394, 1973, 2350, 2493, 2494, 2495, 2438, 2496,
-              1971, 1964, 2395, 1961, 2107, 2108, 2497, 2396, 1967, 1966, 2105, 2227, 1974, 2226, 1969, 2498, 2499, 2500, 2352,
+              1971, 1964, 2395, 1961, 2107, 2108, 2497, 2396, 1967, 1966, 2105, 2227, 1974, 2226, 1969, 2498, 2500, 2352,
               1962, 2229, 2110, 2439]
   - eventTypeId: 9
     name:
@@ -1158,7 +1158,7 @@ events:
       - {language: en, text: "https://sptdc.ru/"}
     youtubeLink: https://www.youtube.com/playlist?list=PL_5iU_mKtf3uFget7xsc6CueBQO3EfB_r
     placeId: 24
-    talkIds: [2367, 2538, 2368, 2369, 2370, 2371, 2539, 2566]
+    talkIds: [2367, 2368, 2369, 2370, 2371, 2539, 2566]
   # SmartData
   - eventTypeId: 11
     name:
@@ -1191,7 +1191,7 @@ events:
     siteLink:
       - {language: en, text: "https://smartdataconf.ru/en/"}
       - {language: ru, text: "https://smartdataconf.ru/"}
-    youtubeLink: https://live.jugru.org/smartdata
+    youtubeLink: https://www.youtube.com/playlist?list=PLeN_80lmoMY37-33D7Jbq09x9wt5BcdBb
     placeId: 24
     talkIds: [3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230, 3231, 3232, 3233, 3234, 3235, 3236, 3237, 3238, 3239,
               3240, 3241, 3242, 3243, 3244, 3245, 3246, 3247, 3248, 3249, 3250, 3251, 3252, 3253, 3254, 3255, 3256, 3257, 3258,
@@ -1259,7 +1259,7 @@ events:
     endDate: "2021-09-18"
     siteLink:
       - {language: en, text: "https://techtrain.ru/"}
-    youtubeLink: https://live.jugru.org/techtrain
+    youtubeLink: https://www.youtube.com/playlist?list=PLmJD_ICvgPy2B-NAFiwN0WuzIPgH-KPwg
     placeId: 24
     talkIds: [3159, 3160, 3161, 3162, 3163, 3164, 3165, 3166]
   # JUG.MSK

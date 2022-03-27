@@ -221,6 +221,7 @@ speakers:
             \ — наше все."
     twitter: gorelikoff
     gitHub: gorelikov
+    habr: somemaxim
   - id: 11
     photoFileName: 0011.jpg
     name:
@@ -4434,6 +4435,7 @@ speakers:
             \ теоретическую подготовку и научный фундамент с разработкой реальных, востребованных продуктов. И этим шансом\
             \ он с радостью воспользовался, придя туда пять лет назад. С 2019-го года присоединился к дружной команде Сбер\
             банка."}
+    gitHub: DmitryBugaychenko
     habr: dmitrybugaychenko
   - id: 302
     photoFileName: 0302.jpg
