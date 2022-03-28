@@ -1801,7 +1801,7 @@ events:
       - {language: en, text: "OpenJDK TestFest Russia 2013 (#21)"}
     startDate: "2013-08-17"
     endDate: "2013-08-17"
-    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b8T9aw7AaAj-Kir3CKABg55
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9Duj3y3XohCraugG8nv0XG
     placeId: 0
     talkIds: [2177, 2178, 2179, 2180]
   - eventTypeId: 14
@@ -1864,6 +1864,7 @@ events:
       - {language: ru, text: "Митап #28 JUG.ru"}
     startDate: "2014-02-06"
     endDate: "2014-02-06"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9SyrcnuaLmwfP-rLURwjy-
     placeId: 0
     talkIds: [2034]
   - eventTypeId: 14
@@ -1872,6 +1873,7 @@ events:
       - {language: ru, text: "Митап #29 JUG.ru"}
     startDate: "2014-02-26"
     endDate: "2014-02-26"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9SyrcnuaLmwfP-rLURwjy-
     placeId: 0
     talkIds: [2035]
   - eventTypeId: 14
@@ -1879,6 +1881,7 @@ events:
       - {language: en, text: "Java 8 Launch Party (#30)"}
     startDate: "2014-04-03"
     endDate: "2014-04-03"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b_hFLa4n-9exJxaS7De73Lx
     placeId: 0
     talkIds: [2036, 2037, 2038, 2039, 2040, 2041]
   - eventTypeId: 14
@@ -1887,6 +1890,7 @@ events:
       - {language: ru, text: "Митап #31 JUG.ru"}
     startDate: "2014-04-10"
     endDate: "2014-04-10"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9SyrcnuaLmwfP-rLURwjy-
     placeId: 0
     talkIds: [2042]
   - eventTypeId: 14
@@ -1895,6 +1899,7 @@ events:
       - {language: ru, text: "Митап #32 JUG.ru"}
     startDate: "2014-04-17"
     endDate: "2014-04-17"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9SyrcnuaLmwfP-rLURwjy-
     placeId: 11
     talkIds: [2186, 2187]
   - eventTypeId: 14
@@ -1903,6 +1908,7 @@ events:
       - {language: ru, text: "Митап #33 JUG.ru"}
     startDate: "2014-06-05"
     endDate: "2014-06-05"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9SyrcnuaLmwfP-rLURwjy-
     placeId: 0
     talkIds: [2043]
   - eventTypeId: 14
@@ -1911,6 +1917,7 @@ events:
       - {language: ru, text: "Митап #34 JUG.ru"}
     startDate: "2014-06-24"
     endDate: "2014-06-25"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9SyrcnuaLmwfP-rLURwjy-
     placeId: 26
     talkIds: [2188, 2189]
   - eventTypeId: 14
@@ -1919,6 +1926,7 @@ events:
       - {language: ru, text: "Митап #35 JUG.ru"}
     startDate: "2014-06-26"
     endDate: "2014-06-26"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9SyrcnuaLmwfP-rLURwjy-
     placeId: 19
     talkIds: [2044]
   - eventTypeId: 14
@@ -1927,6 +1935,7 @@ events:
       - {language: ru, text: "Митап #36 JUG.ru"}
     startDate: "2014-07-24"
     endDate: "2014-07-24"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9SyrcnuaLmwfP-rLURwjy-
     placeId: 20
     talkIds: [2045]
   - eventTypeId: 14
@@ -1935,6 +1944,7 @@ events:
       - {language: ru, text: "Митап #37 JUG.ru"}
     startDate: "2014-08-07"
     endDate: "2014-08-07"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9SyrcnuaLmwfP-rLURwjy-
     placeId: 19
     talkIds: [2046, 2047]
   - eventTypeId: 14
@@ -1943,6 +1953,7 @@ events:
       - {language: ru, text: "Митап #38 JUG.ru"}
     startDate: "2014-09-17"
     endDate: "2014-09-17"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9SyrcnuaLmwfP-rLURwjy-
     placeId: 0
     talkIds: [2048]
   - eventTypeId: 14
@@ -1951,6 +1962,7 @@ events:
       - {language: ru, text: "Митап #39 JUG.ru"}
     startDate: "2014-10-18"
     endDate: "2014-10-19"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9SyrcnuaLmwfP-rLURwjy-
     placeId: 4
     talkIds: [2190]
   - eventTypeId: 14
@@ -1959,6 +1971,7 @@ events:
       - {language: ru, text: "Митап #40 JUG.ru"}
     startDate: "2014-10-22"
     endDate: "2014-10-22"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9SyrcnuaLmwfP-rLURwjy-
     placeId: 4
     talkIds: [2191, 2049]
   - eventTypeId: 14
@@ -1967,6 +1980,7 @@ events:
       - {language: ru, text: "Митап #41 JUG.ru"}
     startDate: "2014-10-23"
     endDate: "2014-10-24"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9SyrcnuaLmwfP-rLURwjy-
     placeId: 4
     talkIds: [2192, 2193]
   - eventTypeId: 14
@@ -1975,6 +1989,7 @@ events:
       - {language: ru, text: "Митап #42 JUG.ru"}
     startDate: "2014-12-22"
     endDate: "2014-12-22"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9SyrcnuaLmwfP-rLURwjy-
     placeId: 0
     talkIds: [2050]
   - eventTypeId: 14
