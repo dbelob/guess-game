@@ -258,7 +258,7 @@ eventTypes:
     vkLink: https://vk.com/jbreakconf
     twitterLink: https://twitter.com/JUGru
     facebookLink: https://www.facebook.com/jbreakconf/
-    youtubeLink: https://www.youtube.com/channel/UCYrGYT7BswsJGkmG7-IAF8g
+    youtubeLink: https://www.youtube.com/c/JUGru
     telegramLink: https://telegram.me/jbreak
     habrLink: https://habr.com/ru/company/jugru
     inactive: true
@@ -484,7 +484,7 @@ eventTypes:
       - {language: en, text: "https://jug.ru"}
     vkLink: https://vk.com/jugru
     twitterLink: https://twitter.com/jugru
-    youtubeLink: https://www.youtube.com/channel/UCYrGYT7BswsJGkmG7-IAF8g
+    youtubeLink: https://www.youtube.com/c/JUGru
     habrLink: https://habr.com/ru/company/jugru
     timeZone: Europe/Moscow
   - id: 15
