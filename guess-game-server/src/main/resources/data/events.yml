@@ -2384,6 +2384,7 @@ events:
       - {language: ru, text: "Митап #86 JUG.ru"}
     startDate: "2020-04-17"
     endDate: "2020-04-17"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9o5OgRDjdny_K4wWVDPVpb
     placeId: 24
     talkIds: [2100]
   - eventTypeId: 14
@@ -2392,6 +2393,7 @@ events:
       - {language: ru, text: "Митап #87 JUG.ru"}
     startDate: "2020-05-11"
     endDate: "2020-05-11"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9o5OgRDjdny_K4wWVDPVpb
     placeId: 24
     talkIds: [2197]
   - eventTypeId: 14
@@ -2400,6 +2402,7 @@ events:
       - {language: ru, text: "Митап #88 JUG.ru"}
     startDate: "2020-05-22"
     endDate: "2020-05-22"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9o5OgRDjdny_K4wWVDPVpb
     placeId: 24
     talkIds: [2308]
   - eventTypeId: 14
