@@ -2087,6 +2087,7 @@ events:
       - {language: ru, text: "Митап #53 JUG.ru"}
     startDate: "2016-01-21"
     endDate: "2016-01-21"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b801EhIQQZEh5EWUf_FiIBb
     placeId: 20
     talkIds: [2063]
   - eventTypeId: 14
@@ -2095,6 +2096,7 @@ events:
       - {language: ru, text: "Митап #54 JUG.ru"}
     startDate: "2016-02-26"
     endDate: "2016-02-26"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b801EhIQQZEh5EWUf_FiIBb
     placeId: 0
     talkIds: [2064, 2065, 2066, 2067]
   - eventTypeId: 14
@@ -2103,6 +2105,7 @@ events:
       - {language: ru, text: "Митап #55 JUG.ru"}
     startDate: "2016-05-26"
     endDate: "2016-05-26"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b801EhIQQZEh5EWUf_FiIBb
     placeId: 19
     talkIds: [2068]
   - eventTypeId: 14
@@ -2111,6 +2114,7 @@ events:
       - {language: ru, text: "Митап #56 JUG.ru"}
     startDate: "2016-06-30"
     endDate: "2016-06-30"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b801EhIQQZEh5EWUf_FiIBb
     placeId: 19
     talkIds: [2069]
   - eventTypeId: 14
@@ -2119,6 +2123,7 @@ events:
       - {language: ru, text: "Митап #57 JUG.ru"}
     startDate: "2016-07-06"
     endDate: "2016-07-06"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b801EhIQQZEh5EWUf_FiIBb
     placeId: 0
     talkIds: [2070]
   - eventTypeId: 14
@@ -2127,6 +2132,7 @@ events:
       - {language: ru, text: "Митап #58 JUG.ru"}
     startDate: "2016-08-31"
     endDate: "2016-08-31"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b801EhIQQZEh5EWUf_FiIBb
     placeId: 21
     talkIds: [2071]
   - eventTypeId: 14
@@ -2135,6 +2141,7 @@ events:
       - {language: ru, text: "Митап #59 JUG.ru"}
     startDate: "2016-09-14"
     endDate: "2016-09-14"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b801EhIQQZEh5EWUf_FiIBb
     placeId: 21
     talkIds: [2072]
   - eventTypeId: 14
@@ -2143,6 +2150,7 @@ events:
       - {language: ru, text: "Митап #60 JUG.ru"}
     startDate: "2016-10-12"
     endDate: "2016-10-12"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b801EhIQQZEh5EWUf_FiIBb
     placeId: 19
     talkIds: [2073]
   - eventTypeId: 14
@@ -2151,6 +2159,7 @@ events:
       - {language: ru, text: "Митап #61 JUG.ru"}
     startDate: "2016-12-01"
     endDate: "2016-12-01"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b801EhIQQZEh5EWUf_FiIBb
     placeId: 21
     talkIds: [2074]
   - eventTypeId: 14
@@ -2159,6 +2168,7 @@ events:
       - {language: ru, text: "Митап #62 JUG.ru"}
     startDate: "2016-12-22"
     endDate: "2016-12-22"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b801EhIQQZEh5EWUf_FiIBb
     placeId: 0
     talkIds: [2075]
   - eventTypeId: 14
