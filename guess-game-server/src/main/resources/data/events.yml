@@ -1998,6 +1998,7 @@ events:
       - {language: ru, text: "Митап #43 JUG.ru"}
     startDate: "2015-02-05"
     endDate: "2015-02-05"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9ykOPSwpgcyLXIj1dI83uO
     placeId: 19
     talkIds: [2051]
   - eventTypeId: 14
@@ -2006,6 +2007,7 @@ events:
       - {language: ru, text: "Митап #44 JUG.ru"}
     startDate: "2015-03-11"
     endDate: "2015-03-11"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9ykOPSwpgcyLXIj1dI83uO
     placeId: 0
     talkIds: [2052]
   - eventTypeId: 14
@@ -2014,6 +2016,7 @@ events:
       - {language: ru, text: "Митап #45 JUG.ru"}
     startDate: "2015-04-22"
     endDate: "2015-04-22"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9ykOPSwpgcyLXIj1dI83uO
     placeId: 19
     talkIds: [2053]
   - eventTypeId: 14
@@ -2030,6 +2033,7 @@ events:
       - {language: ru, text: "Java: 20 лет инноваций (#47)"}
     startDate: "2015-06-30"
     endDate: "2015-06-30"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b886ocQEhfwQy3ARvH3kj0e
     placeId: 0
     talkIds: [2055, 2056, 2057, 2058, 2059]
   - eventTypeId: 14
@@ -2038,6 +2042,7 @@ events:
       - {language: ru, text: "Митап #48 JUG.ru"}
     startDate: "2015-10-14"
     endDate: "2015-10-14"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9ykOPSwpgcyLXIj1dI83uO
     placeId: 0
     talkIds: [2060]
   - eventTypeId: 14
@@ -2046,6 +2051,7 @@ events:
       - {language: ru, text: "Митап #49 JUG.ru"}
     startDate: "2015-10-14"
     endDate: "2015-10-15"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9ykOPSwpgcyLXIj1dI83uO
     placeId: 4
     talkIds: [2194]
   - eventTypeId: 14
@@ -2054,6 +2060,7 @@ events:
       - {language: ru, text: "Митап #50 JUG.ru"}
     startDate: "2015-10-18"
     endDate: "2015-10-18"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9ykOPSwpgcyLXIj1dI83uO
     placeId: 4
     talkIds: [2195]
   - eventTypeId: 14
@@ -2062,6 +2069,7 @@ events:
       - {language: ru, text: "Митап #51 JUG.ru"}
     startDate: "2015-12-03"
     endDate: "2015-12-03"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9ykOPSwpgcyLXIj1dI83uO
     placeId: 0
     talkIds: [2061]
   - eventTypeId: 14
@@ -2070,6 +2078,7 @@ events:
       - {language: ru, text: "Митап #52 JUG.ru"}
     startDate: "2015-12-17"
     endDate: "2015-12-17"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9ykOPSwpgcyLXIj1dI83uO
     placeId: 19
     talkIds: [2062]
   - eventTypeId: 14
