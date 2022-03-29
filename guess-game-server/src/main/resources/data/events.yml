@@ -2411,6 +2411,7 @@ events:
       - {language: ru, text: "Митап #89 JUG.ru"}
     startDate: "2021-06-24"
     endDate: "2021-06-24"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b-3KKwJFzRNArrXE_wY-BlT
     placeId: 24
     talkIds: [3157]
   - eventTypeId: 14
@@ -2419,6 +2420,7 @@ events:
       - {language: ru, text: "Митап #90 JUG.ru"}
     startDate: "2021-10-23"
     endDate: "2021-10-23"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b-3KKwJFzRNArrXE_wY-BlT
     placeId: 24
     talkIds: [3498]
   - eventTypeId: 14
@@ -2427,6 +2429,7 @@ events:
       - {language: ru, text: "Митап #91 JUG.ru"}
     startDate: "2021-12-20"
     endDate: "2021-12-20"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b-3KKwJFzRNArrXE_wY-BlT
     placeId: 24
     talkIds: [3624]
   - eventTypeId: 14
