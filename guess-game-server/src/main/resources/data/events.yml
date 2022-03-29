@@ -2438,6 +2438,7 @@ events:
       - {language: ru, text: "Митап #92 JUG.ru"}
     startDate: "2022-01-27"
     endDate: "2022-01-27"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b_tD5oTvBCL_0XSjMzHb8-c
     placeId: 24
     talkIds: [3625]
   - eventTypeId: 14
@@ -2446,6 +2447,7 @@ events:
       - {language: ru, text: "Митап #93 JUG.ru"}
     startDate: "2022-02-15"
     endDate: "2022-02-15"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b_tD5oTvBCL_0XSjMzHb8-c
     placeId: 24
     talkIds: [3626]
   # JUGNsk
