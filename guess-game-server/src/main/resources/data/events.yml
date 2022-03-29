@@ -2267,6 +2267,7 @@ events:
       - {language: ru, text: "Митап #73 JUG.ru"}
     startDate: "2018-02-28"
     endDate: "2018-02-28"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b8UsxWVA3e9J2wWVO2jSgeb
     placeId: 20
     talkIds: [2088]
   - eventTypeId: 14
@@ -2275,6 +2276,7 @@ events:
       - {language: ru, text: "Митап #74 JUG.ru"}
     startDate: "2018-04-11"
     endDate: "2018-04-11"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b8UsxWVA3e9J2wWVO2jSgeb
     placeId: 20
     talkIds: [2089]
   - eventTypeId: 14
@@ -2283,6 +2285,7 @@ events:
       - {language: ru, text: "Митап #75 JUG.ru"}
     startDate: "2018-05-15"
     endDate: "2018-05-15"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b8UsxWVA3e9J2wWVO2jSgeb
     placeId: 20
     talkIds: [2090]
   - eventTypeId: 14
@@ -2291,6 +2294,7 @@ events:
       - {language: ru, text: "Митап #76 JUG.ru"}
     startDate: "2018-06-05"
     endDate: "2018-06-05"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b8UsxWVA3e9J2wWVO2jSgeb
     placeId: 0
     talkIds: [2091]
   - eventTypeId: 14
@@ -2299,6 +2303,7 @@ events:
       - {language: ru, text: "Митап #77 JUG.ru"}
     startDate: "2018-08-09"
     endDate: "2018-08-09"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b8UsxWVA3e9J2wWVO2jSgeb
     placeId: 0
     talkIds: [2092]
   - eventTypeId: 14
@@ -2307,6 +2312,7 @@ events:
       - {language: ru, text: "Митап #78 JUG.ru"}
     startDate: "2018-10-18"
     endDate: "2018-10-18"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b8UsxWVA3e9J2wWVO2jSgeb
     placeId: 0
     talkIds: [2093]
   - eventTypeId: 14
