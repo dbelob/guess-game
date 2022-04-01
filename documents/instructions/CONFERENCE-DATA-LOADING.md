@@ -286,35 +286,31 @@
         <td>2021 Autumn<br>(2021autumntt)</td>
     </tr>
     <tr>
-        <th rowspan="3">2022</th>
-        <td rowspan="3">2022<br>(2022springcpp)</td>
-        <td rowspan="3">2022</td>
+        <th rowspan="2">2022</th>
+        <td rowspan="2">2022<br>(2022springcpp)</td>
+        <td rowspan="2">2022</td>
         <td>2022 Spring<br>(2022spring)</td>
         <td>2022 Spring<br>(2022spring)</td>
         <td>2022 Spring<br>(2022spring)</td>
-        <td rowspan="3">2022<br>(2022hydra)</td>
-        <td rowspan="3"></td>
-        <td rowspan="3">2022<br>(2022jpoint)</td>
-        <td rowspan="3">2022</td>
+        <td rowspan="2">2022<br>(2022hydra)</td>
+        <td rowspan="2"></td>
+        <td rowspan="2">2022<br>(2022jpoint)</td>
+        <td rowspan="2">2022</td>
         <td>2022 Spring</td>
-        <td rowspan="3"></td>
-        <td rowspan="3">2022</td>
+        <td rowspan="2"></td>
+        <td rowspan="2">2022</td>
         <td>2022 Spring</td>
-        <td rowspan="3">2022</td>
-        <td>2022 Online</td>
-        <td rowspan="3">2022</td>
-        <td rowspan="3"></td>
-        <td rowspan="3"></td>
+        <td rowspan="2">2022</td>
+        <td rowspan="2">2022</td>
+        <td rowspan="2">2022</td>
+        <td rowspan="2"></td>
+        <td rowspan="2"></td>
     </tr>
     <tr>
-        <td rowspan="2">2022 Autumn</td>
-        <td rowspan="2">2022 Autumn</td>
-        <td rowspan="2">2022 Autumn</td>
-        <td rowspan="2">2022 Autumn</td>
-        <td rowspan="2">2022 Autumn</td>
-        <td>2022 Student Day</td>
-    </tr>
-    <tr>
-        <td>2022 Offline</td>
+        <td>2022 Autumn</td>
+        <td>2022 Autumn</td>
+        <td>2022 Autumn</td>
+        <td>2022 Autumn</td>
+        <td>2022 Autumn</td>
     </tr>
 </table>
