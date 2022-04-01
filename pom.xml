@@ -34,7 +34,7 @@
         <mockito.version>4.4.0</mockito.version>
         <sl4j.version>1.7.36</sl4j.version>
         <snakeyaml.version>1.30</snakeyaml.version>
-        <spring-boot.version>2.6.5</spring-boot.version>
+        <spring-boot.version>2.6.6</spring-boot.version>
 
         <ng.build.arguments>-- --configuration=production</ng.build.arguments>
 
