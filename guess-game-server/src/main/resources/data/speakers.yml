@@ -253,6 +253,7 @@ speakers:
             \ AOT-компиляцией."}
     twitter: JohnWings
     gitHub: ivankrylov
+    habr: sunless
   - id: 13
     photoFileName: 0013.jpg
     photoUpdatedAt: 2019-05-20T12:21:27.901Z[UTC]
@@ -29036,3 +29037,14 @@ speakers:
     bio:
       - {language: en, text: "KarpovCourses CEO. Mail.ru lead analyst."}
       - {language: ru, text: "CEO KarpovCourses. Ведущий аналитик в Mail.ru."}
+  - id: 2034
+    photoFileName: 2034.jpg
+    name:
+      - {language: en, text: "Alexander Kuchuk"}
+      - {language: ru, text: "Александр Кучук"}
+    companyIds: [650]
+    bio:
+      - {language: ru, text: "Кучук Александр, пишу в твиттер и на Java. Преподаю в ВШЭ, ранее в МФТИ. Маленький тимлид\
+            \ в большой компании."}
+    twitter: aarexer
+    gitHub: aarexer

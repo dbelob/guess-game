@@ -2646,37 +2646,15 @@ events:
               2902, 2903, 2904, 2905, 2906, 2907, 2908, 2909, 2910, 2911]
   - eventTypeId: 16
     name:
-      - {language: en, text: "SnowOne 2022 Online"}
-      - {language: ru, text: "SnowOne 2022 Онлайн"}
+      - {language: en, text: "SnowOne 2022"}
+      - {language: ru, text: "SnowOne 2022"}
     startDate: "2022-04-08"
     endDate: "2022-04-09"
     siteLink:
       - {language: en, text: "https://snowone.ru/en"}
       - {language: ru, text: "https://snowone.ru"}
     placeId: 24
-    talkIds: [3629, 3630, 3631, 3632, 3633, 3634, 3635, 3636, 3637, 3638]
-#  - eventTypeId: 16
-#    name:
-#      - {language: en, text: "SnowOne 2022 Student Day"}
-#      - {language: ru, text: "SnowOne 2022 Студенческий день"}
-#    startDate: "2022-04-07"
-#    endDate: "2022-04-07"
-#    siteLink:
-#      - {language: en, text: "https://snowone.ru/en"}
-#      - {language: ru, text: "https://snowone.ru"}
-#    placeId: 13
-#    talkIds: []
-#  - eventTypeId: 16
-#    name:
-#      - {language: en, text: "SnowOne 2022 Offline"}
-#      - {language: ru, text: "SnowOne 2022 Офлайн"}
-#    startDate: "2022-04-08"
-#    endDate: "2022-04-09"
-#    siteLink:
-#      - {language: en, text: "https://snowone.ru/en"}
-#      - {language: ru, text: "https://snowone.ru"}
-#    placeId: 13
-#    talkIds: []
+    talkIds: [3629, 3630, 3631, 3632, 3634, 3649, 3653]
   # VideoTech
   - eventTypeId: 17
     name:
