@@ -3278,3 +3278,7 @@ companies:
     name:
       - {language: en, text: "CDEK IT"}
     siteLink: https://cdek-it.ru
+  - id: 900
+    name:
+      - {language: en, text: Ordina}
+    siteLink: https://www.ordina.nl

@@ -29075,3 +29075,62 @@ speakers:
     twitter: conacry_a
     gitHub: conacry    
     habr: Conacry
+  - id: 2037
+    photoFileName: 2037.jpg
+    name:
+      - {language: en, text: "Anastasia Birillo"}
+      - {language: ru, text: "Анастасия Бирилло"}
+    companyIds: [286]
+    bio:
+      - {language: ru, text: "Работаю программистом-исследователем в JetBrains Research в лаборатории ML4SE (Machine\
+            \ Learning Methods in Software Engineering), преподаю в CSC и СПбГУ."}
+    gitHub: nbirillo
+  - id: 2038
+    photoFileName: 2038.jpg
+    name:
+      - {language: en, text: "Sergey Lugovoy"}
+      - {language: ru, text: "Сергей Луговой"}
+    companyIds: [686]
+    bio:
+      - {language: ru, text: "Занимается программированием уже 30 лет. Много лет разрабатывал системы, использующие\
+            \ реляционные БД. Затем 15 лет работал над созданием центров передачи сообщений в телекоммуникационной\
+            \ области, что потребовало изменить подходы к организации данных для обеспечения быстрой обработки больших\
+            \ потоков сообщений. Последнее время специализируюсь на разработке горизонтально масштабируемых систем\
+            \ обработки данных, использующих нереляционные БД и грид системы."}
+  - id: 2039
+    photoFileName: 2039.jpg
+    name:
+      - {language: en, text: "Edwin Derks"}
+    companyIds: [900]
+    bio:
+      - {language: en, text: "Edwin Derks is a Principal Software Architect with Ordina. He has a passion for gathering\
+            \ and sharing knowledge about anything related to the Java ecosystem and cloud-driven development in general.\
+            \ He is a contributor for MicroProfile and Jakarta EE, and often hosts meetups, writes articles, blogs and\
+            \ speaks at conferences. In his spare time, he can often be found in the gym or having a good time at metal\
+            \ concerts."}
+    twitter: edwinderks
+    gitHub: ederks85
+    javaChampion: true
+  - id: 2040
+    photoFileName: 2040.jpg
+    name:
+      - {language: en, text: "Yaroslav Postovalov"}
+      - {language: ru, text: "Ярослав Постовалов"}
+    companyIds: [286]
+    bio:
+      - {language: ru, text: "В 14 выучил Kotlin, чтобы писать моды к Майнкрафту. Затем писал ПО для методов Монте-Карло\
+            \ в составе школьной лаборатории, после чего перешел в одну из лабораторий JetBrains Research, где работаю\
+            \ над библиотекой KMath и некоторыми другими проектами."}
+    twitter: CommanderTvis
+    gitHub: cmdr_tvis
+    habr: CommanderTvis
+  - id: 2041
+    photoFileName: 2041.jpg
+    name:
+      - {language: en, text: "Egor Ushakov"}
+      - {language: ru, text: "Егор Ушаков"}
+    companyIds: [286]
+    bio:
+      - {language: ru, text: "Работал над тулами для jvm в Sun Microsystems и Oracle."}
+    twitter: EgorEars
+    gitHub: gorrus
