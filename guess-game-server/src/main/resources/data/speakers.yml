@@ -17015,6 +17015,9 @@ speakers:
             \ Принимает активное участие в создании AOT и JIT компиляторов, входящих в состав Excelsior JET JVM. Один из а\
             рхитекторов внутреннего представления последнего компилятора, написанного на Scala. Также читает лекции и веде\
             т семинары в Новосибирском Государственном Университете, в свободное время читает книжки по Haskell."}
+    twitter: cypok
+    gitHub: cypok
+    habr: cypok
   - id: 1200
     photoFileName: 1200.jpg
     name:
@@ -29048,3 +29051,27 @@ speakers:
             \ в большой компании."}
     twitter: aarexer
     gitHub: aarexer
+  - id: 2035
+    photoFileName: 2035.jpg
+    name:
+      - {language: en, text: "Artem Semenov"}
+      - {language: ru, text: "Артём Семёнов"}
+    companyIds: [286]
+    bio:
+      - {language: ru, text: "Работаю программистом в JetBrains в команде JetBrains Runtime. Занимаюсь поддержкой\
+            \ Accessibility в IDE на платформе IntelliJ IDEA."}
+    gitHub: savoptik
+    habr: savoptik
+  - id: 2036
+    photoFileName: 2036.jpg
+    name:
+      - {language: en, text: "Alexey Okruzhko"}
+      - {language: ru, text: "Алексей Окружко"}
+    companyIds: [899]
+    bio:
+      - {language: ru, text: "Окружко Алексей, разработчик в CDEK IT. В мир IT пришел Android разработчиком, позже с\
+            \ головой ушел в большие Enterprise приложения. Прошел путь от разработчика до техлида. Хипстер-зануда в\
+            \ разработке."}
+    twitter: conacry_a
+    gitHub: conacry    
+    habr: Conacry

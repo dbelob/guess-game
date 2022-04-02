@@ -3274,3 +3274,7 @@ companies:
       - {language: en, text: Innotechnum}
       - {language: ru, text: Иннотехнум}
     siteLink: https://inno.tech
+  - id: 899
+    name:
+      - {language: en, text: "CDEK IT"}
+    siteLink: https://cdek-it.ru
