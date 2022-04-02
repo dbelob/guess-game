@@ -253,6 +253,7 @@ speakers:
             \ AOT-компиляцией."}
     twitter: JohnWings
     gitHub: ivankrylov
+    habr: sunless
   - id: 13
     photoFileName: 0013.jpg
     photoUpdatedAt: 2019-05-20T12:21:27.901Z[UTC]
@@ -17014,6 +17015,9 @@ speakers:
             \ Принимает активное участие в создании AOT и JIT компиляторов, входящих в состав Excelsior JET JVM. Один из а\
             рхитекторов внутреннего представления последнего компилятора, написанного на Scala. Также читает лекции и веде\
             т семинары в Новосибирском Государственном Университете, в свободное время читает книжки по Haskell."}
+    twitter: cypok
+    gitHub: cypok
+    habr: cypok
   - id: 1200
     photoFileName: 1200.jpg
     name:
@@ -29036,3 +29040,97 @@ speakers:
     bio:
       - {language: en, text: "KarpovCourses CEO. Mail.ru lead analyst."}
       - {language: ru, text: "CEO KarpovCourses. Ведущий аналитик в Mail.ru."}
+  - id: 2034
+    photoFileName: 2034.jpg
+    name:
+      - {language: en, text: "Alexander Kuchuk"}
+      - {language: ru, text: "Александр Кучук"}
+    companyIds: [650]
+    bio:
+      - {language: ru, text: "Кучук Александр, пишу в твиттер и на Java. Преподаю в ВШЭ, ранее в МФТИ. Маленький тимлид\
+            \ в большой компании."}
+    twitter: aarexer
+    gitHub: aarexer
+  - id: 2035
+    photoFileName: 2035.jpg
+    name:
+      - {language: en, text: "Artem Semenov"}
+      - {language: ru, text: "Артём Семёнов"}
+    companyIds: [286]
+    bio:
+      - {language: ru, text: "Работаю программистом в JetBrains в команде JetBrains Runtime. Занимаюсь поддержкой\
+            \ Accessibility в IDE на платформе IntelliJ IDEA."}
+    gitHub: savoptik
+    habr: savoptik
+  - id: 2036
+    photoFileName: 2036.jpg
+    name:
+      - {language: en, text: "Alexey Okruzhko"}
+      - {language: ru, text: "Алексей Окружко"}
+    companyIds: [899]
+    bio:
+      - {language: ru, text: "Окружко Алексей, разработчик в CDEK IT. В мир IT пришел Android разработчиком, позже с\
+            \ головой ушел в большие Enterprise приложения. Прошел путь от разработчика до техлида. Хипстер-зануда в\
+            \ разработке."}
+    twitter: conacry_a
+    gitHub: conacry    
+    habr: Conacry
+  - id: 2037
+    photoFileName: 2037.jpg
+    name:
+      - {language: en, text: "Anastasia Birillo"}
+      - {language: ru, text: "Анастасия Бирилло"}
+    companyIds: [286]
+    bio:
+      - {language: ru, text: "Работаю программистом-исследователем в JetBrains Research в лаборатории ML4SE (Machine\
+            \ Learning Methods in Software Engineering), преподаю в CSC и СПбГУ."}
+    gitHub: nbirillo
+  - id: 2038
+    photoFileName: 2038.jpg
+    name:
+      - {language: en, text: "Sergey Lugovoy"}
+      - {language: ru, text: "Сергей Луговой"}
+    companyIds: [686]
+    bio:
+      - {language: ru, text: "Занимается программированием уже 30 лет. Много лет разрабатывал системы, использующие\
+            \ реляционные БД. Затем 15 лет работал над созданием центров передачи сообщений в телекоммуникационной\
+            \ области, что потребовало изменить подходы к организации данных для обеспечения быстрой обработки больших\
+            \ потоков сообщений. Последнее время специализируюсь на разработке горизонтально масштабируемых систем\
+            \ обработки данных, использующих нереляционные БД и грид системы."}
+  - id: 2039
+    photoFileName: 2039.jpg
+    name:
+      - {language: en, text: "Edwin Derks"}
+    companyIds: [900]
+    bio:
+      - {language: en, text: "Edwin Derks is a Principal Software Architect with Ordina. He has a passion for gathering\
+            \ and sharing knowledge about anything related to the Java ecosystem and cloud-driven development in general.\
+            \ He is a contributor for MicroProfile and Jakarta EE, and often hosts meetups, writes articles, blogs and\
+            \ speaks at conferences. In his spare time, he can often be found in the gym or having a good time at metal\
+            \ concerts."}
+    twitter: edwinderks
+    gitHub: ederks85
+    javaChampion: true
+  - id: 2040
+    photoFileName: 2040.jpg
+    name:
+      - {language: en, text: "Yaroslav Postovalov"}
+      - {language: ru, text: "Ярослав Постовалов"}
+    companyIds: [286]
+    bio:
+      - {language: ru, text: "В 14 выучил Kotlin, чтобы писать моды к Майнкрафту. Затем писал ПО для методов Монте-Карло\
+            \ в составе школьной лаборатории, после чего перешел в одну из лабораторий JetBrains Research, где работаю\
+            \ над библиотекой KMath и некоторыми другими проектами."}
+    twitter: CommanderTvis
+    gitHub: cmdr_tvis
+    habr: CommanderTvis
+  - id: 2041
+    photoFileName: 2041.jpg
+    name:
+      - {language: en, text: "Egor Ushakov"}
+      - {language: ru, text: "Егор Ушаков"}
+    companyIds: [286]
+    bio:
+      - {language: ru, text: "Работал над тулами для jvm в Sun Microsystems и Oracle."}
+    twitter: EgorEars
+    gitHub: gorrus
