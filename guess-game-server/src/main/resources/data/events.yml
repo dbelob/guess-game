@@ -2653,7 +2653,7 @@ events:
     siteLink:
       - {language: en, text: "https://snowone.ru/en"}
       - {language: ru, text: "https://snowone.ru"}
-    placeId: 24
+    placeId: 13
     talkIds: [3629, 3630, 3631, 3632, 3633, 3634, 3635, 3636, 3637, 3638, 3645, 3646, 3647, 3648, 3649, 3650, 3651, 3652,
               3653, 3654]
   # VideoTech
