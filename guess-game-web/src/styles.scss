@@ -249,6 +249,8 @@ html {
 
 // Styles for table paginator
 .p-paginator {
+  padding: 0;
+
   .p-dropdown {
     order: 0 !important;
     margin-right: auto !important;
@@ -347,3 +349,7 @@ a:hover {
 div.overflow-menu > button:not(:first-child) {
   margin-left: 0.5rem !important;
 }
+
+//.p-inputtext {
+//  padding: .429rem;
+//}
