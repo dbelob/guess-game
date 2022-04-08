@@ -86,12 +86,12 @@ html {
 
 // Style for event type listbox on start page
 .event-type-listbox-start {
-  height: 216px;
+  height: 222px;
 }
 
 // Style for event listbox on start page
 .event-listbox-start {
-  height: 92px;
+  height: 98px;
 }
 
 @media (min-width: 576px) {
@@ -137,11 +137,11 @@ html {
   }
 
   .event-type-listbox-start {
-    height: 270px;
+    height: 276px;
   }
 
   .event-listbox-start {
-    height: 114px;
+    height: 120px;
   }
 }
 
@@ -350,6 +350,43 @@ div.overflow-menu > button:not(:first-child) {
   margin-left: 0.5rem !important;
 }
 
-//.p-inputtext {
-//  padding: .429rem;
-//}
+// Decrease top, bottom padding for inputtext and multiselect
+.p-inputtext, .p-multiselect .p-multiselect-label {
+  //padding: 0.75rem 0.75rem;
+  padding: 0.5rem 0.75rem;
+}
+
+// Decrease height of paginator arrow buttons
+.p-paginator .p-paginator-first,
+.p-paginator .p-paginator-prev,
+.p-paginator .p-paginator-next,
+.p-paginator .p-paginator-last {
+  //height: 3rem;
+  height: 2.75rem;
+}
+
+// Decrease height of paginator page buttons
+.p-paginator .p-paginator-pages .p-paginator-page, .p-paginator .p-paginator-current {
+  //min-width: 3rem;
+  //height: 3rem;
+  min-width: 2.75rem;
+  height: 2.75rem;
+}
+
+// Decrease height of paginator dropdown
+.p-paginator .p-dropdown {
+  //height: 3rem;
+  height: 2.75rem;
+}
+
+// Decrease top, bottom padding for listbox item
+.p-listbox .p-listbox-list .p-listbox-item {
+  //padding: 0.75rem 1.25rem;
+  padding: 0.5rem 1rem;
+}
+
+// Decrease top, bottom padding for listbox
+.p-listbox .p-listbox-list {
+  //padding: 0.75rem 0;
+  padding: 0;
+}
