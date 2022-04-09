@@ -29121,8 +29121,8 @@ speakers:
       - {language: ru, text: "В 14 выучил Kotlin, чтобы писать моды к Майнкрафту. Затем писал ПО для методов Монте-Карло\
             \ в составе школьной лаборатории, после чего перешел в одну из лабораторий JetBrains Research, где работаю\
             \ над библиотекой KMath и некоторыми другими проектами."}
-    twitter: CommanderTvis
-    gitHub: cmdr_tvis
+    twitter: cmdr_tvis
+    gitHub: CommanderTvis
     habr: CommanderTvis
   - id: 2041
     photoFileName: 2041.jpg
