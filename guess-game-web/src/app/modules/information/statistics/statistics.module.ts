@@ -10,6 +10,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { RippleModule } from 'primeng/ripple';
 import { RouterModule } from '@angular/router';
 import { TableModule } from 'primeng/table';
+import { TabMenuModule } from "primeng/tabmenu";
 import { TooltipModule } from 'primeng/tooltip';
 import { TranslateModule } from '@ngx-translate/core';
 import { GeneralModule } from '../../general/general.module';
@@ -22,6 +23,7 @@ import { SpeakerStatisticsComponent } from './speaker-statistics.component';
 import { CompanyStatisticsComponent } from './company-statistics.component';
 import { OlapStatisticsComponent } from './olap-statistics.component';
 import { StatisticsMenubarComponent } from './statistics-menubar.component';
+import { StatisticsTabMenuComponent } from "./statistics-tabmenu.component";
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { StatisticsMenubarComponent } from './statistics-menubar.component';
     SpeakerStatisticsComponent,
     CompanyStatisticsComponent,
     OlapStatisticsComponent,
-    StatisticsMenubarComponent
+    StatisticsMenubarComponent,
+    StatisticsTabMenuComponent
   ],
   imports: [
     AutoCompleteModule,
@@ -49,7 +52,8 @@ import { StatisticsMenubarComponent } from './statistics-menubar.component';
     GeneralModule,
     InformationModule,
     MessageModule,
-    TranslateModule
+    TranslateModule,
+    TabMenuModule
   ]
 })
 export class StatisticsModule {
