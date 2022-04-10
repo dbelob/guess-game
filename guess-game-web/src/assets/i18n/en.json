@@ -259,6 +259,7 @@
       }
     },
     "olap" : {
+      "title": "OLAP",
       "cubeLabel": "Cube:",
       "cubePlaceholder": "All",
       "measureLabel": "Measure:",

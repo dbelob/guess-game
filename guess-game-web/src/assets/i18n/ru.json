@@ -259,6 +259,7 @@
       }
     },
     "olap" : {
+      "title": "OLAP",
       "cubeLabel": "Куб:",
       "cubePlaceholder": "Все",
       "measureLabel": "Показатель:",
