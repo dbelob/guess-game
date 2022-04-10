@@ -11,9 +11,9 @@
   </div>
 
   <app-information-menubar [type]="'companies'"></app-information-menubar>
-  <app-companies-menubar [type]="'search'"></app-companies-menubar>
+  <app-companies-tabmenu [activeItemIndex]="1"></app-companies-tabmenu>
 
-  <div class="m-1">
+  <div class="mt-3 mb-1 ml-1 mr-1">
     <form role="form" class="m-2">
       <div class="mb-3 row justify-content-center align-items-center">
         <label for="name" class="form-label col-12 col-sm-3 col-md-2">{{'companies.search.nameLabel' | translate}}</label>
