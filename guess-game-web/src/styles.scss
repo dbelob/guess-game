@@ -350,6 +350,16 @@ div.overflow-menu > button:not(:first-child) {
   margin-left: 0.5rem !important;
 }
 
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+  //padding: 0.75rem 1.25rem;
+  //padding: 0.375rem 0.75rem;
+  padding: 0.75rem 0.75rem;
+}
+
+.p-menubar .p-menubar-root-list > .p-menuitem:not(:first-child) {
+  margin-left: 0.5rem !important;
+}
+
 // Decrease top, bottom padding for inputtext and multiselect
 .p-inputtext, .p-multiselect .p-multiselect-label {
   //padding: 0.75rem 0.75rem;
