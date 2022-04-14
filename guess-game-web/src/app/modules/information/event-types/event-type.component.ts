@@ -12,7 +12,7 @@ export class EventTypeComponent implements OnInit {
   private imageDirectory = 'assets/images';
   public eventsImageDirectory = `${this.imageDirectory}/events`;
 
-  private id: number;
+  public id: number;
   public eventTypeDetails: EventTypeDetails = new EventTypeDetails();
   public multiSortMeta: any[] = [];
 

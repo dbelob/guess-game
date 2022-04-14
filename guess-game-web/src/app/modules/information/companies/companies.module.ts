@@ -12,7 +12,7 @@ import { MessageModule } from '../../message/message.module';
 import { CompanyComponent } from './company.component';
 import { CompaniesListComponent } from './companies-list.component';
 import { CompaniesSearchComponent } from './companies-search.component';
-import { CompaniesTabMenuComponent } from '../../../companies-tabmenu.component';
+import { CompaniesTabMenuComponent } from './companies-tabmenu.component';
 
 @NgModule({
     declarations: [

@@ -17,7 +17,7 @@ export class CompanyComponent implements OnInit {
   public gitHubUrlPrefix = 'https://github.com';
   public habrUrlPrefix = 'https://habr.com/users';
 
-  private id: number;
+  public id: number;
   public companyDetails: CompanyDetails = new CompanyDetails();
   public multiSortMeta: any[] = [];
 

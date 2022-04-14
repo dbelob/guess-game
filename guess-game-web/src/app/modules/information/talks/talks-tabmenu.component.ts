@@ -1,20 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MenuItem } from "primeng/api";
 
 @Component({
-    selector: 'app-talks-tabmenu',
-    templateUrl: './talks-tabmenu.component.html'
+  selector: 'app-talks-tabmenu',
+  templateUrl: './talks-tabmenu.component.html'
 })
-export class TalksTabMenuComponent {
-    public items: MenuItem[] = [];
-    public activeItem: MenuItem;
+export class TalksTabMenuComponent implements OnInit {
+  @Input() private id: number;
 
-    constructor() {
-        this.items = [
-            {label: 'talks.search.title', routerLink: '/information/talks/search'},
-            {label: 'talk.title'}
-        ];
+  public items: MenuItem[] = [];
+  public activeItem: MenuItem;
 
-        this.activeItem = this.items[1];
+  ngOnInit(): void {
+    this.items = [
+      {label: 'talks.search.title', routerLink: '/information/talks/search'}
+    ];
+
+    if (!isNaN(this.id)) {
+      this.items.push({label: 'talk.title', routerLink: `/information/talk/${this.id}`});
     }
+  }
 }

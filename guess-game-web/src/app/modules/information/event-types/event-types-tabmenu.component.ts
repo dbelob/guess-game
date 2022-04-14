@@ -1,20 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MenuItem } from "primeng/api";
 
 @Component({
-    selector: 'app-event-types-tabmenu',
-    templateUrl: './event-types-tabmenu.component.html'
+  selector: 'app-event-types-tabmenu',
+  templateUrl: './event-types-tabmenu.component.html'
 })
-export class EventTypesTabMenuComponent {
-    public items: MenuItem[] = [];
-    public activeItem: MenuItem;
+export class EventTypesTabMenuComponent implements OnInit {
+  @Input() private id: number;
 
-    constructor() {
-        this.items = [
-            {label: 'eventTypes.search.title', routerLink: '/information/event-types/search'},
-            {label: 'eventType.title'}
-        ];
+  public items: MenuItem[] = [];
+  public activeItem: MenuItem;
 
-        this.activeItem = this.items[1];
+  ngOnInit(): void {
+    this.items = [
+      {label: 'eventTypes.search.title', routerLink: '/information/event-types/search'}
+    ];
+
+    if (!isNaN(this.id)) {
+      this.items.push({label: 'eventType.title', routerLink: `/information/event-type/${this.id}`});
     }
+  }
 }
