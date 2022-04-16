@@ -1,3 +1,28 @@
+.p-menubar {
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+// Bold active menubar item
+.p-menubar .p-menuitem-link.p-menuitem-link-active {
+  font-weight: 700;
+}
+
+// Focused menubar item without border
+.p-menubar .p-menuitem-link:focus {
+  box-shadow: none;
+}
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:focus {
+  box-shadow: none;
+}
+
+// Decrease top, bottom padding for menu item
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+  //padding: 0.75rem 1.25rem;
+  padding: 0.75rem 0.75rem;
+}
+
 @media (min-width: 820px) {
   .p-menubar {
     position: static !important;
