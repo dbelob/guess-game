@@ -1,0 +1,28 @@
+@media (min-width: 820px) {
+  .p-menubar {
+    position: static !important;
+  }
+
+  .p-menubar .p-menubar-button {
+    display: none !important;
+  }
+
+  .p-menubar .p-menubar-root-list {
+    position: static !important;
+    display: flex !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: 0 0 transparent !important;
+    width: auto !important;
+  }
+
+  .p-menubar .p-menubar-root-list > .p-menuitem {
+    width: auto !important;
+    position: relative !important;
+  }
+
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+    border-radius: 6px;
+  }
+}
