@@ -2,7 +2,8 @@
   <ng-template pTemplate="end">
     <div class="row justify-content-end align-items-center">
       <div class="col-auto">
-        <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
+<!--        <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>-->
+        <button class="btn btn-link text-muted" routerLink="/home" title="{{'common.menuLinkText' | translate}}"><small><i class="pi pi-home"></i></small></button>
       </div>
       <app-language-switcher (reload)="onReload()" class="col-auto"></app-language-switcher>
     </div>
