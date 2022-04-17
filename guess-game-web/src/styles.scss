@@ -346,11 +346,6 @@ a:hover {
   border-color: #dae0e5;
 }
 
-// Margin for wrapping menu items
-div.overflow-menu > button:not(:first-child) {
-  margin-left: 0.5rem !important;
-}
-
 // Decrease top, bottom padding for inputtext and multiselect
 .p-inputtext, .p-multiselect .p-multiselect-label {
   //padding: 0.75rem 0.75rem;

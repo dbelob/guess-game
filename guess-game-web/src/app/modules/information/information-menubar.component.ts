@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MenuItem } from 'primeng/api';
 
@@ -17,7 +17,6 @@ export class InformationMenubarComponent implements OnInit {
   private readonly KEYS = [this.EVENT_TYPES_TITLE_KEY, this.EVENTS_TITLE_KEY, this.TALKS_TITLE_KEY,
     this.SPEAKERS_TITLE_KEY, this.COMPANIES_TITLE_KEY, this.STATISTICS_TITLE_KEY];
 
-  @Input() private type: string;
   @Output() reload: EventEmitter<any> = new EventEmitter();
 
   public items: MenuItem[] = [];
@@ -46,30 +45,6 @@ export class InformationMenubarComponent implements OnInit {
           {label: labels[this.STATISTICS_TITLE_KEY], routerLink: '/information/statistics'}
         ];
       });
-  }
-
-  isEventTypes(): boolean {
-    return ('eventTypes' === this.type);
-  }
-
-  isEvents(): boolean {
-    return ('events' === this.type);
-  }
-
-  isTalks(): boolean {
-    return ('talks' === this.type);
-  }
-
-  isSpeakers(): boolean {
-    return ('speakers' === this.type);
-  }
-
-  isCompanies(): boolean {
-    return ('companies' === this.type);
-  }
-
-  isStatistics(): boolean {
-    return ('statistics' === this.type);
   }
 
   onReload() {
