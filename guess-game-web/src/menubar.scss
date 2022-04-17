@@ -18,6 +18,11 @@
   box-shadow: none;
 }
 
+// Transparent background color after hover
+.p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link {
+  background: transparent;
+}
+
 // Decrease top, bottom padding for menu item
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
   //padding: 0.75rem 1.25rem;
