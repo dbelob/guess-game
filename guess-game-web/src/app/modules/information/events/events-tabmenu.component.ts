@@ -9,7 +9,6 @@ export class EventsTabMenuComponent implements OnInit {
   @Input() private id: number;
 
   public items: MenuItem[] = [];
-  public activeItem: MenuItem;
 
   ngOnInit(): void {
     this.items = [
