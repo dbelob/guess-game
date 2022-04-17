@@ -1,3 +1,4 @@
+// Menubar styles
 .p-menubar {
   padding: 0;
   background: transparent;
@@ -20,10 +21,10 @@
 // Decrease top, bottom padding for menu item
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
   //padding: 0.75rem 1.25rem;
-  padding: 0.75rem 0.75rem;
+  padding: 0.75rem 0.5rem;
 }
 
-@media (min-width: 820px) {
+@media (min-width: 768px) {
   .p-menubar {
     position: static !important;
   }
@@ -49,5 +50,26 @@
 
   .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
     border-radius: 6px;
+  }
+}
+
+@media (min-width: 820px) {
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+    //padding: 0.75rem 1.25rem;
+    padding: 0.75rem 0.75rem;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+    //padding: 0.75rem 1.25rem;
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+    padding: 0.75rem 1.25rem;
   }
 }

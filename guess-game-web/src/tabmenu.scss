@@ -1,0 +1,35 @@
+// Decrease top, bottom padding for tabmenu item
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+  //padding: 1.25rem;
+  padding: 1.25rem 0.5rem;
+}
+
+// Focused tab without border
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link:not(.p-disabled):focus {
+  box-shadow: none;
+}
+
+// Not bold inactive tabmenu item
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link:not(.p-menuitem-link-active) {
+  font-weight: 400;
+}
+
+@media (min-width: 820px) {
+  .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+    //padding: 1.25rem;
+    padding: 1.25rem 0.75rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+    //padding: 1.25rem;
+    padding: 1.25rem 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+    padding: 1.25rem;
+  }
+}
