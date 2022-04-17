@@ -5,7 +5,6 @@ import { InputTextModule } from 'primeng/inputtext';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { TableModule } from 'primeng/table';
-import { TabMenuModule } from 'primeng/tabmenu';
 import { GeneralModule } from '../../general/general.module';
 import { InformationModule } from '../information.module';
 import { MessageModule } from '../../message/message.module';
@@ -15,24 +14,23 @@ import { CompaniesSearchComponent } from './companies-search.component';
 import { CompaniesTabMenuComponent } from './companies-tabmenu.component';
 
 @NgModule({
-    declarations: [
-        CompanyComponent,
-        CompaniesListComponent,
-        CompaniesSearchComponent,
-        CompaniesTabMenuComponent
-    ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        InputTextModule,
-        RouterModule,
-        TableModule,
-        GeneralModule,
-        InformationModule,
-        MessageModule,
-        TabMenuModule,
-        TranslateModule
-    ]
+  declarations: [
+    CompanyComponent,
+    CompaniesListComponent,
+    CompaniesSearchComponent,
+    CompaniesTabMenuComponent
+  ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    InputTextModule,
+    RouterModule,
+    TableModule,
+    GeneralModule,
+    InformationModule,
+    MessageModule,
+    TranslateModule
+  ]
 })
 export class CompaniesModule {
 }

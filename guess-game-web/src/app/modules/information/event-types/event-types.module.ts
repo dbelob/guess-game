@@ -7,7 +7,6 @@ import { MarkdownModule } from 'ngx-markdown';
 import { TranslateModule } from '@ngx-translate/core';
 import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
-import { TabMenuModule } from 'primeng/tabmenu';
 import { GeneralModule } from '../../general/general.module';
 import { InformationModule } from '../information.module';
 import { MessageModule } from '../../message/message.module';
@@ -16,25 +15,24 @@ import { EventTypesSearchComponent } from './event-types-search.component';
 import { EventTypesTabMenuComponent } from './event-types-tabmenu.component';
 
 @NgModule({
-    declarations: [
-        EventTypeComponent,
-        EventTypesSearchComponent,
-        EventTypesTabMenuComponent
-    ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        CheckboxModule,
-        DropdownModule,
-        MarkdownModule,
-        TableModule,
-        RouterModule,
-        GeneralModule,
-        InformationModule,
-        MessageModule,
-        TabMenuModule,
-        TranslateModule
-    ]
+  declarations: [
+    EventTypeComponent,
+    EventTypesSearchComponent,
+    EventTypesTabMenuComponent
+  ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    CheckboxModule,
+    DropdownModule,
+    MarkdownModule,
+    TableModule,
+    RouterModule,
+    GeneralModule,
+    InformationModule,
+    MessageModule,
+    TranslateModule
+  ]
 })
 export class EventTypesModule {
 }

@@ -10,7 +10,6 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { RippleModule } from 'primeng/ripple';
 import { RouterModule } from '@angular/router';
 import { TableModule } from 'primeng/table';
-import { TabMenuModule } from "primeng/tabmenu";
 import { TooltipModule } from 'primeng/tooltip';
 import { TranslateModule } from '@ngx-translate/core';
 import { GeneralModule } from '../../general/general.module';
@@ -50,8 +49,7 @@ import { StatisticsTabMenuComponent } from "./statistics-tabmenu.component";
     GeneralModule,
     InformationModule,
     MessageModule,
-    TranslateModule,
-    TabMenuModule
+    TranslateModule
   ]
 })
 export class StatisticsModule {

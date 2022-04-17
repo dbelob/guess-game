@@ -6,6 +6,8 @@ import { MenuItem } from "primeng/api";
   templateUrl: './companies-tabmenu.component.html'
 })
 export class CompaniesTabMenuComponent implements OnInit {
+  public readonly SCROLLABLE_WIDTH = 180;
+
   @Input() private id: number;
 
   public items: MenuItem[] = [];

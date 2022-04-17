@@ -6,6 +6,8 @@ import { MenuItem } from "primeng/api";
   templateUrl: './events-tabmenu.component.html'
 })
 export class EventsTabMenuComponent implements OnInit {
+  public readonly SCROLLABLE_WIDTH = 150;
+
   @Input() private id: number;
 
   public items: MenuItem[] = [];
