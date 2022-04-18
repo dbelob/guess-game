@@ -3,17 +3,10 @@
 
   <app-message></app-message>
 
-  <div class="row justify-content-end">
-    <div class="col-auto">
-      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
-    </div>
-    <app-language-switcher (reload)="onLanguageChange()" class="col-auto"></app-language-switcher>
-  </div>
+  <app-information-menubar></app-information-menubar>
+  <app-statistics-tabmenu></app-statistics-tabmenu>
 
-  <app-information-menubar [type]="'statistics'"></app-information-menubar>
-  <app-statistics-menubar [type]="'events'"></app-statistics-menubar>
-
-  <div class="m-1">
+  <div class="mt-4 mb-1 ml-1 mr-1">
     <form role="form" class="m-2">
       <div class="mb-3 row justify-content-center align-items-center">
         <label for="organizer" class="form-label col-12 col-sm-3 col-md-auto text-md-end">{{'common.list.organizerLabel' | translate}}</label>
@@ -50,7 +43,7 @@
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
                currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
-               sortMode="multiple" [multiSortMeta]="multiSortMeta" styleClass="p-datatable-striped"
+               sortMode="multiple" [multiSortMeta]="multiSortMeta" styleClass="p-datatable-sm p-datatable-striped p-datatable-gridlines"
                responsiveLayout="scroll">
         <ng-template pTemplate="header" let-columns>
           <tr>
@@ -88,7 +81,7 @@
           <tr>
             <td class="text-center">{{i + 1}}</td>
             <td>
-              <a [routerLink]="['/information', 'event', eventMetrics.id]" class="text-dark">
+              <a [routerLink]="['/information', 'events', 'event', eventMetrics.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{eventMetrics.eventTypeLogoFileName}}" class="img-event-type-logo-table" alt="logo"/>
                 <span class="ms-2">{{eventMetrics.name}}</span>
               </a>

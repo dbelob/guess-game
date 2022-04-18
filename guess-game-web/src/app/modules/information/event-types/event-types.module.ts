@@ -11,14 +11,14 @@ import { GeneralModule } from '../../general/general.module';
 import { InformationModule } from '../information.module';
 import { MessageModule } from '../../message/message.module';
 import { EventTypeComponent } from './event-type.component';
-import { EventTypesMenubarComponent } from './event-types-menubar.component';
 import { EventTypesSearchComponent } from './event-types-search.component';
+import { EventTypesTabMenuComponent } from './event-types-tabmenu.component';
 
 @NgModule({
   declarations: [
     EventTypeComponent,
-    EventTypesMenubarComponent,
-    EventTypesSearchComponent
+    EventTypesSearchComponent,
+    EventTypesTabMenuComponent
   ],
   imports: [
     CommonModule,

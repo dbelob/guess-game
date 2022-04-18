@@ -3,22 +3,15 @@
 
   <app-message></app-message>
 
-  <div class="row justify-content-end">
-    <div class="col-auto">
-      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
-    </div>
-    <app-language-switcher class="col-auto"></app-language-switcher>
-  </div>
+  <app-information-menubar></app-information-menubar>
+  <app-talks-tabmenu [id]="id"></app-talks-tabmenu>
 
-  <app-information-menubar [type]="'talks'"></app-information-menubar>
-  <app-talks-menubar [type]="'talk'"></app-talks-menubar>
-
-  <div class="m-1">
+  <div class="mt-3 mb-1 ml-1 mr-1">
     <div class="m-2">
       <h4>{{talkDetails.talk?.name}}</h4>
 
       <div class="mt-1">
-        <a [routerLink]="['/information', 'event', talkDetails.talk?.event?.id]" class="text-dark">
+        <a [routerLink]="['/information', 'events', 'event', talkDetails.talk?.event?.id]" class="text-dark">
           <img *ngIf="talkDetails.talk?.eventTypeLogoFileName" class="img-event-type-logo-talk"
                src="{{eventsImageDirectory}}/{{talkDetails.talk.eventTypeLogoFileName}}" alt="logo"/>
           <span class="ms-2">{{talkDetails.talk?.event?.displayName}}</span>
@@ -59,7 +52,7 @@
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
                currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
-               sortMode="multiple" styleClass="p-datatable-striped" responsiveLayout="scroll">
+               sortMode="multiple" styleClass="p-datatable-sm p-datatable-striped p-datatable-gridlines" responsiveLayout="scroll">
         <ng-template pTemplate="header" let-columns>
           <tr>
             <th class="text-center" pResizableColumn>#</th>
@@ -97,14 +90,14 @@
           <tr>
             <td class="text-center">{{i + 1}}</td>
             <td>
-              <a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">
+              <a [routerLink]="['/information', 'speakers', 'speaker', speaker.id]" class="text-dark">
                 <img src="{{speakersImageDirectory}}/{{speaker.photoFileName}}" class="img-speaker-photo-table" alt="photo"/>
                 <span class="ms-2">{{speaker.displayName}}</span>
               </a>
             </td>
             <td>
               <span *ngFor="let company of speaker.companies; last as isLast">
-                <a [routerLink]="['/information', 'company', company.id]" class="text-dark">{{company.name}}</a>
+                <a [routerLink]="['/information', 'companies', 'company', company.id]" class="text-dark">{{company.name}}</a>
                 <span *ngIf="!isLast">, </span>
               </span>
             </td>

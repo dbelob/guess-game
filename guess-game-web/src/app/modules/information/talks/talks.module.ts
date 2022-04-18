@@ -12,14 +12,14 @@ import { GeneralModule } from '../../general/general.module';
 import { InformationModule } from '../information.module';
 import { MessageModule } from '../../message/message.module';
 import { TalkComponent } from './talk.component';
-import { TalksMenubarComponent } from './talks-menubar.component';
 import { TalksSearchComponent } from './talks-search.component';
+import { TalksTabMenuComponent } from './talks-tabmenu.component';
 
 @NgModule({
   declarations: [
     TalkComponent,
-    TalksMenubarComponent,
-    TalksSearchComponent
+    TalksSearchComponent,
+    TalksTabMenuComponent
   ],
   imports: [
     CommonModule,

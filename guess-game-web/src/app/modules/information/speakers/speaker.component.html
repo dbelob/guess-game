@@ -3,23 +3,16 @@
 
   <app-message></app-message>
 
-  <div class="row justify-content-end">
-    <div class="col-auto">
-      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
-    </div>
-    <app-language-switcher (reload)="onLanguageChange()" class="col-auto"></app-language-switcher>
-  </div>
+  <app-information-menubar></app-information-menubar>
+  <app-speakers-tabmenu [id]="id"></app-speakers-tabmenu>
 
-  <app-information-menubar [type]="'speakers'"></app-information-menubar>
-  <app-speakers-menubar [type]="'speaker'"></app-speakers-menubar>
-
-  <div class="m-1">
+  <div class="mt-3 mb-1 ml-1 mr-1">
     <div class="m-2">
       <div class="row align-items-center">
         <span class="col-auto h4">{{speakerDetails.speaker?.name}}</span>
         <span class="col-auto font-italic" *ngIf="speakerDetails.speaker?.companies">
           <span *ngFor="let company of speakerDetails.speaker.companies; last as isLast">
-            <a [routerLink]="['/information', 'company', company.id]" class="text-dark">{{company.name}}</a>
+            <a [routerLink]="['/information', 'companies', 'company', company.id]" class="text-dark">{{company.name}}</a>
             <span *ngIf="!isLast">, </span>
           </span>
         </span>
@@ -67,7 +60,7 @@
                [rows]="10" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
                currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
-               sortMode="multiple" [multiSortMeta]="multiSortMeta" styleClass="p-datatable-striped"
+               sortMode="multiple" [multiSortMeta]="multiSortMeta" styleClass="p-datatable-sm p-datatable-striped p-datatable-gridlines"
                responsiveLayout="scroll">
         <ng-template pTemplate="header" let-columns>
           <tr>
@@ -94,18 +87,18 @@
           <tr>
             <td class="text-center">{{i + 1}}</td>
             <td>
-              <a [routerLink]="['/information', 'event', talk.event?.id]" class="text-dark">
+              <a [routerLink]="['/information', 'events', 'event', talk.event?.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{talk.eventTypeLogoFileName}}" class="img-event-type-logo-table" alt="logo"/>
                 <span class="ms-2">{{talk.event?.name}}</span>
               </a>
             </td>
             <td class="text-center">{{talk.talkDate | date:"shortDate":undefined:translateService.currentLang}}</td>
             <td>
-              <a [routerLink]="['/information', 'talk', talk.id]" class="text-dark">{{talk.name}}</a>
+              <a [routerLink]="['/information', 'talks', 'talk', talk.id]" class="text-dark">{{talk.name}}</a>
             </td>
             <td>
               <span *ngFor="let speaker of talk.speakers; let i = index">
-                <span *ngIf="i > 0">, </span><a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">{{speaker.displayName}}</a>
+                <span *ngIf="i > 0">, </span><a [routerLink]="['/information', 'speakers', 'speaker', speaker.id]" class="text-dark">{{speaker.displayName}}</a>
               </span>
             </td>
           </tr>

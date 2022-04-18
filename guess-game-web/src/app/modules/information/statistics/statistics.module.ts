@@ -21,7 +21,7 @@ import { EventStatisticsComponent } from './event-statistics.component';
 import { SpeakerStatisticsComponent } from './speaker-statistics.component';
 import { CompanyStatisticsComponent } from './company-statistics.component';
 import { OlapStatisticsComponent } from './olap-statistics.component';
-import { StatisticsMenubarComponent } from './statistics-menubar.component';
+import { StatisticsTabMenuComponent } from "./statistics-tabmenu.component";
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { StatisticsMenubarComponent } from './statistics-menubar.component';
     SpeakerStatisticsComponent,
     CompanyStatisticsComponent,
     OlapStatisticsComponent,
-    StatisticsMenubarComponent
+    StatisticsTabMenuComponent
   ],
   imports: [
     AutoCompleteModule,

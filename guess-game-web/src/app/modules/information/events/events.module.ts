@@ -10,13 +10,13 @@ import { GeneralModule } from '../../general/general.module';
 import { InformationModule } from '../information.module';
 import { MessageModule } from '../../message/message.module';
 import { EventComponent } from './event.component';
-import { EventsMenubarComponent } from './events-menubar.component';
 import { EventsSearchComponent } from './events-search.component';
+import { EventsTabMenuComponent } from './events-tabmenu.component';
 
 @NgModule({
   declarations: [
     EventComponent,
-    EventsMenubarComponent,
+    EventsTabMenuComponent,
     EventsSearchComponent
   ],
   imports: [

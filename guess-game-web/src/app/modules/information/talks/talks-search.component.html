@@ -3,14 +3,7 @@
 
   <app-message></app-message>
 
-  <div class="row justify-content-end">
-    <div class="col-auto">
-      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
-    </div>
-    <app-language-switcher (reload)="onLanguageChange()" class="col-auto"></app-language-switcher>
-  </div>
-
-  <app-information-menubar [type]="'talks'"></app-information-menubar>
+  <app-information-menubar></app-information-menubar>
 
   <div class="ms-1 me-1 mb-1 mt-3">
     <form role="form" class="m-2">
@@ -70,7 +63,7 @@
                [rows]="10" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
                currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
-               sortMode="multiple" [multiSortMeta]="multiSortMeta" styleClass="p-datatable-striped"
+               sortMode="multiple" [multiSortMeta]="multiSortMeta" styleClass="p-datatable-sm p-datatable-striped p-datatable-gridlines"
                responsiveLayout="scroll">
         <ng-template pTemplate="header" let-columns>
           <tr>
@@ -97,18 +90,18 @@
           <tr>
             <td class="text-center">{{i + 1}}</td>
             <td>
-              <a [routerLink]="['/information', 'event', talk.event?.id]" class="text-dark">
+              <a [routerLink]="['/information', 'events', 'event', talk.event?.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{talk.eventTypeLogoFileName}}" class="img-event-type-logo-table" alt="logo"/>
                 <span class="ms-2">{{talk.event?.name}}</span>
               </a>
             </td>
             <td class="text-center">{{talk.talkDate | date:"shortDate":undefined:translateService.currentLang}}</td>
             <td>
-              <a [routerLink]="['/information', 'talk', talk.id]" class="text-dark">{{talk.name}}</a>
+              <a [routerLink]="['/information', 'talks', 'talk', talk.id]" class="text-dark">{{talk.name}}</a>
             </td>
             <td>
               <span *ngFor="let speaker of talk.speakers; let i = index">
-                <span *ngIf="i > 0">, </span><a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">{{speaker.displayName}}</a>
+                <span *ngIf="i > 0">, </span><a [routerLink]="['/information', 'speakers', 'speaker', speaker.id]" class="text-dark">{{speaker.displayName}}</a>
               </span>
             </td>
           </tr>

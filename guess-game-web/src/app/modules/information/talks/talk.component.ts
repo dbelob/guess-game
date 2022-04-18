@@ -30,7 +30,7 @@ export class TalkComponent implements AfterViewInit, OnInit, OnDestroy {
   public gitHubUrlPrefix = 'https://github.com';
   public habrUrlPrefix = 'https://habr.com/users';
 
-  private id: number;
+  public id: number;
   public talkDetails: TalkDetails = new TalkDetails();
 
   @ViewChild('youtubePlayerDiv') youtubePlayerDiv: ElementRef<HTMLDivElement>;

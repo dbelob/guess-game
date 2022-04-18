@@ -1,0 +1,85 @@
+// Menubar styles
+.p-menubar {
+  padding: 0;
+  background: inherit;
+  border: 0;
+}
+
+// Bold active menubar item
+.p-menubar .p-menuitem-link.p-menuitem-link-active {
+  font-weight: 700;
+}
+
+// Focused menubar item without border
+.p-menubar .p-menuitem-link:focus {
+  box-shadow: none;
+}
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:focus {
+  box-shadow: none;
+}
+
+// Inherit background color after mouse hover
+.p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link {
+  background: inherit;
+}
+
+// Inherit color after mouse hover
+.p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-text {
+  color: inherit;
+}
+
+// Decrease top, bottom padding for menu item
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+  //padding: 0.75rem 1.25rem;
+  padding: 0.75rem 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .p-menubar {
+    position: static !important;
+  }
+
+  .p-menubar .p-menubar-button {
+    display: none !important;
+  }
+
+  .p-menubar .p-menubar-root-list {
+    position: static !important;
+    display: flex !important;
+    padding: 0 !important;
+    background: inherit !important;
+    border: 0 !important;
+    box-shadow: 0 0 transparent !important;
+    width: auto !important;
+  }
+
+  .p-menubar .p-menubar-root-list > .p-menuitem {
+    width: auto !important;
+    position: relative !important;
+  }
+
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+    border-radius: 6px;
+  }
+}
+
+@media (min-width: 820px) {
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+    //padding: 0.75rem 1.25rem;
+    padding: 0.75rem 0.75rem;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+    //padding: 0.75rem 1.25rem;
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+    padding: 0.75rem 1.25rem;
+  }
+}

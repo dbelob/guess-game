@@ -14,7 +14,7 @@
     "mvpsQuantity": "Number of MVPs"
   },
   "common": {
-    "menuLinkText": "Menu",
+    "homeToolTipText": "Home",
     "cancelLinkText": "Cancel",
     "siteLinkText": "Site",
     "vkLinkText": "VK",
@@ -259,6 +259,7 @@
       }
     },
     "olap" : {
+      "title": "OLAP",
       "cubeLabel": "Cube:",
       "cubePlaceholder": "All",
       "measureLabel": "Measure:",

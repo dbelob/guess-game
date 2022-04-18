@@ -14,7 +14,7 @@
     "mvpsQuantity": "Количество MVPs"
   },
   "common": {
-    "menuLinkText": "Меню",
+    "homeToolTipText": "Главная",
     "cancelLinkText": "Прервать",
     "siteLinkText": "Сайт",
     "vkLinkText": "ВКонтакте",
@@ -259,6 +259,7 @@
       }
     },
     "olap" : {
+      "title": "OLAP",
       "cubeLabel": "Куб:",
       "cubePlaceholder": "Все",
       "measureLabel": "Показатель:",

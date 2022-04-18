@@ -3,14 +3,7 @@
 
   <app-message></app-message>
 
-  <div class="row justify-content-end">
-    <div class="col-auto">
-      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
-    </div>
-    <app-language-switcher (reload)="onLanguageChange()" class="col-auto"></app-language-switcher>
-  </div>
-
-  <app-information-menubar [type]="'eventTypes'"></app-information-menubar>
+  <app-information-menubar (reload)="onLanguageChange()"></app-information-menubar>
 
   <div class="ms-1 me-1 mb-1 mt-2">
     <form role="form" class="m-2">
@@ -46,7 +39,7 @@
 
     <div *ngIf="isEventTypesListVisible()" class="m-2">
       <p-table [value]="eventTypes" [resizableColumns]="true" [autoLayout]="true" sortField="sortName"
-               styleClass="p-datatable-striped" responsiveLayout="scroll">
+               styleClass="p-datatable-sm p-datatable-striped p-datatable-gridlines" responsiveLayout="scroll">
         <ng-template pTemplate="header" let-columns>
           <tr>
             <th class="text-center" pResizableColumn>#</th>
@@ -79,13 +72,13 @@
             </td>
             <td>{{eventType.organizerName}}</td>
             <td>
-              <a [routerLink]="['/information', 'event-type', eventType.id]" class="text-dark">
+              <a [routerLink]="['/information', 'event-types', 'event-type', eventType.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{eventType.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>
                 <span class="ms-2">{{eventType.name}}</span>
               </a>
             </td>
             <td>
-              <a [routerLink]="['/information', 'event-type', eventType.id]" class="text-dark">
+              <a [routerLink]="['/information', 'event-types', 'event-type', eventType.id]" class="text-dark">
                 {{eventType.shortDescription}}
               </a>
             </td>

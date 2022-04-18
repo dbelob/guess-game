@@ -10,18 +10,18 @@
     <img *ngIf="isDefaultEventNotFound()" src="{{imageDirectory}}/home.jpg" alt="logo" class="img-home-logo"/>
     <div *ngIf="isDefaultEventFound()">
       <div class="text-center">
-        <a [routerLink]="['/information', 'event', event.id]" class="text-dark">
+        <a [routerLink]="['/information', 'events', 'event', event.id]" class="text-dark">
           <img *ngIf="event?.eventTypeLogoFileName" class="img-home-logo"
                src="{{eventsImageDirectory}}/{{event.eventTypeLogoFileName}}" alt="logo"/>
         </a>
       </div>
       <div class="h4 text-center">
-        <a [routerLink]="['/information', 'event', event.id]" class="text-dark">
+        <a [routerLink]="['/information', 'events', 'event', event.id]" class="text-dark">
           {{event.name}}
         </a>
       </div>
       <div class="text-center">
-        <a [routerLink]="['/information', 'event', event.id]" class="text-dark">
+        <a [routerLink]="['/information', 'events', 'event', event.id]" class="text-dark">
           {{eventDates}}
         </a>
       </div>

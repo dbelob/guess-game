@@ -18,7 +18,7 @@ export class SpeakerComponent implements OnInit {
   public gitHubUrlPrefix = 'https://github.com';
   public habrUrlPrefix = 'https://habr.com/users';
 
-  private id: number;
+  public id: number;
   public speakerDetails: SpeakerDetails = new SpeakerDetails();
   public multiSortMeta: any[] = [];
 

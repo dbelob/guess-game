@@ -3,17 +3,10 @@
 
   <app-message></app-message>
 
-  <div class="row justify-content-end">
-    <div class="col-auto">
-      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
-    </div>
-    <app-language-switcher (reload)="onLanguageChange()" class="col-auto"></app-language-switcher>
-  </div>
+  <app-information-menubar></app-information-menubar>
+  <app-companies-tabmenu></app-companies-tabmenu>
 
-  <app-information-menubar [type]="'companies'"></app-information-menubar>
-  <app-companies-menubar [type]="'search'"></app-companies-menubar>
-
-  <div class="m-1">
+  <div class="mt-4 mb-1 ml-1 mr-1">
     <form role="form" class="m-2">
       <div class="mb-3 row justify-content-center align-items-center">
         <label for="name" class="form-label col-12 col-sm-3 col-md-2">{{'companies.search.nameLabel' | translate}}</label>
@@ -40,7 +33,7 @@
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
                currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
-               sortMode="multiple" [multiSortMeta]="multiSortMeta" styleClass="p-datatable-striped"
+               sortMode="multiple" [multiSortMeta]="multiSortMeta" styleClass="p-datatable-sm p-datatable-striped p-datatable-gridlines"
               responsiveLayout="scroll">
         <ng-template pTemplate="header">
           <tr>
@@ -67,7 +60,7 @@
           <tr>
             <td class="text-center">{{i + 1}}</td>
             <td>
-              <a [routerLink]="['/information', 'company', company.id]" class="text-dark">{{company.name}}</a>
+              <a [routerLink]="['/information', 'companies', 'company', company.id]" class="text-dark">{{company.name}}</a>
             </td>
             <td class="text-center">{{company.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
             <td class="text-center">{{company.javaChampionsQuantity | number:'1.0-0':translateService.currentLang}}</td>

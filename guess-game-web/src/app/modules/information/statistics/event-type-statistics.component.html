@@ -3,17 +3,10 @@
 
   <app-message></app-message>
 
-  <div class="row justify-content-end">
-    <div class="col-auto">
-      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
-    </div>
-    <app-language-switcher (reload)="onLanguageChange()" class="col-auto"></app-language-switcher>
-  </div>
+  <app-information-menubar></app-information-menubar>
+  <app-statistics-tabmenu></app-statistics-tabmenu>
 
-  <app-information-menubar [type]="'statistics'"></app-information-menubar>
-  <app-statistics-menubar [type]="'eventTypes'"></app-statistics-menubar>
-
-  <div class="m-1">
+  <div class="mt-3 mb-1 ml-1 mr-1">
     <form role="form" class="m-2">
       <div class="mb-3 row justify-content-center">
         <div class="col-auto">
@@ -47,7 +40,7 @@
 
     <div *ngIf="isEventTypesListVisible()" class="m-2">
       <p-table [value]="eventTypeStatistics.eventTypeMetricsList" [resizableColumns]="true" [autoLayout]="true"
-               sortMode="multiple" [multiSortMeta]="multiSortMeta" styleClass="p-datatable-striped"
+               sortMode="multiple" [multiSortMeta]="multiSortMeta" styleClass="p-datatable-sm p-datatable-striped p-datatable-gridlines"
                responsiveLayout="scroll">
         <ng-template pTemplate="header" let-columns>
           <tr>
@@ -108,7 +101,7 @@
             </td>
             <td>{{eventTypeMetrics.organizerName}}</td>
             <td>
-              <a [routerLink]="['/information', 'event-type', eventTypeMetrics.id]" class="text-dark">
+              <a [routerLink]="['/information', 'event-types', 'event-type', eventTypeMetrics.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{eventTypeMetrics.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>
                 <span class="ms-2">{{eventTypeMetrics.displayName}}</span>
               </a>
