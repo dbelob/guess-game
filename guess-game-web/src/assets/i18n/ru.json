@@ -14,7 +14,7 @@
     "mvpsQuantity": "Количество MVPs"
   },
   "common": {
-    "menuLinkText": "Главная",
+    "homeToolTipText": "Главная",
     "cancelLinkText": "Прервать",
     "siteLinkText": "Сайт",
     "vkLinkText": "ВКонтакте",

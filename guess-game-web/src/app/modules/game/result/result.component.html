@@ -5,7 +5,7 @@
 
   <div class="row justify-content-end align-items-center">
     <div class="col-auto">
-      <button class="btn btn-link text-muted" (click)="menu()"><small>{{'common.menuLinkText' | translate}}</small></button>
+      <button class="btn text-muted" (click)="home()" title="{{'common.homeToolTipText' | translate}}"><i class="pi pi-home"></i></button>
     </div>
     <app-language-switcher (reload)="loadResult()" class="col-auto"></app-language-switcher>
   </div>

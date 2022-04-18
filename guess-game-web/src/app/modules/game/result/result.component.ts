@@ -36,7 +36,7 @@ export class ResultComponent implements OnInit {
       });
   }
 
-  menu() {
+  home() {
     this.stateService.deleteStartParameters()
       .subscribe(data => {
           this.router.navigateByUrl('/home');

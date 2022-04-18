@@ -14,7 +14,7 @@
     "mvpsQuantity": "Number of MVPs"
   },
   "common": {
-    "menuLinkText": "Home",
+    "homeToolTipText": "Home",
     "cancelLinkText": "Cancel",
     "siteLinkText": "Site",
     "vkLinkText": "VK",
