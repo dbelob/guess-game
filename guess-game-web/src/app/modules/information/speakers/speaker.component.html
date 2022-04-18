@@ -87,7 +87,7 @@
           <tr>
             <td class="text-center">{{i + 1}}</td>
             <td>
-              <a [routerLink]="['/information', 'event', talk.event?.id]" class="text-dark">
+              <a [routerLink]="['/information', 'events', 'event', talk.event?.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{talk.eventTypeLogoFileName}}" class="img-event-type-logo-table" alt="logo"/>
                 <span class="ms-2">{{talk.event?.name}}</span>
               </a>

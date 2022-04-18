@@ -11,7 +11,7 @@
       <h4>{{talkDetails.talk?.name}}</h4>
 
       <div class="mt-1">
-        <a [routerLink]="['/information', 'event', talkDetails.talk?.event?.id]" class="text-dark">
+        <a [routerLink]="['/information', 'events', 'event', talkDetails.talk?.event?.id]" class="text-dark">
           <img *ngIf="talkDetails.talk?.eventTypeLogoFileName" class="img-event-type-logo-talk"
                src="{{eventsImageDirectory}}/{{talkDetails.talk.eventTypeLogoFileName}}" alt="logo"/>
           <span class="ms-2">{{talkDetails.talk?.event?.displayName}}</span>

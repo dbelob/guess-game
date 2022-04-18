@@ -101,7 +101,7 @@
           <tr>
             <td class="text-center">{{i + 1}}</td>
             <td>
-              <a [routerLink]="['/information', 'event', event.id]" class="text-dark">
+              <a [routerLink]="['/information', 'events', 'event', event.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{event.eventTypeLogoFileName}}" class="img-event-type-logo-table" alt="logo"/>
                 <span class="ms-2">{{event.name}}</span>
               </a>
