@@ -1,7 +1,7 @@
 // Menubar styles
 .p-menubar {
   padding: 0;
-  background: transparent;
+  background: inherit;
   border: 0;
 }
 
@@ -18,9 +18,14 @@
   box-shadow: none;
 }
 
-// Transparent background color after hover
+// Inherit background color after mouse hover
 .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link {
-  background: transparent;
+  background: inherit;
+}
+
+// Inherit color after mouse hover
+.p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-text {
+  color: inherit;
 }
 
 // Decrease top, bottom padding for menu item
@@ -42,7 +47,7 @@
     position: static !important;
     display: flex !important;
     padding: 0 !important;
-    background: transparent !important;
+    background: inherit !important;
     border: 0 !important;
     box-shadow: 0 0 transparent !important;
     width: auto !important;
