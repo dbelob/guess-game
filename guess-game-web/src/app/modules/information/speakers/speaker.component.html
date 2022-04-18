@@ -12,7 +12,7 @@
         <span class="col-auto h4">{{speakerDetails.speaker?.name}}</span>
         <span class="col-auto font-italic" *ngIf="speakerDetails.speaker?.companies">
           <span *ngFor="let company of speakerDetails.speaker.companies; last as isLast">
-            <a [routerLink]="['/information', 'company', company.id]" class="text-dark">{{company.name}}</a>
+            <a [routerLink]="['/information', 'companies', 'company', company.id]" class="text-dark">{{company.name}}</a>
             <span *ngIf="!isLast">, </span>
           </span>
         </span>

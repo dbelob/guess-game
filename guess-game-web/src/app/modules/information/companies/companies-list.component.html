@@ -61,7 +61,7 @@
           <tr>
             <td class="text-center">{{i + 1}}</td>
             <td>
-              <a [routerLink]="['/information', 'company', company.id]" class="text-dark">{{company.name}}</a>
+              <a [routerLink]="['/information', 'companies', 'company', company.id]" class="text-dark">{{company.name}}</a>
             </td>
             <td class="text-center">{{company.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
             <td class="text-center">{{company.javaChampionsQuantity | number:'1.0-0':translateService.currentLang}}</td>

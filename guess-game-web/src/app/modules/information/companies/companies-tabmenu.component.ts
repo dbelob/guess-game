@@ -19,7 +19,7 @@ export class CompaniesTabMenuComponent implements OnInit {
     ];
 
     if (!isNaN(this.id)) {
-      this.items.push({label: 'company.title', routerLink: `/information/company/${this.id}`});
+      this.items.push({label: 'company.title', routerLink: `/information/companies/company/${this.id}`});
     }
   }
 }

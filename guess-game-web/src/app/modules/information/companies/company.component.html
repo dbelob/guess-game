@@ -73,7 +73,7 @@
             </td>
             <td>
               <span *ngFor="let company of speaker.companies; last as isLast">
-                <a [routerLink]="['/information', 'company', company.id]" class="text-dark">{{company.name}}</a>
+                <a [routerLink]="['/information', 'companies', 'company', company.id]" class="text-dark">{{company.name}}</a>
                 <span *ngIf="!isLast">, </span>
               </span>
             </td>
