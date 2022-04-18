@@ -86,9 +86,9 @@ const routes: Routes = [
   {path: 'information/events/event/:id', component: EventComponent},
   {path: 'information/talks/search', component: TalksSearchComponent},
   {path: 'information/talks/talk/:id', component: TalkComponent},
-  {path: 'information/speaker/:id', component: SpeakerComponent},
   {path: 'information/speakers/list', component: SpeakersListComponent},
   {path: 'information/speakers/search', component: SpeakersSearchComponent},
+  {path: 'information/speakers/speaker/:id', component: SpeakerComponent},
   {path: 'information/company/:id', component: CompanyComponent},
   {path: 'information/companies/list', component: CompaniesListComponent},
   {path: 'information/companies/search', component: CompaniesSearchComponent},
@@ -107,6 +107,7 @@ const routes: Routes = [
   {path: 'information/event-type/:id', redirectTo: 'information/event-types/event-type/:id'},
   {path: 'information/event/:id', redirectTo: 'information/events/event/:id'},
   {path: 'information/talk/:id', redirectTo: 'information/talks/talk/:id'},
+  {path: 'information/speaker/:id', redirectTo: 'information/speakers/speaker/:id'},
   {path: 'information', redirectTo: 'information/event-types/search'},
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: '**', component: NotFoundComponent}

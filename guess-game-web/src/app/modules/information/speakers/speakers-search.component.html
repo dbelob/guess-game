@@ -99,7 +99,7 @@
           <tr>
             <td class="text-center">{{i + 1}}</td>
             <td>
-              <a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">
+              <a [routerLink]="['/information', 'speakers', 'speaker', speaker.id]" class="text-dark">
                 <img src="{{speakersImageDirectory}}/{{speaker.photoFileName}}" class="img-speaker-photo-table" alt="photo"/>
                 <span class="ms-2">{{speaker.displayName}}</span>
               </a>

@@ -98,7 +98,7 @@
             </td>
             <td>
               <span *ngFor="let speaker of talk.speakers; let i = index">
-                <span *ngIf="i > 0">, </span><a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">{{speaker.displayName}}</a>
+                <span *ngIf="i > 0">, </span><a [routerLink]="['/information', 'speakers', 'speaker', speaker.id]" class="text-dark">{{speaker.displayName}}</a>
               </span>
             </td>
           </tr>

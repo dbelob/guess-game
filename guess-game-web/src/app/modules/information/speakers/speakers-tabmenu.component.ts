@@ -19,7 +19,7 @@ export class SpeakersTabMenuComponent implements OnInit {
     ];
 
     if (!isNaN(this.id)) {
-      this.items.push({label: 'speaker.title', routerLink: `/information/speaker/${this.id}`});
+      this.items.push({label: 'speaker.title', routerLink: `/information/speakers/speaker/${this.id}`});
     }
   }
 }
