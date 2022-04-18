@@ -18,7 +18,7 @@ export class TalksTabMenuComponent implements OnInit {
     ];
 
     if (!isNaN(this.id)) {
-      this.items.push({label: 'talk.title', routerLink: `/information/talk/${this.id}`});
+      this.items.push({label: 'talk.title', routerLink: `/information/talks/talk/${this.id}`});
     }
   }
 }

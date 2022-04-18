@@ -84,8 +84,8 @@ const routes: Routes = [
   {path: 'information/event-types/event-type/:id', component: EventTypeComponent},
   {path: 'information/events/search', component: EventsSearchComponent},
   {path: 'information/events/event/:id', component: EventComponent},
-  {path: 'information/talk/:id', component: TalkComponent},
   {path: 'information/talks/search', component: TalksSearchComponent},
+  {path: 'information/talks/talk/:id', component: TalkComponent},
   {path: 'information/speaker/:id', component: SpeakerComponent},
   {path: 'information/speakers/list', component: SpeakersListComponent},
   {path: 'information/speakers/search', component: SpeakersSearchComponent},
@@ -106,6 +106,7 @@ const routes: Routes = [
   {path: 'game', redirectTo: 'game/start'},
   {path: 'information/event-type/:id', redirectTo: 'information/event-types/event-type/:id'},
   {path: 'information/event/:id', redirectTo: 'information/events/event/:id'},
+  {path: 'information/talk/:id', redirectTo: 'information/talks/talk/:id'},
   {path: 'information', redirectTo: 'information/event-types/search'},
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: '**', component: NotFoundComponent}

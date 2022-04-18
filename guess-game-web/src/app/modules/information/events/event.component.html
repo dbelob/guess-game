@@ -192,7 +192,7 @@
             <td class="text-center">{{talk.talkTime | date:"HH:mm":undefined:translateService.currentLang}}</td>
             <td class="text-center">{{talk.track}}</td>
             <td>
-              <a [routerLink]="['/information', 'talk', talk.id]" class="text-dark">{{talk.name}}</a>
+              <a [routerLink]="['/information', 'talks', 'talk', talk.id]" class="text-dark">{{talk.name}}</a>
             </td>
             <td>
               <span *ngFor="let speaker of talk.speakers; let i = index">
