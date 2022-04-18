@@ -72,13 +72,13 @@
             </td>
             <td>{{eventType.organizerName}}</td>
             <td>
-              <a [routerLink]="['/information', 'event-type', eventType.id]" class="text-dark">
+              <a [routerLink]="['/information', 'event-types', 'event-type', eventType.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{eventType.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>
                 <span class="ms-2">{{eventType.name}}</span>
               </a>
             </td>
             <td>
-              <a [routerLink]="['/information', 'event-type', eventType.id]" class="text-dark">
+              <a [routerLink]="['/information', 'event-types', 'event-type', eventType.id]" class="text-dark">
                 {{eventType.shortDescription}}
               </a>
             </td>

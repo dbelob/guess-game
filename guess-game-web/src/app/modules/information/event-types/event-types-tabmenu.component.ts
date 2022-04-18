@@ -18,7 +18,7 @@ export class EventTypesTabMenuComponent implements OnInit {
     ];
 
     if (!isNaN(this.id)) {
-      this.items.push({label: 'eventType.title', routerLink: `/information/event-type/${this.id}`});
+      this.items.push({label: 'eventType.title', routerLink: `/information/event-types/event-type/${this.id}`});
     }
   }
 }

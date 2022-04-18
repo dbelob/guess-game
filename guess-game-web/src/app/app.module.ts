@@ -80,8 +80,8 @@ const routes: Routes = [
   {path: 'game/guess/speaker-by-tag-cloud', component: GuessSpeakerByTagCloudComponent, canActivate: [GameStateGuard]},
   {path: 'game/result', component: ResultComponent, canActivate: [GameStateGuard]},
   {path: 'game/cancel', component: CancelGameComponent},
-  {path: 'information/event-type/:id', component: EventTypeComponent},
   {path: 'information/event-types/search', component: EventTypesSearchComponent},
+  {path: 'information/event-types/event-type/:id', component: EventTypeComponent},
   {path: 'information/event/:id', component: EventComponent},
   {path: 'information/events/search', component: EventsSearchComponent},
   {path: 'information/talk/:id', component: TalkComponent},
@@ -104,6 +104,7 @@ const routes: Routes = [
   {path: 'information/companies', redirectTo: 'information/companies/list'},
   {path: 'information/statistics', redirectTo: 'information/statistics/event-types'},
   {path: 'game', redirectTo: 'game/start'},
+  {path: 'information/event-type/:id', redirectTo: 'information/event-types/event-type/:id'},
   {path: 'information', redirectTo: 'information/event-types/search'},
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: '**', component: NotFoundComponent}
