@@ -3,7 +3,7 @@
 
   <app-message></app-message>
 
-  <app-information-menubar></app-information-menubar>
+  <app-information-menubar (reload)="onLanguageChange()"></app-information-menubar>
   <app-companies-tabmenu [id]="id"></app-companies-tabmenu>
 
   <div class="mt-3 mb-1 ml-1 mr-1">
