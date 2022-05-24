@@ -30,7 +30,7 @@
     "get-video-id": "^3.6.4",
     "ngx-markdown": "^13.1.0",
     "primeicons": "^5.0.0",
-    "primeng": "^13.4.0",
+    "primeng": "^13.4.1",
     "rxjs": "^7.5.5",
     "tslib": "^2.4.0",
     "zone.js": "~0.11.5"
