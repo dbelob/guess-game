@@ -9,7 +9,7 @@ import {
   ViewChildren
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { YouTubePlayer } from '@angular/youtube-player/youtube-player';
+import { YouTubePlayer } from '@angular/youtube-player';
 import { TranslateService } from '@ngx-translate/core';
 import { TalkDetails } from '../../../shared/models/talk/talk-details.model';
 import { TalkService } from '../../../shared/services/talk.service';
